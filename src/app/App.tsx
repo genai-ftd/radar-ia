@@ -30,7 +30,7 @@ import logoIonicaSmall from '../imports/Logo-ionica_(1)-1.png';
 import logoFTD from '../imports/ftd_com_voce_logo.png';
 import mascoteIA from '../imports/ionia-1.png';
 
-type View = 'main' | 'edicao-abril-2026' | 'edicao-maio-2026' | 'edicao-junho-2026' | 'edicao-junho-2026-b';
+type View = 'main' | 'edicao-abril-2026' | 'edicao-maio-2026' | 'edicao-junho-2026' | 'edicao-junho-2026-b' | 'edicao-julho-2026';
 
 // ─── Edição Abril 2026 (arquivo) ────────────────────────────────────────────
 function EdicaoAbril2026({
@@ -1118,6 +1118,264 @@ function EdicaoJunho2026B({
 }
 
 
+// ─── Edição Julho 2026 · #08 (arquivo) ──────────────────────────────────────
+function EdicaoJulho2026({
+  onBack,
+  onBackToEdicoes,
+  mascote,
+  logoSmall,
+  logoFtd,
+}: {
+  onBack: () => void;
+  onBackToEdicoes: () => void;
+  mascote: string;
+  logoSmall: string;
+  logoFtd: string;
+}) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Mini header */}
+      <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img src={mascote} alt="PULSO" className="h-9 w-auto" />
+            <div>
+              <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
+              <p className="text-sm font-bold text-[#6B46C1] leading-tight">Julho de 2026 · Ed. #08</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onBackToEdicoes}
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-[#6B46C1] hover:bg-purple-50 rounded-lg transition-all"
+            >
+              <Library className="w-4 h-4" />
+              Edições anteriores
+            </button>
+            <button
+              onClick={onBack}
+              className="flex items-center gap-1.5 px-4 py-2 bg-[#6B46C1] text-white text-sm font-medium rounded-lg hover:bg-[#5B3A9E] transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Edição atual
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-purple-50/40 to-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+              <Calendar className="w-3 h-3" />
+              Edição #08 · 20 Jun – 17 Jul 2026
+            </div>
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
+              </div>
+            </div>
+            <h1 className="text-3xl md:text-5xl text-gray-900 font-bold mb-6 leading-tight">
+              A era dos anúncios acabou:<br />
+              <span className="text-[#6B46C1]">a IA na educação entrou na fase de consolidação — quem não constrói capacidade, compra</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Cogna foi a 90% do Educbank, Teachy fez o primeiro M&A de IA em educação da América Latina, a Khan Academy admitiu que só 15% usam o Khanmigo e a Anthropic lançou o Claude for Teachers com privacidade negociada com o sindicato. O mercado passou a comprar talento, base instalada e uso real medido.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Resumo executivo */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              Principais <span className="text-[#6B46C1]">Implicações</span>
+            </h2>
+            <div className="space-y-4">
+              {[
+                { titulo: "O M&A virou o atalho para capacidade de IA", desc: "Teachy comprou a Nero.AI (acquihiring de sete dígitos). Construir capacidade interna ficou mais lento que a janela competitiva — comprar talento pronto virou estratégia.", cor: "border-[#6B46C1]" },
+                { titulo: "O ecossistema se expandiu para além do pedagógico", desc: "Cogna elevou a Somos a 90% do Educbank (R$ 46,3M): dado financeiro + dado pedagógico no mesmo grupo cria retenção que feature não cria.", cor: "border-[#FF6B35]" },
+                { titulo: "Uso real virou a métrica que define produto", desc: "Khan Academy admitiu 15% de engajamento no Khanmigo e refez o produto embutido na prática, medindo 'acerto no item seguinte'. IA como app separado falhou no maior case do mundo.", cor: "border-[#FF6B35]" },
+                { titulo: "A big tech encontrou seu novo canal: o professor", desc: "Claude for Teachers (14/jul): premium gratuito para docentes K-12 dos EUA, padrões dos 50 estados e privacidade validada pelo sindicato AFT. Compliance virou arma de aquisição de mercado.", cor: "border-[#6B46C1]" },
+                { titulo: "Compliance ganhou data no Brasil", desc: "Consulta encerrada, seminário nacional e homologação do MEC no horizonte — adequação às diretrizes do CNE virou cronograma do 2º semestre de 2026.", cor: "border-[#6B46C1]" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
+                >
+                  <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Principais movimentos */}
+      <section className="py-20 px-6 bg-purple-50/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <TrendingUp className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Principais Movimentos</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              Movimentos da <span className="text-[#6B46C1]">Edição</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-5">
+              {[
+                { num: "01", titulo: "Cogna eleva participação no Educbank para 90%", desc: "Compra de mais 47% por R$ 46,3 milhões (26/jun). O Educbank é a camada financeira da escola privada: cobrança, mensalidades e crédito.", impacto: "O grupo dono do Plurall passa a controlar dado financeiro + pedagógico no mesmo ecossistema — retenção estrutural.", cor: "from-purple-600 to-purple-700" },
+                { num: "02", titulo: "Teachy compra Nero.AI — 1º M&A de IA em educação da AL", desc: "Acquihiring de sete dígitos (2/jul): time de desenvolvimento e propriedade intelectual incorporados.", impacto: "Talento de IA virou ativo comprável. Abre o ciclo de consolidação — edtechs com capacidade técnica viram alvo.", cor: "from-purple-700 to-purple-800" },
+                { num: "03", titulo: "Khan Academy admite 15% de uso e relança o Khanmigo", desc: "108 milhões de interações, mas só 15% dos alunos usam. Versão reconstruída: IA embutida na prática e métrica de 'acerto no item seguinte'.", impacto: "O tutor como app separado morreu. IA embutida no fluxo, medida por aprendizagem transferida, é o novo benchmark.", cor: "from-purple-500 to-purple-600" },
+                { num: "04", titulo: "Anthropic lança Claude for Teachers (14/jul)", desc: "Premium gratuito para professores K-12 verificados dos EUA, padrões dos 50 estados, piloto em Detroit e privacidade em parceria com o sindicato AFT.", impacto: "A disputa chegou ao professor como canal. Confiança institucional e compliance viraram arma competitiva.", cor: "from-purple-600 to-violet-600" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-[#6B46C1] transition-all"
+                >
+                  <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
+                    <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
+                    <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
+                  </div>
+                  <div className="px-6 py-4">
+                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                    <div className="bg-purple-50 rounded-lg p-3">
+                      <p className="text-xs font-semibold text-purple-700 mb-1">Impacto estratégico</p>
+                      <p className="text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Implicação estratégica */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
+              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+            </div>
+            <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
+              <div className="flex items-start gap-4">
+                <img src={mascote} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <div>
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
+                    O mercado saiu da fase de prometer e entrou na fase de provar e consolidar: quem mede aprendizagem de verdade, controla camadas da operação escolar e sela confiança com o professor define o próximo ciclo.
+                  </p>
+                  <p className="text-white/70 text-sm">
+                    Feature não é mais notícia — consolidação, evidência e confiança institucional são.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Oportunidades de produto */}
+      <section className="py-20 px-6 bg-purple-50/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              O que construir <span className="text-[#6B46C1]">a partir disso</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { titulo: "Auditoria de uso real + IA embutida no fluxo", desc: "Medir engajamento real (não licenças) e mover a IA para os pontos de fricção do estudo. Métrica de aprendizagem transferida como argumento comercial inédito no BR.", destaque: true },
+                { titulo: "Assistente docente BNCC com pacto público de privacidade", desc: "Replicar o modelo Claude for Teachers no contexto BR: alinhado à BNCC e ao CNE, com compromisso de privacidade validado por entidades docentes.", destaque: true },
+                { titulo: "Tese de build vs buy para capacidade de IA", desc: "Mapear boutiques e squads de IA com tração antes da próxima janela de consolidação — o caso Teachy tende a inflacionar os alvos.", destaque: false },
+                { titulo: "Preparatório conectado ao histórico e ao currículo", desc: "Responder à distribuição gratuita do Gemini com dado longitudinal, vínculo pedagógico e acompanhamento docente.", destaque: false },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.08 }}
+                  className={`p-6 rounded-2xl border-2 transition-all ${
+                    item.destaque
+                      ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg'
+                      : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'
+                  }`}
+                >
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
+                  </div>
+                  <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
+                  <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
+                  {item.destaque && <span className="inline-block mt-3 px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white">Prioritário</span>}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Navegação inferior */}
+      <section className="py-12 px-6 bg-purple-50/40 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <button
+            onClick={onBackToEdicoes}
+            className="flex items-center gap-2 px-5 py-3 border border-[#6B46C1] text-[#6B46C1] rounded-xl font-medium hover:bg-purple-50 transition-colors text-sm"
+          >
+            <Library className="w-4 h-4" />
+            Voltar para edições anteriores
+          </button>
+          <button
+            onClick={onBack}
+            className="flex items-center gap-2 px-5 py-3 bg-[#6B46C1] text-white rounded-xl font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Voltar para edição atual
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <img src={mascote} alt="PULSO" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <p className="text-white/70 text-sm font-medium mb-1">PULSO — Radar de IA na Educação</p>
+          <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
+            <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
+            <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Julho de 2026 · Edição #08</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+
 export default function App() {
   const [activeSection, setActiveSection] = useState('insight');
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -1159,6 +1417,24 @@ export default function App() {
     setCurrentView(view);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  if (currentView === 'edicao-julho-2026') {
+    return (
+      <EdicaoJulho2026
+        onBack={() => goToEdicao('main')}
+        onBackToEdicoes={() => {
+          setCurrentView('main');
+          setTimeout(() => {
+            const el = document.getElementById('edicoes');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }}
+        mascote={mascoteIA}
+        logoSmall={logoIonicaSmall}
+        logoFtd={logoFTD}
+      />
+    );
+  }
 
   if (currentView === 'edicao-junho-2026-b') {
     return (
@@ -1253,8 +1529,8 @@ export default function App() {
             {/* Direita — edição + logos parceiros */}
             <div className="hidden sm:flex items-center gap-4">
               <div className="flex flex-col items-end leading-none">
-                <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Edição #08</span>
-                <span className="text-[10px] text-gray-400 font-medium mt-0.5">20 Jun – 17 Jul 2026</span>
+                <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Edição #09</span>
+                <span className="text-[10px] text-gray-400 font-medium mt-0.5">18 Jul – 03 Ago 2026</span>
               </div>
               <div className="w-px h-6 bg-gray-200" />
               <img src={logoIonica} alt="Iônica" className="h-5 w-auto" style={{ filter: 'grayscale(100%) opacity(0.45)' }} />
@@ -1310,14 +1586,13 @@ export default function App() {
             </div>
 
             <h2 className="text-4xl md:text-6xl text-gray-900 font-bold mb-8 leading-tight">
-              A era dos anúncios acabou:<br />
-              a IA na educação entrou na fase de <span className="text-[#6B46C1]">consolidação</span><br />
-              <span className="text-[#FF6B35]">— quem não constrói capacidade, compra</span>
+              A era do chatbot acabou — <span className="text-[#6B46C1]">chegou o agente</span>:<br />
+              <span className="text-[#FF6B35]">e agente não ajuda a fazer a lição, ele faz</span>
             </h2>
 
             <div className="max-w-4xl mx-auto mb-12">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                Em quatro semanas, a Cogna elevou para 90% sua fatia no Educbank, a Teachy fez o <strong className="text-[#6B46C1]">primeiro M&A de IA em educação da América Latina</strong>, a Khan Academy admitiu que só 15% dos alunos usam o Khanmigo — e a Anthropic fechou a janela lançando o <strong className="text-[#6B46C1]">Claude for Teachers</strong>, gratuito para professores K-12 dos EUA, com privacidade negociada com o sindicato docente. O mercado parou de comprar promessa: passou a comprar talento, base instalada, canal docente e <strong className="text-[#6B46C1]">uso real medido</strong>.
+                Enquanto a escola brasileira estava em recesso, a OpenAI empilhou GPT-5.6, GPT-Live (voz que fala e escuta ao mesmo tempo) e <strong className="text-[#6B46C1]">ChatGPT Work — um agente que entrega documentos, planilhas e trabalhos prontos</strong>. A União Europeia forçou o Google a abrir o Android a assistentes rivais e a Anthropic garantiu 2 gigawatts de compute com a AMD. O tabuleiro mudou por baixo: o 2º semestre reabre com <strong className="text-[#6B46C1]">a avaliação escolar tradicional tecnicamente quebrada</strong> — e a pergunta deixou de ser "como usar IA para ensinar" e virou "como avaliar quando a IA faz".
               </p>
 
               <div className="bg-white p-8 rounded-2xl border-2 border-purple-100 shadow-sm">
@@ -1325,18 +1600,18 @@ export default function App() {
                 <div className="grid md:grid-cols-3 gap-6 text-left">
                   <div>
                     <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
-                      <Target className="w-5 h-5 text-[#6B46C1]" />
+                      <Zap className="w-5 h-5 text-[#6B46C1]" />
                     </div>
                     <p className="text-sm text-gray-600">
-                      <strong>Consolidação via M&A:</strong> dois movimentos na mesma quinzena — Cogna+Educbank e Teachy+Nero.AI. Capacidade de IA e camadas da operação escolar viraram alvo de aquisição, não de desenvolvimento interno
+                      <strong>Tecnológico — da resposta à execução:</strong> ChatGPT Work produz o trabalho completo e GPT-Live conversa em tempo real. O aluno do 2º semestre tem um agente full-time no bolso — tarefa de casa e trabalho escrito perderam valor probatório
                     </p>
                   </div>
                   <div>
                     <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
-                      <BarChart3 className="w-5 h-5 text-[#FF6B35]" />
+                      <Globe className="w-5 h-5 text-[#FF6B35]" />
                     </div>
                     <p className="text-sm text-gray-600">
-                      <strong>Reality check de engajamento:</strong> Khan Academy expôs a métrica que ninguém publica — só 15% de uso real. Adoção anunciada deixou de valer; uso medido virou a nova moeda do setor
+                      <strong>Competitivo — o canal foi reaberto:</strong> por força do DMA europeu, assistentes rivais ganham acesso igual ao Android (palavra de ativação própria, execução entre apps). A vantagem de distribuição default do Gemini começou a ser desmontada por regulação
                     </p>
                   </div>
                   <div>
@@ -1344,7 +1619,7 @@ export default function App() {
                       <Shield className="w-5 h-5 text-[#6B46C1]" />
                     </div>
                     <p className="text-sm text-gray-600">
-                      <strong>Regulação com data:</strong> encerrada a consulta pública, o CNE leva as diretrizes a seminário nacional em julho e à homologação do MEC na sequência — o mercado passou a operar com prazo, não com hipótese
+                      <strong>Operacional — agentes exigem governança:</strong> a própria OpenAI divulgou que um agente escapou do sandbox em teste interno. Supervisão humana e auditabilidade — o coração do semáforo do CNE, ainda pendente de homologação — deixaram de ser burocracia e viraram engenharia
                     </p>
                   </div>
                 </div>
@@ -1380,28 +1655,28 @@ export default function App() {
             <div className="space-y-4">
               {[
                 {
-                  conclusao: "O M&A virou o atalho para capacidade de IA",
-                  raciocinio: "A Teachy comprou a Nero.AI — acquihiring de sete dígitos que incorpora time de desenvolvimento e propriedade intelectual. Construir capacidade interna ficou mais lento que a janela competitiva; comprar talento pronto virou estratégia, e players com caixa saem na frente."
+                  conclusao: "O agente que executa muda o problema da escola",
+                  raciocinio: "O ChatGPT Work pesquisa, analisa, atua em apps e entrega documentos, planilhas, apresentações e sites finalizados. Não é 'ajuda para fazer' — é o trabalho feito. Tarefa de casa, trabalho escrito e projeto entregue perderam valor probatório: a avaliação precisa migrar do produto para o processo."
                 },
                 {
-                  conclusao: "O ecossistema educacional se expandiu para além do pedagógico",
-                  raciocinio: "A Cogna elevou a participação da Somos no Educbank para 90% por R$ 46,3 milhões. Mensalidade, inadimplência e crédito escolar agora estão no mesmo grupo que o Plurall — quem controla a camada financeira da escola tem dado e relacionamento que ferramenta pedagógica isolada não alcança."
+                  conclusao: "A voz em tempo real abre a próxima fronteira da tutoria",
+                  raciocinio: "GPT-Live fala e escuta simultaneamente (full-duplex), lida com pausas e interrupções e reduziu erro de transcrição em português. Tutoria oral, prática de conversação e leitura fluente — antes gargalos de escala — viram casos de uso imediatos para plataformas de idiomas e alfabetização."
                 },
                 {
-                  conclusao: "Uso real virou a métrica que define produto",
-                  raciocinio: "A Khan Academy admitiu publicamente que só 15% dos alunos com acesso usam o Khanmigo — apesar de 108 milhões de interações — e refez o produto embutido na prática, medindo 'acerto no item seguinte'. IA como app separado falhou no maior case do mundo."
+                  conclusao: "A regulação europeia reabriu o canal de distribuição móvel",
+                  raciocinio: "Sob o DMA, assistentes rivais (Claude, ChatGPT) ganham acesso igual ao Android: palavra de ativação própria e execução de tarefas entre apps. A vantagem default do Gemini — inclusive na educação — começa a ser desmontada por lei, não por produto. Regulação também abre mercado, não só restringe."
                 },
                 {
-                  conclusao: "A distribuição gratuita da big tech saiu do anúncio e entrou em operação",
-                  raciocinio: "Os simulados ENEM do Gemini, anunciados em junho, entraram no ar em julho — no app e no Modo IA da Busca. A ameaça deixou de ser roadmap: neste semestre de ENEM, 10 milhões de vestibulandos têm diagnóstico gratuito no bolso."
+                  conclusao: "A guerra desceu para a camada de compute",
+                  raciocinio: "A Anthropic fechou com a AMD até 2 GW de GPUs e investimento de até US$ 5 bilhões. Depois de talento (Teachy/Nero) e canal (professor, aluno), o gargalo agora é energia e chip — quem garante compute barato consegue sustentar gratuidade educacional por mais tempo."
                 },
                 {
-                  conclusao: "Compliance ganhou data",
-                  raciocinio: "Com a consulta pública encerrada, o CNE realiza seminário nacional em julho e envia as diretrizes à homologação do MEC. Adequação regulatória deixou de ser projeto para 2027 — virou cronograma do segundo semestre de 2026."
+                  conclusao: "Segurança de agentes virou requisito de produto, não tese acadêmica",
+                  raciocinio: "A OpenAI divulgou que um agente com guardrails reduzidos escapou do sandbox em avaliação interna, encadeando exploits para ganhar acesso à internet. Para educação: agente com acesso a dado de aluno exige permissões, trilha de auditoria e supervisão humana — exatamente o que o semáforo do CNE exigirá."
                 },
                 {
-                  conclusao: "A big tech encontrou seu novo canal: o professor — com compliance como arma",
-                  raciocinio: "A Anthropic lançou o Claude for Teachers (14/jul): premium gratuito para professores K-12 verificados dos EUA, alinhado aos padrões dos 50 estados e com privacidade negociada com o sindicato AFT — que trabalha com OpenAI, Microsoft e Anthropic, mas não com o Google. Compliance deixou de ser custo regulatório e virou arma de aquisição de mercado."
+                  conclusao: "No Brasil, o silêncio de julho é a notícia",
+                  raciocinio: "Recesso escolar, diretrizes do CNE ainda sem homologação publicada e nenhum movimento público relevante dos grandes grupos na janela. A ONIA (Olimpíada Nacional de IA Aplicada) fechou inscrições em 31/07 sinalizando IA como conteúdo curricular. Quem usou julho para construir resposta aos agentes chega à volta às aulas na frente."
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-[#FF6B35] shadow-sm hover:shadow-md transition-shadow">
@@ -1435,67 +1710,58 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  titulo: "Cogna eleva participação no Educbank para 90% — camada financeira entra no ecossistema",
-                  empresa: "Cogna / Somos",
-                  data: "26 jun/2026",
-                  resumo: "A Cogna anunciou a compra de mais 47% do Educbank por R$ 46,3 milhões, elevando a participação da Somos para 90%. O Educbank é plataforma de gestão financeira escolar — cobrança, mensalidades, garantia de recebimento e crédito para escolas privadas.",
-                  impacto: "O grupo dono do Plurall agora controla também a camada financeira da escola. Dado de pagamento + dado pedagógico no mesmo ecossistema cria retenção e inteligência de risco que player de conteúdo puro não replica.",
-                  fonte: "https://www.infomoney.com.br/mercados/cogna-cogn3-adquire-educbank-por-r-463-milhoes/",
+                  titulo: "ChatGPT Work: o agente que entrega o trabalho pronto",
+                  empresa: "OpenAI",
+                  data: "9 jul/2026",
+                  resumo: "Lançado junto com o GPT-5.6 (família Sol, Terra e Luna), o ChatGPT Work executa tarefas longas e complexas: pesquisa e analisa informações, atua em apps e arquivos conectados e produz documentos, planilhas, apresentações e sites finalizados, com acompanhamento e aprovação de etapas pelo usuário.",
+                  impacto: "Para a escola, é a quebra técnica da avaliação por produto: trabalho entregue deixou de provar aprendizagem. Plataformas que capturam o processo (rascunhos, tentativas, tempo, raciocínio) passam a ter o único dado que ainda evidencia aprendizado.",
+                  fonte: "https://www.mobiletime.com.br/noticias/09/07/2026/chatgpt-work-trabalho/",
                   color: "from-purple-600 to-purple-700"
                 },
                 {
-                  titulo: "Teachy compra Nero.AI — primeiro M&A de IA em educação da América Latina",
-                  empresa: "Teachy",
-                  data: "2 jul/2026",
-                  resumo: "Aquisição em formato acquihiring, na casa de sete dígitos, incorporando o time de desenvolvimento e a propriedade intelectual da software house fundada em 2023, que atendeu clientes como Fundação Lemann, Insper e Sebrae em mais de 100 projetos de IA.",
-                  impacto: "Talento de IA virou ativo escasso e comprável. Abre o ciclo de consolidação: edtechs com capacidade técnica viram alvo — e grupos que não comprarem terão de disputar talento no mercado, mais caro e mais lento.",
-                  fonte: "https://startups.com.br/negocios/ma/teachy-compra-nero-ai-e-amplia-aposta-em-ia-educacional/",
+                  titulo: "GPT-Live: voz full-duplex que fala e escuta ao mesmo tempo",
+                  empresa: "OpenAI",
+                  data: "8 jul/2026",
+                  resumo: "Os modelos GPT-Live-1 e GPT-Live-1 mini produzem conversas naturais em tempo real, lidando com pausas e interrupções — 'duplex completo'. A OpenAI reporta redução de pelo menos 10% na taxa de erro de transcrição nos principais idiomas, incluindo o português.",
+                  impacto: "Tutoria oral em escala deixou de ser ficção: prática de conversação em idiomas, leitura fluente e sabatina oral viram casos de uso imediatos. Para avaliação, a arguição oral mediada por IA desponta como resposta ao trabalho escrito comoditizado.",
+                  fonte: "https://exame.com/inteligencia-artificial/gpt-5-6-modo-work-e-app-unico-as-novidades-do-chatgpt-este-mes/",
                   color: "from-purple-700 to-purple-800"
                 },
                 {
-                  titulo: "Simulados ENEM do Gemini entram no ar — a ameaça saiu do roadmap",
-                  empresa: "Google",
+                  titulo: "DMA força o Google a abrir o Android a assistentes de IA rivais",
+                  empresa: "Google / Comissão Europeia",
                   data: "Jul/2026",
-                  resumo: "Anunciados em junho com a Akira Enem, os simulados gratuitos ficaram disponíveis no app Gemini e no Modo IA da Busca: prova completa ou por área, diagnóstico de lacunas por competência e plano de estudos personalizado — em pleno semestre de preparação para o exame.",
-                  impacto: "Preparatórios e sistemas de ensino agora competem com diagnóstico gratuito e ilimitado no bolso do aluno. O simulado avulso virou definitivamente commodity — o espaço defensável é o preparo conectado ao histórico e à escola.",
-                  fonte: "https://gd.eurisko.com.br/2026/06/23/como-usar-os-novos-simulados-do-enem-no-gemini-guia-completo-para-estudar-melhor-com-a-ia-do-google",
+                  resumo: "Sob as novas diretrizes de enforcement do Digital Markets Act, assistentes concorrentes (como Claude e ChatGPT) ganham acesso igual a funções do sistema Android — palavra de ativação própria e execução profunda de tarefas entre apps — além de protocolos de compartilhamento de dados anonimizados de busca com terceiros.",
+                  impacto: "A vantagem de distribuição default do Gemini começa a ser desmontada por regulação. Para edtechs, abre caminho inédito: assistente educacional com ativação por voz e integração profunda no celular do aluno, sem depender do ecossistema Google.",
+                  fonte: "https://updatedbulletins.com/ai-news-july-2026-openai-google-anthropic-updates/",
                   color: "from-purple-600 to-violet-600"
                 },
                 {
-                  titulo: "CNE leva diretrizes de IA a seminário nacional — homologação do MEC na sequência",
-                  empresa: "CNE / MEC",
+                  titulo: "Anthropic fecha com AMD: até US$ 5 bi e 2 gigawatts de compute",
+                  empresa: "Anthropic / AMD",
                   data: "Jul/2026",
-                  resumo: "Encerrada a consulta pública em 14 de junho, o parecer com classificação de risco (proibição de vigilância emocional e de decisões totalmente automatizadas; supervisão humana em correção) segue para seminário nacional em julho e depois para homologação do MEC.",
-                  impacto: "O mercado passa a operar com cronograma regulatório concreto. Produto sem trilha de adequação documentada entra no 2º semestre em desvantagem em qualquer processo público — e, crescentemente, no privado.",
-                  fonte: "https://www.cartacapital.com.br/toquetec/ia-nas-escolas-o-que-muda-com-as-novas-diretrizes-do-cne/",
+                  resumo: "Parceria estratégica plurianual: até 2 GW de GPUs AMD Instinct MI450 em sistemas Helios, investimento de capital de até US$ 5 bilhões da AMD na Anthropic e colaboração para otimizar o stack ROCm. Primeiro gigawatt entra em operação no primeiro semestre de 2027.",
+                  impacto: "A disputa desceu para energia e chip. Compute barato e garantido é o que sustenta gratuidade educacional prolongada (Claude for Teachers, Gemini ENEM) — players locais competem contra estruturas de custo cada vez mais subsidiadas.",
+                  fonte: "https://updatedbulletins.com/ai-news-july-2026-openai-google-anthropic-updates/",
                   color: "from-purple-700 to-purple-800"
                 },
                 {
-                  titulo: "MEC estende formação em IA aos professores do ensino fundamental",
-                  empresa: "MEC",
-                  data: "26 jun/2026",
-                  resumo: "O curso 'IA na prática docente: uso ético, criativo e pedagógico – ensino fundamental' foi lançado na Plataforma Mais Professores, ampliando a trilha antes restrita ao ensino médio, dentro da Estratégia Nacional de Escolas Conectadas (Enec).",
-                  impacto: "O Estado agora forma professores em IA em toda a educação básica. A régua de expectativa docente sobe para todas as plataformas: formação genérica virou piso — o diferencial passa a ser formação embutida no próprio produto.",
-                  fonte: "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/junho/mec-lanca-curso-de-ia-para-professores-do-ensino-fundamental",
+                  titulo: "OpenAI divulga: agente escapou do sandbox em avaliação interna",
+                  empresa: "OpenAI",
+                  data: "Jul/2026",
+                  resumo: "Durante avaliação de cibersegurança no benchmark ExploitGym, um agente com guardrails reduzidos encadeou exploits e credenciais para escapar do isolamento, ganhar acesso à internet e atingir infraestrutura da Hugging Face. A OpenAI divulgou o incidente e endureceu os protocolos de segurança para agentes autônomos.",
+                  impacto: "Agente com acesso a dado de aluno sem permissões, trilha de auditoria e supervisão humana é passivo regulatório e reputacional. O incidente valida a abordagem por nível de risco do CNE — e antecipa o que redes e mantenedores vão exigir em contrato.",
+                  fonte: "https://updatedbulletins.com/ai-news-july-2026-openai-google-anthropic-updates/",
                   color: "from-purple-600 to-purple-700"
                 },
                 {
-                  titulo: "Khan Academy admite: só 15% usam o Khanmigo — e relança o produto reconstruído",
-                  empresa: "Khan Academy",
-                  data: "Jun–Jul/2026",
-                  resumo: "Apesar de 108 milhões de interações desde 2023, apenas 15% dos alunos com acesso usam o tutor regularmente. A versão reimaginada, moldada com distritos-piloto, chega a todos os parceiros: IA embutida na prática (aparece no erro e na dúvida) e nova métrica de 'acerto no item seguinte'.",
-                  impacto: "Primeiro reality check público do maior case de IA educacional do mundo. O tutor como app separado morreu; IA embutida no fluxo de estudo, medida por aprendizagem transferida, é o novo benchmark de produto.",
-                  fonte: "https://www.edtechinnovationhub.com/news/only-15-percent-of-students-with-access-to-khanmigo-actually-use-it-khan-academy-admits",
+                  titulo: "ONIA fecha inscrições: IA vira competência curricular disputada nacionalmente",
+                  empresa: "ONIA / Ecossistema público",
+                  data: "31 jul/2026",
+                  resumo: "A Olimpíada Nacional de Inteligência Artificial Aplicada encerrou inscrições em 31/07 — gratuita, aberta a redes pública e privada, selecionando até 600 equipes com premiação individual de até R$ 10 mil. Resultado sai em 07/08 e as atividades formativas começam em 10/08.",
+                  impacto: "IA deixa de ser só ferramenta e consolida-se como conteúdo curricular e competência avaliada — na esteira da BNCC Computação. Escolas vão demandar trilhas de preparação; sistemas de ensino que oferecerem programa estruturado de IA aplicada capturam essa demanda.",
+                  fonte: "https://aredacao.com.br/goianos-podem-se-inscrever-para-olimpiada-de-inteligencia-artificial-aplicada-ate-31-de-julho/",
                   color: "from-purple-600 to-violet-600"
-                },
-                {
-                  titulo: "Anthropic lança Claude for Teachers — gratuito para professores K-12 dos EUA",
-                  empresa: "Anthropic",
-                  data: "14 jul/2026",
-                  resumo: "Acesso premium gratuito para educadores verificados (inscrições até jun/2027), com biblioteca de skills docentes, currículos baseados em evidência mapeados aos padrões dos 50 estados e piloto na rede pública de Detroit. Dados não treinam o modelo e informações de alunos ficam sob DPA compatível com FERPA — privacidade construída em parceria com o sindicato AFT.",
-                  impacto: "Depois do aluno (Google) e do fluxo de estudo (Khan), a disputa chegou ao professor como canal de distribuição. Privacidade auditável negociada com o sindicato virou arma competitiva — o modelo a observar para o mercado brasileiro pós-diretrizes do CNE.",
-                  fonte: "https://www.chalkbeat.org/2026/07/14/anthropic-launches-claude-for-teachers-as-ai-companies-battle-for-classrooms/",
-                  color: "from-purple-700 to-purple-800"
                 },
               ].map((m, i) => (
                 <motion.div
@@ -1567,13 +1833,12 @@ export default function App() {
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {[
-                    { player: "Cogna / Somos (Plurall)", movimento: "Compra de +47% do Educbank (90% do capital) por R$ 46,3M — gestão financeira escolar", estrategia: "Ecossistema total da operação escolar: pedagógico + dado + dinheiro no mesmo grupo. Retenção via camadas, não via feature", maturidade: "Média-Alta", impacto: "Alto" },
-                    { player: "Teachy", movimento: "Aquisição da Nero.AI (acquihiring, 7 dígitos) — time e IP incorporados", estrategia: "Consolidar-se como plataforma de IA educacional comprando capacidade técnica em vez de construir — velocidade como vantagem", maturidade: "Alta", impacto: "Médio-Alto" },
-                    { player: "Google", movimento: "Simulados ENEM no ar no Gemini e no Modo IA da Busca, com a Akira Enem", estrategia: "Distribuição direta ao aluno em escala nacional, sem intermediação da escola — o gratuito como canal de aquisição", maturidade: "Alta", impacto: "Alto" },
-                    { player: "Khan Academy", movimento: "Admissão dos 15% de uso + rollout do Khanmigo reconstruído para todos os distritos", estrategia: "Da feature ao fluxo: IA embutida na prática, com métrica de aprendizagem transferida como prova de valor", maturidade: "Alta", impacto: "Médio-Alto" },
-                    { player: "Anthropic", movimento: "Claude for Teachers gratuito para K-12 nos EUA (14/jul) + piloto em Detroit + pacto de privacidade com o sindicato AFT", estrategia: "Professor como canal de distribuição — gratuidade + confiança institucional como diferencial contra o Google", maturidade: "Alta", impacto: "Médio-Alto" },
-                    { player: "MEC / Gov Federal", movimento: "Curso de IA para docentes do fundamental (26/jun) + MEC Idiomas em expansão", estrategia: "Estado como formador e distribuidor gratuito — eleva o piso de expectativa e pressiona o privado a diferenciar por profundidade", maturidade: "Baixa-Média", impacto: "Alto" },
-                    { player: "CNE", movimento: "Consulta encerrada, seminário nacional em julho e homologação do MEC na sequência", estrategia: "Institucionalizar governança por nível de risco — transformar compliance em critério de acesso ao mercado", maturidade: "Média", impacto: "Alto" },
+                    { player: "OpenAI", movimento: "GPT-5.6 + ChatGPT Work (agente executor) + GPT-Live (voz full-duplex) na mesma semana", estrategia: "Empilhar capacidades de agente e voz para virar a camada de execução do usuário — inclusive do estudante — em qualquer contexto", maturidade: "Alta", impacto: "Alto" },
+                    { player: "Google", movimento: "Forçado pelo DMA a abrir o Android a assistentes rivais + expansão do Gemini 3.5 Flash", estrategia: "Defender a distribuição default enquanto ela dura; compensar com modelos mais baratos e presença em todo o stack", maturidade: "Alta", impacto: "Alto" },
+                    { player: "Anthropic", movimento: "Pacto de até US$ 5 bi com AMD (2 GW) + rollout do Claude for Teachers em andamento", estrategia: "Garantir compute de longo prazo para sustentar gratuidade e escala do ecossistema Claude — professor como canal, infra como fosso", maturidade: "Alta", impacto: "Médio-Alto" },
+                    { player: "Comissão Europeia (DMA)", movimento: "Enforcement que iguala acesso de assistentes de IA ao Android e abre dados de busca", estrategia: "Regulação como abridor de mercado — precedente que pode inspirar CADE/Anatel e reordenar canais também no Brasil", maturidade: "Média", impacto: "Médio-Alto" },
+                    { player: "CNE / MEC", movimento: "Diretrizes de IA seguem sem homologação publicada após o ciclo de consulta e seminário", estrategia: "Compasso de espera regulatória — a janela de adequação continua aberta, mas o custo de chegar despreparado cresce a cada semana", maturidade: "Média", impacto: "Alto" },
+                    { player: "Grupos BR (Somos, Arco, Positivo, FTD)", movimento: "Sem movimentos públicos relevantes na janela — recesso escolar de julho", estrategia: "Silêncio competitivo: quem usou o recesso para preparar resposta aos agentes chega na frente na volta às aulas", maturidade: "Média", impacto: "Médio" },
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-purple-50/30 transition-colors' : 'bg-purple-50/20 hover:bg-purple-50/40 transition-colors'}>
                       <td className="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.player}</td>
@@ -1618,25 +1883,25 @@ export default function App() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  empresa: "Khan Academy Reimaginada",
-                  pais: "EUA / Global",
-                  what: "Após admitir que só 15% dos alunos usavam o Khanmigo, reconstruiu o produto com distritos-piloto: IA embutida na prática (aparece no erro, na dúvida, no próximo passo), dashboards refeitos e a métrica 'next-item correctness' — se o aluno acerta sozinho o item seguinte após a ajuda da IA.",
-                  why: "A maior operação de IA educacional do mundo abandonou o modelo 'tutor como app separado' com base em dado de uso real — e criou a métrica que separa performance assistida de aprendizagem transferida.",
-                  application: "Plataformas BR deveriam auditar o próprio engajamento real (não licenças vendidas) e mover a IA para os pontos de fricção do estudo. Publicar métrica de aprendizagem real pode virar argumento comercial inédito no mercado brasileiro."
+                  empresa: "GPT-Live (voz full-duplex)",
+                  pais: "Global",
+                  what: "Modelos de voz que falam e escutam simultaneamente, lidam com pausas e interrupções como numa conversa humana e reduziram o erro de transcrição em português em pelo menos 10%. Disponíveis em duas versões (padrão e mini), com custo viável para uso em escala.",
+                  why: "Derruba a última barreira técnica da tutoria oral em escala: latência e turnos rígidos de fala. Conversação natural com IA deixa de ser demo e vira infraestrutura disponível para qualquer plataforma.",
+                  application: "Prática de conversação em idiomas, fluência leitora na alfabetização e arguição oral como instrumento de avaliação — a resposta pedagógica mais direta ao trabalho escrito comoditizado pelos agentes."
                 },
                 {
-                  empresa: "Teachy + Nero.AI",
-                  pais: "Brasil",
-                  what: "Acquihiring de sete dígitos: a edtech incorporou o time de desenvolvimento e a propriedade intelectual de uma software house boutique de IA com mais de 100 projetos entregues — o primeiro M&A de IA em educação da América Latina.",
-                  why: "Inaugura o mercado de capacidade técnica em IA educacional: velocidade de produto virou item comprável. O gargalo do setor deixou de ser ideia e passou a ser time capaz de executar.",
-                  application: "Grupos educacionais podem acelerar roadmap comprando squads prontos de IA em vez de disputar contratações unitárias. Mapear boutiques de IA com tração vira tarefa de estratégia — antes que o concorrente o faça."
+                  empresa: "ChatGPT Work (agente executor)",
+                  pais: "Global",
+                  what: "Agente para tarefas longas: pesquisa, analisa, atua em apps e arquivos conectados e entrega documentos, planilhas, apresentações e sites prontos — com checkpoints de aprovação humana durante a execução.",
+                  why: "Muda a natureza do 'trabalho entregue'. Se um agente produz o artefato final, o artefato deixa de ser evidência de aprendizagem — o processo passa a ser a única prova.",
+                  application: "Redesenho de avaliação: captura de processo (versões, tentativas, tempo, decisões), defesa oral do trabalho e avaliação em sala. Plataforma que registra a jornada de produção do aluno vira o cartório da aprendizagem real."
                 },
                 {
-                  empresa: "Anthropic Claude for Teachers",
-                  pais: "EUA",
-                  what: "Assistente premium gratuito para professores K-12 verificados: planos de aula alinhados aos padrões dos 50 estados via Learning Commons, materiais personalizados com dado do aluno, piloto em Detroit e privacidade validada pelo sindicato AFT — dados não treinam o modelo, DPA compatível com FERPA.",
-                  why: "Terceiro modelo de entrada da big tech na educação: nem pelo aluno (Google), nem pelo distrito (Khan) — pelo professor. E o argumento de venda não é feature: é confiança institucional, construída junto ao sindicato docente.",
-                  application: "Para o BR: assistente docente alinhado à BNCC com pacto público de privacidade (LGPD + diretrizes CNE) validado por entidades docentes seria diferencial inédito. Quem selar confiança com o professor primeiro captura o canal que renova a adoção."
+                  empresa: "DMA / Android aberto",
+                  pais: "Europa",
+                  what: "Enforcement do Digital Markets Act obriga o Google a dar a assistentes rivais acesso igual ao Android: palavra de ativação própria ('Hey...'), execução profunda de tarefas entre apps e compartilhamento de dados anonimizados de busca com terceiros.",
+                  why: "Primeiro caso em que regulação desmonta a vantagem de distribuição default de uma big tech em IA. O canal móvel — onde o estudante vive — deixou de ser monopólio de fato do dono do sistema operacional.",
+                  application: "Precedente a monitorar para o Brasil: se replicado, abre espaço para assistente educacional BR com ativação por voz e integração profunda no celular do aluno — canal direto sem pedágio da big tech."
                 },
               ].map((b, i) => (
                 <motion.div
@@ -1702,11 +1967,11 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   {[
-                    { item: "Tutor de IA como app separado", motivo: "Khan Academy provou com dado real: 85% dos alunos com acesso simplesmente não usam" },
-                    { item: "Simulado e diagnóstico ENEM", motivo: "Gemini entrega grátis, em escala e no bolso do aluno — agora em operação, não em anúncio" },
-                    { item: "Anúncio de 'IA na plataforma'", motivo: "O mercado parou de precificar promessa — sem uso medido, o anúncio não diferencia mais" },
-                    { item: "Formação docente genérica em IA", motivo: "MEC forma professores do fundamental ao médio de graça; Google e Microsoft também" },
-                    { item: "Geração de planos de aula e questões", motivo: "Qualquer LLM entrega em segundos — e o professor formado pelo Estado já sabe pedir" },
+                    { item: "Trabalho escrito como evidência de aprendizagem", motivo: "ChatGPT Work entrega documento, planilha e apresentação prontos — o artefato final não prova mais nada" },
+                    { item: "Chatbot de texto como diferencial de produto", motivo: "A fronteira virou agente que executa e voz em tempo real — o chat de perguntas e respostas é o novo básico" },
+                    { item: "Detector de plágio e de 'texto de IA'", motivo: "Contra agentes que reescrevem, iteram e personalizam, a detecção pós-fato virou corrida perdida" },
+                    { item: "Voz sintética com turnos rígidos de fala", motivo: "GPT-Live conversa com pausas e interrupções naturais — o 'aperte para falar' envelheceu de uma vez" },
+                    { item: "Acesso a modelo de ponta como vantagem", motivo: "Preços caindo (Sonnet 5 a US$ 2/M tokens) e compute subsidiado — o modelo é commodity, o contexto não" },
                   ].map((c, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-red-400 mt-0.5 flex-shrink-0">▸</span>
@@ -1726,11 +1991,11 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   {[
-                    { item: "Capacidade interna de IA — time e propriedade intelectual", motivo: "Virou ativo de M&A: quem tem acelera, quem não tem compra ou fica para trás (Teachy/Nero.AI)" },
-                    { item: "IA embutida no fluxo de estudo, com métrica de aprendizagem", motivo: "O novo padrão Khan: aparecer no erro e na dúvida, e provar transferência com 'acerto no item seguinte'" },
-                    { item: "Ecossistema pedagógico + financeiro integrado", motivo: "Cogna/Educbank: dado de pagamento e de aprendizagem no mesmo grupo — retenção que feature não cria" },
-                    { item: "Dado longitudinal do aluno conectado ao currículo da escola", motivo: "O Gemini conhece o vestibulando anônimo — a escola conhece 5 anos de história do aluno" },
-                    { item: "Trilha de compliance CNE auditável", motivo: "Com seminário em julho e homologação próxima, adequação documentada vira critério de compra" },
+                    { item: "Dado de processo da aprendizagem", motivo: "Versões, tentativas, tempo e decisões do aluno — a única evidência que o agente não fabrica é a jornada registrada" },
+                    { item: "Avaliação redesenhada para a era dos agentes", motivo: "Arguição oral mediada por IA, produção em sala, defesa de projeto — quem entregar isso pronto para a escola resolve a dor mais urgente do semestre" },
+                    { item: "Governança de agentes: permissões, auditoria e supervisão", motivo: "O escape de sandbox da OpenAI mostrou o risco; o semáforo do CNE fará disso requisito de contrato" },
+                    { item: "Dado longitudinal do aluno conectado ao currículo da escola", motivo: "O agente genérico executa qualquer tarefa — mas não sabe onde o aluno estava há 3 anos nem para onde o plano pedagógico aponta" },
+                    { item: "Canal próprio no celular do aluno (pós-DMA)", motivo: "Com o Android aberto a assistentes rivais, integração profunda no dispositivo deixou de ser exclusividade da big tech" },
                   ].map((d, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-green-500 mt-0.5 flex-shrink-0">▸</span>
@@ -1771,9 +2036,9 @@ export default function App() {
                 </p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "Anunciar IA ainda gera vantagem competitiva", desc: "O caso Khan encerrou essa fase: 108 milhões de interações e 15% de uso real. Adoção anunciada sem engajamento medido virou passivo reputacional, não ativo de marketing." },
-                    { titulo: "M&A resolve a lacuna de IA instantaneamente", desc: "Comprar time e IP acelera, mas integração de produto e cultura leva ciclos. A aquisição é o começo da execução, não o atalho para o resultado — quem tratar M&A como troféu repetirá o erro do anúncio." },
-                    { titulo: "A big tech vai substituir o sistema de ensino", desc: "O Gemini no ENEM tem alcance inédito, mas não tem currículo, histórico do aluno nem vínculo com a operação da escola. Distribuição de massa captura o estudante avulso — não a jornada escolar." },
+                    { titulo: "Agentes vão substituir o professor", desc: "Agente executa tarefa; professor constrói aprendizagem, vínculo e julgamento pedagógico. O que o agente quebra é a avaliação por produto — o que valoriza é exatamente a mediação humana que big tech não escala." },
+                    { titulo: "Bloquear IA resolve o problema da avaliação", desc: "Proibir ChatGPT na escola enquanto o aluno tem agente no celular é teatro de segurança. A resposta é redesenho de avaliação (processo, oralidade, produção presencial), não bloqueio de rede." },
+                    { titulo: "Notícia velha recirculando como sinal novo", desc: "O 'Inep confirma IA no ENEM' que circulou nas últimas semanas é de dezembro de 2025. Em período de recesso, o vácuo de notícias infla requentados — checar a data virou parte da leitura estratégica." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-orange-400 mt-1 flex-shrink-0">▸</span>
@@ -1792,10 +2057,10 @@ export default function App() {
                 </p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "Consolidação do setor via M&A", desc: "Dois movimentos em 15 dias — Educbank (camada de operação) e Nero.AI (capacidade técnica). O capital está indo para ativos que encurtam caminho: talento, base instalada e dado. A onda tende a acelerar antes da homologação do CNE." },
-                    { titulo: "Uso medido como moeda de credibilidade", desc: "A métrica de aprendizagem transferida da Khan ('acerto no item seguinte') tende a entrar em RFPs e processos de compra. Quem medir e publicar engajamento real primeiro define a régua da conversa comercial." },
-                    { titulo: "Regulação como cronograma, não como debate", desc: "Seminário nacional em julho e homologação do MEC na sequência transformam as diretrizes em requisito datado. A pergunta deixou de ser 'o que o CNE vai exigir' e virou 'quem chega adequado primeiro'." },
-                    { titulo: "O professor virou o canal de distribuição da big tech", desc: "Google formou docentes no Summit, o MEC formou o fundamental e agora a Anthropic dá Claude premium de graça ao professor americano — com o sindicato validando a privacidade. Quem conquista o professor entra na escola sem passar por licitação; o movimento tende a chegar ao Brasil." },
+                    { titulo: "Agentes como nova camada de interação do estudante", desc: "ChatGPT Work, Sonnet 5 'mais agêntico', assistentes com acesso profundo ao Android — o estudante do 2º semestre opera por delegação. Produto educacional que ignora isso desenha para um usuário que não existe mais." },
+                    { titulo: "Voz em tempo real como interface pedagógica", desc: "Full-duplex com português melhorado abre tutoria oral, conversação e avaliação por arguição em escala. É a interface natural para criança em alfabetização e para idiomas — espaço ainda sem dono no Brasil." },
+                    { titulo: "Regulação de canal reordenando a distribuição", desc: "O DMA abriu o Android na Europa; o precedente pressiona outros mercados. Quem planeja canal móvel próprio agora surfa a reordenação — quem depende do default da big tech herda o risco dela." },
+                    { titulo: "Compute como fosso competitivo de longo prazo", desc: "Anthropic+AMD (2 GW), preços de token caindo. A gratuidade educacional das big techs é sustentada por infraestrutura — a resposta local não é competir por preço, é competir por contexto e confiança." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-blue-400 mt-1 flex-shrink-0">▸</span>
@@ -1814,7 +2079,7 @@ export default function App() {
                   <p className="font-bold text-gray-900">O padrão desta quinzena</p>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  A janela não teve um grande lançamento de feature — e isso é o sinal. O capital foi para aquisições (Educbank, Nero.AI), a maior plataforma de IA educacional do mundo refez o produto com base em dado de uso real, a regulação ganhou data e a Anthropic entrou na sala de aula pela porta do professor — com gratuidade e privacidade negociada com o sindicato. O mercado saiu da fase de prometer e entrou na fase de provar e consolidar: quem mede aprendizagem de verdade, controla camadas da operação escolar, sela confiança com o professor e chega adequado à homologação do CNE define o próximo ciclo.
+                  Nenhuma das notícias desta janela aconteceu dentro de uma escola — e todas mudam a escola. O agente que entrega trabalho pronto quebra a avaliação por produto; a voz full-duplex cria a interface da próxima geração de tutoria; o DMA reabre o canal móvel; e 2 gigawatts de compute garantem que a gratuidade da big tech não é promoção — é estratégia de longo prazo. A escola brasileira volta do recesso com o tabuleiro alterado por baixo. O 2º semestre não vai premiar quem adicionar mais uma feature de IA, e sim quem redesenhar avaliação, governança e canal para um aluno que agora opera por delegação.
                 </p>
               </div>
             </div>
@@ -1860,67 +2125,58 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  sinal: "Khan Academy admitiu 15% de uso real e refez o produto embutido no fluxo de estudo",
-                  oportunidade: "Auditoria de uso real + IA embutida nos pontos de fricção",
-                  impacto: "Medir engajamento real (não licenças vendidas) e mover a IA para dentro do fluxo — erro, dúvida, próximo item. Publicar métrica de aprendizagem transferida vira argumento comercial que nenhum player BR usa hoje.",
+                  sinal: "ChatGPT Work entrega trabalhos completos — a avaliação por produto quebrou tecnicamente",
+                  oportunidade: "Suíte de avaliação para a era dos agentes",
+                  impacto: "Problema: o artefato entregue não prova mais aprendizagem. Oportunidade: captura de processo (versões, tentativas, tempo), arguição oral mediada por IA e produção em sala com registro. Impacto: resolve a dor mais urgente do 2º semestre e cria o dado que vira ativo defensável. É a prioridade nº 1 da volta às aulas.",
                   prioridade: "Alta",
                   cor: "border-[#6B46C1]",
                   corBadge: "bg-[#6B46C1] text-white",
-                  area: "Produto / Dados"
+                  area: "Avaliação / Produto"
                 },
                 {
-                  sinal: "Teachy comprou a Nero.AI — capacidade de IA virou ativo comprável",
-                  oportunidade: "Tese de build vs buy para capacidade de IA",
-                  impacto: "Mapear boutiques e squads de IA com tração antes da próxima janela de consolidação. Construir tudo internamente ficou mais lento que o ciclo competitivo — e o caso Teachy tende a inflacionar os próximos alvos.",
+                  sinal: "GPT-Live: voz full-duplex com português melhorado, disponível em escala",
+                  oportunidade: "Tutoria e avaliação oral por voz em tempo real",
+                  impacto: "Problema: conversação e fluência leitora nunca escalaram. Oportunidade: tutor oral para idiomas e alfabetização + sabatina oral como instrumento avaliativo, conectados ao histórico do aluno. Impacto: interface da próxima geração de tutoria, ainda sem dono no Brasil — e complemento natural da suíte de avaliação.",
                   prioridade: "Alta",
                   cor: "border-[#6B46C1]",
                   corBadge: "bg-[#6B46C1] text-white",
-                  area: "Estratégico / M&A"
+                  area: "Idiomas / Alfabetização"
                 },
                 {
-                  sinal: "Simulados do Gemini entraram no ar em pleno semestre de preparação para o ENEM",
-                  oportunidade: "Preparatório conectado ao histórico e ao currículo da escola",
-                  impacto: "Responder à distribuição gratuita com o que ela não tem: dado longitudinal de 3+ anos, vínculo com o plano pedagógico e acompanhamento docente. O simulado avulso morreu; a jornada de preparação integrada é o espaço defensável.",
+                  sinal: "Agente da OpenAI escapou do sandbox; CNE ainda vai homologar o semáforo de riscos",
+                  oportunidade: "Governança de agentes: permissões, auditoria e supervisão humana",
+                  impacto: "Problema: agentes com acesso a dado de aluno são risco regulatório e reputacional. Oportunidade: framework de permissões + trilha de auditoria + supervisão documentada, pronto antes da homologação. Impacto: chega ao mercado público adequado e transforma o incidente da OpenAI em argumento de venda.",
                   prioridade: "Alta",
                   cor: "border-[#6B46C1]",
                   corBadge: "bg-[#6B46C1] text-white",
-                  area: "Preparatório / Iônica"
+                  area: "Compliance / B2G"
                 },
                 {
-                  sinal: "Anthropic lançou Claude for Teachers: gratuito, alinhado a padrões e com privacidade validada pelo sindicato",
-                  oportunidade: "Assistente docente BNCC com pacto público de privacidade",
-                  impacto: "Replicar o modelo no contexto BR: assistente alinhado à BNCC e às diretrizes do CNE, com compromisso público de privacidade (LGPD) validado por entidades docentes. Confiança institucional vira canal de distribuição — antes que Anthropic ou Google o façam aqui.",
-                  prioridade: "Alta",
-                  cor: "border-[#6B46C1]",
-                  corBadge: "bg-[#6B46C1] text-white",
-                  area: "Professores / Compliance"
-                },
-                {
-                  sinal: "Cogna foi a 90% do Educbank — camada financeira integrada ao ecossistema pedagógico",
-                  oportunidade: "Integração de dado operacional + pedagógico da escola",
-                  impacto: "Cruzar dados de operação escolar com aprendizagem cria visão de risco e retenção que fideliza o mantenedor. É a resposta estrutural ao movimento da Somos — e um antídoto contra a comoditização da feature.",
+                  sinal: "DMA abriu o Android a assistentes rivais — o canal móvel foi reordenado por lei",
+                  oportunidade: "Estratégia de canal móvel próprio pós-DMA",
+                  impacto: "Problema: distribuição móvel sempre dependeu do default da big tech. Oportunidade: planejar assistente educacional com ativação por voz e integração profunda no Android, monitorando a chegada do precedente ao Brasil. Impacto: canal direto ao aluno sem pedágio — o que o Google fez com o ENEM, sem ser o Google.",
                   prioridade: "Média",
                   cor: "border-[#FF6B35]",
                   corBadge: "bg-[#FF6B35] text-white",
-                  area: "Ecossistema / Gestão"
+                  area: "Canal / Estratégico"
                 },
                 {
-                  sinal: "CNE realiza seminário nacional em julho, com homologação do MEC na sequência",
-                  oportunidade: "Trilha de adequação CNE concluída antes da homologação",
-                  impacto: "Chegar homologado à regulação — log auditável, supervisão humana documentada, classificação de risco mapeada — vira argumento decisivo em licitação e diferencial crescente na venda B2B privada.",
+                  sinal: "ONIA encerrou inscrições em 31/07 — IA consolidada como competência curricular avaliada",
+                  oportunidade: "Trilha de IA aplicada como conteúdo curricular",
+                  impacto: "Problema: escolas precisam ensinar IA (BNCC Computação) e agora têm competição nacional para preparar. Oportunidade: programa estruturado de IA aplicada com projeto, trilha olímpica e formação docente embutida. Impacto: captura demanda curricular criada por política pública — recorrente, não modismo.",
                   prioridade: "Média",
                   cor: "border-[#FF6B35]",
                   corBadge: "bg-[#FF6B35] text-white",
-                  area: "B2G / Compliance"
+                  area: "Currículo / Iônica"
                 },
                 {
-                  sinal: "MEC estendeu a formação em IA aos professores do ensino fundamental",
-                  oportunidade: "Formação docente embutida no produto para o fundamental",
-                  impacto: "O piso subiu: professor do fundamental formado pelo Estado passa a esperar IA na plataforma que já usa. Formação dentro do fluxo de trabalho diferencia e retém — curso externo virou commodity.",
+                  sinal: "Compute despencando de preço: Sonnet 5 a US$ 2/M tokens e 2 GW garantidos pela Anthropic",
+                  oportunidade: "Reprecificação da arquitetura de IA do portfólio",
+                  impacto: "Problema: custos de IA dimensionados com preços de 2025 superestimam o custo por aluno. Oportunidade: revisar arquitetura e unit economics com os novos preços e modelos intermediários agênticos. Impacto: libera margem para gratuidade tática em segmentos estratégicos — a mesma arma da big tech, em escala local.",
                   prioridade: "Baixa",
                   cor: "border-gray-200",
                   corBadge: "bg-gray-200 text-gray-700",
-                  area: "Professores / Iônica"
+                  area: "Arquitetura / Custos"
                 },
               ].map((item, idx) => (
                 <motion.div
@@ -1972,6 +2228,36 @@ export default function App() {
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Card Julho 2026 · Ed. #08 */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-[#6B46C1] hover:shadow-md transition-all"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 mb-1">EDIÇÃO ANTERIOR</p>
+                    <p className="text-sm text-gray-700">Julho de 2026 · Ed. #08</p>
+                  </div>
+                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-[#6B46C1]" />
+                  </div>
+                </div>
+                <h3 className="font-bold text-gray-900 mb-3">
+                  A era dos anúncios acabou: consolidação — quem não constrói capacidade, compra
+                </h3>
+                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                  Cogna vai a 90% do Educbank, Teachy faz o 1º M&A de IA em educação da AL, Khan admite 15% de uso e Anthropic lança o Claude for Teachers.
+                </p>
+                <button
+                  onClick={() => goToEdicao('edicao-julho-2026')}
+                  className="w-full px-4 py-2 bg-[#6B46C1] text-white rounded-lg font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+                >
+                  Abrir edição
+                </button>
+              </motion.div>
+
               {/* Card Junho 2026 · Ed. #07 */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -2128,7 +2414,7 @@ export default function App() {
             <div className="pt-6 border-t border-white/15 space-y-1.5">
               <p className="text-white/60 text-sm">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
               <p className="text-white/50 text-sm">Hub de IA — Iônica &amp; FTD Com Você</p>
-              <p className="text-white/30 text-xs mt-2">Julho de 2026</p>
+              <p className="text-white/30 text-xs mt-2">Agosto de 2026</p>
             </div>
           </motion.div>
         </div>
