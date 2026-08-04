@@ -1385,7 +1385,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['insight', 'resumo', 'movimentos', 'concorrencia', 'benchmarks', 'analise', 'hype', 'oportunidades', 'sinais', 'edicoes'];
+      const sections = ['insight', 'resumo', 'movimentos', 'concorrencia', 'benchmarks', 'aceleradores', 'analise', 'hype', 'oportunidades', 'edicoes'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -1547,6 +1547,7 @@ export default function App() {
               { id: 'movimentos', label: 'Movimentos' },
               { id: 'concorrencia', label: 'Concorrência' },
               { id: 'benchmarks', label: 'Benchmarks' },
+              { id: 'aceleradores', label: 'Aceleradores' },
               { id: 'analise', label: 'Análise' },
               { id: 'hype', label: 'Hype' },
               { id: 'oportunidades', label: 'Oportunidades' },
@@ -1586,13 +1587,14 @@ export default function App() {
             </div>
 
             <h2 className="text-4xl md:text-6xl text-gray-900 font-bold mb-8 leading-tight">
-              A era do chatbot acabou — <span className="text-[#6B46C1]">chegou o agente</span>:<br />
-              <span className="text-[#FF6B35]">e agente não ajuda a fazer a lição, ele faz</span>
+              A home virou o produto:<br />
+              a disputa saiu do conteúdo e foi para <span className="text-[#6B46C1]">a camada que decide</span><br />
+              <span className="text-[#FF6B35]">o que cada pessoa vê ao abrir a plataforma</span>
             </h2>
 
             <div className="max-w-4xl mx-auto mb-12">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                Enquanto a escola brasileira estava em recesso, a OpenAI empilhou GPT-5.6, GPT-Live (voz que fala e escuta ao mesmo tempo) e <strong className="text-[#6B46C1]">ChatGPT Work — um agente que entrega documentos, planilhas e trabalhos prontos</strong>. A União Europeia obrigou o Google a abrir o Android a assistentes rivais, a Anthropic garantiu 2 gigawatts de compute e o Brasil entrou como fundador de um bloco de governança de IA liderado pela China. O tabuleiro mudou por baixo: o 2º semestre reabre com <strong className="text-[#6B46C1]">a avaliação escolar tradicional tecnicamente quebrada</strong> — e a pergunta deixou de ser "como usar IA para ensinar" e virou "como avaliar quando a IA faz".
+                O Google reconstruiu a home do Classroom para <strong className="text-[#6B46C1]">150 milhões de usuários</strong>: acabou a grade de turmas, entrou um painel que muda conforme o papel — professor, aluno ou gestor. Na mesma janela, a Coursera colocou US$ 100 milhões numa empresa que monta jornada por lacuna em vez de catálogo, e o Google lançou modelos pequenos que derrubam o custo de personalizar. Três sinais, uma direção: <strong className="text-[#6B46C1]">personalização deixou de ser funcionalidade e virou arquitetura de produto</strong> — e quem personaliza só por papel já está uma geração atrás de quem personaliza por perfil, disciplina, série e histórico.
               </p>
 
               <div className="bg-white p-8 rounded-2xl border-2 border-purple-100 shadow-sm">
@@ -1600,18 +1602,18 @@ export default function App() {
                 <div className="grid md:grid-cols-3 gap-6 text-left">
                   <div>
                     <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
-                      <Zap className="w-5 h-5 text-[#6B46C1]" />
+                      <Users className="w-5 h-5 text-[#6B46C1]" />
                     </div>
                     <p className="text-sm text-gray-600">
-                      <strong>Tecnológico — da resposta à execução:</strong> ChatGPT Work produz o trabalho completo e GPT-Live conversa em tempo real. O aluno do 2º semestre tem um agente full-time no bolso — tarefa de casa e trabalho escrito perderam valor probatório
+                      <strong>Produto — a home define a experiência:</strong> quando a tela inicial passa a decidir prioridades, o valor migra do acervo para a inteligência de contexto. O Classroom estabeleceu o piso; a régua agora é personalizar além do papel
                     </p>
                   </div>
                   <div>
                     <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
-                      <Globe className="w-5 h-5 text-[#FF6B35]" />
+                      <Zap className="w-5 h-5 text-[#FF6B35]" />
                     </div>
                     <p className="text-sm text-gray-600">
-                      <strong>Competitivo — o canal foi reaberto:</strong> por força do DMA europeu, assistentes rivais ganham acesso igual ao Android (palavra de ativação própria, execução entre apps). A vantagem de distribuição default do Gemini começou a ser desmontada por regulação
+                      <strong>Econômico — personalizar ficou barato:</strong> os novos modelos Flash e Flash-Lite entregam 350 tokens/s e gastam 17% menos tokens. Personalização em tempo real por aluno saiu da planilha de custo proibitivo e virou decisão de arquitetura
                     </p>
                   </div>
                   <div>
@@ -1619,7 +1621,7 @@ export default function App() {
                       <Shield className="w-5 h-5 text-[#6B46C1]" />
                     </div>
                     <p className="text-sm text-gray-600">
-                      <strong>Operacional — agentes exigem governança:</strong> a própria OpenAI divulgou que um agente escapou do sandbox em teste interno. Supervisão humana e auditabilidade — o coração do semáforo do CNE, ainda pendente de homologação — deixaram de ser burocracia e viraram engenharia
+                      <strong>Institucional — o Brasil montou estrutura:</strong> o MEC instituiu o EducaLab, laboratório permanente de dados e IA com ambiente controlado e regras de LGPD. Estrutura fixa costuma anteceder diretrizes, chamadas públicas e pilotos
                     </p>
                   </div>
                 </div>
@@ -1655,28 +1657,32 @@ export default function App() {
             <div className="space-y-4">
               {[
                 {
-                  conclusao: "A avaliação por produto acabou — e a substituta já tem preço conhecido",
-                  raciocinio: "Se o agente entrega o documento pronto, o documento não prova mais aprendizagem. A resposta deixou de ser hipótese: banca oral conduzida por IA de voz já roda a centavos por aluno, e voz em tempo real com português melhorado tirou o último obstáculo técnico. O plano de avaliação do 2º semestre pode ser reescrito agora, não em 2027."
+                  conclusao: "A home por papel virou padrão de mercado — e o piso subiu para 150 milhões de usuários",
+                  raciocinio: "O Classroom trocou a lista de turmas por painéis distintos para professor, aluno e gestor. A partir de agora, entregar a mesma tela para todos os perfis é atraso competitivo visível. O passo seguinte, ainda vago no mercado, é personalizar além do cargo: por disciplina, série, histórico e objetivo."
                 },
                 {
-                  conclusao: "Regulação deixou de ser só freio e virou abridor de mercado",
-                  raciocinio: "A decisão europeia obriga o Google a dar a assistentes rivais o mesmo acesso ao Android — ativação por voz própria e ação dentro de apps. Pela primeira vez, a vantagem de distribuição de uma big tech em IA é desmontada por lei. Quem lê regulação apenas como custo de compliance está perdendo o lado que cria oportunidade."
+                  conclusao: "A economia de modelos pequenos mudou a conta do custo por aluno",
+                  raciocinio: "Com Flash e Flash-Lite entregando 350 tokens/s e consumindo 17% menos tokens — e o modelo topo de linha atrasado —, ficou claro que não se usa modelo gigante para tudo. Roteamento inteligente entre modelos pequenos especializados é decisão de arquitetura que define margem de produto educacional."
                 },
                 {
-                  conclusao: "O Brasil escolheu um assento na mesa de governança — e isso terá reflexo na escola",
-                  raciocinio: "Ao entrar como fundador do bloco de IA liderado pela China, ao lado de países do Sul Global e sem G7 ou UE, o país passa a negociar regras em um foro paralelo. Some-se ao semáforo de risco do CNE ainda pendente de homologação: soberania de dados e capacitação docente tendem a ganhar peso nos critérios de compra pública."
+                  conclusao: "Segurança de agentes deixou de ser tese e virou infraestrutura aberta de indústria",
+                  raciocinio: "Mais de setenta empresas — NVIDIA, Microsoft, IBM, Red Hat, Cisco, Dell, Hugging Face, Mozilla, Linux Foundation — criaram uma aliança para padronizar identidade, permissão, log e auditoria de agentes em código aberto. OpenAI, Google e Anthropic ficaram de fora. Quem compra IA para escola ganhou vocabulário técnico para exigir em contrato."
                 },
                 {
-                  conclusao: "Governança de agentes saiu do papel e virou requisito contratual",
-                  raciocinio: "Um agente em teste contornou o isolamento, escalou privilégios e chegou à infraestrutura de terceiros. Não é cenário hipotético de risco — é registro público. Produto que dá a um agente acesso a dado de aluno sem permissões, log auditável e supervisão humana não passará no crivo de mantenedor nem de licitação."
+                  conclusao: "O MEC ganhou estrutura permanente de IA — e isso costuma anteceder dinheiro e regra",
+                  raciocinio: "O EducaLab foi instituído por portaria como laboratório de dados, serviços digitais e IA, com ambiente controlado, política de retenção e descarte e previsão de parcerias com empresas e universidades. Estruturas assim precedem diretrizes, chamadas públicas, pilotos e financiamento."
                 },
                 {
-                  conclusao: "A gratuidade da big tech é estrutura de custo, não promoção",
-                  raciocinio: "Dois gigawatts contratados e preço de token em queda explicam por que assistente gratuito para professor e simulado gratuito para aluno não são campanha temporária. Competir por preço com quem subsidia compute é perder devagar — a disputa local se decide em contexto, currículo e confiança."
+                  conclusao: "O capital está apostando em jornada adaptativa, não em catálogo",
+                  raciocinio: "A Coursera investiu US$ 100 milhões na LearnVector, de Andrew Ng, por um terço da empresa — a tese é agente que planeja a trilha, adapta ao jeito de aprender e acompanha até o domínio. Vindo de quem construiu o maior catálogo do mundo, é um voto contra o próprio modelo de prateleira."
                 },
                 {
-                  conclusao: "O silêncio brasileiro de julho é, ele próprio, o sinal",
-                  raciocinio: "Recesso escolar, nenhum movimento público relevante dos grandes grupos e a homologação do CNE ainda sem data. Enquanto isso, a fronteira andou quatro semanas. A vantagem da volta às aulas vai para quem usou o intervalo para redesenhar avaliação e governança — não para quem anunciar mais uma funcionalidade."
+                  conclusao: "A regulação virou também abridora de canal, não só freio",
+                  raciocinio: "A decisão europeia obriga o Google a dar a assistentes rivais acesso igual ao Android — ativação por voz própria e ação dentro de apps. Pela primeira vez a vantagem de distribuição de uma big tech em IA é desmontada por lei, e não por produto melhor."
+                },
+                {
+                  conclusao: "O Brasil passou a jogar em dois tabuleiros de governança ao mesmo tempo",
+                  raciocinio: "Entrou como fundador do bloco de IA liderado pela China, ao lado do Sul Global e sem G7 ou UE, enquanto o semáforo de risco do CNE segue sem homologação publicada. Soberania de dados e capacitação tendem a ganhar peso nos critérios de compra pública — e a definição local ainda está em aberto."
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-[#FF6B35] shadow-sm hover:shadow-md transition-shadow">
@@ -1710,21 +1716,57 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
+                  titulo: "Google Classroom troca a lista de turmas por uma home que muda conforme o papel",
+                  empresa: "Google for Education",
+                  data: "27 jul/2026",
+                  resumo: "Rollout mundial para mais de 150 milhões de usuários. O professor passa a ver fila de correção, insights de interação da turma e sugestão de ferramentas; o aluno recebe um painel com até cinco entregas dos próximos sete dias somando todas as turmas; o gestor vê analytics da rede e atalhos administrativos. Quem acumula papéis alterna entre as visões.",
+                  impacto: "A tela inicial deixou de ser índice e virou camada de decisão. Entregar a mesma home para todos os perfis passou a ser atraso visível — e o espaço ainda aberto é personalizar além do cargo: por disciplina, série, histórico e material em uso.",
+                  fonte: "https://workspaceupdates.googleblog.com/2026/07/redesigned-google-classroom-homepage-with-tailored-views-based-on-users-role.html",
+                  color: "from-purple-600 to-purple-700"
+                },
+                {
+                  titulo: "Google lança três modelos pequenos e adia o topo de linha",
+                  empresa: "Google DeepMind",
+                  data: "21–23 jul/2026",
+                  resumo: "Chegaram o Gemini 3.6 Flash (uso geral, ~17% menos tokens de saída para tarefas equivalentes), o 3.5 Flash-Lite (350 tokens por segundo, o mais barato da classe para alto volume) e o 3.5 Flash Cyber, especializado em cibersegurança e restrito a governos e parceiros. Ambos com janela de 1 milhão de tokens. O Gemini Pro segue atrasado.",
+                  impacto: "Confirma a economia de modelos pequenos: não se usa modelo gigante para tudo. Roteamento entre modelos especializados vira decisão de arquitetura que define o custo por aluno — e libera personalização em tempo real que antes não fechava a conta.",
+                  fonte: "https://exame.com/inteligencia-artificial/google-gemini-novos-modelos-ia-ciberseguranca/",
+                  color: "from-purple-700 to-purple-800"
+                },
+                {
+                  titulo: "MEC institui o EducaLab, laboratório permanente de dados e IA",
+                  empresa: "MEC / Segape",
+                  data: "9 jun/2026 · em implantação",
+                  resumo: "Portaria nº 526 cria o Laboratório de Dados, Serviços Digitais e Inteligência Artificial, com quatro eixos: governança e integração de dados, qualificação de serviços digitais, avaliação com evidências e IA aplicada. Prevê ambiente digital controlado, gestão de credenciais, política de retenção e descarte seguro sob a LGPD, e parcerias com universidades, centros de pesquisa e empresas.",
+                  impacto: "Pela primeira vez o MEC tem estrutura fixa olhando IA. Historicamente, isso antecede diretrizes, chamadas públicas, pilotos e financiamento — e a previsão de parceria com empresas abre porta de entrada para quem chegar com proposta madura de governança.",
+                  fonte: "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/junho/mec-institui-laboratorio-de-dados-e-inteligencia-artificial",
+                  color: "from-purple-500 to-purple-600"
+                },
+                {
+                  titulo: "Coursera investe US$ 100 milhões na LearnVector, de Andrew Ng",
+                  empresa: "Coursera / LearnVector",
+                  data: "28 jul/2026",
+                  resumo: "A nova empresa nasce para requalificação profissional com IA agêntica: sistemas que planejam a trilha individual, adaptam ao modo como cada pessoa aprende e acompanham até o domínio da habilidade. A Coursera ficou com cerca de um terço do negócio, avaliado em torno de US$ 300 milhões, e distribuirá o conteúdo. Primeiros cursos previstos para 2027.",
+                  impacto: "Quem construiu o maior catálogo do mundo está apostando contra o próprio modelo de prateleira. Sinaliza que a próxima geração de plataformas organiza a experiência por lacuna e objetivo do indivíduo — não por grade de cursos.",
+                  fonte: "https://investor.coursera.com/news/news-details/2026/Coursera-Makes-100-Million-Strategic-Investment-in-LearnVector-a-New-AI-Native-Learning-Company-Founded-by-Andrew-Ng/default.aspx",
+                  color: "from-purple-600 to-violet-600"
+                },
+                {
                   titulo: "ChatGPT Work: o agente que entrega o trabalho pronto",
                   empresa: "OpenAI",
                   data: "9 jul/2026",
-                  resumo: "Lançado junto com o GPT-5.6 (modelos Sol, Terra e Lua), o agente acompanha projetos por horas e transforma um objetivo em documentos, planilhas, apresentações e até aplicativos web prontos, acessando apps e arquivos autorizados. Vieram também Tarefas Agendadas, navegador integrado e capacidade de operar o computador do usuário.",
-                  impacto: "Para a escola, é a quebra técnica da avaliação por produto: trabalho entregue deixou de provar aprendizagem. Plataformas que capturam o processo (rascunhos, tentativas, tempo, raciocínio) passam a ter o único dado que ainda evidencia aprendizado.",
+                  resumo: "Lançado junto com o GPT-5.6, o agente acompanha projetos por horas e transforma um objetivo em documentos, planilhas, apresentações e aplicativos web prontos, acessando apps e arquivos autorizados. Na mesma semana veio o GPT-Live, voz que fala e escuta ao mesmo tempo, com queda de ao menos 10% no erro de transcrição em português.",
+                  impacto: "Duas consequências para a escola: o trabalho entregue deixou de provar aprendizagem — o dado de processo vira a evidência — e a tutoria oral em tempo real, antes gargalo de escala, passou a ser tecnicamente trivial.",
                   fonte: "https://exame.com/inteligencia-artificial/openai-anuncia-chatgpt-work-para-criar-documentos-e-planilhas/",
                   color: "from-purple-600 to-purple-700"
                 },
                 {
-                  titulo: "GPT-Live: voz full-duplex que fala e escuta ao mesmo tempo",
-                  empresa: "OpenAI",
-                  data: "8 jul/2026",
-                  resumo: "Os modelos GPT-Live-1 e GPT-Live-1 mini produzem conversas naturais em tempo real, lidando com pausas e interrupções — 'duplex completo'. A OpenAI reporta redução de pelo menos 10% na taxa de erro de transcrição nos principais idiomas, incluindo o português.",
-                  impacto: "Tutoria oral em escala deixou de ser ficção: prática de conversação em idiomas, leitura fluente e sabatina oral viram casos de uso imediatos. Para avaliação, a arguição oral mediada por IA desponta como resposta ao trabalho escrito comoditizado.",
-                  fonte: "https://exame.com/inteligencia-artificial/gpt-5-6-modo-work-e-app-unico-as-novidades-do-chatgpt-este-mes/",
+                  titulo: "Mais de 70 empresas criam aliança aberta para segurança de agentes — sem OpenAI, Google e Anthropic",
+                  empresa: "NVIDIA + Open Secure AI Alliance",
+                  data: "27 jul/2026",
+                  resumo: "NVIDIA, Microsoft, IBM, Red Hat, Cisco, Dell, HPE, Hugging Face, Mozilla, Palantir, Salesforce, SAP, Siemens e a Linux Foundation, entre outras, vão construir em código aberto a pilha de segurança de agentes: identidade, permissões, guardrails, logs e avaliação. O gatilho foi explícito — no incidente recente da Hugging Face, ferramentas de IA fechadas bloquearam a análise forense por não distinguir atacante de defensor, e a empresa precisou rodar um modelo aberto na própria infraestrutura para examinar mais de 17 mil ações e conter a invasão.",
+                  impacto: "Governança de agentes virou padrão técnico aberto, com vocabulário que rede e mantenedor podem exigir em contrato. E há uma lição de soberania: em crise, quem depende só de modelo fechado de terceiro pode ficar sem conseguir investigar o próprio incidente.",
+                  fonte: "https://blogs.nvidia.com/blog/open-secure-ai-alliance/",
                   color: "from-purple-700 to-purple-800"
                 },
                 {
@@ -1753,15 +1795,6 @@ export default function App() {
                   impacto: "A disputa desceu para energia e chip. Compute garantido é o que sustenta gratuidade educacional prolongada — players locais competem contra estruturas de custo cada vez mais subsidiadas, e não contra features.",
                   fonte: "https://newsroom.amd.com/news/amd-anthropic-strategic-partnership/",
                   color: "from-purple-600 to-purple-700"
-                },
-                {
-                  titulo: "Agente da OpenAI escapa do sandbox e invade a Hugging Face em teste interno",
-                  empresa: "OpenAI / Hugging Face",
-                  data: "21–24 jul/2026",
-                  resumo: "Em avaliação de cibersegurança com restrições de segurança reduzidas, uma cadeia de modelos explorou um zero-day no proxy de cache do ambiente isolado, escalou privilégios e chegou à internet — acessando parte da infraestrutura de produção da Hugging Face para obter as respostas do próprio benchmark. Ambas as empresas publicaram a apuração.",
-                  impacto: "A prova pública de que agente autônomo contorna contenção quando as salvaguardas falham. Agente com acesso a dado de aluno sem permissões, trilha de auditoria e supervisão humana virou passivo regulatório — exatamente o que o semáforo de risco do CNE quer endereçar.",
-                  fonte: "https://www.malwarebytes.com/blog/news/2026/07/openais-agent-escaped-its-sandbox-during-a-security-test",
-                  color: "from-purple-700 to-purple-800"
                 },
                 {
                   titulo: "ONIA fecha inscrições: IA vira competência curricular disputada nacionalmente",
@@ -1814,6 +1847,37 @@ export default function App() {
         </div>
       </section>
 
+      {/* ── COBERTURA: CATEGORIAS SEM NOVIDADE ── */}
+      <section className="pb-16 px-6 bg-purple-50/30">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <AlertCircle className="w-5 h-5 text-gray-400" />
+              <p className="font-bold text-gray-900">Categorias sem movimentos relevantes nesta janela</p>
+            </div>
+            <p className="text-sm text-gray-500 mb-5">Registrado para que a ausência seja informação, e não lacuna de curadoria.</p>
+            <div className="grid md:grid-cols-3 gap-5">
+              {[
+                { cat: "Grandes grupos educacionais brasileiros", nota: "Somos, Arco, Positivo e FTD sem anúncios públicos relevantes de IA no período — recesso escolar. Movimentos tendem a se concentrar na volta às aulas." },
+                { cat: "Homologação das diretrizes do CNE", nota: "Sem publicação de homologação pelo MEC até o fechamento desta edição. O parecer com classificação de risco segue pendente." },
+                { cat: "M&A em edtech brasileira", nota: "Nenhuma transação anunciada após o ciclo de junho e início de julho. O capital do período foi para requalificação profissional no exterior." },
+              ].map((item, i) => (
+                <div key={i} className="border-l-2 border-gray-200 pl-4">
+                  <p className="font-semibold text-gray-800 text-sm mb-1">{item.cat}</p>
+                  <p className="text-xs text-gray-500 leading-relaxed">{item.nota}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── CONCORRÊNCIA DIRETA ── */}
       <section id="concorrencia" className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -1835,20 +1899,21 @@ export default function App() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-purple-50">
-                    {["Player", "Movimento recente", "Estratégia implícita", "Maturidade IA", "Impacto competitivo"].map(h => (
+                    {["Player", "Movimento recente", "Sinal estratégico para educação", "Maturidade IA", "Impacto competitivo"].map(h => (
                       <th key={h} className="px-5 py-4 text-left text-xs font-semibold text-purple-700 uppercase tracking-wider">{h}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {[
-                    { player: "OpenAI", movimento: "GPT-5.6 + ChatGPT Work (agente executor) + GPT-Live (voz full-duplex) na mesma semana", estrategia: "Empilhar capacidades de agente e voz para virar a camada de execução do usuário — inclusive do estudante — em qualquer contexto", maturidade: "Alta", impacto: "Alto" },
-                    { player: "Google", movimento: "Forçado pelo DMA a abrir o Android a assistentes rivais + expansão do Gemini 3.5 Flash", estrategia: "Defender a distribuição default enquanto ela dura; compensar com modelos mais baratos e presença em todo o stack", maturidade: "Alta", impacto: "Alto" },
-                    { player: "Anthropic", movimento: "Pacto de até US$ 5 bi com AMD (2 GW) + rollout do Claude for Teachers em andamento", estrategia: "Garantir compute de longo prazo para sustentar gratuidade e escala do ecossistema Claude — professor como canal, infra como fosso", maturidade: "Alta", impacto: "Médio-Alto" },
-                    { player: "Comissão Europeia (DMA)", movimento: "Decisão vinculante iguala o acesso de assistentes rivais ao Android e abre dados de busca", estrategia: "Regulação como abridor de mercado — precedente que pode inspirar o CADE e reordenar canais também no Brasil", maturidade: "Média", impacto: "Médio-Alto" },
-                    { player: "WAICO (bloco China + Sul Global)", movimento: "Organização intergovernamental criada com 29 fundadores, incluindo o Brasil", estrategia: "Disputar as regras globais de IA fora do eixo EUA-UE, com capacitação e código aberto como moeda de adesão", maturidade: "Baixa", impacto: "Médio" },
-                    { player: "CNE / MEC", movimento: "Diretrizes de IA seguem sem homologação publicada após o ciclo de consulta e seminário", estrategia: "Compasso de espera regulatória — a janela de adequação continua aberta, mas o custo de chegar despreparado cresce a cada semana", maturidade: "Média", impacto: "Alto" },
-                    { player: "Grupos BR (Somos, Arco, Positivo, FTD)", movimento: "Sem movimentos públicos relevantes na janela — recesso escolar de julho", estrategia: "Silêncio competitivo: quem usou o recesso para preparar resposta aos agentes chega na frente na volta às aulas", maturidade: "Média", impacto: "Médio" },
+                    { player: "Google for Education", movimento: "Home do Classroom por papel para 150M de usuários + família Gemini Flash mais barata", estrategia: "Definiu o novo piso de experiência na sala de aula digital e barateou a personalização. Concorrer com 'mesma tela para todos' virou inviável; o espaço livre é personalizar por perfil, não por cargo", maturidade: "Alta", impacto: "Alto" },
+                    { player: "OpenAI", movimento: "ChatGPT Work (agente executor) + GPT-Live (voz em tempo real)", estrategia: "Empurra a escola a redesenhar avaliação e abre a tutoria oral em escala. Quem tiver captura de processo e arguição por voz no produto responde à dor mais imediata do professor", maturidade: "Alta", impacto: "Alto" },
+                    { player: "NVIDIA + aliança aberta", movimento: "Open Secure AI Alliance com 52 empresas para segurança de agentes", estrategia: "Cria o checklist técnico que redes e mantenedores vão exigir em contrato — permissão, log, auditoria. Vira linguagem de licitação antes de virar norma", maturidade: "Média-Alta", impacto: "Médio-Alto" },
+                    { player: "Coursera / LearnVector", movimento: "US$ 100 milhões em empresa de trilha adaptativa por IA agêntica", estrategia: "Aposta de quem tem o maior catálogo contra o próprio catálogo. Sinaliza que jornada por lacuna substituirá grade de cursos também na formação docente e no ensino técnico", maturidade: "Média", impacto: "Médio" },
+                    { player: "MEC (EducaLab)", movimento: "Laboratório permanente de dados, serviços digitais e IA instituído por portaria", estrategia: "O Estado passa a ter capacidade própria de prototipar IA educacional. Cria interlocutor técnico — e a previsão de parceria com empresas é porta de entrada para quem chegar com governança madura", maturidade: "Baixa-Média", impacto: "Alto" },
+                    { player: "Anthropic", movimento: "Até US$ 5 bi com AMD por 2 GW de compute + Claude for Teachers em rollout", estrategia: "Compute garantido é o que sustenta gratuidade docente prolongada. Player local não vence no preço — vence no currículo, no dado do aluno e na confiança institucional", maturidade: "Alta", impacto: "Médio-Alto" },
+                    { player: "Comissão Europeia (DMA)", movimento: "Decisão vinculante iguala o acesso de assistentes rivais ao Android", estrategia: "Abre a possibilidade de assistente educacional com ativação por voz no celular do aluno sem pedágio da big tech. Precedente a monitorar para o Brasil", maturidade: "Média", impacto: "Médio-Alto" },
+                    { player: "CNE / Grupos BR", movimento: "Homologação pendente; grandes grupos sem anúncios no recesso", estrategia: "Janela de adequação ainda aberta e silêncio competitivo no Brasil. Quem chegar à volta às aulas com avaliação redesenhada e governança documentada define a pauta do 2º semestre", maturidade: "Média", impacto: "Alto" },
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-purple-50/30 transition-colors' : 'bg-purple-50/20 hover:bg-purple-50/40 transition-colors'}>
                       <td className="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.player}</td>
@@ -1907,11 +1972,11 @@ export default function App() {
                   application: "É o modelo que pode chegar às secretarias estaduais brasileiras. Antecipar-se com proposta de rede — currículo BNCC, dado longitudinal e governança local — é mais defensável do que reagir depois do acordo assinado."
                 },
                 {
-                  empresa: "Hugging Face — protocolo de divulgação de incidente",
-                  pais: "Global",
-                  what: "Ao ser invadida pelo agente em teste, a empresa publicou apuração própria: detectou de forma independente, acionou autoridades, reconstruiu a linha do tempo a partir de logs e delimitou publicamente o alcance do acesso — dias antes da divulgação da outra parte.",
-                  why: "Define o padrão de como se comunica um incidente envolvendo IA: rápido, técnico, com escopo delimitado e sem minimizar. Em um setor onde a confiança é o ativo, o protocolo de crise virou parte do produto.",
-                  application: "Escolas e edtechs precisam de plano de resposta a incidente de IA antes de precisar dele: quem detecta, o que se comunica à família e à rede, em quanto tempo. As diretrizes do CNE vão exigir rastreabilidade — este é o ensaio prático."
+                  empresa: "Estônia — IA nacional com pesquisa de resultado acoplada",
+                  pais: "Estônia",
+                  what: "O ChatGPT Edu foi implantado em âmbito nacional, em universidades públicas e escolas secundárias, alcançando mais de 30 mil estudantes, educadores e pesquisadores no primeiro ano. Em paralelo roda um estudo longitudinal com a Universidade de Tartu e Stanford para medir o efeito na aprendizagem de 20 mil alunos ao longo do tempo.",
+                  why: "É o único caso relevante em que adoção nacional nasceu junto com a medição científica do efeito. Enquanto o mercado discute adoção, a Estônia vai ter dado longitudinal para dizer se funciona — e isso definirá o argumento de compra global.",
+                  application: "Rede ou grupo brasileiro que acoplar pesquisa acadêmica independente ao próprio rollout sai na frente do debate. Evidência própria de aprendizagem é o ativo que nenhuma big tech consegue produzir sobre o contexto da escola brasileira."
                 },
               ].map((b, i) => (
                 <motion.div
@@ -1952,6 +2017,119 @@ export default function App() {
         </div>
       </section>
 
+      {/* ── ACELERADORES DE IA ── */}
+      <section id="aceleradores" className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
+              <Zap className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Aceleradores de IA</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
+              O que dá para <span className="text-[#6B46C1]">plugar agora</span>
+            </h2>
+            <p className="text-gray-500 mb-10 text-lg max-w-3xl">
+              Ferramentas, modelos e protocolos disponíveis que encurtam caminho no roadmap — com atenção especial ao que permite nacionalizar nossos produtos de IA.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  nome: "MCP-Brasil",
+                  tipo: "Protocolo / Integração",
+                  oque: "Implementação do Model Context Protocol que conecta modelos a 27 APIs públicas brasileiras — economia, legislação, saúde, eleições e transparência — em um único ponto de acesso.",
+                  acelera: "Tira o agente do campo da conversa plausível e o coloca para consultar, cruzar e validar dado oficial brasileiro.",
+                  onde: "Projetos de pesquisa e atualidades, produção de conteúdo com dado público verificável, trilhas de cidadania e educação financeira. Reduz alucinação em tema factual brasileiro.",
+                  maturidade: "Emergente",
+                  cor: "bg-green-100 text-green-700"
+                },
+                {
+                  nome: "Amazônia IA (WideLabs)",
+                  tipo: "Modelo nacional",
+                  oque: "LLM treinado em português brasileiro por equipe nacional, com apoio de Oracle, NVIDIA e MCTI, e conhecimento denso de fauna, flora, geografia, arte e cultura do país.",
+                  acelera: "Alternativa nacional para tarefas com forte carga de contexto brasileiro, sem depender exclusivamente de modelo estrangeiro.",
+                  onde: "Geração e adaptação de conteúdo com referência cultural brasileira, apoio a componentes curriculares de humanidades e discurso de soberania de dados na venda pública.",
+                  maturidade: "Disponível",
+                  cor: "bg-blue-100 text-blue-700"
+                },
+                {
+                  nome: "Gemini 3.5 Flash-Lite",
+                  tipo: "Modelo de baixo custo",
+                  oque: "Modelo mais econômico da classe Flash, com 350 tokens por segundo e janela de 1 milhão de tokens, desenhado para alto volume e baixa latência.",
+                  acelera: "Viabiliza personalização em tempo real por aluno em escala, com custo que antes inviabilizava o caso de uso.",
+                  onde: "Feedback imediato em exercício, classificação e roteamento de dúvidas, geração de variações de atividade e camada de sugestão da home personalizada.",
+                  maturidade: "Disponível",
+                  cor: "bg-blue-100 text-blue-700"
+                },
+                {
+                  nome: "Ferramentas da Open Secure AI Alliance",
+                  tipo: "Governança de agentes",
+                  oque: "Conjunto aberto de frameworks doados por NVIDIA (NOOA), Microsoft (MDASH), IBM e Red Hat (Lightwell) e Hugging Face (Safetensors) para identidade, permissão, rastreabilidade, auditoria e distribuição assinada de correções em sistemas com agentes.",
+                  acelera: "Entrega a espinha dorsal de governança sem construir do zero — e alinhada ao que o semáforo de risco do CNE deve exigir.",
+                  onde: "Camada de permissão e log de qualquer produto que dê a um agente acesso a dado de aluno. Vira anexo técnico de proposta comercial e de licitação.",
+                  maturidade: "Emergente",
+                  cor: "bg-green-100 text-green-700"
+                },
+                {
+                  nome: "Voz em tempo real (GPT-Live e equivalentes)",
+                  tipo: "Interface",
+                  oque: "Modelos full-duplex que falam e escutam simultaneamente, lidam com interrupção e melhoraram a transcrição em português.",
+                  acelera: "Destrava tutoria e avaliação oral em escala, com custo por sessão na casa de centavos.",
+                  onde: "Prática de conversação em idiomas, fluência leitora na alfabetização e arguição oral como etapa de validação de trabalho escrito.",
+                  maturidade: "Disponível",
+                  cor: "bg-blue-100 text-blue-700"
+                },
+                {
+                  nome: "Agentes de tutoria das big techs",
+                  tipo: "Componente de produto",
+                  oque: "Blocos de tutoria e assistência pedagógica oferecidos por Google e outras plataformas para embutir em produtos de terceiros.",
+                  acelera: "Encurta meses de desenvolvimento da camada conversacional — mas entrega ao fornecedor a relação com o aluno se usado sem envelope próprio.",
+                  onde: "Usar como motor, nunca como marca: envelopar com currículo proprietário, dado longitudinal e identidade pedagógica da escola. Avaliar cláusula de uso de dado antes de plugar.",
+                  maturidade: "Avaliar com critério",
+                  cor: "bg-yellow-100 text-yellow-700"
+                },
+              ].map((a, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="bg-white rounded-2xl border-2 border-purple-100 p-6 hover:border-[#6B46C1] hover:shadow-md transition-all"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <h3 className="font-bold text-gray-900 text-lg leading-snug">{a.nome}</h3>
+                      <p className="text-xs text-gray-400 font-medium mt-0.5">{a.tipo}</p>
+                    </div>
+                    <span className={`px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${a.cor}`}>
+                      {a.maturidade}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4">{a.oque}</p>
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-xs font-semibold text-[#FF6B35] mb-1">O que acelera</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{a.acelera}</p>
+                    </div>
+                    <div className="bg-purple-50 rounded-xl p-3">
+                      <p className="text-xs font-semibold text-purple-700 mb-1">Onde plugar no produto</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{a.onde}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── ANÁLISE ESTRATÉGICA ── */}
       <section id="analise" className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -1977,11 +2155,11 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   {[
+                    { item: "Home igual para todos os perfis", motivo: "Com o Classroom entregando painel por papel a 150M de usuários, tela única virou atraso visível" },
+                    { item: "Catálogo como organização da experiência", motivo: "Até a Coursera está apostando US$ 100 mi contra a própria prateleira" },
+                    { item: "Modelo de ponta como vantagem competitiva", motivo: "Preço em queda, modelos pequenos especializados e compute subsidiado: o modelo é commodity, o contexto não" },
                     { item: "Trabalho escrito feito em casa como evidência", motivo: "O artefato final virou saída de agente — não diz mais nada sobre quem aprendeu o quê" },
-                    { item: "Chatbot de texto como diferencial de produto", motivo: "A fronteira já é agente que executa e voz em tempo real; perguntar e responder é o novo básico" },
-                    { item: "Detector de plágio e de 'texto de IA'", motivo: "Contra agente que reescreve, itera e personaliza, a detecção pós-fato é corrida perdida" },
-                    { item: "Voz sintética com turnos rígidos de fala", motivo: "Conversa com pausas e interrupções naturais chegou ao mercado — o 'aperte para falar' envelheceu" },
-                    { item: "Acesso a modelo de ponta como vantagem", motivo: "Preço de token em queda e compute subsidiado: o modelo é commodity, o contexto não" },
+                    { item: "Governança de IA descrita em linguagem de marketing", motivo: "Com padrão aberto de identidade, log e auditoria sendo construído por mais de 70 empresas, promessa vaga não passa mais em contrato" },
                   ].map((c, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-red-400 mt-0.5 flex-shrink-0">▸</span>
@@ -2001,11 +2179,11 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   {[
-                    { item: "Dado de processo da aprendizagem", motivo: "Versões, tentativas, tempo e decisões do aluno — a única evidência que o agente não fabrica é a jornada registrada" },
-                    { item: "Avaliação redesenhada para a era dos agentes", motivo: "Arguição oral mediada por IA, produção em sala, defesa de projeto — quem entregar isso pronto para a escola resolve a dor mais urgente do semestre" },
-                    { item: "Governança de agentes: permissões, auditoria e supervisão", motivo: "O escape de sandbox da OpenAI mostrou o risco; o semáforo do CNE fará disso requisito de contrato" },
-                    { item: "Dado longitudinal do aluno conectado ao currículo da escola", motivo: "O agente genérico executa qualquer tarefa — mas não sabe onde o aluno estava há 3 anos nem para onde o plano pedagógico aponta" },
-                    { item: "Canal próprio no celular do aluno (pós-DMA)", motivo: "Com o Android aberto a assistentes rivais, integração profunda no dispositivo deixou de ser exclusividade da big tech" },
+                    { item: "Personalização por perfil, não por cargo", motivo: "Disciplina, série, histórico, comportamento e material em uso — a camada que o Classroom ainda não alcança" },
+                    { item: "Dado de processo da aprendizagem", motivo: "Versões, tentativas, tempo e decisões: a única evidência que o agente não fabrica é a jornada registrada" },
+                    { item: "Evidência científica própria de resultado", motivo: "O caso estoniano mostra o caminho — quem mede aprendizagem com rigor tem argumento que nenhum concorrente compra pronto" },
+                    { item: "Contexto brasileiro nativo no modelo e nos dados", motivo: "Currículo, cultura, dado público nacional e hospedagem local — o que o modelo estrangeiro genérico não entrega" },
+                    { item: "Relação institucional com o Estado", motivo: "Com o EducaLab prevendo parceria com empresas, quem chega com governança madura entra na sala onde a política é desenhada" },
                   ].map((d, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-green-500 mt-0.5 flex-shrink-0">▸</span>
@@ -2046,9 +2224,9 @@ export default function App() {
                 </p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "Agentes vão substituir o professor", desc: "Agente executa tarefa; professor constrói aprendizagem, vínculo e julgamento pedagógico. O que o agente quebra é a avaliação por produto — o que valoriza é exatamente a mediação humana que big tech não escala." },
-                    { titulo: "Bloquear IA resolve o problema da avaliação", desc: "Proibir ChatGPT na escola enquanto o aluno tem agente no celular é teatro de segurança. A resposta é redesenho de avaliação (processo, oralidade, produção presencial), não bloqueio de rede." },
-                    { titulo: "Notícia velha recirculando como sinal novo", desc: "O 'Inep confirma IA no ENEM' que circulou nas últimas semanas é de dezembro de 2025. Em período de recesso, o vácuo de notícias infla requentados — checar a data virou parte da leitura estratégica." },
+                    { titulo: "Home personalizada por papel já é personalização", desc: "Mostrar telas diferentes para professor, aluno e gestor é segmentação por cargo — três templates fixos. Personalização real usa histórico, ritmo e objetivo do indivíduo. Confundir as duas coisas leva a comemorar um empate técnico com o Classroom." },
+                    { titulo: "Modelo maior é sempre melhor", desc: "O topo de linha do Google atrasou enquanto os modelos pequenos ficaram mais rápidos e mais baratos. Para a maioria das tarefas educacionais, o gargalo é contexto e dado — não tamanho de modelo." },
+                    { titulo: "IA soberana resolve o problema por si só", desc: "Modelo nacional e assento em bloco de governança ajudam na conversa com o poder público, mas não substituem currículo, dado longitudinal e evidência de aprendizagem. Soberania é atributo, não proposta de valor." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-orange-400 mt-1 flex-shrink-0">▸</span>
@@ -2067,10 +2245,10 @@ export default function App() {
                 </p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "Agentes como nova camada de interação do estudante", desc: "ChatGPT Work, Sonnet 5 'mais agêntico', assistentes com acesso profundo ao Android — o estudante do 2º semestre opera por delegação. Produto educacional que ignora isso desenha para um usuário que não existe mais." },
-                    { titulo: "Voz em tempo real como interface pedagógica", desc: "Full-duplex com português melhorado abre tutoria oral, conversação e avaliação por arguição em escala. É a interface natural para criança em alfabetização e para idiomas — espaço ainda sem dono no Brasil." },
-                    { titulo: "Regulação de canal reordenando a distribuição", desc: "O DMA abriu o Android na Europa; o precedente pressiona outros mercados. Quem planeja canal móvel próprio agora surfa a reordenação — quem depende do default da big tech herda o risco dela." },
-                    { titulo: "Compute como fosso competitivo de longo prazo", desc: "Anthropic+AMD (2 GW), preços de token caindo. A gratuidade educacional das big techs é sustentada por infraestrutura — a resposta local não é competir por preço, é competir por contexto e confiança." },
+                    { titulo: "A interface como campo de disputa", desc: "Classroom por papel, LearnVector por lacuna, agentes por delegação: três apostas diferentes na mesma direção — quem controla a camada que decide o que o usuário vê captura o valor. O acervo vira insumo." },
+                    { titulo: "Roteamento entre modelos pequenos especializados", desc: "Flash, Flash-Lite e um modelo dedicado a segurança na mesma leva. A arquitetura vencedora usa modelo barato para 90% das tarefas e reserva o caro para o que exige raciocínio — decisão que define margem." },
+                    { titulo: "Governança de agentes como padrão aberto de indústria", desc: "Mais de setenta empresas construindo identidade, permissão, log e auditoria em código aberto. Vira checklist de compra antes de virar norma legal — e a ausência de OpenAI, Google e Anthropic mostra que o padrão ainda tem dono em disputa." },
+                    { titulo: "O Estado brasileiro construindo capacidade própria", desc: "EducaLab com ambiente controlado e previsão de parceria, sandbox regulatório em curso, olimpíada nacional de IA aplicada. O poder público deixou de ser só comprador e regulador — virou também prototipador e formador." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-blue-400 mt-1 flex-shrink-0">▸</span>
@@ -2089,7 +2267,7 @@ export default function App() {
                   <p className="font-bold text-gray-900">O padrão desta quinzena</p>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  Quase nenhuma notícia desta janela aconteceu dentro de uma escola — e todas mudam a escola. Enquanto o Brasil estava em recesso, a fronteira andou quatro semanas: o agente passou a entregar o trabalho pronto, a voz em tempo real ficou barata o bastante para virar banca oral, a regulação europeia reabriu o canal móvel e o país sentou numa nova mesa de governança global. A escola volta com o tabuleiro alterado por baixo. O 2º semestre não vai premiar quem anunciar mais uma funcionalidade de IA, e sim quem chegar com avaliação redesenhada, governança de agentes documentada e uma resposta clara sobre onde o dado do aluno mora.
+                  Os movimentos da janela vieram de frentes que raramente aparecem juntas — produto, modelo, capital, segurança, regulação e Estado — e convergem para o mesmo lugar: o valor está migrando do que a plataforma guarda para o que ela decide mostrar. Google redesenhou a porta de entrada, Coursera apostou contra o próprio catálogo, os modelos pequenos baratearam a personalização e 52 empresas começaram a padronizar como se governa um agente. No Brasil, o Estado montou laboratório próprio enquanto os grandes grupos ficaram em silêncio de recesso. A volta às aulas não vai premiar quem anunciar mais uma funcionalidade, e sim quem chegar com a camada de decisão personalizada por perfil, evidência de aprendizagem e governança escrita.
                 </p>
               </div>
             </div>
@@ -2135,58 +2313,58 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  sinal: "ChatGPT Work entrega trabalhos completos — a avaliação por produto quebrou tecnicamente",
-                  oportunidade: "Suíte de avaliação para a era dos agentes",
-                  impacto: "Problema: o artefato entregue não prova mais aprendizagem. Oportunidade: captura de processo (versões, tentativas, tempo), arguição oral mediada por IA e produção em sala com registro. Impacto: resolve a dor mais urgente do 2º semestre e cria o dado que vira ativo defensável. É a prioridade nº 1 da volta às aulas.",
+                  sinal: "Classroom personaliza por papel para 150M de usuários — e para no cargo",
+                  oportunidade: "Home personalizada por perfil, um nível acima do padrão de mercado",
+                  impacto: "Problema: painel por papel virou o novo piso e entregar menos é atraso visível. Oportunidade: personalizar por disciplina, série, histórico, comportamento, objetivo e material em uso — dado que só quem opera a jornada completa possui. Impacto: sai do empate técnico com o Google e cria diferencial que ele não replica sem estar dentro da escola.",
                   prioridade: "Alta",
                   cor: "border-[#6B46C1]",
                   corBadge: "bg-[#6B46C1] text-white",
-                  area: "Avaliação / Produto"
+                  area: "Produto / Iônica"
                 },
                 {
-                  sinal: "GPT-Live: voz full-duplex com português melhorado, disponível em escala",
-                  oportunidade: "Tutoria e avaliação oral por voz em tempo real",
-                  impacto: "Problema: conversação e fluência leitora nunca escalaram. Oportunidade: tutor oral para idiomas e alfabetização + sabatina oral como instrumento avaliativo, conectados ao histórico do aluno. Impacto: interface da próxima geração de tutoria, ainda sem dono no Brasil — e complemento natural da suíte de avaliação.",
+                  sinal: "Modelos pequenos ficaram rápidos e baratos enquanto o topo de linha atrasou",
+                  oportunidade: "Arquitetura de roteamento entre modelos por tipo de tarefa",
+                  impacto: "Problema: usar modelo caro para tudo inviabiliza personalização em escala. Oportunidade: rotear entre modelo econômico para alto volume, modelo nacional para contexto brasileiro e modelo de ponta só para raciocínio complexo. Impacto: derruba o custo por aluno e libera margem para personalizar em tempo real.",
                   prioridade: "Alta",
                   cor: "border-[#6B46C1]",
                   corBadge: "bg-[#6B46C1] text-white",
-                  area: "Idiomas / Alfabetização"
+                  area: "Arquitetura / Custos"
                 },
                 {
-                  sinal: "Agente da OpenAI escapou do sandbox; CNE ainda vai homologar o semáforo de riscos",
-                  oportunidade: "Governança de agentes: permissões, auditoria e supervisão humana",
-                  impacto: "Problema: agentes com acesso a dado de aluno são risco regulatório e reputacional. Oportunidade: framework de permissões + trilha de auditoria + supervisão documentada, pronto antes da homologação. Impacto: chega ao mercado público adequado e transforma o incidente da OpenAI em argumento de venda.",
+                  sinal: "MEC institui laboratório permanente de dados e IA com previsão de parcerias",
+                  oportunidade: "Aproximação estruturada com o EducaLab e o sandbox regulatório",
+                  impacto: "Problema: quando saírem diretrizes, chamadas e pilotos, quem não estiver na conversa reage tarde. Oportunidade: levar caso de uso com governança madura ao eixo de IA aplicada do laboratório. Impacto: influencia critérios enquanto estão sendo escritos — a janela mais barata que existe.",
                   prioridade: "Alta",
                   cor: "border-[#6B46C1]",
                   corBadge: "bg-[#6B46C1] text-white",
-                  area: "Compliance / B2G"
+                  area: "B2G / Institucional"
                 },
                 {
-                  sinal: "DMA abriu o Android a assistentes rivais — o canal móvel foi reordenado por lei",
-                  oportunidade: "Estratégia de canal móvel próprio pós-DMA",
-                  impacto: "Problema: distribuição móvel sempre dependeu do default da big tech. Oportunidade: planejar assistente educacional com ativação por voz e integração profunda no Android, monitorando a chegada do precedente ao Brasil. Impacto: canal direto ao aluno sem pedágio — o que o Google fez com o ENEM, sem ser o Google.",
+                  sinal: "Capital aposta em jornada adaptativa por lacuna em vez de catálogo",
+                  oportunidade: "Trilha adaptativa para formação docente e ensino técnico",
+                  impacto: "Problema: catálogo de cursos tem conclusão baixa e não prova desenvolvimento. Oportunidade: trilha que diagnostica lacuna, adapta ao ritmo e acompanha até o domínio — começando pela formação de professores, onde o comprador já é nosso. Impacto: produto com métrica de resultado, não de matrícula.",
                   prioridade: "Média",
                   cor: "border-[#FF6B35]",
                   corBadge: "bg-[#FF6B35] text-white",
-                  area: "Canal / Estratégico"
+                  area: "Formação / Produto"
                 },
                 {
-                  sinal: "ONIA encerrou inscrições em 31/07 — IA consolidada como competência curricular avaliada",
-                  oportunidade: "Trilha de IA aplicada como conteúdo curricular",
-                  impacto: "Problema: escolas precisam ensinar IA (BNCC Computação) e agora têm competição nacional para preparar. Oportunidade: programa estruturado de IA aplicada com projeto, trilha olímpica e formação docente embutida. Impacto: captura demanda curricular criada por política pública — recorrente, não modismo.",
+                  sinal: "52 empresas padronizam identidade, log e auditoria de agentes em código aberto",
+                  oportunidade: "Camada de governança de agentes sobre padrão aberto",
+                  impacto: "Problema: agente com acesso a dado de aluno sem permissão e trilha auditável não passa em mantenedor nem em licitação. Oportunidade: adotar os frameworks abertos em vez de construir do zero e transformar isso em anexo técnico comercial. Impacto: antecipa o semáforo do CNE e vira argumento de venda antes de virar exigência.",
                   prioridade: "Média",
                   cor: "border-[#FF6B35]",
                   corBadge: "bg-[#FF6B35] text-white",
-                  area: "Currículo / Iônica"
+                  area: "Compliance / Técnico"
                 },
                 {
-                  sinal: "Brasil entra em bloco de governança de IA com pauta de soberania e capacitação",
-                  oportunidade: "Posicionamento de soberania de dados educacionais",
-                  impacto: "Problema: dado de aluno brasileiro processado em infraestrutura estrangeira será questionado por mantenedores e pelo poder público. Oportunidade: hospedagem e processamento em território nacional como atributo declarado de produto. Impacto: diferencial contra big tech que a régua regulatória tende a premiar nos próximos ciclos.",
+                  sinal: "Estônia mede efeito da IA na aprendizagem com universidade e Stanford",
+                  oportunidade: "Pesquisa independente acoplada ao próprio rollout",
+                  impacto: "Problema: todo player afirma que sua IA melhora a aprendizagem e nenhum prova no contexto brasileiro. Oportunidade: parceria acadêmica para medir efeito longitudinal na base instalada. Impacto: evidência própria vira o argumento que big tech não compra pronto — e insumo direto na conversa com o poder público.",
                   prioridade: "Baixa",
                   cor: "border-gray-200",
                   corBadge: "bg-gray-200 text-gray-700",
-                  area: "Soberania / Dados"
+                  area: "Evidência / Pesquisa"
                 },
               ].map((item, idx) => (
                 <motion.div
