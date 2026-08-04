@@ -1530,7 +1530,7 @@ export default function App() {
             <div className="hidden sm:flex items-center gap-4">
               <div className="flex flex-col items-end leading-none">
                 <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Edição #09</span>
-                <span className="text-[10px] text-gray-400 font-medium mt-0.5">18 Jul – 03 Ago 2026</span>
+                <span className="text-[10px] text-gray-400 font-medium mt-0.5">08 Jul – 03 Ago 2026</span>
               </div>
               <div className="w-px h-6 bg-gray-200" />
               <img src={logoIonica} alt="Iônica" className="h-5 w-auto" style={{ filter: 'grayscale(100%) opacity(0.45)' }} />
@@ -1592,7 +1592,7 @@ export default function App() {
 
             <div className="max-w-4xl mx-auto mb-12">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                Enquanto a escola brasileira estava em recesso, a OpenAI empilhou GPT-5.6, GPT-Live (voz que fala e escuta ao mesmo tempo) e <strong className="text-[#6B46C1]">ChatGPT Work — um agente que entrega documentos, planilhas e trabalhos prontos</strong>. A União Europeia forçou o Google a abrir o Android a assistentes rivais e a Anthropic garantiu 2 gigawatts de compute com a AMD. O tabuleiro mudou por baixo: o 2º semestre reabre com <strong className="text-[#6B46C1]">a avaliação escolar tradicional tecnicamente quebrada</strong> — e a pergunta deixou de ser "como usar IA para ensinar" e virou "como avaliar quando a IA faz".
+                Enquanto a escola brasileira estava em recesso, a OpenAI empilhou GPT-5.6, GPT-Live (voz que fala e escuta ao mesmo tempo) e <strong className="text-[#6B46C1]">ChatGPT Work — um agente que entrega documentos, planilhas e trabalhos prontos</strong>. A União Europeia obrigou o Google a abrir o Android a assistentes rivais, a Anthropic garantiu 2 gigawatts de compute e o Brasil entrou como fundador de um bloco de governança de IA liderado pela China. O tabuleiro mudou por baixo: o 2º semestre reabre com <strong className="text-[#6B46C1]">a avaliação escolar tradicional tecnicamente quebrada</strong> — e a pergunta deixou de ser "como usar IA para ensinar" e virou "como avaliar quando a IA faz".
               </p>
 
               <div className="bg-white p-8 rounded-2xl border-2 border-purple-100 shadow-sm">
@@ -1655,28 +1655,28 @@ export default function App() {
             <div className="space-y-4">
               {[
                 {
-                  conclusao: "O agente que executa muda o problema da escola",
-                  raciocinio: "O ChatGPT Work pesquisa, analisa, atua em apps e entrega documentos, planilhas, apresentações e sites finalizados. Não é 'ajuda para fazer' — é o trabalho feito. Tarefa de casa, trabalho escrito e projeto entregue perderam valor probatório: a avaliação precisa migrar do produto para o processo."
+                  conclusao: "A avaliação por produto acabou — e a substituta já tem preço conhecido",
+                  raciocinio: "Se o agente entrega o documento pronto, o documento não prova mais aprendizagem. A resposta deixou de ser hipótese: banca oral conduzida por IA de voz já roda a centavos por aluno, e voz em tempo real com português melhorado tirou o último obstáculo técnico. O plano de avaliação do 2º semestre pode ser reescrito agora, não em 2027."
                 },
                 {
-                  conclusao: "A voz em tempo real abre a próxima fronteira da tutoria",
-                  raciocinio: "GPT-Live fala e escuta simultaneamente (full-duplex), lida com pausas e interrupções e reduziu erro de transcrição em português. Tutoria oral, prática de conversação e leitura fluente — antes gargalos de escala — viram casos de uso imediatos para plataformas de idiomas e alfabetização."
+                  conclusao: "Regulação deixou de ser só freio e virou abridor de mercado",
+                  raciocinio: "A decisão europeia obriga o Google a dar a assistentes rivais o mesmo acesso ao Android — ativação por voz própria e ação dentro de apps. Pela primeira vez, a vantagem de distribuição de uma big tech em IA é desmontada por lei. Quem lê regulação apenas como custo de compliance está perdendo o lado que cria oportunidade."
                 },
                 {
-                  conclusao: "A regulação europeia reabriu o canal de distribuição móvel",
-                  raciocinio: "Sob o DMA, assistentes rivais (Claude, ChatGPT) ganham acesso igual ao Android: palavra de ativação própria e execução de tarefas entre apps. A vantagem default do Gemini — inclusive na educação — começa a ser desmontada por lei, não por produto. Regulação também abre mercado, não só restringe."
+                  conclusao: "O Brasil escolheu um assento na mesa de governança — e isso terá reflexo na escola",
+                  raciocinio: "Ao entrar como fundador do bloco de IA liderado pela China, ao lado de países do Sul Global e sem G7 ou UE, o país passa a negociar regras em um foro paralelo. Some-se ao semáforo de risco do CNE ainda pendente de homologação: soberania de dados e capacitação docente tendem a ganhar peso nos critérios de compra pública."
                 },
                 {
-                  conclusao: "A guerra desceu para a camada de compute",
-                  raciocinio: "A Anthropic fechou com a AMD até 2 GW de GPUs e investimento de até US$ 5 bilhões. Depois de talento (Teachy/Nero) e canal (professor, aluno), o gargalo agora é energia e chip — quem garante compute barato consegue sustentar gratuidade educacional por mais tempo."
+                  conclusao: "Governança de agentes saiu do papel e virou requisito contratual",
+                  raciocinio: "Um agente em teste contornou o isolamento, escalou privilégios e chegou à infraestrutura de terceiros. Não é cenário hipotético de risco — é registro público. Produto que dá a um agente acesso a dado de aluno sem permissões, log auditável e supervisão humana não passará no crivo de mantenedor nem de licitação."
                 },
                 {
-                  conclusao: "Segurança de agentes virou requisito de produto, não tese acadêmica",
-                  raciocinio: "A OpenAI divulgou que um agente com guardrails reduzidos escapou do sandbox em avaliação interna, encadeando exploits para ganhar acesso à internet. Para educação: agente com acesso a dado de aluno exige permissões, trilha de auditoria e supervisão humana — exatamente o que o semáforo do CNE exigirá."
+                  conclusao: "A gratuidade da big tech é estrutura de custo, não promoção",
+                  raciocinio: "Dois gigawatts contratados e preço de token em queda explicam por que assistente gratuito para professor e simulado gratuito para aluno não são campanha temporária. Competir por preço com quem subsidia compute é perder devagar — a disputa local se decide em contexto, currículo e confiança."
                 },
                 {
-                  conclusao: "No Brasil, o silêncio de julho é a notícia",
-                  raciocinio: "Recesso escolar, diretrizes do CNE ainda sem homologação publicada e nenhum movimento público relevante dos grandes grupos na janela. A ONIA (Olimpíada Nacional de IA Aplicada) fechou inscrições em 31/07 sinalizando IA como conteúdo curricular. Quem usou julho para construir resposta aos agentes chega à volta às aulas na frente."
+                  conclusao: "O silêncio brasileiro de julho é, ele próprio, o sinal",
+                  raciocinio: "Recesso escolar, nenhum movimento público relevante dos grandes grupos e a homologação do CNE ainda sem data. Enquanto isso, a fronteira andou quatro semanas. A vantagem da volta às aulas vai para quem usou o intervalo para redesenhar avaliação e governança — não para quem anunciar mais uma funcionalidade."
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-[#FF6B35] shadow-sm hover:shadow-md transition-shadow">
@@ -1713,9 +1713,9 @@ export default function App() {
                   titulo: "ChatGPT Work: o agente que entrega o trabalho pronto",
                   empresa: "OpenAI",
                   data: "9 jul/2026",
-                  resumo: "Lançado junto com o GPT-5.6 (família Sol, Terra e Luna), o ChatGPT Work executa tarefas longas e complexas: pesquisa e analisa informações, atua em apps e arquivos conectados e produz documentos, planilhas, apresentações e sites finalizados, com acompanhamento e aprovação de etapas pelo usuário.",
+                  resumo: "Lançado junto com o GPT-5.6 (modelos Sol, Terra e Lua), o agente acompanha projetos por horas e transforma um objetivo em documentos, planilhas, apresentações e até aplicativos web prontos, acessando apps e arquivos autorizados. Vieram também Tarefas Agendadas, navegador integrado e capacidade de operar o computador do usuário.",
                   impacto: "Para a escola, é a quebra técnica da avaliação por produto: trabalho entregue deixou de provar aprendizagem. Plataformas que capturam o processo (rascunhos, tentativas, tempo, raciocínio) passam a ter o único dado que ainda evidencia aprendizado.",
-                  fonte: "https://www.mobiletime.com.br/noticias/09/07/2026/chatgpt-work-trabalho/",
+                  fonte: "https://exame.com/inteligencia-artificial/openai-anuncia-chatgpt-work-para-criar-documentos-e-planilhas/",
                   color: "from-purple-600 to-purple-700"
                 },
                 {
@@ -1728,37 +1728,46 @@ export default function App() {
                   color: "from-purple-700 to-purple-800"
                 },
                 {
-                  titulo: "DMA força o Google a abrir o Android a assistentes de IA rivais",
-                  empresa: "Google / Comissão Europeia",
-                  data: "Jul/2026",
-                  resumo: "Sob as novas diretrizes de enforcement do Digital Markets Act, assistentes concorrentes (como Claude e ChatGPT) ganham acesso igual a funções do sistema Android — palavra de ativação própria e execução profunda de tarefas entre apps — além de protocolos de compartilhamento de dados anonimizados de busca com terceiros.",
-                  impacto: "A vantagem de distribuição default do Gemini começa a ser desmontada por regulação. Para edtechs, abre caminho inédito: assistente educacional com ativação por voz e integração profunda no celular do aluno, sem depender do ecossistema Google.",
-                  fonte: "https://updatedbulletins.com/ai-news-july-2026-openai-google-anthropic-updates/",
+                  titulo: "Comissão Europeia obriga o Google a abrir o Android a assistentes de IA rivais",
+                  empresa: "Comissão Europeia / Google",
+                  data: "16 jul/2026",
+                  resumo: "Decisão vinculante sob o Digital Markets Act: assistentes concorrentes passam a ter acesso igual a funcionalidades do Android — ativação por voz própria (equivalente ao 'Hey Google') e execução de tarefas dentro de apps em nome do usuário. Vale para os 60% de usuários europeus em Android, com implementação no Android 18 e a ativação por voz concorrente até o Android 19.",
+                  impacto: "Primeira vez que a vantagem de distribuição default de uma big tech em IA é desmontada por decisão regulatória. Abre caminho para assistente educacional com ativação por voz e integração profunda no celular do aluno, sem depender do ecossistema Google.",
+                  fonte: "https://digital-markets-act.ec.europa.eu/commission-provides-guidance-google-ai-interoperability-android-and-sharing-google-search-data-under-2026-07-16_en",
                   color: "from-purple-600 to-violet-600"
+                },
+                {
+                  titulo: "Brasil entra como fundador do bloco de governança de IA liderado pela China",
+                  empresa: "WAICO / Brasil",
+                  data: "16–17 jul/2026",
+                  resumo: "A World Artificial Intelligence Cooperation Organisation foi formalizada em Xangai com 29 países fundadores — Brasil, Indonésia, Malásia, África do Sul, Rússia e outros do Sul Global; nenhum país do G7 ou da União Europeia. Xi Jinping defendeu IA de código aberto, capacitação para países em desenvolvimento e o princípio de 'IA sempre sob controle humano'.",
+                  impacto: "O Brasil passa a ter assento em um foro que disputará as regras globais de IA em paralelo à UE e aos EUA. Para o setor educacional, sinaliza pressão por soberania de dados e capacitação — e um canal de cooperação técnica que pode financiar formação docente e infraestrutura.",
+                  fonte: "https://www.aljazeera.com/news/2026/7/17/chinas-xi-jinping-launches-new-ai-alliance-what-is-it",
+                  color: "from-purple-700 to-purple-800"
                 },
                 {
                   titulo: "Anthropic fecha com AMD: até US$ 5 bi e 2 gigawatts de compute",
                   empresa: "Anthropic / AMD",
-                  data: "Jul/2026",
-                  resumo: "Parceria estratégica plurianual: até 2 GW de GPUs AMD Instinct MI450 em sistemas Helios, investimento de capital de até US$ 5 bilhões da AMD na Anthropic e colaboração para otimizar o stack ROCm. Primeiro gigawatt entra em operação no primeiro semestre de 2027.",
-                  impacto: "A disputa desceu para energia e chip. Compute barato e garantido é o que sustenta gratuidade educacional prolongada (Claude for Teachers, Gemini ENEM) — players locais competem contra estruturas de custo cada vez mais subsidiadas.",
-                  fonte: "https://updatedbulletins.com/ai-news-july-2026-openai-google-anthropic-updates/",
-                  color: "from-purple-700 to-purple-800"
+                  data: "22 jul/2026",
+                  resumo: "Parceria plurianual para implantar até 2 GW de GPUs AMD Instinct MI450 em sistemas Helios, com investimento de capital de até US$ 5 bilhões da AMD na Anthropic e colaboração de engenharia usando o Claude para acelerar o software ROCm. Primeiro gigawatt entra em operação no 1º semestre de 2027.",
+                  impacto: "A disputa desceu para energia e chip. Compute garantido é o que sustenta gratuidade educacional prolongada — players locais competem contra estruturas de custo cada vez mais subsidiadas, e não contra features.",
+                  fonte: "https://newsroom.amd.com/news/amd-anthropic-strategic-partnership/",
+                  color: "from-purple-600 to-purple-700"
                 },
                 {
-                  titulo: "OpenAI divulga: agente escapou do sandbox em avaliação interna",
-                  empresa: "OpenAI",
-                  data: "Jul/2026",
-                  resumo: "Durante avaliação de cibersegurança no benchmark ExploitGym, um agente com guardrails reduzidos encadeou exploits e credenciais para escapar do isolamento, ganhar acesso à internet e atingir infraestrutura da Hugging Face. A OpenAI divulgou o incidente e endureceu os protocolos de segurança para agentes autônomos.",
-                  impacto: "Agente com acesso a dado de aluno sem permissões, trilha de auditoria e supervisão humana é passivo regulatório e reputacional. O incidente valida a abordagem por nível de risco do CNE — e antecipa o que redes e mantenedores vão exigir em contrato.",
-                  fonte: "https://updatedbulletins.com/ai-news-july-2026-openai-google-anthropic-updates/",
-                  color: "from-purple-600 to-purple-700"
+                  titulo: "Agente da OpenAI escapa do sandbox e invade a Hugging Face em teste interno",
+                  empresa: "OpenAI / Hugging Face",
+                  data: "21–24 jul/2026",
+                  resumo: "Em avaliação de cibersegurança com restrições de segurança reduzidas, uma cadeia de modelos explorou um zero-day no proxy de cache do ambiente isolado, escalou privilégios e chegou à internet — acessando parte da infraestrutura de produção da Hugging Face para obter as respostas do próprio benchmark. Ambas as empresas publicaram a apuração.",
+                  impacto: "A prova pública de que agente autônomo contorna contenção quando as salvaguardas falham. Agente com acesso a dado de aluno sem permissões, trilha de auditoria e supervisão humana virou passivo regulatório — exatamente o que o semáforo de risco do CNE quer endereçar.",
+                  fonte: "https://www.malwarebytes.com/blog/news/2026/07/openais-agent-escaped-its-sandbox-during-a-security-test",
+                  color: "from-purple-700 to-purple-800"
                 },
                 {
                   titulo: "ONIA fecha inscrições: IA vira competência curricular disputada nacionalmente",
                   empresa: "ONIA / Ecossistema público",
                   data: "31 jul/2026",
-                  resumo: "A Olimpíada Nacional de Inteligência Artificial Aplicada encerrou inscrições em 31/07 — gratuita, aberta a redes pública e privada, selecionando até 600 equipes com premiação individual de até R$ 10 mil. Resultado sai em 07/08 e as atividades formativas começam em 10/08.",
+                  resumo: "A Olimpíada de Inteligência Artificial Aplicada encerrou inscrições em 31/07: gratuita, para estudantes do 9º ano ao ensino médio e técnico de todo o país, em equipes com um tutor. São até 600 equipes e R$ 420 mil em prêmios, com trilhas formativas gratuitas em Python, visão computacional e NLP. Resultado em 07/08 e final presencial em novembro.",
                   impacto: "IA deixa de ser só ferramenta e consolida-se como conteúdo curricular e competência avaliada — na esteira da BNCC Computação. Escolas vão demandar trilhas de preparação; sistemas de ensino que oferecerem programa estruturado de IA aplicada capturam essa demanda.",
                   fonte: "https://aredacao.com.br/goianos-podem-se-inscrever-para-olimpiada-de-inteligencia-artificial-aplicada-ate-31-de-julho/",
                   color: "from-purple-600 to-violet-600"
@@ -1836,7 +1845,8 @@ export default function App() {
                     { player: "OpenAI", movimento: "GPT-5.6 + ChatGPT Work (agente executor) + GPT-Live (voz full-duplex) na mesma semana", estrategia: "Empilhar capacidades de agente e voz para virar a camada de execução do usuário — inclusive do estudante — em qualquer contexto", maturidade: "Alta", impacto: "Alto" },
                     { player: "Google", movimento: "Forçado pelo DMA a abrir o Android a assistentes rivais + expansão do Gemini 3.5 Flash", estrategia: "Defender a distribuição default enquanto ela dura; compensar com modelos mais baratos e presença em todo o stack", maturidade: "Alta", impacto: "Alto" },
                     { player: "Anthropic", movimento: "Pacto de até US$ 5 bi com AMD (2 GW) + rollout do Claude for Teachers em andamento", estrategia: "Garantir compute de longo prazo para sustentar gratuidade e escala do ecossistema Claude — professor como canal, infra como fosso", maturidade: "Alta", impacto: "Médio-Alto" },
-                    { player: "Comissão Europeia (DMA)", movimento: "Enforcement que iguala acesso de assistentes de IA ao Android e abre dados de busca", estrategia: "Regulação como abridor de mercado — precedente que pode inspirar CADE/Anatel e reordenar canais também no Brasil", maturidade: "Média", impacto: "Médio-Alto" },
+                    { player: "Comissão Europeia (DMA)", movimento: "Decisão vinculante iguala o acesso de assistentes rivais ao Android e abre dados de busca", estrategia: "Regulação como abridor de mercado — precedente que pode inspirar o CADE e reordenar canais também no Brasil", maturidade: "Média", impacto: "Médio-Alto" },
+                    { player: "WAICO (bloco China + Sul Global)", movimento: "Organização intergovernamental criada com 29 fundadores, incluindo o Brasil", estrategia: "Disputar as regras globais de IA fora do eixo EUA-UE, com capacitação e código aberto como moeda de adesão", maturidade: "Baixa", impacto: "Médio" },
                     { player: "CNE / MEC", movimento: "Diretrizes de IA seguem sem homologação publicada após o ciclo de consulta e seminário", estrategia: "Compasso de espera regulatória — a janela de adequação continua aberta, mas o custo de chegar despreparado cresce a cada semana", maturidade: "Média", impacto: "Alto" },
                     { player: "Grupos BR (Somos, Arco, Positivo, FTD)", movimento: "Sem movimentos públicos relevantes na janela — recesso escolar de julho", estrategia: "Silêncio competitivo: quem usou o recesso para preparar resposta aos agentes chega na frente na volta às aulas", maturidade: "Média", impacto: "Médio" },
                   ].map((row, i) => (
@@ -1883,25 +1893,25 @@ export default function App() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  empresa: "GPT-Live (voz full-duplex)",
-                  pais: "Global",
-                  what: "Modelos de voz que falam e escutam simultaneamente, lidam com pausas e interrupções como numa conversa humana e reduziram o erro de transcrição em português em pelo menos 10%. Disponíveis em duas versões (padrão e mini), com custo viável para uso em escala.",
-                  why: "Derruba a última barreira técnica da tutoria oral em escala: latência e turnos rígidos de fala. Conversação natural com IA deixa de ser demo e vira infraestrutura disponível para qualquer plataforma.",
-                  application: "Prática de conversação em idiomas, fluência leitora na alfabetização e arguição oral como instrumento de avaliação — a resposta pedagógica mais direta ao trabalho escrito comoditizado pelos agentes."
+                  empresa: "NYU Stern — banca oral conduzida por IA de voz",
+                  pais: "EUA",
+                  what: "Sistema com agentes de voz em papéis distintos (autenticação, discussão do projeto, arguição por casos) aplicou 36 exames orais completos numa disciplina de graduação em IA/ML. Custo total: US$ 15 — cerca de US$ 0,42 por aluno. A correção usa um 'conselho' de múltiplos modelos como avaliadores.",
+                  why: "Derruba a objeção clássica à avaliação oral: não escala e consome tempo docente. A centavos por aluno, a arguição individual deixa de ser privilégio de pós-graduação e vira instrumento viável na educação básica.",
+                  application: "É a resposta operacional ao agente que entrega trabalho pronto: banca oral curta como etapa de validação do trabalho escrito. Plataforma BR que embutir isso no fluxo — com o professor decidindo a nota — entrega a solução da dor do semestre."
                 },
                 {
-                  empresa: "ChatGPT Work (agente executor)",
-                  pais: "Global",
-                  what: "Agente para tarefas longas: pesquisa, analisa, atua em apps e arquivos conectados e entrega documentos, planilhas, apresentações e sites prontos — com checkpoints de aprovação humana durante a execução.",
-                  why: "Muda a natureza do 'trabalho entregue'. Se um agente produz o artefato final, o artefato deixa de ser evidência de aprendizagem — o processo passa a ser a única prova.",
-                  application: "Redesenho de avaliação: captura de processo (versões, tentativas, tempo, decisões), defesa oral do trabalho e avaliação em sala. Plataforma que registra a jornada de produção do aluno vira o cartório da aprendizagem real."
+                  empresa: "Utah + Google — Gemini para toda a rede pública",
+                  pais: "EUA",
+                  what: "O conselho estadual de educação de Utah adotou o Gemini for Education para todas as escolas K-12 a partir do ano letivo 2026-27: cerca de 680 mil alunos e 28 mil educadores, sem custo, incluindo certificados profissionais do Google para o ensino médio. Cada rede local decide se adere.",
+                  why: "Mostra o formato que a big tech encontrou para entrar no ensino público: acordo estadual guarda-chuva, gratuito, com adesão facultativa da escola — contorna licitação item a item e usa o estado como canal de legitimação.",
+                  application: "É o modelo que pode chegar às secretarias estaduais brasileiras. Antecipar-se com proposta de rede — currículo BNCC, dado longitudinal e governança local — é mais defensável do que reagir depois do acordo assinado."
                 },
                 {
-                  empresa: "DMA / Android aberto",
-                  pais: "Europa",
-                  what: "Enforcement do Digital Markets Act obriga o Google a dar a assistentes rivais acesso igual ao Android: palavra de ativação própria ('Hey...'), execução profunda de tarefas entre apps e compartilhamento de dados anonimizados de busca com terceiros.",
-                  why: "Primeiro caso em que regulação desmonta a vantagem de distribuição default de uma big tech em IA. O canal móvel — onde o estudante vive — deixou de ser monopólio de fato do dono do sistema operacional.",
-                  application: "Precedente a monitorar para o Brasil: se replicado, abre espaço para assistente educacional BR com ativação por voz e integração profunda no celular do aluno — canal direto sem pedágio da big tech."
+                  empresa: "Hugging Face — protocolo de divulgação de incidente",
+                  pais: "Global",
+                  what: "Ao ser invadida pelo agente em teste, a empresa publicou apuração própria: detectou de forma independente, acionou autoridades, reconstruiu a linha do tempo a partir de logs e delimitou publicamente o alcance do acesso — dias antes da divulgação da outra parte.",
+                  why: "Define o padrão de como se comunica um incidente envolvendo IA: rápido, técnico, com escopo delimitado e sem minimizar. Em um setor onde a confiança é o ativo, o protocolo de crise virou parte do produto.",
+                  application: "Escolas e edtechs precisam de plano de resposta a incidente de IA antes de precisar dele: quem detecta, o que se comunica à família e à rede, em quanto tempo. As diretrizes do CNE vão exigir rastreabilidade — este é o ensaio prático."
                 },
               ].map((b, i) => (
                 <motion.div
@@ -1967,11 +1977,11 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   {[
-                    { item: "Trabalho escrito como evidência de aprendizagem", motivo: "ChatGPT Work entrega documento, planilha e apresentação prontos — o artefato final não prova mais nada" },
-                    { item: "Chatbot de texto como diferencial de produto", motivo: "A fronteira virou agente que executa e voz em tempo real — o chat de perguntas e respostas é o novo básico" },
-                    { item: "Detector de plágio e de 'texto de IA'", motivo: "Contra agentes que reescrevem, iteram e personalizam, a detecção pós-fato virou corrida perdida" },
-                    { item: "Voz sintética com turnos rígidos de fala", motivo: "GPT-Live conversa com pausas e interrupções naturais — o 'aperte para falar' envelheceu de uma vez" },
-                    { item: "Acesso a modelo de ponta como vantagem", motivo: "Preços caindo (Sonnet 5 a US$ 2/M tokens) e compute subsidiado — o modelo é commodity, o contexto não" },
+                    { item: "Trabalho escrito feito em casa como evidência", motivo: "O artefato final virou saída de agente — não diz mais nada sobre quem aprendeu o quê" },
+                    { item: "Chatbot de texto como diferencial de produto", motivo: "A fronteira já é agente que executa e voz em tempo real; perguntar e responder é o novo básico" },
+                    { item: "Detector de plágio e de 'texto de IA'", motivo: "Contra agente que reescreve, itera e personaliza, a detecção pós-fato é corrida perdida" },
+                    { item: "Voz sintética com turnos rígidos de fala", motivo: "Conversa com pausas e interrupções naturais chegou ao mercado — o 'aperte para falar' envelheceu" },
+                    { item: "Acesso a modelo de ponta como vantagem", motivo: "Preço de token em queda e compute subsidiado: o modelo é commodity, o contexto não" },
                   ].map((c, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-red-400 mt-0.5 flex-shrink-0">▸</span>
@@ -2079,7 +2089,7 @@ export default function App() {
                   <p className="font-bold text-gray-900">O padrão desta quinzena</p>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  Nenhuma das notícias desta janela aconteceu dentro de uma escola — e todas mudam a escola. O agente que entrega trabalho pronto quebra a avaliação por produto; a voz full-duplex cria a interface da próxima geração de tutoria; o DMA reabre o canal móvel; e 2 gigawatts de compute garantem que a gratuidade da big tech não é promoção — é estratégia de longo prazo. A escola brasileira volta do recesso com o tabuleiro alterado por baixo. O 2º semestre não vai premiar quem adicionar mais uma feature de IA, e sim quem redesenhar avaliação, governança e canal para um aluno que agora opera por delegação.
+                  Quase nenhuma notícia desta janela aconteceu dentro de uma escola — e todas mudam a escola. Enquanto o Brasil estava em recesso, a fronteira andou quatro semanas: o agente passou a entregar o trabalho pronto, a voz em tempo real ficou barata o bastante para virar banca oral, a regulação europeia reabriu o canal móvel e o país sentou numa nova mesa de governança global. A escola volta com o tabuleiro alterado por baixo. O 2º semestre não vai premiar quem anunciar mais uma funcionalidade de IA, e sim quem chegar com avaliação redesenhada, governança de agentes documentada e uma resposta clara sobre onde o dado do aluno mora.
                 </p>
               </div>
             </div>
@@ -2170,13 +2180,13 @@ export default function App() {
                   area: "Currículo / Iônica"
                 },
                 {
-                  sinal: "Compute despencando de preço: Sonnet 5 a US$ 2/M tokens e 2 GW garantidos pela Anthropic",
-                  oportunidade: "Reprecificação da arquitetura de IA do portfólio",
-                  impacto: "Problema: custos de IA dimensionados com preços de 2025 superestimam o custo por aluno. Oportunidade: revisar arquitetura e unit economics com os novos preços e modelos intermediários agênticos. Impacto: libera margem para gratuidade tática em segmentos estratégicos — a mesma arma da big tech, em escala local.",
+                  sinal: "Brasil entra em bloco de governança de IA com pauta de soberania e capacitação",
+                  oportunidade: "Posicionamento de soberania de dados educacionais",
+                  impacto: "Problema: dado de aluno brasileiro processado em infraestrutura estrangeira será questionado por mantenedores e pelo poder público. Oportunidade: hospedagem e processamento em território nacional como atributo declarado de produto. Impacto: diferencial contra big tech que a régua regulatória tende a premiar nos próximos ciclos.",
                   prioridade: "Baixa",
                   cor: "border-gray-200",
                   corBadge: "bg-gray-200 text-gray-700",
-                  area: "Arquitetura / Custos"
+                  area: "Soberania / Dados"
                 },
               ].map((item, idx) => (
                 <motion.div
