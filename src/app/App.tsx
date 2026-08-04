@@ -1385,7 +1385,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['insight', 'resumo', 'movimentos', 'concorrencia', 'benchmarks', 'aceleradores', 'analise', 'hype', 'oportunidades', 'edicoes'];
+      const sections = ['insight', 'resumo', 'movimentos', 'concorrencia', 'benchmarks', 'aceleradores', 'experts', 'analise', 'hype', 'oportunidades', 'edicoes'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -1548,6 +1548,7 @@ export default function App() {
               { id: 'concorrencia', label: 'Concorrência' },
               { id: 'benchmarks', label: 'Benchmarks' },
               { id: 'aceleradores', label: 'Aceleradores' },
+              { id: 'experts', label: 'Experts' },
               { id: 'analise', label: 'Análise' },
               { id: 'hype', label: 'Hype' },
               { id: 'oportunidades', label: 'Oportunidades' },
@@ -2043,11 +2044,13 @@ export default function App() {
                 {
                   nome: "MCP-Brasil",
                   tipo: "Protocolo / Integração",
-                  oque: "Implementação do Model Context Protocol que conecta modelos a 27 APIs públicas brasileiras — economia, legislação, saúde, eleições e transparência — em um único ponto de acesso.",
+                  oque: "Servidor MCP aberto que conecta modelos a dezenas de APIs públicas brasileiras — economia, legislação, transparência, judiciário, eleições, meio ambiente, saúde, educação e segurança — expondo centenas de ferramentas num único ponto. A maioria das fontes não exige chave de acesso.",
                   acelera: "Tira o agente do campo da conversa plausível e o coloca para consultar, cruzar e validar dado oficial brasileiro.",
                   onde: "Projetos de pesquisa e atualidades, produção de conteúdo com dado público verificável, trilhas de cidadania e educação financeira. Reduz alucinação em tema factual brasileiro.",
                   maturidade: "Emergente",
-                  cor: "bg-green-100 text-green-700"
+                  cor: "bg-green-100 text-green-700",
+                  link: "https://github.com/Mcp-Brasil/mcp-brasil",
+                  linkLabel: "Repositório no GitHub"
                 },
                 {
                   nome: "Amazônia IA (WideLabs)",
@@ -2056,7 +2059,9 @@ export default function App() {
                   acelera: "Alternativa nacional para tarefas com forte carga de contexto brasileiro, sem depender exclusivamente de modelo estrangeiro.",
                   onde: "Geração e adaptação de conteúdo com referência cultural brasileira, apoio a componentes curriculares de humanidades e discurso de soberania de dados na venda pública.",
                   maturidade: "Disponível",
-                  cor: "bg-blue-100 text-blue-700"
+                  cor: "bg-blue-100 text-blue-700",
+                  link: "https://amazoniaia.com.br/",
+                  linkLabel: "Site oficial"
                 },
                 {
                   nome: "Gemini 3.5 Flash-Lite",
@@ -2065,7 +2070,9 @@ export default function App() {
                   acelera: "Viabiliza personalização em tempo real por aluno em escala, com custo que antes inviabilizava o caso de uso.",
                   onde: "Feedback imediato em exercício, classificação e roteamento de dúvidas, geração de variações de atividade e camada de sugestão da home personalizada.",
                   maturidade: "Disponível",
-                  cor: "bg-blue-100 text-blue-700"
+                  cor: "bg-blue-100 text-blue-700",
+                  link: "https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite",
+                  linkLabel: "Documentação do modelo"
                 },
                 {
                   nome: "Ferramentas da Open Secure AI Alliance",
@@ -2074,7 +2081,9 @@ export default function App() {
                   acelera: "Entrega a espinha dorsal de governança sem construir do zero — e alinhada ao que o semáforo de risco do CNE deve exigir.",
                   onde: "Camada de permissão e log de qualquer produto que dê a um agente acesso a dado de aluno. Vira anexo técnico de proposta comercial e de licitação.",
                   maturidade: "Emergente",
-                  cor: "bg-green-100 text-green-700"
+                  cor: "bg-green-100 text-green-700",
+                  link: "https://github.com/NVIDIA-NeMo/labs-OO-Agents/tree/main",
+                  linkLabel: "Framework NOOA no GitHub"
                 },
                 {
                   nome: "Voz em tempo real (GPT-Live e equivalentes)",
@@ -2083,7 +2092,9 @@ export default function App() {
                   acelera: "Destrava tutoria e avaliação oral em escala, com custo por sessão na casa de centavos.",
                   onde: "Prática de conversação em idiomas, fluência leitora na alfabetização e arguição oral como etapa de validação de trabalho escrito.",
                   maturidade: "Disponível",
-                  cor: "bg-blue-100 text-blue-700"
+                  cor: "bg-blue-100 text-blue-700",
+                  link: "https://openai.com/index/introducing-gpt-live/",
+                  linkLabel: "Anúncio técnico"
                 },
                 {
                   nome: "Agentes de tutoria das big techs",
@@ -2092,7 +2103,9 @@ export default function App() {
                   acelera: "Encurta meses de desenvolvimento da camada conversacional — mas entrega ao fornecedor a relação com o aluno se usado sem envelope próprio.",
                   onde: "Usar como motor, nunca como marca: envelopar com currículo proprietário, dado longitudinal e identidade pedagógica da escola. Avaliar cláusula de uso de dado antes de plugar.",
                   maturidade: "Avaliar com critério",
-                  cor: "bg-yellow-100 text-yellow-700"
+                  cor: "bg-yellow-100 text-yellow-700",
+                  link: "https://edu.google.com/intl/ALL_us/ai/gemini-for-education/",
+                  linkLabel: "Gemini for Education"
                 },
               ].map((a, i) => (
                 <motion.div
@@ -2122,7 +2135,111 @@ export default function App() {
                       <p className="text-xs font-semibold text-purple-700 mb-1">Onde plugar no produto</p>
                       <p className="text-sm text-gray-700 leading-relaxed">{a.onde}</p>
                     </div>
+                    <a
+                      href={a.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-purple-50 text-[#6B46C1] rounded-lg hover:bg-[#6B46C1] hover:text-white transition-all font-medium text-sm"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      {a.linkLabel}
+                    </a>
                   </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── O QUE OS EXPERTS ESTÃO ESCREVENDO ── */}
+      <section id="experts" className="py-24 px-6 bg-purple-50/30">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <BookOpen className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">O que os experts estão escrevendo</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
+              Leituras que <span className="text-[#6B46C1]">mudam a conversa</span>
+            </h2>
+            <p className="text-gray-500 mb-10 text-lg max-w-3xl">
+              Artigos publicados na janela por quem forma opinião no setor — com a tese central e o que fazer com ela.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  autor: "Ethan Mollick",
+                  cargo: "Professor na Wharton · One Useful Thing",
+                  titulo: "An opinionated guide to which AI to use to do stuff — Summer 2026",
+                  data: "23 jul/2026",
+                  tese: "Guia prático e atualizado de qual modelo usar para cada tipo de tarefa, num cenário em que a escolha deixou de ser 'qual chatbot' e virou 'qual ferramenta para qual trabalho'. Complementa o ensaio anterior dele, em que argumenta que a era do chatbot está terminando e que o novo trabalho é gerenciar agentes.",
+                  aplicacao: "Material direto para orientar time de produto e professores na escolha de ferramenta por tarefa — e base para a política interna de uso de IA que a escola vai precisar publicar.",
+                  link: "https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22"
+                },
+                {
+                  autor: "Andrew Ng",
+                  cargo: "DeepLearning.AI · fundador da LearnVector",
+                  titulo: "Open Models, Open Harnesses, Open Security",
+                  data: "31 jul/2026",
+                  tese: "Ao pedir uma revisão de segurança do próprio projeto open source, sua equipe foi recusada por dois modelos fechados de ponta e precisou concluir o trabalho com modelos e ferramentas abertas — eco direto do caso Hugging Face. Argumenta que auditoria e defesa exigem modelos que a organização possa inspecionar e rodar por conta própria.",
+                  aplicacao: "Argumento técnico, não ideológico, para manter alternativa aberta e nacional no stack. Em incidente com dado de aluno, depender só de fornecedor fechado pode significar não conseguir investigar.",
+                  link: "https://www.deeplearning.ai/the-batch/open-models-open-harnesses-open-security"
+                },
+                {
+                  autor: "Elisa Terumi, PhD",
+                  cargo: "Pesquisadora em IA · Brasil",
+                  titulo: "MCP-Brasil: agentes de IA conectados a dados públicos brasileiros",
+                  data: "Jul/2026",
+                  tese: "Apresenta o projeto que expõe dezenas de APIs públicas do Brasil via Model Context Protocol e defende a nacionalização da camada de dados dos agentes: em vez de um modelo estrangeiro respondendo de memória sobre o Brasil, um agente que consulta a fonte oficial.",
+                  aplicacao: "Caminho concreto para 'nacionalizar' nossos produtos de IA sem trocar de modelo — basta trocar a fonte de contexto. Ver o acelerador correspondente nesta edição.",
+                  link: "https://www.linkedin.com/posts/elisa-terumi_ia-activity-7442941018548879361-vGSw"
+                },
+              ].map((e, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                >
+                  <div className="mb-4">
+                    <p className="font-bold text-gray-900">{e.autor}</p>
+                    <p className="text-xs text-gray-500">{e.cargo}</p>
+                  </div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="inline-flex items-center gap-1 text-xs bg-gray-50 text-gray-500 px-2 py-1 rounded-full">
+                      <Calendar className="w-3 h-3" /> {e.data}
+                    </span>
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-3 leading-snug">{e.titulo}</h3>
+                  <div className="space-y-3 flex-1">
+                    <div>
+                      <p className="text-xs font-semibold text-purple-700 mb-1">Tese central</p>
+                      <p className="text-sm text-gray-600 leading-relaxed">{e.tese}</p>
+                    </div>
+                    <div className="bg-purple-50 rounded-xl p-3">
+                      <p className="text-xs font-semibold text-orange-600 mb-1">O que fazer com isso</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{e.aplicacao}</p>
+                    </div>
+                  </div>
+                  <a
+                    href={e.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-purple-50 text-[#6B46C1] rounded-lg hover:bg-[#6B46C1] hover:text-white transition-all font-medium text-sm mt-4"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Ler o artigo
+                  </a>
                 </motion.div>
               ))}
             </div>
