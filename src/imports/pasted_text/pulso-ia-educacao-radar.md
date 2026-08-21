@@ -300,6 +300,103 @@ TODOS os links devem:
 “Acessar fonte completa”
 - manter URLs corretas
 
+--------------------------------------------------
+FONTES MONITORADAS (base fixa de curadoria)
+--------------------------------------------------
+
+Consultar SEMPRE estas fontes a cada nova edição, além da
+varredura aberta da janela. Novas fontes solicitadas pelo
+usuário devem ser acrescentadas aqui e passam a valer para
+todas as edições seguintes.
+
+SETOR EDUCACIONAL BRASILEIRO
+- Educador21 — https://educador21.com/  (incluída na Ed. #10)
+- Revista Educação — https://revistaeducacao.com.br/
+- Bett Brasil / Bett Nordeste — https://brasil.bettshow.com/
+- Jeduca — https://jeduca.org.br/
+
+INSTITUCIONAL E REGULATÓRIO
+- MEC — https://www.gov.br/mec/pt-br
+- CNE (pareceres e diretrizes)
+- INEP (microdados ENEM, Saeb, Censo Escolar)
+- OCDE — Digital Education Outlook
+
+TECNOLOGIA, CAPITAL E PESQUISA
+- Blogs oficiais Google, OpenAI e Anthropic
+- Startups.com.br (M&A em edtech)
+- CEPR (working papers)
+- One Useful Thing (Ethan Mollick) e The Batch (Andrew Ng)
+
+OBS: alguns domínios podem estar bloqueados para acesso direto
+pelo proxy de egress. Nesses casos, usar busca web — o conteúdo
+continua acessível e citável.
+
+==================================================
+CRITÉRIOS EDITORIAIS (a partir da Ed. #10)
+==================================================
+
+1. SINAIS, NÃO NOTÍCIAS
+Consolidar acontecimentos relacionados numa única interpretação
+estratégica. Cada card deve declarar o que consolida. Ser
+seletivo: poucos sinais densos valem mais que muitos movimentos
+soltos.
+
+2. INTERPRETAR, NUNCA SÓ DESCREVER
+Em TODAS as seções, traduzir o fato em implicação prática para
+professores, alunos, gestores e roadmap de produto.
+
+3. DIVERSIDADE DE PLAYERS
+Ampliar empresas, EdTechs e categorias monitoradas. Evitar
+concentração recorrente nos mesmos nomes edição após edição.
+
+4. BENCHMARKS COM O “COMO”
+Explicar implantação, escala, métricas, financiamento, parceiros
+e aprendizados — não apenas o que a iniciativa é.
+
+5. ACELERADORES COM ANÁLISE PRÁTICA
+Manter a estrutura, incluindo sempre: limitações, dependências
+técnicas, cenário ideal de uso e impacto para Produto e
+Engenharia.
+
+6. CONSENSO DOS ESPECIALISTAS
+Na seção Experts, abrir com bloco sintetizando as convergências
+da quinzena antes dos artigos individuais.
+
+7. SINAIS DE AUSÊNCIA
+Registrar movimentos importantes que NÃO aconteceram na janela,
+com a leitura estratégica de cada ausência.
+
+8. TEMAS RECORRENTES
+Comparar as edições anteriores para separar tendência estrutural
+(reaparece ciclo após ciclo) de acontecimento pontual.
+
+==================================================
+CONCORRÊNCIA — ESCOPO CALIBRADO
+==================================================
+
+Concorrência direta = soluções educacionais e editoras que
+disputam O MESMO CLIENTE. NÃO é o mapa geral do mercado de
+tecnologia com foco em educação.
+
+MERCADO PRIVADO
+- Somos Educação
+  Soluções educacionais: Anglo, pH, Amplia, Fibonati
+  Solução digital: Plurall
+- Arcos Educação
+  Soluções educacionais: SAS, SAE Digital, Geekie
+- Bernoulli
+- Poliedro
+- Santillana
+  Solução educacional: Moderna Core
+
+MERCADO PÚBLICO
+- Saber (eDocente)
+- Moderna (Moderna Amigos)
+
+BIG TECHS (Google, OpenAI, Anthropic) e edtechs de IA entram
+como FORÇA DE CONTEXTO em bloco separado — mudam as regras do
+jogo, mas não disputam a mesma venda.
+
 ==================================================
 EDIÇÕES ANTERIORES
 ==================================================
