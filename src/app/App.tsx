@@ -56,7 +56,7 @@ function EdicaoAbril2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="PULSO" className="h-9 w-auto" />
+            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Abril de 2026</p>
@@ -277,8 +277,8 @@ function EdicaoAbril2026({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="PULSO" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
-          <p className="text-white/70 text-sm font-medium mb-1">PULSO — Inteligência Estratégica de IA na Educação</p>
+          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
             <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Abril de 2026</p>
@@ -312,7 +312,7 @@ function EdicaoMaio2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="PULSO" className="h-9 w-auto" />
+            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Maio de 2026</p>
@@ -588,8 +588,8 @@ function EdicaoMaio2026({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="PULSO" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
-          <p className="text-white/70 text-sm font-medium mb-1">PULSO — Inteligência Estratégica de IA na Educação</p>
+          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
             <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Maio de 2026</p>
@@ -624,7 +624,7 @@ function EdicaoJunho2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="PULSO" className="h-9 w-auto" />
+            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Junho de 2026</p>
@@ -847,8 +847,8 @@ function EdicaoJunho2026({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="PULSO" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
-          <p className="text-white/70 text-sm font-medium mb-1">PULSO — Inteligência Estratégica de IA na Educação</p>
+          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
             <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Junho de 2026</p>
@@ -884,7 +884,7 @@ function EdicaoJunho2026B({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="PULSO" className="h-9 w-auto" />
+            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Junho de 2026 · Ed. #07</p>
@@ -1105,8 +1105,8 @@ function EdicaoJunho2026B({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="PULSO" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
-          <p className="text-white/70 text-sm font-medium mb-1">PULSO — Inteligência Estratégica de IA na Educação</p>
+          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
             <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Junho de 2026 · Edição #07</p>
@@ -1142,7 +1142,7 @@ function EdicaoJulho2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="PULSO" className="h-9 w-auto" />
+            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Julho de 2026 · Ed. #08</p>
@@ -1363,8 +1363,8 @@ function EdicaoJulho2026({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="PULSO" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
-          <p className="text-white/70 text-sm font-medium mb-1">PULSO — Inteligência Estratégica de IA na Educação</p>
+          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
             <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Julho de 2026 · Edição #08</p>
@@ -1400,7 +1400,7 @@ function EdicaoAgosto2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="PULSO" className="h-9 w-auto" />
+            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Agosto de 2026 · Ed. #09</p>
@@ -1623,8 +1623,8 @@ function EdicaoAgosto2026({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="PULSO" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
-          <p className="text-white/70 text-sm font-medium mb-1">PULSO — Inteligência Estratégica de IA na Educação</p>
+          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
             <p className="text-white/40 text-xs">Hub de IA — Iônica &amp; FTD Com Você · Agosto de 2026 · Edição #09</p>
@@ -1797,9 +1797,9 @@ export default function App() {
 
             {/* Identidade — mascote + nome */}
             <div className="flex items-center gap-3">
-              <img src={mascoteIA} alt="PULSO" className="h-10 md:h-11 w-auto flex-shrink-0" />
+              <img src={mascoteIA} alt="RADAR" className="h-10 md:h-11 w-auto flex-shrink-0" />
               <div className="flex flex-col justify-center leading-none">
-                <span className="text-sm md:text-base font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>PULSO</span>
+                <span className="text-sm md:text-base font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>RADAR</span>
                 <span className="hidden md:inline text-[11px] text-gray-400 font-normal mt-0.5">Inteligência Estratégica de IA na Educação</span>
               </div>
             </div>
@@ -1932,7 +1932,7 @@ export default function App() {
                   <p className="font-bold text-gray-900 text-sm">Leitura executiva — 3 minutos</p>
                 </div>
                 <p className="text-xs text-gray-600 leading-relaxed mb-4">
-                  Para decidir sem percorrer a edição inteira. Este percurso conta a história completa: a mudança, o que ela obriga a revisar e o que fazer com isso.
+                  Com pouco tempo? Estes três blocos contam a edição inteira: a mudança da quinzena, o que ela obriga a revisar e o que fazer com isso.
                 </p>
                 <div className="flex items-center gap-2 flex-wrap">
                   {['insight', 'resumo', 'oportunidades'].map((id, idx, arr) => (
@@ -1955,7 +1955,7 @@ export default function App() {
                   <p className="font-bold text-gray-900 text-sm">Leitura aprofundada — Produto, Dados e Engenharia</p>
                 </div>
                 <p className="text-xs text-gray-600 leading-relaxed mb-4">
-                  A camada de rastreabilidade: de onde vem cada conclusão, o que sustenta, o que ainda não existe e o que dá para plugar. Complementar — não repete o percurso executivo.
+                  As evidências por trás de cada conclusão, o mapa competitivo, os casos de fora e o que já dá para plugar no roadmap.
                 </p>
                 <div className="flex items-center gap-1.5 flex-wrap">
                   {[
@@ -2002,7 +2002,7 @@ export default function App() {
               O que mudou de direção e <span className="text-[#6B46C1]">o que isso obriga a decidir</span>
             </h2>
             <p className="text-gray-500 mb-12 text-lg max-w-3xl">
-              Cada bloco é uma conclusão executiva com a decisão que ela força — não a notícia que a originou. As evidências estão em Sinais.
+              O que a liderança precisa entender em dois minutos, com a decisão que cada ponto força.
             </p>
 
             <div className="space-y-4">
@@ -2076,10 +2076,10 @@ export default function App() {
               <span className="text-sm text-[#6B46C1] font-medium">Sinais da Quinzena</span>
             </div>
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Cinco sinais, <span className="text-[#6B46C1]">muitas evidências</span>
+              Os cinco sinais da <span className="text-[#6B46C1]">quinzena</span>
             </h2>
             <p className="text-gray-500 mb-12 text-lg max-w-3xl">
-              É aqui que ficam os dados, as datas e os fatos que sustentam a leitura desta edição. Cada card consolida vários acontecimentos relacionados — o critério não é o que foi anunciado, é o que muda de direção.
+              Cinco movimentos que mudaram de direção — cada um reunindo os acontecimentos relacionados, com o que sustenta a leitura e o que decorre dela.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -2236,7 +2236,7 @@ export default function App() {
               O espaço que <span className="text-[#6B46C1]">ninguém ocupou</span>
             </h2>
             <p className="text-gray-500 mb-8 max-w-3xl">
-              Não é a lista dos problemas da edição — é o inventário das vagas em aberto. Cada item abaixo é algo que era razoável esperar nesta janela, não veio, e por isso segue disponível para quem chegar primeiro.
+              Cada item abaixo era razoável esperar nesta janela, não veio, e por isso segue disponível para quem chegar primeiro.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               {[
@@ -2318,7 +2318,7 @@ export default function App() {
               Estrutural, emergente ou <span className="text-[#6B46C1]">pontual?</span>
             </h2>
             <p className="text-gray-500 mb-10 text-lg max-w-3xl">
-              Memória do radar aplicada: o que reaparece ciclo após ciclo merece roadmap, o que apareceu uma vez merece monitoramento. Só a sequência necessária para provar a recorrência.
+              O que reaparece ciclo após ciclo merece roadmap; o que apareceu uma vez merece monitoramento.
             </p>
 
             <div className="flex items-center gap-5 mb-10 flex-wrap">
@@ -2340,7 +2340,7 @@ export default function App() {
                   tema: "Distribuição direto ao aluno, contornando a escola",
                   tipo: "Estrutural",
                   trilha: "#07 Gemini no ENEM → #08 Claude for Teachers → #09 home do Classroom por papel → #10 ano gratuito do Gemini e ChatGPT for Teens",
-                  leitura: "Quatro edições seguidas escalando de produto para canal, de canal para subsídio e agora para experiência dedicada por faixa etária. É a tendência mais consistente do radar — e a #10 mostra que ela não parou no acesso: avançou para dentro da pedagogia.",
+                  leitura: "Quatro edições seguidas escalando de produto para canal, de canal para subsídio e agora para experiência dedicada por faixa etária. É a tendência mais consistente das últimas quatro edições — e a #10 mostra que ela não parou no acesso: avançou para dentro da pedagogia.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
@@ -2364,7 +2364,7 @@ export default function App() {
                   tema: "Ecossistema integrado sobre conteúdo autoral",
                   tipo: "Estrutural",
                   trilha: "#05 Moderna Core → Bett 2026 com Meu Arco, Cosmos e Estação → #10 portfólio Bernoulli segmentado por papel, já em operação",
-                  leitura: "O tema mais antigo do radar e o que mais amadureceu: saiu do palco de feira e entrou na rotina. Concluiu a trajetória de diferencial competitivo a custo de entrada — e é isso que libera a próxima fronteira.",
+                  leitura: "O tema mais antigo em acompanhamento e o que mais amadureceu: saiu do palco de feira e entrou na rotina. Concluiu a trajetória de diferencial competitivo a custo de entrada — e é isso que libera a próxima fronteira.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
@@ -2443,7 +2443,7 @@ export default function App() {
               Quem está melhor <span className="text-[#6B46C1]">posicionado</span>
             </h2>
             <p className="text-gray-500 mb-10 text-lg max-w-3xl">
-              Concorrência direta é quem disputa a mesma escola, rede e orçamento. A pergunta aqui não é quem tem mais funcionalidade — é quem chega melhor colocado para a disputa que esta edição identificou: mediar com contexto curricular.
+              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Não é quem tem mais funcionalidade, e sim quem chega melhor colocado para a disputa desta edição: mediar com contexto curricular.
             </p>
 
             {/* Mercado privado */}
@@ -2634,7 +2634,7 @@ export default function App() {
               Não o que fizeram — <span className="text-[#6B46C1]">como fizeram</span>
             </h2>
             <p className="text-gray-500 mb-12 text-lg max-w-3xl">
-              Cada caso destrinchado por problema, implantação, escala, financiamento e aprendizado — com o que é replicável e o que não é separados explicitamente, para que a leitura sirva de plano e não de inspiração.
+              Cada caso destrinchado por problema, implantação, escala, financiamento e aprendizado, separando o que dá para replicar aqui do que não dá.
             </p>
 
             <div className="space-y-8">
@@ -2772,7 +2772,7 @@ export default function App() {
               Capacidades que <span className="text-[#6B46C1]">encurtam o caminho</span>
             </h2>
             <p className="text-gray-500 mb-10 text-lg max-w-3xl">
-              Não é lista de tendências: é o que já existe, em que estágio está e o que custa plugar — com limitações reais, dependências técnicas, cenário ideal de uso e o que muda para Produto e para Engenharia.
+              O que já existe, em que estágio está e o que custa plugar — com limitações reais, dependências técnicas, cenário ideal de uso e o que muda para Produto e para Engenharia.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -2961,7 +2961,7 @@ export default function App() {
                     <span className="text-xs font-semibold uppercase tracking-wider">Consenso dos especialistas da quinzena</span>
                   </div>
                   <p className="text-lg md:text-xl font-semibold leading-relaxed">
-                    Três fontes independentes, com métodos incompatíveis entre si — econometria longitudinal, análise de política pública e survey global — chegaram à mesma conclusão nesta janela: <span className="text-[#FFB89A]">o que determina o resultado não é a adoção, é o desenho do uso</span>. É a convergência mais forte já registrada por este radar.
+                    Três fontes independentes, com métodos incompatíveis entre si — econometria longitudinal, análise de política pública e survey global — chegaram à mesma conclusão nesta janela: <span className="text-[#FFB89A]">o que determina o resultado não é a adoção, é o desenho do uso</span>. É a convergência mais forte já registrada em uma única janela.
                   </p>
                 </div>
               </div>
@@ -3069,83 +3069,6 @@ export default function App() {
           </motion.div>
         </div>
       </section>
-
-      {/* ── FONTES MONITORADAS ── */}
-      <section className="pb-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-gray-50 rounded-2xl border border-gray-200 p-6 md:p-8"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <Library className="w-5 h-5 text-[#6B46C1]" />
-              <p className="font-bold text-gray-900">Fontes monitoradas pelo PULSO</p>
-            </div>
-            <p className="text-sm text-gray-500 mb-6 max-w-3xl">
-              Base fixa de curadoria consultada a cada edição, além da varredura aberta da janela. Novas fontes entram nesta lista e passam a ser monitoradas nas edições seguintes.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  grupo: "Setor educacional brasileiro",
-                  itens: [
-                    { nome: "Educador21", url: "https://educador21.com/", novo: true },
-                    { nome: "Revista Educação", url: "https://revistaeducacao.com.br/" },
-                    { nome: "Bett Brasil / Bett Nordeste", url: "https://brasil.bettshow.com/" },
-                    { nome: "Jeduca", url: "https://jeduca.org.br/" },
-                  ]
-                },
-                {
-                  grupo: "Institucional e regulatório",
-                  itens: [
-                    { nome: "MEC", url: "https://www.gov.br/mec/pt-br" },
-                    { nome: "CNE — pareceres e diretrizes", url: "https://www.gov.br/mec/pt-br/cne" },
-                    { nome: "INEP — microdados", url: "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados" },
-                    { nome: "OCDE — Digital Education Outlook", url: "https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html" },
-                  ]
-                },
-                {
-                  grupo: "Tecnologia, capital e pesquisa",
-                  itens: [
-                    { nome: "Blogs oficiais Google, OpenAI e Anthropic", url: "https://blog.google/technology/ai/" },
-                    { nome: "Digital Education Council", url: "https://www.digitaleducationcouncil.com/", novo: true },
-                    { nome: "CEPR — working papers", url: "https://cepr.org/" },
-                    { nome: "Startups.com.br — M&A em edtech", url: "https://startups.com.br/" },
-                  ]
-                },
-              ].map((bloco, i) => (
-                <div key={i}>
-                  <p className="text-xs font-semibold text-purple-700 uppercase tracking-wider mb-3">{bloco.grupo}</p>
-                  <ul className="space-y-2">
-                    {bloco.itens.map(item => (
-                      <li key={item.nome}>
-                        <a
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-gray-600 hover:text-[#6B46C1] transition-colors inline-flex items-center gap-1.5 group"
-                        >
-                          <ExternalLink className="w-3 h-3 text-gray-300 group-hover:text-[#6B46C1] transition-colors flex-shrink-0" />
-                          <span>{item.nome}</span>
-                          {item.novo && (
-                            <span className="px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-[#FF6B35] text-white uppercase tracking-wide">
-                              Novo
-                            </span>
-                          )}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* ── ANÁLISE ESTRATÉGICA ── */}
       <section id="analise" className="py-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
@@ -3163,7 +3086,7 @@ export default function App() {
               Diferenciação vs <span className="text-[#6B46C1]">Commodity</span>
             </h2>
             <p className="text-gray-500 mb-10 text-lg max-w-3xl">
-              A pergunta aqui é de posicionamento: onde parou de haver vantagem e onde ainda existe algo difícil de copiar. Uma linha mudou de lado nesta edição — e é a que sustentava boa parte do discurso do setor.
+              Onde parou de haver vantagem e onde ainda existe algo difícil de copiar. Uma linha mudou de lado nesta edição — e é a que sustentava boa parte do discurso do setor.
             </p>
 
             <div className="bg-white rounded-2xl border-2 border-[#FF6B35] p-6 mb-8">
@@ -3256,7 +3179,7 @@ export default function App() {
               Força e maturidade <span className="text-[#6B46C1]">do movimento</span>
             </h2>
             <p className="text-gray-500 mb-10 text-lg max-w-3xl">
-              Pergunta diferente da anterior: ali era sobre vantagem competitiva, aqui é sobre quanto discurso existe em relação à evidência disponível — e se o movimento já é forte o bastante para mover roadmap.
+              Quanto discurso existe em relação à evidência disponível — e se o movimento já é forte o bastante para mover roadmap.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -3359,7 +3282,7 @@ export default function App() {
               O que isso muda no <span className="text-[#6B46C1]">nosso produto</span>
             </h2>
             <p className="text-gray-500 mb-4 text-lg max-w-3xl">
-              Camada final de tradução. Toda oportunidade abaixo é rastreável a um sinal desta edição ou de edições anteriores — não há item que não venha de evidência apresentada.
+              O que os sinais desta quinzena mudam, na prática, para o nosso roadmap.
             </p>
 
             {/* Legenda prioridade */}
@@ -3523,16 +3446,6 @@ export default function App() {
               ))}
             </div>
 
-            {/* Princípio editorial */}
-            <div className="mt-12 bg-white rounded-2xl border-2 border-purple-100 p-8 text-center">
-              <p className="text-xs text-gray-400 uppercase tracking-widest font-semibold mb-4">Princípio editorial do PULSO</p>
-              <p className="text-lg md:text-xl text-gray-800 font-semibold leading-relaxed max-w-3xl mx-auto mb-4">
-                Não queremos contar tudo o que aconteceu. Queremos identificar o pouco que realmente mudou alguma coisa.
-              </p>
-              <p className="text-sm text-gray-500 max-w-2xl mx-auto">
-                Poucos sinais. Muitas evidências. Uma leitura estratégica. Consequências claras para produto.
-              </p>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -3554,7 +3467,7 @@ export default function App() {
               Edições <span className="text-[#6B46C1]">Anteriores</span>
             </h2>
             <p className="text-gray-600 mb-12">
-              Biblioteca viva do PULSO — histórico contínuo de inteligência estratégica
+              Biblioteca viva do RADAR — histórico contínuo de inteligência estratégica
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -3756,13 +3669,13 @@ export default function App() {
             <div className="flex justify-center mb-5">
               <img
                 src={mascoteIA}
-                alt="PULSO — Inteligência Estratégica de IA na Educação"
+                alt="RADAR — Inteligência Estratégica de IA na Educação"
                 className="h-20 md:h-24 w-auto drop-shadow-lg"
               />
             </div>
 
             <h3 className="text-xl md:text-2xl font-bold mb-1 tracking-wide">
-              PULSO
+              RADAR
             </h3>
             <p className="text-white/70 text-sm md:text-base mb-1 font-medium">
               Inteligência Estratégica de IA na Educação
@@ -3772,7 +3685,7 @@ export default function App() {
             </p>
 
             <p className="text-white/60 text-sm leading-relaxed max-w-2xl mx-auto mb-8">
-              O PULSO é um sistema contínuo de inteligência estratégica que transforma movimentos de mercado, concorrência, pesquisa, tecnologia e regulação em sinais, padrões, riscos e oportunidades para produtos educacionais.
+              O RADAR é um sistema contínuo de inteligência estratégica que transforma movimentos de mercado, concorrência, pesquisa, tecnologia e regulação em sinais, padrões, riscos e oportunidades para produtos educacionais.
             </p>
 
             <div className="pt-6 border-t border-white/15 space-y-1.5">
