@@ -1,6 +1,6 @@
 Você irá ATUALIZAR um portal editorial estratégico recorrente chamado:
 
-PULSO — RADAR DE IA NA EDUCAÇÃO
+RADAR — RADAR DE IA NA EDUCAÇÃO
 
 ==================================================
 OBJETIVO
@@ -19,7 +19,7 @@ IDENTIDADE VISUAL
 ==================================================
 
 MANTER:
-- marca principal “PULSO”
+- marca principal “RADAR”
 - aparência premium e executiva
 
 UTILIZAR o mascote de IA enviado pelo usuário como:
@@ -61,7 +61,7 @@ ESTRUTURA DA EDIÇÃO
 ==================================================
 
 1. HEADER
-- logo PULSO
+- logo RADAR
 - título:
 RADAR DE IA NA EDUCAÇÃO
 - subtítulo:
@@ -453,20 +453,26 @@ DOUTRINA EDITORIAL — vigente a partir da Edição #10
 1. POSICIONAMENTO DO PRODUTO
 --------------------------------------------------
 
-Nome principal: PULSO
+Nome principal: RADAR
+(renomeado a partir de RADAR — o nome anterior não deve mais ser usado)
+
 Subtítulo: "Inteligência Estratégica de IA na Educação"
-(NÃO usar mais "Radar de IA na Educação")
+NUNCA usar "Radar de notícias" nem "Radar de IA na Educação" como
+subtítulo. O nome é RADAR; a categoria do produto é inteligência
+estratégica.
 
 Definição conceitual oficial:
 
-"O PULSO é um sistema contínuo de inteligência estratégica que
+"O RADAR é um sistema contínuo de inteligência estratégica que
 transforma movimentos de mercado, concorrência, pesquisa, tecnologia
 e regulação em sinais, padrões, riscos e oportunidades para produtos
 educacionais."
 
-O PULSO NÃO é newsletter nem compilado de notícias. Esse
-posicionamento orienta linguagem, títulos, descrição das seções e
-hierarquia da informação.
+ATENÇÃO AO NOME: RADAR aqui significa detectar cedo o que muda de
+direção — não varrer e listar tudo o que aconteceu. O produto NÃO é
+newsletter, clipping nem compilado de notícias. O nome descreve a
+antecipação, jamais a varredura. Esse posicionamento orienta
+linguagem, títulos, descrição das seções e hierarquia da informação.
 
 --------------------------------------------------
 2. REGRA CENTRAL ANTIRREDUNDÂNCIA
@@ -655,5 +661,58 @@ Lógica operacional:
 Poucos sinais. Muitas evidências. Uma leitura estratégica.
 Consequências claras para produto.
 
-O PULSO deve parecer menos uma newsletter e mais uma camada de
+O RADAR deve parecer menos uma newsletter e mais uma camada de
 inteligência para tomada de decisão.
+
+
+--------------------------------------------------
+10. FONTES MONITORADAS — uso interno
+--------------------------------------------------
+
+NÃO exibir esta lista na página publicada. É insumo de curadoria,
+não conteúdo para o leitor. As fontes aparecem para o público apenas
+como link "Ver fonte" dentro do card que as utiliza.
+
+Base fixa consultada a cada edição, além da varredura aberta da janela:
+
+SETOR EDUCACIONAL BRASILEIRO
+- Educador21 ................ https://educador21.com/
+- Revista Educação .......... https://revistaeducacao.com.br/
+- Bett Brasil / Bett Nordeste  https://brasil.bettshow.com/
+- Jeduca .................... https://jeduca.org.br/
+
+INSTITUCIONAL E REGULATÓRIO
+- MEC ....................... https://www.gov.br/mec/pt-br
+- CNE (pareceres) ........... https://www.gov.br/mec/pt-br/cne
+- INEP (microdados) ......... https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados
+- OCDE (Digital Education Outlook)
+                              https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html
+
+TECNOLOGIA, CAPITAL E PESQUISA
+- Blogs oficiais Google, OpenAI e Anthropic
+- Digital Education Council . https://www.digitaleducationcouncil.com/
+- CEPR (working papers) ..... https://cepr.org/
+- Startups.com.br (M&A edtech) https://startups.com.br/
+
+Novas fontes entram nesta lista e passam a ser monitoradas nas
+edições seguintes.
+
+--------------------------------------------------
+11. O QUE NÃO VAI PARA A PÁGINA
+--------------------------------------------------
+
+O leitor consome inteligência, não a mecânica que a produziu.
+Manter fora da página publicada:
+
+- lista de fontes monitoradas
+- princípio editorial e lógica operacional
+- explicação da função de cada seção
+- frases autorreferentes do tipo "a pergunta desta seção é...",
+  "diferente da seção anterior...", "não é X, é Y"
+- menções ao produto falando de si mesmo ("este radar", "nossa
+  curadoria", "critério editorial")
+
+Os textos de apoio de cada seção devem falar do ASSUNTO, nunca do
+método. Rastreabilidade visível ao leitor (badge "Consolida:",
+"Rastreável a: Sinal N", numeração dos sinais e legenda de
+classificação) permanece — é utilidade de leitura, não bastidor.
