@@ -441,3 +441,219 @@ NÃO parecer:
 - blog genérico
 - clipping de notícias
 - relatório acadêmico.
+
+==================================================
+==================================================
+DOUTRINA EDITORIAL — vigente a partir da Edição #10
+(substitui orientações conflitantes acima)
+==================================================
+==================================================
+
+--------------------------------------------------
+1. POSICIONAMENTO DO PRODUTO
+--------------------------------------------------
+
+Nome principal: PULSO
+Subtítulo: "Inteligência Estratégica de IA na Educação"
+(NÃO usar mais "Radar de IA na Educação")
+
+Definição conceitual oficial:
+
+"O PULSO é um sistema contínuo de inteligência estratégica que
+transforma movimentos de mercado, concorrência, pesquisa, tecnologia
+e regulação em sinais, padrões, riscos e oportunidades para produtos
+educacionais."
+
+O PULSO NÃO é newsletter nem compilado de notícias. Esse
+posicionamento orienta linguagem, títulos, descrição das seções e
+hierarquia da informação.
+
+--------------------------------------------------
+2. REGRA CENTRAL ANTIRREDUNDÂNCIA
+--------------------------------------------------
+
+"Uma tese pode atravessar várias seções, mas cada seção deve
+responder a uma pergunta diferente sobre ela."
+
+NUNCA repetir entre seções:
+- a mesma evidência
+- os mesmos números
+- a mesma conclusão
+- a mesma implicação estratégica
+- a mesma justificativa
+
+Se a informação já apareceu, referenciar em uma linha e avançar para
+a camada nova de análise.
+
+Cada número-chave tem UMA seção-casa (normalmente Sinais). Só pode
+reaparecer quando for indispensável para a seção ser compreendida de
+forma independente.
+
+IMPORTANTE: não resolver repetição tornando a edição superficial. O
+objetivo é mais densidade estratégica por bloco — não menos texto.
+
+--------------------------------------------------
+3. PERGUNTA QUE CADA SEÇÃO RESPONDE
+--------------------------------------------------
+
+INSIGHT ......... Qual é a grande mudança que organiza esta edição?
+                  Uma única tese + contexto mínimo + tensão + conclusão.
+                  NÃO antecipar o conteúdo da edição inteira.
+
+RESUMO .......... O que mudou de direção e o que a liderança precisa
+                  decidir agora? Conclusões executivas, nunca notícias.
+                  Registrar hipóteses de edições anteriores que caíram.
+
+SINAIS .......... Que evidências sustentam a leitura desta edição?
+                  "Poucos sinais, muitas evidências." Cada sinal
+                  consolida vários acontecimentos. Estrutura: sinal →
+                  acontecimentos que sustentam → leitura estratégica →
+                  consequência prática. É a seção-casa dos números.
+
+AUSÊNCIAS ....... O que era esperado e não aconteceu?
+                  Inventário de vagas em aberto — não repetir problema
+                  já descrito em Sinais. Cada item revela lacuna ou
+                  janela estratégica.
+
+RECORRENTES ..... O que virou padrão estrutural?
+                  Cruzar obrigatoriamente edições anteriores com trilha
+                  temporal (#07 → #08 → #09 → #10). Classificar em
+                  estrutural / emergente / pontual. Só a sequência
+                  necessária para provar a recorrência.
+
+CONCORRÊNCIA .... Quem está melhor posicionado?
+                  Separar concorrência direta (mesma escola, rede e
+                  orçamento) de forças de contexto (mudam expectativa,
+                  preço percebido e padrão sem disputar a venda).
+                  Posição estratégica, não catálogo de funcionalidades.
+
+BENCHMARKS ...... Como fizeram — não o que fizeram.
+                  Problema, implantação, escala, financiamento,
+                  parceiros, aprendizado, limitações, o que é
+                  replicável, o que não é, implicação para nós.
+
+ACELERADORES .... Que capacidades já existem e encurtam o caminho?
+                  Para cada um: o que é, maturidade, o que acelera,
+                  limitações reais, dependências técnicas, cenário
+                  ideal, impacto para Produto, impacto para Engenharia.
+                  Maturidade: disponível / padrão de mercado /
+                  emergente / a construir.
+
+EXPERTS ......... O que especialistas e instituições concluem?
+                  Bloco "Consenso dos especialistas da quinzena"
+                  primeiro, sintetizando só convergências entre fontes
+                  independentes. Para cada leitura: tese, por que
+                  importa, relação com os sinais desta edição.
+
+ANÁLISE ......... O que deixou de diferenciar e onde ainda há vantagem?
+                  Commodity vs diferencia. Decisão de posicionamento.
+                  Marcar explicitamente o que MUDOU DE LADO na edição.
+
+HYPE ............ Qual a força e a maturidade do movimento?
+                  Pergunta DIFERENTE de Análise: ali é vantagem
+                  competitiva, aqui é discurso vs evidência.
+                  Três níveis: superestimado / emergente / tendência real.
+
+OPORTUNIDADES ... O que isso muda no nosso produto?
+                  Cada uma: sinal observado, problema, oportunidade,
+                  impacto esperado (professor / aluno / gestor),
+                  implicação para roadmap, prioridade.
+                  TODA oportunidade deve ser rastreável a um sinal
+                  desta edição ou de anterior. Nada genérico como
+                  "usar IA para personalização".
+
+--------------------------------------------------
+4. PROGRESSÃO NARRATIVA OBRIGATÓRIA
+--------------------------------------------------
+
+Tese → Evidência → Padrão → Mercado → Aprendizado → Capacidade →
+Validação → Escolha estratégica → Oportunidade
+
+Insight → Resumo → Sinais → Ausências → Recorrentes → Concorrência →
+Benchmarks → Aceleradores → Experts → Análise → Hype → Oportunidades
+
+Cada etapa responde algo que a anterior ainda não respondeu.
+
+--------------------------------------------------
+5. DUAS VELOCIDADES DE LEITURA
+--------------------------------------------------
+
+Leitura executiva: Insight → Resumo → Oportunidades
+Deve contar uma história completa sozinha.
+
+Leitura aprofundada: Sinais → Ausências → Recorrentes → Concorrência
+→ Benchmarks → Aceleradores → Experts → Análise → Hype
+
+As duas jornadas são complementares, nunca repetitivas.
+
+--------------------------------------------------
+6. CONCORRÊNCIA DIRETA — ESCOPO CALIBRADO
+--------------------------------------------------
+
+Concorrência direta é quem disputa a mesma escola, rede e orçamento.
+NÃO é o mapa geral de tecnologia com foco em educação.
+
+MERCADO PRIVADO
+- Somos Educação: Anglo, pH, Amplia, Fibonati | digital: Plurall
+- Arco Educação: SAS, SAE Digital, Geekie
+- Bernoulli
+- Poliedro
+- Santillana: Moderna Core
+
+MERCADO PÚBLICO
+- Saber (eDocente)
+- Moderna (Moderna Amigos)
+
+Big techs, infraestrutura e pesquisa entram como FORÇAS DE CONTEXTO,
+em bloco separado.
+
+--------------------------------------------------
+7. HIGIENE DE JANELA — verificação obrigatória
+--------------------------------------------------
+
+Antes de incluir qualquer notícia:
+1. Conferir a DATA REAL na fonte primária.
+2. Conferir se já foi coberta em edição anterior (grepar o App.tsx).
+3. Se a repercussão for de agora mas o fato for antigo, datar de forma
+   explícita (ex.: "paper de junho, repercussão no Brasil em agosto").
+
+Notícia já publicada em edição anterior NÃO volta como novidade.
+Só reaparece na seção Recorrentes, como trilha temporal.
+
+Não inventar fatos, números, empresas, pesquisas, datas ou fontes.
+Toda afirmação factual precisa de fonte rastreável e clicável.
+
+--------------------------------------------------
+8. CHECKLIST FINAL — validar antes de publicar
+--------------------------------------------------
+
+[ ] A tese central está clara e é única?
+[ ] O resumo traz conclusões, não notícias?
+[ ] Os sinais consolidam acontecimentos?
+[ ] As ausências revelam lacunas reais, não problemas já ditos?
+[ ] Os recorrentes usam a memória das edições?
+[ ] A concorrência mostra posicionamento, não features?
+[ ] Os benchmarks explicam COMO algo foi feito?
+[ ] Os aceleradores conectam tecnologia a roadmap?
+[ ] Os experts adicionam validação ou contraponto?
+[ ] Commodity e hype respondem perguntas diferentes?
+[ ] Toda oportunidade tem evidência rastreável?
+[ ] Há repetição desnecessária de número, evidência ou conclusão?
+[ ] A liderança entende lendo só Insight + Resumo + Oportunidades?
+[ ] Produto e Engenharia conseguem rastrear a origem das conclusões?
+
+Qualquer resposta negativa: revisar antes de finalizar.
+
+--------------------------------------------------
+9. PRINCÍPIO EDITORIAL PERMANENTE
+--------------------------------------------------
+
+"Não queremos contar tudo o que aconteceu. Queremos identificar o
+pouco que realmente mudou alguma coisa."
+
+Lógica operacional:
+Poucos sinais. Muitas evidências. Uma leitura estratégica.
+Consequências claras para produto.
+
+O PULSO deve parecer menos uma newsletter e mais uma camada de
+inteligência para tomada de decisão.
