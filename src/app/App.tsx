@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform, MotionConfig } from 'motion/react';
 import {
   Brain,
   GraduationCap,
@@ -23,12 +23,34 @@ import {
   BarChart3,
   Globe,
   ArrowLeft,
-  Library
+  Library,
+  Check,
+  LayoutList
 } from 'lucide-react';
 import logoIonica from '../imports/Logo-ionica_(1).png';
 import logoIonicaSmall from '../imports/Logo-ionica_(1)-1.png';
 import logoFTD from '../imports/ftd_com_voce_logo.png';
 import mascoteIA from '../imports/ionia-1.png';
+
+type ModoLeitura = 'executiva' | 'completa';
+
+// Fonte única de verdade das seções da edição.
+// `executiva: true` = permanece visível na Leitura executiva.
+const SECOES = [
+  { id: 'insight', label: 'Insight', executiva: true },
+  { id: 'resumo', label: 'Resumo', executiva: true },
+  { id: 'movimentos', label: 'Sinais', executiva: false },
+  { id: 'ausencias', label: 'Ausências', executiva: false },
+  { id: 'recorrentes', label: 'Recorrentes', executiva: false },
+  { id: 'concorrencia', label: 'Concorrência', executiva: false },
+  { id: 'benchmarks', label: 'Benchmarks', executiva: false },
+  { id: 'aceleradores', label: 'Aceleradores', executiva: false },
+  { id: 'experts', label: 'Experts', executiva: false },
+  { id: 'analise', label: 'Análise', executiva: false },
+  { id: 'hype', label: 'Hype', executiva: false },
+  { id: 'oportunidades', label: 'Oportunidades', executiva: true },
+  { id: 'edicoes', label: 'Arquivo', executiva: true },
+];
 
 type View = 'main' | 'edicao-abril-2026' | 'edicao-maio-2026' | 'edicao-junho-2026' | 'edicao-junho-2026-b' | 'edicao-julho-2026' | 'edicao-agosto-2026';
 
@@ -1640,13 +1662,15 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('insight');
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [currentView, setCurrentView] = useState<View>('main');
+  const [modoLeitura, setModoLeitura] = useState<ModoLeitura>('completa');
+  const modoExecutivo = modoLeitura === 'executiva';
+  const secoesVisiveis = SECOES.filter(s => !modoExecutivo || s.executiva);
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['insight', 'resumo', 'movimentos', 'ausencias', 'recorrentes', 'concorrencia', 'benchmarks', 'aceleradores', 'experts', 'analise', 'hype', 'oportunidades', 'edicoes'];
-      const current = sections.find(section => {
+      const current = secoesVisiveis.map(s => s.id).find(section => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -1659,8 +1683,9 @@ export default function App() {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [modoLeitura]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -1787,7 +1812,15 @@ export default function App() {
   }
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className="min-h-screen bg-white">
+      <a
+        href="#insight"
+        onClick={e => { e.preventDefault(); scrollToSection('insight'); }}
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#6B46C1] focus:text-white focus:rounded-lg focus:text-sm focus:font-medium"
+      >
+        Pular para o conteúdo
+      </a>
       {/* Header Fixo */}
       <header className="fixed top-0 left-0 right-0 bg-white/96 backdrop-blur-md z-50 border-b border-gray-100/80 shadow-sm">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
@@ -1818,25 +1851,12 @@ export default function App() {
           </div>
 
           {/* Linha 2 — nav centralizada com respiro */}
-          <nav className="flex items-center justify-start md:justify-center gap-1 pb-2 overflow-x-auto flex-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {[
-              { id: 'insight', label: 'Insight' },
-              { id: 'resumo', label: 'Resumo' },
-              { id: 'movimentos', label: 'Sinais' },
-              { id: 'ausencias', label: 'Ausências' },
-              { id: 'recorrentes', label: 'Recorrentes' },
-              { id: 'concorrencia', label: 'Concorrência' },
-              { id: 'benchmarks', label: 'Benchmarks' },
-              { id: 'aceleradores', label: 'Aceleradores' },
-              { id: 'experts', label: 'Experts' },
-              { id: 'analise', label: 'Análise' },
-              { id: 'hype', label: 'Hype' },
-              { id: 'oportunidades', label: 'Oportunidades' },
-              { id: 'edicoes', label: 'Arquivo' },
-            ].map(item => (
+          <nav aria-label="Seções desta edição" className="flex items-center justify-start md:justify-center gap-1 pb-2 overflow-x-auto flex-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {secoesVisiveis.map(item => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
+                aria-current={activeSection === item.id ? 'true' : undefined}
                 className={`px-3 py-1 rounded-md text-[11px] font-medium whitespace-nowrap transition-all ${
                   activeSection === item.id
                     ? 'bg-[#6B46C1] text-white'
@@ -1867,11 +1887,11 @@ export default function App() {
               </div>
             </div>
 
-            <h2 className="text-4xl md:text-6xl text-gray-900 font-bold mb-8 leading-tight">
+            <h1 className="text-4xl md:text-6xl text-gray-900 font-bold mb-8 leading-tight">
               A mediação pedagógica<br />
               deixou de ser <span className="text-[#6B46C1]">a nossa reserva de valor</span><br />
               <span className="text-[#FF6B35]">e virou default da plataforma</span>
-            </h2>
+            </h1>
 
             <div className="max-w-4xl mx-auto mb-12">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
@@ -1915,72 +1935,68 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── DUAS VELOCIDADES DE LEITURA ── */}
-      <section className="py-12 px-6 bg-white border-y border-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="text-center text-xs text-gray-400 uppercase tracking-widest font-semibold mb-6">Duas velocidades de leitura</p>
-            <div className="grid md:grid-cols-2 gap-5">
-              <div className="rounded-2xl border-2 border-[#6B46C1] p-6 bg-purple-50/40">
-                <div className="flex items-center gap-2 mb-3">
-                  <Target className="w-4 h-4 text-[#6B46C1]" />
-                  <p className="font-bold text-gray-900 text-sm">Leitura executiva — 3 minutos</p>
-                </div>
-                <p className="text-xs text-gray-600 leading-relaxed mb-4">
-                  Com pouco tempo? Estes três blocos contam a edição inteira: a mudança da quinzena, o que ela obriga a revisar e o que fazer com isso.
-                </p>
-                <div className="flex items-center gap-2 flex-wrap">
-                  {['insight', 'resumo', 'oportunidades'].map((id, idx, arr) => (
-                    <span key={id} className="flex items-center gap-2">
-                      <button
-                        onClick={() => scrollToSection(id)}
-                        className="px-3 py-1.5 rounded-lg bg-[#6B46C1] text-white text-xs font-semibold hover:bg-[#5B3A9E] transition-colors capitalize"
-                      >
-                        {id === 'resumo' ? 'Resumo' : id === 'insight' ? 'Insight' : 'Oportunidades'}
-                      </button>
-                      {idx < arr.length - 1 && <span className="text-gray-300 text-xs">→</span>}
-                    </span>
-                  ))}
-                </div>
-              </div>
+      {/* ── SELETOR DE MODO DE LEITURA ── */}
+      <section className="py-10 px-6 bg-white border-y border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-6">
+            <h2 className="text-sm font-bold text-gray-900 mb-1">Como você quer ler esta edição?</h2>
+            <p className="text-xs text-gray-500">Você pode trocar a qualquer momento.</p>
+          </div>
 
-              <div className="rounded-2xl border-2 border-gray-200 p-6 bg-gray-50/60">
-                <div className="flex items-center gap-2 mb-3">
-                  <Brain className="w-4 h-4 text-gray-500" />
-                  <p className="font-bold text-gray-900 text-sm">Leitura aprofundada — Produto, Dados e Engenharia</p>
-                </div>
-                <p className="text-xs text-gray-600 leading-relaxed mb-4">
-                  As evidências por trás de cada conclusão, o mapa competitivo, os casos de fora e o que já dá para plugar no roadmap.
-                </p>
-                <div className="flex items-center gap-1.5 flex-wrap">
-                  {[
-                    { id: 'movimentos', label: 'Sinais' },
-                    { id: 'ausencias', label: 'Ausências' },
-                    { id: 'recorrentes', label: 'Recorrentes' },
-                    { id: 'concorrencia', label: 'Concorrência' },
-                    { id: 'benchmarks', label: 'Benchmarks' },
-                    { id: 'aceleradores', label: 'Aceleradores' },
-                    { id: 'experts', label: 'Experts' },
-                    { id: 'analise', label: 'Análise' },
-                    { id: 'hype', label: 'Hype' },
-                  ].map(item => (
-                    <button
-                      key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className="px-2.5 py-1 rounded-md bg-white border border-gray-200 text-gray-600 text-[11px] font-medium hover:border-[#6B46C1] hover:text-[#6B46C1] transition-colors"
+          <div role="radiogroup" aria-label="Modo de leitura" className="grid sm:grid-cols-2 gap-4">
+            {[
+              {
+                valor: 'executiva' as ModoLeitura,
+                icone: <Target className="w-4 h-4" />,
+                titulo: 'Leitura executiva',
+                tempo: '3 min · 3 seções',
+                desc: 'A mudança da quinzena, o que ela obriga a revisar e o que fazer com isso.',
+              },
+              {
+                valor: 'completa' as ModoLeitura,
+                icone: <LayoutList className="w-4 h-4" />,
+                titulo: 'Leitura aprofundada',
+                tempo: '15 min · edição completa',
+                desc: 'Acrescenta as evidências, o mapa competitivo, os casos de fora e o que dá para plugar no roadmap.',
+              },
+            ].map(opcao => {
+              const selecionado = modoLeitura === opcao.valor;
+              return (
+                <button
+                  key={opcao.valor}
+                  role="radio"
+                  aria-checked={selecionado}
+                  onClick={() => setModoLeitura(opcao.valor)}
+                  className={`text-left rounded-2xl border-2 p-5 transition-all ${
+                    selecionado
+                      ? 'border-[#6B46C1] bg-purple-50/50 shadow-sm'
+                      : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50/60'
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <div className="flex items-center gap-2">
+                      <span className={selecionado ? 'text-[#6B46C1]' : 'text-gray-400'}>{opcao.icone}</span>
+                      <span className={`font-bold text-sm ${selecionado ? 'text-[#6B46C1]' : 'text-gray-900'}`}>
+                        {opcao.titulo}
+                      </span>
+                    </div>
+                    <span
+                      aria-hidden="true"
+                      className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 border-2 transition-colors ${
+                        selecionado ? 'bg-[#6B46C1] border-[#6B46C1]' : 'border-gray-300 bg-white'
+                      }`}
                     >
-                      {item.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
+                      {selecionado && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
+                    </span>
+                  </div>
+                  <p className={`text-xs font-semibold mb-2 ${selecionado ? 'text-[#FF6B35]' : 'text-gray-400'}`}>
+                    {opcao.tempo}
+                  </p>
+                  <p className="text-xs text-gray-600 leading-relaxed">{opcao.desc}</p>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -2062,6 +2078,9 @@ export default function App() {
         </div>
       </section>
 
+      {/* Seções da leitura aprofundada — ocultas na leitura executiva */}
+      {!modoExecutivo && (
+        <>
       {/* ── SINAIS DA QUINZENA ── */}
       <section id="movimentos" className="py-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
@@ -3061,7 +3080,7 @@ export default function App() {
                     className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-purple-50 text-[#6B46C1] rounded-lg hover:bg-[#6B46C1] hover:text-white transition-all font-medium text-sm mt-4"
                   >
                     <ExternalLink className="w-4 h-4" />
-                    Acessar fonte completa
+                    Ver fonte
                   </a>
                 </motion.div>
               ))}
@@ -3263,6 +3282,8 @@ export default function App() {
           </motion.div>
         </div>
       </section>
+        </>
+      )}
 
       {/* ── OPORTUNIDADES DE PRODUTO ── */}
       <section id="oportunidades" className="py-24 px-6 bg-purple-50/30">
@@ -3409,10 +3430,12 @@ export default function App() {
                     <span className="text-xs text-gray-400 font-medium">{item.area}</span>
                   </div>
 
-                  <div className="inline-flex items-center gap-1.5 mb-3 self-start bg-gray-100 rounded-full px-2.5 py-1">
-                    <Library className="w-3 h-3 text-gray-400" />
-                    <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Rastreável a: {item.rastreio}</span>
-                  </div>
+                  {!modoExecutivo && (
+                    <div className="inline-flex items-center gap-1.5 mb-3 self-start bg-gray-100 rounded-full px-2.5 py-1">
+                      <Library className="w-3 h-3 text-gray-400" />
+                      <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Rastreável a: {item.rastreio}</span>
+                    </div>
+                  )}
 
                   <p className="text-xs text-gray-400 mb-1 uppercase tracking-wide font-medium">Sinal observado</p>
                   <p className="text-sm text-gray-500 mb-4 italic leading-relaxed">{item.sinal}</p>
@@ -3449,6 +3472,30 @@ export default function App() {
           </motion.div>
         </div>
       </section>
+      {/* ── SAÍDA DA LEITURA EXECUTIVA ── */}
+      {modoExecutivo && (
+        <section className="pb-20 px-6 bg-purple-50/30">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-white rounded-2xl border-2 border-purple-100 p-7 text-center">
+              <p className="font-bold text-gray-900 mb-2">Fim da leitura executiva</p>
+              <p className="text-sm text-gray-600 leading-relaxed mb-5">
+                Nove seções ficaram de fora: as evidências por trás de cada conclusão, o mapa competitivo, o que não aconteceu, os casos de fora e o que já dá para plugar no roadmap.
+              </p>
+              <button
+                onClick={() => {
+                  setModoLeitura('completa');
+                  setTimeout(() => scrollToSection('movimentos'), 80);
+                }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#6B46C1] text-white rounded-lg font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+              >
+                <LayoutList className="w-4 h-4" />
+                Ler a edição completa
+              </button>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── EDIÇÕES ANTERIORES ── */}
       <section id="edicoes" className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -3710,5 +3757,6 @@ export default function App() {
         </motion.button>
       )}
     </div>
+    </MotionConfig>
   );
 }
