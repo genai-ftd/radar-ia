@@ -52,7 +52,7 @@ const SECOES = [
   { id: 'edicoes', label: 'Arquivo', executiva: true },
 ];
 
-type View = 'main' | 'edicao-abril-2026' | 'edicao-maio-2026' | 'edicao-junho-2026' | 'edicao-junho-2026-b' | 'edicao-julho-2026' | 'edicao-agosto-2026';
+type View = 'main' | 'edicao-abril-2026' | 'edicao-maio-2026' | 'edicao-junho-2026' | 'edicao-junho-2026-b' | 'edicao-julho-2026' | 'edicao-agosto-2026' | 'edicao-agosto-2026-b';
 
 // ─── Edição Abril 2026 (arquivo) ────────────────────────────────────────────
 function EdicaoAbril2026({
@@ -1657,6 +1657,260 @@ function EdicaoAgosto2026({
   );
 }
 
+// ─── Edição #10 · 04–24 ago 2026 (arquivo) ──────────────────────────────────
+function EdicaoAgosto2026B({
+  onBack,
+  onBackToEdicoes,
+  mascote,
+}: {
+  onBack: () => void;
+  onBackToEdicoes: () => void;
+  mascote: string;
+}) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Mini header */}
+      <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
+            <div>
+              <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
+              <p className="text-sm font-bold text-[#6B46C1] leading-tight">Agosto de 2026 · Ed. #10</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onBackToEdicoes}
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-[#6B46C1] hover:bg-purple-50 rounded-lg transition-all"
+            >
+              <Library className="w-4 h-4" />
+              Edições anteriores
+            </button>
+            <button
+              onClick={onBack}
+              className="flex items-center gap-1.5 px-4 py-2 bg-[#6B46C1] text-white text-sm font-medium rounded-lg hover:bg-[#5B3A9E] transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Edição atual
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-purple-50/40 to-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+              <Calendar className="w-3 h-3" />
+              Edição #10 · 04 – 24 Ago 2026
+            </div>
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
+              </div>
+            </div>
+            <h1 className="text-3xl md:text-5xl text-gray-900 font-bold mb-6 leading-tight">
+              A mediação pedagógica deixou de ser a nossa reserva de valor<br />
+              <span className="text-[#6B46C1]">e virou default da plataforma</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              A evidência nomeou o comportamento que faz mal — terceirizar a tarefa. Semanas depois, a OpenAI embutiu no ChatGPT for Teens a detecção de atalho e o redirecionamento para modo de estudo. O remédio que a escola deveria aplicar passou a vir de fábrica.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Resumo executivo */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              O que mudou de <span className="text-[#6B46C1]">direção</span>
+            </h2>
+            <div className="space-y-4">
+              {[
+                { titulo: "A tese da edição anterior caiu em três semanas", desc: "Mediar o uso era a resposta que sobrava para quem está dentro da escola quando o acesso virou grátis. O ChatGPT for Teens tornou a trava de atalho nativa, gratuita e ligada por padrão.", cor: "border-[#6B46C1]" },
+                { titulo: "Duas linhas de receita viraram produto gratuito de terceiro", desc: "Acesso a IA de ponta e formação docente genérica em IA passaram a existir de graça e com qualidade na mesma quinzena, vindos de fora do setor educacional.", cor: "border-[#FF6B35]" },
+                { titulo: "A conversa saiu de quantos usam para que efeito produz", desc: "Estudo longitudinal com 26.811 alunos por 30 meses: a IA subiu a nota da tarefa em 18% e derrubou a da prova em cerca de 20% em seis meses. Cerca de 80% da perda se concentra em quem terceiriza a tarefa.", cor: "border-[#6B46C1]" },
+                { titulo: "O vácuo de governança ganhou tamanho comparável entre países", desc: "Maior base já reunida sobre IA no ensino superior: 88% dos estudantes e 77% dos docentes usando, com a América Latina em 92% e 79%. Só 31% dos docentes participam da política de IA da própria instituição.", cor: "border-[#FF6B35]" },
+                { titulo: "Esperar a norma brasileira deixou de ser estratégia viável", desc: "Terceira edição consecutiva sem homologação do parecer de IA, agora com as câmaras do CNE em recomposição. A indefinição virou variável de planejamento.", cor: "border-[#6B46C1]" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
+                >
+                  <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Sinais */}
+      <section className="py-20 px-6 bg-purple-50/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <TrendingUp className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Sinais da Edição</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              Cinco <span className="text-[#6B46C1]">sinais</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-5">
+              {[
+                { num: "01", titulo: "A plataforma passou a mediar o uso sozinha e por padrão", desc: "ChatGPT for Teens aplicado automaticamente de 13 a 17 anos, com Study Mode padrão, detecção de atalho na tarefa e Study Hours definidas por pais. Junto vieram os plugins educacionais da OpenAI e o hub de estudo do Gemini.", impacto: "As três maiores empresas de IA chegaram ao mesmo desenho: chat aberto não é formato de estudo. Mediar genericamente deixou de diferenciar.", cor: "from-purple-700 to-purple-800" },
+                { num: "02", titulo: "A evidência nomeou qual comportamento prejudica", desc: "Working paper do CEPR com 26.811 estudantes por 30 meses. Cerca de 80% da perda se concentra em quem entrega rápido demais com nota alta — marcador observável de terceirização.", impacto: "Não existe efeito da IA em geral: existe efeito de um padrão específico, que pode ser detectado e interrompido.", cor: "from-purple-600 to-purple-700" },
+                { num: "03", titulo: "O vácuo de governança ganhou recorte latino-americano", desc: "45.398 respostas em 35 países. Adoção quase universal convivendo com avaliação sem orientação adequada e docentes fora da construção da política institucional.", impacto: "Política escrita sem o professor não muda prática de sala. O problema é de processo, não de texto.", cor: "from-purple-600 to-violet-600" },
+                { num: "04", titulo: "Os sistemas de ensino brasileiros convergiram no mesmo desenho", desc: "Bernoulli Reload com portfólio segmentado por público, Cosmos do Poliedro restrito ao acervo autoral, Meu Arco integrando camadas e Moderna Core com IA nos bastidores.", impacto: "Convergência dessa ordem não é tendência, é padrão consolidado — e portanto custo de entrada.", cor: "from-purple-500 to-purple-600" },
+                { num: "05", titulo: "A regulação travou de novo, com o colegiado se reorganizando", desc: "Portaria MEC nº 664 abriu a recomposição das câmaras do CNE enquanto o parecer de IA seguia aguardando homologação.", impacto: "Deixou de ser lentidão de trâmite e passou a ser instabilidade institucional. Produto precisa de governança configurável.", cor: "from-purple-700 to-purple-800" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-[#6B46C1] transition-all"
+                >
+                  <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
+                    <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
+                    <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
+                  </div>
+                  <div className="px-6 py-4">
+                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                    <div className="bg-purple-50 rounded-lg p-3">
+                      <p className="text-xs font-semibold text-purple-700 mb-1">Leitura estratégica</p>
+                      <p className="text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Implicação estratégica */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
+              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+            </div>
+            <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
+              <div className="flex items-start gap-4">
+                <img src={mascote} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <div>
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
+                    A disputa deixou de ser sobre se o produto media — isso a big tech já entrega de graça. Passou a ser sobre mediar com o contexto que ela não tem: o capítulo, o enunciado, se vale nota e o histórico do aluno.
+                  </p>
+                  <p className="text-white/70 text-sm">
+                    Mediação genérica virou commodity. Mediação curricular ainda não tinha dono no Brasil.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Oportunidades */}
+      <section className="py-20 px-6 bg-purple-50/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              O que construir <span className="text-[#6B46C1]">a partir disso</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { titulo: "Mediação curricular: a trava que sabe o que foi pedido", desc: "Mesmo mecanismo de contenção da plataforma, com o que ela não tem: qual capítulo a turma estuda, se a atividade vale nota e o que o aluno errou antes.", destaque: true },
+                { titulo: "Evidência de percurso como artefato de avaliação", desc: "Versões, tentativas, tempo e revisões dentro do editor. Se a entrega deixou de provar aprendizagem, a prova migra para o processo.", destaque: true },
+                { titulo: "Política de uso configurável no produto", desc: "Regra por atividade, série e disciplina, versionada e auditável, construída no mesmo fluxo em que o professor cria a tarefa.", destaque: false },
+                { titulo: "Fechar o ciclo entre uso de IA e resultado", desc: "Devolver ao professor o que aconteceu antes da entrega, cruzado com desempenho posterior — camada indisponível para quem opera de fora da escola.", destaque: false },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.08 }}
+                  className={`p-6 rounded-2xl border-2 transition-all ${
+                    item.destaque
+                      ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg'
+                      : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'
+                  }`}
+                >
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
+                  </div>
+                  <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
+                  <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
+                  {item.destaque && <span className="inline-block mt-3 px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white">Prioritário</span>}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Navegação inferior */}
+      <section className="py-12 px-6 bg-purple-50/40 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <button
+            onClick={onBackToEdicoes}
+            className="flex items-center gap-2 px-5 py-3 border border-[#6B46C1] text-[#6B46C1] rounded-xl font-medium hover:bg-purple-50 transition-colors text-sm"
+          >
+            <Library className="w-4 h-4" />
+            Voltar para edições anteriores
+          </button>
+          <button
+            onClick={onBack}
+            className="flex items-center gap-2 px-5 py-3 bg-[#6B46C1] text-white rounded-xl font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Voltar para edição atual
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
+          <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
+            <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
+            <p className="text-white/40 text-xs">Hub de IA — Iônica &amp; FTD Com Você · Agosto de 2026 · Edição #10</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('insight');
@@ -1702,6 +1956,22 @@ export default function App() {
     setCurrentView(view);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  if (currentView === 'edicao-agosto-2026-b') {
+    return (
+      <EdicaoAgosto2026B
+        onBack={() => goToEdicao('main')}
+        onBackToEdicoes={() => {
+          setCurrentView('main');
+          setTimeout(() => {
+            const el = document.getElementById('edicoes');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }}
+        mascote={mascoteIA}
+      />
+    );
+  }
 
   if (currentView === 'edicao-agosto-2026') {
     return (
@@ -1840,8 +2110,8 @@ export default function App() {
             {/* Direita — edição + logos parceiros */}
             <div className="hidden sm:flex items-center gap-4">
               <div className="flex flex-col items-end leading-none">
-                <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Edição #10</span>
-                <span className="text-[10px] text-gray-400 font-medium mt-0.5">04 – 24 Ago 2026</span>
+                <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Edição #11</span>
+                <span className="text-[10px] text-gray-400 font-medium mt-0.5">25 Ago – 10 Set 2026</span>
               </div>
               <div className="w-px h-6 bg-gray-200" />
               <img src={logoIonica} alt="Iônica" className="h-5 w-auto" style={{ filter: 'grayscale(100%) opacity(0.45)' }} />
@@ -1888,41 +2158,41 @@ export default function App() {
             </div>
 
             <h1 className="text-4xl md:text-6xl text-gray-900 font-bold mb-8 leading-tight">
-              A mediação pedagógica<br />
-              deixou de ser <span className="text-[#6B46C1]">a nossa reserva de valor</span><br />
-              <span className="text-[#FF6B35]">e virou default da plataforma</span>
+              A regra saiu — e ela não proíbe a IA.<br />
+              <span className="text-[#6B46C1]">Proíbe delegar a decisão</span><br />
+              <span className="text-[#FF6B35]">sobre a vida escolar do aluno</span>
             </h1>
 
             <div className="max-w-4xl mx-auto mb-12">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                A evidência desta janela não disse que IA faz mal — disse exatamente <strong className="text-[#6B46C1]">qual comportamento faz mal</strong>: terceirizar a tarefa, entregar rápido demais com nota alta. Semanas depois, em 18 de agosto, a OpenAI embutiu no ChatGPT for Teens o antídoto correspondente: o sistema detecta quando o adolescente está tentando pular a tarefa e o empurra de volta para o modo de estudo, com passo a passo em vez de resposta. <strong className="text-[#6B46C1]">O remédio que a escola deveria aplicar passou a vir de fábrica</strong> — de graça, ligado por padrão, direto no aparelho de quem tem 13 a 17 anos.
+                Depois de quatro edições travado na última milha, o parecer do CNE foi aprovado em <strong className="text-[#6B46C1]">1º de setembro</strong>. E o objeto da vedação não é a ferramenta: é quem assina o resultado. IA não pode corrigir redação nem prova dissertativa, detector de texto não pode fundamentar punição sozinho e criança até o 5º ano não usa IA generativa sem o professor. Nas palavras do relator, <strong className="text-[#6B46C1]">a palavra final sobre o desempenho do aluno cabe ao professor, não à máquina</strong>. No dia seguinte, a maior rede escolar dos Estados Unidos suspendeu IA generativa até o 8º ano. Dois sistemas, duas jurisdições, a mesma conclusão.
               </p>
 
               <div className="bg-white p-8 rounded-2xl border-2 border-purple-100 shadow-sm text-left">
-                <h3 className="text-lg font-semibold text-gray-900 mb-6 text-center">A tensão que organiza esta edição</h3>
+                <h2 className="text-lg font-semibold text-gray-900 mb-6 text-center">A tensão que organiza esta edição</h2>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-red-50/60 rounded-xl p-5 border border-red-100">
-                    <div className="flex items-center gap-2 mb-3">
-                      <TrendingDown className="w-4 h-4 text-red-500" />
-                      <p className="text-xs font-bold text-red-700 uppercase tracking-wide">O que perdemos</p>
-                    </div>
-                    <p className="text-sm text-gray-700 leading-relaxed">
-                      Mediar o uso era a resposta que sobrava para quem está dentro da escola quando o acesso virou grátis. Deixou de ser: a plataforma agora media sozinha, em escala global, sem pedir licença para a rede e sem cobrar por isso.
-                    </p>
-                  </div>
                   <div className="bg-green-50/60 rounded-xl p-5 border border-green-100">
                     <div className="flex items-center gap-2 mb-3">
                       <CheckCircle className="w-4 h-4 text-green-600" />
-                      <p className="text-xs font-bold text-green-700 uppercase tracking-wide">O que ela não consegue ver</p>
+                      <p className="text-xs font-bold text-green-700 uppercase tracking-wide">O que a norma confirma</p>
                     </div>
                     <p className="text-sm text-gray-700 leading-relaxed">
-                      A trava da plataforma é genérica: não sabe qual capítulo a turma viu, o que o professor pediu, onde aquele aluno errou no bimestre passado nem o que a escola decidiu permitir. Ela media a tarefa; não media o currículo.
+                      Quem já operava com humano no laço e trilha auditável está conforme por desenho. A exigência que virou lei é exatamente a arquitetura que os melhores produtos do setor já tinham escolhido — e que agora deixa de ser diferencial e passa a ser piso.
+                    </p>
+                  </div>
+                  <div className="bg-red-50/60 rounded-xl p-5 border border-red-100">
+                    <div className="flex items-center gap-2 mb-3">
+                      <AlertCircle className="w-4 h-4 text-red-500" />
+                      <p className="text-xs font-bold text-red-700 uppercase tracking-wide">O que ela invalida</p>
+                    </div>
+                    <p className="text-sm text-gray-700 leading-relaxed">
+                      Quem vendia correção automática de redação, detecção de plágio por IA como prova ou tutor autônomo para os anos iniciais tem um prazo para refazer o produto. Não é ajuste de comunicação: é troca da peça que decide.
                     </p>
                   </div>
                 </div>
                 <div className="mt-6 bg-purple-50 rounded-xl p-5 border-l-4 border-[#6B46C1]">
                   <p className="text-sm text-gray-800 leading-relaxed">
-                    <span className="font-bold text-[#6B46C1]">A conclusão:</span> a disputa não é mais sobre <em>se</em> o produto media — isso a big tech já entrega. É sobre mediar com o contexto que ela não tem. Mediação genérica virou commodity no dia 18; mediação curricular ainda não tem dono no Brasil.
+                    <span className="font-bold text-[#6B46C1]">A conclusão:</span> a régua deixou de ser <em>usa ou não usa IA</em> e passou a ser <em>quem assina a decisão</em>. Assinatura humana com rastro deixou de ser boa prática e virou requisito de conformidade — com relógio rodando a partir da homologação.
                   </p>
                 </div>
               </div>
@@ -2024,39 +2294,39 @@ export default function App() {
             <div className="space-y-4">
               {[
                 {
-                  tag: "Hipótese revista",
-                  tagCor: "bg-red-100 text-red-700",
-                  conclusao: "A tese que sustentava a edição passada caiu em três semanas",
-                  raciocinio: "A #09 e o começo desta janela trabalhavam com a ideia de que a distribuição gratuita entregava acesso, mas não mediação — e que mediar seria a reserva de valor de quem está na escola. O lançamento do ChatGPT for Teens invalidou isso: a trava de atalho agora é nativa, gratuita e ligada por padrão. Quem tiver 'uso responsável' no roadmap como diferencial precisa reescrever a justificativa antes do próximo comitê.",
-                  decisao: "Reposicionar a narrativa de mediação de diferencial para pré-requisito, e mover o diferencial para a camada curricular."
-                },
-                {
-                  tag: "Reprecificação",
-                  tagCor: "bg-orange-100 text-orange-700",
-                  conclusao: "Duas linhas de receita planejadas viraram produto gratuito de concorrente indireto",
-                  raciocinio: "Acesso a IA de ponta e formação docente em IA estavam em planos de monetização de vários sistemas de ensino. Ambos passaram a existir de graça e com boa qualidade na mesma quinzena, vindos de fora do setor educacional. Não é perda de participação — é desaparecimento da linha.",
-                  decisao: "Tirar acesso e formação genérica da projeção de receita; manter apenas formação ancorada na BNCC, no material adotado e com certificação que o mantenedor reconhece."
-                },
-                {
-                  tag: "Régua nova",
+                  tag: "Hipótese endurecida",
                   tagCor: "bg-purple-100 text-purple-700",
-                  conclusao: "A conversa saiu de quantos usam para que efeito produz",
-                  raciocinio: "Existe agora um número citável de perda de aprendizagem associada a um padrão de uso específico, com metodologia longitudinal e chancela de organismo multilateral apontando na mesma direção. A partir daqui, afirmar que o produto melhora a aprendizagem sem medir passa a ser risco reputacional — inclusive na conversa com pais e mantenedores.",
-                  decisao: "Definir nesta janela qual métrica de efeito o produto vai sustentar publicamente em 12 meses, e quem produz o dado."
+                  conclusao: "A mediação saiu do campo competitivo e entrou no campo legal — com o eixo deslocado",
+                  raciocinio: "A edição passada registrou que mediar o uso tinha virado default de plataforma, e portanto commodity. A norma vai além e muda o eixo: o que ela regula não é mediar o estudo, é impedir que a máquina assine a decisão avaliativa. Deixou de ser disputa de produto e virou requisito de conformidade.",
+                  decisao: "Reclassificar o roadmap por quem assina cada decisão que o produto toma sobre o aluno — não por funcionalidade."
                 },
                 {
-                  tag: "Lacuna medida",
-                  tagCor: "bg-blue-100 text-blue-700",
-                  conclusao: "O vácuo de governança deixou de ser percepção e virou número comparável entre países",
-                  raciocinio: "A maior base já reunida sobre IA no ensino superior mostra adoção quase universal convivendo com orientação institucional escassa — e a América Latina aparece acima da média global em uso e abaixo do necessário em preparo. É a primeira vez que dá para dimensionar o buraco em vez de descrevê-lo.",
-                  decisao: "Tratar política de uso como entregável de produto com dono e prazo, não como documento jurídico de apoio."
+                  tag: "Relógio no calendário",
+                  tagCor: "bg-orange-100 text-orange-700",
+                  conclusao: "O setor ganhou o primeiro prazo regulatório concreto: doze meses após a homologação",
+                  raciocinio: "Por três edições o parecer foi tratado como indefinição de horizonte aberto, e planejar contando com ele era aposta. Aprovado, ele passa a ter contagem: assim que o ministro assinar, escolas, universidades e redes têm um ano para adequar procedimento. O risco inverteu de lado — agora o custo está em não ter começado.",
+                  decisao: "Definir agora o que precisa mudar no produto e no contrato, para não descobrir isso no mês onze."
                 },
                 {
-                  tag: "Risco de planejamento",
+                  tag: "Categoria vedada",
+                  tagCor: "bg-red-100 text-red-700",
+                  conclusao: "Correção automática de texto autoral virou produto proibido, e detector de IA perdeu força probatória",
+                  raciocinio: "Não é restrição de uso: é vedação de finalidade. IA não pode corrigir nem atribuir nota a redação e prova dissertativa em nenhuma etapa, e nenhum detector pode sustentar punição por si só. Em prova objetiva o apoio segue permitido, desde que a validação humana seja documentada — o que transforma registro em obrigação, não em recurso.",
+                  decisao: "Auditar onde o produto decide sozinho e inserir validação humana registrável antes de a norma entrar em vigor."
+                },
+                {
+                  tag: "Mercado fechado",
                   tagCor: "bg-gray-200 text-gray-700",
-                  conclusao: "Esperar a norma brasileira deixou de ser estratégia viável",
-                  raciocinio: "É a terceira edição consecutiva sem homologação do parecer de IA, e agora o colegiado que o sustenta está em recomposição — ou seja, quem relata e defende o texto pode mudar. A indefinição saiu do campo do 'vai sair a qualquer momento' e virou variável de planejamento com horizonte aberto.",
-                  decisao: "Assumir governança configurável por nível de risco no roadmap, dimensionada para absorver o texto final sem retrabalho."
+                  conclusao: "A faixa dos anos iniciais deixou de ser mercado endereçável para IA autônoma",
+                  raciocinio: "Aqui e fora do país a decisão foi a mesma na mesma semana, por caminhos independentes: no Brasil, uso de IA generativa até o 5º ano só mediado pelo professor; em Nova York, moratória de um ano até o 8º ano, com desligamento das funções de IA de mais de trinta programas já autorizados. Tutor autônomo para criança pequena encolheu por decisão administrativa, não por falta de demanda.",
+                  decisao: "Reposicionar produto infantil de autônomo para instrumento do professor, e tratar desligamento remoto de função como requisito técnico."
+                },
+                {
+                  tag: "Novo argumento",
+                  tagCor: "bg-green-100 text-green-700",
+                  conclusao: "Conformidade documentada virou argumento comercial antes de virar exigência de contrato",
+                  raciocinio: "Quem já mantinha autoria humana no centro com rastreabilidade da operação chega conforme por desenho e pode provar. Como a norma pede supervisão humana contínua e relatório nos usos de alto risco, a capacidade de demonstrar o rastro passa a valer na mesa de compra — e não é algo que se constrói em semanas.",
+                  decisao: "Transformar o rastro que já existe em peça de proposta comercial, e onde não existe, priorizá-lo acima de nova funcionalidade."
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-[#FF6B35] shadow-sm hover:shadow-md transition-shadow">
@@ -2095,7 +2365,7 @@ export default function App() {
               <span className="text-sm text-[#6B46C1] font-medium">Sinais da Quinzena</span>
             </div>
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Os cinco sinais da <span className="text-[#6B46C1]">quinzena</span>
+              Cinco sinais, <span className="text-[#6B46C1]">uma direção</span>
             </h2>
             <p className="text-gray-500 mb-12 text-lg max-w-3xl">
               Cinco movimentos que mudaram de direção — cada um reunindo os acontecimentos relacionados, com o que sustenta a leitura e o que decorre dela.
@@ -2104,73 +2374,74 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  titulo: "A plataforma passou a mediar o uso sozinha — e por padrão",
-                  empresa: "OpenAI · Google · Anthropic",
-                  data: "04–20 ago/2026",
-                  consolida: "ChatGPT for Teens (18/ago) · plugins educacionais da OpenAI (4/ago) · ano gratuito e hub de estudo do Gemini (20/ago) · Claude Academy (20/ago)",
-                  resumo: "Em 18 de agosto a OpenAI lançou o ChatGPT for Teens, aplicado automaticamente a usuários de 13 a 17 anos e a quem o sistema de estimativa de idade considerar menor de 18. O centro da experiência é o Study Mode, que responde com perguntas-guia e passo a passo em vez de entregar a solução; junto vieram os responsible homework reminders, que identificam quando o adolescente parece estar tentando atalhar uma tarefa e o redirecionam para o modo de estudo, além de Study Hours — janelas em que o modo fica ligado por padrão, definidas pelo próprio aluno ou pelos pais — quizzes e visualizações interativas. Duas semanas antes, em 4 de agosto, a empresa havia publicado três plugins educacionais (K-12 Educator, College Educator e College Student) em workspaces institucionais, que usam o material do próprio curso para executar tarefas de várias etapas. Na mesma janela, o Google abriu um ano gratuito de plano pago do Gemini a universitários em mais de 140 países, com um hub de estudo que substitui o chat aberto por quiz diagnóstico, lições curtas sobre o material que o aluno sobe e progresso que persiste entre sessões; e a Anthropic lançou a Claude Academy, com 26 cursos gratuitos organizados por problema de trabalho.",
-                  impacto: "As três maiores empresas de IA do mundo chegaram, por caminhos independentes, ao mesmo desenho: chat aberto não é formato de estudo, e o uso precisa ser contido por design. Isso encerra a discussão sobre se mediação é necessária — ela virou padrão de indústria em três semanas. E move a fronteira competitiva: mediar genericamente deixou de diferenciar qualquer produto educacional no dia em que passou a vir de fábrica no aparelho do aluno.",
-                  professor: "A trava que ele pedia agora existe fora da escola, sem ele configurar. Ganha aliado inesperado e perde a exclusividade do argumento pedagógico.",
-                  aluno: "O atalho ficou mais difícil no ChatGPT — e continua trivial em qualquer outra ferramenta sem trava. A proteção é por plataforma, não por aluno.",
-                  gestor: "Não pode mais vender IA responsável como diferencial contratado: precisa mostrar o que sua mediação faz que a do ChatGPT não faz.",
-                  roadmap: "Trava de atalho ancorada no que a turma está estudando; modo de estudo sobre o capítulo em uso, não sobre arquivo avulso que o aluno subiu.",
-                  fonte: "https://openai.com/index/chatgpt-for-teens/",
+                  titulo: "O CNE aprovou as diretrizes e definiu o que a máquina não pode decidir",
+                  empresa: "CNE / MEC",
+                  data: "1 set/2026",
+                  consolida: "Aprovação do parecer em plenário · quatro níveis de risco · vedações de correção e de detector · restrição de uso autônomo até o 5º ano",
+                  resumo: "O Conselho Nacional de Educação aprovou em 1º de setembro as diretrizes nacionais para uso de IA em todos os níveis, etapas e modalidades. A norma classifica as aplicações em quatro faixas: baixo risco (organização de material, acessibilidade, tradução, planejamento de aula), risco moderado (interação direta com o estudante e recomendação, como tutor virtual e assistente de escrita), alto risco (interferência ativa na vida acadêmica, como correção de prova objetiva e monitoramento biométrico, exigindo avaliação de impacto, relatório de dados e supervisão humana contínua) e risco excessivo (pontuação social, vigilância emocional, perfilização psicológica ou biométrica com fim classificatório ou disciplinar). Fica vedado usar IA para corrigir e atribuir nota a redações e provas dissertativas em qualquer etapa; em prova objetiva o apoio é permitido, mas o resultado precisa de validação humana documentada. Nenhuma punição acadêmica ou disciplinar pode se fundamentar apenas em detector de texto gerado por IA. Até o 5º ano, o uso de IA generativa só é admitido em atividade conduzida pelo professor. O relator, Celso Niskier, sustentou que a palavra final sobre o desempenho discente cabe ao professor e não à máquina. O texto ainda depende de homologação do MEC; a partir dela, as instituições têm doze meses para se adaptar.",
+                  impacto: "O objeto da regulação não é a ferramenta, é a delegação. A norma não pergunta se a escola usa IA — pergunta quem assina o que a IA produz sobre a trajetória do aluno. Isso reorganiza a categoria: produtos que decidem viram alto risco com obrigação de rastro, e produtos que decidem sobre texto autoral simplesmente saem do mercado. Vale registrar a tensão dentro do próprio Estado: em junho o Inep havia anunciado prova de conceito com empresas para usar IA na correção da redação do ENEM, justamente a finalidade que agora fica vedada no ensino.",
+                  professor: "Ganha respaldo normativo para recusar nota atribuída por máquina e para exigir o registro de quem validou o quê.",
+                  aluno: "Passa a ter proteção explícita contra punição baseada só em detector — e perde o acesso autônomo à IA generativa até o 5º ano.",
+                  gestor: "Tem doze meses após a homologação para adequar procedimento, contrato e política, com relatório exigível nos usos de alto risco.",
+                  roadmap: "Mapear cada decisão automatizada do produto por faixa de risco; inserir validação humana registrável onde hoje a máquina decide sozinha.",
+                  fonte: "https://g1.globo.com/educacao/noticia/2026/09/01/cne-para-uso-de-ia-em-escolas-e-universidades.ghtml",
                   color: "from-purple-700 to-purple-800"
                 },
                 {
-                  titulo: "A evidência parou de discutir se IA prejudica e nomeou qual comportamento prejudica",
-                  empresa: "CEPR · OCDE",
-                  data: "Paper jun/2026 · repercussão no Brasil em ago",
-                  consolida: "CEPR Discussion Paper 21577 · OECD Digital Education Outlook 2026 · onda de cobertura na imprensa brasileira em agosto",
-                  resumo: "O working paper The Generative AI Learning Penalty, de David Strömberg, Victor Lei e Yanhui Wu, acompanhou 26.811 estudantes chineses do 7º ao 12º ano por 30 meses, cruzando provas mensais de livro fechado, exames de admissão, notas e tempo de conclusão de tarefa em nove disciplinas. A adoção de IA elevou a nota do dever de casa em 18% e cortou 30% do tempo de execução — e derrubou a nota das provas mensais em cerca de 20% em seis meses, com penalidade de 18% a 24% nos exames de admissão ao longo de dois anos. O achado decisivo é o mecanismo: cerca de 80% da perda se concentra no grupo cujo comportamento indica terceirização da tarefa, identificado por tempo de execução anormalmente curto combinado com nota alta. As perdas foram maiores em humanidades, entre alunos mais novos e entre os de melhor desempenho. O paper é de junho, mas só ganhou circulação ampla na imprensa brasileira em agosto. Na mesma direção, o Digital Education Outlook 2026 da OCDE concluiu que IA generativa apoia a aprendizagem quando é desenhada para fim educativo ou usada sob orientação pedagógica clara.",
-                  impacto: "O setor ganhou um número que pode ser usado contra ele — e, no mesmo pacote, a especificação do antídoto. A variável causal não é a ferramenta: é o padrão de uso. Isso converte desenho de uso de tese pedagógica em requisito mensurável, e explica por que as plataformas correram para embutir trava por conta própria.",
-                  professor: "Ganha respaldo externo para exigir percurso em vez de entrega — e um critério objetivo de suspeita: rápido demais com nota alta.",
-                  aluno: "O ganho aparece na tarefa e a conta chega na prova, seis meses depois. É um efeito que ele não consegue perceber sozinho.",
-                  gestor: "Passa a ter dado independente para justificar política de uso e investimento em formação diante de mantenedor e famílias.",
-                  roadmap: "Instrumentar o par tempo-de-execução × acerto como sinal de risco; desenhar o percurso para que o esforço seja o caminho mais curto.",
-                  fonte: "https://cepr.org/publications/dp21577",
+                  titulo: "A maior rede escolar dos Estados Unidos suspendeu IA generativa até o 8º ano",
+                  empresa: "Nova York · Chancellor Samuels",
+                  data: "2 set/2026",
+                  consolida: "Moratória de um ano na maior rede pública do país · cerca de 600 mil alunos · desligamento das funções de IA de mais de 38 programas autorizados · módulos de pensamento crítico no ensino médio",
+                  resumo: "Um dia depois da decisão brasileira, o prefeito Zohran Mamdani e o chanceler de educação Kamar Samuels anunciaram a moratória mais ampla dos Estados Unidos para IA generativa voltada ao estudante: um ano de suspensão, válido no ano letivo 2026-2027, para alunos do 2-K ao 8º ano. A medida alcança cerca de 600 mil estudantes, quase dois terços da matrícula da rede. Como parte da implementação, a prefeitura informou que vai descontinuar ou desativar os componentes de IA de mais de 38 programas já autorizados que não atendam aos novos padrões de segurança e supervisão. No ensino médio, entram módulos semestrais de pensamento crítico sobre IA, pilotos limitados em um número pequeno de turmas e restrições de tempo de tela por faixa de idade.",
+                  impacto: "Duas das maiores jurisdições educacionais das Américas chegaram à mesma restrição por faixa etária em 48 horas, por caminhos independentes — e isso transforma o que parecia posição pedagógica em consenso regulatório emergente. O detalhe mais duro para fornecedor não é a moratória, é o desligamento de função em programas já contratados: a conformidade passou a ser condição de permanência, não só de venda.",
+                  professor: "Volta a ser o único canal de uso de IA para as séries iniciais, com material de pensamento crítico entrando no ensino médio.",
+                  aluno: "Perde o acesso direto por um ano letivo inteiro na faixa até o 8º ano, com uso remanescente apenas mediado.",
+                  gestor: "Precisa saber quais funções de IA dos seus contratos podem ser desligadas remotamente — e se o fornecedor consegue fazer isso por faixa etária.",
+                  roadmap: "Desligamento granular de função por série e por rede como requisito de arquitetura, não como configuração manual de suporte.",
+                  fonte: "https://www.cnn.com/2026/09/02/tech/new-york-city-classroom-ai-ban",
                   color: "from-purple-600 to-purple-700"
                 },
                 {
-                  titulo: "O vácuo de governança ganhou tamanho, comparação internacional e recorte latino-americano",
-                  empresa: "Digital Education Council · Opera",
-                  data: "Ago/2026",
-                  consolida: "AI in Higher Education Global Survey 2026 · recorte LATAM da mesma pesquisa · levantamento Opera com estudantes brasileiros",
-                  resumo: "O Digital Education Council publicou a maior base já reunida sobre IA no ensino superior: 45.398 respostas — 27.284 estudantes e 18.114 docentes — em 35 países. O uso chegou a 88% entre estudantes e 77% entre docentes, alta de 16 pontos percentuais sobre 2025. O recorte latino-americano é ainda mais alto: 92% dos estudantes e 79% dos docentes. O contraste está no preparo institucional: 57% dos estudantes dizem que as avaliações vêm com orientação inadequada sobre IA, apenas 29% acreditam que seus professores estão preparados para orientá-los e somente 31% dos docentes concordam que a instituição os envolve de forma significativa na construção da política de IA. No Brasil, levantamento da Opera com 2.400 estudantes apontou 78% usando IA em tarefas e 5% com orientação formal.",
-                  impacto: "Pela primeira vez o buraco de governança tem tamanho e permite comparação entre regiões — e a América Latina aparece com adoção acima da média global e preparo abaixo do necessário. O dado mais acionável não é o de adoção: é o de que menos de um terço dos docentes participa da política de IA da própria instituição. Política escrita sem o professor não muda prática de sala; é aí que o produto entra.",
-                  professor: "É maioria absoluta usando IA e minoria sendo ouvida sobre as regras. A política chega como imposição, não como instrumento de trabalho.",
-                  aluno: "Usa mais do que a média mundial e recebe menos orientação do que precisa — combinação que a evidência do Sinal 2 mostra ser a mais custosa.",
-                  gestor: "Tem agora referência externa para dimensionar o próprio atraso e defender orçamento de formação e governança.",
-                  roadmap: "Política de uso como artefato configurável e versionável no produto, com fluxo de construção que inclui o professor — não PDF anexo.",
-                  fonte: "https://www.digitaleducationcouncil.com/resource-library-items/ai-in-higher-education-global-survey-2026",
-                  color: "from-purple-600 to-violet-600"
+                  titulo: "A FTD assumiu o controle da Estuda.com e comprou capacidade de avaliação por IA",
+                  empresa: "FTD Educação · Estuda.com",
+                  data: "Fim de ago/2026",
+                  consolida: "Aquisição do controle acionário total · consolidação de parceria de 2020 · plataforma de criação, correção e análise de avaliações · meta de dobrar de tamanho até 2030",
+                  resumo: "A FTD Educação anunciou a aquisição do controle acionário total da Estuda.com, consolidando uma parceria firmada em 2020; o valor não foi divulgado. A plataforma permite criar, corrigir e analisar avaliações escolares e simulados, e reúne mais de 1.300 escolas parceiras, mais de 14 milhões de estudantes alcançados e mais de 700 milhões de questões respondidas. Entre os diferenciais está a criação de provas inclusivas com apoio de IA, com adaptações para dislexia, TDAH e autismo, além do uso de IA para identificar necessidades acadêmicas e apoiar planos de estudo personalizados. A Estuda.com segue operando de forma independente, com marca, equipe e liderança próprias, e o fundador Carlos Pirovani permanece como CEO. A operação integra a estratégia de investimento da FTD em IA aplicada à educação e a meta de dobrar seu tamanho e seu impacto até 2030.",
+                  impacto: "Um grupo editorial comprou capacidade de avaliação por IA no mesmo mês em que avaliação por IA passou a ser regulada — e é aí que a leitura fica interessante. A norma não fecha esse mercado: fecha a correção automática de texto autoral e mantém a prova objetiva com validação humana documentada. Ou seja, o ativo continua utilizável, mas o valor migra de corrigir para instrumentar: quem tiver registro de validação, adaptação por necessidade e análise de item chega conforme; quem só automatiza a nota, não.",
+                  professor: "Tende a receber banco de itens e adaptação por necessidade específica — o tipo de apoio que a norma classifica como baixo risco.",
+                  aluno: "Prova adaptada à sua condição deixa de depender de trabalho manual do professor, o que amplia acesso real à avaliação.",
+                  gestor: "Consolidação editorial em avaliação significa menos fornecedores e mais dependência: vale checar cláusula de conformidade com a nova norma.",
+                  roadmap: "Tratar avaliação como camada instrumentada e auditável, não como motor de nota automática — é o que sobrevive à regra.",
+                  fonte: "https://www.meioemensagem.com.br/marketing/ftd-educacao-e-a-nova-controladora-da-estuda-com",
+                  color: "from-purple-600 to-violet-600",
+                  disclosure: "A FTD Com Você coedita este radar. O movimento entra por relevância de mercado e é analisado pelo mesmo critério aplicado aos demais players."
                 },
                 {
-                  titulo: "Os sistemas de ensino brasileiros convergiram para o mesmo desenho de produto",
-                  empresa: "Bernoulli · Poliedro · Arco · Santillana",
-                  data: "11–20 ago/2026",
-                  consolida: "Bernoulli Reload · hub Cosmos do Poliedro · Meu Arco · Moderna Core",
-                  resumo: "O Bernoulli Reload reuniu mais de 800 gestores e mantenedores em São Paulo em 11 de agosto, apresentando portfólio já em operação e segmentado por público: CoCria para o professor, TutorIA e PraticAI para o aluno, Radar ENEM e MatriculAI para o mantenedor — o Radar converte microdados públicos do ENEM em diagnóstico pedagógico. O mesmo desenho aparece nos pares: o Cosmos, do Poliedro, roda IA generativa com respostas restritas ao conteúdo autoral; o Meu Arco integra gestão, ensino, comunicação (ClassApp) e financeiro (isaac) numa camada só; e o Moderna Core combina inteligência curricular, microtestes e IA operando nos bastidores.",
-                  impacto: "Quatro grupos que competem entre si chegaram à mesma arquitetura: IA restrita ao acervo proprietário, segmentada por papel e alimentada por dado da própria rede. Convergência dessa ordem não é tendência — é padrão consolidado, e portanto custo de entrada. O diferencial de quem opera no Brasil deixou de estar no desenho e passou a estar na única camada em que ainda há dispersão: o que se faz com o dado de percurso do aluno.",
-                  professor: "Assistente ancorado no material que ele adota virou expectativa mínima do mercado, não novidade de catálogo.",
-                  aluno: "Tutoria dentro do sistema de ensino, com o conteúdo da escola — desde que ele prefira isso à ferramenta gratuita que já tem no celular.",
-                  gestor: "A conversa comercial já é sobre diagnóstico, matrícula e evidência. Quem chegar falando de acesso a IA está um ciclo atrás.",
-                  roadmap: "Parar de investir em paridade de funcionalidade com os pares e mover esforço para evidência de percurso, onde ninguém chegou.",
-                  fonte: "https://educador21.com/ia-desafia-escolas-repensar-gestao-formacao/",
+                  titulo: "O Poliedro foi premiado por um projeto de IA que mantém a autoria humana no centro",
+                  empresa: "Poliedro · Premiação Impacto Brasil",
+                  data: "Ago–set/2026",
+                  consolida: "Terceiro lugar na categoria Escala da Premiação Impacto Brasil 2026 · projeto Supernova · 93% de assertividade em validação · rastreabilidade da operação editorial",
+                  resumo: "O Poliedro conquistou o terceiro lugar na categoria Escala da Premiação Impacto Brasil 2026, realizada pelo Agile Trends, com a Supernova — iniciativa que combina práticas ágeis, inteligência artificial e curadoria especializada na produção de conteúdo didático. Desenvolvida pelas áreas de Inovação & Aprendizagem e Produto Editorial, que reúnem quase 300 profissionais, a Supernova habilita novas experiências de gestão de conteúdo e amplia a rastreabilidade na operação de produtos digitais e editoriais. O eixo declarado do projeto é a centralidade da autoria humana ampliada por IA: a tecnologia aumenta o refinamento do material, enquanto curadoria e definições editoriais permanecem sob responsabilidade humana. Nas fases de prova de conceito, testes e validação humana, o projeto registrou 93% de assertividade em tarefas como classificação de conteúdo e verificação de precisão factual.",
+                  impacto: "É o caso brasileiro que já operava a arquitetura que a norma acabou de exigir, e com número para mostrar. Vale notar o que foi premiado: não o volume produzido, mas o desenho em que a máquina refina e o humano decide, com rastro. Enquanto o setor discute como se adequar, existe um par direto que pode dizer que se adequou antes de haver regra — e conformidade demonstrável com histórico é a única que não se improvisa em doze meses.",
+                  professor: "O material que chega à sala mantém decisão editorial humana, o que sustenta a confiança pedagógica que a norma quer preservar.",
+                  aluno: "Efeito indireto: conteúdo com verificação factual registrada reduz o risco de aprender com erro gerado por máquina.",
+                  gestor: "Passa a ter um critério concreto para cobrar do fornecedor — não se ele usa IA, mas se consegue mostrar onde o humano decidiu.",
+                  roadmap: "Instrumentar rastreabilidade na produção de conteúdo agora: é o ativo que a norma vai pedir e que não se constrói retroativamente.",
+                  fonte: "https://www.jornalrmc.com.br/poliedro-e-premiado-por-projeto-de-ia-que-potencializa-a-producao-de-conteudo-editorial-com-foco-na-autoria-humana/",
                   color: "from-purple-500 to-purple-600"
                 },
                 {
-                  titulo: "A regulação brasileira travou de novo — agora com o colegiado se reorganizando",
-                  empresa: "MEC / CNE",
-                  data: "12 ago/2026",
-                  consolida: "Portaria MEC nº 664 · parecer de IA aprovado em maio e sem homologação desde então",
-                  resumo: "A Portaria MEC nº 664, de 12 de agosto, divulgou a relação de entidades civis habilitadas a indicar nomes para a recomposição da Câmara de Educação Básica e da Câmara de Educação Superior do CNE, com lista tríplice a ser protocolada até 28 de agosto. Em paralelo, o parecer que estabelece as diretrizes de IA na educação básica e superior — aprovado em 11 de maio, com classificação por níveis de risco e passagem por consulta pública em junho — segue aguardando homologação do ministro para entrar em vigor.",
-                  impacto: "A janela de adequação continua aberta pela terceira edição consecutiva, mas por um motivo qualitativamente diferente: não é lentidão de trâmite, é troca de composição do colegiado que sustenta o texto. Isso amplia o horizonte de indefinição e, ao mesmo tempo, abre uma janela rara de interlocução técnica enquanto as câmaras se reorganizam.",
-                  professor: "Segue sem norma nacional que defina o que pode e o que não pode em sala; a decisão continua recaindo sobre a escola.",
-                  aluno: "Continua sem direito assegurado a orientação formal — exatamente a lacuna que o Sinal 3 dimensiona.",
-                  gestor: "Precisa de política própria agora, desenhada para convergir com os níveis de risco do parecer quando ele for homologado.",
-                  roadmap: "Governança parametrizável por nível de risco, para absorver o texto final por configuração e não por reescrita.",
-                  fonte: "https://www.poder360.com.br/poder-educacao/cne-aprova-diretrizes-sobre-uso-de-ia-na-educacao/",
+                  titulo: "A formação docente virou obrigação curricular — e a oferta já tem dono",
+                  empresa: "CNE · Google for Education · imprensa setorial",
+                  data: "24 ago – set/2026",
+                  consolida: "Exigência da norma nas licenciaturas e na formação continuada · reportagem setorial sobre quem forma o professor · nova série de formação e certificação do Google anunciada para setembro",
+                  resumo: "Além das vedações, a norma do CNE cria dever de formação: os cursos de licenciatura passam a incluir uso pedagógico das novas tecnologias, análise de dados escolares e avaliação ética de ferramentas, e as instituições ficam obrigadas a promover formação continuada dos profissionais de educação. O problema é quem está ocupando essa oferta. Em 24 de agosto, a Revista Educação publicou reportagem perguntando exatamente isso — quem está formando o professor em IA no Brasil. E em setembro o Google anunciou nova rodada da sua série de formação para educadores, com trilhas e certificação gratuitas, incluindo um dia intensivo de badges em 19 de setembro.",
+                  impacto: "A norma criou uma demanda obrigatória de formação sem criar a oferta correspondente, e o vácuo já está sendo preenchido por quem tem escala e distribuição gratuita. Isso repete, agora com força de lei, o movimento que o radar registrou na edição anterior: formação genérica virou produto subsidiado de fora do setor. A diferença é que agora a escola não pode mais escolher não formar — e vai formar com quem estiver disponível.",
+                  professor: "Passa a ter direito a formação continuada institucional, com risco de recebê-la desconectada do material e da política da própria escola.",
+                  aluno: "Depende de professor formado para ter qualquer acesso mediado à IA nos anos iniciais — a formação virou pré-requisito do acesso dele.",
+                  gestor: "A obrigação de formar é dele. Terceirizar para catálogo gratuito resolve o custo e não resolve a aderência ao currículo adotado.",
+                  roadmap: "Formação certificada ancorada no material adotado e na política configurada da rede: é a lacuna que o catálogo gratuito estruturalmente não cobre.",
+                  fonte: "https://revistaeducacao.com.br/2026/08/24/inteligencia-artificial-na-escola/",
                   color: "from-purple-700 to-purple-800"
                 },
               ].map((m, i) => (
@@ -2208,6 +2479,14 @@ export default function App() {
                       </p>
                     </div>
                     <p className="text-sm text-gray-600 mb-4 leading-relaxed">{m.resumo}</p>
+                    {m.disclosure && (
+                      <div className="flex items-start gap-1.5 mb-4 border border-gray-200 bg-gray-50 rounded-lg px-3 py-2">
+                        <AlertCircle className="w-3 h-3 text-gray-400 mt-0.5 flex-shrink-0" />
+                        <p className="text-[11px] text-gray-500 leading-relaxed">
+                          <span className="font-semibold text-gray-600">Declaração de interesse:</span> {m.disclosure}
+                        </p>
+                      </div>
+                    )}
                     <div className="bg-purple-50 rounded-xl p-4 mb-4">
                       <p className="text-xs font-semibold text-purple-700 mb-1">Leitura estratégica</p>
                       <p className="text-sm text-gray-700 leading-relaxed">{m.impacto}</p>
@@ -2260,40 +2539,40 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  cat: "Ninguém respondeu à trava de atalho com uma versão curricular",
-                  nota: "A OpenAI embutiu detecção de terceirização de tarefa em produto de massa. Nenhum sistema de ensino brasileiro — que tem o que a OpenAI não tem: o capítulo, a turma, o gabarito e o histórico — anunciou equivalente ancorado no currículo.",
-                  leitura: "A vaga mais valiosa da edição. O padrão foi validado por quem inventou a categoria, e a versão contextualizada continua sem dono.",
+                  cat: "A homologação não saiu na mesma semana da aprovação",
+                  nota: "O parecer foi aprovado em plenário em 1º de setembro e segue dependendo da assinatura do ministro para entrar em vigor. Até o fechamento desta edição não houve publicação da homologação nem sinalização de data.",
+                  leitura: "O relógio de doze meses só começa a correr depois da assinatura. Quem se mover antes dela compra tempo de graça; quem esperar perde a diferença.",
                   janela: "Janela curta"
                 },
                 {
-                  cat: "Nenhuma big tech devolveu dado de uso para a escola",
-                  nota: "Google, OpenAI e Anthropic distribuíram ferramenta direto ao aluno e ao professor sem abrir para a instituição o que esse uso produz. A escola vê o resultado da prova; não vê o que aconteceu antes dela.",
-                  leitura: "A assimetria não é acidental — é o modelo de negócio. Quem estiver dentro da escola é o único capaz de fechar o ciclo entre uso e resultado, e isso não é replicável de fora.",
-                  janela: "Vantagem estrutural"
+                  cat: "Nenhum fornecedor publicou mapa de conformidade por faixa de risco",
+                  nota: "A norma classifica aplicações em quatro níveis e exige avaliação de impacto, relatório e supervisão contínua no alto risco. Nenhum player brasileiro publicou onde seus próprios produtos se encaixam nessa classificação.",
+                  leitura: "É a lacuna mais barata de ocupar e a de maior efeito comercial: quem publicar primeiro define o formato que os concorrentes terão de responder.",
+                  janela: "Janela curta"
                 },
                 {
-                  cat: "Nenhum player transformou política de uso em produto",
-                  nota: "Com governança institucional escassa e a norma nacional parada, a política de uso segue tratada como documento jurídico avulso. Ninguém a empacotou como artefato configurável, versionável e auditável dentro da plataforma.",
-                  leitura: "É a lacuna com maior descasamento entre urgência e esforço: o problema está medido, a norma não chega e nenhum concorrente construiu a resposta.",
+                  cat: "Ninguém anunciou reposicionamento do produto de correção automática",
+                  nota: "Correção e atribuição de nota por IA em redação e prova dissertativa passou a ser vedada em todas as etapas, e nenhuma empresa que oferece isso comunicou mudança de escopo, migração de função ou prazo próprio de adequação.",
+                  leitura: "Silêncio de quem foi diretamente afetado. Cria espaço para quem chegar dizendo o que passou a fazer em vez do que deixou de fazer.",
+                  janela: "Janela aberta"
+                },
+                {
+                  cat: "O Inep não se manifestou sobre a prova de conceito da redação do ENEM",
+                  nota: "Em junho o instituto anunciou teste com empresas para usar IA no processo de correção da redação, com foco em acelerar o espelho e a devolutiva pedagógica. Após a decisão do CNE, não houve pronunciamento sobre continuidade, escopo ou compatibilidade.",
+                  leitura: "Tensão não resolvida dentro do próprio Estado. Como a devolutiva pedagógica não é atribuição de nota, há um caminho técnico — mas ele precisa ser dito, e ainda não foi.",
+                  janela: "Monitorar"
+                },
+                {
+                  cat: "Nenhuma rede brasileira anunciou desligamento de função de IA por faixa etária",
+                  nota: "Nova York especificou o desligamento de componentes de IA em mais de trinta programas já autorizados. Aqui, com a vedação até o 5º ano aprovada, nenhuma secretaria ou grupo informou como vai operacionalizar isso nos contratos vigentes.",
+                  leitura: "A vedação é conhecida e o mecanismo de cumprimento não existe. Quem entregar o desligamento granular pronto resolve um problema que a rede ainda não sabe que terá.",
                   janela: "Janela aberta"
                 },
                 {
                   cat: "Nenhuma evidência longitudinal brasileira entrou em campo",
-                  nota: "A penalidade de aprendizagem foi medida em coorte chinesa. Nenhuma rede, grupo ou universidade brasileira anunciou estudo de efeito com desenho comparável sobre a própria base instalada.",
-                  leitura: "Quem começar a medir agora terá dado próprio quando o debate exigir prova local — e uma coorte não se constrói retroativamente.",
+                  nota: "Segunda edição consecutiva registrando a mesma ausência. Com norma aprovada e prazo definido, nenhuma rede, grupo ou universidade anunciou estudo de efeito sobre a própria base instalada.",
+                  leitura: "A norma vai exigir avaliação de impacto no alto risco. Quem já tiver linha de base terá o que declarar; quem não tiver vai declarar intenção.",
                   janela: "Custo de atraso alto"
-                },
-                {
-                  cat: "O EducaLab completou a janela sem chamada pública",
-                  nota: "O laboratório de dados e IA do MEC foi instituído prevendo parceria com universidades, centros de pesquisa e empresas, e não publicou edital até o fechamento desta edição.",
-                  leitura: "A porta formal segue fechada, o que mantém a aproximação técnica informal como via mais barata de influenciar critério antes de ele virar exigência.",
-                  janela: "Monitorar"
-                },
-                {
-                  cat: "Nenhum grupo brasileiro se posicionou publicamente sobre a evidência",
-                  nota: "O achado de perda de aprendizagem circulou amplamente na imprensa nacional em agosto. Nenhum dos grandes sistemas de ensino publicou leitura própria explicando como seus produtos evitam o efeito descrito.",
-                  leitura: "Silêncio coletivo cria assimetria de autoridade: quem falar primeiro com dado próprio define o enquadramento; quem falar depois responde ao enquadramento alheio.",
-                  janela: "Janela curta"
                 },
               ].map((item, i) => (
                 <div key={i} className="border-l-2 border-gray-200 pl-5 hover:border-[#FF6B35] transition-colors">
@@ -2302,7 +2581,6 @@ export default function App() {
                       item.janela === 'Janela curta' ? 'bg-red-100 text-red-700'
                       : item.janela === 'Janela aberta' ? 'bg-orange-100 text-orange-700'
                       : item.janela === 'Custo de atraso alto' ? 'bg-purple-100 text-purple-700'
-                      : item.janela === 'Vantagem estrutural' ? 'bg-green-100 text-green-700'
                       : 'bg-gray-100 text-gray-600'
                     }`}>{item.janela}</span>
                   </div>
@@ -2334,14 +2612,15 @@ export default function App() {
               <span className="text-sm text-[#6B46C1] font-medium">Temas Recorrentes</span>
             </div>
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Estrutural, emergente ou <span className="text-[#6B46C1]">pontual?</span>
+              Estrutural, emergente ou <span className="text-[#6B46C1]">encerrado?</span>
             </h2>
             <p className="text-gray-500 mb-10 text-lg max-w-3xl">
-              O que reaparece ciclo após ciclo merece roadmap; o que apareceu uma vez merece monitoramento.
+              O que reaparece ciclo após ciclo merece roadmap; o que apareceu uma vez merece monitoramento. Nesta edição, uma linha que atravessou cinco edições finalmente se resolveu.
             </p>
 
             <div className="flex items-center gap-5 mb-10 flex-wrap">
               {[
+                { t: 'Resolvido', d: 'a linha chegou ao seu desfecho', c: 'bg-green-100 text-green-700' },
                 { t: 'Estrutural', d: 'atravessa 3+ edições — entra no roadmap', c: 'bg-red-100 text-red-700' },
                 { t: 'Emergente', d: '2 edições ou aceleração recente — posicionar', c: 'bg-orange-100 text-orange-700' },
                 { t: 'Pontual', d: 'aparição isolada — monitorar', c: 'bg-gray-200 text-gray-700' },
@@ -2356,66 +2635,58 @@ export default function App() {
             <div className="space-y-5">
               {[
                 {
-                  tema: "Distribuição direto ao aluno, contornando a escola",
+                  tema: "A regulação brasileira travada na última milha",
+                  tipo: "Resolvido",
+                  trilha: "#07 CNE aprova e abre consulta → #08 consulta encerrada → #09 sem homologação → #10 sem homologação e câmaras em recomposição → #11 aprovado em plenário com prazo de doze meses",
+                  leitura: "Cinco edições acompanhando a mesma pendência, e o desfecho contrariou a leitura mais comum: não veio uma regra permissiva de compromisso, veio uma regra com vedações específicas e prazo. A recomposição das câmaras, que na edição passada parecia sinal de mais atraso, antecedeu a aprovação em três semanas. Fica um aprendizado de método: instabilidade institucional não é sinônimo de paralisia.",
+                  cor: "bg-green-50 border-green-200",
+                  badge: "bg-green-100 text-green-700"
+                },
+                {
+                  tema: "Quem assina a decisão sobre o aluno",
                   tipo: "Estrutural",
-                  trilha: "#07 Gemini no ENEM → #08 Claude for Teachers → #09 home do Classroom por papel → #10 ano gratuito do Gemini e ChatGPT for Teens",
-                  leitura: "Quatro edições seguidas escalando de produto para canal, de canal para subsídio e agora para experiência dedicada por faixa etária. É a tendência mais consistente das últimas quatro edições — e a #10 mostra que ela não parou no acesso: avançou para dentro da pedagogia.",
+                  trilha: "#09 a interface passa a decidir o que cada papel vê → #10 a plataforma passa a conter o atalho por conta própria → #11 a norma proíbe a máquina de assinar avaliação e punição",
+                  leitura: "Três edições seguidas em que o objeto de disputa foi o mesmo, subindo de camada: primeiro quem decide o que aparece, depois quem decide o que é permitido, agora quem responde pelo resultado. É a linha mais consistente do radar e a que passou a ter consequência jurídica.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
+                },
+                {
+                  tema: "Restrição de acesso por faixa etária",
+                  tipo: "Emergente",
+                  trilha: "#10 experiência dedicada por idade com trava padrão em produto de massa → #11 vedação normativa até o 5º ano no Brasil e moratória até o 8º ano em Nova York",
+                  leitura: "Passou de decisão de produto de uma empresa a decisão de política pública em duas jurisdições, em uma única edição. Ainda são dois ciclos, mas a aceleração e a convergência entre jurisdições independentes tiram isso do campo do acontecimento isolado.",
+                  cor: "bg-orange-50 border-orange-200",
+                  badge: "bg-orange-100 text-orange-700"
                 },
                 {
                   tema: "Evidência de aprendizagem como campo de disputa",
                   tipo: "Estrutural",
-                  trilha: "#08 Khan admite 15% de uso real → #09 Estônia acopla pesquisa longitudinal ao rollout → #10 penalidade medida em coorte de 30 meses",
-                  leitura: "Saiu de métrica de vaidade para evidência científica e agora para evidência contrária, com mecanismo causal identificado. A régua subiu em três edições consecutivas e não deu sinal de estabilizar.",
+                  trilha: "#08 admissão de uso real baixo → #09 pesquisa longitudinal acoplada a rollout nacional → #10 penalidade medida em coorte de 30 meses → #11 avaliação de impacto exigida por norma no alto risco",
+                  leitura: "Quatro edições subindo a régua, e agora a exigência sai do campo reputacional e entra no campo do dever legal. A ausência registrada nesta edição fica mais custosa: quem não tiver linha de base quando a norma vigorar não tem como produzir a avaliação retroativamente.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
-                },
-                {
-                  tema: "Regulação brasileira travada na última milha",
-                  tipo: "Estrutural",
-                  trilha: "#07 CNE aprova e abre consulta → #08 consulta encerrada → #09 sem homologação → #10 sem homologação e câmaras em recomposição",
-                  leitura: "O padrão deixou de ser demora e virou instabilidade institucional. A leitura prática muda de esperar para blindar: produto com governança configurável em vez de produto que assume um texto que não chega.",
-                  cor: "bg-red-50 border-red-200",
-                  badge: "bg-red-100 text-red-700"
-                },
-                {
-                  tema: "Ecossistema integrado sobre conteúdo autoral",
-                  tipo: "Estrutural",
-                  trilha: "#05 Moderna Core → Bett 2026 com Meu Arco, Cosmos e Estação → #10 portfólio Bernoulli segmentado por papel, já em operação",
-                  leitura: "O tema mais antigo em acompanhamento e o que mais amadureceu: saiu do palco de feira e entrou na rotina. Concluiu a trajetória de diferencial competitivo a custo de entrada — e é isso que libera a próxima fronteira.",
-                  cor: "bg-red-50 border-red-200",
-                  badge: "bg-red-100 text-red-700"
-                },
-                {
-                  tema: "Contenção do uso embutida no próprio produto",
-                  tipo: "Emergente",
-                  trilha: "#09 home que decide o que cada papel vê → #10 modo de estudo padrão, trava de atalho e janelas de estudo definidas por pais",
-                  leitura: "Segunda edição consecutiva em que a interface deixa de ser neutra e passa a induzir comportamento. Na #09 era sobre o que mostrar; na #10 é sobre o que impedir. Ainda não tem três ciclos, mas acelerou rápido demais para tratar como pontual.",
-                  cor: "bg-orange-50 border-orange-200",
-                  badge: "bg-orange-100 text-orange-700"
                 },
                 {
                   tema: "Formação docente como camada de produto",
-                  tipo: "Emergente",
-                  trilha: "#08 Claude for Teachers → #09 formação citada como gargalo em benchmark internacional → #10 catálogo gratuito consolidado e caso do Piauí evidenciando pré-condição",
-                  leitura: "Passou de brinde comercial a pré-condição de adoção em três ciclos, mas mudou de natureza no meio do caminho: era receita potencial e virou custo subsidiado por concorrente indireto. Exige reposicionamento, não só priorização.",
-                  cor: "bg-orange-50 border-orange-200",
-                  badge: "bg-orange-100 text-orange-700"
+                  tipo: "Estrutural",
+                  trilha: "#08 ferramenta gratuita para professor → #09 formação como gargalo em benchmark internacional → #10 catálogo gratuito consolidado por concorrente indireto → #11 formação continuada vira obrigação institucional",
+                  leitura: "Quatro edições e uma inversão completa de natureza: era receita potencial, virou custo subsidiado por quem vem de fora do setor e agora é dever da instituição. O tema deixou de ser oportunidade e passou a ser obrigação com oferta capturada.",
+                  cor: "bg-red-50 border-red-200",
+                  badge: "bg-red-100 text-red-700"
                 },
                 {
-                  tema: "Consolidação por captura de time técnico",
-                  tipo: "Pontual",
-                  trilha: "#08 Cogna/Educbank e o primeiro M&A de IA em educação da AL → #09 e #10 sem novas transações na janela",
-                  leitura: "Tese registrada na #08 e sem desdobramento em duas edições seguidas. Segue plausível como movimento de mercado, mas não se confirmou como padrão — e não sustenta decisão de build vs buy com a urgência que parecia ter.",
-                  cor: "bg-gray-50 border-gray-200",
-                  badge: "bg-gray-200 text-gray-700"
+                  tema: "Consolidação editorial por compra de capacidade técnica",
+                  tipo: "Emergente",
+                  trilha: "#08 primeiro M&A de IA em educação da América Latina → #09 e #10 sem novas transações → #11 grupo editorial assume controle de plataforma de avaliação com IA",
+                  leitura: "A tese sumiu por duas edições e voltou com uma diferença relevante: não é aquisição de time, é aquisição de base instalada e de função regulada. Sai do registro de escassez de talento e entra no de posicionamento diante da norma.",
+                  cor: "bg-orange-50 border-orange-200",
+                  badge: "bg-orange-100 text-orange-700"
                 },
                 {
                   tema: "Interfaces novas: voz, agente executor e robótica",
                   tipo: "Pontual",
-                  trilha: "#09 voz em tempo real e banca oral por IA → #10 robô humanoide com conversação em português na Bett Nordeste",
-                  leitura: "Reaparece com roupagem diferente a cada ciclo e sem evidência de aprendizagem associada. A voz tem caso de uso defensável em avaliação e fluência; o hardware segue vitrine. Observar sem alocar roadmap.",
+                  trilha: "#09 voz em tempo real e banca oral por IA → #10 robô humanoide com conversação em português → #11 sem desdobramento na janela",
+                  leitura: "Terceira edição em que a categoria aparece com roupagem diferente e nenhuma evidência de aprendizagem associada, agora seguida de silêncio. Segue como termômetro de orçamento de inovação, não como decisão de roadmap.",
                   cor: "bg-gray-50 border-gray-200",
                   badge: "bg-gray-200 text-gray-700"
                 },
@@ -2459,10 +2730,10 @@ export default function App() {
               <span className="text-sm text-[#6B46C1] font-medium">Concorrência</span>
             </div>
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Quem está melhor <span className="text-[#6B46C1]">posicionado</span>
+              Quem chega <span className="text-[#6B46C1]">conforme</span>
             </h2>
             <p className="text-gray-500 mb-10 text-lg max-w-3xl">
-              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Não é quem tem mais funcionalidade, e sim quem chega melhor colocado para a disputa desta edição: mediar com contexto curricular.
+              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Nesta edição a pergunta é uma só: quem já opera com decisão humana registrável e quem tem produto para refazer dentro do prazo.
             </p>
 
             {/* Mercado privado */}
@@ -2474,7 +2745,7 @@ export default function App() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-purple-50">
-                    {["Player", "Grupo / Soluções", "Movimento observado", "Posição diante da disputa desta edição", "Maturidade IA", "Impacto"].map(h => (
+                    {["Player", "Grupo / Soluções", "Movimento observado", "Posição diante da norma", "Exposição", "Impacto"].map(h => (
                       <th key={h} className="px-5 py-4 text-left text-xs font-semibold text-purple-700 uppercase tracking-wider">{h}</th>
                     ))}
                   </tr>
@@ -2482,39 +2753,39 @@ export default function App() {
                 <tbody className="divide-y divide-gray-100">
                   {[
                     {
-                      player: "Bernoulli",
-                      grupo: "Sistema de ensino próprio",
-                      movimento: "Portfólio em operação fechando o ciclo professor–aluno–mantenedor, apresentado a 800 gestores em agosto",
-                      estrategia: "Melhor colocado em cobertura de públicos e o único com camada de inteligência sobre microdados públicos. Falta o passo seguinte: nada no portfólio atua sobre como o aluno usa IA — a cobertura é de papéis, não de comportamento",
-                      maturidade: "Alta", impacto: "Alto"
-                    },
-                    {
                       player: "Poliedro",
                       grupo: "Cosmos · Polígono · Conviver · Sabiá",
-                      movimento: "Hub de IA generativa com resposta restrita ao conteúdo autoral",
-                      estrategia: "O desenho que melhor sobrevive à discussão de confiabilidade e o mais próximo de virar mediação curricular — já tem a âncora no acervo. O que falta é a trava: restringir a fonte não impede a entrega da resposta pronta a quem quer atalhar",
-                      maturidade: "Alta", impacto: "Alto"
+                      movimento: "Premiado por projeto que mantém curadoria e definição editorial humanas, com rastreabilidade da operação e 93% de assertividade em validação",
+                      estrategia: "O melhor posicionado da janela: já operava a arquitetura que a norma passou a exigir e tem histórico documentado para provar. Conformidade com rastro é o único tipo que não se improvisa em doze meses",
+                      exposicao: "Baixa", impacto: "Alto"
                     },
                     {
-                      player: "Somos Educação",
-                      grupo: "Anglo, pH, Amplia, Fibonati · Plurall",
-                      movimento: "Plurall IA integrado aos sistemas, com foco em produtividade docente e geração de conteúdo",
-                      estrategia: "Maior parque digital instalado do país e vantagem estrutural de dado no mesmo grupo. É também o mais exposto à mudança desta edição: o portfólio observado se concentra em produzir material, e não em desenhar ou medir o uso do aluno",
-                      maturidade: "Alta", impacto: "Alto"
+                      player: "Santillana",
+                      grupo: "Moderna Core",
+                      movimento: "Ecossistema com IA operando nos bastidores, sem protagonismo de interface e sem se oferecer como atalho ao aluno",
+                      estrategia: "Posicionamento de IA invisível envelhece bem: não decide sobre o aluno na superfície e por isso tende a cair em faixas de risco mais baixas. A fragilidade é ter menos superfície própria para registrar validação humana",
+                      exposicao: "Baixa", impacto: "Médio-Alto"
+                    },
+                    {
+                      player: "Bernoulli",
+                      grupo: "Sistema de ensino próprio",
+                      movimento: "Portfólio segmentado por público cobrindo professor, aluno e mantenedor, com camada de inteligência sobre microdados públicos",
+                      estrategia: "Cobertura de públicos é vantagem, mas amplia a superfície a auditar: tutoria e prática para aluno caem em risco moderado e diagnóstico que orienta decisão pedagógica tende ao alto. Precisa mapear faixa por produto",
+                      exposicao: "Média", impacto: "Alto"
                     },
                     {
                       player: "Arco Educação",
                       grupo: "SAS, SAE Digital, Geekie",
                       movimento: "Camada única de gestão, ensino, comunicação e financeiro; literacia em IA incorporada ao programa de competências",
-                      estrategia: "O único que trata IA como competência a ser ensinada e avaliada, não só como ferramenta — posição que envelhece bem quando a discussão vira uso responsável. Define pauta por escala e antecipa o que a norma deve exigir",
-                      maturidade: "Alta", impacto: "Alto"
+                      estrategia: "O único que já tratava IA como competência a ser ensinada e avaliada — exatamente o que a norma agora exige na formação. Em contrapartida, plataforma adaptativa que recomenda trilha entra em risco moderado com dever de supervisão",
+                      exposicao: "Média", impacto: "Alto"
                     },
                     {
-                      player: "Santillana",
-                      grupo: "Moderna Core",
-                      movimento: "Inteligência curricular, microtestes e IA operando nos bastidores, sem protagonismo de interface",
-                      estrategia: "Posicionamento de IA invisível é o mais coerente com a evidência desta edição — não incentiva terceirização porque não se oferece como atalho. A fragilidade é simétrica: sem interface própria de estudo, tem menos superfície para instrumentar percurso",
-                      maturidade: "Média-Alta", impacto: "Médio-Alto"
+                      player: "Somos Educação",
+                      grupo: "Anglo, pH, Amplia, Fibonati · Plurall",
+                      movimento: "Plurall IA com foco em produtividade docente, geração de questões e apoio ao planejamento",
+                      estrategia: "Geração de material para o professor é justamente o que a norma classifica como baixo risco, o que protege o núcleo do portfólio. O risco está no que não apareceu: nada indica instrumentação de validação nem registro de decisão",
+                      exposicao: "Média", impacto: "Alto"
                     },
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-purple-50/30 transition-colors' : 'bg-purple-50/20 hover:bg-purple-50/40 transition-colors'}>
@@ -2523,8 +2794,8 @@ export default function App() {
                       <td className="px-5 py-4 text-gray-600 text-xs leading-relaxed">{row.movimento}</td>
                       <td className="px-5 py-4 text-gray-600 text-xs leading-relaxed">{row.estrategia}</td>
                       <td className="px-5 py-4">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.maturidade.startsWith('Alta') ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
-                          {row.maturidade}
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                          {row.exposicao}
                         </span>
                       </td>
                       <td className="px-5 py-4">
@@ -2547,7 +2818,7 @@ export default function App() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-orange-50">
-                    {["Player", "Grupo / Soluções", "Movimento observado", "Posição diante da disputa desta edição", "Maturidade IA", "Impacto"].map(h => (
+                    {["Player", "Grupo / Soluções", "Movimento observado", "Posição diante da norma", "Exposição", "Impacto"].map(h => (
                       <th key={h} className="px-5 py-4 text-left text-xs font-semibold text-orange-700 uppercase tracking-wider">{h}</th>
                     ))}
                   </tr>
@@ -2557,16 +2828,16 @@ export default function App() {
                     {
                       player: "Saber",
                       grupo: "eDocente",
-                      movimento: "Correção automática de microtestes por câmera, notas de voz com IA e gestão de alunos a partir do celular do professor",
-                      estrategia: "Melhor colocado em fricção de adoção na rede pública, que é a variável que decide o segmento. Como opera na correção e não no estudo do aluno, é o menos exposto ao deslocamento desta edição — e também o menos posicionado para capturá-lo",
-                      maturidade: "Média-Alta", impacto: "Alto"
+                      movimento: "Correção automática de microtestes por câmera e gestão a partir do celular do professor, com baixa fricção de adoção na rede pública",
+                      estrategia: "Opera exatamente na fronteira que a norma detalhou: correção de prova objetiva segue permitida como apoio, desde que a validação humana seja documentada. Quem já registra quem conferiu ganha; quem só devolve a nota precisa acrescentar o registro",
+                      exposicao: "Média", impacto: "Alto"
                     },
                     {
                       player: "Moderna",
                       grupo: "Moderna Amigos",
-                      movimento: "Braço público do grupo Santillana, com capilaridade em redes municipais e estaduais",
-                      estrategia: "A força é relacionamento institucional e presença em compra pública, não velocidade de IA. Com a norma parada e o laboratório do MEC sem edital, quem já está dentro da rede converte tempo de indefinição em vantagem",
-                      maturidade: "Média", impacto: "Médio-Alto"
+                      movimento: "Braço público do grupo Santillana, com capilaridade em redes municipais e estaduais e histórico em processos de adoção pública",
+                      estrategia: "A força é relacionamento institucional, e ela cresce de valor: com prazo de doze meses correndo, a rede vai procurar quem já está dentro para resolver adequação de procedimento, não um fornecedor novo",
+                      exposicao: "Baixa", impacto: "Médio-Alto"
                     },
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-orange-50/30 transition-colors' : 'bg-orange-50/20 hover:bg-orange-50/40 transition-colors'}>
@@ -2575,8 +2846,8 @@ export default function App() {
                       <td className="px-5 py-4 text-gray-600 text-xs leading-relaxed">{row.movimento}</td>
                       <td className="px-5 py-4 text-gray-600 text-xs leading-relaxed">{row.estrategia}</td>
                       <td className="px-5 py-4">
-                        <span className="px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap bg-yellow-100 text-yellow-700">
-                          {row.maturidade}
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                          {row.exposicao}
                         </span>
                       </td>
                       <td className="px-5 py-4">
@@ -2597,29 +2868,29 @@ export default function App() {
             </div>
             <div className="bg-white rounded-2xl border-2 border-purple-100 p-6 md:p-8">
               <p className="text-sm text-gray-500 mb-6 max-w-3xl">
-                Não disputam a venda para a escola e por isso ficam fora do mapa competitivo. Mudam outra coisa: o que a escola espera receber, quanto aceita pagar e o que professores e alunos já consideram normal antes de qualquer proposta comercial chegar.
+                Não disputam a venda para a escola e por isso ficam fora do mapa competitivo. Mudam outra coisa: o que a escola espera receber, quanto aceita pagar e o que passa a ser considerado normal antes de qualquer proposta chegar.
               </p>
               <div className="grid md:grid-cols-2 gap-5">
                 {[
                   {
-                    nome: "OpenAI",
-                    altera: "Comportamento e expectativa pedagógica",
-                    nota: "Ao ligar modo de estudo por padrão para adolescentes e detectar tentativa de atalho, definiu sozinha o que passa a ser considerado uso responsável. Qualquer produto educacional agora é comparado a esse piso — inclusive por pais."
+                    nome: "Reguladores brasileiros e estrangeiros",
+                    altera: "Regras competitivas",
+                    nota: "Duas jurisdições restringiram acesso por faixa etária na mesma semana. Deixou de ser risco distante e passou a ser variável de contrato, com desligamento de função entrando como requisito técnico."
                   },
                   {
                     nome: "Google for Education",
-                    altera: "Preço percebido e padrão de interface",
-                    nota: "Ano gratuito de plano pago em escala global e abandono do chat aberto em favor de fluxo estruturado. Derruba o valor de IA inclusa em proposta comercial e define o formato que o aluno passa a esperar de uma ferramenta de estudo."
+                    altera: "Economia da formação",
+                    nota: "Nova rodada de trilhas e certificação gratuitas para educadores em setembro. Ocupa a oferta no exato momento em que a formação continuada passou a ser obrigação da instituição."
                   },
                   {
-                    nome: "Anthropic",
-                    altera: "Economia da formação docente",
-                    nota: "Catálogo gratuito de formação em IA organizado por problema de trabalho. Ocupa, sem cobrar, um espaço que sistemas de ensino planejavam monetizar — e eleva a régua de qualidade esperada da capacitação."
+                    nome: "OpenAI e Anthropic",
+                    altera: "Comportamento e expectativa",
+                    nota: "A trava de atalho e o modo de estudo ligados por padrão já definiram o que pais e escolas consideram uso responsável. A norma agora chancela esse piso — e ele foi definido fora do setor educacional."
                   },
                   {
-                    nome: "Organismos multilaterais e pesquisa acadêmica",
-                    altera: "Regras do argumento comercial",
-                    nota: "Evidência longitudinal e relatório de política pública passaram a fornecer números citáveis por qualquer lado da mesa. A conversa de compra deixou de aceitar promessa de aprendizagem sem medição."
+                    nome: "Inep",
+                    altera: "Precedente de avaliação em escala",
+                    nota: "Testava IA na correção da redação do ENEM antes da decisão do CNE. O que o instituto fizer a seguir vira referência prática de onde está a fronteira entre apoio e atribuição de nota."
                   },
                 ].map((item, i) => (
                   <div key={i} className="border-l-2 border-purple-200 pl-4">
@@ -2653,52 +2924,52 @@ export default function App() {
               Não o que fizeram — <span className="text-[#6B46C1]">como fizeram</span>
             </h2>
             <p className="text-gray-500 mb-12 text-lg max-w-3xl">
-              Cada caso destrinchado por problema, implantação, escala, financiamento e aprendizado, separando o que dá para replicar aqui do que não dá.
+              Cada caso destrinchado por problema, implantação, escala e aprendizado, separando o que dá para replicar aqui do que não dá.
             </p>
 
             <div className="space-y-8">
               {[
                 {
-                  empresa: "OpenAI — trava de atalho embutida no produto de massa",
-                  pais: "Global · Produto e mediação",
-                  categoria: "Mediação",
-                  problema: "A empresa que mais se beneficia do uso de IA por adolescentes passou a ser responsabilizada pelo efeito desse uso — em aprendizagem e em segurança. Precisava de uma resposta que não dependesse de a escola configurar nada.",
-                  implementacao: "Em vez de criar um app separado, aplicou a experiência automaticamente por faixa etária, usando estimativa de idade quando a informação não é declarada. O modo de estudo virou comportamento padrão e não opção de menu; a detecção de atalho é acionada pelo padrão da pergunta, não por regra da escola; e o controle de horário é delegado à família, não à instituição. Duas semanas antes, a mesma empresa havia empacotado fluxos por papel — professor de educação básica, docente de ensino superior e estudante — em workspaces institucionais, usando o material do próprio curso como contexto.",
-                  escala: "Aplicação automática a toda a base de 13 a 17 anos, sem adesão da escola, da rede ou do país.",
-                  financiamento: "Custo integralmente absorvido pela empresa e tratado como resposta regulatória e reputacional antecipada, não como linha de receita.",
-                  aprendizado: "Mediação escala quando é default e independe de configuração institucional. A escolha de acionar por idade em vez de por contrato com a escola é a decisão de arquitetura que torna o alcance imediato — e que nenhum fornecedor educacional consegue reproduzir, porque depende de estar no aparelho antes da instituição.",
-                  limitacoes: "A trava não sabe o que foi pedido: reage ao formato da pergunta, não ao enunciado do professor. Não distingue tarefa avaliativa de estudo livre, não conhece o gabarito nem o histórico do aluno, e vale só dentro do ChatGPT — o atalho segue disponível em qualquer outra ferramenta. Também não devolve à escola nenhum registro do que aconteceu.",
-                  replicavel: "O par detecção de atalho + redirecionamento para percurso guiado, e a decisão de tratar mediação como padrão em vez de configuração opcional.",
-                  naoReplicavel: "O alcance por estimativa de idade sem intermediação institucional, e o custo de operar isso gratuitamente em escala global.",
-                  application: "A versão defensável aqui é a que a OpenAI não pode fazer: trava que sabe qual capítulo a turma está estudando, se aquilo vale nota, o que o aluno errou no bimestre e o que a escola definiu como permitido. Mesmo mecanismo, contexto que a plataforma não tem — e com o registro voltando para o professor."
+                  empresa: "Poliedro — IA com autoria humana no centro e rastro auditável",
+                  pais: "Brasil · Operação editorial",
+                  categoria: "Conformidade por desenho",
+                  problema: "Ampliar a produção de conteúdo didático com IA sem perder o controle editorial nem a confiabilidade factual — e sem transferir a decisão pedagógica para a máquina.",
+                  implementacao: "O projeto foi construído por duas áreas em conjunto, Inovação & Aprendizagem e Produto Editorial, em vez de nascer como iniciativa isolada de tecnologia. A sequência foi prova de conceito, testes e validação humana antes de escalar, com a IA atuando no refinamento e a curadoria e as definições editoriais permanecendo sob responsabilidade de pessoas. A rastreabilidade da operação foi tratada como entregável do projeto, não como subproduto.",
+                  escala: "Áreas envolvidas somam quase 300 profissionais; 93% de assertividade registrada em tarefas como classificação de conteúdo e verificação de precisão factual.",
+                  financiamento: "Investimento interno, sem aporte externo declarado. O reconhecimento externo veio pela Premiação Impacto Brasil 2026, do Agile Trends, com terceiro lugar na categoria Escala.",
+                  aprendizado: "Medir assertividade antes de escalar é o que permitiu declarar um número. A decisão de manter o humano decidindo não foi tomada por causa da norma — foi tomada antes dela, e é isso que hoje se converte em vantagem: conformidade com histórico não se constrói depois.",
+                  limitacoes: "O indicador é de fase de validação, não de operação contínua em produção, e cobre tarefas específicas — classificação e checagem factual —, não a qualidade pedagógica do material final. Também não há dado público sobre efeito na aprendizagem do aluno.",
+                  replicavel: "A sequência prova de conceito, teste, validação humana e só então escala; e tratar rastreabilidade como entregável desde o início, o que torna a conformidade demonstrável.",
+                  naoReplicavel: "A escala de equipe editorial própria que sustenta curadoria humana em volume — é estrutura de grupo consolidado, não de time enxuto.",
+                  application: "É o modelo de referência para a adequação que a norma vai exigir, e está a um telefonema de distância. Para quem não tem 300 profissionais, o caminho é o mesmo em menor escala: definir o ponto de decisão humana, registrá-lo e medir assertividade antes de ampliar o uso."
                 },
                 {
-                  empresa: "Piauí — IA como disciplina obrigatória na rede estadual",
-                  pais: "Brasil · Política pública curricular",
-                  categoria: "Currículo",
-                  problema: "Preparar estudantes de rede pública para um mercado e uma sociedade mediados por IA, sem depender de iniciativa isolada de escola ou de professor voluntário.",
-                  implementacao: "Programa Piauí Inteligência Artificial, iniciado em 2024, com uma sequência deliberada: formação docente primeiro, mudança curricular depois. A capacitação foi conduzida em conjunto pela Seduc e por uma secretaria estadual dedicada exclusivamente a IA, com ampliação contínua da formação ao longo de 2026. O conteúdo combina fundamentos técnicos e reflexão ética sobre uso.",
-                  escala: "Mais de 120 mil estudantes da rede pública, cerca de 800 professores formados em 540 unidades escolares, no 9º ano do fundamental e no ensino médio.",
-                  financiamento: "Recursos estaduais, com governança própria — o estado criou uma secretaria de IA em vez de alocar o programa dentro da pasta de educação.",
-                  aprendizado: "O gargalo não foi tecnologia nem material didático: foi professor formado. O programa só escalou porque tratou capacitação como pré-condição, e não como trilha paralela ao currículo. Reconhecido pela UNESCO com o Prêmio King Hamad Bin Isa Al-Khalifa de uso de TICs na Educação.",
-                  limitacoes: "Depende de vontade política sustentada por mais de um ciclo e de estrutura administrativa dedicada, o que poucos estados têm. Não há, até aqui, medição pública de efeito na aprendizagem — o reconhecimento é de política, não de resultado mensurado.",
-                  replicavel: "A sequência formar-antes-de-implantar e o empacotamento de trilha de IA aplicada com formação docente inclusa, que é vendável a rede e a sistema de ensino.",
-                  naoReplicavel: "A criação de uma secretaria estadual dedicada — a condição institucional que destravou orçamento e prioridade.",
-                  application: "É o benchmark nacional mais maduro e segue sem réplica em outros estados. Além do valor comercial, resolve uma objeção recorrente na conversa com o setor público: é caso brasileiro, em rede pública, com escala verificável — não realidade de país rico."
+                  empresa: "Nova York — como se operacionaliza uma moratória de IA",
+                  pais: "Estados Unidos · Rede pública",
+                  categoria: "Execução de restrição",
+                  problema: "Conter o uso de IA generativa por crianças e pré-adolescentes numa rede gigante onde dezenas de programas já autorizados traziam IA embutida — sem paralisar a operação escolar.",
+                  implementacao: "A medida não foi anunciada como proibição genérica. Veio com três mecanismos simultâneos: moratória por faixa (2-K ao 8º ano) com prazo definido de um ano letivo, desligamento ou descontinuidade dos componentes de IA de mais de 38 programas já autorizados que não atendessem aos novos padrões de segurança e supervisão, e substituição por formação — módulos semestrais de pensamento crítico sobre IA no ensino médio, mais pilotos limitados em poucas turmas para seguir aprendendo.",
+                  escala: "Cerca de 600 mil estudantes do 2-K ao 8º ano, quase dois terços da matrícula da maior rede pública dos Estados Unidos.",
+                  financiamento: "Recursos da própria rede, com a maior parte do custo recaindo sobre renegociação e reconfiguração de contratos existentes em vez de nova aquisição.",
+                  aprendizado: "O que faz a moratória funcionar não é o anúncio, é a capacidade de desligar função em contrato vigente. A rede tratou o inventário de programas autorizados como pré-condição — sem saber onde a IA estava embutida, a proibição seria apenas declaratória.",
+                  limitacoes: "É medida temporária de um ano sem substituto pedagógico definido para a faixa restringida, e concentra em pilotos pequenos o aprendizado que deveria orientar a decisão seguinte. Também não resolve o uso fora da escola, que segue livre.",
+                  replicavel: "O inventário de onde a IA está embutida nos contratos vigentes, e a exigência contratual de desligamento granular por faixa etária — aplicável a qualquer rede ou grupo brasileiro agora.",
+                  naoReplicavel: "O poder de compra concentrado que permite renegociar dezenas de contratos simultaneamente por decisão administrativa única.",
+                  application: "Com a vedação até o 5º ano aprovada aqui, toda rede brasileira vai precisar responder à mesma pergunta operacional: onde a IA está embutida e quem consegue desligá-la por série. Quem chegar com esse inventário e esse controle pronto resolve um problema que o cliente ainda não formulou."
                 },
                 {
-                  empresa: "Google — hub de estudo do Gemini",
-                  pais: "EUA + 140 países · Produto e distribuição",
-                  categoria: "Distribuição",
-                  problema: "Converter uso genérico de chatbot em hábito de estudo ancorado, capturando o estudante universitário no início do semestre antes que ele escolha outra ferramenta.",
-                  implementacao: "Oferta de um ano de plano pago combinada a um hub que substitui a conversa aberta por ciclo fechado: quiz diagnóstico localiza a lacuna, lições curtas são geradas sobre o material que o próprio aluno sobe — slides, PDFs, listas —, flashcards consolidam e o progresso persiste entre sessões em vez de reiniciar a cada conversa.",
-                  escala: "Google AI Pro (US$ 19,99/mês) para estudantes nos EUA e AI Plus (US$ 4,99/mês) em mais de 140 países, com resgate até 31/12/2026.",
-                  financiamento: "Subsídio integral da própria empresa, com o custo tratado como investimento em canal e aquisição de hábito, não como operação educacional.",
-                  aprendizado: "A big tech concluiu, por conta própria, que chat aberto não é formato de estudo. Migrar para diagnóstico, lição curta, prática e progresso persistente é admissão pública de que conversa livre não produz aprendizagem estruturada — e valida o desenho para todo o setor.",
-                  limitacoes: "O material de referência depende do aluno subir arquivo, o que exclui quem não organiza os próprios materiais; não há alinhamento a currículo, série ou habilidade; e o progresso fica na conta do estudante, invisível para professor e escola.",
-                  replicavel: "O ciclo diagnóstico → lição curta → prática → progresso persistente, que é padrão de experiência e não tecnologia proprietária.",
-                  naoReplicavel: "O subsídio de um ano de plano pago em escala global como instrumento de aquisição.",
-                  application: "O mesmo fluxo sobre acervo autoral parte de uma vantagem que o Gemini não tem: o material já está estruturado por série, capítulo e habilidade da BNCC, sem depender de upload. O que a big tech entrega genérico e invisível para a escola, o sistema de ensino entrega curricular e devolvendo dado ao professor."
+                  empresa: "CNE — como a norma foi construída em cinco meses de tramitação",
+                  pais: "Brasil · Desenho regulatório",
+                  categoria: "Processo normativo",
+                  problema: "Regular IA em todos os níveis e modalidades de ensino sem congelar a tecnologia numa definição que envelheceria em meses, e sem deixar a escola sem critério prático.",
+                  implementacao: "A construção partiu de um referencial técnico publicado pelo MEC em abril, seguido de aprovação inicial no CNE em maio, consulta pública encerrada em 14 de junho, seminário em julho e votação final em plenário em 1º de setembro. A escolha de desenho foi regular por faixa de risco e por finalidade, não por tecnologia: em vez de listar ferramentas permitidas, o texto define o que uma aplicação pode ou não decidir sobre a trajetória do aluno. Como parâmetro internacional, adotou a recomendação da UNESCO que indica uso autônomo de IA apenas a partir dos 13 anos.",
+                  escala: "Alcança todos os níveis, etapas e modalidades da educação brasileira, pública e privada, com prazo de doze meses de adaptação a partir da homologação.",
+                  financiamento: "Processo institucional, sem custo direto ao setor privado — o custo aparece na adequação, que recai sobre instituições e fornecedores.",
+                  aprendizado: "Regular finalidade em vez de tecnologia é o que dá sobrevida à norma: modelo novo não a torna obsoleta, porque o que está vedado é a delegação da decisão, não o uso de uma ferramenta específica. A ancoragem em parâmetro internacional deu ao texto uma defesa pronta contra a acusação de excesso.",
+                  limitacoes: "A classificação por faixa de risco depende de interpretação caso a caso, e o texto não traz lista fechada de aplicações por nível — o que gera zona cinzenta justamente no risco moderado, onde está a maior parte dos produtos educacionais. A eficácia também segue condicionada à homologação, que ainda não veio.",
+                  replicavel: "A lógica de classificar o próprio portfólio por finalidade e por quem assina a decisão, em vez de por tecnologia empregada — é a forma mais rápida de descobrir a própria exposição.",
+                  naoReplicavel: "O tempo de tramitação: o setor privado não tem cinco meses de consulta antes de decidir o que fazer com o produto.",
+                  application: "A leitura mais útil aqui é de método, não de conteúdo: aplicar a mesma matriz internamente. Listar cada decisão que o produto toma sobre o aluno, classificar por faixa e identificar quem assina — esse exercício produz o mapa de conformidade que ainda ninguém publicou no país."
                 },
               ].map((b, i) => (
                 <motion.div
@@ -2791,100 +3062,100 @@ export default function App() {
               Capacidades que <span className="text-[#6B46C1]">encurtam o caminho</span>
             </h2>
             <p className="text-gray-500 mb-10 text-lg max-w-3xl">
-              O que já existe, em que estágio está e o que custa plugar — com limitações reais, dependências técnicas, cenário ideal de uso e o que muda para Produto e para Engenharia.
+              O que já existe, em que estágio está e o que custa plugar — com limitações reais, dependências técnicas, cenário ideal de uso e o que muda para Produto e Engenharia. Nesta edição, o critério de seleção é o prazo de adequação.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  nome: "Detecção de terceirização de tarefa",
-                  tipo: "Padrão de mediação",
-                  oque: "Classificação em tempo real do padrão de interação para identificar quando o aluno está buscando resposta pronta em vez de apoio, com redirecionamento para percurso guiado. O mecanismo foi validado em produto de massa nesta janela e ataca diretamente o comportamento que concentra a maior parte da perda de aprendizagem medida no Sinal 2.",
-                  acelera: "Transfere para o produto a contenção que hoje depende de vigilância do professor — e faz isso no momento da interação, não na correção.",
-                  limitacoes: "Classifica intenção a partir de proxy e erra nas duas direções: bloqueia aluno legítimo com pressa e libera quem sabe reformular a pergunta. Vale só dentro do seu ambiente. Se a trava for percebida como obstáculo, o aluno migra para a ferramenta sem trava — e a versão sem trava é gratuita.",
-                  dependencias: "Interface de estudo própria, classificador de intenção com avaliação contínua, vínculo com a atividade em curso para saber se vale nota, e limiar calibrável por série e disciplina.",
-                  cenario: "Tarefa avaliativa e estudo dirigido em que existe enunciado conhecido. Contraindicado em pesquisa exploratória e produção autoral livre, onde a trava vira atrito sem ganho.",
-                  impactoProduto: "É a única versão defensável da mediação depois desta edição: a que conhece o enunciado, o gabarito e o histórico. Sem esse contexto, o produto compete de igual para igual com uma feature gratuita — e perde.",
-                  impactoEngenharia: "Exige latência baixa no caminho crítico da resposta, política de fallback quando o classificador não decide, e telemetria de falso positivo desde o primeiro dia, senão não há como calibrar.",
+                  nome: "Registro de decisão pedagógica",
+                  tipo: "Trilha de auditoria",
+                  oque: "Log imutável de cada decisão que o produto toma ou sugere sobre um aluno, com quem validou, quando, com base em qual saída do modelo e qual foi a intervenção humana. É a peça que responde à exigência de supervisão humana contínua e de relatório nos usos classificados como alto risco.",
+                  acelera: "Converte conformidade de promessa em evidência exibível, e transforma o que hoje é risco jurídico em anexo de proposta comercial.",
+                  limitacoes: "Registrar não é supervisionar: se o professor apenas clica em confirmar, o log documenta uma validação que não aconteceu de fato. Também cria exposição — o rastro que prova conformidade prova descumprimento com a mesma clareza. E aumenta o atrito do fluxo justamente no momento em que o professor tem menos tempo.",
+                  dependencias: "Modelo de identidade por usuário, armazenamento append-only com retenção definida, versionamento do modelo e do prompt usados em cada decisão, e base legal sob a LGPD por envolver dado de menor associado a decisão automatizada.",
+                  cenario: "Qualquer fluxo em que a IA proponha nota, classificação, encaminhamento ou alerta sobre o aluno. Desnecessário em uso de baixo risco como organização de material e acessibilidade.",
+                  impactoProduto: "É o item que separa quem vai poder vender para rede pública e mantenedor daqui a doze meses de quem vai renegociar contrato. Não é diferencial: é licença para operar.",
+                  impactoEngenharia: "Decidir o esquema de evento antes de escrever a primeira feature nova — retrofit de trilha de auditoria exige reprocessar histórico que não foi gravado, ou seja, não exige, impossibilita.",
+                  maturidade: "A construir",
+                  cor: "bg-purple-100 text-purple-700",
+                  link: "https://g1.globo.com/educacao/noticia/2026/09/01/cne-para-uso-de-ia-em-escolas-e-universidades.ghtml",
+                  linkLabel: "A norma que exige"
+                },
+                {
+                  nome: "Matriz de classificação por faixa de risco",
+                  tipo: "Método de conformidade",
+                  oque: "Inventário de cada decisão automatizada do produto mapeada nas quatro faixas da norma — baixo, moderado, alto e excessivo —, com a finalidade declarada e o responsável pela validação em cada uma. Não é documento jurídico: é artefato de produto que orienta priorização.",
+                  acelera: "Substitui adequação por intuição por adequação por evidência, e revela em dias onde está a exposição real do portfólio — normalmente em lugares que ninguém suspeitava.",
+                  limitacoes: "A norma não traz lista fechada por nível, então a classificação depende de interpretação e pode ser contestada. A zona cinzenta se concentra no risco moderado, onde está a maior parte dos produtos educacionais. Classificar sem parecer jurídico dá direção, não segurança.",
+                  dependencias: "Levantamento completo das decisões automatizadas existentes, o que quase nunca está documentado; leitura conjunta de produto, pedagógico e jurídico; e revisão a cada novo recurso.",
+                  cenario: "Primeira ação de qualquer time antes de mexer em código. Aplicável integralmente hoje, sem depender da homologação.",
+                  impactoProduto: "É a lacuna mais barata de ocupar desta edição: nenhum player brasileiro publicou o próprio mapa, e quem publicar primeiro define o formato que os concorrentes terão de responder.",
+                  impactoEngenharia: "Custo próximo de zero em desenvolvimento e alto em tempo de gente sênior. O entregável é uma planilha viva, não um sistema.",
+                  maturidade: "Disponível",
+                  cor: "bg-blue-100 text-blue-700",
+                  link: "https://www.spacemoney.com.br/economia/legislacao/cne-aprova-faixas-de-risco-para-ia-na-educacao",
+                  linkLabel: "As quatro faixas em detalhe"
+                },
+                {
+                  nome: "Desligamento granular de função por série e rede",
+                  tipo: "Controle operacional",
+                  oque: "Capacidade de desativar recursos específicos de IA por faixa etária, série, turma ou rede inteira, remotamente e sem nova versão do produto. Foi o mecanismo que viabilizou a moratória em Nova York, onde mais de trinta programas já autorizados tiveram componentes de IA descontinuados ou desativados.",
+                  acelera: "Permite atender à vedação até o 5º ano sem retirar o produto do ar nem manter versões paralelas, e responde em horas a uma decisão de rede que hoje levaria um ciclo de release.",
+                  limitacoes: "Feature flag por si só não resolve: sem mapeamento de qual aluno está em qual série, o desligamento é grosseiro e derruba função de quem poderia usá-la. Depende de dado cadastral que muitas redes mantêm desatualizado, e cria matriz de estados difícil de testar.",
+                  dependencias: "Sistema de flags com escopo hierárquico por rede, escola, série e turma; integração confiável com o cadastro do aluno; e suíte de teste que cubra as combinações, sob pena de desligar o que não devia.",
+                  cenario: "Produtos com uso direto pelo estudante em faixas que atravessam o corte do 5º ano. Irrelevante em produto exclusivo de professor ou gestor.",
+                  impactoProduto: "Vira cláusula de contrato antes de virar requisito técnico: a rede vai perguntar se você consegue desligar por série, e a resposta define se o contrato é renovado.",
+                  impactoEngenharia: "O risco não está em criar a flag, está na explosão combinatória de estados. Modelar o escopo hierárquico desde o início evita reescrever o controle de acesso depois.",
                   maturidade: "Emergente",
                   cor: "bg-green-100 text-green-700",
-                  link: "https://openai.com/index/chatgpt-for-teens/",
-                  linkLabel: "Referência: implementação da OpenAI"
+                  link: "https://www.chalkbeat.org/newyork/2026/09/02/nyc-schools-to-set-ai-policy-ban-screen-time-limits/",
+                  linkLabel: "Como Nova York executou"
+                },
+                {
+                  nome: "Validação humana documentada em correção objetiva",
+                  tipo: "Padrão de fluxo",
+                  oque: "Fluxo em que a IA propõe a correção de item objetivo, o professor confirma ou ajusta e o sistema registra a conferência com autoria e horário. É exatamente a fronteira que a norma preservou: apoio permitido, resultado validado e documentado por pessoa.",
+                  acelera: "Mantém o ganho de tempo da correção automática — que é real e é a dor mais concreta do professor — sem cair na vedação de atribuição de nota por máquina.",
+                  limitacoes: "Se a confirmação for um botão único para a turma toda, o registro é formalmente válido e pedagogicamente vazio. Desenhar atrito suficiente para a conferência ser real, sem devolver ao professor o trabalho que a IA deveria poupar, é o problema difícil aqui — e não tem solução pronta.",
+                  dependencias: "Interface de revisão em lote com amostragem inteligente, destaque dos itens de baixa confiança do modelo, e registro por item e não por prova inteira.",
+                  cenario: "Simulados, avaliações objetivas e microtestes em escala. Não se aplica a texto autoral, onde a correção por IA está vedada em qualquer configuração.",
+                  impactoProduto: "É a única forma de manter a proposta de valor de correção automática dentro da regra — e quem oferecer isso pronto atende a um mercado que acabou de ficar sem alternativa conforme.",
+                  impactoEngenharia: "Exige calibração de confiança do modelo por item para a amostragem funcionar. Sem isso, a revisão vira aleatória e o professor perde a confiança no fluxo.",
+                  maturidade: "Emergente",
+                  cor: "bg-green-100 text-green-700",
+                  link: "https://olhardigital.com.br/2026/09/01/inteligencia-artificial/ia-nao-podera-mais-corrigir-provas-e-redacoes-nas-escolas-veja-o-que-muda",
+                  linkLabel: "O que segue permitido"
                 },
                 {
                   nome: "Telemetria de percurso de aprendizagem",
-                  tipo: "Padrão de instrumentação",
-                  oque: "Captura estruturada do processo e não só do resultado: versões do texto, tentativas por item, tempo entre ações, revisões, origem do conteúdo colado e sequência de consultas. É o registro que permite distinguir esforço de entrega — a distinção que a evidência desta edição tornou decisiva.",
-                  acelera: "Transforma uso responsável de discurso em métrica auditável, e cria o único artefato de avaliação que o agente não consegue fabricar pelo aluno.",
-                  limitacoes: "Indica padrão, não intenção: não prova autoria sozinha e gera falso positivo com aluno naturalmente rápido. Exige o professor no laço para interpretar. Só captura o que acontece dentro do seu editor — texto escrito fora e colado aparece como colagem, não como percurso.",
-                  dependencias: "Editor próprio instrumentado (não funciona sobre PDF ou documento de terceiro), pipeline de eventos, armazenamento de série temporal por aluno, base legal e consentimento sob a LGPD por envolver dado comportamental de menor.",
-                  cenario: "Produção textual, redação, resolução em etapas e projetos longos, onde o percurso importa mais que a resposta final. Pouco útil em exercício objetivo de resposta curta.",
-                  impactoProduto: "Cria a métrica de evidência que nenhum concorrente direto oferece hoje no Brasil e sustenta a conversa com o mantenedor sobre efeito, não sobre funcionalidade.",
-                  impactoEngenharia: "Obriga a decidir esquema de eventos cedo — mudar depois invalida a série histórica —, e traz custo de armazenamento crescente por aluno-ano com política de retenção definida antes do primeiro registro.",
+                  tipo: "Instrumentação",
+                  oque: "Captura do processo e não só do resultado — versões, tentativas, tempo entre ações, revisões. Registrado na edição anterior como resposta ao comportamento de terceirização, ganha nesta um segundo uso: é o insumo natural da avaliação de impacto que a norma passa a exigir nos usos de alto risco.",
+                  acelera: "Uma única instrumentação atende a dois propósitos que antes pareciam separados: evidência pedagógica de esforço e evidência regulatória de efeito.",
+                  limitacoes: "As mesmas da edição passada seguem valendo — indica padrão e não intenção, e só captura o que acontece dentro do seu editor. A novidade é uma tensão nova: dado de percurso é dado comportamental de menor, e a norma que pede avaliação de impacto também endurece a proteção de dados do estudante.",
+                  dependencias: "Editor próprio instrumentado, pipeline de eventos, série temporal por aluno e — agora com peso maior — base legal, minimização e política de retenção definidas antes da primeira coleta.",
+                  cenario: "Produção textual, resolução em etapas e projetos longos. Ideal onde já houver necessidade de demonstrar efeito para mantenedor ou rede.",
+                  impactoProduto: "Deixou de ser aposta de diferenciação e passou a ter comprador definido: quem precisar declarar avaliação de impacto vai precisar de linha de base, e ela não se constrói retroativamente.",
+                  impactoEngenharia: "Coletar menos e melhor: com dado de menor sob escrutínio maior, esquema enxuto e retenção curta valem mais que captura ampla que depois precisa ser expurgada.",
                   maturidade: "A construir",
                   cor: "bg-purple-100 text-purple-700",
                   link: "https://cepr.org/publications/dp21577",
-                  linkLabel: "A evidência que justifica"
-                },
-                {
-                  nome: "Política de uso como artefato de produto",
-                  tipo: "Governança",
-                  oque: "Transformar a regra de uso de IA em objeto configurável dentro da plataforma — o que é permitido por atividade, série e disciplina, com registro de quem definiu, quando mudou e como foi aplicado — em vez de documento estático anexo ao contrato.",
-                  acelera: "Resolve com produto uma dor que a norma nacional não resolveu e que nenhum concorrente empacotou, e prepara o terreno para absorver o texto do parecer por configuração quando ele for homologado.",
-                  limitacoes: "Política escrita não muda prática sozinha: sem participação do professor na construção, vira regra ignorada — e o dado do Sinal 3 mostra que envolvê-lo é justamente o que hoje não acontece. Também cria exposição: registrar a regra torna auditável o descumprimento dela.",
-                  dependencias: "Modelo de permissões por atividade, versionamento com trilha de auditoria, integração com o fluxo de criação de tarefa do professor e mapeamento para níveis de risco parametrizáveis.",
-                  cenario: "Redes e mantenedores com várias escolas e necessidade de padronizar sem engessar a escola individual. Menos relevante para escola única com decisão centralizada.",
-                  impactoProduto: "Vira anexo técnico de proposta comercial e diferencial em conversa com mantenedor — hoje a política é a lacuna mais explícita entre urgência medida e produto existente.",
-                  impactoEngenharia: "Exige separar regra de código desde o início: política como dado, não como condicional espalhada. Retrofit desse desenho depois é caro.",
-                  maturidade: "A construir",
-                  cor: "bg-purple-100 text-purple-700",
-                  link: "https://www.digitaleducationcouncil.com/resource-library-items/ai-in-higher-education-global-survey-2026",
-                  linkLabel: "O dado que dimensiona a lacuna"
-                },
-                {
-                  nome: "Fluxo de estudo estruturado",
-                  tipo: "Padrão de experiência",
-                  oque: "Substituição do chat aberto por ciclo fechado — diagnóstico localiza a lacuna, lição curta é gerada sobre o material de referência, prática consolida e o progresso persiste entre sessões. Padrão adotado simultaneamente por Google e OpenAI nesta janela.",
-                  acelera: "Copia um desenho já validado por quem inventou a interface conversacional, evitando o custo de descobrir por tentativa que conversa livre não organiza estudo.",
-                  limitacoes: "Fluxo estruturado sem trava continua entregando resposta a quem quer atalhar — resolve organização, não terceirização. E exige acervo bem fatiado por objetivo de aprendizagem: sobre conteúdo mal estruturado, o diagnóstico aponta lacuna errada.",
-                  dependencias: "Acervo mapeado por habilidade e pré-requisito, banco de itens com calibração de dificuldade, motor de sequenciamento e persistência de estado por aluno entre sessões.",
-                  cenario: "Revisão, recuperação e preparação para avaliação, onde existe objetivo definido e lacuna mensurável. Menos adequado a conteúdo novo sem base diagnóstica.",
-                  impactoProduto: "A vantagem sobre a big tech não está no fluxo — está na âncora: currículo estruturado por série, capítulo e habilidade, sem depender de o aluno subir arquivo.",
-                  impactoEngenharia: "O trabalho pesado é modelagem de pré-requisitos e calibração de itens, não geração. Orçar equipe pedagógica junto com a de dados.",
-                  maturidade: "Padrão de mercado",
-                  cor: "bg-blue-100 text-blue-700",
-                  link: "https://blog.google/innovation-and-ai/products/gemini-app/student-offer-google-ai/",
-                  linkLabel: "Referência: hub de estudo do Gemini"
+                  linkLabel: "A evidência que originou"
                 },
                 {
                   nome: "RAG sobre acervo autoral",
                   tipo: "Arquitetura de contexto",
-                  oque: "A IA generativa responde apenas a partir do conteúdo proprietário indexado, em vez de recorrer ao conhecimento genérico do modelo. Padrão já adotado por todos os concorrentes diretos mapeados nesta edição.",
-                  acelera: "Resolve confiabilidade e alinhamento curricular sem treinar modelo próprio, e converte o acervo editorial — commodity como conteúdo — em vantagem defensável como contexto.",
-                  limitacoes: "Resolve a fonte, não o uso: continua entregando resposta pronta a quem quer atalho. A qualidade depende inteiramente da curadoria do índice — acervo mal fatiado gera resposta pior que o modelo puro, e conteúdo desatualizado vira erro com aparência de autoridade.",
-                  dependencias: "Pipeline de ingestão e fatiamento, banco vetorial, reindexação a cada atualização editorial, avaliação contínua de fidelidade à fonte e custo recorrente de embeddings proporcional ao catálogo.",
-                  cenario: "Tira-dúvidas ancorado no material adotado, geração de atividade alinhada ao capítulo e apoio ao planejamento docente. Ideal onde a resposta certa já existe no acervo.",
-                  impactoProduto: "É custo de entrada no mercado brasileiro, não diferencial: todos os concorrentes diretos já têm. Investir aqui para alcançar paridade não gera vantagem.",
-                  impactoEngenharia: "O esforço está na curadoria e na avaliação, não no modelo. A dívida técnica típica é o índice que envelhece silenciosamente após atualização editorial.",
+                  oque: "A IA responde apenas a partir do conteúdo proprietário indexado. Padrão já consolidado entre os concorrentes diretos e que, com a norma, ganha um atributo novo: por não interferir em decisão acadêmica, tende a se enquadrar nas faixas de risco mais baixas.",
+                  acelera: "Resolve alinhamento curricular e confiabilidade de fonte sem treinar modelo próprio — e agora também simplifica a conversa de conformidade, porque apoio à organização de material é o exemplo típico de baixo risco.",
+                  limitacoes: "Resolve a procedência, não o uso: continua entregando resposta pronta a quem quer atalho. A classificação de risco também não é automática — o mesmo RAG vira risco moderado no instante em que passa a recomendar trilha ao aluno, e isso muda por configuração, não por código.",
+                  dependencias: "Pipeline de ingestão e fatiamento, banco vetorial, reindexação a cada atualização editorial e avaliação contínua de fidelidade à fonte.",
+                  cenario: "Tira-dúvidas ancorado no material adotado e apoio ao planejamento docente. Onde a resposta certa já existe no acervo.",
+                  impactoProduto: "Segue sendo custo de entrada e não diferencial. O que mudou é que agora é também a parte do portfólio que dá menos trabalho de adequar — vale saber disso ao priorizar.",
+                  impactoEngenharia: "O trabalho continua na curadoria e na avaliação, não no modelo. Acrescente ao pipeline o registro de qual versão do acervo respondeu o quê: é o que liga o RAG à trilha de auditoria.",
                   maturidade: "Padrão de mercado",
                   cor: "bg-blue-100 text-blue-700",
                   link: "https://www.santillanaeducacao.com.br/solucoes-educacionais/solucoes-pedagogicas/moderna-core/",
                   linkLabel: "Referência: Moderna Core"
-                },
-                {
-                  nome: "Roteamento entre modelos por tipo de tarefa",
-                  tipo: "Arquitetura de custo",
-                  oque: "Distribuir a carga entre modelos de portes diferentes conforme a exigência da tarefa, reservando o modelo caro para o que precisa de raciocínio e usando modelos econômicos de alta vazão para classificação, correção objetiva e sugestão.",
-                  acelera: "Derruba o custo por aluno ativo e é o que torna financeiramente viável rodar mediação e telemetria em tempo real sobre toda a base, em vez de em piloto.",
-                  limitacoes: "Cada modelo tem comportamento e formato de saída próprios: trocar de rota sem avaliação por tarefa degrada qualidade de forma difícil de perceber. Adiciona ponto de falha e exige camada de observabilidade que muitos times subestimam.",
-                  dependencias: "Camada de abstração sobre provedores, suíte de avaliação por tipo de tarefa, monitoramento de qualidade por rota e política de fallback quando um provedor degrada.",
-                  cenario: "Operação com volume alto e tarefas heterogêneas. Em produto de baixo volume, a complexidade não se paga.",
-                  impactoProduto: "É o que define margem quando personalização passa a rodar por aluno e não por turma — decisão de arquitetura com efeito direto no preço final.",
-                  impactoEngenharia: "Sem avaliação automatizada por rota, a economia de custo é paga em regressão silenciosa de qualidade. Construir a suíte antes de rotear.",
-                  maturidade: "Disponível",
-                  cor: "bg-blue-100 text-blue-700",
-                  link: "https://ai.google.dev/gemini-api/docs/models",
-                  linkLabel: "Documentação de modelos"
                 },
               ].map((a, i) => (
                 <motion.div
@@ -2967,7 +3238,7 @@ export default function App() {
               Validação e <span className="text-[#6B46C1]">contraponto</span>
             </h2>
             <p className="text-gray-500 mb-10 text-lg max-w-3xl">
-              O que pesquisadores e instituições de referência estão concluindo sobre os movimentos desta edição — começando pelo que dizem em coro.
+              O que quem decide e quem estuda o tema concluiu sobre os movimentos desta edição — começando pelo que dizem em coro.
             </p>
 
             {/* Consenso dos especialistas */}
@@ -2980,7 +3251,7 @@ export default function App() {
                     <span className="text-xs font-semibold uppercase tracking-wider">Consenso dos especialistas da quinzena</span>
                   </div>
                   <p className="text-lg md:text-xl font-semibold leading-relaxed">
-                    Três fontes independentes, com métodos incompatíveis entre si — econometria longitudinal, análise de política pública e survey global — chegaram à mesma conclusão nesta janela: <span className="text-[#FFB89A]">o que determina o resultado não é a adoção, é o desenho do uso</span>. É a convergência mais forte já registrada em uma única janela.
+                    Reguladores brasileiros, gestores públicos estrangeiros e organismos multilaterais convergiram, sem coordenação entre si, na mesma fronteira: <span className="text-[#FFB89A]">a IA pode participar do processo, mas não pode assinar o resultado</span> — e quanto menor a idade, menor a autonomia admitida.
                   </p>
                 </div>
               </div>
@@ -2988,16 +3259,16 @@ export default function App() {
               <div className="grid md:grid-cols-3 gap-5">
                 {[
                   {
-                    ponto: "Ganho de desempenho sem ganho de aprendizagem tem assinatura própria",
-                    detalhe: "Econometria e análise de política descreveram o mesmo fenômeno por caminhos opostos: quando a tarefa é terceirizada sem orientação, o indicador sobe e o aprendizado não acontece. Convergência rara entre medição quantitativa e revisão de evidência internacional."
+                    ponto: "A decisão avaliativa é indelegável",
+                    detalhe: "A formulação do relator do CNE — a palavra final sobre o desempenho cabe ao professor, não à máquina — é a mesma linha que separa risco moderado de alto risco no texto aprovado. Não é retórica de abertura: é o critério operacional da norma."
                   },
                   {
-                    ponto: "Existe um terceiro caminho entre substituir e apenas complementar",
-                    detalhe: "A OCDE separa três modos de colaboração humano-IA — substituição, complementaridade e aumento — e argumenta que só o terceiro preserva a expertise docente, porque exige que o professor examine criticamente e recontextualize a saída da IA dentro do próprio objetivo de ensino."
+                    ponto: "Idade define autonomia, e o corte ficou alto",
+                    detalhe: "O CNE veda uso autônomo até o 5º ano ancorado no parâmetro da UNESCO, que indica uso independente a partir dos 13 anos. Nova York foi além e suspendeu até o 8º. Três referências independentes apontando para a mesma faixa."
                   },
                   {
-                    ponto: "A política de IA está sendo escrita sem quem vai aplicá-la",
-                    detalhe: "O dado de survey mostra que menos de um terço dos docentes considera participar de forma significativa da política de IA da própria instituição. É a explicação estrutural para regra que não muda prática — e um problema de processo, não de texto."
+                    ponto: "Conformidade se prova com rastro, não com política",
+                    detalhe: "Onde há alto risco, exige-se avaliação de impacto, relatório de dados e supervisão humana contínua. O que separa quem cumpre de quem declara cumprir é a existência de registro — e registro não é retroativo."
                   },
                 ].map((item, i) => (
                   <div key={i} className="bg-white/10 rounded-xl p-5 backdrop-blur-sm">
@@ -3011,34 +3282,34 @@ export default function App() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  autor: "OCDE",
-                  cargo: "Digital Education Outlook 2026",
-                  titulo: "Exploring Effective Uses of Generative AI in Education",
-                  data: "2026",
-                  tese: "Distingue três modos de colaboração humano-IA — substituição, complementaridade e aumento — e sustenta que apenas o aumento preserva e amplia a expertise docente, porque obriga o professor a examinar e recontextualizar criticamente a saída da IA dentro do próprio objetivo instrucional. Sem intenção pedagógica explícita, terceirizar tarefa para IA generativa eleva o desempenho aparente sem produzir aprendizado real.",
-                  importa: "É a formulação de política pública que dá nome ao mecanismo que a econometria mediu. Fornece vocabulário aceito internacionalmente para desenhar produto e defender escolha de arquitetura diante de mantenedor e de regulador.",
-                  relacao: "Explica por que a trava embutida do Sinal 1 funciona e por que ela é insuficiente sozinha: contenção é complementaridade; recontextualizar no objetivo da aula é aumento — e isso exige contexto curricular.",
-                  link: "https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html"
+                  autor: "Celso Niskier",
+                  cargo: "Relator do parecer · CNE",
+                  titulo: "A palavra final sobre o desempenho cabe ao professor, não à máquina",
+                  data: "1 set/2026",
+                  tese: "Ao sustentar o parecer em plenário, o relator firmou o princípio que organiza toda a norma: a IA pode apoiar o trabalho pedagógico em qualquer etapa, mas a responsabilidade pelo juízo sobre a trajetória do aluno permanece humana e não é transferível. É desse princípio que derivam as vedações concretas — correção de texto autoral, punição por detector e uso autônomo na infância.",
+                  importa: "Dá ao setor um critério único para interpretar casos que a norma não lista explicitamente. Diante de qualquer recurso novo, a pergunta deixa de ser se a lei permite e passa a ser quem assina o resultado.",
+                  relacao: "É a chave de leitura do Sinal 1 e o que explica por que a matriz de classificação por faixa de risco funciona como método: ela é a operacionalização desse princípio.",
+                  link: "https://www.spacemoney.com.br/economia/legislacao/cne-aprova-faixas-de-risco-para-ia-na-educacao"
                 },
                 {
-                  autor: "Strömberg, Lei e Wu",
-                  cargo: "CEPR Discussion Paper 21577",
-                  titulo: "The Generative AI Learning Penalty: Evidence from Chinese Secondary Education",
-                  data: "Jun/2026 · repercussão em ago",
-                  tese: "A perda de aprendizagem não é uniforme entre usuários de IA: concentra-se de forma acentuada no subgrupo cujo comportamento indica terceirização da tarefa. O par tempo de execução anormalmente curto com nota alta é o marcador observável desse padrão, e as perdas são maiores justamente entre alunos mais novos e de melhor desempenho.",
-                  importa: "É a primeira medição longitudinal em larga escala que separa uso de comportamento de uso. Muda o objeto da discussão: não existe efeito da IA em geral, existe efeito de um padrão específico que pode ser detectado e interrompido.",
-                  relacao: "É a evidência que sustenta o Sinal 2 e justifica os dois aceleradores classificados como a construir. O achado de que os melhores alunos são os mais afetados desmonta a hipótese de que o risco se limita a quem já ia mal.",
-                  link: "https://cepr.org/publications/dp21577"
+                  autor: "UNESCO",
+                  cargo: "Parâmetro internacional adotado pelo CNE",
+                  titulo: "Uso autônomo de ferramentas de IA apenas a partir dos 13 anos",
+                  data: "Referência do parecer",
+                  tese: "A recomendação da organização, usada como referência internacional na construção do parecer brasileiro, estabelece um limiar de idade para uso independente de IA. O parecer do CNE a adota como âncora ao vedar o uso autônomo até o 5º ano, admitindo a tecnologia nessa faixa apenas em atividade conduzida e mediada pelo professor.",
+                  importa: "Blinda a norma brasileira contra a acusação de excesso regulatório: a restrição por idade não é invenção local, é aplicação de parâmetro multilateral já existente. Isso reduz a chance de reversão na homologação.",
+                  relacao: "Sustenta a leitura do Sinal 2 sobre convergência entre jurisdições e é o argumento que torna a restrição por faixa etária um tema estrutural, e não um acontecimento isolado.",
+                  link: "https://blog.emy.education/cne-2026-inteligencia-artificial-ies/"
                 },
                 {
-                  autor: "Digital Education Council",
-                  cargo: "AI in Higher Education Global Survey 2026",
-                  titulo: "Adoção quase universal, preparo institucional escasso",
-                  data: "Ago/2026",
-                  tese: "Com a maior base já reunida sobre o tema, mostra que o uso de IA se tornou majoritário entre estudantes e docentes em 35 países, enquanto a estrutura institucional não acompanhou: avaliação sem orientação adequada, professores percebidos como despreparados para orientar e docentes fora da construção da política de IA das próprias instituições.",
-                  importa: "Transforma percepção difusa em número comparável entre regiões e permite dimensionar o atraso institucional em vez de descrevê-lo. O recorte latino-americano mostra adoção acima da média global.",
-                  relacao: "Sustenta o Sinal 3 e o acelerador de política de uso. O dado de participação docente é o que explica por que política escrita não vira prática — e desloca o problema de redação para processo.",
-                  link: "https://www.digitaleducationcouncil.com/resource-library-items/ai-in-higher-education-global-survey-2026"
+                  autor: "Zohran Mamdani",
+                  cargo: "Prefeito de Nova York",
+                  titulo: "Desligar os componentes de IA de mais de 38 programas já autorizados",
+                  data: "2 set/2026",
+                  tese: "Ao anunciar a moratória, o prefeito não a apresentou como proibição de uso, e sim como revisão de padrões: os programas já contratados que não atenderem aos novos critérios de segurança e supervisão terão seus componentes de IA descontinuados ou desativados. A restrição foi formulada como consequência de um padrão, não como veto a uma tecnologia.",
+                  importa: "Mostra o mecanismo real de aplicação de uma restrição em escala — e ele é contratual, não pedagógico. Quem fornece precisa responder tecnicamente por algo que antes era pergunta de compliance.",
+                  relacao: "É o que transforma o acelerador de desligamento granular em requisito concreto e não em hipótese: existe precedente de uma rede exigindo isso de dezenas de fornecedores ao mesmo tempo.",
+                  link: "https://www.k12dive.com/news/new-york-city-pauses-ai-use-for-elementary-middle-school-students/829496/"
                 },
               ].map((e, i) => (
                 <motion.div
@@ -3088,6 +3359,7 @@ export default function App() {
           </motion.div>
         </div>
       </section>
+
       {/* ── ANÁLISE ESTRATÉGICA ── */}
       <section id="analise" className="py-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
@@ -3105,16 +3377,16 @@ export default function App() {
               Diferenciação vs <span className="text-[#6B46C1]">Commodity</span>
             </h2>
             <p className="text-gray-500 mb-10 text-lg max-w-3xl">
-              Onde parou de haver vantagem e onde ainda existe algo difícil de copiar. Uma linha mudou de lado nesta edição — e é a que sustentava boa parte do discurso do setor.
+              Onde parou de haver vantagem e onde ainda existe algo difícil de copiar. Nesta edição, uma linha saiu do tabuleiro inteiro — deixou de ser commodity para virar proibição.
             </p>
 
             <div className="bg-white rounded-2xl border-2 border-[#FF6B35] p-6 mb-8">
               <div className="flex items-start gap-3">
-                <TrendingDown className="w-5 h-5 text-[#FF6B35] flex-shrink-0 mt-0.5" />
+                <AlertCircle className="w-5 h-5 text-[#FF6B35] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-gray-900 mb-1">A mudança de lado desta edição</p>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    <strong>Mediação genérica</strong> saiu da coluna de diferenciação e entrou na de commodity. Até esta janela, prometer uso responsável e contenção de atalho era argumento comercial defensável. Passou a ser o comportamento padrão de um produto gratuito instalado no celular do aluno — e o que era promessa de fornecedor virou expectativa mínima de qualquer pai.
+                    <strong>Correção automática de texto autoral</strong> não migrou de diferencial para commodity: saiu da tabela. Deixou de ser uma capacidade com valor decrescente e passou a ser finalidade vedada em todas as etapas do ensino. É a primeira vez que este radar registra uma categoria de produto encerrada por norma, e não por concorrência.
                   </p>
                 </div>
               </div>
@@ -3124,16 +3396,16 @@ export default function App() {
               <div className="bg-red-50 rounded-2xl p-8 border border-red-100">
                 <div className="flex items-center gap-2 mb-6">
                   <TrendingDown className="w-5 h-5 text-red-500" />
-                  <p className="font-bold text-red-700 text-sm uppercase tracking-wide">Virou commodity</p>
+                  <p className="font-bold text-red-700 text-sm uppercase tracking-wide">Virou commodity — ou saiu do jogo</p>
                 </div>
                 <div className="space-y-4">
                   {[
-                    { item: "Mediação genérica do uso", motivo: "Detecção de atalho e modo de estudo ligados por padrão, de graça, sem passar pela escola. Deixou de valer como diferencial no dia em que virou default de plataforma", novo: true },
-                    { item: "Acesso a IA de ponta como parte da oferta", motivo: "Distribuição subsidiada em escala global tirou a linha da planilha. IA inclusa não sustenta preço" },
-                    { item: "Gerador de plano de aula e de questões", motivo: "Todos os concorrentes diretos entregam. É custo de entrada, não argumento de venda" },
-                    { item: "Chat ancorado no conteúdo próprio", motivo: "RAG sobre acervo autoral é padrão consolidado entre os cinco grupos mapeados. Paridade aqui não gera vantagem" },
-                    { item: "Formação genérica em IA como receita", motivo: "Catálogo gratuito e bem estruturado ocupou o espaço. Resta o que exige currículo e certificação reconhecida pelo mantenedor" },
-                    { item: "Discurso de intencionalidade pedagógica", motivo: "Repetido em todos os palcos do setor nesta janela. Sem métrica de percurso por trás, virou consenso vazio que não separa ninguém" },
+                    { item: "Correção automática de redação e prova dissertativa", motivo: "Não é mais commodity: é finalidade vedada em qualquer etapa. Quem vendia isso tem prazo para trocar a peça que decide", novo: true },
+                    { item: "Detector de IA como prova de autoria", motivo: "Perdeu força probatória por norma: nenhuma punição pode se fundamentar apenas nele. Vira sinal para conversa, não evidência para sanção", novo: true },
+                    { item: "Tutor autônomo para os anos iniciais", motivo: "Mercado fechado por decisão administrativa em duas jurisdições na mesma semana. Só sobrevive como instrumento do professor", novo: true },
+                    { item: "Mediação genérica do uso", motivo: "Já era default de plataforma na edição passada; agora é também piso normativo. Duplamente commodity" },
+                    { item: "Chat ancorado no conteúdo próprio", motivo: "Padrão consolidado entre todos os concorrentes diretos. Paridade aqui continua não gerando vantagem" },
+                    { item: "Política de uso como documento", motivo: "Vira obrigação com prazo. Ter o PDF deixa de diferenciar no instante em que todos precisam ter o seu" },
                   ].map((c, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-red-400 mt-0.5 flex-shrink-0">▸</span>
@@ -3156,12 +3428,12 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   {[
-                    { item: "Mediação com contexto curricular", motivo: "Saber o capítulo, o enunciado, se vale nota e o que o aluno errou antes. Mesmo mecanismo da trava genérica, com a informação que a plataforma não tem acesso para obter", novo: true },
-                    { item: "Evidência de percurso, não de entrega", motivo: "Versões, tentativas, tempo e revisões — a única prova de aprendizagem que o agente não fabrica pelo aluno, e que exige estar dentro do editor" },
-                    { item: "Devolução do dado de uso ao professor", motivo: "As plataformas gratuitas não devolvem nada à instituição. Fechar o ciclo entre uso e resultado só é possível para quem opera a jornada inteira" },
-                    { item: "Política de uso pronta e configurável", motivo: "Dor medida, norma parada e nenhum concorrente com produto. É a lacuna com maior descasamento entre urgência e oferta" },
-                    { item: "Dado longitudinal da própria rede", motivo: "Histórico do aluno cruzado com microdados públicos. A big tech entrega estudo genérico e não sabe o que a turma viu no capítulo passado" },
-                    { item: "Relação institucional com rede e mantenedor", motivo: "Compra pública e adoção de rede dependem de confiança construída ao longo de ciclos, não de superioridade técnica pontual" },
+                    { item: "Rastro de decisão com histórico", motivo: "A norma pede supervisão contínua e relatório no alto risco. Quem já registra pode provar; quem começar agora prova daqui a um ano — e isso não se compra", novo: true },
+                    { item: "Conformidade demonstrável como peça comercial", motivo: "Mapa próprio de classificação por faixa de risco publicado antes dos concorrentes define o formato que eles terão de responder", novo: true },
+                    { item: "Desligamento granular por série e rede", motivo: "Vira condição de permanência em contrato, não só de venda. Precedente já existe em rede com centenas de milhares de alunos", novo: true },
+                    { item: "Curadoria humana em escala", motivo: "Manter decisão editorial humana em volume exige estrutura de gente que não se contrata em um ciclo — é a barreira mais difícil de vencer desta lista" },
+                    { item: "Evidência de efeito na própria base", motivo: "Avaliação de impacto passa a ser exigível. Linha de base não é construída retroativamente, então quem não começou já está atrasado" },
+                    { item: "Relação institucional com rede e mantenedor", motivo: "Com prazo correndo, a rede procura quem já está dentro para resolver adequação — a confiança acumulada rende mais agora do que rendia antes" },
                   ].map((d, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-green-500 mt-0.5 flex-shrink-0">▸</span>
@@ -3209,9 +3481,9 @@ export default function App() {
                 <p className="text-[11px] text-orange-600/80 mb-5 font-medium">Muito discurso, evidência ausente ou contrária</p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "IA grátis democratiza a aprendizagem", desc: "A evidência da própria janela aponta na direção oposta: distribuir ferramenta poderosa a quem não recebeu orientação amplia a diferença de resultado entre quem sabe usar e quem não sabe. Acesso sem desenho não é inclusão." },
-                    { titulo: "Robô humanoide na sala de aula", desc: "Alto poder de encantamento em feira, custo elevado por unidade e nenhuma evidência de efeito. O que sustenta a experiência é a camada de recuperação sobre acervo próprio — replicável sem hardware nenhum." },
-                    { titulo: "Adoção alta como sinal de maturidade", desc: "Uso quase universal convivendo com orientação escassa não é maturidade, é exposição. O indicador que importa deixou de ser quantos usam e passou a ser quantos usam sob desenho pedagógico." },
+                    { titulo: "A norma proíbe IA na escola", desc: "É a leitura que circulou mais e a mais errada. O texto mantém permitido o apoio à organização de material, acessibilidade, tradução, planejamento de aula e até correção de prova objetiva com validação humana. O que se veda é a delegação da decisão, não o uso." },
+                    { titulo: "Doze meses é prazo confortável", desc: "O relógio só começa na homologação, mas o que precisa ser feito não é ajuste de interface: é instrumentar registro de decisão, o que exige definir esquema de evento antes de escrever a próxima feature. Quem tratar como projeto do mês dez descobre que trilha de auditoria não é retroativa." },
+                    { titulo: "Detector de IA resolvido é problema resolvido", desc: "A norma retirou o poder punitivo do detector, e isso foi lido como fim da questão da autoria. Não é: o problema de saber quem escreveu continua inteiro, apenas ficou sem o atalho técnico que nunca funcionou bem." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-orange-400 mt-1 flex-shrink-0">▸</span>
@@ -3231,9 +3503,9 @@ export default function App() {
                 <p className="text-[11px] text-purple-600/80 mb-5 font-medium">Sinal real, cedo demais para conclusão firme</p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "Trava de atalho como padrão de indústria", desc: "Implementada por um player dominante e coerente com a evidência, mas com um único ciclo de existência e nenhum dado público sobre eficácia real. Forte o suficiente para exigir resposta de produto, cedo demais para tratar como padrão consolidado." },
-                    { titulo: "Controle parental como camada pedagógica", desc: "Delegar à família a janela em que o modo de estudo fica ligado desloca a autoridade sobre o uso da escola para a casa. Mexe na cadeia de decisão do setor, mas ainda não há sinal de como escolas e redes vão reagir." },
-                    { titulo: "Literacia em IA como competência avaliada", desc: "Aparece em currículo estadual, em programa de grupo educacional e na pauta de organismos internacionais. Convergência real, sem instrumento de avaliação padronizado que permita comparar resultado entre redes." },
+                    { titulo: "Conformidade como argumento de venda", desc: "A lógica é sólida e o precedente de desligamento contratual existe, mas nenhum player brasileiro testou isso numa mesa de compra ainda — e sem homologação, o comprador pode legitimamente esperar. Forte para começar a construir, cedo para prometer retorno." },
+                    { titulo: "Restrição de acesso por faixa etária como padrão global", desc: "Duas jurisdições grandes na mesma semana, ancoradas no mesmo parâmetro multilateral. É convergência real, mas ainda são dois casos: falta ver se outras redes seguem ou se o corte por idade recua na prática." },
+                    { titulo: "Consolidação editorial por função regulada", desc: "Comprar plataforma de avaliação no mês em que avaliação virou regulada pode ser leitura estratégica precisa ou coincidência de calendário. Uma transação não estabelece padrão — vale acompanhar se outros grupos se movem na mesma direção." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-purple-400 mt-1 flex-shrink-0">▸</span>
@@ -3253,10 +3525,10 @@ export default function App() {
                 <p className="text-[11px] text-blue-600/80 mb-5 font-medium">Evidência convergente, já move roadmap</p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "Desenho de uso como requisito de produto", desc: "Medição longitudinal, análise de política pública e decisão de produto das três maiores empresas de IA apontam para o mesmo lugar, por caminhos independentes. Deixou de ser posição pedagógica e virou especificação técnica." },
-                    { titulo: "Evidência de percurso como artefato de avaliação", desc: "Se a entrega deixou de provar aprendizagem, a prova migra para o processo. É a resposta técnica ao problema que a própria IA criou, e segue sem produto no mercado brasileiro." },
-                    { titulo: "O fim do chat aberto como formato de estudo", desc: "Dois dos maiores laboratórios de IA do mundo abandonaram a conversa livre em favor de fluxo estruturado na mesma janela. Quando quem inventou a interface troca de formato, o padrão do setor muda junto." },
-                    { titulo: "Formação docente como pré-condição de adoção", desc: "O caso público mais maduro do país escalou porque formou professor antes de mudar currículo, e o mercado tornou a capacitação gratuita. Deixou de ser brinde comercial e virou etapa obrigatória — agora com concorrente subsidiado." },
+                    { titulo: "A decisão sobre o aluno é indelegável", desc: "Três edições subindo de camada e agora com força normativa, princípio declarado pelo relator e convergência com parâmetro internacional. Deixou de ser posição pedagógica e virou critério de arquitetura com consequência jurídica." },
+                    { titulo: "Rastro de decisão como infraestrutura", desc: "A norma pede supervisão contínua e relatório no alto risco, e a única forma de atender é registrar. Não é tendência de mercado: é requisito com prazo, e o custo de começar tarde é estrutural." },
+                    { titulo: "Formação docente como obrigação institucional", desc: "Quatro edições de escalada e agora dever legal nas licenciaturas e na formação continuada, com a oferta gratuita já capturada por quem vem de fora do setor. A escola perdeu a opção de não formar." },
+                    { titulo: "Regulação por finalidade, não por tecnologia", desc: "A escolha de desenho do CNE — regular o que a aplicação pode decidir, e não qual ferramenta usar — dá sobrevida à norma diante de modelo novo. É o método que outras jurisdições tendem a copiar." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-blue-400 mt-1 flex-shrink-0">▸</span>
@@ -3276,7 +3548,7 @@ export default function App() {
                 <p className="font-bold text-gray-900">O padrão desta quinzena</p>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                O setor passou anos discutindo se deveria mediar o uso de IA pelo aluno. Enquanto essa discussão acontecia, quem opera a ferramenta decidiu sozinho — e implementou. A consequência é que o debate pedagógico brasileiro perdeu o objeto: não adianta defender mediação como diferencial quando ela chega de fábrica e de graça. O que sobra é mais estreito e mais difícil: mediar sabendo o que foi pedido, por quem, para quando e com que histórico. Nenhum dos cinco grupos mapeados nesta edição ocupou esse espaço, nenhum se posicionou publicamente sobre a evidência que o justifica, e a norma que poderia forçar o movimento segue sem homologação. O problema tem dado, tem urgência, tem tecnologia disponível — e continua sem dono.
+                O setor passou cinco edições esperando uma regra que parecia não chegar, e quando chegou não fez o que se temia. Não proibiu a tecnologia nem a liberou com ressalvas vagas: recortou por finalidade e devolveu ao professor a assinatura da decisão sobre o aluno. Quem lia a regulação como risco de restrição errou o alvo — o risco real era o oposto, é de ter construído produto que decide sozinho. E há uma ironia útil aqui: a arquitetura que a norma acabou de exigir é a mesma que um par direto brasileiro escolheu por conta própria antes de existir regra, e foi premiado por isso. A conformidade que vai valer na mesa de compra não é a que se declara em doze meses; é a que já tem histórico. O relógio começa na homologação, mas a vantagem começou a ser construída antes dela.
               </p>
             </div>
           </motion.div>
@@ -3325,90 +3597,90 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
+                  rastreio: "Sinal 1",
+                  sinal: "A norma exige supervisão humana contínua e relatório nos usos de alto risco, e proíbe a máquina de assinar avaliação e punição",
+                  problema: "Nossos fluxos em que a IA propõe nota, classificação ou alerta não registram quem validou, com base em quê e quando. Sem esse registro, não há como demonstrar conformidade — e o rastro não é reconstituível depois.",
+                  oportunidade: "Registro de decisão pedagógica como infraestrutura",
+                  impacto: "Log imutável de cada decisão sobre o aluno, com autoria da validação, versão do modelo e intervenção humana. Deixa de ser diferencial e passa a ser licença para operar em rede pública e mantenedor — mas quem tiver primeiro tem histórico, e histórico é a única conformidade que não se improvisa.",
+                  professor: "Ganha respaldo documentado quando sua decisão divergir da sugestão da máquina.",
+                  aluno: "Passa a ter direito verificável a uma decisão humana sobre sua trajetória, não apenas prometida.",
+                  gestor: "Tem o que apresentar em auditoria e em processo de compra, no lugar de declaração de intenção.",
+                  roadmapItem: "Definir esquema de evento antes da próxima feature; retrofit é impossível, não apenas caro.",
+                  prioridade: "Alta",
+                  cor: "border-[#6B46C1]",
+                  corBadge: "bg-[#6B46C1] text-white",
+                  area: "Produto / Engenharia"
+                },
+                {
+                  rastreio: "Sinal 1 e ausência registrada",
+                  sinal: "A norma classifica aplicações em quatro faixas de risco e nenhum player brasileiro publicou onde seus próprios produtos se encaixam",
+                  problema: "Não sabemos qual é a nossa exposição real. Sem o inventário das decisões automatizadas por faixa, a adequação vira reação a interpretação de terceiro.",
+                  oportunidade: "Mapa próprio de conformidade, publicado antes dos pares",
+                  impacto: "Inventário de cada decisão automatizada, classificada por finalidade e por quem assina. Custo próximo de zero em desenvolvimento e alto em tempo sênior — e quem publica primeiro define o formato de resposta que os concorrentes terão de adotar. É a lacuna mais barata desta edição.",
+                  professor: "Passa a saber, por recurso, o que o sistema decide e o que depende dele.",
+                  aluno: "Efeito indireto: transparência sobre onde há decisão automatizada na sua trajetória.",
+                  gestor: "Recebe do fornecedor o documento que ele mesmo teria de produzir para a rede.",
+                  roadmapItem: "Exercício conjunto de produto, pedagógico e jurídico nesta janela; independe da homologação.",
+                  prioridade: "Alta",
+                  cor: "border-[#6B46C1]",
+                  corBadge: "bg-[#6B46C1] text-white",
+                  area: "Produto / Compliance"
+                },
+                {
                   rastreio: "Sinais 1 e 2",
-                  sinal: "A trava de atalho virou default de plataforma, e a evidência mostra que é exatamente o comportamento que ela contém que concentra a perda de aprendizagem",
-                  problema: "A mediação que sustentava nosso discurso passou a existir de graça no celular do aluno — sem currículo, sem enunciado e sem histórico, mas de graça e ligada por padrão.",
-                  oportunidade: "Mediação curricular: a trava que sabe o que foi pedido",
-                  impacto: "Mesmo mecanismo de contenção, com o que a plataforma não tem: qual capítulo a turma está estudando, se a atividade vale nota, o que o aluno errou no bimestre e o que a escola definiu como permitido. É a única versão da mediação que não compete com um produto gratuito — porque não pode ser construída de fora da escola.",
-                  professor: "Recebe a trava alinhada ao que ele pediu, e não a uma regra genérica que ignora o enunciado.",
-                  aluno: "Encontra o caminho guiado dentro do material da própria escola, em vez de ser empurrado para fora dela.",
-                  gestor: "Ganha o argumento que substitui o que a gratuidade destruiu: mediação que a big tech não consegue oferecer.",
-                  roadmapItem: "Classificador de intenção acoplado ao contexto da atividade; limiar por série e disciplina; registro de acionamento devolvido ao professor.",
+                  sinal: "Uso autônomo vedado até o 5º ano aqui, moratória até o 8º em Nova York com desligamento de função em mais de 38 programas já autorizados",
+                  problema: "Se uma rede nos pedir amanhã para desativar IA apenas nos anos iniciais, não temos controle granular para fazer isso sem tirar função de quem pode usá-la.",
+                  oportunidade: "Desligamento de função por série, turma e rede",
+                  impacto: "Controle hierárquico remoto, sem nova versão. Vira condição de permanência em contrato, não só de venda — o precedente de uma rede exigindo isso de dezenas de fornecedores simultaneamente já existe. Resolve um problema que o cliente brasileiro ainda não formulou, mas vai formular.",
+                  professor: "Mantém acesso às funções da sua etapa sem ser afetado por restrição de outra faixa.",
+                  aluno: "Tem a proteção da norma aplicada de fato, e não por retirada geral do recurso.",
+                  gestor: "Cumpre a vedação sem suspender o contrato inteiro nem gerenciar exceções manualmente.",
+                  roadmapItem: "Flags com escopo hierárquico e integração confiável ao cadastro do aluno; testar a matriz de estados.",
                   prioridade: "Alta",
                   cor: "border-[#6B46C1]",
                   corBadge: "bg-[#6B46C1] text-white",
-                  area: "Produto / Iônica"
+                  area: "Engenharia / Contratos"
                 },
                 {
-                  rastreio: "Sinal 2",
-                  sinal: "O marcador observável do dano é o par tempo de execução curto com nota alta — um dado que só existe para quem instrumenta o percurso",
-                  problema: "Se a entrega deixou de provar aprendizagem, a avaliação perdeu seu artefato principal — e nenhum player brasileiro lançou substituto.",
-                  oportunidade: "Evidência de percurso como novo artefato de avaliação",
-                  impacto: "Captura de versões, tentativas, tempo e revisões dentro do editor, transformando processo em prova. Cria métrica de efeito que hoje nenhum concorrente direto oferece e muda a conversa comercial de funcionalidade para resultado.",
-                  professor: "Passa a ver como o aluno chegou lá, e não só onde chegou — com critério objetivo de suspeita em vez de intuição.",
-                  aluno: "O esforço fica visível e reconhecido, o que muda o incentivo: percurso registrado vale mais que entrega impecável.",
-                  gestor: "Leva ao mantenedor evidência de aprendizagem produzida na própria rede, não promessa de fornecedor.",
-                  roadmapItem: "Esquema de eventos definido antes do primeiro registro; política de retenção sob LGPD; painel de percurso para o professor.",
-                  prioridade: "Alta",
-                  cor: "border-[#6B46C1]",
-                  corBadge: "bg-[#6B46C1] text-white",
-                  area: "Produto / Dados"
-                },
-                {
-                  rastreio: "Sinais 3 e 5",
-                  sinal: "Adoção quase universal com participação docente minoritária na construção da política, e norma nacional sem homologação pela terceira edição",
-                  problema: "A escola precisa decidir sozinha o que permitir, sem norma para se apoiar e sem instrumento para aplicar o que decidir.",
-                  oportunidade: "Política de uso como artefato configurável no produto",
-                  impacto: "Regra por atividade, série e disciplina, versionada e auditável, construída com o professor dentro do fluxo de criação de tarefa. Resolve uma dor medida que nem a regulação nem o concorrente resolveram, e absorve o parecer por configuração quando ele for homologado.",
-                  professor: "Sai de destinatário da regra para autor dela, no mesmo lugar onde cria a atividade.",
-                  aluno: "Passa a saber o que é permitido em cada tarefa, em vez de inferir a partir do silêncio institucional.",
-                  gestor: "Ganha governança demonstrável para mantenedor, família e futura fiscalização — sem esperar a norma.",
-                  roadmapItem: "Política como dado e não como condicional em código; trilha de auditoria; mapeamento para níveis de risco parametrizáveis.",
-                  prioridade: "Alta",
-                  cor: "border-[#6B46C1]",
-                  corBadge: "bg-[#6B46C1] text-white",
-                  area: "Compliance / Produto"
-                },
-                {
-                  rastreio: "Sinais 1 e 4",
-                  sinal: "As plataformas gratuitas não devolvem à escola nenhum registro do que o aluno fez, e os concorrentes diretos convergiram para o mesmo desenho sem cobrir essa camada",
-                  problema: "O uso de IA pelo aluno acontece fora do campo de visão da escola, e o professor só encontra o resultado quando a avaliação já passou.",
-                  oportunidade: "Fechar o ciclo entre uso de IA e resultado de aprendizagem",
-                  impacto: "Devolver ao professor o que aconteceu antes da entrega, cruzado com desempenho posterior. É a única camada estruturalmente indisponível para quem opera de fora da instituição — e a que transforma dado de uso em decisão pedagógica.",
-                  professor: "Enxerga o antes da prova, não só o depois, e pode intervir enquanto ainda dá tempo.",
-                  aluno: "Recebe intervenção baseada no que realmente fez, e não em suposição sobre por que foi mal.",
-                  gestor: "Passa a ter leitura de rede sobre padrão de uso, insumo que hoje nenhuma plataforma fornece.",
-                  roadmapItem: "Integração entre telemetria de percurso e resultado de avaliação; visão de turma antes da visão de aluno.",
+                  rastreio: "Sinais 1 e 3",
+                  sinal: "Correção de prova objetiva segue permitida como apoio, desde que a validação humana seja documentada — e um grupo editorial acabou de comprar capacidade de avaliação por IA",
+                  problema: "Correção automática resolve a dor mais concreta do professor e é justamente onde a norma traçou a linha. Sem fluxo de conferência registrável, o ganho de tempo vira risco de conformidade.",
+                  oportunidade: "Fluxo de validação humana que não devolve o trabalho ao professor",
+                  impacto: "Revisão em lote com amostragem guiada pela confiança do modelo, destaque dos itens duvidosos e registro por item. Preserva a proposta de valor da correção automática dentro da regra — e atende a um mercado que acabou de ficar sem alternativa conforme.",
+                  professor: "Confere o que importa em vez de tudo, e o sistema registra que ele conferiu.",
+                  aluno: "Nota objetiva revisada por pessoa, com rastro de quem revisou.",
+                  gestor: "Mantém o ganho operacional da correção em escala sem expor a instituição.",
+                  roadmapItem: "Calibrar confiança por item antes de desenhar a amostragem; sem isso a revisão vira aleatória.",
                   prioridade: "Média",
                   cor: "border-[#FF6B35]",
                   corBadge: "bg-[#FF6B35] text-white",
-                  area: "Dados / Produto"
+                  area: "Produto / Avaliação"
                 },
                 {
-                  rastreio: "Sinal 3 e benchmark Piauí",
-                  sinal: "Formação docente aparece como gargalo real no caso público mais maduro do país e como lacuna medida no survey global — enquanto o catálogo genérico virou gratuito",
-                  problema: "A linha de receita de formação em IA foi ocupada por concorrente indireto que não cobra, e a capacitação segue sendo pré-condição de qualquer adoção.",
-                  oportunidade: "Formação ancorada no material adotado e na política da rede",
-                  impacto: "O que o catálogo gratuito não faz: formar sobre a BNCC, sobre o livro em uso e sobre a política que a escola acabou de configurar, com certificação que o mantenedor reconhece. Deixa de competir em conteúdo genérico e passa a competir em contexto.",
-                  professor: "Aprende a usar IA no material que ele efetivamente adota, não em exemplo genérico de catálogo.",
-                  aluno: "Efeito indireto e direto: professor formado é a variável que o caso do Piauí mostra ser decisiva para o programa escalar.",
-                  gestor: "Converte formação de custo em ativo de retenção, com trilha vinculada ao sistema de ensino contratado.",
-                  roadmapItem: "Trilha gerada a partir do material adotado pela escola; certificação vinculada à política configurada.",
+                  rastreio: "Sinal 5",
+                  sinal: "A norma cria dever de formação continuada e de conteúdo de IA nas licenciaturas, enquanto a oferta gratuita já está capturada por quem vem de fora do setor",
+                  problema: "A escola passou a ser obrigada a formar e vai formar com quem estiver disponível. Catálogo gratuito e genérico resolve o custo dela e não cria nenhum vínculo com o nosso material.",
+                  oportunidade: "Formação certificada ancorada no material adotado e na política da rede",
+                  impacto: "Trilha gerada a partir do livro e da política que a escola configurou, com certificação que o mantenedor reconhece para cumprir a obrigação. É a lacuna que o catálogo gratuito estruturalmente não cobre, porque ele não conhece o currículo adotado.",
+                  professor: "Aprende a usar IA no material que ele efetivamente adota, não em exemplo genérico.",
+                  aluno: "Depende de professor formado para ter qualquer acesso mediado nos anos iniciais.",
+                  gestor: "Cumpre o dever de formação com evidência aceitável e sem montar programa próprio.",
+                  roadmapItem: "Vincular certificação à política configurada da rede — é o que transforma formação em retenção.",
                   prioridade: "Média",
                   cor: "border-[#FF6B35]",
                   corBadge: "bg-[#FF6B35] text-white",
                   area: "Formação / Comercial"
                 },
                 {
-                  rastreio: "Sinal 2 e ausência registrada",
-                  sinal: "A penalidade de aprendizagem foi medida em coorte estrangeira, e nenhuma instituição brasileira anunciou estudo de efeito comparável sobre base própria",
-                  problema: "Quando o debate exigir prova local — e ele vai exigir —, ninguém no Brasil terá dado próprio, porque coorte não se constrói retroativamente.",
-                  oportunidade: "Coorte longitudinal própria com parceria acadêmica independente",
-                  impacto: "Evidência de efeito produzida na base instalada, com desenho metodológico defensável. É o ativo que nenhuma big tech consegue produzir sobre o contexto da escola brasileira — e o único que sustenta afirmação pública de aprendizagem sem risco reputacional.",
-                  professor: "Participa de pesquisa que legitima a própria prática, em vez de ser objeto de medição externa.",
-                  aluno: "Efeito de médio prazo: intervenções passam a ser calibradas por dado da própria rede.",
-                  gestor: "Ganha diferencial institucional durável e insumo direto para a conversa com o poder público.",
-                  roadmapItem: "Definir coorte, consentimento e linha de base neste semestre; o custo de atraso é a impossibilidade de recuperar o histórico.",
+                  rastreio: "Sinal 1 e ausência recorrente",
+                  sinal: "Avaliação de impacto passa a ser exigível no alto risco, e nenhuma instituição brasileira anunciou estudo de efeito sobre a própria base — segunda edição com a mesma ausência",
+                  problema: "Quando a norma vigorar, quem não tiver linha de base não terá o que declarar. Coorte não se constrói retroativamente, e o prazo de doze meses não é suficiente para gerar série histórica.",
+                  oportunidade: "Linha de base própria para avaliação de impacto",
+                  impacto: "Definir coorte, consentimento e medição inicial agora, com parceria acadêmica independente. Cumpre a exigência futura e produz o ativo que nenhuma big tech consegue gerar sobre o contexto da escola brasileira. O custo de atraso aqui não é financeiro, é de impossibilidade.",
+                  professor: "Participa de pesquisa que legitima a prática, em vez de ser objeto de medição externa.",
+                  aluno: "Intervenções passam a ser calibradas por dado da própria rede.",
+                  gestor: "Tem o que apresentar quando o relatório de impacto for cobrado.",
+                  roadmapItem: "Fechar desenho metodológico e consentimento neste semestre; cada mês sem coleta é histórico perdido.",
                   prioridade: "Baixa",
                   cor: "border-gray-200",
                   corBadge: "bg-gray-200 text-gray-700",
@@ -3518,6 +3790,36 @@ export default function App() {
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Card Agosto 2026 · Ed. #10 */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-[#6B46C1] hover:shadow-md transition-all"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 mb-1">EDIÇÃO ANTERIOR</p>
+                    <p className="text-sm text-gray-700">Agosto de 2026 · Ed. #10</p>
+                  </div>
+                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-[#6B46C1]" />
+                  </div>
+                </div>
+                <h3 className="font-bold text-gray-900 mb-3">
+                  A mediação pedagógica deixou de ser reserva de valor e virou default da plataforma
+                </h3>
+                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                  A evidência nomeou o comportamento que prejudica e a OpenAI embutiu o antídoto no produto. Mediar genericamente virou commodity em três semanas.
+                </p>
+                <button
+                  onClick={() => goToEdicao('edicao-agosto-2026-b')}
+                  className="w-full px-4 py-2 bg-[#6B46C1] text-white rounded-lg font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+                >
+                  Abrir edição
+                </button>
+              </motion.div>
+
               {/* Card Agosto 2026 · Ed. #09 */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -3738,7 +4040,7 @@ export default function App() {
             <div className="pt-6 border-t border-white/15 space-y-1.5">
               <p className="text-white/60 text-sm">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
               <p className="text-white/50 text-sm">Hub de IA — Iônica &amp; FTD Com Você</p>
-              <p className="text-white/30 text-xs mt-2">Agosto de 2026 · Edição #10 · 04 – 24 ago</p>
+              <p className="text-white/30 text-xs mt-2">Setembro de 2026 · Edição #11 · 25 ago – 10 set</p>
             </div>
           </motion.div>
         </div>
