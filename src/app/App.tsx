@@ -2733,7 +2733,7 @@ export default function App() {
               Quem chega <span className="text-[#6B46C1]">conforme</span>
             </h2>
             <p className="text-gray-500 mb-10 text-lg max-w-3xl">
-              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Nesta edição a pergunta é uma só: quem já opera com decisão humana registrável e quem tem produto para refazer dentro do prazo.
+              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Nesta edição interessa quem já opera com decisão humana registrável, quem tem produto para refazer dentro do prazo e o que cada um já colocou dentro do produto.
             </p>
 
             {/* Mercado privado */}
@@ -2859,6 +2859,127 @@ export default function App() {
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            {/* Radar de funcionalidades */}
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-1.5 h-6 bg-gradient-to-b from-[#6B46C1] to-[#FF6B35] rounded-full" />
+              <h3 className="text-xl font-bold text-gray-900">Radar de funcionalidades</h3>
+            </div>
+            <p className="text-sm text-gray-500 mb-6 max-w-3xl">
+              Posição de mercado se anuncia; funcionalidade se usa. O recurso que cada player já embarcou, a quem ele serve e o que ocupa — ou deixa vago — no tabuleiro.
+            </p>
+            <div className="grid md:grid-cols-2 gap-5 mb-8">
+              {[
+                {
+                  player: "Somos Educação",
+                  produto: "Plu, dentro do Plurall",
+                  mercado: "Privado",
+                  corMercado: "bg-purple-100 text-purple-700",
+                  publicos: ["Professor", "Aluno"],
+                  entregue: "Para o professor: plano de aula, questões, provas e apresentações a partir do capítulo do material. Para o aluno: resumo, glossário, plano de estudo, exercício e tirar dúvida dentro do próprio conteúdo.",
+                  leitura: "É quem foi mais longe na conversa com o conteúdo do livro. Ancorar a resposta ao capítulo é o que separa assistente genérico de assistente proprietário — e é a parte difícil de copiar, porque depende do acervo, não do modelo. Volume declarado pela empresa nos três primeiros meses de 2025: mais de 168 mil planos de aula gerados, com 86% de satisfação.",
+                  fonte: "https://www.plurall.net/ia.html",
+                  fonteLabel: "Plurall IA"
+                },
+                {
+                  player: "Poliedro",
+                  produto: "Cosmos, camada de IA do P+",
+                  mercado: "Privado",
+                  corMercado: "bg-purple-100 text-purple-700",
+                  publicos: ["Professor", "Gestor"],
+                  entregue: "Interação com IA generativa restrita ao conteúdo proprietário, somada a modelos preditivos: sugestão de estratégia didática, adaptação de conteúdo, criação de avaliação e leitura de desempenho. Disponível na web e no app P+.",
+                  leitura: "Restringir a geração ao acervo próprio é decisão de arquitetura, não de marketing: reduz alucinação e encurta a conversa de conformidade. A aposta é no professor e no gestor; o aluno não aparece como usuário direto da camada generativa.",
+                  fonte: "https://brasil.bettshow.com/releases-expositores-2026/poliedro-apresenta-cosmos-hub-de-inteligencia-artificial-na-bett-brasil-2026",
+                  fonteLabel: "Release Bett Brasil 2026"
+                },
+                {
+                  player: "Santillana",
+                  produto: "Moderna Core",
+                  mercado: "Privado",
+                  corMercado: "bg-purple-100 text-purple-700",
+                  publicos: ["Professor", "Gestor"],
+                  entregue: "Ecossistema que junta conteúdo, dados e IA: ampliação de repertório de estratégias para o professor e leitura contínua de desempenho para apoiar decisão do gestor.",
+                  leitura: "A funcionalidade anunciada é acompanhamento, não geração. Isso mantém a IA longe da superfície do aluno e explica a exposição mais baixa — ao custo de ter menos produto visível para disputar a comparação de recursos numa mesa de venda.",
+                  fonte: "https://revistaeducacao.com.br/2026/05/05/moderna-core-bett/",
+                  fonteLabel: "Revista Educação"
+                },
+                {
+                  player: "Bernoulli",
+                  produto: "CoCria Professor",
+                  mercado: "Privado",
+                  corMercado: "bg-purple-100 text-purple-700",
+                  publicos: ["Professor", "Gestor"],
+                  entregue: "Apoio ao planejamento docente e à leitura de diagnóstico de aprendizagem, com adaptação de atividades e organização de estratégias sobre a base de dados da rede.",
+                  leitura: "Entra pela dor operacional — devolver tempo a quem planeja — e não pela promessa de personalização. É o caminho de menor atrito para adoção, e também o de menor diferenciação: é o recurso que todo mundo terá.",
+                  fonte: "https://educador21.com/ia-desafia-escolas-repensar-gestao-formacao/",
+                  fonteLabel: "Educador21"
+                },
+                {
+                  player: "PNLD Digital",
+                  produto: "Leitor oficial do MEC/FNDE",
+                  mercado: "Plataforma pública",
+                  corMercado: "bg-orange-100 text-orange-700",
+                  publicos: ["Aluno", "Professor"],
+                  entregue: "Leitor interativo das obras do programa, com audiodescrição, narração, mapas e infográficos clicáveis, vídeos legendados e compatibilidade com leitor de tela. Traz agente de IA para esclarecer dúvidas e apoiar o uso do sistema.",
+                  leitura: "Não é concorrente: é o trilho por onde o livro de todo mundo passa a circular. E o detalhe importa — o agente responde sobre o sistema, não sobre o conteúdo do livro. Quem entregar acessibilidade acima do padrão do leitor oficial deixa de ter diferencial; quem entregar conversa com o conteúdo ainda tem.",
+                  fonte: "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/junho/pnld-digital-amplia-inclusao-aos-livros-da-educacao-basica",
+                  fonteLabel: "MEC"
+                },
+              ].map((f, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col"
+                >
+                  <div className="flex items-start justify-between gap-3 mb-1 flex-wrap">
+                    <h4 className="font-bold text-gray-900 text-lg leading-snug">{f.player}</h4>
+                    <span className={`px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${f.corMercado}`}>
+                      {f.mercado}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-500 mb-4">{f.produto}</p>
+
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {f.publicos.map(p => (
+                      <span key={p} className="px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-600">
+                        {p}
+                      </span>
+                    ))}
+                  </div>
+
+                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">O que está no produto</p>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-4">{f.entregue}</p>
+
+                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">O que isso significa</p>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-5">{f.leitura}</p>
+
+                  <a
+                    href={f.fonte}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-center gap-1.5 text-xs font-medium text-[#6B46C1] hover:underline"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    {f.fonteLabel}
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="bg-white rounded-2xl border-2 border-orange-100 p-6 md:p-8 mb-12">
+              <div className="flex items-start gap-3">
+                <Target className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-2">O espaço que continua vago</h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Entre todos esses produtos, um recurso aparece uma vez só: conversar com o conteúdo do livro. O Plu faz isso no privado, ancorado ao capítulo. No público, o agente do leitor oficial responde sobre o sistema — como navegar, como baixar, como ativar acessibilidade — e não sobre o que está escrito na página. É a diferença entre um suporte e um professor auxiliar, e ela ainda não foi ocupada na rede pública.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Força de contexto */}
