@@ -1,5 +1,16 @@
 packages:
   - '.'
+
+# Pacotes autorizados a rodar script de build na instalação.
+# Ambos compilam binário nativo no postinstall; sem isso o build do Vite falha.
+# A partir do pnpm 12 a instalação é INTERROMPIDA quando há build ignorado
+# (ERR_PNPM_IGNORED_BUILDS), então estes booleanos são obrigatórios.
+# `allowBuilds` é a chave lida pelo pnpm 12; `onlyBuiltDependencies` cobre
+# as versões 9 e 10, que ainda usam o formato de lista.
 allowBuilds:
-  '@tailwindcss/oxide': set this to true or false
-  esbuild: set this to true or false
+  '@tailwindcss/oxide': true
+  esbuild: true
+
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - esbuild
