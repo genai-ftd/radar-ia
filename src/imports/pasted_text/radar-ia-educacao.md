@@ -613,6 +613,32 @@ MERCADO PÚBLICO
 Big techs, infraestrutura e pesquisa entram como FORÇAS DE CONTEXTO,
 em bloco separado.
 
+RADAR DE FUNCIONALIDADES — rastreio no nível do produto
+Além da POSIÇÃO de cada player, rastrear O QUE ENTROU NO PRODUTO:
+recurso, público atendido (professor / aluno / gestor), data e fonte.
+É o eixo que responde "eles lançaram X, nós lançamos Y" — e que
+expõe espaço vago quando um recurso aparece em um só concorrente.
+
+Onde procurar, em ordem de confiabilidade:
+1. Central de ajuda e notas de versão do produto
+   (ex.: ajuda.plurall.net, materiais.sistemapoliedro.com.br)
+2. Página oficial do produto e release de evento (Bett Brasil)
+3. Loja de aplicativo — histórico de versões
+4. Imprensa setorial (Educador21, Revista Educação, Porvir, IT Forum)
+5. Comunicado MEC/FNDE para a camada pública (PNLD Digital)
+
+PLATAFORMA PÚBLICA NÃO É CONCORRENTE
+O PNLD Digital (MEC/FNDE) é o leitor oficial por onde o livro de todos
+passa a circular. Entra no radar de funcionalidades como camada de
+plataforma; NUNCA na tabela de concorrência direta, que segue restrita
+à lista calibrada acima.
+
+Regra de precisão: descrever o recurso pelo que ele faz, não pelo que
+o nome sugere. Caso verificado na #11 — o agente de IA do PNLD Digital
+atende dúvida sobre o USO DO SISTEMA, não sobre o conteúdo do livro.
+A diferença é o que separa suporte de professor auxiliar, e é ela que
+define se o espaço está ocupado ou vago.
+
 --------------------------------------------------
 7. HIGIENE DE JANELA — verificação obrigatória
 --------------------------------------------------
