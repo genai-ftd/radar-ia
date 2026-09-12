@@ -2397,7 +2397,7 @@ export default function App() {
               Cinco movimentos que mudaram de direção — cada um reunindo os acontecimentos relacionados, com o que sustenta a leitura e o que decorre dela.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               {[
                 {
                   titulo: "O CNE aprovou as diretrizes e definiu o que a máquina não pode decidir",
@@ -2562,7 +2562,7 @@ export default function App() {
             <p className="text-gray-600 mb-8 max-w-3xl">
               Cada item abaixo era razoável esperar nesta janela, não veio, e por isso segue disponível para quem chegar primeiro.
             </p>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               {[
                 {
                   cat: "A homologação não saiu na mesma semana da aprovação",
@@ -3147,7 +3147,7 @@ export default function App() {
                     <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{b.problema}</p>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4 mb-5">
+                  <div className="grid md:grid-cols-2 gap-4 mb-5 items-start">
                     {[
                       { label: 'Como foi implantado', valor: b.implementacao, icone: <Zap className="w-3.5 h-3.5" /> },
                       { label: 'Escala e números', valor: b.escala, icone: <BarChart3 className="w-3.5 h-3.5" /> },
@@ -3169,7 +3169,7 @@ export default function App() {
                     <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{b.limitacoes}</p>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4 mb-5">
+                  <div className="grid md:grid-cols-2 gap-4 mb-5 items-start">
                     <div className="bg-green-50/60 rounded-xl p-4 border border-green-100">
                       <p className="text-xs font-semibold text-green-700 mb-1">O que é replicável</p>
                       <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{b.replicavel}</p>
@@ -3936,7 +3936,7 @@ export default function App() {
               Biblioteca viva do RADAR — histórico contínuo de inteligência estratégica
             </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
               {/* Card Agosto 2026 · Ed. #10 */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
