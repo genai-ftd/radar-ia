@@ -159,7 +159,7 @@ function EdicaoAbril2026({
                   className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
                 >
                   <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -198,10 +198,10 @@ function EdicaoAbril2026({
                     <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
                   </div>
                   <div className="px-6 py-4">
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
                     <div className="border-l-2 border-[#6B46C1] pl-3">
                       <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
-                      <p className="text-sm text-gray-700 leading-relaxed">{item.impacto}</p>
+                      <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -437,7 +437,7 @@ function EdicaoMaio2026({
                   className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
                 >
                   <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -497,7 +497,7 @@ function EdicaoMaio2026({
                     <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
                   </div>
                   <div className="px-6 py-4">
-                    <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -731,7 +731,7 @@ function EdicaoJunho2026({
                   className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
                 >
                   <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -772,10 +772,10 @@ function EdicaoJunho2026({
                     <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
                   </div>
                   <div className="px-6 py-4">
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
                     <div className="border-l-2 border-[#6B46C1] pl-3">
                       <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
-                      <p className="text-sm text-gray-700 leading-relaxed">{item.impacto}</p>
+                      <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -993,7 +993,7 @@ function EdicaoJunho2026B({
                   className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
                 >
                   <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -1032,10 +1032,10 @@ function EdicaoJunho2026B({
                     <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
                   </div>
                   <div className="px-6 py-4">
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
                     <div className="border-l-2 border-[#6B46C1] pl-3">
                       <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
-                      <p className="text-sm text-gray-700 leading-relaxed">{item.impacto}</p>
+                      <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1253,7 +1253,7 @@ function EdicaoJulho2026({
                   className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
                 >
                   <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -1292,10 +1292,10 @@ function EdicaoJulho2026({
                     <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
                   </div>
                   <div className="px-6 py-4">
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
                     <div className="border-l-2 border-[#6B46C1] pl-3">
                       <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
-                      <p className="text-sm text-gray-700 leading-relaxed">{item.impacto}</p>
+                      <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1513,7 +1513,7 @@ function EdicaoAgosto2026({
                   className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
                 >
                   <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -1554,10 +1554,10 @@ function EdicaoAgosto2026({
                     <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
                   </div>
                   <div className="px-6 py-4">
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
                     <div className="border-l-2 border-[#6B46C1] pl-3">
                       <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
-                      <p className="text-sm text-gray-700 leading-relaxed">{item.impacto}</p>
+                      <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1770,7 +1770,7 @@ function EdicaoAgosto2026B({
                   className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
                 >
                   <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -1810,10 +1810,10 @@ function EdicaoAgosto2026B({
                     <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
                   </div>
                   <div className="px-6 py-4">
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
                     <div className="border-l-2 border-[#6B46C1] pl-3">
                       <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Leitura estratégica</p>
-                      <p className="text-sm text-gray-700 leading-relaxed">{item.impacto}</p>
+                      <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -2114,49 +2114,52 @@ export default function App() {
         Pular para o conteúdo
       </a>
       {/* Header Fixo */}
-      <header className="fixed top-0 left-0 right-0 bg-white/96 backdrop-blur-md z-50 border-b border-gray-100/80 shadow-sm">
+      <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-xl z-50 border-b border-gray-200/80">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
 
-          {/* Linha 1 — identidade + direita */}
-          <div className="flex items-center justify-between h-12 md:h-14">
+          {/* Masthead — identidade à esquerda, procedência à direita */}
+          <div className="flex items-center justify-between gap-4 h-14 md:h-[60px]">
 
-            {/* Identidade — mascote + nome */}
-            <div className="flex items-center gap-3">
-              <img src={liaHeader} alt="" className="h-10 md:h-11 w-auto flex-shrink-0" />
-              <div className="flex flex-col justify-center leading-none">
-                <span className="text-sm md:text-base font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>RADAR</span>
-                <span className="hidden md:inline text-[11px] text-gray-600 font-normal mt-0.5">Inteligência Estratégica de IA na Educação</span>
+            <div className="flex items-center gap-3 min-w-0">
+              <img src={liaHeader} alt="" className="h-9 md:h-10 w-auto shrink-0" />
+              <div className="min-w-0 leading-none">
+                <span className="block text-base md:text-[17px] font-extrabold text-gray-900 tracking-[-0.02em]">RADAR</span>
+                <span className="hidden md:block text-[11px] text-gray-500 mt-1.5 truncate">Inteligência Estratégica de IA na Educação</span>
               </div>
             </div>
 
-            {/* Direita — edição + logos parceiros */}
-            <div className="hidden sm:flex items-center gap-4">
-              <div className="flex flex-col items-end leading-none">
-                <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Edição #11</span>
-                <span className="text-[11px] text-gray-600 font-medium mt-0.5">25 Ago – 10 Set 2026</span>
+            <div className="hidden sm:flex items-center gap-5 shrink-0">
+              <div className="text-right leading-none">
+                <span className="block text-[11px] font-bold text-[#6B46C1] uppercase tracking-[0.16em]">Edição #11</span>
+                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">25 Ago – 10 Set 2026</span>
               </div>
-              <div className="w-px h-6 bg-gray-200" />
-              <img src={logoIonica} alt="Iônica" className="h-5 w-auto" style={{ filter: 'grayscale(100%) opacity(0.45)' }} />
-              <div className="w-px h-4 bg-gray-200" />
-              <img src={logoFTD} alt="FTD Com Você" className="h-4 w-auto" style={{ filter: 'grayscale(100%) opacity(0.40)' }} />
+              <div className="w-px h-9 bg-gray-200" />
+              <div className="flex items-center gap-3">
+                <img src={logoIonica} alt="Iônica" className="h-[18px] w-auto opacity-60" style={{ filter: 'grayscale(100%)' }} />
+                <div className="w-px h-3.5 bg-gray-200" />
+                <img src={logoFTD} alt="FTD Com Você" className="h-[15px] w-auto opacity-60" style={{ filter: 'grayscale(100%)' }} />
+              </div>
             </div>
           </div>
 
-          {/* Linha 2 — nav centralizada com respiro */}
-          <nav aria-label="Seções desta edição" className="flex items-center justify-start md:justify-center gap-1 pb-2 overflow-x-auto flex-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {/* Sumário da edição — indicador de seção em vez de pílula */}
+          <nav aria-label="Seções desta edição" className="flex items-center justify-start md:justify-center gap-0.5 border-t border-gray-100 overflow-x-auto flex-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {secoesVisiveis.map(item => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 aria-current={activeSection === item.id ? 'true' : undefined}
-                className={`px-3 py-1 rounded-md text-[11px] font-medium whitespace-nowrap transition-all ${
+                className={`relative px-3 py-2.5 text-xs whitespace-nowrap transition-colors ${
                   activeSection === item.id
-                    ? 'bg-[#6B46C1] text-white'
-                    : 'text-gray-600 hover:bg-purple-50 hover:text-[#6B46C1]'
+                    ? 'text-[#6B46C1] font-semibold'
+                    : 'text-gray-500 font-medium hover:text-gray-900'
                 }`}
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 {item.label}
+                {activeSection === item.id && (
+                  <span aria-hidden="true" className="absolute inset-x-2.5 bottom-0 h-[2px] bg-[#6B46C1] rounded-full" />
+                )}
               </button>
             ))}
           </nav>
@@ -2165,55 +2168,56 @@ export default function App() {
       </header>
 
       {/* ── INSIGHT DA QUINZENA ── */}
-      <section id="insight" className="min-h-screen flex items-center justify-center pt-44 md:pt-48 px-6 bg-gradient-to-br from-white via-purple-50/30 to-white">
-        <div className="max-w-5xl mx-auto">
+      <section id="insight" className="relative min-h-screen flex items-center pt-36 md:pt-40 pb-20 px-6 bg-[linear-gradient(180deg,#FAF7FF_0%,#FFFFFF_62%)]">
+        <div className="max-w-6xl mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+            <div className="flex items-center gap-3 mb-8">
+              <span aria-hidden="true" className="h-[3px] w-12 bg-[#FF6B35] rounded-full" />
+              <span className="inline-flex items-center gap-2 text-[#FF6B35]">
                 <Sparkles className="w-4 h-4" />
-                <span className="text-sm font-semibold">INSIGHT DA QUINZENA</span>
-              </div>
+                <span className="text-[11px] font-bold tracking-[0.2em]">INSIGHT DA QUINZENA</span>
+              </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl text-gray-900 font-bold mb-7 leading-[1.08] tracking-tight">
+            <h1 className="text-[clamp(2.1rem,7.4vw,2.75rem)] md:text-[clamp(2.75rem,4.6vw,4rem)] text-gray-900 font-extrabold mb-8 leading-[1.04] tracking-[-0.035em]">
               A regra saiu — e ela não proíbe a IA.<br />
               <span className="text-[#6B46C1]">Proíbe delegar a decisão</span><br />
               <span className="text-[#FF6B35]">sobre a vida escolar do aluno</span>
             </h1>
 
             <div className="mb-12">
-              <p className="text-xl text-gray-700 leading-relaxed mb-10 max-w-[68ch]">
+              <p className="text-lg md:text-xl text-gray-600 leading-[1.65] max-w-[68ch] pb-10 mb-10 border-b border-gray-200">
                 Depois de quatro edições travado na última milha, o parecer do CNE foi aprovado em <strong className="text-[#6B46C1]">1º de setembro</strong>. E o objeto da vedação não é a ferramenta: é quem assina o resultado. IA não pode corrigir redação nem prova dissertativa, detector de texto não pode fundamentar punição sozinho e criança até o 5º ano não usa IA generativa sem o professor. Nas palavras do relator, <strong className="text-[#6B46C1]">a palavra final sobre o desempenho do aluno cabe ao professor, não à máquina</strong>. No dia seguinte, a maior rede escolar dos Estados Unidos suspendeu IA generativa até o 8º ano. Dois sistemas, duas jurisdições, a mesma conclusão.
               </p>
 
-              <div className="bg-white p-8 rounded-2xl border-2 border-purple-100 shadow-sm text-left">
-                <h2 className="text-lg font-semibold text-gray-900 mb-6 text-center">A tensão que organiza esta edição</h2>
+              <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-[0_1px_2px_rgba(16,12,40,0.04),0_8px_24px_-12px_rgba(16,12,40,0.10)]">
+                <h2 className="text-[11px] font-bold uppercase tracking-[0.16em] text-gray-500 mb-5">A tensão que organiza esta edição</h2>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-green-50/60 rounded-xl p-5 border border-green-100">
+                  <div className="border-l-2 border-green-500 pl-4">
                     <div className="flex items-center gap-2 mb-3">
                       <CheckCircle className="w-4 h-4 text-green-600" />
                       <p className="text-xs font-bold text-green-700 uppercase tracking-wide">O que a norma confirma</p>
                     </div>
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                    <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
                       Quem já operava com humano no laço e trilha auditável está conforme por desenho. A exigência que virou lei é exatamente a arquitetura que os melhores produtos do setor já tinham escolhido — e que agora deixa de ser diferencial e passa a ser piso.
                     </p>
                   </div>
-                  <div className="bg-red-50/60 rounded-xl p-5 border border-red-100">
+                  <div className="border-l-2 border-red-400 pl-4">
                     <div className="flex items-center gap-2 mb-3">
                       <AlertCircle className="w-4 h-4 text-red-500" />
                       <p className="text-xs font-bold text-red-700 uppercase tracking-wide">O que ela invalida</p>
                     </div>
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                    <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
                       Quem vendia correção automática de redação, detecção de plágio por IA como prova ou tutor autônomo para os anos iniciais tem um prazo para refazer o produto. Não é ajuste de comunicação: é troca da peça que decide.
                     </p>
                   </div>
                 </div>
-                <div className="mt-6 bg-purple-50 rounded-xl p-5 border-l-4 border-[#6B46C1]">
-                  <p className="text-sm text-gray-800 leading-relaxed">
+                <div className="mt-7 pt-6 border-t border-gray-100">
+                  <p className="text-sm md:text-xs text-gray-800 leading-relaxed max-w-[68ch]">
                     <span className="font-bold text-[#6B46C1]">A conclusão:</span> a régua deixou de ser <em>usa ou não usa IA</em> e passou a ser <em>quem assina a decisão</em>. Assinatura humana com rastro deixou de ser boa prática e virou requisito de conformidade — com relógio rodando a partir da homologação.
                   </p>
                 </div>
@@ -2284,7 +2288,7 @@ export default function App() {
                   <p className={`text-xs font-semibold mb-2 ${selecionado ? 'text-[#FF6B35]' : 'text-gray-600'}`}>
                     {opcao.tempo}
                   </p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{opcao.desc}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{opcao.desc}</p>
                 </button>
               );
             })}
@@ -2293,8 +2297,8 @@ export default function App() {
       </section>
 
       {/* ── RESUMO EXECUTIVO ── */}
-      <section id="resumo" className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section id="resumo" className="prosa py-24 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -2356,9 +2360,9 @@ export default function App() {
                     <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wide ${item.tagCor}`}>{item.tag}</span>
                   </div>
                   <p className="font-bold text-gray-900 mb-2 text-base">{item.conclusao}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.raciocinio}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.raciocinio}</p>
                   <div className="bg-purple-50 rounded-lg px-4 py-2.5">
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                    <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
                       <span className="font-semibold text-[#6B46C1]">Decisão que isso força:</span> {item.decisao}
                     </p>
                   </div>
@@ -2374,7 +2378,7 @@ export default function App() {
       {!modoExecutivo && (
         <>
       {/* ── SINAIS DA QUINZENA ── */}
-      <section id="movimentos" className="py-24 px-6 bg-purple-50/30">
+      <section id="movimentos" className="prosa py-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -2500,7 +2504,7 @@ export default function App() {
                         <span className="font-semibold text-gray-600">Consolida:</span> {m.consolida}
                       </p>
                     </div>
-                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">{m.resumo}</p>
+                    <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">{m.resumo}</p>
                     {m.disclosure && (
                       <div className="flex items-start gap-1.5 mb-4 border-l-2 border-amber-300 pl-3">
                         <AlertCircle className="w-3 h-3 text-gray-600 mt-0.5 flex-shrink-0" />
@@ -2511,7 +2515,7 @@ export default function App() {
                     )}
                     <div className="border-l-2 border-[#6B46C1] pl-4 mb-5">
                       <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Leitura estratégica</p>
-                      <p className="text-sm text-gray-700 leading-relaxed">{m.impacto}</p>
+                      <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{m.impacto}</p>
                     </div>
                     <div className="border-l-2 border-[#FF6B35] pl-4 space-y-2">
                       <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#FF6B35]">Consequência prática</p>
@@ -2521,7 +2525,7 @@ export default function App() {
                         { label: 'Gestor', valor: m.gestor },
                         { label: 'Roadmap', valor: m.roadmap },
                       ].map(linha => (
-                        <p key={linha.label} className="text-sm text-gray-700 leading-relaxed">
+                        <p key={linha.label} className="text-sm md:text-xs text-gray-700 leading-relaxed">
                           <span className="font-semibold text-gray-900">{linha.label}:</span> {linha.valor}
                         </p>
                       ))}
@@ -2539,7 +2543,7 @@ export default function App() {
       </section>
 
       {/* ── SINAIS DE AUSÊNCIA ── */}
-      <section id="ausencias" className="pb-24 px-6 bg-purple-50/30">
+      <section id="ausencias" className="prosa pb-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -2607,7 +2611,7 @@ export default function App() {
                     }`}>{item.janela}</span>
                   </div>
                   <p className="font-bold text-gray-900 text-sm mb-2">{item.cat}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.nota}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.nota}</p>
                   <div className="bg-orange-50/60 rounded-lg px-3 py-2">
                     <p className="text-[11px] text-gray-700 leading-relaxed">
                       <span className="font-semibold text-[#FF6B35]">Por que a vaga importa:</span> {item.leitura}
@@ -2621,8 +2625,8 @@ export default function App() {
       </section>
 
       {/* ── TEMAS RECORRENTES ENTRE EDIÇÕES ── */}
-      <section id="recorrentes" className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section id="recorrentes" className="prosa py-24 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -2728,9 +2732,9 @@ export default function App() {
                     </span>
                   </div>
                   <div className="bg-white/70 rounded-lg px-4 py-2.5 mb-3">
-                    <p className="text-sm text-gray-600 leading-relaxed font-medium">{item.trilha}</p>
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed font-medium">{item.trilha}</p>
                   </div>
-                  <p className="text-sm text-gray-700 leading-relaxed">{item.leitura}</p>
+                  <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.leitura}</p>
                 </motion.div>
               ))}
             </div>
@@ -2739,7 +2743,7 @@ export default function App() {
       </section>
 
       {/* ── CONCORRÊNCIA ── */}
-      <section id="concorrencia" className="py-24 px-6 bg-purple-50/30">
+      <section id="concorrencia" className="prosa py-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -2812,9 +2816,9 @@ export default function App() {
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-purple-50/30 transition-colors' : 'bg-purple-50/20 hover:bg-purple-50/40 transition-colors'}>
                       <td className="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.player}</td>
-                      <td className="px-5 py-4 text-gray-600 text-sm leading-relaxed">{row.grupo}</td>
-                      <td className="px-5 py-4 text-gray-600 text-sm leading-relaxed">{row.movimento}</td>
-                      <td className="px-5 py-4 text-gray-600 text-sm leading-relaxed">{row.estrategia}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.grupo}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.movimento}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.estrategia}</td>
                       <td className="px-5 py-4">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
                           {row.exposicao}
@@ -2864,9 +2868,9 @@ export default function App() {
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-orange-50/30 transition-colors' : 'bg-orange-50/20 hover:bg-orange-50/40 transition-colors'}>
                       <td className="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.player}</td>
-                      <td className="px-5 py-4 text-gray-600 text-sm leading-relaxed">{row.grupo}</td>
-                      <td className="px-5 py-4 text-gray-600 text-sm leading-relaxed">{row.movimento}</td>
-                      <td className="px-5 py-4 text-gray-600 text-sm leading-relaxed">{row.estrategia}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.grupo}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.movimento}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.estrategia}</td>
                       <td className="px-5 py-4">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
                           {row.exposicao}
@@ -2974,10 +2978,10 @@ export default function App() {
                   </div>
 
                   <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">O que está no produto</p>
-                  <p className="text-sm text-gray-700 leading-relaxed mb-4">{f.entregue}</p>
+                  <p className="text-sm md:text-xs text-gray-700 leading-relaxed mb-4">{f.entregue}</p>
 
                   <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">O que isso significa</p>
-                  <p className="text-sm text-gray-700 leading-relaxed mb-5">{f.leitura}</p>
+                  <p className="text-sm md:text-xs text-gray-700 leading-relaxed mb-5">{f.leitura}</p>
 
                   <a
                     href={f.fonte}
@@ -2997,7 +3001,7 @@ export default function App() {
                 <Target className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-gray-900 mb-2">O espaço que continua vago</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
+                  <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
                     Entre todos esses produtos, um recurso aparece uma vez só: conversar com o conteúdo do livro. O Plu faz isso no privado, ancorado ao capítulo. No público, o agente do leitor oficial responde sobre o sistema — como navegar, como baixar, como ativar acessibilidade — e não sobre o que está escrito na página. É a diferença entre um suporte e um professor auxiliar, e ela ainda não foi ocupada na rede pública.
                   </p>
                 </div>
@@ -3041,7 +3045,7 @@ export default function App() {
                       <p className="font-semibold text-gray-900 text-sm">{item.nome}</p>
                       <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-gray-100 text-gray-600 uppercase tracking-wide">{item.altera}</span>
                     </div>
-                    <p className="text-sm text-gray-600 leading-relaxed">{item.nota}</p>
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.nota}</p>
                   </div>
                 ))}
               </div>
@@ -3051,7 +3055,7 @@ export default function App() {
       </section>
 
       {/* ── BENCHMARKS DE INOVAÇÃO ── */}
-      <section id="benchmarks" className="py-24 px-6 bg-white">
+      <section id="benchmarks" className="prosa py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3140,7 +3144,7 @@ export default function App() {
 
                   <div className="bg-gray-50 rounded-xl p-4 mb-5 border-l-4 border-gray-300">
                     <p className="text-xs font-semibold text-gray-700 mb-1">Problema que tentaram resolver</p>
-                    <p className="text-sm text-gray-600 leading-relaxed">{b.problema}</p>
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{b.problema}</p>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4 mb-5">
@@ -3155,30 +3159,30 @@ export default function App() {
                           <span className="text-[#6B46C1]">{bloco.icone}</span>
                           {bloco.label}
                         </p>
-                        <p className="text-sm text-gray-600 leading-relaxed">{bloco.valor}</p>
+                        <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{bloco.valor}</p>
                       </div>
                     ))}
                   </div>
 
                   <div className="bg-red-50/60 rounded-xl p-4 mb-4 border border-red-100">
                     <p className="text-xs font-semibold text-red-700 mb-1">Limitações do caso</p>
-                    <p className="text-sm text-gray-600 leading-relaxed">{b.limitacoes}</p>
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{b.limitacoes}</p>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4 mb-5">
                     <div className="bg-green-50/60 rounded-xl p-4 border border-green-100">
                       <p className="text-xs font-semibold text-green-700 mb-1">O que é replicável</p>
-                      <p className="text-sm text-gray-600 leading-relaxed">{b.replicavel}</p>
+                      <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{b.replicavel}</p>
                     </div>
                     <div className="bg-gray-100/70 rounded-xl p-4 border border-gray-200">
                       <p className="text-xs font-semibold text-gray-600 mb-1">O que não é replicável</p>
-                      <p className="text-sm text-gray-600 leading-relaxed">{b.naoReplicavel}</p>
+                      <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{b.naoReplicavel}</p>
                     </div>
                   </div>
 
                   <div className="bg-purple-50 rounded-xl p-4 border-l-4 border-[#6B46C1]">
                     <p className="text-xs font-semibold text-purple-700 mb-1">Implicação para o nosso contexto</p>
-                    <p className="text-sm text-gray-700 leading-relaxed">{b.application}</p>
+                    <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{b.application}</p>
                   </div>
                 </motion.div>
               ))}
@@ -3188,7 +3192,7 @@ export default function App() {
       </section>
 
       {/* ── ACELERADORES DE IA ── */}
-      <section id="aceleradores" className="py-24 px-6 bg-purple-50/30">
+      <section id="aceleradores" className="prosa py-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3318,32 +3322,32 @@ export default function App() {
                       {a.maturidade}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4">{a.oque}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-4">{a.oque}</p>
                   <div className="space-y-3 flex-1">
                     <div>
                       <p className="text-xs font-semibold text-[#FF6B35] mb-1">O que acelera</p>
-                      <p className="text-sm text-gray-700 leading-relaxed">{a.acelera}</p>
+                      <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{a.acelera}</p>
                     </div>
                     <div className="bg-red-50/60 rounded-xl p-3 border border-red-100">
                       <p className="text-xs font-semibold text-red-700 mb-1">Limitações reais</p>
-                      <p className="text-sm text-gray-600 leading-relaxed">{a.limitacoes}</p>
+                      <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{a.limitacoes}</p>
                     </div>
                     <div className="bg-gray-50 rounded-xl p-3">
                       <p className="text-xs font-semibold text-gray-700 mb-1">Dependências técnicas</p>
-                      <p className="text-sm text-gray-600 leading-relaxed">{a.dependencias}</p>
+                      <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{a.dependencias}</p>
                     </div>
                     <div className="bg-gray-50 rounded-xl p-3">
                       <p className="text-xs font-semibold text-gray-700 mb-1">Cenário ideal de uso</p>
-                      <p className="text-sm text-gray-600 leading-relaxed">{a.cenario}</p>
+                      <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{a.cenario}</p>
                     </div>
                     <div className="grid gap-2">
                       <div className="bg-purple-50 rounded-xl p-3">
                         <p className="text-xs font-semibold text-purple-700 mb-1">Impacto para Produto</p>
-                        <p className="text-sm text-gray-700 leading-relaxed">{a.impactoProduto}</p>
+                        <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{a.impactoProduto}</p>
                       </div>
                       <div className="bg-blue-50 rounded-xl p-3">
                         <p className="text-xs font-semibold text-blue-700 mb-1">Impacto para Engenharia</p>
-                        <p className="text-sm text-gray-700 leading-relaxed">{a.impactoEngenharia}</p>
+                        <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{a.impactoEngenharia}</p>
                       </div>
                     </div>
                   </div>
@@ -3364,7 +3368,7 @@ export default function App() {
       </section>
 
       {/* ── O QUE OS EXPERTS ESTÃO ESCREVENDO ── */}
-      <section id="experts" className="py-24 px-6 bg-white">
+      <section id="experts" className="prosa py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3416,7 +3420,7 @@ export default function App() {
                 ].map((item, i) => (
                   <div key={i} className="bg-white/10 rounded-xl p-5 backdrop-blur-sm">
                     <p className="font-semibold text-white mb-2 text-sm leading-snug">{item.ponto}</p>
-                    <p className="text-white/75 text-sm leading-relaxed">{item.detalhe}</p>
+                    <p className="text-white/75 text-sm md:text-xs leading-relaxed">{item.detalhe}</p>
                   </div>
                 ))}
               </div>
@@ -3476,15 +3480,15 @@ export default function App() {
                   <div className="space-y-3 flex-1">
                     <div>
                       <p className="text-xs font-semibold text-purple-700 mb-1">Tese central</p>
-                      <p className="text-sm text-gray-600 leading-relaxed">{e.tese}</p>
+                      <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{e.tese}</p>
                     </div>
                     <div>
                       <p className="text-xs font-semibold text-gray-600 mb-1">Por que importa</p>
-                      <p className="text-sm text-gray-600 leading-relaxed">{e.importa}</p>
+                      <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{e.importa}</p>
                     </div>
                     <div className="bg-purple-50 rounded-xl p-3">
                       <p className="text-xs font-semibold text-orange-700 mb-1">Relação com os sinais desta edição</p>
-                      <p className="text-sm text-gray-700 leading-relaxed">{e.relacao}</p>
+                      <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{e.relacao}</p>
                     </div>
                   </div>
                   <a
@@ -3504,7 +3508,7 @@ export default function App() {
       </section>
 
       {/* ── ANÁLISE ESTRATÉGICA ── */}
-      <section id="analise" className="py-24 px-6 bg-purple-50/30">
+      <section id="analise" className="prosa py-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3528,7 +3532,7 @@ export default function App() {
                 <AlertCircle className="w-5 h-5 text-[#FF6B35] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-gray-900 mb-1">A mudança de lado desta edição</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed">
                     <strong>Correção automática de texto autoral</strong> não migrou de diferencial para commodity: saiu da tabela. Deixou de ser uma capacidade com valor decrescente e passou a ser finalidade vedada em todas as etapas do ensino. É a primeira vez que este radar registra uma categoria de produto encerrada por norma, e não por concorrência.
                   </p>
                 </div>
@@ -3557,7 +3561,7 @@ export default function App() {
                           {c.item}
                           {c.novo && <span className="px-1.5 py-0.5 rounded-full text-[11px] font-bold bg-[#FF6B35] text-white uppercase tracking-wide">Mudou nesta edição</span>}
                         </p>
-                        <p className="text-sm text-gray-600 leading-relaxed">{c.motivo}</p>
+                        <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{c.motivo}</p>
                       </div>
                     </div>
                   ))}
@@ -3585,7 +3589,7 @@ export default function App() {
                           {d.item}
                           {d.novo && <span className="px-1.5 py-0.5 rounded-full text-[11px] font-bold bg-green-700 text-white uppercase tracking-wide">Nova fronteira</span>}
                         </p>
-                        <p className="text-sm text-gray-600 leading-relaxed">{d.motivo}</p>
+                        <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{d.motivo}</p>
                       </div>
                     </div>
                   ))}
@@ -3597,7 +3601,7 @@ export default function App() {
       </section>
 
       {/* ── HYPE VS TENDÊNCIA REAL ── */}
-      <section id="hype" className="py-24 px-6 bg-white">
+      <section id="hype" className="prosa py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3632,7 +3636,7 @@ export default function App() {
                       <span className="text-orange-400 mt-1 flex-shrink-0">▸</span>
                       <div>
                         <p className="font-semibold text-gray-900 text-sm mb-1">{item.titulo}</p>
-                        <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                        <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -3654,7 +3658,7 @@ export default function App() {
                       <span className="text-purple-400 mt-1 flex-shrink-0">▸</span>
                       <div>
                         <p className="font-semibold text-gray-900 text-sm mb-1">{item.titulo}</p>
-                        <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                        <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -3677,7 +3681,7 @@ export default function App() {
                       <span className="text-blue-400 mt-1 flex-shrink-0">▸</span>
                       <div>
                         <p className="font-semibold text-gray-900 text-sm mb-1">{item.titulo}</p>
-                        <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                        <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -3701,7 +3705,7 @@ export default function App() {
       )}
 
       {/* ── OPORTUNIDADES DE PRODUTO ── */}
-      <section id="oportunidades" className="py-24 px-6 bg-purple-50/30">
+      <section id="oportunidades" className="prosa py-24 px-6 bg-purple-50/30">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3853,15 +3857,15 @@ export default function App() {
                   )}
 
                   <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-gray-600">Sinal observado</p>
-                  <p className="text-sm text-gray-600 mb-4 italic leading-relaxed">{item.sinal}</p>
+                  <p className="text-sm md:text-xs text-gray-600 mb-4 italic leading-relaxed">{item.sinal}</p>
 
                   <div className="border-l-2 border-red-400 pl-4 mb-5">
                     <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-red-700">Problema</p>
-                    <p className="text-sm text-gray-600 leading-relaxed">{item.problema}</p>
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.problema}</p>
                   </div>
 
                   <h3 className="font-bold text-gray-900 mb-2 text-base leading-snug">{item.oportunidade}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4">{item.impacto}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-4">{item.impacto}</p>
 
                   <div className="border-l-2 border-[#FF6B35] pl-4 space-y-2 mb-5">
                     <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#FF6B35]">Impacto esperado</p>
@@ -3870,7 +3874,7 @@ export default function App() {
                       { label: 'Aluno', valor: item.aluno },
                       { label: 'Gestor', valor: item.gestor },
                     ].map(linha => (
-                      <p key={linha.label} className="text-sm text-gray-700 leading-relaxed">
+                      <p key={linha.label} className="text-sm md:text-xs text-gray-700 leading-relaxed">
                         <span className="font-semibold text-gray-900">{linha.label}:</span> {linha.valor}
                       </p>
                     ))}
@@ -3878,7 +3882,7 @@ export default function App() {
 
                   <div className="border-l-2 border-[#6B46C1] pl-4 mt-auto">
                     <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Implicação para roadmap</p>
-                    <p className="text-sm text-gray-700 leading-relaxed">{item.roadmapItem}</p>
+                    <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.roadmapItem}</p>
                   </div>
                 </motion.div>
               ))}
@@ -3893,7 +3897,7 @@ export default function App() {
           <div className="max-w-3xl mx-auto">
             <div className="bg-white rounded-2xl border-2 border-purple-100 p-7 text-center">
               <p className="font-bold text-gray-900 mb-2">Fim da leitura executiva</p>
-              <p className="text-sm text-gray-600 leading-relaxed mb-5">
+              <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-5">
                 Nove seções ficaram de fora: as evidências por trás de cada conclusão, o mapa competitivo, o que não aconteceu, os casos de fora e o que já dá para plugar no roadmap.
               </p>
               <button
@@ -3952,7 +3956,7 @@ export default function App() {
                 <h3 className="font-bold text-gray-900 mb-3">
                   A mediação pedagógica deixou de ser reserva de valor e virou default da plataforma
                 </h3>
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
                   A evidência nomeou o comportamento que prejudica e a OpenAI embutiu o antídoto no produto. Mediar genericamente virou commodity em três semanas.
                 </p>
                 <button
@@ -3982,7 +3986,7 @@ export default function App() {
                 <h3 className="font-bold text-gray-900 mb-3">
                   A home virou o produto: a disputa saiu do conteúdo e foi para a camada que decide
                 </h3>
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
                   Classroom reconstrói a home por papel para 150M de usuários, Coursera aposta US$ 100 mi contra o próprio catálogo e o MEC institui o EducaLab.
                 </p>
                 <button
@@ -4012,7 +4016,7 @@ export default function App() {
                 <h3 className="font-bold text-gray-900 mb-3">
                   A era dos anúncios acabou: consolidação — quem não constrói capacidade, compra
                 </h3>
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
                   Cogna vai a 90% do Educbank, Teachy faz o 1º M&A de IA em educação da AL, Khan admite 15% de uso e Anthropic lança o Claude for Teachers.
                 </p>
                 <button
@@ -4042,7 +4046,7 @@ export default function App() {
                 <h3 className="font-bold text-gray-900 mb-3">
                   O Gemini entrou direto no ENEM: a batalha é pelo estudante dentro do exame
                 </h3>
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
                   Google anuncia simulados gratuitos do ENEM com a Akira Enem, CNE encerra consulta pública e a disputa migra do produto para o canal de distribuição.
                 </p>
                 <button
@@ -4072,7 +4076,7 @@ export default function App() {
                 <h3 className="font-bold text-gray-900 mb-3">
                   O Brasil no ponto de inflexão: IA virou objeto de regulação, capital e escala
                 </h3>
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
                   CNE aprova semáforo de riscos, BNDES injeta R$ 300M na Positivo e Plurall IA gera 26 mil PEIs em 3 meses.
                 </p>
                 <button
@@ -4103,7 +4107,7 @@ export default function App() {
                 <h3 className="font-bold text-gray-900 mb-3">
                   A próxima disputa não será pela melhor funcionalidade
                 </h3>
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
                   Mercado migra de features isoladas para ecossistemas integrados. CNE regulamenta, Moderna Core e Positivo+AWS definem novo benchmark.
                 </p>
                 <button
@@ -4134,7 +4138,7 @@ export default function App() {
                 <h3 className="font-bold text-gray-900 mb-3">
                   MEC abre sandbox para testar IA na educação
                 </h3>
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
                   Análise sobre ambiente de experimentação para avaliar soluções educacionais com IA e antecipação de critérios de validação no setor.
                 </p>
                 <button
@@ -4176,7 +4180,7 @@ export default function App() {
               Sinais · Padrões · Riscos · Oportunidades para produtos educacionais
             </p>
 
-            <p className="text-white/60 text-sm leading-relaxed max-w-2xl mx-auto mb-8">
+            <p className="text-white/60 text-sm md:text-xs leading-relaxed max-w-[68ch] mx-auto mb-8">
               O RADAR é um sistema contínuo de inteligência estratégica que transforma movimentos de mercado, concorrência, pesquisa, tecnologia e regulação em sinais, padrões, riscos e oportunidades para produtos educacionais.
             </p>
 
