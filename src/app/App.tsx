@@ -30,7 +30,8 @@ import {
 import logoIonica from '../imports/Logo-ionica_(1).png';
 import logoIonicaSmall from '../imports/Logo-ionica_(1)-1.png';
 import logoFTD from '../imports/ftd_com_voce_logo.png';
-import mascoteIA from '../imports/ionia-1.png';
+import liaHeader from '../imports/lia-header.png';
+import liaFooter from '../imports/lia_footer.png';
 
 type ModoLeitura = 'executiva' | 'completa';
 
@@ -59,12 +60,14 @@ function EdicaoAbril2026({
   onBack,
   onBackToEdicoes,
   mascote,
+  mascoteInverso,
   logoSmall,
   logoFtd,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
+  mascoteInverso: string;
   logoSmall: string;
   logoFtd: string;
 }) {
@@ -78,7 +81,7 @@ function EdicaoAbril2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Abril de 2026</p>
@@ -218,7 +221,7 @@ function EdicaoAbril2026({
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
-                <img src={mascote} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
                   <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
                     O MEC não abriu só um sandbox — abriu o processo de definição dos critérios do próximo PNLD. Quem participa agora molda as regras que valerão para todos depois.
@@ -299,7 +302,7 @@ function EdicaoAbril2026({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
@@ -315,12 +318,14 @@ function EdicaoMaio2026({
   onBack,
   onBackToEdicoes,
   mascote,
+  mascoteInverso,
   logoSmall,
   logoFtd,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
+  mascoteInverso: string;
   logoSmall: string;
   logoFtd: string;
 }) {
@@ -334,7 +339,7 @@ function EdicaoMaio2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Maio de 2026</p>
@@ -511,7 +516,7 @@ function EdicaoMaio2026({
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
-                <img src={mascote} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
                   <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
                     A vantagem competitiva migrou de "ter IA" para "ter IA operacional integrada
@@ -610,7 +615,7 @@ function EdicaoMaio2026({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
@@ -627,12 +632,14 @@ function EdicaoJunho2026({
   onBack,
   onBackToEdicoes,
   mascote,
+  mascoteInverso,
   logoSmall,
   logoFtd,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
+  mascoteInverso: string;
   logoSmall: string;
   logoFtd: string;
 }) {
@@ -646,7 +653,7 @@ function EdicaoJunho2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Junho de 2026</p>
@@ -788,7 +795,7 @@ function EdicaoJunho2026({
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
-                <img src={mascote} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
                   <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
                     O Brasil saiu do "se" e entrou no "quem chega primeiro". Regulação aprovada, capital institucional injetado, escala comprovada — o mercado entrou em fase de corrida por posicionamento.
@@ -869,7 +876,7 @@ function EdicaoJunho2026({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
@@ -887,12 +894,14 @@ function EdicaoJunho2026B({
   onBack,
   onBackToEdicoes,
   mascote,
+  mascoteInverso,
   logoSmall,
   logoFtd,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
+  mascoteInverso: string;
   logoSmall: string;
   logoFtd: string;
 }) {
@@ -906,7 +915,7 @@ function EdicaoJunho2026B({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Junho de 2026 · Ed. #07</p>
@@ -1046,7 +1055,7 @@ function EdicaoJunho2026B({
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
-                <img src={mascote} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
                   <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
                     O Google não entrou na educação pela porta da escola — entrou pela porta do vestibulando. Quem tem canal direto ao aluno não precisa convencer a escola.
@@ -1127,7 +1136,7 @@ function EdicaoJunho2026B({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
@@ -1145,12 +1154,14 @@ function EdicaoJulho2026({
   onBack,
   onBackToEdicoes,
   mascote,
+  mascoteInverso,
   logoSmall,
   logoFtd,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
+  mascoteInverso: string;
   logoSmall: string;
   logoFtd: string;
 }) {
@@ -1164,7 +1175,7 @@ function EdicaoJulho2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Julho de 2026 · Ed. #08</p>
@@ -1304,7 +1315,7 @@ function EdicaoJulho2026({
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
-                <img src={mascote} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
                   <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
                     O mercado saiu da fase de prometer e entrou na fase de provar e consolidar: quem mede aprendizagem de verdade, controla camadas da operação escolar e sela confiança com o professor define o próximo ciclo.
@@ -1385,7 +1396,7 @@ function EdicaoJulho2026({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
@@ -1403,12 +1414,14 @@ function EdicaoAgosto2026({
   onBack,
   onBackToEdicoes,
   mascote,
+  mascoteInverso,
   logoSmall,
   logoFtd,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
+  mascoteInverso: string;
   logoSmall: string;
   logoFtd: string;
 }) {
@@ -1422,7 +1435,7 @@ function EdicaoAgosto2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Agosto de 2026 · Ed. #09</p>
@@ -1564,7 +1577,7 @@ function EdicaoAgosto2026({
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
-                <img src={mascote} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
                   <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
                     O valor migrou do que a plataforma guarda para o que ela decide mostrar. A volta às aulas não vai premiar quem anunciar mais uma funcionalidade, e sim quem chegar com camada de decisão personalizada por perfil, evidência de aprendizagem e governança escrita.
@@ -1645,7 +1658,7 @@ function EdicaoAgosto2026({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
@@ -1662,10 +1675,12 @@ function EdicaoAgosto2026B({
   onBack,
   onBackToEdicoes,
   mascote,
+  mascoteInverso,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
+  mascoteInverso: string;
 }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1677,7 +1692,7 @@ function EdicaoAgosto2026B({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Agosto de 2026 · Ed. #10</p>
@@ -1818,7 +1833,7 @@ function EdicaoAgosto2026B({
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
-                <img src={mascote} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
                   <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
                     A disputa deixou de ser sobre se o produto media — isso a big tech já entrega de graça. Passou a ser sobre mediar com o contexto que ela não tem: o capítulo, o enunciado, se vale nota e o histórico do aluno.
@@ -1899,7 +1914,7 @@ function EdicaoAgosto2026B({
       {/* Footer */}
       <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascote} alt="RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
@@ -1968,7 +1983,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={mascoteIA}
+        mascote={liaHeader}
+        mascoteInverso={liaFooter}
       />
     );
   }
@@ -1984,7 +2000,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={mascoteIA}
+        mascote={liaHeader}
+        mascoteInverso={liaFooter}
         logoSmall={logoIonicaSmall}
         logoFtd={logoFTD}
       />
@@ -2002,7 +2019,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={mascoteIA}
+        mascote={liaHeader}
+        mascoteInverso={liaFooter}
         logoSmall={logoIonicaSmall}
         logoFtd={logoFTD}
       />
@@ -2020,7 +2038,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={mascoteIA}
+        mascote={liaHeader}
+        mascoteInverso={liaFooter}
         logoSmall={logoIonicaSmall}
         logoFtd={logoFTD}
       />
@@ -2038,7 +2057,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={mascoteIA}
+        mascote={liaHeader}
+        mascoteInverso={liaFooter}
         logoSmall={logoIonicaSmall}
         logoFtd={logoFTD}
       />
@@ -2056,7 +2076,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={mascoteIA}
+        mascote={liaHeader}
+        mascoteInverso={liaFooter}
         logoSmall={logoIonicaSmall}
         logoFtd={logoFTD}
       />
@@ -2074,7 +2095,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={mascoteIA}
+        mascote={liaHeader}
+        mascoteInverso={liaFooter}
         logoSmall={logoIonicaSmall}
         logoFtd={logoFTD}
       />
@@ -2100,7 +2122,7 @@ export default function App() {
 
             {/* Identidade — mascote + nome */}
             <div className="flex items-center gap-3">
-              <img src={mascoteIA} alt="RADAR" className="h-10 md:h-11 w-auto flex-shrink-0" />
+              <img src={liaHeader} alt="" className="h-10 md:h-11 w-auto flex-shrink-0" />
               <div className="flex flex-col justify-center leading-none">
                 <span className="text-sm md:text-base font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>RADAR</span>
                 <span className="hidden md:inline text-[11px] text-gray-400 font-normal mt-0.5">Inteligência Estratégica de IA na Educação</span>
@@ -3365,7 +3387,7 @@ export default function App() {
             {/* Consenso dos especialistas */}
             <div className="bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] rounded-2xl p-8 md:p-10 mb-12 text-white">
               <div className="flex items-start gap-4 mb-6">
-                <img src={mascoteIA} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <img src={liaFooter} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/15 rounded-full mb-3">
                     <Brain className="w-3.5 h-3.5" />
@@ -4138,8 +4160,8 @@ export default function App() {
           >
             <div className="flex justify-center mb-5">
               <img
-                src={mascoteIA}
-                alt="RADAR — Inteligência Estratégica de IA na Educação"
+                src={liaFooter}
+                alt="Lia — mascote do RADAR"
                 className="h-20 md:h-24 w-auto drop-shadow-lg"
               />
             </div>
