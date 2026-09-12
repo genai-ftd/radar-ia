@@ -2190,7 +2190,7 @@ export default function App() {
             </h1>
 
             <div className="mb-12">
-              <p className="text-lg md:text-xl text-gray-600 leading-[1.65] max-w-[68ch] pb-10 mb-10 border-b border-gray-200">
+              <p className="text-base md:text-[17px] text-gray-600 leading-[1.7] max-w-[68ch] mb-12">
                 Depois de quatro edições travado na última milha, o parecer do CNE foi aprovado em <strong className="text-[#6B46C1]">1º de setembro</strong>. E o objeto da vedação não é a ferramenta: é quem assina o resultado. IA não pode corrigir redação nem prova dissertativa, detector de texto não pode fundamentar punição sozinho e criança até o 5º ano não usa IA generativa sem o professor. Nas palavras do relator, <strong className="text-[#6B46C1]">a palavra final sobre o desempenho do aluno cabe ao professor, não à máquina</strong>. No dia seguinte, a maior rede escolar dos Estados Unidos suspendeu IA generativa até o 8º ano. Dois sistemas, duas jurisdições, a mesma conclusão.
               </p>
 
@@ -2217,7 +2217,7 @@ export default function App() {
                   </div>
                 </div>
                 <div className="mt-7 pt-6 border-t border-gray-100">
-                  <p className="text-sm md:text-xs text-gray-800 leading-relaxed max-w-[68ch]">
+                  <p className="text-sm md:text-xs text-gray-800 leading-relaxed">
                     <span className="font-bold text-[#6B46C1]">A conclusão:</span> a régua deixou de ser <em>usa ou não usa IA</em> e passou a ser <em>quem assina a decisão</em>. Assinatura humana com rastro deixou de ser boa prática e virou requisito de conformidade — com relógio rodando a partir da homologação.
                   </p>
                 </div>
@@ -2298,7 +2298,7 @@ export default function App() {
 
       {/* ── RESUMO EXECUTIVO ── */}
       <section id="resumo" className="prosa py-24 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -2317,7 +2317,7 @@ export default function App() {
               O que a liderança precisa entender em dois minutos, com a decisão que cada ponto força.
             </p>
 
-            <div className="space-y-4">
+            <div className="grid md:grid-cols-2 gap-5 items-start">
               {[
                 {
                   tag: "Hipótese endurecida",
@@ -2626,7 +2626,7 @@ export default function App() {
 
       {/* ── TEMAS RECORRENTES ENTRE EDIÇÕES ── */}
       <section id="recorrentes" className="prosa py-24 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -2658,7 +2658,7 @@ export default function App() {
               ))}
             </div>
 
-            <div className="space-y-5">
+            <div className="grid md:grid-cols-2 gap-5 items-start">
               {[
                 {
                   tema: "A regulação brasileira travada na última milha",
@@ -3074,7 +3074,7 @@ export default function App() {
               Cada caso destrinchado por problema, implantação, escala e aprendizado, separando o que dá para replicar aqui do que não dá.
             </p>
 
-            <div className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               {[
                 {
                   empresa: "Poliedro — IA com autoria humana no centro e rastro auditável",
@@ -3694,7 +3694,7 @@ export default function App() {
                 <Brain className="w-5 h-5 text-[#6B46C1]" />
                 <p className="font-bold text-gray-900">O padrão desta quinzena</p>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed md:columns-2 md:gap-10">
                 O setor passou cinco edições esperando uma regra que parecia não chegar, e quando chegou não fez o que se temia. Não proibiu a tecnologia nem a liberou com ressalvas vagas: recortou por finalidade e devolveu ao professor a assinatura da decisão sobre o aluno. Quem lia a regulação como risco de restrição errou o alvo — o risco real era o oposto, é de ter construído produto que decide sozinho. E há uma ironia útil aqui: a arquitetura que a norma acabou de exigir é a mesma que um par direto brasileiro escolheu por conta própria antes de existir regra, e foi premiado por isso. A conformidade que vai valer na mesa de compra não é a que se declara em doze meses; é a que já tem histórico. O relógio começa na homologação, mas a vantagem começou a ser construída antes dela.
               </p>
             </div>
