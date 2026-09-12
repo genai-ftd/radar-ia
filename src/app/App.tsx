@@ -83,7 +83,7 @@ function EdicaoAbril2026({
           <div className="flex items-center gap-3">
             <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
-              <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
+              <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Abril de 2026</p>
             </div>
           </div>
@@ -115,7 +115,7 @@ function EdicaoAbril2026({
               Abril de 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -199,9 +199,9 @@ function EdicaoAbril2026({
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
-                    <div className="bg-purple-50 rounded-lg p-3">
-                      <p className="text-xs font-semibold text-purple-700 mb-1">Impacto estratégico</p>
-                      <p className="text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
+                    <div className="border-l-2 border-[#6B46C1] pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -216,8 +216,8 @@ function EdicaoAbril2026({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#C2410C]" />
+              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -341,7 +341,7 @@ function EdicaoMaio2026({
           <div className="flex items-center gap-3">
             <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
-              <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
+              <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Maio de 2026</p>
             </div>
           </div>
@@ -374,7 +374,7 @@ function EdicaoMaio2026({
             </div>
 
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -511,8 +511,8 @@ function EdicaoMaio2026({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#C2410C]" />
+              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -655,7 +655,7 @@ function EdicaoJunho2026({
           <div className="flex items-center gap-3">
             <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
-              <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
+              <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Junho de 2026</p>
             </div>
           </div>
@@ -687,7 +687,7 @@ function EdicaoJunho2026({
               Junho de 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -773,9 +773,9 @@ function EdicaoJunho2026({
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
-                    <div className="bg-purple-50 rounded-lg p-3">
-                      <p className="text-xs font-semibold text-purple-700 mb-1">Impacto estratégico</p>
-                      <p className="text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
+                    <div className="border-l-2 border-[#6B46C1] pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -790,8 +790,8 @@ function EdicaoJunho2026({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#C2410C]" />
+              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -917,7 +917,7 @@ function EdicaoJunho2026B({
           <div className="flex items-center gap-3">
             <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
-              <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
+              <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Junho de 2026 · Ed. #07</p>
             </div>
           </div>
@@ -949,7 +949,7 @@ function EdicaoJunho2026B({
               Edição #07 · 08 – 19 Jun 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -1033,9 +1033,9 @@ function EdicaoJunho2026B({
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
-                    <div className="bg-purple-50 rounded-lg p-3">
-                      <p className="text-xs font-semibold text-purple-700 mb-1">Impacto estratégico</p>
-                      <p className="text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
+                    <div className="border-l-2 border-[#6B46C1] pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1050,8 +1050,8 @@ function EdicaoJunho2026B({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#C2410C]" />
+              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -1177,7 +1177,7 @@ function EdicaoJulho2026({
           <div className="flex items-center gap-3">
             <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
-              <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
+              <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Julho de 2026 · Ed. #08</p>
             </div>
           </div>
@@ -1209,7 +1209,7 @@ function EdicaoJulho2026({
               Edição #08 · 20 Jun – 17 Jul 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -1293,9 +1293,9 @@ function EdicaoJulho2026({
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
-                    <div className="bg-purple-50 rounded-lg p-3">
-                      <p className="text-xs font-semibold text-purple-700 mb-1">Impacto estratégico</p>
-                      <p className="text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
+                    <div className="border-l-2 border-[#6B46C1] pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1310,8 +1310,8 @@ function EdicaoJulho2026({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#C2410C]" />
+              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -1437,7 +1437,7 @@ function EdicaoAgosto2026({
           <div className="flex items-center gap-3">
             <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
-              <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
+              <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Agosto de 2026 · Ed. #09</p>
             </div>
           </div>
@@ -1469,7 +1469,7 @@ function EdicaoAgosto2026({
               Edição #09 · 08 Jul – 03 Ago 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -1555,9 +1555,9 @@ function EdicaoAgosto2026({
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
-                    <div className="bg-purple-50 rounded-lg p-3">
-                      <p className="text-xs font-semibold text-purple-700 mb-1">Impacto estratégico</p>
-                      <p className="text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
+                    <div className="border-l-2 border-[#6B46C1] pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1572,8 +1572,8 @@ function EdicaoAgosto2026({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#C2410C]" />
+              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -1694,7 +1694,7 @@ function EdicaoAgosto2026B({
           <div className="flex items-center gap-3">
             <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
             <div>
-              <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
+              <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Agosto de 2026 · Ed. #10</p>
             </div>
           </div>
@@ -1726,7 +1726,7 @@ function EdicaoAgosto2026B({
               Edição #10 · 04 – 24 Ago 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -1811,9 +1811,9 @@ function EdicaoAgosto2026B({
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
-                    <div className="bg-purple-50 rounded-lg p-3">
-                      <p className="text-xs font-semibold text-purple-700 mb-1">Leitura estratégica</p>
-                      <p className="text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
+                    <div className="border-l-2 border-[#6B46C1] pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Leitura estratégica</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1828,8 +1828,8 @@ function EdicaoAgosto2026B({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#C2410C]" />
+              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -2125,7 +2125,7 @@ export default function App() {
               <img src={liaHeader} alt="" className="h-10 md:h-11 w-auto flex-shrink-0" />
               <div className="flex flex-col justify-center leading-none">
                 <span className="text-sm md:text-base font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>RADAR</span>
-                <span className="hidden md:inline text-[11px] text-gray-400 font-normal mt-0.5">Inteligência Estratégica de IA na Educação</span>
+                <span className="hidden md:inline text-[11px] text-gray-600 font-normal mt-0.5">Inteligência Estratégica de IA na Educação</span>
               </div>
             </div>
 
@@ -2133,7 +2133,7 @@ export default function App() {
             <div className="hidden sm:flex items-center gap-4">
               <div className="flex flex-col items-end leading-none">
                 <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Edição #11</span>
-                <span className="text-[10px] text-gray-400 font-medium mt-0.5">25 Ago – 10 Set 2026</span>
+                <span className="text-[11px] text-gray-600 font-medium mt-0.5">25 Ago – 10 Set 2026</span>
               </div>
               <div className="w-px h-6 bg-gray-200" />
               <img src={logoIonica} alt="Iônica" className="h-5 w-auto" style={{ filter: 'grayscale(100%) opacity(0.45)' }} />
@@ -2152,7 +2152,7 @@ export default function App() {
                 className={`px-3 py-1 rounded-md text-[11px] font-medium whitespace-nowrap transition-all ${
                   activeSection === item.id
                     ? 'bg-[#6B46C1] text-white'
-                    : 'text-gray-500 hover:bg-purple-50 hover:text-[#6B46C1]'
+                    : 'text-gray-600 hover:bg-purple-50 hover:text-[#6B46C1]'
                 }`}
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
@@ -2173,7 +2173,7 @@ export default function App() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center gap-3 mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA QUINZENA</span>
               </div>
@@ -2182,11 +2182,11 @@ export default function App() {
             <h1 className="text-4xl md:text-6xl text-gray-900 font-bold mb-8 leading-tight">
               A regra saiu — e ela não proíbe a IA.<br />
               <span className="text-[#6B46C1]">Proíbe delegar a decisão</span><br />
-              <span className="text-[#FF6B35]">sobre a vida escolar do aluno</span>
+              <span className="text-[#C2410C]">sobre a vida escolar do aluno</span>
             </h1>
 
             <div className="max-w-4xl mx-auto mb-12">
-              <p className="text-xl text-gray-700 leading-relaxed mb-8">
+              <p className="text-xl text-gray-700 leading-relaxed mb-8 text-left max-w-[68ch] mx-auto">
                 Depois de quatro edições travado na última milha, o parecer do CNE foi aprovado em <strong className="text-[#6B46C1]">1º de setembro</strong>. E o objeto da vedação não é a ferramenta: é quem assina o resultado. IA não pode corrigir redação nem prova dissertativa, detector de texto não pode fundamentar punição sozinho e criança até o 5º ano não usa IA generativa sem o professor. Nas palavras do relator, <strong className="text-[#6B46C1]">a palavra final sobre o desempenho do aluno cabe ao professor, não à máquina</strong>. No dia seguinte, a maior rede escolar dos Estados Unidos suspendeu IA generativa até o 8º ano. Dois sistemas, duas jurisdições, a mesma conclusão.
               </p>
 
@@ -2232,7 +2232,7 @@ export default function App() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-6">
             <h2 className="text-sm font-bold text-gray-900 mb-1">Como você quer ler esta edição?</h2>
-            <p className="text-xs text-gray-500">Você pode trocar a qualquer momento.</p>
+            <p className="text-xs text-gray-600">Você pode trocar a qualquer momento.</p>
           </div>
 
           <div role="radiogroup" aria-label="Modo de leitura" className="grid sm:grid-cols-2 gap-4">
@@ -2267,7 +2267,7 @@ export default function App() {
                 >
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <div className="flex items-center gap-2">
-                      <span className={selecionado ? 'text-[#6B46C1]' : 'text-gray-400'}>{opcao.icone}</span>
+                      <span className={selecionado ? 'text-[#6B46C1]' : 'text-gray-600'}>{opcao.icone}</span>
                       <span className={`font-bold text-sm ${selecionado ? 'text-[#6B46C1]' : 'text-gray-900'}`}>
                         {opcao.titulo}
                       </span>
@@ -2281,10 +2281,10 @@ export default function App() {
                       {selecionado && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
                     </span>
                   </div>
-                  <p className={`text-xs font-semibold mb-2 ${selecionado ? 'text-[#FF6B35]' : 'text-gray-400'}`}>
+                  <p className={`text-xs font-semibold mb-2 ${selecionado ? 'text-[#C2410C]' : 'text-gray-600'}`}>
                     {opcao.tempo}
                   </p>
-                  <p className="text-xs text-gray-600 leading-relaxed">{opcao.desc}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{opcao.desc}</p>
                 </button>
               );
             })}
@@ -2309,7 +2309,7 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
               O que mudou de direção e <span className="text-[#6B46C1]">o que isso obriga a decidir</span>
             </h2>
-            <p className="text-gray-500 mb-12 text-lg max-w-3xl">
+            <p className="text-gray-600 mb-12 text-lg max-w-3xl">
               O que a liderança precisa entender em dois minutos, com a decisão que cada ponto força.
             </p>
 
@@ -2353,12 +2353,12 @@ export default function App() {
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-[#FF6B35] shadow-sm hover:shadow-md transition-shadow">
                   <div className="flex items-center gap-2 mb-2 flex-wrap">
-                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide ${item.tagCor}`}>{item.tag}</span>
+                    <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wide ${item.tagCor}`}>{item.tag}</span>
                   </div>
                   <p className="font-bold text-gray-900 mb-2 text-base">{item.conclusao}</p>
                   <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.raciocinio}</p>
                   <div className="bg-purple-50 rounded-lg px-4 py-2.5">
-                    <p className="text-xs text-gray-700 leading-relaxed">
+                    <p className="text-sm text-gray-700 leading-relaxed">
                       <span className="font-semibold text-[#6B46C1]">Decisão que isso força:</span> {item.decisao}
                     </p>
                   </div>
@@ -2389,7 +2389,7 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
               Cinco sinais, <span className="text-[#6B46C1]">uma direção</span>
             </h2>
-            <p className="text-gray-500 mb-12 text-lg max-w-3xl">
+            <p className="text-gray-600 mb-12 text-lg max-w-3xl">
               Cinco movimentos que mudaram de direção — cada um reunindo os acontecimentos relacionados, com o que sustenta a leitura e o que decorre dela.
             </p>
 
@@ -2482,7 +2482,7 @@ export default function App() {
                         <span className="inline-flex items-center gap-1 text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded-full font-medium">
                           <Users className="w-3 h-3" /> {m.empresa}
                         </span>
-                        <span className="inline-flex items-center gap-1 text-xs bg-gray-50 text-gray-500 px-2 py-1 rounded-full">
+                        <span className="inline-flex items-center gap-1 text-xs bg-gray-50 text-gray-600 px-2 py-1 rounded-full">
                           <Calendar className="w-3 h-3" /> {m.data}
                         </span>
                       </div>
@@ -2491,42 +2491,42 @@ export default function App() {
                       </a>
                     </div>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-[10px] font-bold text-[#6B46C1] bg-purple-50 px-2 py-0.5 rounded-full uppercase tracking-wider">Sinal {i + 1}</span>
+                      <span className="text-[11px] font-bold text-[#6B46C1] bg-purple-50 px-2 py-0.5 rounded-full uppercase tracking-wider">Sinal {i + 1}</span>
                     </div>
                     <h3 className="font-bold text-gray-900 mb-2 leading-snug">{m.titulo}</h3>
-                    <div className="flex items-start gap-1.5 mb-3 bg-gray-50 rounded-lg px-3 py-2">
-                      <Library className="w-3 h-3 text-gray-400 mt-0.5 flex-shrink-0" />
-                      <p className="text-[11px] text-gray-500 leading-relaxed">
+                    <div className="flex items-start gap-1.5 mb-4 border-l-2 border-gray-200 pl-3">
+                      <Library className="w-3 h-3 text-gray-600 mt-0.5 flex-shrink-0" />
+                      <p className="text-[11px] text-gray-600 leading-relaxed">
                         <span className="font-semibold text-gray-600">Consolida:</span> {m.consolida}
                       </p>
                     </div>
                     <p className="text-sm text-gray-600 mb-4 leading-relaxed">{m.resumo}</p>
                     {m.disclosure && (
-                      <div className="flex items-start gap-1.5 mb-4 border border-gray-200 bg-gray-50 rounded-lg px-3 py-2">
-                        <AlertCircle className="w-3 h-3 text-gray-400 mt-0.5 flex-shrink-0" />
-                        <p className="text-[11px] text-gray-500 leading-relaxed">
+                      <div className="flex items-start gap-1.5 mb-4 border-l-2 border-amber-300 pl-3">
+                        <AlertCircle className="w-3 h-3 text-gray-600 mt-0.5 flex-shrink-0" />
+                        <p className="text-[11px] text-gray-600 leading-relaxed">
                           <span className="font-semibold text-gray-600">Declaração de interesse:</span> {m.disclosure}
                         </p>
                       </div>
                     )}
-                    <div className="bg-purple-50 rounded-xl p-4 mb-4">
-                      <p className="text-xs font-semibold text-purple-700 mb-1">Leitura estratégica</p>
+                    <div className="border-l-2 border-[#6B46C1] pl-4 mb-5">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Leitura estratégica</p>
                       <p className="text-sm text-gray-700 leading-relaxed">{m.impacto}</p>
                     </div>
-                    <div className="border border-orange-100 bg-orange-50/50 rounded-xl p-4 space-y-2">
-                      <p className="text-xs font-semibold text-[#FF6B35] mb-1">Consequência prática</p>
+                    <div className="border-l-2 border-[#C2410C] pl-4 space-y-2">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#C2410C]">Consequência prática</p>
                       {[
                         { label: 'Professor', valor: m.professor },
                         { label: 'Aluno', valor: m.aluno },
                         { label: 'Gestor', valor: m.gestor },
                         { label: 'Roadmap', valor: m.roadmap },
                       ].map(linha => (
-                        <p key={linha.label} className="text-xs text-gray-700 leading-relaxed">
+                        <p key={linha.label} className="text-sm text-gray-700 leading-relaxed">
                           <span className="font-semibold text-gray-900">{linha.label}:</span> {linha.valor}
                         </p>
                       ))}
                     </div>
-                    <a href={m.fonte} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-purple-50 text-[#6B46C1] rounded-lg group-hover:bg-[#6B46C1] group-hover:text-white transition-all font-medium text-sm mt-4">
+                    <a href={m.fonte} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-5 pt-4 border-t border-gray-100 w-full text-[#6B46C1] hover:text-[#4C3290] transition-colors font-medium text-sm">
                       <ExternalLink className="w-4 h-4" />
                       Ver fonte
                     </a>
@@ -2549,13 +2549,13 @@ export default function App() {
             className="bg-white rounded-2xl border border-gray-200 p-6 md:p-10"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full mb-6">
-              <AlertCircle className="w-4 h-4 text-gray-500" />
+              <AlertCircle className="w-4 h-4 text-gray-600" />
               <span className="text-sm text-gray-600 font-medium">Sinais de Ausência</span>
             </div>
             <h2 className="text-3xl md:text-4xl text-gray-900 font-bold mb-3">
               O espaço que <span className="text-[#6B46C1]">ninguém ocupou</span>
             </h2>
-            <p className="text-gray-500 mb-8 max-w-3xl">
+            <p className="text-gray-600 mb-8 max-w-3xl">
               Cada item abaixo era razoável esperar nesta janela, não veio, e por isso segue disponível para quem chegar primeiro.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
@@ -2599,7 +2599,7 @@ export default function App() {
               ].map((item, i) => (
                 <div key={i} className="border-l-2 border-gray-200 pl-5 hover:border-[#FF6B35] transition-colors">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide ${
+                    <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wide ${
                       item.janela === 'Janela curta' ? 'bg-red-100 text-red-700'
                       : item.janela === 'Janela aberta' ? 'bg-orange-100 text-orange-700'
                       : item.janela === 'Custo de atraso alto' ? 'bg-purple-100 text-purple-700'
@@ -2607,10 +2607,10 @@ export default function App() {
                     }`}>{item.janela}</span>
                   </div>
                   <p className="font-bold text-gray-900 text-sm mb-2">{item.cat}</p>
-                  <p className="text-xs text-gray-500 leading-relaxed mb-3">{item.nota}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.nota}</p>
                   <div className="bg-orange-50/60 rounded-lg px-3 py-2">
                     <p className="text-[11px] text-gray-700 leading-relaxed">
-                      <span className="font-semibold text-[#FF6B35]">Por que a vaga importa:</span> {item.leitura}
+                      <span className="font-semibold text-[#C2410C]">Por que a vaga importa:</span> {item.leitura}
                     </p>
                   </div>
                 </div>
@@ -2636,7 +2636,7 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
               Estrutural, emergente ou <span className="text-[#6B46C1]">encerrado?</span>
             </h2>
-            <p className="text-gray-500 mb-10 text-lg max-w-3xl">
+            <p className="text-gray-600 mb-10 text-lg max-w-3xl">
               O que reaparece ciclo após ciclo merece roadmap; o que apareceu uma vez merece monitoramento. Nesta edição, uma linha que atravessou cinco edições finalmente se resolveu.
             </p>
 
@@ -2648,8 +2648,8 @@ export default function App() {
                 { t: 'Pontual', d: 'aparição isolada — monitorar', c: 'bg-gray-200 text-gray-700' },
               ].map(l => (
                 <div key={l.t} className="flex items-center gap-2">
-                  <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide ${l.c}`}>{l.t}</span>
-                  <span className="text-xs text-gray-500">{l.d}</span>
+                  <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wide ${l.c}`}>{l.t}</span>
+                  <span className="text-xs text-gray-600">{l.d}</span>
                 </div>
               ))}
             </div>
@@ -2728,7 +2728,7 @@ export default function App() {
                     </span>
                   </div>
                   <div className="bg-white/70 rounded-lg px-4 py-2.5 mb-3">
-                    <p className="text-xs text-gray-600 leading-relaxed font-medium">{item.trilha}</p>
+                    <p className="text-sm text-gray-600 leading-relaxed font-medium">{item.trilha}</p>
                   </div>
                   <p className="text-sm text-gray-700 leading-relaxed">{item.leitura}</p>
                 </motion.div>
@@ -2754,7 +2754,7 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
               Quem chega <span className="text-[#6B46C1]">conforme</span>
             </h2>
-            <p className="text-gray-500 mb-10 text-lg max-w-3xl">
+            <p className="text-gray-600 mb-10 text-lg max-w-3xl">
               Concorrência direta é quem disputa a mesma escola, rede e orçamento. Nesta edição interessa quem já opera com decisão humana registrável, quem tem produto para refazer dentro do prazo e o que cada um já colocou dentro do produto.
             </p>
 
@@ -2812,9 +2812,9 @@ export default function App() {
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-purple-50/30 transition-colors' : 'bg-purple-50/20 hover:bg-purple-50/40 transition-colors'}>
                       <td className="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.player}</td>
-                      <td className="px-5 py-4 text-gray-500 text-xs leading-relaxed">{row.grupo}</td>
-                      <td className="px-5 py-4 text-gray-600 text-xs leading-relaxed">{row.movimento}</td>
-                      <td className="px-5 py-4 text-gray-600 text-xs leading-relaxed">{row.estrategia}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm leading-relaxed">{row.grupo}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm leading-relaxed">{row.movimento}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm leading-relaxed">{row.estrategia}</td>
                       <td className="px-5 py-4">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
                           {row.exposicao}
@@ -2864,9 +2864,9 @@ export default function App() {
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-orange-50/30 transition-colors' : 'bg-orange-50/20 hover:bg-orange-50/40 transition-colors'}>
                       <td className="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.player}</td>
-                      <td className="px-5 py-4 text-gray-500 text-xs leading-relaxed">{row.grupo}</td>
-                      <td className="px-5 py-4 text-gray-600 text-xs leading-relaxed">{row.movimento}</td>
-                      <td className="px-5 py-4 text-gray-600 text-xs leading-relaxed">{row.estrategia}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm leading-relaxed">{row.grupo}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm leading-relaxed">{row.movimento}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm leading-relaxed">{row.estrategia}</td>
                       <td className="px-5 py-4">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
                           {row.exposicao}
@@ -2888,7 +2888,7 @@ export default function App() {
               <div className="w-1.5 h-6 bg-gradient-to-b from-[#6B46C1] to-[#FF6B35] rounded-full" />
               <h3 className="text-xl font-bold text-gray-900">Radar de funcionalidades</h3>
             </div>
-            <p className="text-sm text-gray-500 mb-6 max-w-3xl">
+            <p className="text-sm text-gray-600 mb-6 max-w-3xl">
               Posição de mercado se anuncia; funcionalidade se usa. O recurso que cada player já embarcou, a quem ele serve e o que ocupa — ou deixa vago — no tabuleiro.
             </p>
             <div className="grid md:grid-cols-2 gap-5 mb-8">
@@ -2963,7 +2963,7 @@ export default function App() {
                       {f.mercado}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-500 mb-4">{f.produto}</p>
+                  <p className="text-sm text-gray-600 mb-4">{f.produto}</p>
 
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {f.publicos.map(p => (
@@ -2973,10 +2973,10 @@ export default function App() {
                     ))}
                   </div>
 
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">O que está no produto</p>
+                  <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">O que está no produto</p>
                   <p className="text-sm text-gray-700 leading-relaxed mb-4">{f.entregue}</p>
 
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">O que isso significa</p>
+                  <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">O que isso significa</p>
                   <p className="text-sm text-gray-700 leading-relaxed mb-5">{f.leitura}</p>
 
                   <a
@@ -2994,7 +2994,7 @@ export default function App() {
 
             <div className="bg-white rounded-2xl border-2 border-orange-100 p-6 md:p-8 mb-12">
               <div className="flex items-start gap-3">
-                <Target className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
+                <Target className="w-5 h-5 text-[#C2410C] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-gray-900 mb-2">O espaço que continua vago</h4>
                   <p className="text-sm text-gray-700 leading-relaxed">
@@ -3010,7 +3010,7 @@ export default function App() {
               <h3 className="text-xl font-bold text-gray-900">Forças de contexto</h3>
             </div>
             <div className="bg-white rounded-2xl border-2 border-purple-100 p-6 md:p-8">
-              <p className="text-sm text-gray-500 mb-6 max-w-3xl">
+              <p className="text-sm text-gray-600 mb-6 max-w-3xl">
                 Não disputam a venda para a escola e por isso ficam fora do mapa competitivo. Mudam outra coisa: o que a escola espera receber, quanto aceita pagar e o que passa a ser considerado normal antes de qualquer proposta chegar.
               </p>
               <div className="grid md:grid-cols-2 gap-5">
@@ -3039,9 +3039,9 @@ export default function App() {
                   <div key={i} className="border-l-2 border-purple-200 pl-4">
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
                       <p className="font-semibold text-gray-900 text-sm">{item.nome}</p>
-                      <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-gray-100 text-gray-500 uppercase tracking-wide">{item.altera}</span>
+                      <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-gray-100 text-gray-600 uppercase tracking-wide">{item.altera}</span>
                     </div>
-                    <p className="text-xs text-gray-500 leading-relaxed">{item.nota}</p>
+                    <p className="text-sm text-gray-600 leading-relaxed">{item.nota}</p>
                   </div>
                 ))}
               </div>
@@ -3066,7 +3066,7 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
               Não o que fizeram — <span className="text-[#6B46C1]">como fizeram</span>
             </h2>
-            <p className="text-gray-500 mb-12 text-lg max-w-3xl">
+            <p className="text-gray-600 mb-12 text-lg max-w-3xl">
               Cada caso destrinchado por problema, implantação, escala e aprendizado, separando o que dá para replicar aqui do que não dá.
             </p>
 
@@ -3130,7 +3130,7 @@ export default function App() {
                       </div>
                       <div>
                         <p className="font-bold text-gray-900 text-lg leading-snug">{b.empresa}</p>
-                        <p className="text-xs text-gray-500 mt-0.5">{b.pais}</p>
+                        <p className="text-xs text-gray-600 mt-0.5">{b.pais}</p>
                       </div>
                     </div>
                     <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 whitespace-nowrap">
@@ -3155,24 +3155,24 @@ export default function App() {
                           <span className="text-[#6B46C1]">{bloco.icone}</span>
                           {bloco.label}
                         </p>
-                        <p className="text-xs text-gray-600 leading-relaxed">{bloco.valor}</p>
+                        <p className="text-sm text-gray-600 leading-relaxed">{bloco.valor}</p>
                       </div>
                     ))}
                   </div>
 
                   <div className="bg-red-50/60 rounded-xl p-4 mb-4 border border-red-100">
                     <p className="text-xs font-semibold text-red-700 mb-1">Limitações do caso</p>
-                    <p className="text-xs text-gray-600 leading-relaxed">{b.limitacoes}</p>
+                    <p className="text-sm text-gray-600 leading-relaxed">{b.limitacoes}</p>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4 mb-5">
                     <div className="bg-green-50/60 rounded-xl p-4 border border-green-100">
                       <p className="text-xs font-semibold text-green-700 mb-1">O que é replicável</p>
-                      <p className="text-xs text-gray-600 leading-relaxed">{b.replicavel}</p>
+                      <p className="text-sm text-gray-600 leading-relaxed">{b.replicavel}</p>
                     </div>
                     <div className="bg-gray-100/70 rounded-xl p-4 border border-gray-200">
                       <p className="text-xs font-semibold text-gray-600 mb-1">O que não é replicável</p>
-                      <p className="text-xs text-gray-600 leading-relaxed">{b.naoReplicavel}</p>
+                      <p className="text-sm text-gray-600 leading-relaxed">{b.naoReplicavel}</p>
                     </div>
                   </div>
 
@@ -3204,7 +3204,7 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
               Capacidades que <span className="text-[#6B46C1]">encurtam o caminho</span>
             </h2>
-            <p className="text-gray-500 mb-10 text-lg max-w-3xl">
+            <p className="text-gray-600 mb-10 text-lg max-w-3xl">
               O que já existe, em que estágio está e o que custa plugar — com limitações reais, dependências técnicas, cenário ideal de uso e o que muda para Produto e Engenharia. Nesta edição, o critério de seleção é o prazo de adequação.
             </p>
 
@@ -3312,7 +3312,7 @@ export default function App() {
                   <div className="flex items-start justify-between mb-3 gap-3">
                     <div>
                       <h3 className="font-bold text-gray-900 text-lg leading-snug">{a.nome}</h3>
-                      <p className="text-xs text-gray-400 font-medium mt-0.5">{a.tipo}</p>
+                      <p className="text-xs text-gray-600 font-medium mt-0.5">{a.tipo}</p>
                     </div>
                     <span className={`px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${a.cor}`}>
                       {a.maturidade}
@@ -3321,29 +3321,29 @@ export default function App() {
                   <p className="text-sm text-gray-600 leading-relaxed mb-4">{a.oque}</p>
                   <div className="space-y-3 flex-1">
                     <div>
-                      <p className="text-xs font-semibold text-[#FF6B35] mb-1">O que acelera</p>
+                      <p className="text-xs font-semibold text-[#C2410C] mb-1">O que acelera</p>
                       <p className="text-sm text-gray-700 leading-relaxed">{a.acelera}</p>
                     </div>
                     <div className="bg-red-50/60 rounded-xl p-3 border border-red-100">
                       <p className="text-xs font-semibold text-red-700 mb-1">Limitações reais</p>
-                      <p className="text-xs text-gray-600 leading-relaxed">{a.limitacoes}</p>
+                      <p className="text-sm text-gray-600 leading-relaxed">{a.limitacoes}</p>
                     </div>
                     <div className="bg-gray-50 rounded-xl p-3">
                       <p className="text-xs font-semibold text-gray-700 mb-1">Dependências técnicas</p>
-                      <p className="text-xs text-gray-600 leading-relaxed">{a.dependencias}</p>
+                      <p className="text-sm text-gray-600 leading-relaxed">{a.dependencias}</p>
                     </div>
                     <div className="bg-gray-50 rounded-xl p-3">
                       <p className="text-xs font-semibold text-gray-700 mb-1">Cenário ideal de uso</p>
-                      <p className="text-xs text-gray-600 leading-relaxed">{a.cenario}</p>
+                      <p className="text-sm text-gray-600 leading-relaxed">{a.cenario}</p>
                     </div>
                     <div className="grid gap-2">
                       <div className="bg-purple-50 rounded-xl p-3">
                         <p className="text-xs font-semibold text-purple-700 mb-1">Impacto para Produto</p>
-                        <p className="text-xs text-gray-700 leading-relaxed">{a.impactoProduto}</p>
+                        <p className="text-sm text-gray-700 leading-relaxed">{a.impactoProduto}</p>
                       </div>
                       <div className="bg-blue-50 rounded-xl p-3">
                         <p className="text-xs font-semibold text-blue-700 mb-1">Impacto para Engenharia</p>
-                        <p className="text-xs text-gray-700 leading-relaxed">{a.impactoEngenharia}</p>
+                        <p className="text-sm text-gray-700 leading-relaxed">{a.impactoEngenharia}</p>
                       </div>
                     </div>
                   </div>
@@ -3380,7 +3380,7 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
               Validação e <span className="text-[#6B46C1]">contraponto</span>
             </h2>
-            <p className="text-gray-500 mb-10 text-lg max-w-3xl">
+            <p className="text-gray-600 mb-10 text-lg max-w-3xl">
               O que quem decide e quem estuda o tema concluiu sobre os movimentos desta edição — começando pelo que dizem em coro.
             </p>
 
@@ -3416,7 +3416,7 @@ export default function App() {
                 ].map((item, i) => (
                   <div key={i} className="bg-white/10 rounded-xl p-5 backdrop-blur-sm">
                     <p className="font-semibold text-white mb-2 text-sm leading-snug">{item.ponto}</p>
-                    <p className="text-white/75 text-xs leading-relaxed">{item.detalhe}</p>
+                    <p className="text-white/75 text-sm leading-relaxed">{item.detalhe}</p>
                   </div>
                 ))}
               </div>
@@ -3465,10 +3465,10 @@ export default function App() {
                 >
                   <div className="mb-4">
                     <p className="font-bold text-gray-900">{e.autor}</p>
-                    <p className="text-xs text-gray-500">{e.cargo}</p>
+                    <p className="text-xs text-gray-600">{e.cargo}</p>
                   </div>
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="inline-flex items-center gap-1 text-xs bg-gray-50 text-gray-500 px-2 py-1 rounded-full">
+                    <span className="inline-flex items-center gap-1 text-xs bg-gray-50 text-gray-600 px-2 py-1 rounded-full">
                       <Calendar className="w-3 h-3" /> {e.data}
                     </span>
                   </div>
@@ -3479,11 +3479,11 @@ export default function App() {
                       <p className="text-sm text-gray-600 leading-relaxed">{e.tese}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-gray-500 mb-1">Por que importa</p>
+                      <p className="text-xs font-semibold text-gray-600 mb-1">Por que importa</p>
                       <p className="text-sm text-gray-600 leading-relaxed">{e.importa}</p>
                     </div>
                     <div className="bg-purple-50 rounded-xl p-3">
-                      <p className="text-xs font-semibold text-orange-600 mb-1">Relação com os sinais desta edição</p>
+                      <p className="text-xs font-semibold text-orange-700 mb-1">Relação com os sinais desta edição</p>
                       <p className="text-sm text-gray-700 leading-relaxed">{e.relacao}</p>
                     </div>
                   </div>
@@ -3519,13 +3519,13 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
               Diferenciação vs <span className="text-[#6B46C1]">Commodity</span>
             </h2>
-            <p className="text-gray-500 mb-10 text-lg max-w-3xl">
+            <p className="text-gray-600 mb-10 text-lg max-w-3xl">
               Onde parou de haver vantagem e onde ainda existe algo difícil de copiar. Nesta edição, uma linha saiu do tabuleiro inteiro — deixou de ser commodity para virar proibição.
             </p>
 
             <div className="bg-white rounded-2xl border-2 border-[#FF6B35] p-6 mb-8">
               <div className="flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-[#FF6B35] flex-shrink-0 mt-0.5" />
+                <AlertCircle className="w-5 h-5 text-[#C2410C] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-gray-900 mb-1">A mudança de lado desta edição</p>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -3555,9 +3555,9 @@ export default function App() {
                       <div>
                         <p className="font-semibold text-gray-900 text-sm flex items-center gap-2 flex-wrap">
                           {c.item}
-                          {c.novo && <span className="px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-[#FF6B35] text-white uppercase tracking-wide">Mudou nesta edição</span>}
+                          {c.novo && <span className="px-1.5 py-0.5 rounded-full text-[11px] font-bold bg-[#C2410C] text-white uppercase tracking-wide">Mudou nesta edição</span>}
                         </p>
-                        <p className="text-xs text-gray-500 leading-relaxed">{c.motivo}</p>
+                        <p className="text-sm text-gray-600 leading-relaxed">{c.motivo}</p>
                       </div>
                     </div>
                   ))}
@@ -3583,9 +3583,9 @@ export default function App() {
                       <div>
                         <p className="font-semibold text-gray-900 text-sm flex items-center gap-2 flex-wrap">
                           {d.item}
-                          {d.novo && <span className="px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-green-600 text-white uppercase tracking-wide">Nova fronteira</span>}
+                          {d.novo && <span className="px-1.5 py-0.5 rounded-full text-[11px] font-bold bg-green-700 text-white uppercase tracking-wide">Nova fronteira</span>}
                         </p>
-                        <p className="text-xs text-gray-500 leading-relaxed">{d.motivo}</p>
+                        <p className="text-sm text-gray-600 leading-relaxed">{d.motivo}</p>
                       </div>
                     </div>
                   ))}
@@ -3612,7 +3612,7 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
               Força e maturidade <span className="text-[#6B46C1]">do movimento</span>
             </h2>
-            <p className="text-gray-500 mb-10 text-lg max-w-3xl">
+            <p className="text-gray-600 mb-10 text-lg max-w-3xl">
               Quanto discurso existe em relação à evidência disponível — e se o movimento já é forte o bastante para mover roadmap.
             </p>
 
@@ -3621,7 +3621,7 @@ export default function App() {
                 <p className="font-bold text-orange-700 mb-2 text-sm uppercase tracking-wide flex items-center gap-2">
                   <AlertCircle className="w-4 h-4" /> Superestimado
                 </p>
-                <p className="text-[11px] text-orange-600/80 mb-5 font-medium">Muito discurso, evidência ausente ou contrária</p>
+                <p className="text-[11px] text-orange-700 mb-5 font-medium">Muito discurso, evidência ausente ou contrária</p>
                 <div className="space-y-5">
                   {[
                     { titulo: "A norma proíbe IA na escola", desc: "É a leitura que circulou mais e a mais errada. O texto mantém permitido o apoio à organização de material, acessibilidade, tradução, planejamento de aula e até correção de prova objetiva com validação humana. O que se veda é a delegação da decisão, não o uso." },
@@ -3643,7 +3643,7 @@ export default function App() {
                 <p className="font-bold text-purple-700 mb-2 text-sm uppercase tracking-wide flex items-center gap-2">
                   <TrendingUp className="w-4 h-4" /> Emergente
                 </p>
-                <p className="text-[11px] text-purple-600/80 mb-5 font-medium">Sinal real, cedo demais para conclusão firme</p>
+                <p className="text-[11px] text-purple-700 mb-5 font-medium">Sinal real, cedo demais para conclusão firme</p>
                 <div className="space-y-5">
                   {[
                     { titulo: "Conformidade como argumento de venda", desc: "A lógica é sólida e o precedente de desligamento contratual existe, mas nenhum player brasileiro testou isso numa mesa de compra ainda — e sem homologação, o comprador pode legitimamente esperar. Forte para começar a construir, cedo para prometer retorno." },
@@ -3665,7 +3665,7 @@ export default function App() {
                 <p className="font-bold text-blue-700 mb-2 text-sm uppercase tracking-wide flex items-center gap-2">
                   <CheckCircle className="w-4 h-4" /> Tendência real
                 </p>
-                <p className="text-[11px] text-blue-600/80 mb-5 font-medium">Evidência convergente, já move roadmap</p>
+                <p className="text-[11px] text-blue-700 mb-5 font-medium">Evidência convergente, já move roadmap</p>
                 <div className="space-y-5">
                   {[
                     { titulo: "A decisão sobre o aluno é indelegável", desc: "Três edições subindo de camada e agora com força normativa, princípio declarado pelo relator e convergência com parâmetro internacional. Deixou de ser posição pedagógica e virou critério de arquitetura com consequência jurídica." },
@@ -3717,7 +3717,7 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
               O que isso muda no <span className="text-[#6B46C1]">nosso produto</span>
             </h2>
-            <p className="text-gray-500 mb-4 text-lg max-w-3xl">
+            <p className="text-gray-600 mb-4 text-lg max-w-3xl">
               O que os sinais desta quinzena mudam, na prática, para o nosso roadmap.
             </p>
 
@@ -3796,7 +3796,7 @@ export default function App() {
                   roadmapItem: "Calibrar confiança por item antes de desenhar a amostragem; sem isso a revisão vira aleatória.",
                   prioridade: "Média",
                   cor: "border-[#FF6B35]",
-                  corBadge: "bg-[#FF6B35] text-white",
+                  corBadge: "bg-[#C2410C] text-white",
                   area: "Produto / Avaliação"
                 },
                 {
@@ -3811,7 +3811,7 @@ export default function App() {
                   roadmapItem: "Vincular certificação à política configurada da rede — é o que transforma formação em retenção.",
                   prioridade: "Média",
                   cor: "border-[#FF6B35]",
-                  corBadge: "bg-[#FF6B35] text-white",
+                  corBadge: "bg-[#C2410C] text-white",
                   area: "Formação / Comercial"
                 },
                 {
@@ -3842,43 +3842,43 @@ export default function App() {
                     <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${item.corBadge}`}>
                       {item.prioridade}
                     </span>
-                    <span className="text-xs text-gray-400 font-medium">{item.area}</span>
+                    <span className="text-xs text-gray-600 font-medium">{item.area}</span>
                   </div>
 
                   {!modoExecutivo && (
                     <div className="inline-flex items-center gap-1.5 mb-3 self-start bg-gray-100 rounded-full px-2.5 py-1">
-                      <Library className="w-3 h-3 text-gray-400" />
-                      <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Rastreável a: {item.rastreio}</span>
+                      <Library className="w-3 h-3 text-gray-600" />
+                      <span className="text-[11px] font-semibold text-gray-600 uppercase tracking-wide">Rastreável a: {item.rastreio}</span>
                     </div>
                   )}
 
-                  <p className="text-xs text-gray-400 mb-1 uppercase tracking-wide font-medium">Sinal observado</p>
-                  <p className="text-sm text-gray-500 mb-4 italic leading-relaxed">{item.sinal}</p>
+                  <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-gray-600">Sinal observado</p>
+                  <p className="text-sm text-gray-600 mb-4 italic leading-relaxed">{item.sinal}</p>
 
-                  <div className="bg-red-50/50 rounded-xl p-3 mb-3 border border-red-100">
-                    <p className="text-xs font-semibold text-red-700 mb-1">Problema</p>
-                    <p className="text-xs text-gray-600 leading-relaxed">{item.problema}</p>
+                  <div className="border-l-2 border-red-400 pl-4 mb-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-red-700">Problema</p>
+                    <p className="text-sm text-gray-600 leading-relaxed">{item.problema}</p>
                   </div>
 
                   <h3 className="font-bold text-gray-900 mb-2 text-base leading-snug">{item.oportunidade}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed mb-4">{item.impacto}</p>
 
-                  <div className="border border-orange-100 bg-orange-50/50 rounded-xl p-4 space-y-2 mb-3">
-                    <p className="text-xs font-semibold text-[#FF6B35]">Impacto esperado</p>
+                  <div className="border-l-2 border-[#C2410C] pl-4 space-y-2 mb-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#C2410C]">Impacto esperado</p>
                     {[
                       { label: 'Professor', valor: item.professor },
                       { label: 'Aluno', valor: item.aluno },
                       { label: 'Gestor', valor: item.gestor },
                     ].map(linha => (
-                      <p key={linha.label} className="text-xs text-gray-700 leading-relaxed">
+                      <p key={linha.label} className="text-sm text-gray-700 leading-relaxed">
                         <span className="font-semibold text-gray-900">{linha.label}:</span> {linha.valor}
                       </p>
                     ))}
                   </div>
 
-                  <div className="bg-purple-50 rounded-xl p-3 mt-auto">
-                    <p className="text-xs font-semibold text-purple-700 mb-1">Implicação para roadmap</p>
-                    <p className="text-xs text-gray-700 leading-relaxed">{item.roadmapItem}</p>
+                  <div className="border-l-2 border-[#6B46C1] pl-4 mt-auto">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Implicação para roadmap</p>
+                    <p className="text-sm text-gray-700 leading-relaxed">{item.roadmapItem}</p>
                   </div>
                 </motion.div>
               ))}
@@ -3942,7 +3942,7 @@ export default function App() {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <p className="text-xs font-semibold text-gray-500 mb-1">EDIÇÃO ANTERIOR</p>
+                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Agosto de 2026 · Ed. #10</p>
                   </div>
                   <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
@@ -3972,7 +3972,7 @@ export default function App() {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <p className="text-xs font-semibold text-gray-500 mb-1">EDIÇÃO ANTERIOR</p>
+                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Agosto de 2026 · Ed. #09</p>
                   </div>
                   <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
@@ -4002,7 +4002,7 @@ export default function App() {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <p className="text-xs font-semibold text-gray-500 mb-1">EDIÇÃO ANTERIOR</p>
+                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Julho de 2026 · Ed. #08</p>
                   </div>
                   <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
@@ -4032,7 +4032,7 @@ export default function App() {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <p className="text-xs font-semibold text-gray-500 mb-1">EDIÇÃO ANTERIOR</p>
+                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Junho de 2026 · Ed. #07</p>
                   </div>
                   <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
@@ -4062,7 +4062,7 @@ export default function App() {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <p className="text-xs font-semibold text-gray-500 mb-1">EDIÇÃO ANTERIOR</p>
+                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Junho de 2026</p>
                   </div>
                   <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
@@ -4093,7 +4093,7 @@ export default function App() {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <p className="text-xs font-semibold text-gray-500 mb-1">EDIÇÃO ANTERIOR</p>
+                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Maio de 2026</p>
                   </div>
                   <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
@@ -4124,7 +4124,7 @@ export default function App() {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <p className="text-xs font-semibold text-gray-500 mb-1">EDIÇÃO ANTERIOR</p>
+                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Abril de 2026</p>
                   </div>
                   <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
@@ -4195,7 +4195,7 @@ export default function App() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 w-10 h-10 md:w-12 md:h-12 bg-[#FF6B35] hover:bg-[#FF8C5A] text-white rounded-full shadow-lg hover:shadow-xl transition-all z-40 flex items-center justify-center"
+          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 w-10 h-10 md:w-12 md:h-12 bg-[#C2410C] hover:bg-[#9A3412] text-white rounded-full shadow-lg hover:shadow-xl transition-all z-40 flex items-center justify-center"
           aria-label="Voltar ao topo"
         >
           <ChevronUp className="w-5 h-5 md:w-6 md:h-6" />
