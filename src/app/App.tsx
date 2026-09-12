@@ -115,7 +115,7 @@ function EdicaoAbril2026({
               Abril de 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -216,8 +216,8 @@ function EdicaoAbril2026({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#C2410C]" />
-              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
+              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -374,7 +374,7 @@ function EdicaoMaio2026({
             </div>
 
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -511,8 +511,8 @@ function EdicaoMaio2026({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#C2410C]" />
-              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
+              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -687,7 +687,7 @@ function EdicaoJunho2026({
               Junho de 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -790,8 +790,8 @@ function EdicaoJunho2026({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#C2410C]" />
-              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
+              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -949,7 +949,7 @@ function EdicaoJunho2026B({
               Edição #07 · 08 – 19 Jun 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -1050,8 +1050,8 @@ function EdicaoJunho2026B({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#C2410C]" />
-              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
+              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -1209,7 +1209,7 @@ function EdicaoJulho2026({
               Edição #08 · 20 Jun – 17 Jul 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -1310,8 +1310,8 @@ function EdicaoJulho2026({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#C2410C]" />
-              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
+              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -1469,7 +1469,7 @@ function EdicaoAgosto2026({
               Edição #09 · 08 Jul – 03 Ago 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -1572,8 +1572,8 @@ function EdicaoAgosto2026({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#C2410C]" />
-              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
+              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -1726,7 +1726,7 @@ function EdicaoAgosto2026B({
               Edição #10 · 04 – 24 Ago 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
@@ -1828,8 +1828,8 @@ function EdicaoAgosto2026B({
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#C2410C]" />
-              <span className="text-sm text-[#C2410C] font-medium">Implicação Estratégica</span>
+              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
+              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
             </div>
             <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
@@ -2166,27 +2166,27 @@ export default function App() {
 
       {/* ── INSIGHT DA QUINZENA ── */}
       <section id="insight" className="min-h-screen flex items-center justify-center pt-44 md:pt-48 px-6 bg-gradient-to-br from-white via-purple-50/30 to-white">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#C2410C] text-white rounded-full">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA QUINZENA</span>
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-6xl text-gray-900 font-bold mb-8 leading-tight">
+            <h1 className="text-4xl md:text-6xl text-gray-900 font-bold mb-7 leading-[1.08] tracking-tight">
               A regra saiu — e ela não proíbe a IA.<br />
               <span className="text-[#6B46C1]">Proíbe delegar a decisão</span><br />
-              <span className="text-[#C2410C]">sobre a vida escolar do aluno</span>
+              <span className="text-[#FF6B35]">sobre a vida escolar do aluno</span>
             </h1>
 
-            <div className="max-w-4xl mx-auto mb-12">
-              <p className="text-xl text-gray-700 leading-relaxed mb-8 text-left max-w-[68ch] mx-auto">
+            <div className="mb-12">
+              <p className="text-xl text-gray-700 leading-relaxed mb-10 max-w-[68ch]">
                 Depois de quatro edições travado na última milha, o parecer do CNE foi aprovado em <strong className="text-[#6B46C1]">1º de setembro</strong>. E o objeto da vedação não é a ferramenta: é quem assina o resultado. IA não pode corrigir redação nem prova dissertativa, detector de texto não pode fundamentar punição sozinho e criança até o 5º ano não usa IA generativa sem o professor. Nas palavras do relator, <strong className="text-[#6B46C1]">a palavra final sobre o desempenho do aluno cabe ao professor, não à máquina</strong>. No dia seguinte, a maior rede escolar dos Estados Unidos suspendeu IA generativa até o 8º ano. Dois sistemas, duas jurisdições, a mesma conclusão.
               </p>
 
@@ -2281,7 +2281,7 @@ export default function App() {
                       {selecionado && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
                     </span>
                   </div>
-                  <p className={`text-xs font-semibold mb-2 ${selecionado ? 'text-[#C2410C]' : 'text-gray-600'}`}>
+                  <p className={`text-xs font-semibold mb-2 ${selecionado ? 'text-[#FF6B35]' : 'text-gray-600'}`}>
                     {opcao.tempo}
                   </p>
                   <p className="text-sm text-gray-600 leading-relaxed">{opcao.desc}</p>
@@ -2513,8 +2513,8 @@ export default function App() {
                       <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Leitura estratégica</p>
                       <p className="text-sm text-gray-700 leading-relaxed">{m.impacto}</p>
                     </div>
-                    <div className="border-l-2 border-[#C2410C] pl-4 space-y-2">
-                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#C2410C]">Consequência prática</p>
+                    <div className="border-l-2 border-[#FF6B35] pl-4 space-y-2">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#FF6B35]">Consequência prática</p>
                       {[
                         { label: 'Professor', valor: m.professor },
                         { label: 'Aluno', valor: m.aluno },
@@ -2610,7 +2610,7 @@ export default function App() {
                   <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.nota}</p>
                   <div className="bg-orange-50/60 rounded-lg px-3 py-2">
                     <p className="text-[11px] text-gray-700 leading-relaxed">
-                      <span className="font-semibold text-[#C2410C]">Por que a vaga importa:</span> {item.leitura}
+                      <span className="font-semibold text-[#FF6B35]">Por que a vaga importa:</span> {item.leitura}
                     </p>
                   </div>
                 </div>
@@ -2994,7 +2994,7 @@ export default function App() {
 
             <div className="bg-white rounded-2xl border-2 border-orange-100 p-6 md:p-8 mb-12">
               <div className="flex items-start gap-3">
-                <Target className="w-5 h-5 text-[#C2410C] shrink-0 mt-0.5" />
+                <Target className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-gray-900 mb-2">O espaço que continua vago</h4>
                   <p className="text-sm text-gray-700 leading-relaxed">
@@ -3321,7 +3321,7 @@ export default function App() {
                   <p className="text-sm text-gray-600 leading-relaxed mb-4">{a.oque}</p>
                   <div className="space-y-3 flex-1">
                     <div>
-                      <p className="text-xs font-semibold text-[#C2410C] mb-1">O que acelera</p>
+                      <p className="text-xs font-semibold text-[#FF6B35] mb-1">O que acelera</p>
                       <p className="text-sm text-gray-700 leading-relaxed">{a.acelera}</p>
                     </div>
                     <div className="bg-red-50/60 rounded-xl p-3 border border-red-100">
@@ -3525,7 +3525,7 @@ export default function App() {
 
             <div className="bg-white rounded-2xl border-2 border-[#FF6B35] p-6 mb-8">
               <div className="flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-[#C2410C] flex-shrink-0 mt-0.5" />
+                <AlertCircle className="w-5 h-5 text-[#FF6B35] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-gray-900 mb-1">A mudança de lado desta edição</p>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -3555,7 +3555,7 @@ export default function App() {
                       <div>
                         <p className="font-semibold text-gray-900 text-sm flex items-center gap-2 flex-wrap">
                           {c.item}
-                          {c.novo && <span className="px-1.5 py-0.5 rounded-full text-[11px] font-bold bg-[#C2410C] text-white uppercase tracking-wide">Mudou nesta edição</span>}
+                          {c.novo && <span className="px-1.5 py-0.5 rounded-full text-[11px] font-bold bg-[#FF6B35] text-white uppercase tracking-wide">Mudou nesta edição</span>}
                         </p>
                         <p className="text-sm text-gray-600 leading-relaxed">{c.motivo}</p>
                       </div>
@@ -3796,7 +3796,7 @@ export default function App() {
                   roadmapItem: "Calibrar confiança por item antes de desenhar a amostragem; sem isso a revisão vira aleatória.",
                   prioridade: "Média",
                   cor: "border-[#FF6B35]",
-                  corBadge: "bg-[#C2410C] text-white",
+                  corBadge: "bg-[#FF6B35] text-white",
                   area: "Produto / Avaliação"
                 },
                 {
@@ -3811,7 +3811,7 @@ export default function App() {
                   roadmapItem: "Vincular certificação à política configurada da rede — é o que transforma formação em retenção.",
                   prioridade: "Média",
                   cor: "border-[#FF6B35]",
-                  corBadge: "bg-[#C2410C] text-white",
+                  corBadge: "bg-[#FF6B35] text-white",
                   area: "Formação / Comercial"
                 },
                 {
@@ -3863,8 +3863,8 @@ export default function App() {
                   <h3 className="font-bold text-gray-900 mb-2 text-base leading-snug">{item.oportunidade}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed mb-4">{item.impacto}</p>
 
-                  <div className="border-l-2 border-[#C2410C] pl-4 space-y-2 mb-5">
-                    <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#C2410C]">Impacto esperado</p>
+                  <div className="border-l-2 border-[#FF6B35] pl-4 space-y-2 mb-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#FF6B35]">Impacto esperado</p>
                     {[
                       { label: 'Professor', valor: item.professor },
                       { label: 'Aluno', valor: item.aluno },
@@ -4195,7 +4195,7 @@ export default function App() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 w-10 h-10 md:w-12 md:h-12 bg-[#C2410C] hover:bg-[#9A3412] text-white rounded-full shadow-lg hover:shadow-xl transition-all z-40 flex items-center justify-center"
+          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 w-10 h-10 md:w-12 md:h-12 bg-[#FF6B35] hover:bg-[#FF8C5A] text-white rounded-full shadow-lg hover:shadow-xl transition-all z-40 flex items-center justify-center"
           aria-label="Voltar ao topo"
         >
           <ChevronUp className="w-5 h-5 md:w-6 md:h-6" />
