@@ -2183,14 +2183,14 @@ export default function App() {
               </span>
             </div>
 
-            <h1 className="text-[clamp(2.1rem,7.4vw,2.75rem)] md:text-[clamp(2.75rem,4.6vw,4rem)] text-gray-900 font-extrabold mb-8 leading-[1.04] tracking-[-0.035em]">
+            <h1 className="text-[clamp(2.1rem,7.4vw,2.75rem)] md:text-[clamp(2.25rem,4.6vw,4rem)] text-gray-900 font-extrabold mb-8 leading-[1.04] tracking-[-0.035em]">
               A regra saiu — e ela não proíbe a IA.<br />
               <span className="text-[#6B46C1]">Proíbe delegar a decisão</span><br />
               <span className="text-[#FF6B35]">sobre a vida escolar do aluno</span>
             </h1>
 
             <div className="mb-12">
-              <p className="text-base md:text-[17px] text-gray-600 leading-[1.7] max-w-[68ch] mb-12">
+              <p className="text-base md:text-[17px] text-gray-600 leading-[1.7] max-w-4xl mb-12">
                 Depois de quatro edições travado na última milha, o parecer do CNE foi aprovado em <strong className="text-[#6B46C1]">1º de setembro</strong>. E o objeto da vedação não é a ferramenta: é quem assina o resultado. IA não pode corrigir redação nem prova dissertativa, detector de texto não pode fundamentar punição sozinho e criança até o 5º ano não usa IA generativa sem o professor. Nas palavras do relator, <strong className="text-[#6B46C1]">a palavra final sobre o desempenho do aluno cabe ao professor, não à máquina</strong>. No dia seguinte, a maior rede escolar dos Estados Unidos suspendeu IA generativa até o 8º ano. Dois sistemas, duas jurisdições, a mesma conclusão.
               </p>
 
