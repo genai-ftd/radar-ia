@@ -2183,7 +2183,7 @@ export default function App() {
               </span>
             </div>
 
-            <h1 className="text-[clamp(2.1rem,7.4vw,2.75rem)] md:text-[clamp(2.25rem,4.6vw,4rem)] text-gray-900 font-extrabold mb-8 leading-[1.04] tracking-[-0.035em]">
+            <h1 className="text-[clamp(2rem,4.6vw,4rem)] text-gray-900 font-extrabold mb-8 leading-[1.04] tracking-[-0.035em]">
               A regra saiu — e ela não proíbe a IA.<br />
               <span className="text-[#6B46C1]">Proíbe delegar a decisão</span><br />
               <span className="text-[#FF6B35]">sobre a vida escolar do aluno</span>
@@ -2297,7 +2297,7 @@ export default function App() {
       </section>
 
       {/* ── RESUMO EXECUTIVO ── */}
-      <section id="resumo" className="prosa py-24 px-6 bg-white">
+      <section id="resumo" className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -2378,7 +2378,7 @@ export default function App() {
       {!modoExecutivo && (
         <>
       {/* ── SINAIS DA QUINZENA ── */}
-      <section id="movimentos" className="prosa py-24 px-6 bg-purple-50/30">
+      <section id="movimentos" className="py-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -2543,7 +2543,7 @@ export default function App() {
       </section>
 
       {/* ── SINAIS DE AUSÊNCIA ── */}
-      <section id="ausencias" className="prosa pb-24 px-6 bg-purple-50/30">
+      <section id="ausencias" className="pb-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -2625,7 +2625,7 @@ export default function App() {
       </section>
 
       {/* ── TEMAS RECORRENTES ENTRE EDIÇÕES ── */}
-      <section id="recorrentes" className="prosa py-24 px-6 bg-white">
+      <section id="recorrentes" className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -2743,7 +2743,7 @@ export default function App() {
       </section>
 
       {/* ── CONCORRÊNCIA ── */}
-      <section id="concorrencia" className="prosa py-24 px-6 bg-purple-50/30">
+      <section id="concorrencia" className="py-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3055,7 +3055,7 @@ export default function App() {
       </section>
 
       {/* ── BENCHMARKS DE INOVAÇÃO ── */}
-      <section id="benchmarks" className="prosa py-24 px-6 bg-white">
+      <section id="benchmarks" className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3074,7 +3074,7 @@ export default function App() {
               Cada caso destrinchado por problema, implantação, escala e aprendizado, separando o que dá para replicar aqui do que não dá.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-6 items-start">
+            <div className="grid lg:grid-cols-2 gap-6 items-start">
               {[
                 {
                   empresa: "Poliedro — IA com autoria humana no centro e rastro auditável",
@@ -3192,7 +3192,7 @@ export default function App() {
       </section>
 
       {/* ── ACELERADORES DE IA ── */}
-      <section id="aceleradores" className="prosa py-24 px-6 bg-purple-50/30">
+      <section id="aceleradores" className="py-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3368,7 +3368,7 @@ export default function App() {
       </section>
 
       {/* ── O QUE OS EXPERTS ESTÃO ESCREVENDO ── */}
-      <section id="experts" className="prosa py-24 px-6 bg-white">
+      <section id="experts" className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3420,7 +3420,7 @@ export default function App() {
                 ].map((item, i) => (
                   <div key={i} className="bg-white/10 rounded-xl p-5 backdrop-blur-sm">
                     <p className="font-semibold text-white mb-2 text-sm leading-snug">{item.ponto}</p>
-                    <p className="text-white/75 text-sm md:text-xs leading-relaxed">{item.detalhe}</p>
+                    <p className="text-white/85 text-sm md:text-xs leading-relaxed">{item.detalhe}</p>
                   </div>
                 ))}
               </div>
@@ -3508,7 +3508,7 @@ export default function App() {
       </section>
 
       {/* ── ANÁLISE ESTRATÉGICA ── */}
-      <section id="analise" className="prosa py-24 px-6 bg-purple-50/30">
+      <section id="analise" className="py-24 px-6 bg-purple-50/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3601,7 +3601,7 @@ export default function App() {
       </section>
 
       {/* ── HYPE VS TENDÊNCIA REAL ── */}
-      <section id="hype" className="prosa py-24 px-6 bg-white">
+      <section id="hype" className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3705,7 +3705,7 @@ export default function App() {
       )}
 
       {/* ── OPORTUNIDADES DE PRODUTO ── */}
-      <section id="oportunidades" className="prosa py-24 px-6 bg-purple-50/30">
+      <section id="oportunidades" className="py-24 px-6 bg-purple-50/30">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -4180,7 +4180,7 @@ export default function App() {
               Sinais · Padrões · Riscos · Oportunidades para produtos educacionais
             </p>
 
-            <p className="text-white/60 text-sm md:text-xs leading-relaxed max-w-[68ch] mx-auto mb-8">
+            <p className="text-white/85 text-sm md:text-xs leading-relaxed max-w-[68ch] mx-auto mb-8">
               O RADAR é um sistema contínuo de inteligência estratégica que transforma movimentos de mercado, concorrência, pesquisa, tecnologia e regulação em sinais, padrões, riscos e oportunidades para produtos educacionais.
             </p>
 
