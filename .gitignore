@@ -1,0 +1,14 @@
+# Dependências — reinstale com `pnpm install`
+node_modules/
+
+# Build — gerado por `pnpm run build` e publicado pela GitHub Action
+dist/
+
+# Cache de ferramentas
+.vite/
+*.tsbuildinfo
+
+# Sistema operacional e logs
+.DS_Store
+Thumbs.db
+*.log

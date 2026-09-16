@@ -7,11 +7,20 @@
 
   Hub de IA — Iônica & FTD Com Você.
 
-  ## Running the code
+  ## Rodando o projeto
 
-  Run `npm i` to install the dependencies.
+  O projeto usa **pnpm** (há `pnpm-lock.yaml` e `pnpm-workspace.yaml`);
+  instalar com npm ignora o lockfile.
 
-  Run `npm run dev` to start the development server.
+  ```bash
+  pnpm install      # instala as dependências
+  pnpm run dev      # servidor de desenvolvimento
+  pnpm run build    # build de produção em dist/
+  pnpm run preview  # serve o build localmente
+  ```
+
+  `node_modules/` e `dist/` não são versionados — o primeiro vem do
+  `pnpm install`, o segundo do `pnpm run build`.
 
   ## Editorial
 
