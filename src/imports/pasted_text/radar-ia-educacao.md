@@ -25,9 +25,9 @@ MANTER:
 - assinatura do Hub no header e no rodapé (hub-logo.png / hub-logo-claro.png)
 - aparência premium e executiva
 
-O ícone do Radar (radar-icone.png) substitui o antigo mascote como elemento
-editorial secundário: pequeno, discreto, no consenso dos especialistas e nas
-edições arquivadas. Não criar novos mascotes.
+O ícone do Radar (radar-icone.png) é o elemento editorial secundário das
+edições arquivadas. A Lia (lia-experts.webp) aparece só no box de consenso dos
+especialistas, sem ícone de cérebro ao lado. Não criar novos mascotes.
 
 PALETA E FONTE (tokens em src/styles/theme.css):
 - fonte Plus Jakarta Sans (self-hosted via @fontsource-variable)
