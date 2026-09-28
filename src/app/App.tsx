@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, MotionConfig } from 'motion/react';
+import { motion, MotionConfig } from 'motion/react';
 import {
   Brain,
   GraduationCap,
@@ -27,11 +27,12 @@ import {
   Check,
   LayoutList
 } from 'lucide-react';
-import logoIonica from '../imports/Logo-ionica_(1).png';
-import logoIonicaSmall from '../imports/Logo-ionica_(1)-1.png';
-import logoFTD from '../imports/ftd_com_voce_logo.png';
-import liaHeader from '../imports/lia-header.png';
-import liaFooter from '../imports/lia_footer.png';
+import radarLogo from '../imports/radar-logo.png';
+import radarLogoClaro from '../imports/radar-logo-claro.png';
+import radarIcone from '../imports/radar-icone.png';
+import radarIconeClaro from '../imports/radar-icone-claro.png';
+import hubLogo from '../imports/hub-logo.png';
+import hubLogoClaro from '../imports/hub-logo-claro.png';
 
 type ModoLeitura = 'executiva' | 'completa';
 
@@ -53,7 +54,7 @@ const SECOES = [
   { id: 'edicoes', label: 'Arquivo', executiva: true },
 ];
 
-type View = 'main' | 'edicao-abril-2026' | 'edicao-maio-2026' | 'edicao-junho-2026' | 'edicao-junho-2026-b' | 'edicao-julho-2026' | 'edicao-agosto-2026' | 'edicao-agosto-2026-b';
+type View = 'main' | 'edicao-abril-2026' | 'edicao-maio-2026' | 'edicao-junho-2026' | 'edicao-junho-2026-b' | 'edicao-julho-2026' | 'edicao-agosto-2026' | 'edicao-agosto-2026-b' | 'edicao-setembro-2026';
 
 // ─── Edição Abril 2026 (arquivo) ────────────────────────────────────────────
 function EdicaoAbril2026({
@@ -61,15 +62,11 @@ function EdicaoAbril2026({
   onBackToEdicoes,
   mascote,
   mascoteInverso,
-  logoSmall,
-  logoFtd,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
   mascoteInverso: string;
-  logoSmall: string;
-  logoFtd: string;
 }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -81,23 +78,23 @@ function EdicaoAbril2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Radar" className="h-9 w-auto" />
             <div>
               <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
-              <p className="text-sm font-bold text-[#6B46C1] leading-tight">Abril de 2026</p>
+              <p className="text-sm font-bold text-azul-600 leading-tight">Abril de 2026</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={onBackToEdicoes}
-              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-[#6B46C1] hover:bg-purple-50 rounded-lg transition-all"
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-azul-600 hover:bg-azul-50 rounded-lg transition-all"
             >
               <Library className="w-4 h-4" />
               Edições anteriores
             </button>
             <button
               onClick={onBack}
-              className="flex items-center gap-1.5 px-4 py-2 bg-[#6B46C1] text-white text-sm font-medium rounded-lg hover:bg-[#5B3A9E] transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2 bg-azul-600 text-white text-sm font-medium rounded-lg hover:bg-azul-700 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Edição atual
@@ -107,7 +104,7 @@ function EdicaoAbril2026({
       </header>
 
       {/* Hero */}
-      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-purple-50/40 to-white">
+      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-azul-50/40 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
@@ -115,14 +112,14 @@ function EdicaoAbril2026({
               Abril de 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-rosa-600 to-rosa-500 text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
             </div>
-            <h1 className="text-3xl md:text-5xl text-gray-900 font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl text-navy-900 font-bold mb-6 leading-tight">
               O MEC abre sandbox de IA para educação básica:<br />
-              <span className="text-[#6B46C1]">quem molda os critérios, molda o próximo PNLD</span>
+              <span className="text-azul-600">quem molda os critérios, molda o próximo PNLD</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               O Ministério da Educação abriu um ambiente de experimentação controlado para soluções de IA, avaliando por inovação, escalabilidade e governança ética — sinalizando os critérios que guiarão contratos públicos.
@@ -135,20 +132,20 @@ function EdicaoAbril2026({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <FileText className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Resumo Executivo</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Principais <span className="text-[#6B46C1]">Implicações</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Principais <span className="text-azul-600">Implicações</span>
             </h2>
             <div className="space-y-4">
               {[
-                { titulo: "MEC abre sandbox regulatório para IA na educação básica", desc: "Players que participam ganham vantagem direta no PNLD futuro e contratos públicos. Critérios: inovação + escalabilidade + governança ética — requisitos de entrada, não diferenciais.", cor: "border-[#6B46C1]" },
-                { titulo: "CNE forma comissão especial para diretrizes de IA (básica e superior)", desc: "Regulação virá no 2º semestre de 2026 — janela de 6 meses para adequação. Empresas sem governança auditável terão barreira de entrada no mercado público.", cor: "border-[#FF6B35]" },
-                { titulo: "BNCC Computação torna IA curricular em todas as escolas em 2026", desc: "Demanda estrutural criada por lei — não depende de adoção voluntária. Janela de 12–18 meses antes de commodity. Diferencial: formação docente integrada.", cor: "border-[#FF6B35]" },
-                { titulo: "Arco/Geekie consolida Teacher Assistant com OpenAI", desc: "Primeiro player BR com IA generativa integrada ao fluxo pedagógico. Cria pressão sobre concorrentes — Plurall/SOMOS precisam acelerar integração.", cor: "border-[#6B46C1]" },
-                { titulo: "MEC lança curso 'IA na prática docente' e plataforma MEC Idiomas com tutor IA", desc: "Estado forma professores para IA antes que o mercado o faça. Cria expectativa docente que plataformas privadas precisam igualar ou superar.", cor: "border-[#6B46C1]" },
+                { titulo: "MEC abre sandbox regulatório para IA na educação básica", desc: "Players que participam ganham vantagem direta no PNLD futuro e contratos públicos. Critérios: inovação + escalabilidade + governança ética — requisitos de entrada, não diferenciais.", cor: "border-azul-600" },
+                { titulo: "CNE forma comissão especial para diretrizes de IA (básica e superior)", desc: "Regulação virá no 2º semestre de 2026 — janela de 6 meses para adequação. Empresas sem governança auditável terão barreira de entrada no mercado público.", cor: "border-rosa-600" },
+                { titulo: "BNCC Computação torna IA curricular em todas as escolas em 2026", desc: "Demanda estrutural criada por lei — não depende de adoção voluntária. Janela de 12–18 meses antes de commodity. Diferencial: formação docente integrada.", cor: "border-rosa-600" },
+                { titulo: "Arco/Geekie consolida Teacher Assistant com OpenAI", desc: "Primeiro player BR com IA generativa integrada ao fluxo pedagógico. Cria pressão sobre concorrentes — Plurall/SOMOS precisam acelerar integração.", cor: "border-azul-600" },
+                { titulo: "MEC lança curso 'IA na prática docente' e plataforma MEC Idiomas com tutor IA", desc: "Estado forma professores para IA antes que o mercado o faça. Cria expectativa docente que plataformas privadas precisam igualar ou superar.", cor: "border-azul-600" },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -168,22 +165,22 @@ function EdicaoAbril2026({
       </section>
 
       {/* Principais movimentos */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <TrendingUp className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Principais Movimentos</span>
+              <TrendingUp className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Principais Movimentos</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Movimentos <span className="text-[#6B46C1]">de Abril</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Movimentos <span className="text-azul-600">de Abril</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-5">
               {[
-                { num: "01", titulo: "MEC Sandbox de IA: ambiente regulatório aberto", desc: "O Ministério da Educação abriu inscrições para sandbox regulatório avaliando soluções de IA por inovação, escalabilidade e governança ética. Publicação do documento orientador 'IA na Educação Básica'.", impacto: "Empresas que participarem moldam os critérios que valerão nos próximos ciclos do PNLD. É uma janela que se fecha em 12–18 meses.", cor: "from-purple-600 to-purple-700" },
-                { num: "02", titulo: "BNCC Computação: IA obrigatória em todas as escolas em 2026", desc: "A partir de 2026, a BNCC Computação passa a ser obrigatória em todas as escolas brasileiras, tornando o trabalho com IA parte estruturada do currículo.", impacto: "Janela de 12–18 meses para sistemas de ensino sem solução de IA curricular. Quem chegar primeiro com formação + ferramenta integradas captura o mercado.", cor: "from-purple-700 to-purple-800" },
-                { num: "03", titulo: "Arco/Geekie + OpenAI: Teacher Assistant em expansão", desc: "A Arco Educação reporta avanços na parceria com OpenAI anunciada em 2024. O Teacher Assistant, que gera planos pedagógicos personalizados para alunos com deficiência, está em expansão.", impacto: "Primeiro grande player BR com IA generativa no fluxo pedagógico. Cria pressão sobre Plurall/SOMOS para acelerarem suas próprias integrações.", cor: "from-purple-500 to-purple-600" },
-                { num: "04", titulo: "MEC lança curso de IA para docentes e plataforma de idiomas com IA", desc: "Curso 'IA na prática docente' disponível na Plataforma Mais Professores. Lançamento da MEC Idiomas com tutor de IA que corrige pronúncia e permite prática de conversação.", impacto: "Estado formando professores para IA cria expectativa docente que plataformas privadas precisarão igualar ou superar.", cor: "from-purple-600 to-violet-600" },
+                { num: "01", titulo: "MEC Sandbox de IA: ambiente regulatório aberto", desc: "O Ministério da Educação abriu inscrições para sandbox regulatório avaliando soluções de IA por inovação, escalabilidade e governança ética. Publicação do documento orientador 'IA na Educação Básica'.", impacto: "Empresas que participarem moldam os critérios que valerão nos próximos ciclos do PNLD. É uma janela que se fecha em 12–18 meses.", cor: "from-azul-600 to-azul-700" },
+                { num: "02", titulo: "BNCC Computação: IA obrigatória em todas as escolas em 2026", desc: "A partir de 2026, a BNCC Computação passa a ser obrigatória em todas as escolas brasileiras, tornando o trabalho com IA parte estruturada do currículo.", impacto: "Janela de 12–18 meses para sistemas de ensino sem solução de IA curricular. Quem chegar primeiro com formação + ferramenta integradas captura o mercado.", cor: "from-azul-700 to-azul-800" },
+                { num: "03", titulo: "Arco/Geekie + OpenAI: Teacher Assistant em expansão", desc: "A Arco Educação reporta avanços na parceria com OpenAI anunciada em 2024. O Teacher Assistant, que gera planos pedagógicos personalizados para alunos com deficiência, está em expansão.", impacto: "Primeiro grande player BR com IA generativa no fluxo pedagógico. Cria pressão sobre Plurall/SOMOS para acelerarem suas próprias integrações.", cor: "from-azul-500 to-azul-600" },
+                { num: "04", titulo: "MEC lança curso de IA para docentes e plataforma de idiomas com IA", desc: "Curso 'IA na prática docente' disponível na Plataforma Mais Professores. Lançamento da MEC Idiomas com tutor de IA que corrige pronúncia e permite prática de conversação.", impacto: "Estado formando professores para IA cria expectativa docente que plataformas privadas precisarão igualar ou superar.", cor: "from-azul-600 to-lilas-600" },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -191,7 +188,7 @@ function EdicaoAbril2026({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-[#6B46C1] transition-all"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-azul-600 transition-all"
                 >
                   <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
                     <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
@@ -199,8 +196,8 @@ function EdicaoAbril2026({
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
-                    <div className="border-l-2 border-[#6B46C1] pl-3">
-                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
+                    <div className="border-l-2 border-lilas-500 pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-lilas-600">Impacto estratégico</p>
                       <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
@@ -215,11 +212,11 @@ function EdicaoAbril2026({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-rosa-600" />
+              <span className="text-sm text-rosa-600 font-medium">Implicação Estratégica</span>
             </div>
-            <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
+            <div className="bg-gradient-to-r from-azul-600 to-navy-900 p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
                 <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
@@ -237,15 +234,15 @@ function EdicaoAbril2026({
       </section>
 
       {/* Oportunidades de produto */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
+              <Lightbulb className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Oportunidades de Produto</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              O que construir <span className="text-[#6B46C1]">a partir disso</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              O que construir <span className="text-azul-600">a partir disso</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -262,12 +259,12 @@ function EdicaoAbril2026({
                   transition={{ delay: idx * 0.08 }}
                   className={`p-6 rounded-2xl border-2 transition-all ${
                     item.destaque
-                      ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg'
-                      : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'
+                      ? 'bg-gradient-to-br from-azul-600 to-navy-900 text-white border-transparent shadow-lg'
+                      : 'bg-white border-azul-200 hover:border-rosa-600 hover:shadow-md'
                   }`}
                 >
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
-                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-azul-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-azul-600'}`} />
                   </div>
                   <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
                   <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
@@ -280,18 +277,18 @@ function EdicaoAbril2026({
       </section>
 
       {/* Navegação inferior */}
-      <section className="py-12 px-6 bg-purple-50/40 border-t border-gray-100">
+      <section className="py-12 px-6 bg-azul-50/40 border-t border-gray-100">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={onBackToEdicoes}
-            className="flex items-center gap-2 px-5 py-3 border border-[#6B46C1] text-[#6B46C1] rounded-xl font-medium hover:bg-purple-50 transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 border border-azul-600 text-azul-600 rounded-xl font-medium hover:bg-azul-50 transition-colors text-sm"
           >
             <Library className="w-4 h-4" />
             Voltar para edições anteriores
           </button>
           <button
             onClick={onBack}
-            className="flex items-center gap-2 px-5 py-3 bg-[#6B46C1] text-white rounded-xl font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 bg-azul-600 text-white rounded-xl font-medium hover:bg-azul-700 transition-colors text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para edição atual
@@ -300,13 +297,13 @@ function EdicaoAbril2026({
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
+      <footer className="py-12 px-6 bg-gradient-to-br from-navy-900 to-navy-950 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Radar" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
-            <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Abril de 2026</p>
+            <p className="text-white/40 text-xs">Hub de IA, Produto e Experiência · Abril de 2026</p>
           </div>
         </div>
       </footer>
@@ -319,15 +316,11 @@ function EdicaoMaio2026({
   onBackToEdicoes,
   mascote,
   mascoteInverso,
-  logoSmall,
-  logoFtd,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
   mascoteInverso: string;
-  logoSmall: string;
-  logoFtd: string;
 }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -339,23 +332,23 @@ function EdicaoMaio2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Radar" className="h-9 w-auto" />
             <div>
               <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
-              <p className="text-sm font-bold text-[#6B46C1] leading-tight">Maio de 2026</p>
+              <p className="text-sm font-bold text-azul-600 leading-tight">Maio de 2026</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={onBackToEdicoes}
-              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-[#6B46C1] hover:bg-purple-50 rounded-lg transition-all"
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-azul-600 hover:bg-azul-50 rounded-lg transition-all"
             >
               <Library className="w-4 h-4" />
               Edições anteriores
             </button>
             <button
               onClick={onBack}
-              className="flex items-center gap-1.5 px-4 py-2 bg-[#6B46C1] text-white text-sm font-medium rounded-lg hover:bg-[#5B3A9E] transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2 bg-azul-600 text-white text-sm font-medium rounded-lg hover:bg-azul-700 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Edição atual
@@ -365,7 +358,7 @@ function EdicaoMaio2026({
       </header>
 
       {/* Hero */}
-      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-purple-50/40 to-white">
+      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-azul-50/40 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
@@ -374,15 +367,15 @@ function EdicaoMaio2026({
             </div>
 
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-rosa-600 to-rosa-500 text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
             </div>
 
-            <h1 className="text-3xl md:text-5xl text-gray-900 font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl text-navy-900 font-bold mb-6 leading-tight">
               A próxima disputa da IA na educação não será pela melhor{" "}
-              <span className="text-[#6B46C1]">funcionalidade</span>
+              <span className="text-azul-600">funcionalidade</span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
@@ -397,12 +390,12 @@ function EdicaoMaio2026({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <FileText className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Resumo Executivo</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Principais <span className="text-[#6B46C1]">Implicações</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Principais <span className="text-azul-600">Implicações</span>
             </h2>
 
             <div className="space-y-4">
@@ -410,22 +403,22 @@ function EdicaoMaio2026({
                 {
                   titulo: "CNE regulamenta uso de IA na educação",
                   desc: "Nova regulamentação institucionaliza a IA como parte da operação escolar — governança, rastreabilidade e transparência tornam-se diferenciais competitivos.",
-                  cor: "border-[#FF6B35]"
+                  cor: "border-rosa-600"
                 },
                 {
                   titulo: "Ecossistemas integrados definem o novo benchmark",
                   desc: "Moderna Core e Positivo+AWS sinalizam: a competição migrou de features isoladas para jornadas completas — conteúdo + analytics + IA + acompanhamento.",
-                  cor: "border-[#6B46C1]"
+                  cor: "border-azul-600"
                 },
                 {
                   titulo: "Analytics operacional ganha força",
                   desc: "Plurall 2026 e outros players apostam em dados que viram ação pedagógica — IA prescritiva supera IA descritiva.",
-                  cor: "border-[#FF6B35]"
+                  cor: "border-rosa-600"
                 },
                 {
                   titulo: "Consolidação via M&A acelera",
                   desc: "Árvore adquire Typper — mercado entra em fase de concentração e fortalecimento de ecossistemas. Integração e interoperabilidade tornam-se críticas.",
-                  cor: "border-[#6B46C1]"
+                  cor: "border-azul-600"
                 }
               ].map((item, idx) => (
                 <motion.div
@@ -446,15 +439,15 @@ function EdicaoMaio2026({
       </section>
 
       {/* Principais movimentos */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <TrendingUp className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Principais Movimentos</span>
+              <TrendingUp className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Principais Movimentos</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Movimentos <span className="text-[#6B46C1]">de Maio</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Movimentos <span className="text-azul-600">de Maio</span>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-5">
@@ -463,25 +456,25 @@ function EdicaoMaio2026({
                   num: "01",
                   titulo: "Moderna Core: ecossistema integrado",
                   desc: "Plataforma completa combinando conteúdo, IA, analytics e acompanhamento — novo benchmark do setor educacional.",
-                  cor: "from-purple-600 to-purple-700"
+                  cor: "from-azul-600 to-azul-700"
                 },
                 {
                   num: "02",
                   titulo: "Positivo + AWS: IA generativa em escala",
                   desc: "Parceria traz infraestrutura enterprise e capacidade técnica robusta para IA generativa no ambiente educacional.",
-                  cor: "from-orange-500 to-orange-600"
+                  cor: "from-ambar-500 to-ambar-600"
                 },
                 {
                   num: "03",
                   titulo: "Plurall 2026: analytics operacional",
                   desc: "SOMOS Educação aposta em inteligência pedagógica acionável — dados virando recomendações práticas para professores.",
-                  cor: "from-violet-500 to-violet-600"
+                  cor: "from-lilas-500 to-lilas-600"
                 },
                 {
                   num: "04",
                   titulo: "Árvore adquire Typper",
                   desc: "Primeira grande aquisição EdTech do ciclo — mercado entra em fase de consolidação e fortalecimento de plataformas proprietárias.",
-                  cor: "from-purple-700 to-purple-800"
+                  cor: "from-azul-700 to-azul-800"
                 }
               ].map((item, idx) => (
                 <motion.div
@@ -490,7 +483,7 @@ function EdicaoMaio2026({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-[#6B46C1] transition-all"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-azul-600 transition-all"
                 >
                   <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
                     <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
@@ -510,11 +503,11 @@ function EdicaoMaio2026({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-rosa-600" />
+              <span className="text-sm text-rosa-600 font-medium">Implicação Estratégica</span>
             </div>
-            <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
+            <div className="bg-gradient-to-r from-azul-600 to-navy-900 p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
                 <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
@@ -534,15 +527,15 @@ function EdicaoMaio2026({
       </section>
 
       {/* Oportunidades de produto */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
+              <Lightbulb className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Oportunidades de Produto</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              O que construir <span className="text-[#6B46C1]">a partir disso</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              O que construir <span className="text-azul-600">a partir disso</span>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-4">
@@ -576,12 +569,12 @@ function EdicaoMaio2026({
                   transition={{ delay: idx * 0.08 }}
                   className={`p-6 rounded-2xl border-2 transition-all ${
                     item.destaque
-                      ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg'
-                      : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'
+                      ? 'bg-gradient-to-br from-azul-600 to-navy-900 text-white border-transparent shadow-lg'
+                      : 'bg-white border-azul-200 hover:border-rosa-600 hover:shadow-md'
                   }`}
                 >
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
-                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-azul-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-azul-600'}`} />
                   </div>
                   <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
                   <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
@@ -593,18 +586,18 @@ function EdicaoMaio2026({
       </section>
 
       {/* Navegação inferior */}
-      <section className="py-12 px-6 bg-purple-50/40 border-t border-gray-100">
+      <section className="py-12 px-6 bg-azul-50/40 border-t border-gray-100">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={onBackToEdicoes}
-            className="flex items-center gap-2 px-5 py-3 border border-[#6B46C1] text-[#6B46C1] rounded-xl font-medium hover:bg-purple-50 transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 border border-azul-600 text-azul-600 rounded-xl font-medium hover:bg-azul-50 transition-colors text-sm"
           >
             <Library className="w-4 h-4" />
             Voltar para edições anteriores
           </button>
           <button
             onClick={onBack}
-            className="flex items-center gap-2 px-5 py-3 bg-[#6B46C1] text-white rounded-xl font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 bg-azul-600 text-white rounded-xl font-medium hover:bg-azul-700 transition-colors text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para edição atual
@@ -613,13 +606,13 @@ function EdicaoMaio2026({
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
+      <footer className="py-12 px-6 bg-gradient-to-br from-navy-900 to-navy-950 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Radar" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
-            <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Maio de 2026</p>
+            <p className="text-white/40 text-xs">Hub de IA, Produto e Experiência · Maio de 2026</p>
           </div>
         </div>
       </footer>
@@ -633,15 +626,11 @@ function EdicaoJunho2026({
   onBackToEdicoes,
   mascote,
   mascoteInverso,
-  logoSmall,
-  logoFtd,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
   mascoteInverso: string;
-  logoSmall: string;
-  logoFtd: string;
 }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -653,23 +642,23 @@ function EdicaoJunho2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Radar" className="h-9 w-auto" />
             <div>
               <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
-              <p className="text-sm font-bold text-[#6B46C1] leading-tight">Junho de 2026</p>
+              <p className="text-sm font-bold text-azul-600 leading-tight">Junho de 2026</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={onBackToEdicoes}
-              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-[#6B46C1] hover:bg-purple-50 rounded-lg transition-all"
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-azul-600 hover:bg-azul-50 rounded-lg transition-all"
             >
               <Library className="w-4 h-4" />
               Edições anteriores
             </button>
             <button
               onClick={onBack}
-              className="flex items-center gap-1.5 px-4 py-2 bg-[#6B46C1] text-white text-sm font-medium rounded-lg hover:bg-[#5B3A9E] transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2 bg-azul-600 text-white text-sm font-medium rounded-lg hover:bg-azul-700 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Edição atual
@@ -679,7 +668,7 @@ function EdicaoJunho2026({
       </header>
 
       {/* Hero */}
-      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-purple-50/40 to-white">
+      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-azul-50/40 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
@@ -687,14 +676,14 @@ function EdicaoJunho2026({
               Junho de 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-rosa-600 to-rosa-500 text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
             </div>
-            <h1 className="text-3xl md:text-5xl text-gray-900 font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl text-navy-900 font-bold mb-6 leading-tight">
               O Brasil chegou ao ponto de inflexão:<br />
-              <span className="text-[#6B46C1]">IA na educação virou objeto de regulação, capital e escala</span>
+              <span className="text-azul-600">IA na educação virou objeto de regulação, capital e escala</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               CNE aprovou diretrizes com semáforo de riscos, BNDES injetou R$ 300M na Positivo e Plurall IA gerou 26 mil PEIs em 3 meses. O mercado não discute mais se — disputa quem chega primeiro.
@@ -707,20 +696,20 @@ function EdicaoJunho2026({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <FileText className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Resumo Executivo</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Principais <span className="text-[#6B46C1]">Implicações</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Principais <span className="text-azul-600">Implicações</span>
             </h2>
             <div className="space-y-4">
               {[
-                { titulo: "CNE aprova semáforo de riscos para IA (mai/2026)", desc: "Compliance vira requisito de entrada — não diferencial opcional. Produtos sem governança auditável perdem acesso ao mercado público regulado.", cor: "border-[#6B46C1]" },
-                { titulo: "BNDES injeta R$ 300M na Positivo para IA + plataforma MARIA com GPT", desc: "Capital institucional valida o setor — modelo replicável por outros grupos. Vertical integrada (hardware + software + IA própria) cria vantagem estrutural.", cor: "border-[#FF6B35]" },
-                { titulo: "Moderna relança Aprova Brasil com IA para 800k alunos e SAEB (mai/2026)", desc: "Defesa de base instalada com upgrade tecnológico — produto com 15 anos ganha nova vida. Integrar conteúdo + avaliação SAEB + IA + analytics num único produto é o novo benchmark público.", cor: "border-[#FF6B35]" },
-                { titulo: "Google + UNICEF entram no mercado público BR com Gemini e NotebookLM (mai/2026)", desc: "Big tech contorna ausência de conteúdo BR via parceria institucional multilateral. Resposta não é produto melhor — é relacionamento mais profundo com redes e secretarias.", cor: "border-[#6B46C1]" },
-                { titulo: "Plurall IA: 26 mil PEIs gerados, 2 mil escolas ativas em 3 meses", desc: "Primeira prova de escala real de IA no ensino formal brasileiro. PEI automatizado deixou de ser hipótese — é demanda comprovada e mercado aberto.", cor: "border-[#6B46C1]" },
+                { titulo: "CNE aprova semáforo de riscos para IA (mai/2026)", desc: "Compliance vira requisito de entrada — não diferencial opcional. Produtos sem governança auditável perdem acesso ao mercado público regulado.", cor: "border-azul-600" },
+                { titulo: "BNDES injeta R$ 300M na Positivo para IA + plataforma MARIA com GPT", desc: "Capital institucional valida o setor — modelo replicável por outros grupos. Vertical integrada (hardware + software + IA própria) cria vantagem estrutural.", cor: "border-rosa-600" },
+                { titulo: "Moderna relança Aprova Brasil com IA para 800k alunos e SAEB (mai/2026)", desc: "Defesa de base instalada com upgrade tecnológico — produto com 15 anos ganha nova vida. Integrar conteúdo + avaliação SAEB + IA + analytics num único produto é o novo benchmark público.", cor: "border-rosa-600" },
+                { titulo: "Google + UNICEF entram no mercado público BR com Gemini e NotebookLM (mai/2026)", desc: "Big tech contorna ausência de conteúdo BR via parceria institucional multilateral. Resposta não é produto melhor — é relacionamento mais profundo com redes e secretarias.", cor: "border-azul-600" },
+                { titulo: "Plurall IA: 26 mil PEIs gerados, 2 mil escolas ativas em 3 meses", desc: "Primeira prova de escala real de IA no ensino formal brasileiro. PEI automatizado deixou de ser hipótese — é demanda comprovada e mercado aberto.", cor: "border-azul-600" },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -740,24 +729,24 @@ function EdicaoJunho2026({
       </section>
 
       {/* Principais movimentos */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <TrendingUp className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Principais Movimentos</span>
+              <TrendingUp className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Principais Movimentos</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Movimentos <span className="text-[#6B46C1]">de Junho</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Movimentos <span className="text-azul-600">de Junho</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-5">
               {[
-                { num: "01", titulo: "CNE aprova diretrizes com semáforo de riscos para IA", desc: "CNE aprovou parecer que classifica tecnologias por risco: proibiu vigilância emocional e perfilização psicológica; exige supervisão humana em correção automatizada.", impacto: "Compliance vira requisito de entrada no mercado público. Produto sem governança auditável perde acesso a contratos regulados.", cor: "from-purple-600 to-purple-700" },
-                { num: "02", titulo: "BNDES injeta R$ 300M na Positivo — plataforma MARIA integra GPT", desc: "Positivo fechou financiamento de até R$ 300M com BNDES para Plano de Inovação 2026–2028, incluindo MARIA, assistente de IA que monta planos de estudo personalizados.", impacto: "Vertical integrada (hardware + software + IA própria) cria vantagem estrutural difícil de replicar por players apenas de software.", cor: "from-purple-700 to-purple-800" },
-                { num: "03", titulo: "Moderna relança Aprova Brasil com IA para 800k alunos", desc: "Soluções Moderna lançou nova versão do Aprova Brasil com monitoramento em tempo real, análise de performance no SAEB e intervenção pedagógica baseada em IA.", impacto: "Produto de 15 anos ganhou nova vida com IA integrada. Benchmark: conteúdo + SAEB + analytics em plataforma única.", cor: "from-purple-500 to-purple-600" },
-                { num: "04", titulo: "Google + UNICEF parceria 3 anos no Brasil", desc: "Parceria trienal anuncia uso de Gemini e NotebookLM em escolas públicas brasileiras. Google.org destina R$ 5M para expandir programa Experience AI no Brasil.", impacto: "Big tech contorna ausência de conteúdo brasileiro via parceria institucional multilateral — canal de distribuição diferente dos players privados.", cor: "from-purple-600 to-violet-600" },
-                { num: "05", titulo: "Plurall IA: 26 mil PEIs gerados em 3 meses", desc: "Em 3 meses de uso, mais de 2 mil escolas criaram pelo menos um PEI na plataforma Plurall IA, com 26 mil conteúdos adaptados gerados. Predição por IA prevista para 2026.", impacto: "Primeira prova de escala real de IA no ensino formal brasileiro. PEI automatizado saiu de hipótese para demanda comprovada.", cor: "from-purple-600 to-purple-700" },
-                { num: "06", titulo: "Bett Brasil 2026: 65 mil visitantes, +40% vs 2025", desc: "Maior edição da história do evento com lançamentos de Somos, Moderna, Super Professor, SoftBank Robotics (Léia) e relatório OCDE em português.", impacto: "Mercado saiu do discurso para o produto. Volume de lançamentos indica corrida por posicionamento antes da regulação final do CNE.", cor: "from-purple-700 to-purple-800" },
+                { num: "01", titulo: "CNE aprova diretrizes com semáforo de riscos para IA", desc: "CNE aprovou parecer que classifica tecnologias por risco: proibiu vigilância emocional e perfilização psicológica; exige supervisão humana em correção automatizada.", impacto: "Compliance vira requisito de entrada no mercado público. Produto sem governança auditável perde acesso a contratos regulados.", cor: "from-azul-600 to-azul-700" },
+                { num: "02", titulo: "BNDES injeta R$ 300M na Positivo — plataforma MARIA integra GPT", desc: "Positivo fechou financiamento de até R$ 300M com BNDES para Plano de Inovação 2026–2028, incluindo MARIA, assistente de IA que monta planos de estudo personalizados.", impacto: "Vertical integrada (hardware + software + IA própria) cria vantagem estrutural difícil de replicar por players apenas de software.", cor: "from-azul-700 to-azul-800" },
+                { num: "03", titulo: "Moderna relança Aprova Brasil com IA para 800k alunos", desc: "Soluções Moderna lançou nova versão do Aprova Brasil com monitoramento em tempo real, análise de performance no SAEB e intervenção pedagógica baseada em IA.", impacto: "Produto de 15 anos ganhou nova vida com IA integrada. Benchmark: conteúdo + SAEB + analytics em plataforma única.", cor: "from-azul-500 to-azul-600" },
+                { num: "04", titulo: "Google + UNICEF parceria 3 anos no Brasil", desc: "Parceria trienal anuncia uso de Gemini e NotebookLM em escolas públicas brasileiras. Google.org destina R$ 5M para expandir programa Experience AI no Brasil.", impacto: "Big tech contorna ausência de conteúdo brasileiro via parceria institucional multilateral — canal de distribuição diferente dos players privados.", cor: "from-azul-600 to-lilas-600" },
+                { num: "05", titulo: "Plurall IA: 26 mil PEIs gerados em 3 meses", desc: "Em 3 meses de uso, mais de 2 mil escolas criaram pelo menos um PEI na plataforma Plurall IA, com 26 mil conteúdos adaptados gerados. Predição por IA prevista para 2026.", impacto: "Primeira prova de escala real de IA no ensino formal brasileiro. PEI automatizado saiu de hipótese para demanda comprovada.", cor: "from-azul-600 to-azul-700" },
+                { num: "06", titulo: "Bett Brasil 2026: 65 mil visitantes, +40% vs 2025", desc: "Maior edição da história do evento com lançamentos de Somos, Moderna, Super Professor, SoftBank Robotics (Léia) e relatório OCDE em português.", impacto: "Mercado saiu do discurso para o produto. Volume de lançamentos indica corrida por posicionamento antes da regulação final do CNE.", cor: "from-azul-700 to-azul-800" },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -765,7 +754,7 @@ function EdicaoJunho2026({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.08 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-[#6B46C1] transition-all"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-azul-600 transition-all"
                 >
                   <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
                     <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
@@ -773,8 +762,8 @@ function EdicaoJunho2026({
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
-                    <div className="border-l-2 border-[#6B46C1] pl-3">
-                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
+                    <div className="border-l-2 border-lilas-500 pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-lilas-600">Impacto estratégico</p>
                       <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
@@ -789,11 +778,11 @@ function EdicaoJunho2026({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-rosa-600" />
+              <span className="text-sm text-rosa-600 font-medium">Implicação Estratégica</span>
             </div>
-            <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
+            <div className="bg-gradient-to-r from-azul-600 to-navy-900 p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
                 <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
@@ -811,15 +800,15 @@ function EdicaoJunho2026({
       </section>
 
       {/* Oportunidades de produto */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
+              <Lightbulb className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Oportunidades de Produto</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              O que construir <span className="text-[#6B46C1]">a partir disso</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              O que construir <span className="text-azul-600">a partir disso</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -836,12 +825,12 @@ function EdicaoJunho2026({
                   transition={{ delay: idx * 0.08 }}
                   className={`p-6 rounded-2xl border-2 transition-all ${
                     item.destaque
-                      ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg'
-                      : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'
+                      ? 'bg-gradient-to-br from-azul-600 to-navy-900 text-white border-transparent shadow-lg'
+                      : 'bg-white border-azul-200 hover:border-rosa-600 hover:shadow-md'
                   }`}
                 >
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
-                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-azul-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-azul-600'}`} />
                   </div>
                   <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
                   <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
@@ -854,18 +843,18 @@ function EdicaoJunho2026({
       </section>
 
       {/* Navegação inferior */}
-      <section className="py-12 px-6 bg-purple-50/40 border-t border-gray-100">
+      <section className="py-12 px-6 bg-azul-50/40 border-t border-gray-100">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={onBackToEdicoes}
-            className="flex items-center gap-2 px-5 py-3 border border-[#6B46C1] text-[#6B46C1] rounded-xl font-medium hover:bg-purple-50 transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 border border-azul-600 text-azul-600 rounded-xl font-medium hover:bg-azul-50 transition-colors text-sm"
           >
             <Library className="w-4 h-4" />
             Voltar para edições anteriores
           </button>
           <button
             onClick={onBack}
-            className="flex items-center gap-2 px-5 py-3 bg-[#6B46C1] text-white rounded-xl font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 bg-azul-600 text-white rounded-xl font-medium hover:bg-azul-700 transition-colors text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para edição atual
@@ -874,13 +863,13 @@ function EdicaoJunho2026({
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
+      <footer className="py-12 px-6 bg-gradient-to-br from-navy-900 to-navy-950 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Radar" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
-            <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Junho de 2026</p>
+            <p className="text-white/40 text-xs">Hub de IA, Produto e Experiência · Junho de 2026</p>
           </div>
         </div>
       </footer>
@@ -895,15 +884,11 @@ function EdicaoJunho2026B({
   onBackToEdicoes,
   mascote,
   mascoteInverso,
-  logoSmall,
-  logoFtd,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
   mascoteInverso: string;
-  logoSmall: string;
-  logoFtd: string;
 }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -915,23 +900,23 @@ function EdicaoJunho2026B({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Radar" className="h-9 w-auto" />
             <div>
               <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
-              <p className="text-sm font-bold text-[#6B46C1] leading-tight">Junho de 2026 · Ed. #07</p>
+              <p className="text-sm font-bold text-azul-600 leading-tight">Junho de 2026 · Ed. #07</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={onBackToEdicoes}
-              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-[#6B46C1] hover:bg-purple-50 rounded-lg transition-all"
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-azul-600 hover:bg-azul-50 rounded-lg transition-all"
             >
               <Library className="w-4 h-4" />
               Edições anteriores
             </button>
             <button
               onClick={onBack}
-              className="flex items-center gap-1.5 px-4 py-2 bg-[#6B46C1] text-white text-sm font-medium rounded-lg hover:bg-[#5B3A9E] transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2 bg-azul-600 text-white text-sm font-medium rounded-lg hover:bg-azul-700 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Edição atual
@@ -941,7 +926,7 @@ function EdicaoJunho2026B({
       </header>
 
       {/* Hero */}
-      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-purple-50/40 to-white">
+      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-azul-50/40 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
@@ -949,14 +934,14 @@ function EdicaoJunho2026B({
               Edição #07 · 08 – 19 Jun 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-rosa-600 to-rosa-500 text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
             </div>
-            <h1 className="text-3xl md:text-5xl text-gray-900 font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl text-navy-900 font-bold mb-6 leading-tight">
               O Gemini entrou direto no ENEM:<br />
-              <span className="text-[#6B46C1]">a batalha agora é pelo estudante brasileiro dentro do exame mais disputado do país</span>
+              <span className="text-azul-600">a batalha agora é pelo estudante brasileiro dentro do exame mais disputado do país</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               O Google anunciou simulados gratuitos do ENEM no Gemini, desenvolvidos com a Akira Enem, enquanto o CNE encerrava a consulta pública sobre IA na educação. O campo de batalha migrou do produto para o canal de distribuição.
@@ -969,20 +954,20 @@ function EdicaoJunho2026B({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <FileText className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Resumo Executivo</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Principais <span className="text-[#6B46C1]">Implicações</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Principais <span className="text-azul-600">Implicações</span>
             </h2>
             <div className="space-y-4">
               {[
-                { titulo: "Big techs passaram a competir diretamente pela distribuição educacional", desc: "Simulado ENEM gratuito no Gemini (parceria com Akira Enem) é o primeiro produto de IA do Google desenhado para o contexto brasileiro — canal direto a 10M+ de vestibulandos, sem passar pela escola.", cor: "border-[#6B46C1]" },
-                { titulo: "Regulação de IA entrou em fase prática", desc: "CNE encerrou consulta pública sobre as diretrizes: proibição de vigilância emocional e supervisão humana obrigatória em correção automatizada. Compliance virou requisito de entrada.", cor: "border-[#FF6B35]" },
-                { titulo: "Gratuidade virou estratégia de aquisição em escala", desc: "Google Summit gratuito para professores, MEC Idiomas gratuito (212k usuários em dias), Khan Academy gratuito até 2027 — zero cost como canal de adoção antes de monetizar.", cor: "border-[#FF6B35]" },
-                { titulo: "O diferencial migrou do conteúdo para o dado de aprendizagem", desc: "Gemini tem alcance, mas não tem histórico do aluno. Quem tem o dado longitudinal tem o ativo que a big tech não copia.", cor: "border-[#6B46C1]" },
-                { titulo: "Coordenador pedagógico emergiu como buyer estratégico", desc: "Geekie lançou a Ultravisão da Coordenação — dado consolidado de turma em tempo real. Coordenador renova contrato e influencia a compra do próximo ciclo.", cor: "border-[#6B46C1]" },
+                { titulo: "Big techs passaram a competir diretamente pela distribuição educacional", desc: "Simulado ENEM gratuito no Gemini (parceria com Akira Enem) é o primeiro produto de IA do Google desenhado para o contexto brasileiro — canal direto a 10M+ de vestibulandos, sem passar pela escola.", cor: "border-azul-600" },
+                { titulo: "Regulação de IA entrou em fase prática", desc: "CNE encerrou consulta pública sobre as diretrizes: proibição de vigilância emocional e supervisão humana obrigatória em correção automatizada. Compliance virou requisito de entrada.", cor: "border-rosa-600" },
+                { titulo: "Gratuidade virou estratégia de aquisição em escala", desc: "Google Summit gratuito para professores, MEC Idiomas gratuito (212k usuários em dias), Khan Academy gratuito até 2027 — zero cost como canal de adoção antes de monetizar.", cor: "border-rosa-600" },
+                { titulo: "O diferencial migrou do conteúdo para o dado de aprendizagem", desc: "Gemini tem alcance, mas não tem histórico do aluno. Quem tem o dado longitudinal tem o ativo que a big tech não copia.", cor: "border-azul-600" },
+                { titulo: "Coordenador pedagógico emergiu como buyer estratégico", desc: "Geekie lançou a Ultravisão da Coordenação — dado consolidado de turma em tempo real. Coordenador renova contrato e influencia a compra do próximo ciclo.", cor: "border-azul-600" },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -1002,22 +987,22 @@ function EdicaoJunho2026B({
       </section>
 
       {/* Principais movimentos */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <TrendingUp className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Principais Movimentos</span>
+              <TrendingUp className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Principais Movimentos</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Movimentos da <span className="text-[#6B46C1]">Quinzena</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Movimentos da <span className="text-azul-600">Quinzena</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-5">
               {[
-                { num: "01", titulo: "Gemini lança simulados gratuitos do ENEM com a Akira Enem", desc: "Anunciado no Google for Brasil (10/jun): testes completos ou por área, diagnóstico detalhado e plano de estudos personalizado, gratuitos no app Gemini.", impacto: "Canal direto a 10M+ vestibulandos sem passar por escola ou sistema de ensino. Ameaça específica a preparatórios.", cor: "from-purple-600 to-purple-700" },
-                { num: "02", titulo: "CNE encerra consulta pública sobre IA na Educação", desc: "Consulta via Brasil Participativo (18/mai–14/jun) colheu contribuições sobre as diretrizes de IA na educação básica e superior antes da fase final.", impacto: "Quem participou tem argumento técnico de alinhamento regulatório. Compliance virou moat, não custo.", cor: "from-purple-700 to-purple-800" },
-                { num: "03", titulo: "MEC Idiomas: 212 mil usuários em dias com tutor de IA gratuito", desc: "Plataforma pública de inglês e espanhol (A1–C2) com agente de IA para dúvidas e conversação, em app e web.", impacto: "Estado entregando IA de qualidade gratuita cria benchmark público difícil de bater por preço. Diferencial privado: personalização e dado longitudinal.", cor: "from-purple-500 to-purple-600" },
-                { num: "04", titulo: "Geekie One lança Ultravisão da Coordenação", desc: "Tela de gestão com dados consolidados de alunos, turmas e professores em tempo real, específica para coordenadores pedagógicos.", impacto: "Coordenador como buyer estratégico: produto que o serve cria retenção que ferramenta de aluno não cria.", cor: "from-purple-600 to-violet-600" },
+                { num: "01", titulo: "Gemini lança simulados gratuitos do ENEM com a Akira Enem", desc: "Anunciado no Google for Brasil (10/jun): testes completos ou por área, diagnóstico detalhado e plano de estudos personalizado, gratuitos no app Gemini.", impacto: "Canal direto a 10M+ vestibulandos sem passar por escola ou sistema de ensino. Ameaça específica a preparatórios.", cor: "from-azul-600 to-azul-700" },
+                { num: "02", titulo: "CNE encerra consulta pública sobre IA na Educação", desc: "Consulta via Brasil Participativo (18/mai–14/jun) colheu contribuições sobre as diretrizes de IA na educação básica e superior antes da fase final.", impacto: "Quem participou tem argumento técnico de alinhamento regulatório. Compliance virou moat, não custo.", cor: "from-azul-700 to-azul-800" },
+                { num: "03", titulo: "MEC Idiomas: 212 mil usuários em dias com tutor de IA gratuito", desc: "Plataforma pública de inglês e espanhol (A1–C2) com agente de IA para dúvidas e conversação, em app e web.", impacto: "Estado entregando IA de qualidade gratuita cria benchmark público difícil de bater por preço. Diferencial privado: personalização e dado longitudinal.", cor: "from-azul-500 to-azul-600" },
+                { num: "04", titulo: "Geekie One lança Ultravisão da Coordenação", desc: "Tela de gestão com dados consolidados de alunos, turmas e professores em tempo real, específica para coordenadores pedagógicos.", impacto: "Coordenador como buyer estratégico: produto que o serve cria retenção que ferramenta de aluno não cria.", cor: "from-azul-600 to-lilas-600" },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -1025,7 +1010,7 @@ function EdicaoJunho2026B({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-[#6B46C1] transition-all"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-azul-600 transition-all"
                 >
                   <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
                     <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
@@ -1033,8 +1018,8 @@ function EdicaoJunho2026B({
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
-                    <div className="border-l-2 border-[#6B46C1] pl-3">
-                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
+                    <div className="border-l-2 border-lilas-500 pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-lilas-600">Impacto estratégico</p>
                       <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
@@ -1049,11 +1034,11 @@ function EdicaoJunho2026B({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-rosa-600" />
+              <span className="text-sm text-rosa-600 font-medium">Implicação Estratégica</span>
             </div>
-            <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
+            <div className="bg-gradient-to-r from-azul-600 to-navy-900 p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
                 <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
@@ -1071,15 +1056,15 @@ function EdicaoJunho2026B({
       </section>
 
       {/* Oportunidades de produto */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
+              <Lightbulb className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Oportunidades de Produto</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              O que construir <span className="text-[#6B46C1]">a partir disso</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              O que construir <span className="text-azul-600">a partir disso</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -1096,12 +1081,12 @@ function EdicaoJunho2026B({
                   transition={{ delay: idx * 0.08 }}
                   className={`p-6 rounded-2xl border-2 transition-all ${
                     item.destaque
-                      ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg'
-                      : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'
+                      ? 'bg-gradient-to-br from-azul-600 to-navy-900 text-white border-transparent shadow-lg'
+                      : 'bg-white border-azul-200 hover:border-rosa-600 hover:shadow-md'
                   }`}
                 >
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
-                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-azul-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-azul-600'}`} />
                   </div>
                   <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
                   <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
@@ -1114,18 +1099,18 @@ function EdicaoJunho2026B({
       </section>
 
       {/* Navegação inferior */}
-      <section className="py-12 px-6 bg-purple-50/40 border-t border-gray-100">
+      <section className="py-12 px-6 bg-azul-50/40 border-t border-gray-100">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={onBackToEdicoes}
-            className="flex items-center gap-2 px-5 py-3 border border-[#6B46C1] text-[#6B46C1] rounded-xl font-medium hover:bg-purple-50 transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 border border-azul-600 text-azul-600 rounded-xl font-medium hover:bg-azul-50 transition-colors text-sm"
           >
             <Library className="w-4 h-4" />
             Voltar para edições anteriores
           </button>
           <button
             onClick={onBack}
-            className="flex items-center gap-2 px-5 py-3 bg-[#6B46C1] text-white rounded-xl font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 bg-azul-600 text-white rounded-xl font-medium hover:bg-azul-700 transition-colors text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para edição atual
@@ -1134,13 +1119,13 @@ function EdicaoJunho2026B({
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
+      <footer className="py-12 px-6 bg-gradient-to-br from-navy-900 to-navy-950 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Radar" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
-            <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Junho de 2026 · Edição #07</p>
+            <p className="text-white/40 text-xs">Hub de IA, Produto e Experiência · Junho de 2026 · Edição #07</p>
           </div>
         </div>
       </footer>
@@ -1155,15 +1140,11 @@ function EdicaoJulho2026({
   onBackToEdicoes,
   mascote,
   mascoteInverso,
-  logoSmall,
-  logoFtd,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
   mascoteInverso: string;
-  logoSmall: string;
-  logoFtd: string;
 }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1175,23 +1156,23 @@ function EdicaoJulho2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Radar" className="h-9 w-auto" />
             <div>
               <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
-              <p className="text-sm font-bold text-[#6B46C1] leading-tight">Julho de 2026 · Ed. #08</p>
+              <p className="text-sm font-bold text-azul-600 leading-tight">Julho de 2026 · Ed. #08</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={onBackToEdicoes}
-              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-[#6B46C1] hover:bg-purple-50 rounded-lg transition-all"
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-azul-600 hover:bg-azul-50 rounded-lg transition-all"
             >
               <Library className="w-4 h-4" />
               Edições anteriores
             </button>
             <button
               onClick={onBack}
-              className="flex items-center gap-1.5 px-4 py-2 bg-[#6B46C1] text-white text-sm font-medium rounded-lg hover:bg-[#5B3A9E] transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2 bg-azul-600 text-white text-sm font-medium rounded-lg hover:bg-azul-700 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Edição atual
@@ -1201,7 +1182,7 @@ function EdicaoJulho2026({
       </header>
 
       {/* Hero */}
-      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-purple-50/40 to-white">
+      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-azul-50/40 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
@@ -1209,14 +1190,14 @@ function EdicaoJulho2026({
               Edição #08 · 20 Jun – 17 Jul 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-rosa-600 to-rosa-500 text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
             </div>
-            <h1 className="text-3xl md:text-5xl text-gray-900 font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl text-navy-900 font-bold mb-6 leading-tight">
               A era dos anúncios acabou:<br />
-              <span className="text-[#6B46C1]">a IA na educação entrou na fase de consolidação — quem não constrói capacidade, compra</span>
+              <span className="text-azul-600">a IA na educação entrou na fase de consolidação — quem não constrói capacidade, compra</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               Cogna foi a 90% do Educbank, Teachy fez o primeiro M&A de IA em educação da América Latina, a Khan Academy admitiu que só 15% usam o Khanmigo e a Anthropic lançou o Claude for Teachers com privacidade negociada com o sindicato. O mercado passou a comprar talento, base instalada e uso real medido.
@@ -1229,20 +1210,20 @@ function EdicaoJulho2026({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <FileText className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Resumo Executivo</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Principais <span className="text-[#6B46C1]">Implicações</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Principais <span className="text-azul-600">Implicações</span>
             </h2>
             <div className="space-y-4">
               {[
-                { titulo: "O M&A virou o atalho para capacidade de IA", desc: "Teachy comprou a Nero.AI (acquihiring de sete dígitos). Construir capacidade interna ficou mais lento que a janela competitiva — comprar talento pronto virou estratégia.", cor: "border-[#6B46C1]" },
-                { titulo: "O ecossistema se expandiu para além do pedagógico", desc: "Cogna elevou a Somos a 90% do Educbank (R$ 46,3M): dado financeiro + dado pedagógico no mesmo grupo cria retenção que feature não cria.", cor: "border-[#FF6B35]" },
-                { titulo: "Uso real virou a métrica que define produto", desc: "Khan Academy admitiu 15% de engajamento no Khanmigo e refez o produto embutido na prática, medindo 'acerto no item seguinte'. IA como app separado falhou no maior case do mundo.", cor: "border-[#FF6B35]" },
-                { titulo: "A big tech encontrou seu novo canal: o professor", desc: "Claude for Teachers (14/jul): premium gratuito para docentes K-12 dos EUA, padrões dos 50 estados e privacidade validada pelo sindicato AFT. Compliance virou arma de aquisição de mercado.", cor: "border-[#6B46C1]" },
-                { titulo: "Compliance ganhou data no Brasil", desc: "Consulta encerrada, seminário nacional e homologação do MEC no horizonte — adequação às diretrizes do CNE virou cronograma do 2º semestre de 2026.", cor: "border-[#6B46C1]" },
+                { titulo: "O M&A virou o atalho para capacidade de IA", desc: "Teachy comprou a Nero.AI (acquihiring de sete dígitos). Construir capacidade interna ficou mais lento que a janela competitiva — comprar talento pronto virou estratégia.", cor: "border-azul-600" },
+                { titulo: "O ecossistema se expandiu para além do pedagógico", desc: "Cogna elevou a Somos a 90% do Educbank (R$ 46,3M): dado financeiro + dado pedagógico no mesmo grupo cria retenção que feature não cria.", cor: "border-rosa-600" },
+                { titulo: "Uso real virou a métrica que define produto", desc: "Khan Academy admitiu 15% de engajamento no Khanmigo e refez o produto embutido na prática, medindo 'acerto no item seguinte'. IA como app separado falhou no maior case do mundo.", cor: "border-rosa-600" },
+                { titulo: "A big tech encontrou seu novo canal: o professor", desc: "Claude for Teachers (14/jul): premium gratuito para docentes K-12 dos EUA, padrões dos 50 estados e privacidade validada pelo sindicato AFT. Compliance virou arma de aquisição de mercado.", cor: "border-azul-600" },
+                { titulo: "Compliance ganhou data no Brasil", desc: "Consulta encerrada, seminário nacional e homologação do MEC no horizonte — adequação às diretrizes do CNE virou cronograma do 2º semestre de 2026.", cor: "border-azul-600" },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -1262,22 +1243,22 @@ function EdicaoJulho2026({
       </section>
 
       {/* Principais movimentos */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <TrendingUp className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Principais Movimentos</span>
+              <TrendingUp className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Principais Movimentos</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Movimentos da <span className="text-[#6B46C1]">Edição</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Movimentos da <span className="text-azul-600">Edição</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-5">
               {[
-                { num: "01", titulo: "Cogna eleva participação no Educbank para 90%", desc: "Compra de mais 47% por R$ 46,3 milhões (26/jun). O Educbank é a camada financeira da escola privada: cobrança, mensalidades e crédito.", impacto: "O grupo dono do Plurall passa a controlar dado financeiro + pedagógico no mesmo ecossistema — retenção estrutural.", cor: "from-purple-600 to-purple-700" },
-                { num: "02", titulo: "Teachy compra Nero.AI — 1º M&A de IA em educação da AL", desc: "Acquihiring de sete dígitos (2/jul): time de desenvolvimento e propriedade intelectual incorporados.", impacto: "Talento de IA virou ativo comprável. Abre o ciclo de consolidação — edtechs com capacidade técnica viram alvo.", cor: "from-purple-700 to-purple-800" },
-                { num: "03", titulo: "Khan Academy admite 15% de uso e relança o Khanmigo", desc: "108 milhões de interações, mas só 15% dos alunos usam. Versão reconstruída: IA embutida na prática e métrica de 'acerto no item seguinte'.", impacto: "O tutor como app separado morreu. IA embutida no fluxo, medida por aprendizagem transferida, é o novo benchmark.", cor: "from-purple-500 to-purple-600" },
-                { num: "04", titulo: "Anthropic lança Claude for Teachers (14/jul)", desc: "Premium gratuito para professores K-12 verificados dos EUA, padrões dos 50 estados, piloto em Detroit e privacidade em parceria com o sindicato AFT.", impacto: "A disputa chegou ao professor como canal. Confiança institucional e compliance viraram arma competitiva.", cor: "from-purple-600 to-violet-600" },
+                { num: "01", titulo: "Cogna eleva participação no Educbank para 90%", desc: "Compra de mais 47% por R$ 46,3 milhões (26/jun). O Educbank é a camada financeira da escola privada: cobrança, mensalidades e crédito.", impacto: "O grupo dono do Plurall passa a controlar dado financeiro + pedagógico no mesmo ecossistema — retenção estrutural.", cor: "from-azul-600 to-azul-700" },
+                { num: "02", titulo: "Teachy compra Nero.AI — 1º M&A de IA em educação da AL", desc: "Acquihiring de sete dígitos (2/jul): time de desenvolvimento e propriedade intelectual incorporados.", impacto: "Talento de IA virou ativo comprável. Abre o ciclo de consolidação — edtechs com capacidade técnica viram alvo.", cor: "from-azul-700 to-azul-800" },
+                { num: "03", titulo: "Khan Academy admite 15% de uso e relança o Khanmigo", desc: "108 milhões de interações, mas só 15% dos alunos usam. Versão reconstruída: IA embutida na prática e métrica de 'acerto no item seguinte'.", impacto: "O tutor como app separado morreu. IA embutida no fluxo, medida por aprendizagem transferida, é o novo benchmark.", cor: "from-azul-500 to-azul-600" },
+                { num: "04", titulo: "Anthropic lança Claude for Teachers (14/jul)", desc: "Premium gratuito para professores K-12 verificados dos EUA, padrões dos 50 estados, piloto em Detroit e privacidade em parceria com o sindicato AFT.", impacto: "A disputa chegou ao professor como canal. Confiança institucional e compliance viraram arma competitiva.", cor: "from-azul-600 to-lilas-600" },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -1285,7 +1266,7 @@ function EdicaoJulho2026({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-[#6B46C1] transition-all"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-azul-600 transition-all"
                 >
                   <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
                     <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
@@ -1293,8 +1274,8 @@ function EdicaoJulho2026({
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
-                    <div className="border-l-2 border-[#6B46C1] pl-3">
-                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
+                    <div className="border-l-2 border-lilas-500 pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-lilas-600">Impacto estratégico</p>
                       <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
@@ -1309,11 +1290,11 @@ function EdicaoJulho2026({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-rosa-600" />
+              <span className="text-sm text-rosa-600 font-medium">Implicação Estratégica</span>
             </div>
-            <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
+            <div className="bg-gradient-to-r from-azul-600 to-navy-900 p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
                 <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
@@ -1331,15 +1312,15 @@ function EdicaoJulho2026({
       </section>
 
       {/* Oportunidades de produto */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
+              <Lightbulb className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Oportunidades de Produto</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              O que construir <span className="text-[#6B46C1]">a partir disso</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              O que construir <span className="text-azul-600">a partir disso</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -1356,12 +1337,12 @@ function EdicaoJulho2026({
                   transition={{ delay: idx * 0.08 }}
                   className={`p-6 rounded-2xl border-2 transition-all ${
                     item.destaque
-                      ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg'
-                      : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'
+                      ? 'bg-gradient-to-br from-azul-600 to-navy-900 text-white border-transparent shadow-lg'
+                      : 'bg-white border-azul-200 hover:border-rosa-600 hover:shadow-md'
                   }`}
                 >
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
-                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-azul-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-azul-600'}`} />
                   </div>
                   <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
                   <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
@@ -1374,18 +1355,18 @@ function EdicaoJulho2026({
       </section>
 
       {/* Navegação inferior */}
-      <section className="py-12 px-6 bg-purple-50/40 border-t border-gray-100">
+      <section className="py-12 px-6 bg-azul-50/40 border-t border-gray-100">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={onBackToEdicoes}
-            className="flex items-center gap-2 px-5 py-3 border border-[#6B46C1] text-[#6B46C1] rounded-xl font-medium hover:bg-purple-50 transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 border border-azul-600 text-azul-600 rounded-xl font-medium hover:bg-azul-50 transition-colors text-sm"
           >
             <Library className="w-4 h-4" />
             Voltar para edições anteriores
           </button>
           <button
             onClick={onBack}
-            className="flex items-center gap-2 px-5 py-3 bg-[#6B46C1] text-white rounded-xl font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 bg-azul-600 text-white rounded-xl font-medium hover:bg-azul-700 transition-colors text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para edição atual
@@ -1394,13 +1375,13 @@ function EdicaoJulho2026({
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
+      <footer className="py-12 px-6 bg-gradient-to-br from-navy-900 to-navy-950 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Radar" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
-            <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Julho de 2026 · Edição #08</p>
+            <p className="text-white/40 text-xs">Hub de IA, Produto e Experiência · Julho de 2026 · Edição #08</p>
           </div>
         </div>
       </footer>
@@ -1415,15 +1396,11 @@ function EdicaoAgosto2026({
   onBackToEdicoes,
   mascote,
   mascoteInverso,
-  logoSmall,
-  logoFtd,
 }: {
   onBack: () => void;
   onBackToEdicoes: () => void;
   mascote: string;
   mascoteInverso: string;
-  logoSmall: string;
-  logoFtd: string;
 }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1435,23 +1412,23 @@ function EdicaoAgosto2026({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Radar" className="h-9 w-auto" />
             <div>
               <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
-              <p className="text-sm font-bold text-[#6B46C1] leading-tight">Agosto de 2026 · Ed. #09</p>
+              <p className="text-sm font-bold text-azul-600 leading-tight">Agosto de 2026 · Ed. #09</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={onBackToEdicoes}
-              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-[#6B46C1] hover:bg-purple-50 rounded-lg transition-all"
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-azul-600 hover:bg-azul-50 rounded-lg transition-all"
             >
               <Library className="w-4 h-4" />
               Edições anteriores
             </button>
             <button
               onClick={onBack}
-              className="flex items-center gap-1.5 px-4 py-2 bg-[#6B46C1] text-white text-sm font-medium rounded-lg hover:bg-[#5B3A9E] transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2 bg-azul-600 text-white text-sm font-medium rounded-lg hover:bg-azul-700 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Edição atual
@@ -1461,7 +1438,7 @@ function EdicaoAgosto2026({
       </header>
 
       {/* Hero */}
-      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-purple-50/40 to-white">
+      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-azul-50/40 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
@@ -1469,14 +1446,14 @@ function EdicaoAgosto2026({
               Edição #09 · 08 Jul – 03 Ago 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-rosa-600 to-rosa-500 text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
             </div>
-            <h1 className="text-3xl md:text-5xl text-gray-900 font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl text-navy-900 font-bold mb-6 leading-tight">
               A home virou o produto:<br />
-              <span className="text-[#6B46C1]">a disputa saiu do conteúdo e foi para a camada que decide o que cada pessoa vê</span>
+              <span className="text-azul-600">a disputa saiu do conteúdo e foi para a camada que decide o que cada pessoa vê</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               O Google reconstruiu a home do Classroom por papel para 150 milhões de usuários, a Coursera colocou US$ 100 milhões numa empresa que monta jornada por lacuna e os modelos pequenos derrubaram o custo de personalizar. Personalização deixou de ser funcionalidade e virou arquitetura de produto.
@@ -1489,20 +1466,20 @@ function EdicaoAgosto2026({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <FileText className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Resumo Executivo</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Principais <span className="text-[#6B46C1]">Implicações</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Principais <span className="text-azul-600">Implicações</span>
             </h2>
             <div className="space-y-4">
               {[
-                { titulo: "A home por papel virou padrão — e o piso subiu para 150 milhões de usuários", desc: "O Classroom trocou a lista de turmas por painéis distintos para professor, aluno e gestor. Entregar a mesma tela para todos os perfis virou atraso competitivo visível.", cor: "border-[#6B46C1]" },
-                { titulo: "A economia de modelos pequenos mudou a conta do custo por aluno", desc: "Gemini Flash e Flash-Lite a 350 tokens/s e 17% menos tokens, com o topo de linha atrasado. Roteamento entre modelos especializados virou decisão de arquitetura que define margem.", cor: "border-[#FF6B35]" },
-                { titulo: "Segurança de agentes virou infraestrutura aberta de indústria", desc: "Mais de 70 empresas — NVIDIA, Microsoft, IBM, Red Hat, Hugging Face, Linux Foundation — criaram aliança para padronizar identidade, permissão, log e auditoria. Sem OpenAI, Google e Anthropic.", cor: "border-[#6B46C1]" },
-                { titulo: "O MEC ganhou estrutura permanente de IA com o EducaLab", desc: "Laboratório de dados, serviços digitais e IA instituído por portaria, com ambiente controlado e previsão de parcerias. Estruturas assim precedem diretrizes, chamadas e financiamento.", cor: "border-[#6B46C1]" },
-                { titulo: "O capital apostou em jornada adaptativa, não em catálogo", desc: "Coursera investiu US$ 100 milhões na LearnVector, de Andrew Ng, por um terço da empresa — um voto de quem tem o maior catálogo do mundo contra o próprio modelo de prateleira.", cor: "border-[#FF6B35]" },
+                { titulo: "A home por papel virou padrão — e o piso subiu para 150 milhões de usuários", desc: "O Classroom trocou a lista de turmas por painéis distintos para professor, aluno e gestor. Entregar a mesma tela para todos os perfis virou atraso competitivo visível.", cor: "border-azul-600" },
+                { titulo: "A economia de modelos pequenos mudou a conta do custo por aluno", desc: "Gemini Flash e Flash-Lite a 350 tokens/s e 17% menos tokens, com o topo de linha atrasado. Roteamento entre modelos especializados virou decisão de arquitetura que define margem.", cor: "border-rosa-600" },
+                { titulo: "Segurança de agentes virou infraestrutura aberta de indústria", desc: "Mais de 70 empresas — NVIDIA, Microsoft, IBM, Red Hat, Hugging Face, Linux Foundation — criaram aliança para padronizar identidade, permissão, log e auditoria. Sem OpenAI, Google e Anthropic.", cor: "border-azul-600" },
+                { titulo: "O MEC ganhou estrutura permanente de IA com o EducaLab", desc: "Laboratório de dados, serviços digitais e IA instituído por portaria, com ambiente controlado e previsão de parcerias. Estruturas assim precedem diretrizes, chamadas e financiamento.", cor: "border-azul-600" },
+                { titulo: "O capital apostou em jornada adaptativa, não em catálogo", desc: "Coursera investiu US$ 100 milhões na LearnVector, de Andrew Ng, por um terço da empresa — um voto de quem tem o maior catálogo do mundo contra o próprio modelo de prateleira.", cor: "border-rosa-600" },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -1522,24 +1499,24 @@ function EdicaoAgosto2026({
       </section>
 
       {/* Principais movimentos */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <TrendingUp className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Principais Movimentos</span>
+              <TrendingUp className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Principais Movimentos</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Movimentos da <span className="text-[#6B46C1]">Edição</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Movimentos da <span className="text-azul-600">Edição</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-5">
               {[
-                { num: "01", titulo: "Classroom troca a lista de turmas por home que muda conforme o papel", desc: "Rollout mundial para mais de 150 milhões de usuários: professor vê fila de correção e insights; aluno vê entregas dos próximos 7 dias; gestor vê analytics da rede.", impacto: "A tela inicial deixou de ser índice e virou camada de decisão. O espaço aberto é personalizar além do cargo.", cor: "from-purple-600 to-purple-700" },
-                { num: "02", titulo: "Google lança três modelos pequenos e adia o topo de linha", desc: "Gemini 3.6 Flash, 3.5 Flash-Lite (350 tokens/s) e Flash Cyber, todos com janela de 1 milhão de tokens. O Pro segue atrasado.", impacto: "Confirma a economia de modelos pequenos: roteamento entre modelos especializados define o custo por aluno.", cor: "from-purple-700 to-purple-800" },
-                { num: "03", titulo: "MEC institui o EducaLab, laboratório permanente de dados e IA", desc: "Portaria nº 526 cria o laboratório com quatro eixos, ambiente digital controlado sob a LGPD e parcerias com universidades e empresas.", impacto: "Pela primeira vez o MEC tem estrutura fixa olhando IA — e uma porta de entrada para quem chegar com governança madura.", cor: "from-purple-500 to-purple-600" },
-                { num: "04", titulo: "Coursera investe US$ 100 milhões na LearnVector, de Andrew Ng", desc: "IA agêntica que planeja a trilha individual, adapta ao modo de aprender e acompanha até o domínio. Coursera fica com um terço do negócio.", impacto: "A próxima geração de plataformas organiza a experiência por lacuna e objetivo — não por grade de cursos.", cor: "from-purple-600 to-violet-600" },
-                { num: "05", titulo: "Mais de 70 empresas criam aliança aberta para segurança de agentes", desc: "NVIDIA, Microsoft, IBM, Red Hat, Hugging Face, Mozilla e Linux Foundation vão construir em código aberto identidade, permissões, guardrails e auditoria.", impacto: "Governança de agentes virou padrão técnico aberto — vocabulário que rede e mantenedor podem exigir em contrato.", cor: "from-purple-700 to-purple-800" },
-                { num: "06", titulo: "Brasil entra como fundador do bloco de governança de IA da China", desc: "A WAICO foi formalizada em Xangai com 29 países fundadores do Sul Global, sem G7 ou União Europeia.", impacto: "Soberania de dados e capacitação tendem a ganhar peso nos critérios de compra pública brasileira.", cor: "from-purple-600 to-purple-700" },
+                { num: "01", titulo: "Classroom troca a lista de turmas por home que muda conforme o papel", desc: "Rollout mundial para mais de 150 milhões de usuários: professor vê fila de correção e insights; aluno vê entregas dos próximos 7 dias; gestor vê analytics da rede.", impacto: "A tela inicial deixou de ser índice e virou camada de decisão. O espaço aberto é personalizar além do cargo.", cor: "from-azul-600 to-azul-700" },
+                { num: "02", titulo: "Google lança três modelos pequenos e adia o topo de linha", desc: "Gemini 3.6 Flash, 3.5 Flash-Lite (350 tokens/s) e Flash Cyber, todos com janela de 1 milhão de tokens. O Pro segue atrasado.", impacto: "Confirma a economia de modelos pequenos: roteamento entre modelos especializados define o custo por aluno.", cor: "from-azul-700 to-azul-800" },
+                { num: "03", titulo: "MEC institui o EducaLab, laboratório permanente de dados e IA", desc: "Portaria nº 526 cria o laboratório com quatro eixos, ambiente digital controlado sob a LGPD e parcerias com universidades e empresas.", impacto: "Pela primeira vez o MEC tem estrutura fixa olhando IA — e uma porta de entrada para quem chegar com governança madura.", cor: "from-azul-500 to-azul-600" },
+                { num: "04", titulo: "Coursera investe US$ 100 milhões na LearnVector, de Andrew Ng", desc: "IA agêntica que planeja a trilha individual, adapta ao modo de aprender e acompanha até o domínio. Coursera fica com um terço do negócio.", impacto: "A próxima geração de plataformas organiza a experiência por lacuna e objetivo — não por grade de cursos.", cor: "from-azul-600 to-lilas-600" },
+                { num: "05", titulo: "Mais de 70 empresas criam aliança aberta para segurança de agentes", desc: "NVIDIA, Microsoft, IBM, Red Hat, Hugging Face, Mozilla e Linux Foundation vão construir em código aberto identidade, permissões, guardrails e auditoria.", impacto: "Governança de agentes virou padrão técnico aberto — vocabulário que rede e mantenedor podem exigir em contrato.", cor: "from-azul-700 to-azul-800" },
+                { num: "06", titulo: "Brasil entra como fundador do bloco de governança de IA da China", desc: "A WAICO foi formalizada em Xangai com 29 países fundadores do Sul Global, sem G7 ou União Europeia.", impacto: "Soberania de dados e capacitação tendem a ganhar peso nos critérios de compra pública brasileira.", cor: "from-azul-600 to-azul-700" },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -1547,7 +1524,7 @@ function EdicaoAgosto2026({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-[#6B46C1] transition-all"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-azul-600 transition-all"
                 >
                   <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
                     <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
@@ -1555,8 +1532,8 @@ function EdicaoAgosto2026({
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
-                    <div className="border-l-2 border-[#6B46C1] pl-3">
-                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Impacto estratégico</p>
+                    <div className="border-l-2 border-lilas-500 pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-lilas-600">Impacto estratégico</p>
                       <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
@@ -1571,11 +1548,11 @@ function EdicaoAgosto2026({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-rosa-600" />
+              <span className="text-sm text-rosa-600 font-medium">Implicação Estratégica</span>
             </div>
-            <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
+            <div className="bg-gradient-to-r from-azul-600 to-navy-900 p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
                 <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
@@ -1593,15 +1570,15 @@ function EdicaoAgosto2026({
       </section>
 
       {/* Oportunidades de produto */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
+              <Lightbulb className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Oportunidades de Produto</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              O que construir <span className="text-[#6B46C1]">a partir disso</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              O que construir <span className="text-azul-600">a partir disso</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -1618,12 +1595,12 @@ function EdicaoAgosto2026({
                   transition={{ delay: idx * 0.08 }}
                   className={`p-6 rounded-2xl border-2 transition-all ${
                     item.destaque
-                      ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg'
-                      : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'
+                      ? 'bg-gradient-to-br from-azul-600 to-navy-900 text-white border-transparent shadow-lg'
+                      : 'bg-white border-azul-200 hover:border-rosa-600 hover:shadow-md'
                   }`}
                 >
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
-                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-azul-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-azul-600'}`} />
                   </div>
                   <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
                   <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
@@ -1636,18 +1613,18 @@ function EdicaoAgosto2026({
       </section>
 
       {/* Navegação inferior */}
-      <section className="py-12 px-6 bg-purple-50/40 border-t border-gray-100">
+      <section className="py-12 px-6 bg-azul-50/40 border-t border-gray-100">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={onBackToEdicoes}
-            className="flex items-center gap-2 px-5 py-3 border border-[#6B46C1] text-[#6B46C1] rounded-xl font-medium hover:bg-purple-50 transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 border border-azul-600 text-azul-600 rounded-xl font-medium hover:bg-azul-50 transition-colors text-sm"
           >
             <Library className="w-4 h-4" />
             Voltar para edições anteriores
           </button>
           <button
             onClick={onBack}
-            className="flex items-center gap-2 px-5 py-3 bg-[#6B46C1] text-white rounded-xl font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 bg-azul-600 text-white rounded-xl font-medium hover:bg-azul-700 transition-colors text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para edição atual
@@ -1656,13 +1633,13 @@ function EdicaoAgosto2026({
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
+      <footer className="py-12 px-6 bg-gradient-to-br from-navy-900 to-navy-950 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Radar" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
-            <p className="text-white/40 text-xs">Hub de IA — Iônica &amp; FTD Com Você · Agosto de 2026 · Edição #09</p>
+            <p className="text-white/40 text-xs">Hub de IA, Produto e Experiência · Agosto de 2026 · Edição #09</p>
           </div>
         </div>
       </footer>
@@ -1692,23 +1669,23 @@ function EdicaoAgosto2026B({
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={mascote} alt="Lia — mascote do RADAR" className="h-9 w-auto" />
+            <img src={mascote} alt="Radar" className="h-9 w-auto" />
             <div>
               <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
-              <p className="text-sm font-bold text-[#6B46C1] leading-tight">Agosto de 2026 · Ed. #10</p>
+              <p className="text-sm font-bold text-azul-600 leading-tight">Agosto de 2026 · Ed. #10</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={onBackToEdicoes}
-              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-[#6B46C1] hover:bg-purple-50 rounded-lg transition-all"
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-azul-600 hover:bg-azul-50 rounded-lg transition-all"
             >
               <Library className="w-4 h-4" />
               Edições anteriores
             </button>
             <button
               onClick={onBack}
-              className="flex items-center gap-1.5 px-4 py-2 bg-[#6B46C1] text-white text-sm font-medium rounded-lg hover:bg-[#5B3A9E] transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2 bg-azul-600 text-white text-sm font-medium rounded-lg hover:bg-azul-700 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Edição atual
@@ -1718,7 +1695,7 @@ function EdicaoAgosto2026B({
       </header>
 
       {/* Hero */}
-      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-purple-50/40 to-white">
+      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-azul-50/40 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
@@ -1726,14 +1703,14 @@ function EdicaoAgosto2026B({
               Edição #10 · 04 – 24 Ago 2026
             </div>
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-rosa-600 to-rosa-500 text-white rounded-full">
                 <Sparkles className="w-4 h-4" />
                 <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
             </div>
-            <h1 className="text-3xl md:text-5xl text-gray-900 font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl text-navy-900 font-bold mb-6 leading-tight">
               A mediação pedagógica deixou de ser a nossa reserva de valor<br />
-              <span className="text-[#6B46C1]">e virou default da plataforma</span>
+              <span className="text-azul-600">e virou default da plataforma</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               A evidência nomeou o comportamento que faz mal — terceirizar a tarefa. Semanas depois, a OpenAI embutiu no ChatGPT for Teens a detecção de atalho e o redirecionamento para modo de estudo. O remédio que a escola deveria aplicar passou a vir de fábrica.
@@ -1746,20 +1723,20 @@ function EdicaoAgosto2026B({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <FileText className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Resumo Executivo</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              O que mudou de <span className="text-[#6B46C1]">direção</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              O que mudou de <span className="text-azul-600">direção</span>
             </h2>
             <div className="space-y-4">
               {[
-                { titulo: "A tese da edição anterior caiu em três semanas", desc: "Mediar o uso era a resposta que sobrava para quem está dentro da escola quando o acesso virou grátis. O ChatGPT for Teens tornou a trava de atalho nativa, gratuita e ligada por padrão.", cor: "border-[#6B46C1]" },
-                { titulo: "Duas linhas de receita viraram produto gratuito de terceiro", desc: "Acesso a IA de ponta e formação docente genérica em IA passaram a existir de graça e com qualidade na mesma quinzena, vindos de fora do setor educacional.", cor: "border-[#FF6B35]" },
-                { titulo: "A conversa saiu de quantos usam para que efeito produz", desc: "Estudo longitudinal com 26.811 alunos por 30 meses: a IA subiu a nota da tarefa em 18% e derrubou a da prova em cerca de 20% em seis meses. Cerca de 80% da perda se concentra em quem terceiriza a tarefa.", cor: "border-[#6B46C1]" },
-                { titulo: "O vácuo de governança ganhou tamanho comparável entre países", desc: "Maior base já reunida sobre IA no ensino superior: 88% dos estudantes e 77% dos docentes usando, com a América Latina em 92% e 79%. Só 31% dos docentes participam da política de IA da própria instituição.", cor: "border-[#FF6B35]" },
-                { titulo: "Esperar a norma brasileira deixou de ser estratégia viável", desc: "Terceira edição consecutiva sem homologação do parecer de IA, agora com as câmaras do CNE em recomposição. A indefinição virou variável de planejamento.", cor: "border-[#6B46C1]" },
+                { titulo: "A tese da edição anterior caiu em três semanas", desc: "Mediar o uso era a resposta que sobrava para quem está dentro da escola quando o acesso virou grátis. O ChatGPT for Teens tornou a trava de atalho nativa, gratuita e ligada por padrão.", cor: "border-azul-600" },
+                { titulo: "Duas linhas de receita viraram produto gratuito de terceiro", desc: "Acesso a IA de ponta e formação docente genérica em IA passaram a existir de graça e com qualidade na mesma quinzena, vindos de fora do setor educacional.", cor: "border-rosa-600" },
+                { titulo: "A conversa saiu de quantos usam para que efeito produz", desc: "Estudo longitudinal com 26.811 alunos por 30 meses: a IA subiu a nota da tarefa em 18% e derrubou a da prova em cerca de 20% em seis meses. Cerca de 80% da perda se concentra em quem terceiriza a tarefa.", cor: "border-azul-600" },
+                { titulo: "O vácuo de governança ganhou tamanho comparável entre países", desc: "Maior base já reunida sobre IA no ensino superior: 88% dos estudantes e 77% dos docentes usando, com a América Latina em 92% e 79%. Só 31% dos docentes participam da política de IA da própria instituição.", cor: "border-rosa-600" },
+                { titulo: "Esperar a norma brasileira deixou de ser estratégia viável", desc: "Terceira edição consecutiva sem homologação do parecer de IA, agora com as câmaras do CNE em recomposição. A indefinição virou variável de planejamento.", cor: "border-azul-600" },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -1779,23 +1756,23 @@ function EdicaoAgosto2026B({
       </section>
 
       {/* Sinais */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <TrendingUp className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Sinais da Edição</span>
+              <TrendingUp className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Sinais da Edição</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Cinco <span className="text-[#6B46C1]">sinais</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Cinco <span className="text-azul-600">sinais</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-5">
               {[
-                { num: "01", titulo: "A plataforma passou a mediar o uso sozinha e por padrão", desc: "ChatGPT for Teens aplicado automaticamente de 13 a 17 anos, com Study Mode padrão, detecção de atalho na tarefa e Study Hours definidas por pais. Junto vieram os plugins educacionais da OpenAI e o hub de estudo do Gemini.", impacto: "As três maiores empresas de IA chegaram ao mesmo desenho: chat aberto não é formato de estudo. Mediar genericamente deixou de diferenciar.", cor: "from-purple-700 to-purple-800" },
-                { num: "02", titulo: "A evidência nomeou qual comportamento prejudica", desc: "Working paper do CEPR com 26.811 estudantes por 30 meses. Cerca de 80% da perda se concentra em quem entrega rápido demais com nota alta — marcador observável de terceirização.", impacto: "Não existe efeito da IA em geral: existe efeito de um padrão específico, que pode ser detectado e interrompido.", cor: "from-purple-600 to-purple-700" },
-                { num: "03", titulo: "O vácuo de governança ganhou recorte latino-americano", desc: "45.398 respostas em 35 países. Adoção quase universal convivendo com avaliação sem orientação adequada e docentes fora da construção da política institucional.", impacto: "Política escrita sem o professor não muda prática de sala. O problema é de processo, não de texto.", cor: "from-purple-600 to-violet-600" },
-                { num: "04", titulo: "Os sistemas de ensino brasileiros convergiram no mesmo desenho", desc: "Bernoulli Reload com portfólio segmentado por público, Cosmos do Poliedro restrito ao acervo autoral, Meu Arco integrando camadas e Moderna Core com IA nos bastidores.", impacto: "Convergência dessa ordem não é tendência, é padrão consolidado — e portanto custo de entrada.", cor: "from-purple-500 to-purple-600" },
-                { num: "05", titulo: "A regulação travou de novo, com o colegiado se reorganizando", desc: "Portaria MEC nº 664 abriu a recomposição das câmaras do CNE enquanto o parecer de IA seguia aguardando homologação.", impacto: "Deixou de ser lentidão de trâmite e passou a ser instabilidade institucional. Produto precisa de governança configurável.", cor: "from-purple-700 to-purple-800" },
+                { num: "01", titulo: "A plataforma passou a mediar o uso sozinha e por padrão", desc: "ChatGPT for Teens aplicado automaticamente de 13 a 17 anos, com Study Mode padrão, detecção de atalho na tarefa e Study Hours definidas por pais. Junto vieram os plugins educacionais da OpenAI e o hub de estudo do Gemini.", impacto: "As três maiores empresas de IA chegaram ao mesmo desenho: chat aberto não é formato de estudo. Mediar genericamente deixou de diferenciar.", cor: "from-azul-700 to-azul-800" },
+                { num: "02", titulo: "A evidência nomeou qual comportamento prejudica", desc: "Working paper do CEPR com 26.811 estudantes por 30 meses. Cerca de 80% da perda se concentra em quem entrega rápido demais com nota alta — marcador observável de terceirização.", impacto: "Não existe efeito da IA em geral: existe efeito de um padrão específico, que pode ser detectado e interrompido.", cor: "from-azul-600 to-azul-700" },
+                { num: "03", titulo: "O vácuo de governança ganhou recorte latino-americano", desc: "45.398 respostas em 35 países. Adoção quase universal convivendo com avaliação sem orientação adequada e docentes fora da construção da política institucional.", impacto: "Política escrita sem o professor não muda prática de sala. O problema é de processo, não de texto.", cor: "from-azul-600 to-lilas-600" },
+                { num: "04", titulo: "Os sistemas de ensino brasileiros convergiram no mesmo desenho", desc: "Bernoulli Reload com portfólio segmentado por público, Cosmos do Poliedro restrito ao acervo autoral, Meu Arco integrando camadas e Moderna Core com IA nos bastidores.", impacto: "Convergência dessa ordem não é tendência, é padrão consolidado — e portanto custo de entrada.", cor: "from-azul-500 to-azul-600" },
+                { num: "05", titulo: "A regulação travou de novo, com o colegiado se reorganizando", desc: "Portaria MEC nº 664 abriu a recomposição das câmaras do CNE enquanto o parecer de IA seguia aguardando homologação.", impacto: "Deixou de ser lentidão de trâmite e passou a ser instabilidade institucional. Produto precisa de governança configurável.", cor: "from-azul-700 to-azul-800" },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -1803,7 +1780,7 @@ function EdicaoAgosto2026B({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-[#6B46C1] transition-all"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-azul-600 transition-all"
                 >
                   <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
                     <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
@@ -1811,8 +1788,8 @@ function EdicaoAgosto2026B({
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
-                    <div className="border-l-2 border-[#6B46C1] pl-3">
-                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Leitura estratégica</p>
+                    <div className="border-l-2 border-lilas-500 pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-lilas-600">Leitura estratégica</p>
                       <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
                     </div>
                   </div>
@@ -1827,11 +1804,11 @@ function EdicaoAgosto2026B({
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-rosa-600" />
+              <span className="text-sm text-rosa-600 font-medium">Implicação Estratégica</span>
             </div>
-            <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
+            <div className="bg-gradient-to-r from-azul-600 to-navy-900 p-8 md:p-10 rounded-2xl text-white">
               <div className="flex items-start gap-4">
                 <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
                 <div>
@@ -1849,15 +1826,15 @@ function EdicaoAgosto2026B({
       </section>
 
       {/* Oportunidades */}
-      <section className="py-20 px-6 bg-purple-50/30">
+      <section className="py-20 px-6 bg-azul-50/30">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
+              <Lightbulb className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Oportunidades de Produto</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              O que construir <span className="text-[#6B46C1]">a partir disso</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              O que construir <span className="text-azul-600">a partir disso</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -1874,12 +1851,12 @@ function EdicaoAgosto2026B({
                   transition={{ delay: idx * 0.08 }}
                   className={`p-6 rounded-2xl border-2 transition-all ${
                     item.destaque
-                      ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg'
-                      : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'
+                      ? 'bg-gradient-to-br from-azul-600 to-navy-900 text-white border-transparent shadow-lg'
+                      : 'bg-white border-azul-200 hover:border-rosa-600 hover:shadow-md'
                   }`}
                 >
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
-                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-azul-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-azul-600'}`} />
                   </div>
                   <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
                   <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
@@ -1892,18 +1869,18 @@ function EdicaoAgosto2026B({
       </section>
 
       {/* Navegação inferior */}
-      <section className="py-12 px-6 bg-purple-50/40 border-t border-gray-100">
+      <section className="py-12 px-6 bg-azul-50/40 border-t border-gray-100">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={onBackToEdicoes}
-            className="flex items-center gap-2 px-5 py-3 border border-[#6B46C1] text-[#6B46C1] rounded-xl font-medium hover:bg-purple-50 transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 border border-azul-600 text-azul-600 rounded-xl font-medium hover:bg-azul-50 transition-colors text-sm"
           >
             <Library className="w-4 h-4" />
             Voltar para edições anteriores
           </button>
           <button
             onClick={onBack}
-            className="flex items-center gap-2 px-5 py-3 bg-[#6B46C1] text-white rounded-xl font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+            className="flex items-center gap-2 px-5 py-3 bg-azul-600 text-white rounded-xl font-medium hover:bg-azul-700 transition-colors text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para edição atual
@@ -1912,13 +1889,269 @@ function EdicaoAgosto2026B({
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
+      <footer className="py-12 px-6 bg-gradient-to-br from-navy-900 to-navy-950 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <img src={mascoteInverso} alt="Lia — mascote do RADAR" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <img src={mascoteInverso} alt="Radar" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
           <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
           <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
             <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
-            <p className="text-white/40 text-xs">Hub de IA — Iônica &amp; FTD Com Você · Agosto de 2026 · Edição #10</p>
+            <p className="text-white/40 text-xs">Hub de IA, Produto e Experiência · Agosto de 2026 · Edição #10</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+
+function EdicaoSetembro2026({
+  onBack,
+  onBackToEdicoes,
+  mascote,
+  mascoteInverso,
+}: {
+  onBack: () => void;
+  onBackToEdicoes: () => void;
+  mascote: string;
+  mascoteInverso: string;
+}) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Mini header */}
+      <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img src={mascote} alt="Radar" className="h-9 w-auto" />
+            <div>
+              <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
+              <p className="text-sm font-bold text-azul-600 leading-tight">Setembro de 2026 · Ed. #11</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onBackToEdicoes}
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-azul-600 hover:bg-azul-50 rounded-lg transition-all"
+            >
+              <Library className="w-4 h-4" />
+              Edições anteriores
+            </button>
+            <button
+              onClick={onBack}
+              className="flex items-center gap-1.5 px-4 py-2 bg-azul-600 text-white text-sm font-medium rounded-lg hover:bg-azul-700 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Edição atual
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-azul-50/40 to-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+              <Calendar className="w-3 h-3" />
+              Edição #11 · 25 Ago – 10 Set 2026
+            </div>
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-rosa-600 to-rosa-500 text-white rounded-full">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
+              </div>
+            </div>
+            <h1 className="text-3xl md:text-5xl text-navy-900 font-bold mb-6 leading-tight">
+              A regra saiu — e ela não proíbe a IA.<br />
+              <span className="text-azul-600">Proíbe delegar a decisão sobre a vida escolar do aluno</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Depois de quatro edições travado na última milha, o parecer do CNE foi aprovado em 1º de setembro. O objeto da vedação não é a ferramenta: é quem assina o resultado. No dia seguinte, a maior rede escolar dos Estados Unidos suspendeu IA generativa até o 8º ano. Dois sistemas, duas jurisdições, a mesma conclusão.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Resumo executivo */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Resumo Executivo</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              O que mudou de <span className="text-azul-600">direção</span>
+            </h2>
+            <div className="space-y-4">
+              {[
+                { titulo: "A mediação saiu do campo competitivo e entrou no campo legal — com o eixo deslocado", desc: "Decisão: Reclassificar o roadmap por quem assina cada decisão que o produto toma sobre o aluno — não por funcionalidade.", cor: "border-azul-600" },
+                { titulo: "O setor ganhou o primeiro prazo regulatório concreto: doze meses após a homologação", desc: "Decisão: Definir agora o que precisa mudar no produto e no contrato, para não descobrir isso no mês onze.", cor: "border-rosa-600" },
+                { titulo: "Correção automática de texto autoral virou produto proibido, e detector de IA perdeu força probatória", desc: "Decisão: Auditar onde o produto decide sozinho e inserir validação humana registrável antes de a norma entrar em vigor.", cor: "border-azul-600" },
+                { titulo: "A faixa dos anos iniciais deixou de ser mercado endereçável para IA autônoma", desc: "Decisão: Reposicionar produto infantil de autônomo para instrumento do professor, e tratar desligamento remoto de função como requisito técnico.", cor: "border-rosa-600" },
+                { titulo: "Conformidade documentada virou argumento comercial antes de virar exigência de contrato", desc: "Decisão: Transformar o rastro que já existe em peça de proposta comercial, e onde não existe, priorizá-lo acima de nova funcionalidade.", cor: "border-azul-600" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
+                >
+                  <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Sinais */}
+      <section className="py-20 px-6 bg-azul-50/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <TrendingUp className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Sinais da Edição</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Cinco <span className="text-azul-600">sinais</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-5">
+              {[
+                { num: "01", titulo: "O CNE aprovou as diretrizes e definiu o que a máquina não pode decidir", desc: "O Conselho Nacional de Educação aprovou em 1º de setembro as diretrizes nacionais para uso de IA em todos os níveis, etapas e modalidades.", impacto: "O objeto da regulação não é a ferramenta, é a delegação.", cor: "from-azul-700 to-azul-800" },
+                { num: "02", titulo: "A maior rede escolar dos Estados Unidos suspendeu IA generativa até o 8º ano", desc: "Um dia depois da decisão brasileira, o prefeito Zohran Mamdani e o chanceler de educação Kamar Samuels anunciaram a moratória mais ampla dos Estados Unidos para IA generativa voltada ao estudante: um ano de suspensão, válido no ano letivo 2026-2027, para alunos do 2-K ao 8º ano.", impacto: "Duas das maiores jurisdições educacionais das Américas chegaram à mesma restrição por faixa etária em 48 horas, por caminhos independentes — e isso transforma o que parecia posição pedagógica em consenso regulatório emergente.", cor: "from-azul-600 to-azul-700" },
+                { num: "03", titulo: "A FTD assumiu o controle da Estuda.com e comprou capacidade de avaliação por IA", desc: "A FTD Educação anunciou a aquisição do controle acionário total da Estuda.com, consolidando uma parceria firmada em 2020; o valor não foi divulgado.", impacto: "Um grupo editorial comprou capacidade de avaliação por IA no mesmo mês em que avaliação por IA passou a ser regulada — e é aí que a leitura fica interessante.", cor: "from-azul-600 to-lilas-600" },
+                { num: "04", titulo: "O Poliedro foi premiado por um projeto de IA que mantém a autoria humana no centro", desc: "O Poliedro conquistou o terceiro lugar na categoria Escala da Premiação Impacto Brasil 2026, realizada pelo Agile Trends, com a Supernova — iniciativa que combina práticas ágeis, inteligência artificial e curadoria especializada na produção de conteúdo didático.", impacto: "É o caso brasileiro que já operava a arquitetura que a norma acabou de exigir, e com número para mostrar.", cor: "from-azul-500 to-azul-600" },
+                { num: "05", titulo: "A formação docente virou obrigação curricular — e a oferta já tem dono", desc: "Além das vedações, a norma do CNE cria dever de formação: os cursos de licenciatura passam a incluir uso pedagógico das novas tecnologias, análise de dados escolares e avaliação ética de ferramentas, e as instituições ficam obrigadas a promover formação continuada dos profissionais de educação.", impacto: "A norma criou uma demanda obrigatória de formação sem criar a oferta correspondente, e o vácuo já está sendo preenchido por quem tem escala e distribuição gratuita.", cor: "from-azul-700 to-azul-800" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-azul-600 transition-all"
+                >
+                  <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
+                    <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
+                    <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
+                  </div>
+                  <div className="px-6 py-4">
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                    <div className="border-l-2 border-lilas-500 pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-lilas-600">Leitura estratégica</p>
+                      <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Implicação estratégica */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-rosa-600" />
+              <span className="text-sm text-rosa-600 font-medium">Implicação Estratégica</span>
+            </div>
+            <div className="bg-gradient-to-r from-azul-600 to-navy-900 p-8 md:p-10 rounded-2xl text-white">
+              <div className="flex items-start gap-4">
+                <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <div>
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
+                    A régua deixou de ser usa ou não usa IA e passou a ser quem assina a decisão. Assinatura humana com rastro deixou de ser boa prática e virou requisito de conformidade — com relógio rodando a partir da homologação.
+                  </p>
+                  <p className="text-white/70 text-sm">
+                    Conformidade com rastro é o único tipo que não se improvisa em doze meses.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Oportunidades */}
+      <section className="py-20 px-6 bg-azul-50/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <Lightbulb className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Oportunidades de Produto</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              O que construir <span className="text-azul-600">a partir disso</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { titulo: "Registro de decisão pedagógica como infraestrutura", desc: "Definir esquema de evento antes da próxima feature; retrofit é impossível, não apenas caro.", destaque: true },
+                { titulo: "Mapa próprio de conformidade, publicado antes dos pares", desc: "Exercício conjunto de produto, pedagógico e jurídico nesta janela; independe da homologação.", destaque: true },
+                { titulo: "Desligamento de função por série, turma e rede", desc: "Flags com escopo hierárquico e integração confiável ao cadastro do aluno; testar a matriz de estados.", destaque: false },
+                { titulo: "Fluxo de validação humana que não devolve o trabalho ao professor", desc: "Calibrar confiança por item antes de desenhar a amostragem; sem isso a revisão vira aleatória.", destaque: false },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.08 }}
+                  className={`p-6 rounded-2xl border-2 transition-all ${
+                    item.destaque
+                      ? 'bg-gradient-to-br from-azul-600 to-navy-900 text-white border-transparent shadow-lg'
+                      : 'bg-white border-azul-200 hover:border-rosa-600 hover:shadow-md'
+                  }`}
+                >
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-azul-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-azul-600'}`} />
+                  </div>
+                  <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
+                  <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
+                  {item.destaque && <span className="inline-block mt-3 px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white">Prioritário</span>}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Navegação inferior */}
+      <section className="py-12 px-6 bg-azul-50/40 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <button
+            onClick={onBackToEdicoes}
+            className="flex items-center gap-2 px-5 py-3 border border-azul-600 text-azul-600 rounded-xl font-medium hover:bg-azul-50 transition-colors text-sm"
+          >
+            <Library className="w-4 h-4" />
+            Voltar para edições anteriores
+          </button>
+          <button
+            onClick={onBack}
+            className="flex items-center gap-2 px-5 py-3 bg-azul-600 text-white rounded-xl font-medium hover:bg-azul-700 transition-colors text-sm"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Voltar para edição atual
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-6 bg-gradient-to-br from-navy-900 to-navy-950 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <img src={mascoteInverso} alt="Radar" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
+          <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
+            <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
+            <p className="text-white/40 text-xs">Hub de IA, Produto e Experiência · Setembro de 2026 · Edição #11</p>
           </div>
         </div>
       </footer>
@@ -1934,8 +2167,6 @@ export default function App() {
   const [modoLeitura, setModoLeitura] = useState<ModoLeitura>('completa');
   const modoExecutivo = modoLeitura === 'executiva';
   const secoesVisiveis = SECOES.filter(s => !modoExecutivo || s.executiva);
-  const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -1972,6 +2203,23 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  if (currentView === 'edicao-setembro-2026') {
+    return (
+      <EdicaoSetembro2026
+        onBack={() => goToEdicao('main')}
+        onBackToEdicoes={() => {
+          setCurrentView('main');
+          setTimeout(() => {
+            const el = document.getElementById('edicoes');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }}
+        mascote={radarIcone}
+        mascoteInverso={radarIconeClaro}
+      />
+    );
+  }
+
   if (currentView === 'edicao-agosto-2026-b') {
     return (
       <EdicaoAgosto2026B
@@ -1983,8 +2231,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={liaHeader}
-        mascoteInverso={liaFooter}
+        mascote={radarIcone}
+        mascoteInverso={radarIconeClaro}
       />
     );
   }
@@ -2000,10 +2248,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={liaHeader}
-        mascoteInverso={liaFooter}
-        logoSmall={logoIonicaSmall}
-        logoFtd={logoFTD}
+        mascote={radarIcone}
+        mascoteInverso={radarIconeClaro}
       />
     );
   }
@@ -2019,10 +2265,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={liaHeader}
-        mascoteInverso={liaFooter}
-        logoSmall={logoIonicaSmall}
-        logoFtd={logoFTD}
+        mascote={radarIcone}
+        mascoteInverso={radarIconeClaro}
       />
     );
   }
@@ -2038,10 +2282,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={liaHeader}
-        mascoteInverso={liaFooter}
-        logoSmall={logoIonicaSmall}
-        logoFtd={logoFTD}
+        mascote={radarIcone}
+        mascoteInverso={radarIconeClaro}
       />
     );
   }
@@ -2057,10 +2299,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={liaHeader}
-        mascoteInverso={liaFooter}
-        logoSmall={logoIonicaSmall}
-        logoFtd={logoFTD}
+        mascote={radarIcone}
+        mascoteInverso={radarIconeClaro}
       />
     );
   }
@@ -2076,10 +2316,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={liaHeader}
-        mascoteInverso={liaFooter}
-        logoSmall={logoIonicaSmall}
-        logoFtd={logoFTD}
+        mascote={radarIcone}
+        mascoteInverso={radarIconeClaro}
       />
     );
   }
@@ -2095,10 +2333,8 @@ export default function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}
-        mascote={liaHeader}
-        mascoteInverso={liaFooter}
-        logoSmall={logoIonicaSmall}
-        logoFtd={logoFTD}
+        mascote={radarIcone}
+        mascoteInverso={radarIconeClaro}
       />
     );
   }
@@ -2109,7 +2345,7 @@ export default function App() {
       <a
         href="#insight"
         onClick={e => { e.preventDefault(); scrollToSection('insight'); }}
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#6B46C1] focus:text-white focus:rounded-lg focus:text-sm focus:font-medium"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:bg-azul-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-medium"
       >
         Pular para o conteúdo
       </a>
@@ -2120,25 +2356,19 @@ export default function App() {
           {/* Masthead — identidade à esquerda, procedência à direita */}
           <div className="flex items-center justify-between gap-4 h-14 md:h-[60px]">
 
-            <div className="flex items-center gap-3 min-w-0">
-              <img src={liaHeader} alt="" className="h-9 md:h-10 w-auto shrink-0" />
-              <div className="min-w-0 leading-none">
-                <span className="block text-base md:text-[17px] font-extrabold text-gray-900 tracking-[-0.02em]">RADAR</span>
-                <span className="hidden md:block text-[11px] text-gray-500 mt-1.5 truncate">Inteligência Estratégica de IA na Educação</span>
-              </div>
+            <div className="flex items-center gap-3.5 min-w-0">
+              <img src={radarLogo} alt="Radar" className="h-7 md:h-8 w-auto shrink-0" />
+              <span aria-hidden="true" className="hidden lg:block w-px h-7 bg-gray-200" />
+              <span className="hidden lg:block text-[11px] leading-snug text-gray-500 max-w-[10.5rem]">Inteligência Estratégica de IA na Educação</span>
             </div>
 
             <div className="hidden sm:flex items-center gap-5 shrink-0">
               <div className="text-right leading-none">
-                <span className="block text-[11px] font-bold text-[#6B46C1] uppercase tracking-[0.16em]">Edição #11</span>
-                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">25 Ago – 10 Set 2026</span>
+                <span className="block text-[11px] font-bold text-azul-600 uppercase tracking-[0.16em]">Edição #12</span>
+                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">11 – 28 Set 2026</span>
               </div>
               <div className="w-px h-9 bg-gray-200" />
-              <div className="flex items-center gap-3">
-                <img src={logoIonica} alt="Iônica" className="h-[18px] w-auto opacity-60" style={{ filter: 'grayscale(100%)' }} />
-                <div className="w-px h-3.5 bg-gray-200" />
-                <img src={logoFTD} alt="FTD Com Você" className="h-[15px] w-auto opacity-60" style={{ filter: 'grayscale(100%)' }} />
-              </div>
+              <img src={hubLogo} alt="Hub de IA, Produto e Experiência" className="h-9 w-auto" />
             </div>
           </div>
 
@@ -2151,14 +2381,13 @@ export default function App() {
                 aria-current={activeSection === item.id ? 'true' : undefined}
                 className={`relative px-3 py-2.5 text-xs whitespace-nowrap transition-colors ${
                   activeSection === item.id
-                    ? 'text-[#6B46C1] font-semibold'
-                    : 'text-gray-500 font-medium hover:text-gray-900'
+                    ? 'text-azul-600 font-semibold'
+                    : 'text-gray-500 font-medium hover:text-navy-900'
                 }`}
-                style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 {item.label}
                 {activeSection === item.id && (
-                  <span aria-hidden="true" className="absolute inset-x-2.5 bottom-0 h-[2px] bg-[#6B46C1] rounded-full" />
+                  <span aria-hidden="true" className="absolute inset-x-2.5 bottom-0 h-[2px] bg-azul-600 rounded-full" />
                 )}
               </button>
             ))}
@@ -2168,66 +2397,88 @@ export default function App() {
       </header>
 
       {/* ── INSIGHT DA QUINZENA ── */}
-      <section id="insight" className="relative min-h-screen flex items-center pt-36 md:pt-40 pb-20 px-6 bg-[linear-gradient(180deg,#FAF7FF_0%,#FFFFFF_62%)]">
-        <div className="max-w-6xl mx-auto w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+      <section id="insight" className="relative pt-[97px] md:pt-[101px] bg-white">
+        {/* Faixa navy com as formas orgânicas da identidade do Hub */}
+        <div className="relative overflow-hidden bg-navy-900 text-white">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 400 600"
+            preserveAspectRatio="xMaxYMid slice"
+            className="pointer-events-none absolute inset-y-0 right-0 h-full w-full md:w-[40vw] opacity-25 md:opacity-100"
           >
-            <div className="flex items-center gap-3 mb-8">
-              <span aria-hidden="true" className="h-[3px] w-12 bg-[#FF6B35] rounded-full" />
-              <span className="inline-flex items-center gap-2 text-[#FF6B35]">
-                <Sparkles className="w-4 h-4" />
-                <span className="text-[11px] font-bold tracking-[0.2em]">INSIGHT DA QUINZENA</span>
-              </span>
-            </div>
+            <path d="M400 0H118c-40 92 32 172 132 192 80 16 120 60 150 90z" className="fill-azul-600" />
+            <path d="M400 330c-100-10-160 50-190 120-30 70-90 120-170 150h360z" className="fill-lilas-500" />
+            <path d="M20 592c100-30 150-90 180-162 35-80 100-130 200-130v45c-80 0-128 40-156 105-34 80-94 135-174 150z" className="fill-amarelo-400" />
+            <g className="fill-white" opacity="0.6">
+              {[0, 1, 2, 3].map(l => [0, 1, 2, 3, 4].map(c => (
+                <circle key={`${l}-${c}`} cx={300 + c * 18} cy={470 + l * 18} r="2.4" />
+              )))}
+            </g>
+          </svg>
 
-            <h1 className="text-[clamp(2rem,4.6vw,4rem)] text-gray-900 font-extrabold mb-8 leading-[1.04] tracking-[-0.035em]">
-              A regra saiu — e ela não proíbe a IA.<br />
-              <span className="text-[#6B46C1]">Proíbe delegar a decisão</span><br />
-              <span className="text-[#FF6B35]">sobre a vida escolar do aluno</span>
-            </h1>
+          <div className="relative max-w-6xl mx-auto px-6 pt-14 md:pt-24 pb-44 md:pb-52">
+            <motion.div
+              initial="oculto"
+              animate="visivel"
+              variants={{ visivel: { transition: { staggerChildren: 0.1 } } }}
+              className="md:max-w-[56%]"
+            >
+              <motion.div
+                variants={{ oculto: { opacity: 0, y: 16 }, visivel: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }}
+                className="flex items-center gap-2.5 mb-6"
+              >
+                <Sparkles className="w-4 h-4 text-amarelo-400" strokeWidth={2} />
+                <span className="text-[11px] font-bold tracking-[0.22em] text-white/75">INSIGHT DA QUINZENA</span>
+              </motion.div>
 
-            <div className="mb-12">
-              <p className="text-base md:text-[17px] text-gray-600 leading-[1.7] max-w-4xl mb-12">
-                Depois de quatro edições travado na última milha, o parecer do CNE foi aprovado em <strong className="text-[#6B46C1]">1º de setembro</strong>. E o objeto da vedação não é a ferramenta: é quem assina o resultado. IA não pode corrigir redação nem prova dissertativa, detector de texto não pode fundamentar punição sozinho e criança até o 5º ano não usa IA generativa sem o professor. Nas palavras do relator, <strong className="text-[#6B46C1]">a palavra final sobre o desempenho do aluno cabe ao professor, não à máquina</strong>. No dia seguinte, a maior rede escolar dos Estados Unidos suspendeu IA generativa até o 8º ano. Dois sistemas, duas jurisdições, a mesma conclusão.
-              </p>
+              <motion.h1
+                variants={{ oculto: { opacity: 0, y: 16 }, visivel: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }}
+                className="text-[clamp(2rem,4.2vw,3.5rem)] text-white font-extrabold mb-7 leading-[1.06] tracking-[-0.03em]"
+              >
+                O público virou contra a IA na escola.<br />
+                <span className="text-amarelo-400">A evidência virou só contra o atalho.</span>
+              </motion.h1>
 
-              <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-[0_1px_2px_rgba(16,12,40,0.04),0_8px_24px_-12px_rgba(16,12,40,0.10)]">
-                <h2 className="text-[11px] font-bold uppercase tracking-[0.16em] text-gray-500 mb-5">A tensão que organiza esta edição</h2>
+              <motion.p
+                variants={{ oculto: { opacity: 0, y: 16 }, visivel: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }}
+                className="text-base md:text-[17px] text-white/80 leading-[1.7]"
+              >
+                Em 17 de setembro, a maioria dos adultos americanos disse a uma pesquisa nacional que a IA faz mais mal que bem na escola, e educadores passaram a falar em <strong className="font-semibold text-white">ilusão de aprendizagem</strong>. Os estudos rigorosos das mesmas semanas contam outra coisa: a IA que entrega a resposta não ensina, e a que obriga o aluno a trabalhar <strong className="font-semibold text-white">ensina pouco, mas de forma mensurável</strong>. O debate público ainda não separou as duas. O produto precisa separar.
+              </motion.p>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Bloco de tensão sobreposto à borda da faixa */}
+        <div className="relative max-w-6xl mx-auto px-6 -mt-28 md:-mt-32 pb-16">
+          <div className="bg-white rounded-3xl p-6 md:p-9 shadow-[0_1px_2px_rgba(1,34,112,0.06),0_16px_40px_-16px_rgba(1,34,112,0.28)]">
+            <h2 className="text-[11px] font-bold uppercase tracking-[0.16em] text-gray-500 mb-6">A tensão que organiza esta edição</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="border-l-2 border-green-500 pl-4">
                     <div className="flex items-center gap-2 mb-3">
                       <CheckCircle className="w-4 h-4 text-green-600" />
-                      <p className="text-xs font-bold text-green-700 uppercase tracking-wide">O que a norma confirma</p>
+                      <p className="text-xs font-bold text-green-700 uppercase tracking-wide">O que a evidência sustenta</p>
                     </div>
                     <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
-                      Quem já operava com humano no laço e trilha auditável está conforme por desenho. A exigência que virou lei é exatamente a arquitetura que os melhores produtos do setor já tinham escolhido — e que agora deixa de ser diferencial e passa a ser piso.
+                      Tutor que faz o aluno trabalhar, com domínio antes de avançar e professor decidindo, produz ganho pequeno e mensurável. Três estudos grandes de agosto e setembro chegaram lá por caminhos independentes, e um deles mostrou que o modelo aberto mais barato entrega o mesmo resultado que os caros.
                     </p>
                   </div>
                   <div className="border-l-2 border-red-400 pl-4">
                     <div className="flex items-center gap-2 mb-3">
                       <AlertCircle className="w-4 h-4 text-red-500" />
-                      <p className="text-xs font-bold text-red-700 uppercase tracking-wide">O que ela invalida</p>
+                      <p className="text-xs font-bold text-red-700 uppercase tracking-wide">O que ela derruba</p>
                     </div>
                     <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
-                      Quem vendia correção automática de redação, detecção de plágio por IA como prova ou tutor autônomo para os anos iniciais tem um prazo para refazer o produto. Não é ajuste de comunicação: é troca da peça que decide.
+                      A promessa de transformação pelo acesso ao modelo. O ganho medido é do tamanho de um bom material sem IA, some em parte uma semana depois, e aparece só quando o aluno usa a ferramenta para pensar. Quem vende "IA na escola" sem dizer qual desenho está vendendo o que o público acabou de rejeitar.
                     </p>
                   </div>
                 </div>
                 <div className="mt-7 pt-6 border-t border-gray-100">
                   <p className="text-sm md:text-xs text-gray-800 leading-relaxed">
-                    <span className="font-bold text-[#6B46C1]">A conclusão:</span> a régua deixou de ser <em>usa ou não usa IA</em> e passou a ser <em>quem assina a decisão</em>. Assinatura humana com rastro deixou de ser boa prática e virou requisito de conformidade — com relógio rodando a partir da homologação.
+                    <span className="font-bold text-azul-600">A conclusão:</span> o modelo virou insumo barato e o diferencial foi para o <em>desenho pedagógico</em>, que decide se a IA ensina ou só responde. Na próxima conversa de compra, a pergunta não vai ser <em>tem IA?</em>, vai ser <em>prova que não é atalho</em>.
                   </p>
                 </div>
-              </div>
-            </div>
-
-            <motion.div style={{ opacity }} className="mt-12">
-              <ChevronDown className="w-8 h-8 text-[#6B46C1] mx-auto animate-bounce" />
-            </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -2235,7 +2486,7 @@ export default function App() {
       <section className="py-10 px-6 bg-white border-y border-gray-100">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-6">
-            <h2 className="text-sm font-bold text-gray-900 mb-1">Como você quer ler esta edição?</h2>
+            <h2 className="text-sm font-bold text-navy-900 mb-1">Como você quer ler esta edição?</h2>
             <p className="text-xs text-gray-600">Você pode trocar a qualquer momento.</p>
           </div>
 
@@ -2265,27 +2516,27 @@ export default function App() {
                   onClick={() => setModoLeitura(opcao.valor)}
                   className={`text-left rounded-2xl border-2 p-5 transition-all ${
                     selecionado
-                      ? 'border-[#6B46C1] bg-purple-50/50 shadow-sm'
+                      ? 'border-azul-600 bg-azul-50/50 shadow-sm'
                       : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50/60'
                   }`}
                 >
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <div className="flex items-center gap-2">
-                      <span className={selecionado ? 'text-[#6B46C1]' : 'text-gray-600'}>{opcao.icone}</span>
-                      <span className={`font-bold text-sm ${selecionado ? 'text-[#6B46C1]' : 'text-gray-900'}`}>
+                      <span className={selecionado ? 'text-azul-600' : 'text-gray-600'}>{opcao.icone}</span>
+                      <span className={`font-bold text-sm ${selecionado ? 'text-azul-600' : 'text-gray-900'}`}>
                         {opcao.titulo}
                       </span>
                     </div>
                     <span
                       aria-hidden="true"
                       className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 border-2 transition-colors ${
-                        selecionado ? 'bg-[#6B46C1] border-[#6B46C1]' : 'border-gray-300 bg-white'
+                        selecionado ? 'bg-azul-600 border-azul-600' : 'border-gray-300 bg-white'
                       }`}
                     >
                       {selecionado && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
                     </span>
                   </div>
-                  <p className={`text-xs font-semibold mb-2 ${selecionado ? 'text-[#FF6B35]' : 'text-gray-600'}`}>
+                  <p className={`text-xs font-semibold mb-2 ${selecionado ? 'text-rosa-600' : 'text-gray-600'}`}>
                     {opcao.tempo}
                   </p>
                   <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{opcao.desc}</p>
@@ -2305,13 +2556,13 @@ export default function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <FileText className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Resumo Executivo</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              O que mudou de direção e <span className="text-[#6B46C1]">o que isso obriga a decidir</span>
+            <h2 className="text-4xl md:text-5xl text-navy-900 font-bold mb-4">
+              O que mudou de direção e <span className="text-azul-600">o que isso obriga a decidir</span>
             </h2>
             <p className="text-gray-600 mb-12 text-lg max-w-3xl">
               O que a liderança precisa entender em dois minutos, com a decisão que cada ponto força.
@@ -2320,50 +2571,50 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-5 items-start">
               {[
                 {
-                  tag: "Hipótese endurecida",
-                  tagCor: "bg-purple-100 text-purple-700",
-                  conclusao: "A mediação saiu do campo competitivo e entrou no campo legal — com o eixo deslocado",
-                  raciocinio: "A edição passada registrou que mediar o uso tinha virado default de plataforma, e portanto commodity. A norma vai além e muda o eixo: o que ela regula não é mediar o estudo, é impedir que a máquina assine a decisão avaliativa. Deixou de ser disputa de produto e virou requisito de conformidade.",
-                  decisao: "Reclassificar o roadmap por quem assina cada decisão que o produto toma sobre o aluno — não por funcionalidade."
-                },
-                {
-                  tag: "Relógio no calendário",
-                  tagCor: "bg-orange-100 text-orange-700",
-                  conclusao: "O setor ganhou o primeiro prazo regulatório concreto: doze meses após a homologação",
-                  raciocinio: "Por três edições o parecer foi tratado como indefinição de horizonte aberto, e planejar contando com ele era aposta. Aprovado, ele passa a ter contagem: assim que o ministro assinar, escolas, universidades e redes têm um ano para adequar procedimento. O risco inverteu de lado — agora o custo está em não ter começado.",
-                  decisao: "Definir agora o que precisa mudar no produto e no contrato, para não descobrir isso no mês onze."
-                },
-                {
-                  tag: "Categoria vedada",
-                  tagCor: "bg-red-100 text-red-700",
-                  conclusao: "Correção automática de texto autoral virou produto proibido, e detector de IA perdeu força probatória",
-                  raciocinio: "Não é restrição de uso: é vedação de finalidade. IA não pode corrigir nem atribuir nota a redação e prova dissertativa em nenhuma etapa, e nenhum detector pode sustentar punição por si só. Em prova objetiva o apoio segue permitido, desde que a validação humana seja documentada — o que transforma registro em obrigação, não em recurso.",
-                  decisao: "Auditar onde o produto decide sozinho e inserir validação humana registrável antes de a norma entrar em vigor."
-                },
-                {
-                  tag: "Mercado fechado",
-                  tagCor: "bg-gray-200 text-gray-700",
-                  conclusao: "A faixa dos anos iniciais deixou de ser mercado endereçável para IA autônoma",
-                  raciocinio: "Aqui e fora do país a decisão foi a mesma na mesma semana, por caminhos independentes: no Brasil, uso de IA generativa até o 5º ano só mediado pelo professor; em Nova York, moratória de um ano até o 8º ano, com desligamento das funções de IA de mais de trinta programas já autorizados. Tutor autônomo para criança pequena encolheu por decisão administrativa, não por falta de demanda.",
-                  decisao: "Reposicionar produto infantil de autônomo para instrumento do professor, e tratar desligamento remoto de função como requisito técnico."
-                },
-                {
-                  tag: "Novo argumento",
+                  tag: "Tese confirmada",
                   tagCor: "bg-green-100 text-green-700",
-                  conclusao: "Conformidade documentada virou argumento comercial antes de virar exigência de contrato",
-                  raciocinio: "Quem já mantinha autoria humana no centro com rastreabilidade da operação chega conforme por desenho e pode provar. Como a norma pede supervisão humana contínua e relatório nos usos de alto risco, a capacidade de demonstrar o rastro passa a valer na mesa de compra — e não é algo que se constrói em semanas.",
-                  decisao: "Transformar o rastro que já existe em peça de proposta comercial, e onde não existe, priorizá-lo acima de nova funcionalidade."
+                  conclusao: "A IA que faz o aluno trabalhar ensina, mas o ganho medido é modesto e depende do desenho",
+                  raciocinio: "Dois anos de ensaio randomizado com o Khanmigo em modo coach, em 18 escolas do Tennessee, deram cerca de 1,3 ponto percentil por período, parecido com o do Khan sem IA. Outro estudo, com quase 7 mil alunos, mediu 3 pontos percentuais com IA combinada a domínio antes de avançar, e boa parte da vantagem sumiu uma semana depois. O efeito existe e é pequeno. Promessa de salto não tem sustentação.",
+                  decisao: "Trocar a promessa de transformação por uma meta de ganho mensurável e o desenho que a sustenta."
+                },
+                {
+                  tag: "Commodity",
+                  tagCor: "bg-gray-200 text-gray-700",
+                  conclusao: "O modelo deixou de ser diferencial: o aberto mais barato empatou com o tutor humano no estudo",
+                  raciocinio: "Um estudo com 2.383 participantes mediu tutor de IA equivalente a tutoria humana a um custo por ponto aprendido 918 vezes menor, e o modelo mais barato testado foi um modelo aberto de porte médio. Se o modelo barato basta, o que separa um produto do outro é o que se constrói em volta dele: sequência, domínio, retomada do erro, papel do professor.",
+                  decisao: "Parar de posicionar o produto pelo modelo que usa e passar a posicioná-lo pelo desenho pedagógico."
+                },
+                {
+                  tag: "Vento contra",
+                  tagCor: "bg-red-100 text-red-700",
+                  conclusao: "A opinião pública americana virou contra a IA na escola, e uma grande rede tirou a IA de todos os alunos",
+                  raciocinio: "Pesquisa nacional publicada em 17 de setembro: 53% dos adultos acham que a IA faz mais mal que bem na educação básica, contra 27%. Em Los Angeles, a segunda maior rede dos EUA bloqueou IA generativa para todos os alunos nos equipamentos da escola, sem aviso ao conselho. A objeção deixou de ser de nicho e virou maioria.",
+                  decisao: "Preparar a resposta à objeção antes de ela chegar ao comprador brasileiro: evidência de aprendizagem, não de uso."
+                },
+                {
+                  tag: "Padrão da indústria",
+                  tagCor: "bg-azul-100 text-azul-700",
+                  conclusao: "As big techs passaram a treinar o professor a decidir, não a delegar",
+                  raciocinio: "A OpenAI abriu uma trilha para educadores em que a IA revisa respostas contra objetivos e o professor decide o que fazer, com selo de conclusão e programa de formadores. A Anthropic levou o Claude for Teachers para redes e escolas, com habilidades de preparar aula e verificar compreensão. O discurso das duas convergiu para o que a norma brasileira exige: o humano assina.",
+                  decisao: "Tratar formação docente dentro do produto como parte do produto, não como material de apoio."
+                },
+                {
+                  tag: "Lacuna local",
+                  tagCor: "bg-ambar-100 text-ambar-700",
+                  conclusao: "Ninguém no Brasil tem evidência de impacto publicada, e é aí que está a vantagem",
+                  raciocinio: "Não localizamos estudo com grupo de comparação de nenhum sistema de ensino ou plataforma brasileira de IA pedagógica, enquanto o parecer do CNE segue sem homologação. Quando a objeção pública chegar aqui, quem tiver um número próprio de aprendizagem vai ter o único argumento que a pesquisa americana não derrubou.",
+                  decisao: "Montar agora uma linha de base de aprendizagem em uma rede parceira, antes do próximo ciclo de vendas."
                 },
               ].map((item, i) => (
-                <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-[#FF6B35] shadow-sm hover:shadow-md transition-shadow">
+                <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-rosa-600 shadow-sm hover:shadow-md transition-shadow">
                   <div className="flex items-center gap-2 mb-2 flex-wrap">
                     <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wide ${item.tagCor}`}>{item.tag}</span>
                   </div>
                   <p className="font-bold text-gray-900 mb-2 text-base">{item.conclusao}</p>
                   <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.raciocinio}</p>
-                  <div className="bg-purple-50 rounded-lg px-4 py-2.5">
+                  <div className="bg-azul-50 rounded-lg px-4 py-2.5">
                     <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
-                      <span className="font-semibold text-[#6B46C1]">Decisão que isso força:</span> {item.decisao}
+                      <span className="font-semibold text-azul-600">Decisão que isso força:</span> {item.decisao}
                     </p>
                   </div>
                 </div>
@@ -2378,7 +2629,7 @@ export default function App() {
       {!modoExecutivo && (
         <>
       {/* ── SINAIS DA QUINZENA ── */}
-      <section id="movimentos" className="py-24 px-6 bg-purple-50/30">
+      <section id="movimentos" className="py-24 px-6 bg-fundo-azul/70">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -2387,88 +2638,87 @@ export default function App() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <Zap className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Sinais da Quinzena</span>
+              <Zap className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Sinais da Quinzena</span>
             </div>
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Cinco sinais, <span className="text-[#6B46C1]">uma direção</span>
+            <h2 className="text-4xl md:text-5xl text-navy-900 font-bold mb-4">
+              Cinco sinais, <span className="text-azul-600">uma direção</span>
             </h2>
             <p className="text-gray-600 mb-12 text-lg max-w-3xl">
-              Cinco movimentos que mudaram de direção — cada um reunindo os acontecimentos relacionados, com o que sustenta a leitura e o que decorre dela.
+              Cinco movimentos que apontam para o mesmo lugar: a IA que ensina e a IA que só responde passaram a ser julgadas separadamente. Parte dos fatos é anterior a 11 de setembro e não tinha entrado na edição passada; a data de cada um está no cartão.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 items-start">
               {[
                 {
-                  titulo: "O CNE aprovou as diretrizes e definiu o que a máquina não pode decidir",
-                  empresa: "CNE / MEC",
-                  data: "1 set/2026",
-                  consolida: "Aprovação do parecer em plenário · quatro níveis de risco · vedações de correção e de detector · restrição de uso autônomo até o 5º ano",
-                  resumo: "O Conselho Nacional de Educação aprovou em 1º de setembro as diretrizes nacionais para uso de IA em todos os níveis, etapas e modalidades. A norma classifica as aplicações em quatro faixas: baixo risco (organização de material, acessibilidade, tradução, planejamento de aula), risco moderado (interação direta com o estudante e recomendação, como tutor virtual e assistente de escrita), alto risco (interferência ativa na vida acadêmica, como correção de prova objetiva e monitoramento biométrico, exigindo avaliação de impacto, relatório de dados e supervisão humana contínua) e risco excessivo (pontuação social, vigilância emocional, perfilização psicológica ou biométrica com fim classificatório ou disciplinar). Fica vedado usar IA para corrigir e atribuir nota a redações e provas dissertativas em qualquer etapa; em prova objetiva o apoio é permitido, mas o resultado precisa de validação humana documentada. Nenhuma punição acadêmica ou disciplinar pode se fundamentar apenas em detector de texto gerado por IA. Até o 5º ano, o uso de IA generativa só é admitido em atividade conduzida pelo professor. O relator, Celso Niskier, sustentou que a palavra final sobre o desempenho discente cabe ao professor e não à máquina. O texto ainda depende de homologação do MEC; a partir dela, as instituições têm doze meses para se adaptar.",
-                  impacto: "O objeto da regulação não é a ferramenta, é a delegação. A norma não pergunta se a escola usa IA — pergunta quem assina o que a IA produz sobre a trajetória do aluno. Isso reorganiza a categoria: produtos que decidem viram alto risco com obrigação de rastro, e produtos que decidem sobre texto autoral simplesmente saem do mercado. Vale registrar a tensão dentro do próprio Estado: em junho o Inep havia anunciado prova de conceito com empresas para usar IA na correção da redação do ENEM, justamente a finalidade que agora fica vedada no ensino.",
-                  professor: "Ganha respaldo normativo para recusar nota atribuída por máquina e para exigir o registro de quem validou o quê.",
-                  aluno: "Passa a ter proteção explícita contra punição baseada só em detector — e perde o acesso autônomo à IA generativa até o 5º ano.",
-                  gestor: "Tem doze meses após a homologação para adequar procedimento, contrato e política, com relatório exigível nos usos de alto risco.",
-                  roadmap: "Mapear cada decisão automatizada do produto por faixa de risco; inserir validação humana registrável onde hoje a máquina decide sozinha.",
-                  fonte: "https://g1.globo.com/educacao/noticia/2026/09/01/cne-para-uso-de-ia-em-escolas-e-universidades.ghtml",
-                  color: "from-purple-700 to-purple-800"
+                  titulo: "Os primeiros ensaios rigorosos de tutor de IA saíram: o ganho existe, é pequeno e depende do desenho",
+                  empresa: "Khan Academy · NUMI · EdWorkingPapers",
+                  data: "Ago/2026",
+                  consolida: "Ensaio randomizado por escola de dois anos com o Khanmigo · estudo com 6.997 alunos em Hamilton County · dados de uso e de desvio da tarefa",
+                  resumo: "Philip Oreopoulos e Low publicaram o primeiro ensaio randomizado de dois anos com o Khanmigo, em 18 escolas de anos finais do Tennessee, com o tutor configurado em modo coach, que não entrega a resposta. O ganho foi de cerca de 1,3 ponto percentil por período letivo, algo como 0,06 a 0,08 desvio-padrão por ano e 0,14 num ano completo de uso ativo, parecido com o que o próprio Khan obtém sem IA. Quase todos os alunos (96%) experimentaram, mas o aluno mediano mandou mensagem em só um terço dos dias, e boa parte das conversas fugiu do assunto ou pediu a resposta pronta. No mesmo mês, um estudo com 6.997 alunos em Hamilton County mediu cerca de 3 pontos percentuais a mais quando a IA vinha combinada com domínio obrigatório antes de avançar. A vantagem ficou no conteúdo praticado e tinha sumido em boa parte uma semana depois; a IA deixou a prática mais lenta e melhorou a retomada depois do erro.",
+                  impacto: "É a primeira vez que o setor tem números de aprendizagem com grupo de comparação para tutor de IA, e eles desmontam as duas narrativas extremas. O ganho não é zero, nem transformador. E ele vem do desenho: modo coach, domínio antes de avançar, retomada do erro. Onde o aluno consegue usar a ferramenta como atalho, ele usa. O que se compra, portanto, não é o modelo: é a estrutura que impede o atalho e mantém o aluno trabalhando.",
+                  professor: "Ganha uma expectativa realista para calibrar com a turma: a IA ajuda quem pratica e mal chega a quem não usa.",
+                  aluno: "Aprende mais quando o tutor não entrega a resposta e o obriga a dominar antes de avançar, e esquece parte do ganho se não retomar.",
+                  gestor: "Passa a ter uma régua externa para desconfiar de promessa de salto e para exigir do fornecedor o desenho, não o logotipo do modelo.",
+                  roadmap: "Priorizar domínio antes de avançar, retomada do erro e medição de engajamento produtivo acima de funcionalidade conversacional nova.",
+                  fonte: "https://www.chalkbeat.org/2026/08/25/ai-tutoring-students-khanmigo-khan-academy-engagement-study/",
+                  color: "from-azul-700 to-azul-800"
                 },
                 {
-                  titulo: "A maior rede escolar dos Estados Unidos suspendeu IA generativa até o 8º ano",
-                  empresa: "Nova York · Chancellor Samuels",
-                  data: "2 set/2026",
-                  consolida: "Moratória de um ano na maior rede pública do país · cerca de 600 mil alunos · desligamento das funções de IA de mais de 38 programas autorizados · módulos de pensamento crítico no ensino médio",
-                  resumo: "Um dia depois da decisão brasileira, o prefeito Zohran Mamdani e o chanceler de educação Kamar Samuels anunciaram a moratória mais ampla dos Estados Unidos para IA generativa voltada ao estudante: um ano de suspensão, válido no ano letivo 2026-2027, para alunos do 2-K ao 8º ano. A medida alcança cerca de 600 mil estudantes, quase dois terços da matrícula da rede. Como parte da implementação, a prefeitura informou que vai descontinuar ou desativar os componentes de IA de mais de 38 programas já autorizados que não atendam aos novos padrões de segurança e supervisão. No ensino médio, entram módulos semestrais de pensamento crítico sobre IA, pilotos limitados em um número pequeno de turmas e restrições de tempo de tela por faixa de idade.",
-                  impacto: "Duas das maiores jurisdições educacionais das Américas chegaram à mesma restrição por faixa etária em 48 horas, por caminhos independentes — e isso transforma o que parecia posição pedagógica em consenso regulatório emergente. O detalhe mais duro para fornecedor não é a moratória, é o desligamento de função em programas já contratados: a conformidade passou a ser condição de permanência, não só de venda.",
-                  professor: "Volta a ser o único canal de uso de IA para as séries iniciais, com material de pensamento crítico entrando no ensino médio.",
-                  aluno: "Perde o acesso direto por um ano letivo inteiro na faixa até o 8º ano, com uso remanescente apenas mediado.",
-                  gestor: "Precisa saber quais funções de IA dos seus contratos podem ser desligadas remotamente — e se o fornecedor consegue fazer isso por faixa etária.",
-                  roadmap: "Desligamento granular de função por série e por rede como requisito de arquitetura, não como configuração manual de suporte.",
-                  fonte: "https://www.cnn.com/2026/09/02/tech/new-york-city-classroom-ai-ban",
-                  color: "from-purple-600 to-purple-700"
+                  titulo: "Um modelo aberto barato empatou com o tutor humano a um custo 918 vezes menor",
+                  empresa: "Handshake AI Research · StudentBench",
+                  data: "Set/2026",
+                  consolida: "2.383 participantes em preparação para o GRE · tutor de IA comparado a tutoria humana · custo por ponto aprendido · modelo mais barato de porte médio e aberto",
+                  resumo: "O StudentBench, pré-print publicado em setembro pela Handshake AI Research, comparou tutores de IA a tutoria humana com 2.383 participantes estudando para o GRE. O tutor de IA produziu ganho estatisticamente equivalente ao humano (p = 0,044 no teste de equivalência), a um custo por ponto percentual aprendido de US$ 0,0052, contra US$ 4,81 da tutoria humana calculada a US$ 75 por hora: 918 vezes menos. O modelo mais barato entre os testados foi o Gemma 4 31B, um modelo aberto de porte médio. O estudo é de adultos, num exame padronizado e ainda sem revisão por pares, o que limita a transposição direta para a educação básica.",
+                  impacto: "A métrica é o dado mais útil do mês: custo por ponto aprendido, não custo por token nem por licença. Se um modelo aberto que roda barato entrega o mesmo que o caro, a escolha do modelo deixa de ser vantagem competitiva e vira decisão de custo. A disputa sai do fornecedor de modelo e vai para quem desenha a experiência em volta dele, que é justamente o que os ensaios de agosto mostraram fazer a diferença.",
+                  professor: "Efeito indireto: tutoria individual deixa de ser recurso escasso, e o tempo do professor pode ir para quem a IA não alcança.",
+                  aluno: "Pode ter acesso a tutoria equivalente à humana em prática estruturada, desde que o produto seja desenhado para isso.",
+                  gestor: "Ganha um jeito de comparar propostas: quanto custa cada ponto de aprendizagem, e não quanto custa a licença por aluno.",
+                  roadmap: "Adotar custo por ponto aprendido como métrica de produto e testar modelo aberto de porte médio antes de renovar contrato de modelo fechado.",
+                  fonte: "https://arxiv.org/abs/2609.28470",
+                  color: "from-azul-600 to-azul-700"
                 },
                 {
-                  titulo: "A FTD assumiu o controle da Estuda.com e comprou capacidade de avaliação por IA",
-                  empresa: "FTD Educação · Estuda.com",
-                  data: "Fim de ago/2026",
-                  consolida: "Aquisição do controle acionário total · consolidação de parceria de 2020 · plataforma de criação, correção e análise de avaliações · meta de dobrar de tamanho até 2030",
-                  resumo: "A FTD Educação anunciou a aquisição do controle acionário total da Estuda.com, consolidando uma parceria firmada em 2020; o valor não foi divulgado. A plataforma permite criar, corrigir e analisar avaliações escolares e simulados, e reúne mais de 1.300 escolas parceiras, mais de 14 milhões de estudantes alcançados e mais de 700 milhões de questões respondidas. Entre os diferenciais está a criação de provas inclusivas com apoio de IA, com adaptações para dislexia, TDAH e autismo, além do uso de IA para identificar necessidades acadêmicas e apoiar planos de estudo personalizados. A Estuda.com segue operando de forma independente, com marca, equipe e liderança próprias, e o fundador Carlos Pirovani permanece como CEO. A operação integra a estratégia de investimento da FTD em IA aplicada à educação e a meta de dobrar seu tamanho e seu impacto até 2030.",
-                  impacto: "Um grupo editorial comprou capacidade de avaliação por IA no mesmo mês em que avaliação por IA passou a ser regulada — e é aí que a leitura fica interessante. A norma não fecha esse mercado: fecha a correção automática de texto autoral e mantém a prova objetiva com validação humana documentada. Ou seja, o ativo continua utilizável, mas o valor migra de corrigir para instrumentar: quem tiver registro de validação, adaptação por necessidade e análise de item chega conforme; quem só automatiza a nota, não.",
-                  professor: "Tende a receber banco de itens e adaptação por necessidade específica — o tipo de apoio que a norma classifica como baixo risco.",
-                  aluno: "Prova adaptada à sua condição deixa de depender de trabalho manual do professor, o que amplia acesso real à avaliação.",
-                  gestor: "Consolidação editorial em avaliação significa menos fornecedores e mais dependência: vale checar cláusula de conformidade com a nova norma.",
-                  roadmap: "Tratar avaliação como camada instrumentada e auditável, não como motor de nota automática — é o que sobrevive à regra.",
-                  fonte: "https://www.meioemensagem.com.br/marketing/ftd-educacao-e-a-nova-controladora-da-estuda-com",
-                  color: "from-purple-600 to-violet-600",
-                  disclosure: "A FTD Com Você coedita este radar. O movimento entra por relevância de mercado e é analisado pelo mesmo critério aplicado aos demais players."
+                  titulo: "O público americano virou contra a IA na escola, e Los Angeles tirou a IA de todos os alunos",
+                  empresa: "NBC News · Washington Post · LAUSD",
+                  data: "2 – 22 set/2026",
+                  consolida: "Pesquisa nacional com 7.105 adultos · reportagem sobre ilusão de aprendizagem · bloqueio de IA generativa para todos os alunos da segunda maior rede dos EUA",
+                  resumo: "A pesquisa nacional da NBC News, publicada em 17 de setembro com 7.105 adultos ouvidos entre 20 de agosto e 1º de setembro (margem de 3,3 pontos), encontrou 53% dizendo que a IA faz mais mal que bem na educação básica, contra 27%, e 54% contra 24% no ensino superior. Em 22 de setembro, o Washington Post publicou reportagem com educadores que descrevem o efeito como uma ilusão de aprendizagem: o aluno entrega mais, e melhor, e sabe menos. Antes disso, entre 2 e 4 de setembro, o distrito de Los Angeles bloqueou o uso de IA generativa para todos os alunos nos equipamentos da escola no ano letivo 2026-2027. Até então, a rede tinha mais de treze ferramentas aprovadas. A decisão pegou de surpresa o conselho e as famílias e levou à criação de um comitê específico.",
+                  impacto: "A objeção à IA na escola deixou de ser de nicho: virou maioria na opinião pública e política de rede. O que a pesquisa não separa, e o produto precisa separar, é a IA que responde da IA que faz trabalhar. A ilusão de aprendizagem que os educadores descrevem é exatamente o efeito do atalho que os ensaios mediram. Quem não conseguir mostrar a diferença vai ser julgado junto.",
+                  professor: "Tende a encontrar famílias mais desconfiadas e precisa de argumento para defender o uso que funciona.",
+                  aluno: "Corre o risco de perder até o uso bom, quando a rede decide cortar tudo de uma vez.",
+                  gestor: "Precisa de evidência de aprendizagem para sustentar a decisão diante de conselho e famílias, e não só de dados de uso.",
+                  roadmap: "Tornar visível, para a família e para a rede, o que o aluno fez com a IA: pensou, praticou, errou e corrigiu, ou só copiou.",
+                  fonte: "https://www.nbcnews.com/politics/politics-news/poll-americans-think-ai-harm-good-schools-rcna597777",
+                  color: "from-rosa-600 to-rosa-700"
                 },
                 {
-                  titulo: "O Poliedro foi premiado por um projeto de IA que mantém a autoria humana no centro",
-                  empresa: "Poliedro · Premiação Impacto Brasil",
-                  data: "Ago–set/2026",
-                  consolida: "Terceiro lugar na categoria Escala da Premiação Impacto Brasil 2026 · projeto Supernova · 93% de assertividade em validação · rastreabilidade da operação editorial",
-                  resumo: "O Poliedro conquistou o terceiro lugar na categoria Escala da Premiação Impacto Brasil 2026, realizada pelo Agile Trends, com a Supernova — iniciativa que combina práticas ágeis, inteligência artificial e curadoria especializada na produção de conteúdo didático. Desenvolvida pelas áreas de Inovação & Aprendizagem e Produto Editorial, que reúnem quase 300 profissionais, a Supernova habilita novas experiências de gestão de conteúdo e amplia a rastreabilidade na operação de produtos digitais e editoriais. O eixo declarado do projeto é a centralidade da autoria humana ampliada por IA: a tecnologia aumenta o refinamento do material, enquanto curadoria e definições editoriais permanecem sob responsabilidade humana. Nas fases de prova de conceito, testes e validação humana, o projeto registrou 93% de assertividade em tarefas como classificação de conteúdo e verificação de precisão factual.",
-                  impacto: "É o caso brasileiro que já operava a arquitetura que a norma acabou de exigir, e com número para mostrar. Vale notar o que foi premiado: não o volume produzido, mas o desenho em que a máquina refina e o humano decide, com rastro. Enquanto o setor discute como se adequar, existe um par direto que pode dizer que se adequou antes de haver regra — e conformidade demonstrável com histórico é a única que não se improvisa em doze meses.",
-                  professor: "O material que chega à sala mantém decisão editorial humana, o que sustenta a confiança pedagógica que a norma quer preservar.",
-                  aluno: "Efeito indireto: conteúdo com verificação factual registrada reduz o risco de aprender com erro gerado por máquina.",
-                  gestor: "Passa a ter um critério concreto para cobrar do fornecedor — não se ele usa IA, mas se consegue mostrar onde o humano decidiu.",
-                  roadmap: "Instrumentar rastreabilidade na produção de conteúdo agora: é o ativo que a norma vai pedir e que não se constrói retroativamente.",
-                  fonte: "https://www.jornalrmc.com.br/poliedro-e-premiado-por-projeto-de-ia-que-potencializa-a-producao-de-conteudo-editorial-com-foco-na-autoria-humana/",
-                  color: "from-purple-500 to-purple-600"
+                  titulo: "As big techs passaram a formar o professor para decidir, não para delegar",
+                  empresa: "OpenAI Academy · Anthropic",
+                  data: "28 ago – 23 set/2026",
+                  consolida: "Trilha AI for Educators e AI for College Students com selos · programa de formadores · Claude for Teachers aberto a escolas e redes com habilidades pedagógicas",
+                  resumo: "Em 21 de setembro, a OpenAI ampliou a OpenAI Academy com novas trilhas, entre elas uma para educadores, em que a IA revisa as respostas dos alunos contra os objetivos de aprendizagem e o professor decide o que fazer com isso, e outra para universitários, com selos de conclusão. Em 23 de setembro, anunciou um programa para formar formadores. Um pouco antes, em 28 de agosto, a Anthropic abriu o Claude for Teachers para escolas e redes americanas (até então era individual, para docentes verificados), com as habilidades de preparação de aula e de verificação de compreensão, desenvolvidas com a Learning Commons.",
+                  impacto: "A edição #08 registrou que a big tech encontrou no professor o seu canal. Agora ela formaliza o canal com trilha, certificado e formador, e o conteúdo mudou de ênfase: não é mais o que a IA faz pelo professor, é como o professor decide com a IA. É a mesma regra que o CNE aprovou em setembro, dita por quem tem distribuição global e oferta gratuita. A formação genérica e subsidiada está ocupada; o que sobra é a formação ancorada no material e na política de cada rede.",
+                  professor: "Recebe formação certificada gratuita, com o risco de ela não conversar com o material que usa em sala.",
+                  aluno: "Efeito indireto: professor treinado para decidir tende a usar a IA para diagnosticar, não para substituir a própria correção.",
+                  gestor: "Precisa decidir se a formação obrigatória pela norma vai ser o catálogo gratuito ou algo ligado ao currículo adotado.",
+                  roadmap: "Formação docente embutida no fluxo do produto, com o professor praticando a decisão no próprio material, e não num curso à parte.",
+                  fonte: "https://openai.com/index/expanding-openai-academy-with-new-learning-paths/",
+                  color: "from-azul-600 to-lilas-600"
                 },
                 {
-                  titulo: "A formação docente virou obrigação curricular — e a oferta já tem dono",
-                  empresa: "CNE · Google for Education · imprensa setorial",
-                  data: "24 ago – set/2026",
-                  consolida: "Exigência da norma nas licenciaturas e na formação continuada · reportagem setorial sobre quem forma o professor · nova série de formação e certificação do Google anunciada para setembro",
-                  resumo: "Além das vedações, a norma do CNE cria dever de formação: os cursos de licenciatura passam a incluir uso pedagógico das novas tecnologias, análise de dados escolares e avaliação ética de ferramentas, e as instituições ficam obrigadas a promover formação continuada dos profissionais de educação. O problema é quem está ocupando essa oferta. Em 24 de agosto, a Revista Educação publicou reportagem perguntando exatamente isso — quem está formando o professor em IA no Brasil. E em setembro o Google anunciou nova rodada da sua série de formação para educadores, com trilhas e certificação gratuitas, incluindo um dia intensivo de badges em 19 de setembro.",
-                  impacto: "A norma criou uma demanda obrigatória de formação sem criar a oferta correspondente, e o vácuo já está sendo preenchido por quem tem escala e distribuição gratuita. Isso repete, agora com força de lei, o movimento que o radar registrou na edição anterior: formação genérica virou produto subsidiado de fora do setor. A diferença é que agora a escola não pode mais escolher não formar — e vai formar com quem estiver disponível.",
-                  professor: "Passa a ter direito a formação continuada institucional, com risco de recebê-la desconectada do material e da política da própria escola.",
-                  aluno: "Depende de professor formado para ter qualquer acesso mediado à IA nos anos iniciais — a formação virou pré-requisito do acesso dele.",
-                  gestor: "A obrigação de formar é dele. Terceirizar para catálogo gratuito resolve o custo e não resolve a aderência ao currículo adotado.",
-                  roadmap: "Formação certificada ancorada no material adotado e na política configurada da rede: é a lacuna que o catálogo gratuito estruturalmente não cobre.",
-                  fonte: "https://revistaeducacao.com.br/2026/08/24/inteligencia-artificial-na-escola/",
-                  color: "from-purple-700 to-purple-800"
+                  titulo: "No Brasil, a correção de redação por IA segue em rede pública enquanto a regra espera assinatura",
+                  empresa: "SEDU-ES · Letrus · CNE · Inep",
+                  data: "26 ago – 18 set/2026",
+                  consolida: "4ª produção de redação da rede estadual do Espírito Santo com correção por IA · parecer do CNE ainda sem homologação · imprensa divergente sobre a vigência · cartilha do ENEM",
+                  resumo: "Entre 26 de agosto e 7 de setembro, a rede estadual do Espírito Santo fez a quarta produção de redação do ano na plataforma Letrus, em que a IA corrige o texto e devolve o retorno ao aluno na hora; a secretaria usa a ferramenta desde 2019. O parecer do CNE aprovado em 1º de setembro, que veda IA para corrigir e dar nota a redação, segue sem homologação do MEC: não localizamos publicação no Diário Oficial até o fechamento. A cobertura não se entende sobre isso: parte da imprensa trata a regra como já em vigor, parte lembra que parecer só vira norma depois de homologado. Em 18 de setembro, o Inep publicou a cartilha do participante do ENEM, cuja prova é em 8 de novembro, com a redação corrigida por dois avaliadores humanos e terceira correção em caso de discrepância.",
+                  impacto: "O caso capixaba mostra onde vai estar a linha na prática: devolutiva formativa imediata é uma coisa, nota é outra. A norma veda a segunda. Como ela ainda não foi assinada e a imprensa diverge, redes e fornecedores estão operando sem saber de que lado da linha está cada funcionalidade. Quem definir e publicar essa fronteira primeiro, com base no texto aprovado, vai orientar o mercado.",
+                  professor: "Continua dono da nota e ganha, na devolutiva automática, um apoio que a norma não proíbe, desde que não vire nota.",
+                  aluno: "Recebe retorno imediato sobre o texto, que é justamente o tipo de ajuda que os ensaios associam à retomada do erro.",
+                  gestor: "Precisa separar, em cada contrato de correção, o que é devolutiva formativa e o que é nota, antes que a homologação o obrigue.",
+                  roadmap: "Separar no produto devolutiva formativa de atribuição de nota, com o professor validando a nota e o registro disso guardado.",
+                  fonte: "https://sedu.es.gov.br/escolas-da-rede-desenvolvem-a-4a-producao-de-redacao-do-ano-com-apoio-da-inteligencia-artificial",
+                  color: "from-azul-500 to-azul-600"
                 },
               ].map((m, i) => (
                 <motion.div
@@ -2483,21 +2733,21 @@ export default function App() {
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="inline-flex items-center gap-1 text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded-full font-medium">
+                        <span className="inline-flex items-center gap-1 text-xs bg-azul-50 text-azul-700 px-2 py-1 rounded-full font-medium">
                           <Users className="w-3 h-3" /> {m.empresa}
                         </span>
                         <span className="inline-flex items-center gap-1 text-xs bg-gray-50 text-gray-600 px-2 py-1 rounded-full">
                           <Calendar className="w-3 h-3" /> {m.data}
                         </span>
                       </div>
-                      <a href={m.fonte} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#6B46C1] transition-colors">
+                      <a href={m.fonte} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-azul-600 transition-colors">
                         <ExternalLink className="w-4 h-4" />
                       </a>
                     </div>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-[11px] font-bold text-[#6B46C1] bg-purple-50 px-2 py-0.5 rounded-full uppercase tracking-wider">Sinal {i + 1}</span>
+                      <span className="text-[11px] font-bold text-azul-600 bg-azul-50 px-2 py-0.5 rounded-full uppercase tracking-wider">Sinal {i + 1}</span>
                     </div>
-                    <h3 className="font-bold text-gray-900 mb-2 leading-snug">{m.titulo}</h3>
+                    <h3 className="font-bold text-navy-900 mb-2 leading-snug">{m.titulo}</h3>
                     <div className="flex items-start gap-1.5 mb-4 border-l-2 border-gray-200 pl-3">
                       <Library className="w-3 h-3 text-gray-600 mt-0.5 flex-shrink-0" />
                       <p className="text-[11px] text-gray-600 leading-relaxed">
@@ -2505,20 +2755,12 @@ export default function App() {
                       </p>
                     </div>
                     <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">{m.resumo}</p>
-                    {m.disclosure && (
-                      <div className="flex items-start gap-1.5 mb-4 border-l-2 border-amber-300 pl-3">
-                        <AlertCircle className="w-3 h-3 text-gray-600 mt-0.5 flex-shrink-0" />
-                        <p className="text-[11px] text-gray-600 leading-relaxed">
-                          <span className="font-semibold text-gray-600">Declaração de interesse:</span> {m.disclosure}
-                        </p>
-                      </div>
-                    )}
-                    <div className="border-l-2 border-[#6B46C1] pl-4 mb-5">
-                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Leitura estratégica</p>
+                    <div className="border-l-2 border-lilas-500 pl-4 mb-5">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-lilas-600">Leitura estratégica</p>
                       <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{m.impacto}</p>
                     </div>
-                    <div className="border-l-2 border-[#FF6B35] pl-4 space-y-2">
-                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#FF6B35]">Consequência prática</p>
+                    <div className="border-l-2 border-rosa-600 pl-4 space-y-2">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-rosa-600">Consequência prática</p>
                       {[
                         { label: 'Professor', valor: m.professor },
                         { label: 'Aluno', valor: m.aluno },
@@ -2530,7 +2772,7 @@ export default function App() {
                         </p>
                       ))}
                     </div>
-                    <a href={m.fonte} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-5 pt-4 border-t border-gray-100 w-full text-[#6B46C1] hover:text-[#4C3290] transition-colors font-medium text-sm">
+                    <a href={m.fonte} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-5 pt-4 border-t border-gray-100 w-full text-azul-600 hover:text-azul-700 transition-colors font-medium text-sm">
                       <ExternalLink className="w-4 h-4" />
                       Ver fonte
                     </a>
@@ -2543,7 +2785,7 @@ export default function App() {
       </section>
 
       {/* ── SINAIS DE AUSÊNCIA ── */}
-      <section id="ausencias" className="pb-24 px-6 bg-purple-50/30">
+      <section id="ausencias" className="pb-24 px-6 bg-fundo-azul/70">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -2556,8 +2798,8 @@ export default function App() {
               <AlertCircle className="w-4 h-4 text-gray-600" />
               <span className="text-sm text-gray-600 font-medium">Sinais de Ausência</span>
             </div>
-            <h2 className="text-3xl md:text-4xl text-gray-900 font-bold mb-3">
-              O espaço que <span className="text-[#6B46C1]">ninguém ocupou</span>
+            <h2 className="text-3xl md:text-4xl text-navy-900 font-bold mb-3">
+              O espaço que <span className="text-azul-600">ninguém ocupou</span>
             </h2>
             <p className="text-gray-600 mb-8 max-w-3xl">
               Cada item abaixo era razoável esperar nesta janela, não veio, e por isso segue disponível para quem chegar primeiro.
@@ -2565,56 +2807,56 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6 items-start">
               {[
                 {
-                  cat: "A homologação não saiu na mesma semana da aprovação",
-                  nota: "O parecer foi aprovado em plenário em 1º de setembro e segue dependendo da assinatura do ministro para entrar em vigor. Até o fechamento desta edição não houve publicação da homologação nem sinalização de data.",
-                  leitura: "O relógio de doze meses só começa a correr depois da assinatura. Quem se mover antes dela compra tempo de graça; quem esperar perde a diferença.",
-                  janela: "Janela curta"
-                },
-                {
-                  cat: "Nenhum fornecedor publicou mapa de conformidade por faixa de risco",
-                  nota: "A norma classifica aplicações em quatro níveis e exige avaliação de impacto, relatório e supervisão contínua no alto risco. Nenhum player brasileiro publicou onde seus próprios produtos se encaixam nessa classificação.",
-                  leitura: "É a lacuna mais barata de ocupar e a de maior efeito comercial: quem publicar primeiro define o formato que os concorrentes terão de responder.",
-                  janela: "Janela curta"
-                },
-                {
-                  cat: "Ninguém anunciou reposicionamento do produto de correção automática",
-                  nota: "Correção e atribuição de nota por IA em redação e prova dissertativa passou a ser vedada em todas as etapas, e nenhuma empresa que oferece isso comunicou mudança de escopo, migração de função ou prazo próprio de adequação.",
-                  leitura: "Silêncio de quem foi diretamente afetado. Cria espaço para quem chegar dizendo o que passou a fazer em vez do que deixou de fazer.",
-                  janela: "Janela aberta"
-                },
-                {
-                  cat: "O Inep não se manifestou sobre a prova de conceito da redação do ENEM",
-                  nota: "Em junho o instituto anunciou teste com empresas para usar IA no processo de correção da redação, com foco em acelerar o espelho e a devolutiva pedagógica. Após a decisão do CNE, não houve pronunciamento sobre continuidade, escopo ou compatibilidade.",
-                  leitura: "Tensão não resolvida dentro do próprio Estado. Como a devolutiva pedagógica não é atribuição de nota, há um caminho técnico — mas ele precisa ser dito, e ainda não foi.",
+                  cat: "A homologação do parecer do CNE não saiu em quatro semanas",
+                  nota: "O parecer foi aprovado em 1º de setembro e, até o fechamento desta edição, não localizamos homologação do MEC nem publicação no Diário Oficial. Enquanto isso, a imprensa diverge: parte trata as vedações como já vigentes, parte lembra que o prazo de doze meses só começa com a assinatura.",
+                  leitura: "Quem publicar uma leitura clara do que muda, e a partir de quando, vira referência para as redes que estão lendo manchetes contraditórias.",
                   janela: "Monitorar"
                 },
                 {
-                  cat: "Nenhuma rede brasileira anunciou desligamento de função de IA por faixa etária",
-                  nota: "Nova York especificou o desligamento de componentes de IA em mais de trinta programas já autorizados. Aqui, com a vedação até o 5º ano aprovada, nenhuma secretaria ou grupo informou como vai operacionalizar isso nos contratos vigentes.",
-                  leitura: "A vedação é conhecida e o mecanismo de cumprimento não existe. Quem entregar o desligamento granular pronto resolve um problema que a rede ainda não sabe que terá.",
+                  cat: "Nenhum estudo brasileiro de IA pedagógica com grupo de comparação",
+                  nota: "Terceira edição seguida registrando a mesma ausência. No mesmo período em que os EUA publicaram dois ensaios com milhares de alunos, não localizamos estudo de efeito com grupo de comparação de nenhuma rede, sistema de ensino ou plataforma brasileira.",
+                  leitura: "Quando a objeção pública chegar aqui, a primeira pergunta vai ser se funciona. Um estudo leva pelo menos um semestre letivo: quem não começar agora não vai ter resposta em 2027.",
+                  janela: "Custo de atraso alto"
+                },
+                {
+                  cat: "Nenhum sistema de ensino concorrente publicou evidência de aprendizagem",
+                  nota: "Entre os concorrentes que o radar acompanha, não localizamos lançamento de funcionalidade de IA na janela nem publicação de resultado de aprendizagem associado às ferramentas que já estão no mercado.",
+                  leitura: "O concorrente que publicar o primeiro número, mesmo modesto, define a régua que os outros vão ter de alcançar. Com os ensaios americanos, número modesto passou a ser número crível.",
                   janela: "Janela aberta"
                 },
                 {
-                  cat: "Nenhuma evidência longitudinal brasileira entrou em campo",
-                  nota: "Segunda edição consecutiva registrando a mesma ausência. Com norma aprovada e prazo definido, nenhuma rede, grupo ou universidade anunciou estudo de efeito sobre a própria base instalada.",
-                  leitura: "A norma vai exigir avaliação de impacto no alto risco. Quem já tiver linha de base terá o que declarar; quem não tiver vai declarar intenção.",
-                  janela: "Custo de atraso alto"
+                  cat: "Ninguém mede engajamento produtivo com a IA",
+                  nota: "O ensaio do Khanmigo mostrou que o aluno mediano usou o tutor em um terço dos dias e que boa parte das conversas fugiu do assunto ou pediu a resposta. Nenhuma plataforma brasileira divulga métrica que separe uso produtivo de atalho.",
+                  leitura: "Métrica de uso sem qualidade de uso é o número que a ilusão de aprendizagem produz. Separar os dois é o que permite defender o produto diante do conselho e da família.",
+                  janela: "Janela aberta"
+                },
+                {
+                  cat: "Ninguém publica custo por ponto de aprendizagem",
+                  nota: "O StudentBench mostrou que a métrica é calculável e que a diferença entre fornecedores pode ser de centenas de vezes. Nenhum fornecedor brasileiro apresenta preço em função do resultado, só por aluno ou por licença.",
+                  leitura: "Numa rede pública com orçamento apertado, quem vender aprendizagem por real gasto muda a conversa de compra, e sai da comparação de preço de licença.",
+                  janela: "Janela aberta"
+                },
+                {
+                  cat: "O Inep segue em silêncio sobre a prova de conceito de correção por IA",
+                  nota: "Segunda edição seguida sem posição. A cartilha do ENEM de 18 de setembro repete a correção por dois avaliadores humanos e não menciona o teste com empresas anunciado em junho para apoiar a correção da redação.",
+                  leitura: "A diferença entre devolutiva e nota, que a norma vai exigir das redes, também vale para o próprio Estado. Enquanto o Inep não diz onde fica a linha, o mercado não tem referência pública.",
+                  janela: "Monitorar"
                 },
               ].map((item, i) => (
-                <div key={i} className="border-l-2 border-gray-200 pl-5 hover:border-[#FF6B35] transition-colors">
+                <div key={i} className="border-l-2 border-gray-200 pl-5 hover:border-rosa-600 transition-colors">
                   <div className="flex items-center gap-2 mb-2">
                     <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wide ${
                       item.janela === 'Janela curta' ? 'bg-red-100 text-red-700'
-                      : item.janela === 'Janela aberta' ? 'bg-orange-100 text-orange-700'
-                      : item.janela === 'Custo de atraso alto' ? 'bg-purple-100 text-purple-700'
+                      : item.janela === 'Janela aberta' ? 'bg-ambar-100 text-ambar-700'
+                      : item.janela === 'Custo de atraso alto' ? 'bg-azul-100 text-azul-700'
                       : 'bg-gray-100 text-gray-600'
                     }`}>{item.janela}</span>
                   </div>
                   <p className="font-bold text-gray-900 text-sm mb-2">{item.cat}</p>
                   <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.nota}</p>
-                  <div className="bg-orange-50/60 rounded-lg px-3 py-2">
+                  <div className="bg-ambar-50/60 rounded-lg px-3 py-2">
                     <p className="text-[11px] text-gray-700 leading-relaxed">
-                      <span className="font-semibold text-[#FF6B35]">Por que a vaga importa:</span> {item.leitura}
+                      <span className="font-semibold text-rosa-600">Por que a vaga importa:</span> {item.leitura}
                     </p>
                   </div>
                 </div>
@@ -2633,22 +2875,21 @@ export default function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <TrendingUp className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Temas Recorrentes</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <TrendingUp className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Temas Recorrentes</span>
             </div>
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Estrutural, emergente ou <span className="text-[#6B46C1]">encerrado?</span>
+            <h2 className="text-4xl md:text-5xl text-navy-900 font-bold mb-4">
+              Estrutural, emergente ou <span className="text-azul-600">encerrado?</span>
             </h2>
             <p className="text-gray-600 mb-10 text-lg max-w-3xl">
-              O que reaparece ciclo após ciclo merece roadmap; o que apareceu uma vez merece monitoramento. Nesta edição, uma linha que atravessou cinco edições finalmente se resolveu.
+              O que reaparece ciclo após ciclo merece roadmap; o que apareceu uma vez merece monitoramento. Nesta edição, a restrição por idade e a big tech no canal do professor ganharam o terceiro ciclo, e a regulação que parecia resolvida travou de novo na assinatura.
             </p>
 
             <div className="flex items-center gap-5 mb-10 flex-wrap">
               {[
-                { t: 'Resolvido', d: 'a linha chegou ao seu desfecho', c: 'bg-green-100 text-green-700' },
                 { t: 'Estrutural', d: 'atravessa 3+ edições — entra no roadmap', c: 'bg-red-100 text-red-700' },
-                { t: 'Emergente', d: '2 edições ou aceleração recente — posicionar', c: 'bg-orange-100 text-orange-700' },
+                { t: 'Emergente', d: '2 edições ou aceleração recente — posicionar', c: 'bg-ambar-100 text-ambar-700' },
                 { t: 'Pontual', d: 'aparição isolada — monitorar', c: 'bg-gray-200 text-gray-700' },
               ].map(l => (
                 <div key={l.t} className="flex items-center gap-2">
@@ -2661,58 +2902,58 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-5 items-start">
               {[
                 {
-                  tema: "A regulação brasileira travada na última milha",
-                  tipo: "Resolvido",
-                  trilha: "#07 CNE aprova e abre consulta → #08 consulta encerrada → #09 sem homologação → #10 sem homologação e câmaras em recomposição → #11 aprovado em plenário com prazo de doze meses",
-                  leitura: "Cinco edições acompanhando a mesma pendência, e o desfecho contrariou a leitura mais comum: não veio uma regra permissiva de compromisso, veio uma regra com vedações específicas e prazo. A recomposição das câmaras, que na edição passada parecia sinal de mais atraso, antecedeu a aprovação em três semanas. Fica um aprendizado de método: instabilidade institucional não é sinônimo de paralisia.",
-                  cor: "bg-green-50 border-green-200",
-                  badge: "bg-green-100 text-green-700"
-                },
-                {
-                  tema: "Quem assina a decisão sobre o aluno",
+                  tema: "Evidência de aprendizagem como campo de disputa",
                   tipo: "Estrutural",
-                  trilha: "#09 a interface passa a decidir o que cada papel vê → #10 a plataforma passa a conter o atalho por conta própria → #11 a norma proíbe a máquina de assinar avaliação e punição",
-                  leitura: "Três edições seguidas em que o objeto de disputa foi o mesmo, subindo de camada: primeiro quem decide o que aparece, depois quem decide o que é permitido, agora quem responde pelo resultado. É a linha mais consistente do radar e a que passou a ter consequência jurídica.",
+                  trilha: "#08 admissão de uso real baixo → #09 pesquisa longitudinal acoplada a rollout → #10 penalidade medida em coorte de 30 meses → #11 avaliação de impacto exigida por norma → #12 primeiros ensaios randomizados de tutor de IA, com ganho modesto",
+                  leitura: "Cinco edições e a linha chegou ao dado. A disputa deixa de ser se existe evidência e passa a ser o tamanho do efeito e o desenho que o produz. O número modesto virou o novo piso de credibilidade, e a ausência de número brasileiro virou o risco mais concreto do setor.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
                 {
-                  tema: "Restrição de acesso por faixa etária",
-                  tipo: "Emergente",
-                  trilha: "#10 experiência dedicada por idade com trava padrão em produto de massa → #11 vedação normativa até o 5º ano no Brasil e moratória até o 8º ano em Nova York",
-                  leitura: "Passou de decisão de produto de uma empresa a decisão de política pública em duas jurisdições, em uma única edição. Ainda são dois ciclos, mas a aceleração e a convergência entre jurisdições independentes tiram isso do campo do acontecimento isolado.",
-                  cor: "bg-orange-50 border-orange-200",
-                  badge: "bg-orange-100 text-orange-700"
-                },
-                {
-                  tema: "Evidência de aprendizagem como campo de disputa",
+                  tema: "Quem assina a decisão sobre o aluno",
                   tipo: "Estrutural",
-                  trilha: "#08 admissão de uso real baixo → #09 pesquisa longitudinal acoplada a rollout nacional → #10 penalidade medida em coorte de 30 meses → #11 avaliação de impacto exigida por norma no alto risco",
-                  leitura: "Quatro edições subindo a régua, e agora a exigência sai do campo reputacional e entra no campo do dever legal. A ausência registrada nesta edição fica mais custosa: quem não tiver linha de base quando a norma vigorar não tem como produzir a avaliação retroativamente.",
+                  trilha: "#09 a interface decide o que cada papel vê → #10 a plataforma contém o atalho → #11 a norma proíbe a máquina de assinar avaliação → #12 as big techs formam o professor para decidir",
+                  leitura: "A mesma ideia agora aparece na regra brasileira e no currículo de formação de quem tem distribuição global. Deixou de ser posição de nicho pedagógico e passou a ser o discurso padrão da indústria, o que a torna piso, e não diferencial.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
                 {
                   tema: "Formação docente como camada de produto",
                   tipo: "Estrutural",
-                  trilha: "#08 ferramenta gratuita para professor → #09 formação como gargalo em benchmark internacional → #10 catálogo gratuito consolidado por concorrente indireto → #11 formação continuada vira obrigação institucional",
-                  leitura: "Quatro edições e uma inversão completa de natureza: era receita potencial, virou custo subsidiado por quem vem de fora do setor e agora é dever da instituição. O tema deixou de ser oportunidade e passou a ser obrigação com oferta capturada.",
+                  trilha: "#08 a big tech encontra o professor como canal → #09 formação como gargalo → #10 catálogo gratuito consolidado → #11 formação vira obrigação institucional → #12 trilha certificada, selo e programa de formadores",
+                  leitura: "A oferta genérica está ocupada e se profissionalizou com certificado e formador. A única faixa que continua aberta é a que o catálogo global não alcança: formar o professor no próprio material e na política da própria rede.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
                 {
-                  tema: "Consolidação editorial por compra de capacidade técnica",
+                  tema: "Restrição de acesso por faixa etária",
+                  tipo: "Estrutural",
+                  trilha: "#10 trava padrão por idade em produto de massa → #11 vedação até o 5º ano no Brasil e moratória até o 8º ano em Nova York → #12 Los Angeles bloqueia IA generativa para todos os alunos",
+                  leitura: "Terceiro ciclo, e o corte subiu de faixa: começou nos pequenos e chegou a uma rede inteira. Passa a ser estrutural. O que mudou de natureza é o motivo: não é mais só proteção da criança, é desconfiança sobre o efeito na aprendizagem.",
+                  cor: "bg-red-50 border-red-200",
+                  badge: "bg-red-100 text-red-700"
+                },
+                {
+                  tema: "A regulação brasileira travada na última milha",
                   tipo: "Emergente",
-                  trilha: "#08 primeiro M&A de IA em educação da América Latina → #09 e #10 sem novas transações → #11 grupo editorial assume controle de plataforma de avaliação com IA",
-                  leitura: "A tese sumiu por duas edições e voltou com uma diferença relevante: não é aquisição de time, é aquisição de base instalada e de função regulada. Sai do registro de escassez de talento e entra no de posicionamento diante da norma.",
-                  cor: "bg-orange-50 border-orange-200",
-                  badge: "bg-orange-100 text-orange-700"
+                  trilha: "#07 CNE aprova e abre consulta → #08 a #10 sem homologação → #11 aprovado em plenário com prazo de doze meses → #12 quatro semanas sem assinatura e imprensa divergente sobre a vigência",
+                  leitura: "A edição passada tratou a linha como resolvida, e ela reabriu num degrau acima. O conteúdo da regra está definido; o que falta é o início da contagem. Para planejamento, vale tratar o texto aprovado como certo e a data como incerta.",
+                  cor: "bg-ambar-50 border-ambar-200",
+                  badge: "bg-ambar-100 text-ambar-700"
+                },
+                {
+                  tema: "O que vira commodity",
+                  tipo: "Emergente",
+                  trilha: "#10 mediar o uso vira padrão de plataforma → #12 o modelo em si vira insumo barato, com o aberto de porte médio empatando com o humano",
+                  leitura: "Duas camadas que eram vendidas como diferencial caíram para o piso em três edições. O valor subiu para o desenho pedagógico e para a prova de resultado, que são justamente as duas coisas mais difíceis de copiar.",
+                  cor: "bg-ambar-50 border-ambar-200",
+                  badge: "bg-ambar-100 text-ambar-700"
                 },
                 {
                   tema: "Interfaces novas: voz, agente executor e robótica",
                   tipo: "Pontual",
-                  trilha: "#09 voz em tempo real e banca oral por IA → #10 robô humanoide com conversação em português → #11 sem desdobramento na janela",
-                  leitura: "Terceira edição em que a categoria aparece com roupagem diferente e nenhuma evidência de aprendizagem associada, agora seguida de silêncio. Segue como termômetro de orçamento de inovação, não como decisão de roadmap.",
+                  trilha: "#09 voz em tempo real e banca oral → #10 robô humanoide em português → #11 sem desdobramento → #12 sem desdobramento",
+                  leitura: "Segunda edição seguida de silêncio, numa quinzena em que toda a atenção foi para o efeito na aprendizagem. Se nada vier na próxima, a linha sai do radar.",
                   cor: "bg-gray-50 border-gray-200",
                   badge: "bg-gray-200 text-gray-700"
                 },
@@ -2726,7 +2967,7 @@ export default function App() {
                   className={`rounded-2xl border-2 ${item.cor} p-6`}
                 >
                   <div className="flex items-start justify-between gap-4 mb-3 flex-wrap">
-                    <h3 className="font-bold text-gray-900 text-lg leading-snug">{item.tema}</h3>
+                    <h3 className="font-bold text-navy-900 text-lg leading-snug">{item.tema}</h3>
                     <span className={`px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap ${item.badge}`}>
                       {item.tipo}
                     </span>
@@ -2743,7 +2984,7 @@ export default function App() {
       </section>
 
       {/* ── CONCORRÊNCIA ── */}
-      <section id="concorrencia" className="py-24 px-6 bg-purple-50/30">
+      <section id="concorrencia" className="py-24 px-6 bg-fundo-azul/70">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -2752,27 +2993,27 @@ export default function App() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <BarChart3 className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Concorrência</span>
+              <BarChart3 className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Concorrência</span>
             </div>
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Quem chega <span className="text-[#6B46C1]">conforme</span>
+            <h2 className="text-4xl md:text-5xl text-navy-900 font-bold mb-4">
+              Quem está do lado <span className="text-azul-600">certo da evidência</span>
             </h2>
             <p className="text-gray-600 mb-10 text-lg max-w-3xl">
-              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Nesta edição interessa quem já opera com decisão humana registrável, quem tem produto para refazer dentro do prazo e o que cada um já colocou dentro do produto.
+              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Não localizamos, entre os players acompanhados, lançamento de funcionalidade de IA nem resultado de aprendizagem publicado na janela. Por isso a leitura é feita com o que cada um já tem: quem está do lado da IA que faz o aluno trabalhar e quem fica exposto à objeção contra a IA que responde.
             </p>
 
             {/* Mercado privado */}
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-1.5 h-6 bg-[#6B46C1] rounded-full" />
-              <h3 className="text-xl font-bold text-gray-900">Concorrência direta — mercado privado</h3>
+              <div className="w-1.5 h-6 bg-azul-600 rounded-full" />
+              <h3 className="text-xl font-bold text-navy-900">Concorrência direta — mercado privado</h3>
             </div>
             <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm mb-12 bg-white">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-purple-50">
-                    {["Player", "Grupo / Soluções", "Movimento observado", "Posição diante da norma", "Exposição", "Impacto"].map(h => (
-                      <th key={h} className="px-5 py-4 text-left text-xs font-semibold text-purple-700 uppercase tracking-wider">{h}</th>
+                  <tr className="bg-azul-50">
+                    {["Player", "Grupo / Soluções", "Movimento observado", "Posição diante da evidência", "Exposição", "Impacto"].map(h => (
+                      <th key={h} className="px-5 py-4 text-left text-xs font-semibold text-azul-700 uppercase tracking-wider">{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -2781,51 +3022,51 @@ export default function App() {
                     {
                       player: "Poliedro",
                       grupo: "Cosmos · Polígono · Conviver · Sabiá",
-                      movimento: "Premiado por projeto que mantém curadoria e definição editorial humanas, com rastreabilidade da operação e 93% de assertividade em validação",
-                      estrategia: "O melhor posicionado da janela: já operava a arquitetura que a norma passou a exigir e tem histórico documentado para provar. Conformidade com rastro é o único tipo que não se improvisa em doze meses",
-                      exposicao: "Baixa", impacto: "Alto"
+                      movimento: "Nenhum lançamento na janela. O Cosmos segue restrito ao acervo próprio e voltado a professor e gestor",
+                      estrategia: "Como a IA não fala direto com o aluno, fica fora do alvo da objeção pública. Em compensação, tem mais dificuldade para mostrar ganho de aprendizagem atribuível à IA, porque o efeito passa pelo professor",
+                      exposicao: "Baixa", impacto: "Médio-Alto"
                     },
                     {
                       player: "Santillana",
                       grupo: "Moderna Core",
-                      movimento: "Ecossistema com IA operando nos bastidores, sem protagonismo de interface e sem se oferecer como atalho ao aluno",
-                      estrategia: "Posicionamento de IA invisível envelhece bem: não decide sobre o aluno na superfície e por isso tende a cair em faixas de risco mais baixas. A fragilidade é ter menos superfície própria para registrar validação humana",
+                      movimento: "Nenhum lançamento na janela. IA de acompanhamento de desempenho, sem geração voltada ao aluno",
+                      estrategia: "Leitura contínua de desempenho é a matéria-prima de uma linha de base de aprendizagem. Já tem o dado para medir o efeito do próprio produto, se decidir medir",
                       exposicao: "Baixa", impacto: "Médio-Alto"
                     },
                     {
                       player: "Bernoulli",
                       grupo: "Sistema de ensino próprio",
-                      movimento: "Portfólio segmentado por público cobrindo professor, aluno e mantenedor, com camada de inteligência sobre microdados públicos",
-                      estrategia: "Cobertura de públicos é vantagem, mas amplia a superfície a auditar: tutoria e prática para aluno caem em risco moderado e diagnóstico que orienta decisão pedagógica tende ao alto. Precisa mapear faixa por produto",
+                      movimento: "Nenhum lançamento na janela. CoCria Professor segue focado em planejamento e diagnóstico",
+                      estrategia: "O diagnóstico sobre a base da rede o aproxima de uma medição de efeito, mas hoje o produto mede o aluno, não a própria ferramenta. Falta um passo para virar evidência",
                       exposicao: "Média", impacto: "Alto"
                     },
                     {
                       player: "Arco Educação",
                       grupo: "SAS, SAE Digital, Geekie",
-                      movimento: "Camada única de gestão, ensino, comunicação e financeiro; literacia em IA incorporada ao programa de competências",
-                      estrategia: "O único que já tratava IA como competência a ser ensinada e avaliada — exatamente o que a norma agora exige na formação. Em contrapartida, plataforma adaptativa que recomenda trilha entra em risco moderado com dever de supervisão",
+                      movimento: "Nenhum lançamento na janela. Plataforma adaptativa e literacia em IA no programa de competências",
+                      estrategia: "Tem o desenho mais próximo do que os ensaios premiaram: prática adaptativa com trilha. Também é quem mais depende de provar que o aluno pratica, e não pula etapas, porque a plataforma fala direto com ele",
                       exposicao: "Média", impacto: "Alto"
                     },
                     {
                       player: "Somos Educação",
                       grupo: "Anglo, pH, Amplia, Fibonati · Plurall",
-                      movimento: "Plurall IA com foco em produtividade docente, geração de questões e apoio ao planejamento",
-                      estrategia: "Geração de material para o professor é justamente o que a norma classifica como baixo risco, o que protege o núcleo do portfólio. O risco está no que não apareceu: nada indica instrumentação de validação nem registro de decisão",
-                      exposicao: "Média", impacto: "Alto"
+                      movimento: "Nenhum lançamento na janela. O Plu oferece ao aluno resumo, exercício e tirar dúvida ancorados ao capítulo",
+                      estrategia: "Pelo desenho do que já está no produto, é o mais exposto à objeção: resumir e responder dúvida é o uso que os educadores associam à ilusão de aprendizagem. Ancorar ao capítulo melhora a precisão, não o esforço do aluno",
+                      exposicao: "Alta", impacto: "Alto"
                     },
                   ].map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-purple-50/30 transition-colors' : 'bg-purple-50/20 hover:bg-purple-50/40 transition-colors'}>
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-azul-50/30 transition-colors' : 'bg-azul-50/20 hover:bg-azul-50/40 transition-colors'}>
                       <td className="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.player}</td>
                       <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.grupo}</td>
                       <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.movimento}</td>
                       <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.estrategia}</td>
                       <td className="px-5 py-4">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-amarelo-100 text-amarelo-800'}`}>
                           {row.exposicao}
                         </span>
                       </td>
                       <td className="px-5 py-4">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.impacto === 'Alto' ? 'bg-red-100 text-red-700' : 'bg-blue-100 text-blue-700'}`}>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.impacto === 'Alto' ? 'bg-red-100 text-red-700' : 'bg-azul-100 text-azul-700'}`}>
                           {row.impacto}
                         </span>
                       </td>
@@ -2837,15 +3078,15 @@ export default function App() {
 
             {/* Mercado público */}
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-1.5 h-6 bg-[#FF6B35] rounded-full" />
-              <h3 className="text-xl font-bold text-gray-900">Concorrência direta — mercado público</h3>
+              <div className="w-1.5 h-6 bg-rosa-600 rounded-full" />
+              <h3 className="text-xl font-bold text-navy-900">Concorrência direta — mercado público</h3>
             </div>
             <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm mb-12 bg-white">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-orange-50">
-                    {["Player", "Grupo / Soluções", "Movimento observado", "Posição diante da norma", "Exposição", "Impacto"].map(h => (
-                      <th key={h} className="px-5 py-4 text-left text-xs font-semibold text-orange-700 uppercase tracking-wider">{h}</th>
+                  <tr className="bg-ambar-50">
+                    {["Player", "Grupo / Soluções", "Movimento observado", "Posição diante da evidência", "Exposição", "Impacto"].map(h => (
+                      <th key={h} className="px-5 py-4 text-left text-xs font-semibold text-ambar-700 uppercase tracking-wider">{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -2854,30 +3095,30 @@ export default function App() {
                     {
                       player: "Saber",
                       grupo: "eDocente",
-                      movimento: "Correção automática de microtestes por câmera e gestão a partir do celular do professor, com baixa fricção de adoção na rede pública",
-                      estrategia: "Opera exatamente na fronteira que a norma detalhou: correção de prova objetiva segue permitida como apoio, desde que a validação humana seja documentada. Quem já registra quem conferiu ganha; quem só devolve a nota precisa acrescentar o registro",
-                      exposicao: "Média", impacto: "Alto"
+                      movimento: "Nenhum lançamento na janela. Correção de microtestes por câmera no celular do professor",
+                      estrategia: "IA que mede e devolve o resultado ao professor fica do lado certo da objeção, porque não conversa com o aluno. E produz, de quebra, o dado de acompanhamento de que uma rede precisa para avaliar impacto",
+                      exposicao: "Baixa", impacto: "Alto"
                     },
                     {
                       player: "Moderna",
                       grupo: "Moderna Amigos",
-                      movimento: "Braço público do grupo Santillana, com capilaridade em redes municipais e estaduais e histórico em processos de adoção pública",
-                      estrategia: "A força é relacionamento institucional, e ela cresce de valor: com prazo de doze meses correndo, a rede vai procurar quem já está dentro para resolver adequação de procedimento, não um fornecedor novo",
+                      movimento: "Nenhum lançamento na janela. Capilaridade em redes municipais e estaduais",
+                      estrategia: "Numa rede que precisa justificar a IA diante do conselho e das famílias, o fornecedor já contratado é o primeiro chamado a mostrar resultado. O relacionamento vira cobrança de evidência",
                       exposicao: "Baixa", impacto: "Médio-Alto"
                     },
                   ].map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-orange-50/30 transition-colors' : 'bg-orange-50/20 hover:bg-orange-50/40 transition-colors'}>
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-ambar-50/30 transition-colors' : 'bg-ambar-50/20 hover:bg-ambar-50/40 transition-colors'}>
                       <td className="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.player}</td>
                       <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.grupo}</td>
                       <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.movimento}</td>
                       <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.estrategia}</td>
                       <td className="px-5 py-4">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-amarelo-100 text-amarelo-800'}`}>
                           {row.exposicao}
                         </span>
                       </td>
                       <td className="px-5 py-4">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.impacto === 'Alto' ? 'bg-red-100 text-red-700' : 'bg-blue-100 text-blue-700'}`}>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.impacto === 'Alto' ? 'bg-red-100 text-red-700' : 'bg-azul-100 text-azul-700'}`}>
                           {row.impacto}
                         </span>
                       </td>
@@ -2889,11 +3130,11 @@ export default function App() {
 
             {/* Radar de funcionalidades */}
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-1.5 h-6 bg-gradient-to-b from-[#6B46C1] to-[#FF6B35] rounded-full" />
-              <h3 className="text-xl font-bold text-gray-900">Radar de funcionalidades</h3>
+              <div className="w-1.5 h-6 bg-gradient-to-b from-azul-600 to-rosa-600 rounded-full" />
+              <h3 className="text-xl font-bold text-navy-900">Radar de funcionalidades</h3>
             </div>
             <p className="text-sm text-gray-600 mb-6 max-w-3xl">
-              Posição de mercado se anuncia; funcionalidade se usa. O recurso que cada player já embarcou, a quem ele serve e o que ocupa — ou deixa vago — no tabuleiro.
+              Nenhuma funcionalidade nova na janela: os recursos abaixo são os mesmos da edição passada. O que muda é a pergunta feita a cada um: ele faz o aluno trabalhar, ou entrega a resposta?
             </p>
             <div className="grid md:grid-cols-2 gap-5 mb-8">
               {[
@@ -2901,10 +3142,10 @@ export default function App() {
                   player: "Somos Educação",
                   produto: "Plu, dentro do Plurall",
                   mercado: "Privado",
-                  corMercado: "bg-purple-100 text-purple-700",
+                  corMercado: "bg-azul-100 text-azul-700",
                   publicos: ["Professor", "Aluno"],
                   entregue: "Para o professor: plano de aula, questões, provas e apresentações a partir do capítulo do material. Para o aluno: resumo, glossário, plano de estudo, exercício e tirar dúvida dentro do próprio conteúdo.",
-                  leitura: "É quem foi mais longe na conversa com o conteúdo do livro. Ancorar a resposta ao capítulo é o que separa assistente genérico de assistente proprietário — e é a parte difícil de copiar, porque depende do acervo, não do modelo. Volume declarado pela empresa nos três primeiros meses de 2025: mais de 168 mil planos de aula gerados, com 86% de satisfação.",
+                  leitura: "Do lado do professor, é geração de material, que ninguém questiona. Do lado do aluno, resumo e tirar dúvida são o formato que mais se presta a atalho. O ativo que protege é o acervo: o mesmo ancoramento ao capítulo serviria para perguntar ao aluno em vez de responder por ele.",
                   fonte: "https://www.plurall.net/ia.html",
                   fonteLabel: "Plurall IA"
                 },
@@ -2912,10 +3153,10 @@ export default function App() {
                   player: "Poliedro",
                   produto: "Cosmos, camada de IA do P+",
                   mercado: "Privado",
-                  corMercado: "bg-purple-100 text-purple-700",
+                  corMercado: "bg-azul-100 text-azul-700",
                   publicos: ["Professor", "Gestor"],
                   entregue: "Interação com IA generativa restrita ao conteúdo proprietário, somada a modelos preditivos: sugestão de estratégia didática, adaptação de conteúdo, criação de avaliação e leitura de desempenho. Disponível na web e no app P+.",
-                  leitura: "Restringir a geração ao acervo próprio é decisão de arquitetura, não de marketing: reduz alucinação e encurta a conversa de conformidade. A aposta é no professor e no gestor; o aluno não aparece como usuário direto da camada generativa.",
+                  leitura: "A IA não fala com o aluno, então a pergunta não se aplica diretamente: quem decide é o professor. É o desenho que a regra e as big techs acabaram de chancelar, com o custo de depender da formação do professor para virar aprendizagem.",
                   fonte: "https://brasil.bettshow.com/releases-expositores-2026/poliedro-apresenta-cosmos-hub-de-inteligencia-artificial-na-bett-brasil-2026",
                   fonteLabel: "Release Bett Brasil 2026"
                 },
@@ -2923,10 +3164,10 @@ export default function App() {
                   player: "Santillana",
                   produto: "Moderna Core",
                   mercado: "Privado",
-                  corMercado: "bg-purple-100 text-purple-700",
+                  corMercado: "bg-azul-100 text-azul-700",
                   publicos: ["Professor", "Gestor"],
                   entregue: "Ecossistema que junta conteúdo, dados e IA: ampliação de repertório de estratégias para o professor e leitura contínua de desempenho para apoiar decisão do gestor.",
-                  leitura: "A funcionalidade anunciada é acompanhamento, não geração. Isso mantém a IA longe da superfície do aluno e explica a exposição mais baixa — ao custo de ter menos produto visível para disputar a comparação de recursos numa mesa de venda.",
+                  leitura: "Acompanhamento não entrega resposta a ninguém: mostra onde o aluno está. É o recurso mais útil para medir efeito e o menos visível na mesa de venda, e com a evidência virando argumento, essa troca começa a pender a favor.",
                   fonte: "https://revistaeducacao.com.br/2026/05/05/moderna-core-bett/",
                   fonteLabel: "Revista Educação"
                 },
@@ -2934,10 +3175,10 @@ export default function App() {
                   player: "Bernoulli",
                   produto: "CoCria Professor",
                   mercado: "Privado",
-                  corMercado: "bg-purple-100 text-purple-700",
+                  corMercado: "bg-azul-100 text-azul-700",
                   publicos: ["Professor", "Gestor"],
                   entregue: "Apoio ao planejamento docente e à leitura de diagnóstico de aprendizagem, com adaptação de atividades e organização de estratégias sobre a base de dados da rede.",
-                  leitura: "Entra pela dor operacional — devolver tempo a quem planeja — e não pela promessa de personalização. É o caminho de menor atrito para adoção, e também o de menor diferenciação: é o recurso que todo mundo terá.",
+                  leitura: "Planejamento e diagnóstico ficam do lado do professor e não criam atalho para o aluno. O limite é o mesmo de antes: é o recurso que todo mundo terá, e não se diferencia pelo resultado de aprendizagem.",
                   fonte: "https://educador21.com/ia-desafia-escolas-repensar-gestao-formacao/",
                   fonteLabel: "Educador21"
                 },
@@ -2945,10 +3186,10 @@ export default function App() {
                   player: "PNLD Digital",
                   produto: "Leitor oficial do MEC/FNDE",
                   mercado: "Plataforma pública",
-                  corMercado: "bg-orange-100 text-orange-700",
+                  corMercado: "bg-ambar-100 text-ambar-700",
                   publicos: ["Aluno", "Professor"],
                   entregue: "Leitor interativo das obras do programa, com audiodescrição, narração, mapas e infográficos clicáveis, vídeos legendados e compatibilidade com leitor de tela. Traz agente de IA para esclarecer dúvidas e apoiar o uso do sistema.",
-                  leitura: "Não é concorrente: é o trilho por onde o livro de todo mundo passa a circular. E o detalhe importa — o agente responde sobre o sistema, não sobre o conteúdo do livro. Quem entregar acessibilidade acima do padrão do leitor oficial deixa de ter diferencial; quem entregar conversa com o conteúdo ainda tem.",
+                  leitura: "O agente responde sobre o sistema, não sobre o conteúdo, e por isso não entrega resposta de exercício. É o trilho por onde o livro de todo mundo circula, e a acessibilidade que ele padroniza deixa de ser diferencial de qualquer fornecedor.",
                   fonte: "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/junho/pnld-digital-amplia-inclusao-aos-livros-da-educacao-basica",
                   fonteLabel: "MEC"
                 },
@@ -2987,7 +3228,7 @@ export default function App() {
                     href={f.fonte}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center gap-1.5 text-xs font-medium text-[#6B46C1] hover:underline"
+                    className="mt-auto inline-flex items-center gap-1.5 text-xs font-medium text-azul-600 hover:underline"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
                     {f.fonteLabel}
@@ -2996,13 +3237,13 @@ export default function App() {
               ))}
             </div>
 
-            <div className="bg-white rounded-2xl border-2 border-orange-100 p-6 md:p-8 mb-12">
+            <div className="bg-white rounded-2xl border-2 border-ambar-100 p-6 md:p-8 mb-12">
               <div className="flex items-start gap-3">
-                <Target className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
+                <Target className="w-5 h-5 text-rosa-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-gray-900 mb-2">O espaço que continua vago</h4>
                   <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
-                    Entre todos esses produtos, um recurso aparece uma vez só: conversar com o conteúdo do livro. O Plu faz isso no privado, ancorado ao capítulo. No público, o agente do leitor oficial responde sobre o sistema — como navegar, como baixar, como ativar acessibilidade — e não sobre o que está escrito na página. É a diferença entre um suporte e um professor auxiliar, e ela ainda não foi ocupada na rede pública.
+                    Nenhum dos recursos descritos publicamente declara domínio obrigatório antes de avançar, retomada guiada depois do erro ou medida do que o aluno fez com a resposta. São justamente os três elementos de desenho associados a ganho nos ensaios de agosto e setembro. A vaga não é de funcionalidade nova: é de desenho em volta do que já existe, com número para mostrar.
                   </p>
                 </div>
               </div>
@@ -3011,36 +3252,36 @@ export default function App() {
             {/* Força de contexto */}
             <div className="flex items-center gap-2 mb-4">
               <div className="w-1.5 h-6 bg-gray-400 rounded-full" />
-              <h3 className="text-xl font-bold text-gray-900">Forças de contexto</h3>
+              <h3 className="text-xl font-bold text-navy-900">Forças de contexto</h3>
             </div>
-            <div className="bg-white rounded-2xl border-2 border-purple-100 p-6 md:p-8">
+            <div className="bg-white rounded-2xl border-2 border-azul-100 p-6 md:p-8">
               <p className="text-sm text-gray-600 mb-6 max-w-3xl">
                 Não disputam a venda para a escola e por isso ficam fora do mapa competitivo. Mudam outra coisa: o que a escola espera receber, quanto aceita pagar e o que passa a ser considerado normal antes de qualquer proposta chegar.
               </p>
               <div className="grid md:grid-cols-2 gap-5">
                 {[
                   {
-                    nome: "Reguladores brasileiros e estrangeiros",
-                    altera: "Regras competitivas",
-                    nota: "Duas jurisdições restringiram acesso por faixa etária na mesma semana. Deixou de ser risco distante e passou a ser variável de contrato, com desligamento de função entrando como requisito técnico."
-                  },
-                  {
-                    nome: "Google for Education",
-                    altera: "Economia da formação",
-                    nota: "Nova rodada de trilhas e certificação gratuitas para educadores em setembro. Ocupa a oferta no exato momento em que a formação continuada passou a ser obrigação da instituição."
+                    nome: "Opinião pública e imprensa",
+                    altera: "Comportamento e expectativa",
+                    nota: "Maioria nos EUA acha que a IA faz mais mal que bem na escola, e a expressão ilusão de aprendizagem entrou no vocabulário dos educadores. A objeção chega à escola brasileira antes de qualquer proposta, e vai pedir resultado, não funcionalidade."
                   },
                   {
                     nome: "OpenAI e Anthropic",
-                    altera: "Comportamento e expectativa",
-                    nota: "A trava de atalho e o modo de estudo ligados por padrão já definiram o que pais e escolas consideram uso responsável. A norma agora chancela esse piso — e ele foi definido fora do setor educacional."
+                    altera: "Economia da formação",
+                    nota: "Trilha para educadores com selo, programa de formadores e assistente docente vendido a redes. Formação genérica e certificada virou oferta gratuita de quem tem distribuição global, no momento em que a norma a tornou obrigatória."
                   },
                   {
-                    nome: "Inep",
-                    altera: "Precedente de avaliação em escala",
-                    nota: "Testava IA na correção da redação do ENEM antes da decisão do CNE. O que o instituto fizer a seguir vira referência prática de onde está a fronteira entre apoio e atribuição de nota."
+                    nome: "Pesquisa independente",
+                    altera: "Régua de evidência",
+                    nota: "Dois ensaios com milhares de alunos e um estudo de custo por ponto aprendido fixaram o que é um ganho crível e quanto ele pode custar. Qualquer promessa de fornecedor passa a ser comparada com esses números."
+                  },
+                  {
+                    nome: "Reguladores e redes",
+                    altera: "Regras competitivas",
+                    nota: "Los Angeles cortou a IA de todos os alunos e o parecer do CNE segue sem assinatura. O risco de contrato deixou de ser só a faixa etária: uma rede pode desligar tudo por desconfiança sobre a aprendizagem."
                   },
                 ].map((item, i) => (
-                  <div key={i} className="border-l-2 border-purple-200 pl-4">
+                  <div key={i} className="border-l-2 border-azul-200 pl-4">
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
                       <p className="font-semibold text-gray-900 text-sm">{item.nome}</p>
                       <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-gray-100 text-gray-600 uppercase tracking-wide">{item.altera}</span>
@@ -3063,12 +3304,12 @@ export default function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <Globe className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Benchmarks de Inovação</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <Globe className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Benchmarks de Inovação</span>
             </div>
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Não o que fizeram — <span className="text-[#6B46C1]">como fizeram</span>
+            <h2 className="text-4xl md:text-5xl text-navy-900 font-bold mb-4">
+              Não o que fizeram — <span className="text-azul-600">como fizeram</span>
             </h2>
             <p className="text-gray-600 mb-12 text-lg max-w-3xl">
               Cada caso destrinchado por problema, implantação, escala e aprendizado, separando o que dá para replicar aqui do que não dá.
@@ -3077,46 +3318,46 @@ export default function App() {
             <div className="grid lg:grid-cols-2 gap-6 items-start">
               {[
                 {
-                  empresa: "Poliedro — IA com autoria humana no centro e rastro auditável",
-                  pais: "Brasil · Operação editorial",
-                  categoria: "Conformidade por desenho",
-                  problema: "Ampliar a produção de conteúdo didático com IA sem perder o controle editorial nem a confiabilidade factual — e sem transferir a decisão pedagógica para a máquina.",
-                  implementacao: "O projeto foi construído por duas áreas em conjunto, Inovação & Aprendizagem e Produto Editorial, em vez de nascer como iniciativa isolada de tecnologia. A sequência foi prova de conceito, testes e validação humana antes de escalar, com a IA atuando no refinamento e a curadoria e as definições editoriais permanecendo sob responsabilidade de pessoas. A rastreabilidade da operação foi tratada como entregável do projeto, não como subproduto.",
-                  escala: "Áreas envolvidas somam quase 300 profissionais; 93% de assertividade registrada em tarefas como classificação de conteúdo e verificação de precisão factual.",
-                  financiamento: "Investimento interno, sem aporte externo declarado. O reconhecimento externo veio pela Premiação Impacto Brasil 2026, do Agile Trends, com terceiro lugar na categoria Escala.",
-                  aprendizado: "Medir assertividade antes de escalar é o que permitiu declarar um número. A decisão de manter o humano decidindo não foi tomada por causa da norma — foi tomada antes dela, e é isso que hoje se converte em vantagem: conformidade com histórico não se constrói depois.",
-                  limitacoes: "O indicador é de fase de validação, não de operação contínua em produção, e cobre tarefas específicas — classificação e checagem factual —, não a qualidade pedagógica do material final. Também não há dado público sobre efeito na aprendizagem do aluno.",
-                  replicavel: "A sequência prova de conceito, teste, validação humana e só então escala; e tratar rastreabilidade como entregável desde o início, o que torna a conformidade demonstrável.",
-                  naoReplicavel: "A escala de equipe editorial própria que sustenta curadoria humana em volume — é estrutura de grupo consolidado, não de time enxuto.",
-                  application: "É o modelo de referência para a adequação que a norma vai exigir, e está a um telefonema de distância. Para quem não tem 300 profissionais, o caminho é o mesmo em menor escala: definir o ponto de decisão humana, registrá-lo e medir assertividade antes de ampliar o uso."
+                  empresa: "Khanmigo — dois anos de ensaio randomizado em modo coach",
+                  pais: "Estados Unidos · Anos finais",
+                  categoria: "Evidência de efeito",
+                  problema: "Saber se um tutor de IA que não entrega a resposta melhora a aprendizagem em condição real de escola, por tempo suficiente para o efeito aparecer, e comparado com o que a mesma plataforma já fazia sem IA.",
+                  implementacao: "O ensaio sorteou escolas, e não alunos, para evitar contaminação dentro da mesma turma: 18 escolas de anos finais do Tennessee ao longo de dois anos letivos. O Khanmigo foi usado em modo coach, que conduz o aluno por perguntas em vez de responder. Além das notas, os pesquisadores analisaram o registro das conversas para ver como o tutor foi de fato usado.",
+                  escala: "18 escolas em dois anos. Ganho de cerca de 1,3 ponto percentil por período letivo (0,06 a 0,08 desvio-padrão por ano; 0,14 num ano completo de uso ativo). 96% dos alunos experimentaram; o aluno mediano mandou mensagem em um terço dos dias.",
+                  financiamento: "Pesquisa acadêmica independente publicada como working paper (EdWorkingPapers e NBER), com acesso aos dados de uso da plataforma.",
+                  aprendizado: "O efeito é real e pequeno, parecido com o do próprio Khan sem IA. O que o limita não é a qualidade da resposta, é o uso: muita conversa fora do assunto e pedido de resposta pronta, mesmo num tutor desenhado para não dar a resposta.",
+                  limitacoes: "É uma rede, uma plataforma e uma faixa etária. O working paper ainda não passou por revisão por pares, e o resultado vale para o modo coach, não para IA conversacional aberta.",
+                  replicavel: "Sortear por escola, rodar por pelo menos um ano, medir contra a mesma plataforma sem IA e ler o registro das conversas junto com as notas.",
+                  naoReplicavel: "O acesso a uma base de milhões de alunos e a um parceiro acadêmico com histórico em ensaios desse porte. Aqui, o equivalente teria de ser montado com uma rede parceira.",
+                  application: "É o desenho de estudo que dá para copiar em escala menor: uma rede, duas condições, um ano. E o dado mais útil não é a nota, é o registro de uso, que mostra onde o aluno foge da tarefa."
                 },
                 {
-                  empresa: "Nova York — como se operacionaliza uma moratória de IA",
+                  empresa: "NUMI em Hamilton County — IA combinada com domínio antes de avançar",
                   pais: "Estados Unidos · Rede pública",
-                  categoria: "Execução de restrição",
-                  problema: "Conter o uso de IA generativa por crianças e pré-adolescentes numa rede gigante onde dezenas de programas já autorizados traziam IA embutida — sem paralisar a operação escolar.",
-                  implementacao: "A medida não foi anunciada como proibição genérica. Veio com três mecanismos simultâneos: moratória por faixa (2-K ao 8º ano) com prazo definido de um ano letivo, desligamento ou descontinuidade dos componentes de IA de mais de 38 programas já autorizados que não atendessem aos novos padrões de segurança e supervisão, e substituição por formação — módulos semestrais de pensamento crítico sobre IA no ensino médio, mais pilotos limitados em poucas turmas para seguir aprendendo.",
-                  escala: "Cerca de 600 mil estudantes do 2-K ao 8º ano, quase dois terços da matrícula da maior rede pública dos Estados Unidos.",
-                  financiamento: "Recursos da própria rede, com a maior parte do custo recaindo sobre renegociação e reconfiguração de contratos existentes em vez de nova aquisição.",
-                  aprendizado: "O que faz a moratória funcionar não é o anúncio, é a capacidade de desligar função em contrato vigente. A rede tratou o inventário de programas autorizados como pré-condição — sem saber onde a IA estava embutida, a proibição seria apenas declaratória.",
-                  limitacoes: "É medida temporária de um ano sem substituto pedagógico definido para a faixa restringida, e concentra em pilotos pequenos o aprendizado que deveria orientar a decisão seguinte. Também não resolve o uso fora da escola, que segue livre.",
-                  replicavel: "O inventário de onde a IA está embutida nos contratos vigentes, e a exigência contratual de desligamento granular por faixa etária — aplicável a qualquer rede ou grupo brasileiro agora.",
-                  naoReplicavel: "O poder de compra concentrado que permite renegociar dezenas de contratos simultaneamente por decisão administrativa única.",
-                  application: "Com a vedação até o 5º ano aprovada aqui, toda rede brasileira vai precisar responder à mesma pergunta operacional: onde a IA está embutida e quem consegue desligá-la por série. Quem chegar com esse inventário e esse controle pronto resolve um problema que o cliente ainda não formulou."
+                  categoria: "Desenho pedagógico",
+                  problema: "Separar o efeito da IA do efeito do domínio obrigatório: o aluno aprende mais porque a IA ajuda, ou porque é obrigado a dominar o conteúdo antes de seguir?",
+                  implementacao: "O estudo comparou condições com e sem IA dentro de uma plataforma de prática com domínio obrigatório, em que o aluno só avança depois de acertar o suficiente. A IA atuava principalmente depois do erro, ajudando o aluno a entender o que errou antes de tentar de novo.",
+                  escala: "6.997 alunos. IA combinada a domínio obrigatório deu cerca de 3 pontos percentuais a mais. O ganho ficou concentrado no conteúdo praticado, e boa parte da vantagem tinha sumido uma semana depois.",
+                  financiamento: "Working paper acadêmico (EdWorkingPapers 26-1552) em parceria com a rede pública do condado.",
+                  aprendizado: "A IA deixou a prática mais lenta e melhorou a retomada depois do erro. O ganho vem da combinação: domínio obrigatório dá a estrutura, a IA dá a explicação no momento do erro.",
+                  limitacoes: "O efeito medido é de curto prazo e em parte não se sustenta. Não diz nada sobre transferência para conteúdo não praticado.",
+                  replicavel: "Pôr a IA onde o aluno erra, não onde ele começa, e exigir domínio antes de avançar. Medir de novo uma semana depois.",
+                  naoReplicavel: "A plataforma de domínio já pronta e calibrada por item. Sem banco de itens com dificuldade conhecida, o domínio obrigatório não funciona.",
+                  application: "O recado para produto é de posicionamento da IA dentro do fluxo: menos assistente de conversa aberta, mais explicador do erro dentro de uma trilha que não deixa o aluno pular etapa."
                 },
                 {
-                  empresa: "CNE — como a norma foi construída em cinco meses de tramitação",
-                  pais: "Brasil · Desenho regulatório",
-                  categoria: "Processo normativo",
-                  problema: "Regular IA em todos os níveis e modalidades de ensino sem congelar a tecnologia numa definição que envelheceria em meses, e sem deixar a escola sem critério prático.",
-                  implementacao: "A construção partiu de um referencial técnico publicado pelo MEC em abril, seguido de aprovação inicial no CNE em maio, consulta pública encerrada em 14 de junho, seminário em julho e votação final em plenário em 1º de setembro. A escolha de desenho foi regular por faixa de risco e por finalidade, não por tecnologia: em vez de listar ferramentas permitidas, o texto define o que uma aplicação pode ou não decidir sobre a trajetória do aluno. Como parâmetro internacional, adotou a recomendação da UNESCO que indica uso autônomo de IA apenas a partir dos 13 anos.",
-                  escala: "Alcança todos os níveis, etapas e modalidades da educação brasileira, pública e privada, com prazo de doze meses de adaptação a partir da homologação.",
-                  financiamento: "Processo institucional, sem custo direto ao setor privado — o custo aparece na adequação, que recai sobre instituições e fornecedores.",
-                  aprendizado: "Regular finalidade em vez de tecnologia é o que dá sobrevida à norma: modelo novo não a torna obsoleta, porque o que está vedado é a delegação da decisão, não o uso de uma ferramenta específica. A ancoragem em parâmetro internacional deu ao texto uma defesa pronta contra a acusação de excesso.",
-                  limitacoes: "A classificação por faixa de risco depende de interpretação caso a caso, e o texto não traz lista fechada de aplicações por nível — o que gera zona cinzenta justamente no risco moderado, onde está a maior parte dos produtos educacionais. A eficácia também segue condicionada à homologação, que ainda não veio.",
-                  replicavel: "A lógica de classificar o próprio portfólio por finalidade e por quem assina a decisão, em vez de por tecnologia empregada — é a forma mais rápida de descobrir a própria exposição.",
-                  naoReplicavel: "O tempo de tramitação: o setor privado não tem cinco meses de consulta antes de decidir o que fazer com o produto.",
-                  application: "A leitura mais útil aqui é de método, não de conteúdo: aplicar a mesma matriz internamente. Listar cada decisão que o produto toma sobre o aluno, classificar por faixa e identificar quem assina — esse exercício produz o mapa de conformidade que ainda ninguém publicou no país."
+                  empresa: "StudentBench — como medir custo por ponto aprendido",
+                  pais: "Estados Unidos · Método de avaliação",
+                  categoria: "Método",
+                  problema: "Comparar tutores de IA entre si e com tutoria humana por uma métrica que junte efeito e custo, em vez de comparar modelos por benchmark técnico.",
+                  implementacao: "Os participantes foram distribuídos entre tutores de IA com modelos diferentes e tutoria humana, estudando para o GRE com pré e pós-teste. O custo foi calculado por ponto percentual de ganho, usando o preço real de cada modelo e US$ 75 por hora para a tutoria humana.",
+                  escala: "2.383 participantes. Tutor de IA estatisticamente equivalente ao humano (p = 0,044 no teste de equivalência), a US$ 0,0052 por ponto contra US$ 4,81: 918 vezes menos. O mais barato foi o Gemma 4 31B, modelo aberto.",
+                  financiamento: "Handshake AI Research. Pré-print publicado no arXiv em setembro de 2026.",
+                  aprendizado: "Custo por ponto aprendido é calculável e muda a comparação de fornecedores. Entre os modelos testados, o mais caro não foi o que ensinou mais.",
+                  limitacoes: "Adultos, exame padronizado, intervenção curta, sem revisão por pares. Não vale como estimativa de efeito para a educação básica, e sim como método.",
+                  replicavel: "A métrica e o desenho: vários modelos atrás do mesmo desenho pedagógico, pré e pós-teste, custo real por ponto.",
+                  naoReplicavel: "O volume de participantes adultos recrutáveis online. Na educação básica, a amostra depende de rede parceira e consentimento.",
+                  application: "Usar o mesmo método para decidir o modelo do próprio produto: trocar o modelo mantendo o desenho e medir custo por ponto antes de renovar contrato."
                 },
               ].map((b, i) => (
                 <motion.div
@@ -3125,19 +3366,19 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white rounded-2xl p-6 md:p-8 border-2 border-purple-100 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white rounded-2xl p-6 md:p-8 border-2 border-azul-100 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-start justify-between mb-5 gap-4 flex-wrap">
                     <div className="flex items-start gap-4">
-                      <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Award className="w-5 h-5 text-[#6B46C1]" />
+                      <div className="w-11 h-11 bg-azul-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Award className="w-5 h-5 text-azul-600" />
                       </div>
                       <div>
                         <p className="font-bold text-gray-900 text-lg leading-snug">{b.empresa}</p>
                         <p className="text-xs text-gray-600 mt-0.5">{b.pais}</p>
                       </div>
                     </div>
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 whitespace-nowrap">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-azul-50 text-azul-700 whitespace-nowrap">
                       {b.categoria}
                     </span>
                   </div>
@@ -3156,7 +3397,7 @@ export default function App() {
                     ].map(bloco => (
                       <div key={bloco.label} className="bg-gray-50 rounded-xl p-4">
                         <p className="text-xs font-semibold text-gray-700 mb-1.5 flex items-center gap-1.5">
-                          <span className="text-[#6B46C1]">{bloco.icone}</span>
+                          <span className="text-azul-600">{bloco.icone}</span>
                           {bloco.label}
                         </p>
                         <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{bloco.valor}</p>
@@ -3180,8 +3421,8 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="bg-purple-50 rounded-xl p-4 border-l-4 border-[#6B46C1]">
-                    <p className="text-xs font-semibold text-purple-700 mb-1">Implicação para o nosso contexto</p>
+                  <div className="bg-azul-50 rounded-xl p-4 border-l-4 border-azul-600">
+                    <p className="text-xs font-semibold text-azul-700 mb-1">Implicação para o nosso contexto</p>
                     <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{b.application}</p>
                   </div>
                 </motion.div>
@@ -3192,7 +3433,7 @@ export default function App() {
       </section>
 
       {/* ── ACELERADORES DE IA ── */}
-      <section id="aceleradores" className="py-24 px-6 bg-purple-50/30">
+      <section id="aceleradores" className="py-24 px-6 bg-fundo-azul/70">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3201,108 +3442,108 @@ export default function App() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <Zap className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Aceleradores de IA</span>
+              <Zap className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Aceleradores de IA</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Capacidades que <span className="text-[#6B46C1]">encurtam o caminho</span>
+            <h2 className="text-4xl md:text-5xl text-navy-900 font-bold mb-4">
+              Capacidades que <span className="text-azul-600">encurtam o caminho</span>
             </h2>
             <p className="text-gray-600 mb-10 text-lg max-w-3xl">
-              O que já existe, em que estágio está e o que custa plugar — com limitações reais, dependências técnicas, cenário ideal de uso e o que muda para Produto e Engenharia. Nesta edição, o critério de seleção é o prazo de adequação.
+              O que já existe, em que estágio está e o que custa plugar — com limitações reais, dependências técnicas, cenário ideal de uso e o que muda para Produto e Engenharia. Nesta edição, o critério de seleção é o que os estudos associaram a ganho de aprendizagem.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  nome: "Registro de decisão pedagógica",
-                  tipo: "Trilha de auditoria",
-                  oque: "Log imutável de cada decisão que o produto toma ou sugere sobre um aluno, com quem validou, quando, com base em qual saída do modelo e qual foi a intervenção humana. É a peça que responde à exigência de supervisão humana contínua e de relatório nos usos classificados como alto risco.",
-                  acelera: "Converte conformidade de promessa em evidência exibível, e transforma o que hoje é risco jurídico em anexo de proposta comercial.",
-                  limitacoes: "Registrar não é supervisionar: se o professor apenas clica em confirmar, o log documenta uma validação que não aconteceu de fato. Também cria exposição — o rastro que prova conformidade prova descumprimento com a mesma clareza. E aumenta o atrito do fluxo justamente no momento em que o professor tem menos tempo.",
-                  dependencias: "Modelo de identidade por usuário, armazenamento append-only com retenção definida, versionamento do modelo e do prompt usados em cada decisão, e base legal sob a LGPD por envolver dado de menor associado a decisão automatizada.",
-                  cenario: "Qualquer fluxo em que a IA proponha nota, classificação, encaminhamento ou alerta sobre o aluno. Desnecessário em uso de baixo risco como organização de material e acessibilidade.",
-                  impactoProduto: "É o item que separa quem vai poder vender para rede pública e mantenedor daqui a doze meses de quem vai renegociar contrato. Não é diferencial: é licença para operar.",
-                  impactoEngenharia: "Decidir o esquema de evento antes de escrever a primeira feature nova — retrofit de trilha de auditoria exige reprocessar histórico que não foi gravado, ou seja, não exige, impossibilita.",
-                  maturidade: "A construir",
-                  cor: "bg-purple-100 text-purple-700",
-                  link: "https://g1.globo.com/educacao/noticia/2026/09/01/cne-para-uso-de-ia-em-escolas-e-universidades.ghtml",
-                  linkLabel: "A norma que exige"
-                },
-                {
-                  nome: "Matriz de classificação por faixa de risco",
-                  tipo: "Método de conformidade",
-                  oque: "Inventário de cada decisão automatizada do produto mapeada nas quatro faixas da norma — baixo, moderado, alto e excessivo —, com a finalidade declarada e o responsável pela validação em cada uma. Não é documento jurídico: é artefato de produto que orienta priorização.",
-                  acelera: "Substitui adequação por intuição por adequação por evidência, e revela em dias onde está a exposição real do portfólio — normalmente em lugares que ninguém suspeitava.",
-                  limitacoes: "A norma não traz lista fechada por nível, então a classificação depende de interpretação e pode ser contestada. A zona cinzenta se concentra no risco moderado, onde está a maior parte dos produtos educacionais. Classificar sem parecer jurídico dá direção, não segurança.",
-                  dependencias: "Levantamento completo das decisões automatizadas existentes, o que quase nunca está documentado; leitura conjunta de produto, pedagógico e jurídico; e revisão a cada novo recurso.",
-                  cenario: "Primeira ação de qualquer time antes de mexer em código. Aplicável integralmente hoje, sem depender da homologação.",
-                  impactoProduto: "É a lacuna mais barata de ocupar desta edição: nenhum player brasileiro publicou o próprio mapa, e quem publicar primeiro define o formato que os concorrentes terão de responder.",
-                  impactoEngenharia: "Custo próximo de zero em desenvolvimento e alto em tempo de gente sênior. O entregável é uma planilha viva, não um sistema.",
+                  nome: "Modelo aberto de porte médio",
+                  tipo: "Modelo base",
+                  oque: "Modelo de pesos abertos na faixa de 30 bilhões de parâmetros, que roda em infraestrutura própria ou em provedor de nuvem a custo por token muito menor que os modelos fechados de ponta. O StudentBench testou o Gemma 4 31B e ele foi o de menor custo por ponto aprendido.",
+                  acelera: "Tira o custo do modelo da conta do produto e dá controle sobre dado de aluno, versão e comportamento, sem depender da política de preço de um fornecedor.",
+                  limitacoes: "O resultado vem de um estudo com adultos, em inglês e num exame padronizado. O desempenho em português e com conteúdo da educação básica precisa ser testado antes de qualquer troca.",
+                  dependencias: "Infraestrutura de inferência (própria ou gerenciada), avaliação em português com o conteúdo adotado, e um desenho pedagógico que não dependa de capacidade exclusiva de modelo de ponta.",
+                  cenario: "Tutoria em prática estruturada, explicação do erro e geração de variação de exercício, onde o desenho restringe o que o modelo precisa fazer.",
+                  impactoProduto: "Permite competir por custo por aluno numa rede pública sem abrir mão de margem, e muda o argumento de venda do modelo que usamos para o resultado que entregamos.",
+                  impactoEngenharia: "Manter o produto independente de modelo: uma camada de abstração e uma bateria de avaliação que permita trocar o modelo em dias, não em meses.",
                   maturidade: "Disponível",
-                  cor: "bg-blue-100 text-blue-700",
-                  link: "https://www.spacemoney.com.br/economia/legislacao/cne-aprova-faixas-de-risco-para-ia-na-educacao",
-                  linkLabel: "As quatro faixas em detalhe"
+                  cor: "bg-azul-100 text-azul-700",
+                  link: "https://arxiv.org/abs/2609.28470",
+                  linkLabel: "O estudo de custo"
                 },
                 {
-                  nome: "Desligamento granular de função por série e rede",
-                  tipo: "Controle operacional",
-                  oque: "Capacidade de desativar recursos específicos de IA por faixa etária, série, turma ou rede inteira, remotamente e sem nova versão do produto. Foi o mecanismo que viabilizou a moratória em Nova York, onde mais de trinta programas já autorizados tiveram componentes de IA descontinuados ou desativados.",
-                  acelera: "Permite atender à vedação até o 5º ano sem retirar o produto do ar nem manter versões paralelas, e responde em horas a uma decisão de rede que hoje levaria um ciclo de release.",
-                  limitacoes: "Feature flag por si só não resolve: sem mapeamento de qual aluno está em qual série, o desligamento é grosseiro e derruba função de quem poderia usá-la. Depende de dado cadastral que muitas redes mantêm desatualizado, e cria matriz de estados difícil de testar.",
-                  dependencias: "Sistema de flags com escopo hierárquico por rede, escola, série e turma; integração confiável com o cadastro do aluno; e suíte de teste que cubra as combinações, sob pena de desligar o que não devia.",
-                  cenario: "Produtos com uso direto pelo estudante em faixas que atravessam o corte do 5º ano. Irrelevante em produto exclusivo de professor ou gestor.",
-                  impactoProduto: "Vira cláusula de contrato antes de virar requisito técnico: a rede vai perguntar se você consegue desligar por série, e a resposta define se o contrato é renovado.",
-                  impactoEngenharia: "O risco não está em criar a flag, está na explosão combinatória de estados. Modelar o escopo hierárquico desde o início evita reescrever o controle de acesso depois.",
-                  maturidade: "Emergente",
-                  cor: "bg-green-100 text-green-700",
-                  link: "https://www.chalkbeat.org/newyork/2026/09/02/nyc-schools-to-set-ai-policy-ban-screen-time-limits/",
-                  linkLabel: "Como Nova York executou"
-                },
-                {
-                  nome: "Validação humana documentada em correção objetiva",
+                  nome: "Domínio obrigatório antes de avançar",
                   tipo: "Padrão de fluxo",
-                  oque: "Fluxo em que a IA propõe a correção de item objetivo, o professor confirma ou ajusta e o sistema registra a conferência com autoria e horário. É exatamente a fronteira que a norma preservou: apoio permitido, resultado validado e documentado por pessoa.",
-                  acelera: "Mantém o ganho de tempo da correção automática — que é real e é a dor mais concreta do professor — sem cair na vedação de atribuição de nota por máquina.",
-                  limitacoes: "Se a confirmação for um botão único para a turma toda, o registro é formalmente válido e pedagogicamente vazio. Desenhar atrito suficiente para a conferência ser real, sem devolver ao professor o trabalho que a IA deveria poupar, é o problema difícil aqui — e não tem solução pronta.",
-                  dependencias: "Interface de revisão em lote com amostragem inteligente, destaque dos itens de baixa confiança do modelo, e registro por item e não por prova inteira.",
-                  cenario: "Simulados, avaliações objetivas e microtestes em escala. Não se aplica a texto autoral, onde a correção por IA está vedada em qualquer configuração.",
-                  impactoProduto: "É a única forma de manter a proposta de valor de correção automática dentro da regra — e quem oferecer isso pronto atende a um mercado que acabou de ficar sem alternativa conforme.",
-                  impactoEngenharia: "Exige calibração de confiança do modelo por item para a amostragem funcionar. Sem isso, a revisão vira aleatória e o professor perde a confiança no fluxo.",
+                  oque: "O aluno só segue para o próximo conteúdo depois de demonstrar domínio do atual, com itens de dificuldade conhecida e critério de acerto definido. É a estrutura em que a IA mostrou ganho no estudo de Hamilton County.",
+                  acelera: "Dá à IA um lugar certo no fluxo, o momento do erro, e impede o atalho por construção: não há como pular a etapa pedindo a resposta.",
+                  limitacoes: "Deixa a prática mais lenta, o que pode ser lido como pior experiência. E o ganho medido foi de curto prazo, concentrado no conteúdo praticado.",
+                  dependencias: "Banco de itens calibrado por dificuldade e alinhado à habilidade, critério de domínio por habilidade e mapa de pré-requisitos entre conteúdos.",
+                  cenario: "Matemática e conteúdos com progressão clara de pré-requisitos. Menos útil em produção textual e projetos abertos.",
+                  impactoProduto: "É o recurso que mais aproxima o produto do que a evidência premia, e o que menos aparece nos concorrentes: nenhum deles declara domínio obrigatório publicamente.",
+                  impactoEngenharia: "O trabalho está no conteúdo, não no código: calibrar itens e mapear pré-requisitos. O motor de regra é simples; o dado que o alimenta, não.",
+                  maturidade: "Disponível",
+                  cor: "bg-azul-100 text-azul-700",
+                  link: "https://hechingerreport.org/proof-points-ai-mastery-learning/",
+                  linkLabel: "O estudo de domínio"
+                },
+                {
+                  nome: "Explicação guiada depois do erro",
+                  tipo: "Padrão de interação",
+                  oque: "Quando o aluno erra, a IA não mostra a resposta certa: pergunta o raciocínio, aponta onde ele se desviou e pede uma nova tentativa. É o ponto do fluxo em que o estudo de Hamilton County mediu melhora.",
+                  acelera: "Concentra o custo de inferência onde ele gera aprendizagem e evita a conversa aberta, que é onde o aluno foge do assunto ou pede a resposta.",
+                  limitacoes: "O aluno ainda pode desistir ou chutar. Sem limite de tentativas e sem registro, a explicação vira mais um caminho para chegar à resposta.",
+                  dependencias: "Classificação do tipo de erro por item, instruções de sistema que proíbam a entrega da resposta e registro de cada tentativa.",
+                  cenario: "Exercícios com resposta verificável e erros típicos conhecidos. Complementa o domínio obrigatório.",
+                  impactoProduto: "Transforma o tira-dúvidas, hoje o recurso mais exposto à objeção de atalho, em explicação de erro, que é o uso que os estudos defendem.",
+                  impactoEngenharia: "Avaliar o comportamento do modelo com casos de aluno que insiste em pedir a resposta: é o teste que separa o desenho que se sustenta do que cede.",
                   maturidade: "Emergente",
                   cor: "bg-green-100 text-green-700",
-                  link: "https://olhardigital.com.br/2026/09/01/inteligencia-artificial/ia-nao-podera-mais-corrigir-provas-e-redacoes-nas-escolas-veja-o-que-muda",
-                  linkLabel: "O que segue permitido"
+                  link: "https://edworkingpapers.com/sites/default/files/ai26-1552.pdf",
+                  linkLabel: "O working paper"
                 },
                 {
-                  nome: "Telemetria de percurso de aprendizagem",
+                  nome: "Métrica de engajamento produtivo",
                   tipo: "Instrumentação",
-                  oque: "Captura do processo e não só do resultado — versões, tentativas, tempo entre ações, revisões. Registrado na edição anterior como resposta ao comportamento de terceirização, ganha nesta um segundo uso: é o insumo natural da avaliação de impacto que a norma passa a exigir nos usos de alto risco.",
-                  acelera: "Uma única instrumentação atende a dois propósitos que antes pareciam separados: evidência pedagógica de esforço e evidência regulatória de efeito.",
-                  limitacoes: "As mesmas da edição passada seguem valendo — indica padrão e não intenção, e só captura o que acontece dentro do seu editor. A novidade é uma tensão nova: dado de percurso é dado comportamental de menor, e a norma que pede avaliação de impacto também endurece a proteção de dados do estudante.",
-                  dependencias: "Editor próprio instrumentado, pipeline de eventos, série temporal por aluno e — agora com peso maior — base legal, minimização e política de retenção definidas antes da primeira coleta.",
-                  cenario: "Produção textual, resolução em etapas e projetos longos. Ideal onde já houver necessidade de demonstrar efeito para mantenedor ou rede.",
-                  impactoProduto: "Deixou de ser aposta de diferenciação e passou a ter comprador definido: quem precisar declarar avaliação de impacto vai precisar de linha de base, e ela não se constrói retroativamente.",
-                  impactoEngenharia: "Coletar menos e melhor: com dado de menor sob escrutínio maior, esquema enxuto e retenção curta valem mais que captura ampla que depois precisa ser expurgada.",
+                  oque: "Classificação automática de cada interação do aluno com a IA: trabalho na tarefa, pedido de resposta pronta, fuga do assunto. O ensaio do Khanmigo usou esse tipo de leitura para mostrar como o tutor era de fato usado.",
+                  acelera: "Dá ao professor e à rede a informação que o dado de uso esconde: não quantas vezes o aluno usou, mas se usou para pensar.",
+                  limitacoes: "A classificação é probabilística e erra. Serve para padrão de turma e de período, não para julgar um aluno individualmente, e nunca como base de punição.",
+                  dependencias: "Registro das conversas com política de retenção, classificador avaliado com amostra rotulada por educadores e painel por turma.",
+                  cenario: "Qualquer recurso de conversa com o aluno. Indispensável onde a rede precisa justificar o uso diante de conselho e famílias.",
+                  impactoProduto: "É a resposta direta à ilusão de aprendizagem: um número que mostra se o uso é produtivo. Nenhum player brasileiro divulga algo assim.",
+                  impactoEngenharia: "Tratar o classificador como produto, com conjunto de avaliação próprio e revisão periódica, e não como relatório gerado uma vez.",
                   maturidade: "A construir",
-                  cor: "bg-purple-100 text-purple-700",
-                  link: "https://cepr.org/publications/dp21577",
-                  linkLabel: "A evidência que originou"
+                  cor: "bg-azul-100 text-azul-700",
+                  link: "https://www.chalkbeat.org/2026/08/25/ai-tutoring-students-khanmigo-khan-academy-engagement-study/",
+                  linkLabel: "O que o ensaio mostrou"
                 },
                 {
-                  nome: "RAG sobre acervo autoral",
-                  tipo: "Arquitetura de contexto",
-                  oque: "A IA responde apenas a partir do conteúdo proprietário indexado. Padrão já consolidado entre os concorrentes diretos e que, com a norma, ganha um atributo novo: por não interferir em decisão acadêmica, tende a se enquadrar nas faixas de risco mais baixas.",
-                  acelera: "Resolve alinhamento curricular e confiabilidade de fonte sem treinar modelo próprio — e agora também simplifica a conversa de conformidade, porque apoio à organização de material é o exemplo típico de baixo risco.",
-                  limitacoes: "Resolve a procedência, não o uso: continua entregando resposta pronta a quem quer atalho. A classificação de risco também não é automática — o mesmo RAG vira risco moderado no instante em que passa a recomendar trilha ao aluno, e isso muda por configuração, não por código.",
-                  dependencias: "Pipeline de ingestão e fatiamento, banco vetorial, reindexação a cada atualização editorial e avaliação contínua de fidelidade à fonte.",
-                  cenario: "Tira-dúvidas ancorado no material adotado e apoio ao planejamento docente. Onde a resposta certa já existe no acervo.",
-                  impactoProduto: "Segue sendo custo de entrada e não diferencial. O que mudou é que agora é também a parte do portfólio que dá menos trabalho de adequar — vale saber disso ao priorizar.",
-                  impactoEngenharia: "O trabalho continua na curadoria e na avaliação, não no modelo. Acrescente ao pipeline o registro de qual versão do acervo respondeu o quê: é o que liga o RAG à trilha de auditoria.",
-                  maturidade: "Padrão de mercado",
-                  cor: "bg-blue-100 text-blue-700",
-                  link: "https://www.santillanaeducacao.com.br/solucoes-educacionais/solucoes-pedagogicas/moderna-core/",
-                  linkLabel: "Referência: Moderna Core"
+                  nome: "Linha de base de aprendizagem com grupo de comparação",
+                  tipo: "Método de avaliação",
+                  oque: "Estudo com uma rede parceira: turmas ou escolas com e sem o recurso de IA, mesmo material, pré e pós-teste, por pelo menos um período letivo, com o registro de uso analisado junto.",
+                  acelera: "Produz o único argumento que a objeção pública não derruba, e antecipa a avaliação de impacto que a norma vai exigir nos usos de alto risco.",
+                  limitacoes: "Leva pelo menos um semestre, exige consentimento e pode dar resultado pequeno ou nulo. Um resultado modesto e honesto vale mais que nenhum.",
+                  dependencias: "Rede parceira, desenho aprovado com antecedência, avaliação externa ou alinhada à BNCC e parceiro acadêmico para dar credibilidade.",
+                  cenario: "O recurso de IA que a empresa mais quer vender. Começar por um só, bem medido.",
+                  impactoProduto: "Sai do discurso de uso e entra no de resultado, num mercado em que nenhum concorrente acompanhado tem número publicado.",
+                  impactoEngenharia: "Garantir que o produto consiga ligar e desligar o recurso por turma e registrar exposição por aluno: sem isso, não há como comparar.",
+                  maturidade: "A construir",
+                  cor: "bg-azul-100 text-azul-700",
+                  link: "https://edworkingpapers.com/ai26-1551",
+                  linkLabel: "Um desenho de referência"
+                },
+                {
+                  nome: "Custo por ponto aprendido",
+                  tipo: "Métrica de negócio",
+                  oque: "Custo total do recurso (modelo, infraestrutura, suporte) dividido pelo ganho de aprendizagem medido. O StudentBench usou essa métrica para comparar modelos e tutoria humana.",
+                  acelera: "Liga a decisão técnica (qual modelo, quanto contexto) à decisão comercial (quanto cobrar, quanto entregar) numa só conta.",
+                  limitacoes: "Depende de ter o ganho medido, ou seja, da linha de base. Sem ela, a métrica é só o custo com outro nome.",
+                  dependencias: "Linha de base de aprendizagem, custo de inferência por aluno e por período, e um critério comum de ganho.",
+                  cenario: "Propostas para rede pública e renovações de contrato de modelo. Comparação interna entre versões do produto.",
+                  impactoProduto: "Muda a conversa de compra de preço por licença para aprendizagem por real gasto, onde o modelo barato e o desenho bom se somam.",
+                  impactoEngenharia: "Medir custo de inferência por aluno e por recurso desde já, mesmo antes de ter o ganho: é a metade da conta que depende só de nós.",
+                  maturidade: "Emergente",
+                  cor: "bg-green-100 text-green-700",
+                  link: "https://arxiv.org/abs/2609.28470",
+                  linkLabel: "A métrica no estudo"
                 },
               ].map((a, i) => (
                 <motion.div
@@ -3311,11 +3552,11 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="bg-white rounded-2xl border-2 border-purple-100 p-6 hover:border-[#6B46C1] hover:shadow-md transition-all flex flex-col"
+                  className="bg-white rounded-2xl border-2 border-azul-100 p-6 hover:border-azul-600 hover:shadow-md transition-all flex flex-col"
                 >
                   <div className="flex items-start justify-between mb-3 gap-3">
                     <div>
-                      <h3 className="font-bold text-gray-900 text-lg leading-snug">{a.nome}</h3>
+                      <h3 className="font-bold text-navy-900 text-lg leading-snug">{a.nome}</h3>
                       <p className="text-xs text-gray-600 font-medium mt-0.5">{a.tipo}</p>
                     </div>
                     <span className={`px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${a.cor}`}>
@@ -3325,7 +3566,7 @@ export default function App() {
                   <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-4">{a.oque}</p>
                   <div className="space-y-3 flex-1">
                     <div>
-                      <p className="text-xs font-semibold text-[#FF6B35] mb-1">O que acelera</p>
+                      <p className="text-xs font-semibold text-rosa-600 mb-1">O que acelera</p>
                       <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{a.acelera}</p>
                     </div>
                     <div className="bg-red-50/60 rounded-xl p-3 border border-red-100">
@@ -3341,12 +3582,12 @@ export default function App() {
                       <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{a.cenario}</p>
                     </div>
                     <div className="grid gap-2">
-                      <div className="bg-purple-50 rounded-xl p-3">
-                        <p className="text-xs font-semibold text-purple-700 mb-1">Impacto para Produto</p>
+                      <div className="bg-azul-50 rounded-xl p-3">
+                        <p className="text-xs font-semibold text-azul-700 mb-1">Impacto para Produto</p>
                         <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{a.impactoProduto}</p>
                       </div>
-                      <div className="bg-blue-50 rounded-xl p-3">
-                        <p className="text-xs font-semibold text-blue-700 mb-1">Impacto para Engenharia</p>
+                      <div className="bg-azul-50 rounded-xl p-3">
+                        <p className="text-xs font-semibold text-azul-700 mb-1">Impacto para Engenharia</p>
                         <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{a.impactoEngenharia}</p>
                       </div>
                     </div>
@@ -3355,7 +3596,7 @@ export default function App() {
                     href={a.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-purple-50 text-[#6B46C1] rounded-lg hover:bg-[#6B46C1] hover:text-white transition-all font-medium text-sm mt-4"
+                    className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-azul-50 text-azul-600 rounded-lg hover:bg-azul-600 hover:text-white transition-all font-medium text-sm mt-4"
                   >
                     <ExternalLink className="w-4 h-4" />
                     {a.linkLabel}
@@ -3376,29 +3617,29 @@ export default function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <BookOpen className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">O que os experts estão escrevendo</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <BookOpen className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">O que os experts estão escrevendo</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Validação e <span className="text-[#6B46C1]">contraponto</span>
+            <h2 className="text-4xl md:text-5xl text-navy-900 font-bold mb-4">
+              Validação e <span className="text-azul-600">contraponto</span>
             </h2>
             <p className="text-gray-600 mb-10 text-lg max-w-3xl">
               O que quem decide e quem estuda o tema concluiu sobre os movimentos desta edição — começando pelo que dizem em coro.
             </p>
 
             {/* Consenso dos especialistas */}
-            <div className="bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] rounded-2xl p-8 md:p-10 mb-12 text-white">
+            <div className="bg-gradient-to-br from-azul-600 to-navy-900 rounded-2xl p-8 md:p-10 mb-12 text-white">
               <div className="flex items-start gap-4 mb-6">
-                <img src={liaFooter} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <img src={radarIconeClaro} alt="" className="h-12 w-auto flex-shrink-0" />
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/15 rounded-full mb-3">
                     <Brain className="w-3.5 h-3.5" />
                     <span className="text-xs font-semibold uppercase tracking-wider">Consenso dos especialistas da quinzena</span>
                   </div>
                   <p className="text-lg md:text-xl font-semibold leading-relaxed">
-                    Reguladores brasileiros, gestores públicos estrangeiros e organismos multilaterais convergiram, sem coordenação entre si, na mesma fronteira: <span className="text-[#FFB89A]">a IA pode participar do processo, mas não pode assinar o resultado</span> — e quanto menor a idade, menor a autonomia admitida.
+                    Pesquisadores, educadores e as próprias big techs chegaram, cada um pelo seu caminho, ao mesmo ponto: <span className="text-amarelo-400">a IA ensina quando faz o aluno trabalhar, e o ganho vem do desenho, não do modelo</span>. O que ninguém disse, e nenhum estudo mostrou, é que o acesso à IA por si só melhora a aprendizagem.
                   </p>
                 </div>
               </div>
@@ -3406,16 +3647,16 @@ export default function App() {
               <div className="grid md:grid-cols-3 gap-5">
                 {[
                   {
-                    ponto: "A decisão avaliativa é indelegável",
-                    detalhe: "A formulação do relator do CNE — a palavra final sobre o desempenho cabe ao professor, não à máquina — é a mesma linha que separa risco moderado de alto risco no texto aprovado. Não é retórica de abertura: é o critério operacional da norma."
+                    ponto: "O efeito é pequeno, e isso o torna crível",
+                    detalhe: "Os dois ensaios de agosto mediram ganhos de poucos pontos percentis, parecidos com os de boas intervenções sem IA. É o primeiro número com grupo de comparação, e ele passa a ser a régua para qualquer promessa de fornecedor."
                   },
                   {
-                    ponto: "Idade define autonomia, e o corte ficou alto",
-                    detalhe: "O CNE veda uso autônomo até o 5º ano ancorado no parâmetro da UNESCO, que indica uso independente a partir dos 13 anos. Nova York foi além e suspendeu até o 8º. Três referências independentes apontando para a mesma faixa."
+                    ponto: "O atalho é o comportamento padrão",
+                    detalhe: "Mesmo num tutor desenhado para não dar a resposta, boa parte das conversas pediu a resposta ou fugiu do assunto. Os educadores chamam o resultado de ilusão de aprendizagem. O desenho precisa impedir o atalho, não só desencorajá-lo."
                   },
                   {
-                    ponto: "Conformidade se prova com rastro, não com política",
-                    detalhe: "Onde há alto risco, exige-se avaliação de impacto, relatório de dados e supervisão humana contínua. O que separa quem cumpre de quem declara cumprir é a existência de registro — e registro não é retroativo."
+                    ponto: "O professor decide, e isso virou padrão",
+                    detalhe: "A trilha da OpenAI para educadores e as habilidades do Claude for Teachers põem a IA para revisar e sugerir e o professor para decidir. É a mesma linha da norma do CNE, agora dita por quem tem distribuição global."
                   },
                 ].map((item, i) => (
                   <div key={i} className="bg-white/10 rounded-xl p-5 backdrop-blur-sm">
@@ -3429,34 +3670,34 @@ export default function App() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  autor: "Celso Niskier",
-                  cargo: "Relator do parecer · CNE",
-                  titulo: "A palavra final sobre o desempenho cabe ao professor, não à máquina",
-                  data: "1 set/2026",
-                  tese: "Ao sustentar o parecer em plenário, o relator firmou o princípio que organiza toda a norma: a IA pode apoiar o trabalho pedagógico em qualquer etapa, mas a responsabilidade pelo juízo sobre a trajetória do aluno permanece humana e não é transferível. É desse princípio que derivam as vedações concretas — correção de texto autoral, punição por detector e uso autônomo na infância.",
-                  importa: "Dá ao setor um critério único para interpretar casos que a norma não lista explicitamente. Diante de qualquer recurso novo, a pergunta deixa de ser se a lei permite e passa a ser quem assina o resultado.",
-                  relacao: "É a chave de leitura do Sinal 1 e o que explica por que a matriz de classificação por faixa de risco funciona como método: ela é a operacionalização desse princípio.",
-                  link: "https://www.spacemoney.com.br/economia/legislacao/cne-aprova-faixas-de-risco-para-ia-na-educacao"
+                  autor: "Philip Oreopoulos",
+                  cargo: "Economista · Universidade de Toronto",
+                  titulo: "O tutor ajuda quem usa, e a maioria usa pouco",
+                  data: "Ago/2026",
+                  tese: "No ensaio de dois anos com o Khanmigo, feito com Low, o efeito sobre a aprendizagem ficou em torno de 1,3 ponto percentil por período letivo, próximo do que a plataforma obtém sem IA. A leitura dos autores vai além da nota: quase todos os alunos experimentaram, mas o uso foi esparso, e muitas conversas saíram do assunto ou pediram a resposta. O limite do tutor está no engajamento, não na qualidade da resposta.",
+                  importa: "Tira a discussão do campo da capacidade do modelo e a põe no do comportamento do aluno. Melhorar o modelo não resolve um problema que é de uso.",
+                  relacao: "Sustenta o Sinal 1 e é a base da métrica de engajamento produtivo entre os aceleradores: sem medir o uso, não dá para saber por que o efeito é pequeno.",
+                  link: "https://edworkingpapers.com/ai26-1551"
                 },
                 {
-                  autor: "UNESCO",
-                  cargo: "Parâmetro internacional adotado pelo CNE",
-                  titulo: "Uso autônomo de ferramentas de IA apenas a partir dos 13 anos",
-                  data: "Referência do parecer",
-                  tese: "A recomendação da organização, usada como referência internacional na construção do parecer brasileiro, estabelece um limiar de idade para uso independente de IA. O parecer do CNE a adota como âncora ao vedar o uso autônomo até o 5º ano, admitindo a tecnologia nessa faixa apenas em atividade conduzida e mediada pelo professor.",
-                  importa: "Blinda a norma brasileira contra a acusação de excesso regulatório: a restrição por idade não é invenção local, é aplicação de parâmetro multilateral já existente. Isso reduz a chance de reversão na homologação.",
-                  relacao: "Sustenta a leitura do Sinal 2 sobre convergência entre jurisdições e é o argumento que torna a restrição por faixa etária um tema estrutural, e não um acontecimento isolado.",
-                  link: "https://blog.emy.education/cne-2026-inteligencia-artificial-ies/"
+                  autor: "Educadores ouvidos pelo Washington Post",
+                  cargo: "Professores e gestores escolares dos EUA",
+                  titulo: "É a ilusão de aprendizagem",
+                  data: "22 set/2026",
+                  tese: "Na reportagem, educadores descrevem alunos que entregam trabalhos melhores e mais rápidos com a IA e, nas avaliações sem ela, mostram que aprenderam menos. O problema apontado não é a cola no sentido tradicional: é o aluno acreditar que aprendeu porque a tarefa ficou pronta.",
+                  importa: "Dá nome ao que os ensaios mediram de outro ângulo, e o nome pega. A expressão tende a chegar ao debate brasileiro antes dos dados, e vai ser usada contra qualquer IA na escola, sem distinção de desenho.",
+                  relacao: "Explica o Sinal 3, a virada da opinião pública, e é a objeção que a métrica de engajamento produtivo e a linha de base de aprendizagem existem para responder.",
+                  link: "https://www.washingtonpost.com/education/2026/09/22/its-illusion-learning-how-some-educators-say-ai-is-hurting-students/"
                 },
                 {
-                  autor: "Zohran Mamdani",
-                  cargo: "Prefeito de Nova York",
-                  titulo: "Desligar os componentes de IA de mais de 38 programas já autorizados",
-                  data: "2 set/2026",
-                  tese: "Ao anunciar a moratória, o prefeito não a apresentou como proibição de uso, e sim como revisão de padrões: os programas já contratados que não atenderem aos novos critérios de segurança e supervisão terão seus componentes de IA descontinuados ou desativados. A restrição foi formulada como consequência de um padrão, não como veto a uma tecnologia.",
-                  importa: "Mostra o mecanismo real de aplicação de uma restrição em escala — e ele é contratual, não pedagógico. Quem fornece precisa responder tecnicamente por algo que antes era pergunta de compliance.",
-                  relacao: "É o que transforma o acelerador de desligamento granular em requisito concreto e não em hipótese: existe precedente de uma rede exigindo isso de dezenas de fornecedores ao mesmo tempo.",
-                  link: "https://www.k12dive.com/news/new-york-city-pauses-ai-use-for-elementary-middle-school-students/829496/"
+                  autor: "Proof Points · Hechinger Report",
+                  cargo: "Coluna de evidência em educação",
+                  titulo: "A vantagem da IA com domínio foi real, e curta",
+                  data: "Ago/2026",
+                  tese: "A coluna apresentou o estudo de Hamilton County, com quase 7 mil alunos: a IA combinada a domínio obrigatório antes de avançar rendeu cerca de 3 pontos percentuais a mais, concentrados no conteúdo praticado, e boa parte da vantagem tinha sumido uma semana depois. A IA deixou a prática mais lenta e melhorou a recuperação depois do erro.",
+                  importa: "Mostra onde pôr a IA no fluxo, no momento do erro e dentro de uma trilha que não deixa pular etapa, e também o limite: ganho que não é retomado não se sustenta.",
+                  relacao: "Fundamenta os aceleradores de domínio obrigatório e de explicação guiada depois do erro, e a oportunidade de tutor com retomada.",
+                  link: "https://hechingerreport.org/proof-points-ai-mastery-learning/"
                 },
               ].map((e, i) => (
                 <motion.div
@@ -3476,18 +3717,18 @@ export default function App() {
                       <Calendar className="w-3 h-3" /> {e.data}
                     </span>
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-3 leading-snug">{e.titulo}</h3>
+                  <h3 className="font-semibold text-navy-900 mb-3 leading-snug">{e.titulo}</h3>
                   <div className="space-y-3 flex-1">
                     <div>
-                      <p className="text-xs font-semibold text-purple-700 mb-1">Tese central</p>
+                      <p className="text-xs font-semibold text-azul-700 mb-1">Tese central</p>
                       <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{e.tese}</p>
                     </div>
                     <div>
                       <p className="text-xs font-semibold text-gray-600 mb-1">Por que importa</p>
                       <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{e.importa}</p>
                     </div>
-                    <div className="bg-purple-50 rounded-xl p-3">
-                      <p className="text-xs font-semibold text-orange-700 mb-1">Relação com os sinais desta edição</p>
+                    <div className="bg-azul-50 rounded-xl p-3">
+                      <p className="text-xs font-semibold text-ambar-700 mb-1">Relação com os sinais desta edição</p>
                       <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{e.relacao}</p>
                     </div>
                   </div>
@@ -3495,7 +3736,7 @@ export default function App() {
                     href={e.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-purple-50 text-[#6B46C1] rounded-lg hover:bg-[#6B46C1] hover:text-white transition-all font-medium text-sm mt-4"
+                    className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-azul-50 text-azul-600 rounded-lg hover:bg-azul-600 hover:text-white transition-all font-medium text-sm mt-4"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Ver fonte
@@ -3508,7 +3749,7 @@ export default function App() {
       </section>
 
       {/* ── ANÁLISE ESTRATÉGICA ── */}
-      <section id="analise" className="py-24 px-6 bg-purple-50/30">
+      <section id="analise" className="py-24 px-6 bg-fundo-azul/70">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3517,23 +3758,23 @@ export default function App() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <Target className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Análise Estratégica</span>
+              <Target className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Análise Estratégica</span>
             </div>
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Diferenciação vs <span className="text-[#6B46C1]">Commodity</span>
+            <h2 className="text-4xl md:text-5xl text-navy-900 font-bold mb-4">
+              Diferenciação vs <span className="text-azul-600">Commodity</span>
             </h2>
             <p className="text-gray-600 mb-10 text-lg max-w-3xl">
-              Onde parou de haver vantagem e onde ainda existe algo difícil de copiar. Nesta edição, uma linha saiu do tabuleiro inteiro — deixou de ser commodity para virar proibição.
+              Onde parou de haver vantagem e onde ainda existe algo difícil de copiar. Nesta edição, o próprio modelo de IA desceu para o lado da commodity.
             </p>
 
-            <div className="bg-white rounded-2xl border-2 border-[#FF6B35] p-6 mb-8">
+            <div className="bg-white rounded-2xl border-2 border-rosa-600 p-6 mb-8">
               <div className="flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-[#FF6B35] flex-shrink-0 mt-0.5" />
+                <AlertCircle className="w-5 h-5 text-rosa-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-gray-900 mb-1">A mudança de lado desta edição</p>
                   <p className="text-sm md:text-xs text-gray-600 leading-relaxed">
-                    <strong>Correção automática de texto autoral</strong> não migrou de diferencial para commodity: saiu da tabela. Deixou de ser uma capacidade com valor decrescente e passou a ser finalidade vedada em todas as etapas do ensino. É a primeira vez que este radar registra uma categoria de produto encerrada por norma, e não por concorrência.
+                    <strong>O modelo de IA</strong> deixou de ser diferencial. Um modelo aberto de porte médio empatou com a tutoria humana a um custo por ponto aprendido centenas de vezes menor, e os ensaios mostraram que o que muda o resultado é o desenho em volta dele. A vantagem que era vendida como "usamos o melhor modelo" passou para "provamos que o aluno aprende".
                   </p>
                 </div>
               </div>
@@ -3547,19 +3788,19 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   {[
-                    { item: "Correção automática de redação e prova dissertativa", motivo: "Não é mais commodity: é finalidade vedada em qualquer etapa. Quem vendia isso tem prazo para trocar a peça que decide", novo: true },
-                    { item: "Detector de IA como prova de autoria", motivo: "Perdeu força probatória por norma: nenhuma punição pode se fundamentar apenas nele. Vira sinal para conversa, não evidência para sanção", novo: true },
-                    { item: "Tutor autônomo para os anos iniciais", motivo: "Mercado fechado por decisão administrativa em duas jurisdições na mesma semana. Só sobrevive como instrumento do professor", novo: true },
-                    { item: "Mediação genérica do uso", motivo: "Já era default de plataforma na edição passada; agora é também piso normativo. Duplamente commodity" },
-                    { item: "Chat ancorado no conteúdo próprio", motivo: "Padrão consolidado entre todos os concorrentes diretos. Paridade aqui continua não gerando vantagem" },
-                    { item: "Política de uso como documento", motivo: "Vira obrigação com prazo. Ter o PDF deixa de diferenciar no instante em que todos precisam ter o seu" },
+                    { item: "O modelo de IA em si", motivo: "O aberto de porte médio empatou com a tutoria humana no StudentBench, a custo muito menor. Escolher o modelo virou decisão de custo, não de posicionamento", novo: true },
+                    { item: "Tira-dúvidas e resumo para o aluno", motivo: "Todos oferecem, e é o formato que a objeção pública associa à ilusão de aprendizagem. Além de não diferenciar, passou a expor", novo: true },
+                    { item: "Formação docente genérica em IA", motivo: "Trilha certificada e programa de formadores gratuitos de quem tem distribuição global. Concorrer com isso por preço não faz sentido", novo: true },
+                    { item: "Métrica de uso da IA", motivo: "Quantos alunos usaram e quantas vezes deixou de convencer depois que o ensaio mostrou uso esparso e muita fuga da tarefa. Número de uso sem qualidade de uso não sustenta mais nada" },
+                    { item: "Humano no laço como discurso", motivo: "Virou a linha oficial das big techs e da norma. Dizer que o professor decide é o piso; mostrar onde ele decidiu é que ainda separa" },
+                    { item: "Chat ancorado no conteúdo próprio", motivo: "Padrão entre todos os concorrentes diretos, como já registrado. Melhora a precisão da resposta, não o esforço do aluno" },
                   ].map((c, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-red-400 mt-0.5 flex-shrink-0">▸</span>
                       <div>
                         <p className="font-semibold text-gray-900 text-sm flex items-center gap-2 flex-wrap">
                           {c.item}
-                          {c.novo && <span className="px-1.5 py-0.5 rounded-full text-[11px] font-bold bg-[#FF6B35] text-white uppercase tracking-wide">Mudou nesta edição</span>}
+                          {c.novo && <span className="px-1.5 py-0.5 rounded-full text-[11px] font-bold bg-rosa-600 text-white uppercase tracking-wide">Mudou nesta edição</span>}
                         </p>
                         <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{c.motivo}</p>
                       </div>
@@ -3575,12 +3816,12 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   {[
-                    { item: "Rastro de decisão com histórico", motivo: "A norma pede supervisão contínua e relatório no alto risco. Quem já registra pode provar; quem começar agora prova daqui a um ano — e isso não se compra", novo: true },
-                    { item: "Conformidade demonstrável como peça comercial", motivo: "Mapa próprio de classificação por faixa de risco publicado antes dos concorrentes define o formato que eles terão de responder", novo: true },
-                    { item: "Desligamento granular por série e rede", motivo: "Vira condição de permanência em contrato, não só de venda. Precedente já existe em rede com centenas de milhares de alunos", novo: true },
-                    { item: "Curadoria humana em escala", motivo: "Manter decisão editorial humana em volume exige estrutura de gente que não se contrata em um ciclo — é a barreira mais difícil de vencer desta lista" },
-                    { item: "Evidência de efeito na própria base", motivo: "Avaliação de impacto passa a ser exigível. Linha de base não é construída retroativamente, então quem não começou já está atrasado" },
-                    { item: "Relação institucional com rede e mantenedor", motivo: "Com prazo correndo, a rede procura quem já está dentro para resolver adequação — a confiança acumulada rende mais agora do que rendia antes" },
+                    { item: "Domínio obrigatório com explicação do erro", motivo: "É o desenho associado a ganho no estudo de Hamilton County, e nenhum concorrente acompanhado o declara publicamente. Depende de banco de itens calibrado, que não se monta em um ciclo", novo: true },
+                    { item: "Número próprio de aprendizagem", motivo: "Nenhum player brasileiro tem estudo com grupo de comparação publicado. O primeiro a ter, mesmo com efeito modesto, define a régua e responde à objeção pública", novo: true },
+                    { item: "Medida de engajamento produtivo", motivo: "Separar uso para pensar de uso como atalho é o que permite defender o produto diante do conselho e da família. Ninguém divulga isso ainda", novo: true },
+                    { item: "Custo por ponto aprendido", motivo: "Numa rede pública, vender aprendizagem por real gasto muda a comparação de propostas. Exige ter as duas metades da conta, e quase ninguém tem nenhuma" },
+                    { item: "Formação docente ancorada no material adotado", motivo: "A única faixa de formação que o catálogo global não cobre: o professor praticando a decisão no próprio material e na política da própria rede" },
+                    { item: "Acervo próprio com itens calibrados", motivo: "O modelo virou insumo; o conteúdo estruturado para domínio, não. É o ativo que um grupo editorial tem e uma big tech não" },
                   ].map((d, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-green-500 mt-0.5 flex-shrink-0">▸</span>
@@ -3609,31 +3850,31 @@ export default function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <AlertCircle className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Hype vs Tendência Real</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <AlertCircle className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Hype vs Tendência Real</span>
             </div>
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Força e maturidade <span className="text-[#6B46C1]">do movimento</span>
+            <h2 className="text-4xl md:text-5xl text-navy-900 font-bold mb-4">
+              Força e maturidade <span className="text-azul-600">do movimento</span>
             </h2>
             <p className="text-gray-600 mb-10 text-lg max-w-3xl">
               Quanto discurso existe em relação à evidência disponível — e se o movimento já é forte o bastante para mover roadmap.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-orange-50 rounded-2xl p-7 border border-orange-100">
-                <p className="font-bold text-orange-700 mb-2 text-sm uppercase tracking-wide flex items-center gap-2">
+              <div className="bg-ambar-50 rounded-2xl p-7 border border-ambar-100">
+                <p className="font-bold text-ambar-700 mb-2 text-sm uppercase tracking-wide flex items-center gap-2">
                   <AlertCircle className="w-4 h-4" /> Superestimado
                 </p>
-                <p className="text-[11px] text-orange-700 mb-5 font-medium">Muito discurso, evidência ausente ou contrária</p>
+                <p className="text-[11px] text-ambar-700 mb-5 font-medium">Muito discurso, evidência ausente ou contrária</p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "A norma proíbe IA na escola", desc: "É a leitura que circulou mais e a mais errada. O texto mantém permitido o apoio à organização de material, acessibilidade, tradução, planejamento de aula e até correção de prova objetiva com validação humana. O que se veda é a delegação da decisão, não o uso." },
-                    { titulo: "Doze meses é prazo confortável", desc: "O relógio só começa na homologação, mas o que precisa ser feito não é ajuste de interface: é instrumentar registro de decisão, o que exige definir esquema de evento antes de escrever a próxima feature. Quem tratar como projeto do mês dez descobre que trilha de auditoria não é retroativa." },
-                    { titulo: "Detector de IA resolvido é problema resolvido", desc: "A norma retirou o poder punitivo do detector, e isso foi lido como fim da questão da autoria. Não é: o problema de saber quem escreveu continua inteiro, apenas ficou sem o atalho técnico que nunca funcionou bem." },
+                    { titulo: "A IA vai transformar a aprendizagem", desc: "Os primeiros ensaios rigorosos mediram ganhos de poucos pontos percentis, parecidos com os de boas intervenções sem IA, e parte do ganho some em uma semana. A transformação prometida não aparece nos dados; o que aparece é uma melhora modesta que depende do desenho." },
+                    { titulo: "O público rejeita a IA na escola", desc: "A pesquisa mede uma impressão geral, sem separar a IA que responde da IA que faz trabalhar. Ler o resultado como rejeição a qualquer uso leva a cortar também o que funciona, que foi o que Los Angeles fez." },
+                    { titulo: "Tutor de IA substitui o professor", desc: "O StudentBench comparou IA e tutoria individual com adultos numa preparação para exame, não IA e professor em sala. E todos os estudos da quinzena põem o professor ou a estrutura pedagógica como condição do ganho." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <span className="text-orange-400 mt-1 flex-shrink-0">▸</span>
+                      <span className="text-ambar-400 mt-1 flex-shrink-0">▸</span>
                       <div>
                         <p className="font-semibold text-gray-900 text-sm mb-1">{item.titulo}</p>
                         <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
@@ -3643,19 +3884,19 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="bg-purple-50 rounded-2xl p-7 border border-purple-200">
-                <p className="font-bold text-purple-700 mb-2 text-sm uppercase tracking-wide flex items-center gap-2">
+              <div className="bg-azul-50 rounded-2xl p-7 border border-azul-200">
+                <p className="font-bold text-azul-700 mb-2 text-sm uppercase tracking-wide flex items-center gap-2">
                   <TrendingUp className="w-4 h-4" /> Emergente
                 </p>
-                <p className="text-[11px] text-purple-700 mb-5 font-medium">Sinal real, cedo demais para conclusão firme</p>
+                <p className="text-[11px] text-azul-700 mb-5 font-medium">Sinal real, cedo demais para conclusão firme</p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "Conformidade como argumento de venda", desc: "A lógica é sólida e o precedente de desligamento contratual existe, mas nenhum player brasileiro testou isso numa mesa de compra ainda — e sem homologação, o comprador pode legitimamente esperar. Forte para começar a construir, cedo para prometer retorno." },
-                    { titulo: "Restrição de acesso por faixa etária como padrão global", desc: "Duas jurisdições grandes na mesma semana, ancoradas no mesmo parâmetro multilateral. É convergência real, mas ainda são dois casos: falta ver se outras redes seguem ou se o corte por idade recua na prática." },
-                    { titulo: "Consolidação editorial por função regulada", desc: "Comprar plataforma de avaliação no mês em que avaliação virou regulada pode ser leitura estratégica precisa ou coincidência de calendário. Uma transação não estabelece padrão — vale acompanhar se outros grupos se movem na mesma direção." },
+                    { titulo: "Modelo aberto barato como padrão do setor", desc: "Um estudo sólido, mas com adultos, em inglês e sem revisão por pares. É forte o suficiente para testar agora e cedo para migrar o produto inteiro sem avaliação própria em português." },
+                    { titulo: "A objeção pública chegando ao Brasil", desc: "Os dados são americanos e a opinião brasileira sobre o tema não foi medida na janela. A tendência é de a discussão chegar, mas não se sabe com que força nem em que prazo." },
+                    { titulo: "Big tech como formadora oficial do professor", desc: "Trilha com selo e programa de formadores são um passo claro, mas ainda sem adesão medida no Brasil nem reconhecimento por redes ou pela norma como formação válida." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <span className="text-purple-400 mt-1 flex-shrink-0">▸</span>
+                      <span className="text-azul-400 mt-1 flex-shrink-0">▸</span>
                       <div>
                         <p className="font-semibold text-gray-900 text-sm mb-1">{item.titulo}</p>
                         <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
@@ -3665,20 +3906,20 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="bg-blue-50 rounded-2xl p-7 border border-blue-100">
-                <p className="font-bold text-blue-700 mb-2 text-sm uppercase tracking-wide flex items-center gap-2">
+              <div className="bg-azul-50 rounded-2xl p-7 border border-azul-100">
+                <p className="font-bold text-azul-700 mb-2 text-sm uppercase tracking-wide flex items-center gap-2">
                   <CheckCircle className="w-4 h-4" /> Tendência real
                 </p>
-                <p className="text-[11px] text-blue-700 mb-5 font-medium">Evidência convergente, já move roadmap</p>
+                <p className="text-[11px] text-azul-700 mb-5 font-medium">Evidência convergente, já move roadmap</p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "A decisão sobre o aluno é indelegável", desc: "Três edições subindo de camada e agora com força normativa, princípio declarado pelo relator e convergência com parâmetro internacional. Deixou de ser posição pedagógica e virou critério de arquitetura com consequência jurídica." },
-                    { titulo: "Rastro de decisão como infraestrutura", desc: "A norma pede supervisão contínua e relatório no alto risco, e a única forma de atender é registrar. Não é tendência de mercado: é requisito com prazo, e o custo de começar tarde é estrutural." },
-                    { titulo: "Formação docente como obrigação institucional", desc: "Quatro edições de escalada e agora dever legal nas licenciaturas e na formação continuada, com a oferta gratuita já capturada por quem vem de fora do setor. A escola perdeu a opção de não formar." },
-                    { titulo: "Regulação por finalidade, não por tecnologia", desc: "A escolha de desenho do CNE — regular o que a aplicação pode decidir, e não qual ferramenta usar — dá sobrevida à norma diante de modelo novo. É o método que outras jurisdições tendem a copiar." },
+                    { titulo: "O ganho vem do desenho, não do acesso", desc: "Três estudos independentes, com desenhos diferentes, chegaram ao mesmo ponto: onde o aluno pode pegar o atalho, pega, e o ganho aparece quando a estrutura obriga a trabalhar. Já move roadmap." },
+                    { titulo: "Evidência de aprendizagem como condição de venda", desc: "Cinco edições de escalada, agora com números de referência publicados e uma objeção pública que vai pedir resultado. Quem não tiver linha de base vai responder com intenção." },
+                    { titulo: "O professor decide", desc: "Norma brasileira, big techs e estudos apontam para o mesmo lugar. Deixou de ser posição pedagógica e virou a arquitetura esperada de qualquer produto." },
+                    { titulo: "O modelo como insumo", desc: "Custo por ponto aprendido centenas de vezes menor com modelo aberto, e mediação de uso já no piso desde a edição #10. A camada do modelo não sustenta mais diferença de preço." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <span className="text-blue-400 mt-1 flex-shrink-0">▸</span>
+                      <span className="text-azul-400 mt-1 flex-shrink-0">▸</span>
                       <div>
                         <p className="font-semibold text-gray-900 text-sm mb-1">{item.titulo}</p>
                         <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
@@ -3689,13 +3930,13 @@ export default function App() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 border-2 border-purple-200">
+            <div className="bg-white rounded-2xl p-8 border-2 border-azul-200">
               <div className="flex items-center gap-3 mb-4">
-                <Brain className="w-5 h-5 text-[#6B46C1]" />
+                <Brain className="w-5 h-5 text-azul-600" />
                 <p className="font-bold text-gray-900">O padrão desta quinzena</p>
               </div>
               <p className="text-gray-700 leading-relaxed md:columns-2 md:gap-10">
-                O setor passou cinco edições esperando uma regra que parecia não chegar, e quando chegou não fez o que se temia. Não proibiu a tecnologia nem a liberou com ressalvas vagas: recortou por finalidade e devolveu ao professor a assinatura da decisão sobre o aluno. Quem lia a regulação como risco de restrição errou o alvo — o risco real era o oposto, é de ter construído produto que decide sozinho. E há uma ironia útil aqui: a arquitetura que a norma acabou de exigir é a mesma que um par direto brasileiro escolheu por conta própria antes de existir regra, e foi premiado por isso. A conformidade que vai valer na mesa de compra não é a que se declara em doze meses; é a que já tem histórico. O relógio começa na homologação, mas a vantagem começou a ser construída antes dela.
+                A quinzena juntou duas notícias que parecem opostas e não são. O público americano virou contra a IA na escola, e os primeiros estudos rigorosos mostraram que ela ensina. As duas coisas são verdade para IAs diferentes: a que entrega a resposta produz a ilusão de aprendizagem que os educadores descrevem, e a que obriga o aluno a trabalhar produz um ganho pequeno e mensurável. Ao mesmo tempo, o modelo que faz isso ficou barato o bastante para deixar de ser vantagem. O que sobra para competir é o desenho pedagógico, a prova de que ele funciona e o professor no lugar de quem decide. O mercado brasileiro ainda não tem nenhum número próprio. Quando a objeção chegar aqui, quem tiver um vai ser o único com resposta.
               </p>
             </div>
           </motion.div>
@@ -3705,7 +3946,7 @@ export default function App() {
       )}
 
       {/* ── OPORTUNIDADES DE PRODUTO ── */}
-      <section id="oportunidades" className="py-24 px-6 bg-purple-50/30">
+      <section id="oportunidades" className="py-24 px-6 bg-fundo-azul/70">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -3714,12 +3955,12 @@ export default function App() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-              <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Prioridades Estratégicas</span>
+              <Lightbulb className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Prioridades Estratégicas</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              O que isso muda no <span className="text-[#6B46C1]">nosso produto</span>
+            <h2 className="text-4xl md:text-5xl text-navy-900 font-bold mb-4">
+              O que isso muda no <span className="text-azul-600">nosso produto</span>
             </h2>
             <p className="text-gray-600 mb-4 text-lg max-w-3xl">
               O que os sinais desta quinzena mudam, na prática, para o nosso roadmap.
@@ -3728,11 +3969,11 @@ export default function App() {
             {/* Legenda prioridade */}
             <div className="flex items-center gap-6 mb-10 flex-wrap">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-[#6B46C1]" />
+                <div className="w-3 h-3 rounded-full bg-azul-600" />
                 <span className="text-sm text-gray-600"><strong>Alta</strong> — janela estreita, agir agora</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-[#FF6B35]" />
+                <div className="w-3 h-3 rounded-full bg-rosa-600" />
                 <span className="text-sm text-gray-600"><strong>Média</strong> — posicionar nos próximos ciclos</span>
               </div>
               <div className="flex items-center gap-2">
@@ -3744,94 +3985,94 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  rastreio: "Sinal 1",
-                  sinal: "A norma exige supervisão humana contínua e relatório nos usos de alto risco, e proíbe a máquina de assinar avaliação e punição",
-                  problema: "Nossos fluxos em que a IA propõe nota, classificação ou alerta não registram quem validou, com base em quê e quando. Sem esse registro, não há como demonstrar conformidade — e o rastro não é reconstituível depois.",
-                  oportunidade: "Registro de decisão pedagógica como infraestrutura",
-                  impacto: "Log imutável de cada decisão sobre o aluno, com autoria da validação, versão do modelo e intervenção humana. Deixa de ser diferencial e passa a ser licença para operar em rede pública e mantenedor — mas quem tiver primeiro tem histórico, e histórico é a única conformidade que não se improvisa.",
-                  professor: "Ganha respaldo documentado quando sua decisão divergir da sugestão da máquina.",
-                  aluno: "Passa a ter direito verificável a uma decisão humana sobre sua trajetória, não apenas prometida.",
-                  gestor: "Tem o que apresentar em auditoria e em processo de compra, no lugar de declaração de intenção.",
-                  roadmapItem: "Definir esquema de evento antes da próxima feature; retrofit é impossível, não apenas caro.",
+                  rastreio: "Sinais 1 e 3 · ausência registrada",
+                  sinal: "O ensaio do Khanmigo mostrou uso esparso e muita conversa fora da tarefa, e os educadores americanos passaram a falar em ilusão de aprendizagem",
+                  problema: "Medimos quantos alunos usam a IA e quantas vezes, mas não se usam para pensar ou para pegar atalho. É exatamente o número que não responde à objeção que está chegando.",
+                  oportunidade: "Engajamento produtivo no painel do professor",
+                  impacto: "Classificação de cada interação do aluno com a IA (trabalho na tarefa, pedido de resposta, fuga do assunto), mostrada por turma e por período. Transforma o dado de uso em dado de qualidade de uso, que é o que conselho, família e comprador vão pedir. Nenhum player brasileiro divulga isso.",
+                  professor: "Vê quem está usando a IA para pensar e quem está só pedindo a resposta, e intervém a tempo.",
+                  aluno: "Recebe acompanhamento sobre como usa a ferramenta, não só sobre o que acerta.",
+                  gestor: "Tem um número para defender o uso da IA diante do conselho e das famílias.",
+                  roadmapItem: "Registrar as conversas com política de retenção desde já e montar um conjunto de avaliação rotulado por educadores antes de treinar o classificador.",
                   prioridade: "Alta",
-                  cor: "border-[#6B46C1]",
-                  corBadge: "bg-[#6B46C1] text-white",
-                  area: "Produto / Engenharia"
-                },
-                {
-                  rastreio: "Sinal 1 e ausência registrada",
-                  sinal: "A norma classifica aplicações em quatro faixas de risco e nenhum player brasileiro publicou onde seus próprios produtos se encaixam",
-                  problema: "Não sabemos qual é a nossa exposição real. Sem o inventário das decisões automatizadas por faixa, a adequação vira reação a interpretação de terceiro.",
-                  oportunidade: "Mapa próprio de conformidade, publicado antes dos pares",
-                  impacto: "Inventário de cada decisão automatizada, classificada por finalidade e por quem assina. Custo próximo de zero em desenvolvimento e alto em tempo sênior — e quem publica primeiro define o formato de resposta que os concorrentes terão de adotar. É a lacuna mais barata desta edição.",
-                  professor: "Passa a saber, por recurso, o que o sistema decide e o que depende dele.",
-                  aluno: "Efeito indireto: transparência sobre onde há decisão automatizada na sua trajetória.",
-                  gestor: "Recebe do fornecedor o documento que ele mesmo teria de produzir para a rede.",
-                  roadmapItem: "Exercício conjunto de produto, pedagógico e jurídico nesta janela; independe da homologação.",
-                  prioridade: "Alta",
-                  cor: "border-[#6B46C1]",
-                  corBadge: "bg-[#6B46C1] text-white",
-                  area: "Produto / Compliance"
+                  cor: "border-azul-600",
+                  corBadge: "bg-azul-600 text-white",
+                  area: "Produto / Dados"
                 },
                 {
                   rastreio: "Sinais 1 e 2",
-                  sinal: "Uso autônomo vedado até o 5º ano aqui, moratória até o 8º em Nova York com desligamento de função em mais de 38 programas já autorizados",
-                  problema: "Se uma rede nos pedir amanhã para desativar IA apenas nos anos iniciais, não temos controle granular para fazer isso sem tirar função de quem pode usá-la.",
-                  oportunidade: "Desligamento de função por série, turma e rede",
-                  impacto: "Controle hierárquico remoto, sem nova versão. Vira condição de permanência em contrato, não só de venda — o precedente de uma rede exigindo isso de dezenas de fornecedores simultaneamente já existe. Resolve um problema que o cliente brasileiro ainda não formulou, mas vai formular.",
-                  professor: "Mantém acesso às funções da sua etapa sem ser afetado por restrição de outra faixa.",
-                  aluno: "Tem a proteção da norma aplicada de fato, e não por retirada geral do recurso.",
-                  gestor: "Cumpre a vedação sem suspender o contrato inteiro nem gerenciar exceções manualmente.",
-                  roadmapItem: "Flags com escopo hierárquico e integração confiável ao cadastro do aluno; testar a matriz de estados.",
+                  sinal: "A IA com domínio obrigatório antes de avançar deu cerca de 3 pontos a mais, principalmente na recuperação depois do erro, e o modelo aberto barato empatou com o tutor humano",
+                  problema: "Nosso recurso de apoio ao aluno funciona como conversa aberta. O aluno pode pedir a resposta e seguir adiante, que é o formato que os estudos associam a atalho.",
+                  oportunidade: "Tutor de retomada do erro dentro de trilha com domínio",
+                  impacto: "A IA entra no momento do erro, pergunta o raciocínio e pede nova tentativa, dentro de uma trilha em que o aluno só avança depois de dominar a habilidade. Põe a IA no único ponto do fluxo em que a evidência mostrou ganho, e com modelo aberto o custo por aluno cabe no orçamento público.",
+                  professor: "Recebe relatório de quais erros cada aluno cometeu e retomou, em vez de só a nota final.",
+                  aluno: "Não consegue pular etapa pedindo a resposta, e recebe explicação quando mais precisa dela.",
+                  gestor: "Compra um desenho que tem evidência externa por trás, e não uma promessa de personalização.",
+                  roadmapItem: "Começar pelo banco de itens: calibrar dificuldade e mapear pré-requisitos por habilidade da BNCC em uma disciplina e uma série.",
                   prioridade: "Alta",
-                  cor: "border-[#6B46C1]",
-                  corBadge: "bg-[#6B46C1] text-white",
-                  area: "Engenharia / Contratos"
+                  cor: "border-azul-600",
+                  corBadge: "bg-azul-600 text-white",
+                  area: "Produto / Conteúdo"
                 },
                 {
-                  rastreio: "Sinais 1 e 3",
-                  sinal: "Correção de prova objetiva segue permitida como apoio, desde que a validação humana seja documentada — e um grupo editorial acabou de comprar capacidade de avaliação por IA",
-                  problema: "Correção automática resolve a dor mais concreta do professor e é justamente onde a norma traçou a linha. Sem fluxo de conferência registrável, o ganho de tempo vira risco de conformidade.",
-                  oportunidade: "Fluxo de validação humana que não devolve o trabalho ao professor",
-                  impacto: "Revisão em lote com amostragem guiada pela confiança do modelo, destaque dos itens duvidosos e registro por item. Preserva a proposta de valor da correção automática dentro da regra — e atende a um mercado que acabou de ficar sem alternativa conforme.",
-                  professor: "Confere o que importa em vez de tudo, e o sistema registra que ele conferiu.",
-                  aluno: "Nota objetiva revisada por pessoa, com rastro de quem revisou.",
-                  gestor: "Mantém o ganho operacional da correção em escala sem expor a instituição.",
-                  roadmapItem: "Calibrar confiança por item antes de desenhar a amostragem; sem isso a revisão vira aleatória.",
-                  prioridade: "Média",
-                  cor: "border-[#FF6B35]",
-                  corBadge: "bg-[#FF6B35] text-white",
-                  area: "Produto / Avaliação"
+                  rastreio: "Sinal 3 · ausência recorrente",
+                  sinal: "Nenhuma rede, sistema de ensino ou plataforma brasileira tem estudo com grupo de comparação publicado, enquanto os EUA publicaram dois ensaios com milhares de alunos em um mês",
+                  problema: "Terceira edição com a mesma ausência. Na edição passada esta prioridade era Baixa; com a objeção pública virando maioria nos EUA e números de referência publicados, o custo de não ter dado próprio subiu.",
+                  oportunidade: "Linha de base de aprendizagem com uma rede parceira",
+                  impacto: "Um recurso de IA, uma rede, duas condições, pelo menos um período letivo, com o registro de uso analisado junto das notas e um parceiro acadêmico. Um resultado modesto e honesto já seria o primeiro número do mercado brasileiro, e o único argumento que a objeção pública não derruba.",
+                  professor: "Participa de uma pesquisa que legitima a prática, em vez de ser alvo de medição externa.",
+                  aluno: "Usa recursos que passam a ser ajustados com dado da própria rede.",
+                  gestor: "Tem resultado para apresentar quando a pergunta \"funciona?\" chegar, e o relatório de impacto que a norma vai exigir.",
+                  roadmapItem: "Fechar rede parceira e desenho neste semestre, e garantir no produto o ligar e desligar por turma e o registro de exposição por aluno.",
+                  prioridade: "Alta",
+                  cor: "border-azul-600",
+                  corBadge: "bg-azul-600 text-white",
+                  area: "Evidência / Pesquisa"
                 },
                 {
                   rastreio: "Sinal 5",
-                  sinal: "A norma cria dever de formação continuada e de conteúdo de IA nas licenciaturas, enquanto a oferta gratuita já está capturada por quem vem de fora do setor",
-                  problema: "A escola passou a ser obrigada a formar e vai formar com quem estiver disponível. Catálogo gratuito e genérico resolve o custo dela e não cria nenhum vínculo com o nosso material.",
-                  oportunidade: "Formação certificada ancorada no material adotado e na política da rede",
-                  impacto: "Trilha gerada a partir do livro e da política que a escola configurou, com certificação que o mantenedor reconhece para cumprir a obrigação. É a lacuna que o catálogo gratuito estruturalmente não cobre, porque ele não conhece o currículo adotado.",
-                  professor: "Aprende a usar IA no material que ele efetivamente adota, não em exemplo genérico.",
-                  aluno: "Depende de professor formado para ter qualquer acesso mediado nos anos iniciais.",
-                  gestor: "Cumpre o dever de formação com evidência aceitável e sem montar programa próprio.",
-                  roadmapItem: "Vincular certificação à política configurada da rede — é o que transforma formação em retenção.",
+                  sinal: "Rede estadual usa IA para corrigir redação com retorno imediato ao aluno, enquanto o parecer que veda IA para dar nota a redação espera homologação",
+                  problema: "Nossos recursos de apoio à escrita não separam com clareza o que é devolutiva formativa e o que é nota. Quando a norma entrar em vigor, a fronteira vai ser cobrada funcionalidade por funcionalidade.",
+                  oportunidade: "Devolutiva formativa separada de atribuição de nota",
+                  impacto: "A IA devolve o retorno sobre o texto na hora, o que a evidência associa à retomada do erro, e a nota fica sempre com o professor, com o registro de quem validou. Mantém o valor da correção dentro da regra e dá ao produto uma posição clara enquanto a imprensa ainda diverge.",
+                  professor: "Continua dono da nota e ganha tempo com a devolutiva preliminar.",
+                  aluno: "Recebe retorno imediato para reescrever antes da avaliação.",
+                  gestor: "Sabe exatamente de que lado da norma está cada funcionalidade que contrata.",
+                  roadmapItem: "Separar no modelo de dados devolutiva de nota e exigir validação humana registrada para qualquer nota em texto autoral.",
                   prioridade: "Média",
-                  cor: "border-[#FF6B35]",
-                  corBadge: "bg-[#FF6B35] text-white",
-                  area: "Formação / Comercial"
+                  cor: "border-rosa-600",
+                  corBadge: "bg-rosa-600 text-white",
+                  area: "Produto / Avaliação"
                 },
                 {
-                  rastreio: "Sinal 1 e ausência recorrente",
-                  sinal: "Avaliação de impacto passa a ser exigível no alto risco, e nenhuma instituição brasileira anunciou estudo de efeito sobre a própria base — segunda edição com a mesma ausência",
-                  problema: "Quando a norma vigorar, quem não tiver linha de base não terá o que declarar. Coorte não se constrói retroativamente, e o prazo de doze meses não é suficiente para gerar série histórica.",
-                  oportunidade: "Linha de base própria para avaliação de impacto",
-                  impacto: "Definir coorte, consentimento e medição inicial agora, com parceria acadêmica independente. Cumpre a exigência futura e produz o ativo que nenhuma big tech consegue gerar sobre o contexto da escola brasileira. O custo de atraso aqui não é financeiro, é de impossibilidade.",
-                  professor: "Participa de pesquisa que legitima a prática, em vez de ser objeto de medição externa.",
-                  aluno: "Intervenções passam a ser calibradas por dado da própria rede.",
-                  gestor: "Tem o que apresentar quando o relatório de impacto for cobrado.",
-                  roadmapItem: "Fechar desenho metodológico e consentimento neste semestre; cada mês sem coleta é histórico perdido.",
+                  rastreio: "Sinal 2",
+                  sinal: "Um modelo aberto de porte médio teve o menor custo por ponto aprendido, 918 vezes abaixo da tutoria humana, num estudo com 2.383 participantes",
+                  problema: "O produto está preso a um fornecedor de modelo, e trocar exigiria reescrever instruções e fluxos. Não temos avaliação própria que diga se um modelo mais barato entregaria o mesmo em português.",
+                  oportunidade: "Produto independente de modelo, com teste de modelo aberto",
+                  impacto: "Uma camada de abstração de modelo e uma bateria de avaliação em português, com o nosso conteúdo, que permita trocar de modelo em dias. Reduz custo, dá controle sobre dado de aluno e tira o produto da política de preço de um só fornecedor.",
+                  professor: "Efeito indireto: nenhuma mudança visível, se a troca for bem avaliada.",
+                  aluno: "Efeito indireto: dado pessoal que pode ficar em infraestrutura sob controle da empresa.",
+                  gestor: "Pode receber proposta com custo por aluno menor, sem perda de qualidade medida.",
+                  roadmapItem: "Montar a bateria de avaliação em português antes de qualquer migração; sem ela, a troca é aposta.",
+                  prioridade: "Média",
+                  cor: "border-rosa-600",
+                  corBadge: "bg-rosa-600 text-white",
+                  area: "Engenharia"
+                },
+                {
+                  rastreio: "Sinal 2 · ausência registrada",
+                  sinal: "O StudentBench mostrou que custo por ponto aprendido é calculável e varia centenas de vezes entre alternativas, e nenhum fornecedor brasileiro vende por resultado",
+                  problema: "Nossas propostas comparam preço de licença por aluno. Não temos nenhuma das duas metades da conta: custo de inferência por aluno e ganho medido.",
+                  oportunidade: "Custo por ponto aprendido como métrica de produto e de venda",
+                  impacto: "Começar pela metade que depende só de nós, o custo por aluno e por recurso, e juntar o ganho quando a linha de base existir. Muda a conversa com a rede pública de preço para aprendizagem por real gasto.",
+                  professor: "Efeito indireto: os recursos que mais ensinam por real gasto passam a ser priorizados.",
+                  aluno: "Efeito indireto: o investimento vai para o que funciona.",
+                  gestor: "Compara propostas pelo que importa, com um número que ele consegue defender no orçamento.",
+                  roadmapItem: "Instrumentar custo de inferência por aluno e por recurso já; depende da linha de base para virar métrica completa.",
                   prioridade: "Baixa",
                   cor: "border-gray-200",
                   corBadge: "bg-gray-200 text-gray-700",
-                  area: "Evidência / Pesquisa"
+                  area: "Negócio / Dados"
                 },
               ].map((item, idx) => (
                 <motion.div
@@ -3864,11 +4105,11 @@ export default function App() {
                     <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.problema}</p>
                   </div>
 
-                  <h3 className="font-bold text-gray-900 mb-2 text-base leading-snug">{item.oportunidade}</h3>
+                  <h3 className="font-bold text-navy-900 mb-2 text-base leading-snug">{item.oportunidade}</h3>
                   <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-4">{item.impacto}</p>
 
-                  <div className="border-l-2 border-[#FF6B35] pl-4 space-y-2 mb-5">
-                    <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#FF6B35]">Impacto esperado</p>
+                  <div className="border-l-2 border-rosa-600 pl-4 space-y-2 mb-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-rosa-600">Impacto esperado</p>
                     {[
                       { label: 'Professor', valor: item.professor },
                       { label: 'Aluno', valor: item.aluno },
@@ -3880,8 +4121,8 @@ export default function App() {
                     ))}
                   </div>
 
-                  <div className="border-l-2 border-[#6B46C1] pl-4 mt-auto">
-                    <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-[#6B46C1]">Implicação para roadmap</p>
+                  <div className="border-l-2 border-lilas-500 pl-4 mt-auto">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-lilas-600">Implicação para roadmap</p>
                     <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.roadmapItem}</p>
                   </div>
                 </motion.div>
@@ -3893,9 +4134,9 @@ export default function App() {
       </section>
       {/* ── SAÍDA DA LEITURA EXECUTIVA ── */}
       {modoExecutivo && (
-        <section className="pb-20 px-6 bg-purple-50/30">
+        <section className="pb-20 px-6 bg-azul-50/30">
           <div className="max-w-3xl mx-auto">
-            <div className="bg-white rounded-2xl border-2 border-purple-100 p-7 text-center">
+            <div className="bg-white rounded-2xl border-2 border-azul-100 p-7 text-center">
               <p className="font-bold text-gray-900 mb-2">Fim da leitura executiva</p>
               <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-5">
                 Nove seções ficaram de fora: as evidências por trás de cada conclusão, o mapa competitivo, o que não aconteceu, os casos de fora e o que já dá para plugar no roadmap.
@@ -3905,7 +4146,7 @@ export default function App() {
                   setModoLeitura('completa');
                   setTimeout(() => scrollToSection('movimentos'), 80);
                 }}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#6B46C1] text-white rounded-lg font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
               >
                 <LayoutList className="w-4 h-4" />
                 Ler a edição completa
@@ -3924,36 +4165,66 @@ export default function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-              <BookOpen className="w-4 h-4 text-[#6B46C1]" />
-              <span className="text-sm text-[#6B46C1] font-medium">Arquivo</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <BookOpen className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Arquivo</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
-              Edições <span className="text-[#6B46C1]">Anteriores</span>
+            <h2 className="text-4xl md:text-5xl text-navy-900 font-bold mb-4">
+              Edições <span className="text-azul-600">Anteriores</span>
             </h2>
             <p className="text-gray-600 mb-12">
               Biblioteca viva do RADAR — histórico contínuo de inteligência estratégica
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+              {/* Card Setembro 2026 · Ed. #11 */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
+                    <p className="text-sm text-gray-700">Setembro de 2026 · Ed. #11</p>
+                  </div>
+                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-azul-600" />
+                  </div>
+                </div>
+                <h3 className="font-bold text-navy-900 mb-3">
+                  A regra saiu, e ela não proíbe a IA: proíbe delegar a decisão sobre o aluno
+                </h3>
+                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
+                  O CNE aprovou as diretrizes em 1º de setembro e Nova York suspendeu IA generativa até o 8º ano no dia seguinte. A régua passou a ser quem assina a decisão.
+                </p>
+                <button
+                  onClick={() => goToEdicao('edicao-setembro-2026')}
+                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
+                >
+                  Abrir edição
+                </button>
+              </motion.div>
+
               {/* Card Agosto 2026 · Ed. #10 */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-[#6B46C1] hover:shadow-md transition-all"
+                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Agosto de 2026 · Ed. #10</p>
                   </div>
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-[#6B46C1]" />
+                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-azul-600" />
                   </div>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-3">
+                <h3 className="font-bold text-navy-900 mb-3">
                   A mediação pedagógica deixou de ser reserva de valor e virou default da plataforma
                 </h3>
                 <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
@@ -3961,7 +4232,7 @@ export default function App() {
                 </p>
                 <button
                   onClick={() => goToEdicao('edicao-agosto-2026-b')}
-                  className="w-full px-4 py-2 bg-[#6B46C1] text-white rounded-lg font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
                 >
                   Abrir edição
                 </button>
@@ -3972,18 +4243,18 @@ export default function App() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-[#6B46C1] hover:shadow-md transition-all"
+                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Agosto de 2026 · Ed. #09</p>
                   </div>
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-[#6B46C1]" />
+                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-azul-600" />
                   </div>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-3">
+                <h3 className="font-bold text-navy-900 mb-3">
                   A home virou o produto: a disputa saiu do conteúdo e foi para a camada que decide
                 </h3>
                 <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
@@ -3991,7 +4262,7 @@ export default function App() {
                 </p>
                 <button
                   onClick={() => goToEdicao('edicao-agosto-2026')}
-                  className="w-full px-4 py-2 bg-[#6B46C1] text-white rounded-lg font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
                 >
                   Abrir edição
                 </button>
@@ -4002,18 +4273,18 @@ export default function App() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-[#6B46C1] hover:shadow-md transition-all"
+                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Julho de 2026 · Ed. #08</p>
                   </div>
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-[#6B46C1]" />
+                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-azul-600" />
                   </div>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-3">
+                <h3 className="font-bold text-navy-900 mb-3">
                   A era dos anúncios acabou: consolidação — quem não constrói capacidade, compra
                 </h3>
                 <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
@@ -4021,7 +4292,7 @@ export default function App() {
                 </p>
                 <button
                   onClick={() => goToEdicao('edicao-julho-2026')}
-                  className="w-full px-4 py-2 bg-[#6B46C1] text-white rounded-lg font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
                 >
                   Abrir edição
                 </button>
@@ -4032,18 +4303,18 @@ export default function App() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-[#6B46C1] hover:shadow-md transition-all"
+                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Junho de 2026 · Ed. #07</p>
                   </div>
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-[#6B46C1]" />
+                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-azul-600" />
                   </div>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-3">
+                <h3 className="font-bold text-navy-900 mb-3">
                   O Gemini entrou direto no ENEM: a batalha é pelo estudante dentro do exame
                 </h3>
                 <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
@@ -4051,7 +4322,7 @@ export default function App() {
                 </p>
                 <button
                   onClick={() => goToEdicao('edicao-junho-2026-b')}
-                  className="w-full px-4 py-2 bg-[#6B46C1] text-white rounded-lg font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
                 >
                   Abrir edição
                 </button>
@@ -4062,18 +4333,18 @@ export default function App() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-[#6B46C1] hover:shadow-md transition-all"
+                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Junho de 2026</p>
                   </div>
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-[#6B46C1]" />
+                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-azul-600" />
                   </div>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-3">
+                <h3 className="font-bold text-navy-900 mb-3">
                   O Brasil no ponto de inflexão: IA virou objeto de regulação, capital e escala
                 </h3>
                 <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
@@ -4081,7 +4352,7 @@ export default function App() {
                 </p>
                 <button
                   onClick={() => goToEdicao('edicao-junho-2026')}
-                  className="w-full px-4 py-2 bg-[#6B46C1] text-white rounded-lg font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
                 >
                   Abrir edição
                 </button>
@@ -4093,18 +4364,18 @@ export default function App() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-[#6B46C1] hover:shadow-md transition-all"
+                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Maio de 2026</p>
                   </div>
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-[#6B46C1]" />
+                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-azul-600" />
                   </div>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-3">
+                <h3 className="font-bold text-navy-900 mb-3">
                   A próxima disputa não será pela melhor funcionalidade
                 </h3>
                 <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
@@ -4112,7 +4383,7 @@ export default function App() {
                 </p>
                 <button
                   onClick={() => goToEdicao('edicao-maio-2026')}
-                  className="w-full px-4 py-2 bg-[#6B46C1] text-white rounded-lg font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
                 >
                   Abrir edição
                 </button>
@@ -4124,18 +4395,18 @@ export default function App() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-[#6B46C1] hover:shadow-md transition-all"
+                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
                     <p className="text-sm text-gray-700">Abril de 2026</p>
                   </div>
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-[#6B46C1]" />
+                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-azul-600" />
                   </div>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-3">
+                <h3 className="font-bold text-navy-900 mb-3">
                   MEC abre sandbox para testar IA na educação
                 </h3>
                 <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
@@ -4143,7 +4414,7 @@ export default function App() {
                 </p>
                 <button
                   onClick={() => goToEdicao('edicao-abril-2026')}
-                  className="w-full px-4 py-2 bg-[#6B46C1] text-white rounded-lg font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
+                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
                 >
                   Abrir edição
                 </button>
@@ -4154,40 +4425,33 @@ export default function App() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="py-16 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
-        <div className="max-w-6xl mx-auto text-center">
+      <footer className="relative overflow-hidden bg-navy-900 text-white">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
           >
-            <div className="flex justify-center mb-5">
-              <img
-                src={liaFooter}
-                alt="Lia — mascote do RADAR"
-                className="h-20 md:h-24 w-auto drop-shadow-lg"
-              />
-            </div>
-
-            <h3 className="text-xl md:text-2xl font-bold mb-1 tracking-wide">
-              RADAR
-            </h3>
-            <p className="text-white/70 text-sm md:text-base mb-1 font-medium">
+            <img src={radarLogoClaro} alt="Radar" className="h-10 md:h-11 w-auto mx-auto mb-5" />
+            <p className="text-white/80 text-sm md:text-base font-medium mb-1">
               Inteligência Estratégica de IA na Educação
             </p>
-            <p className="text-white/50 text-xs mb-6">
+            <p className="text-white/60 text-xs mb-7">
               Sinais · Padrões · Riscos · Oportunidades para produtos educacionais
             </p>
 
-            <p className="text-white/85 text-sm md:text-xs leading-relaxed max-w-[68ch] mx-auto mb-8">
+            <p className="text-white/80 text-sm md:text-xs leading-relaxed max-w-[68ch] mx-auto mb-10">
               O RADAR é um sistema contínuo de inteligência estratégica que transforma movimentos de mercado, concorrência, pesquisa, tecnologia e regulação em sinais, padrões, riscos e oportunidades para produtos educacionais.
             </p>
 
-            <div className="pt-6 border-t border-white/15 space-y-1.5">
-              <p className="text-white/60 text-sm">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
-              <p className="text-white/50 text-sm">Hub de IA — Iônica &amp; FTD Com Você</p>
-              <p className="text-white/30 text-xs mt-2">Setembro de 2026 · Edição #11 · 25 ago – 10 set</p>
+            <div className="pt-8 border-t border-white/15 flex flex-col items-center gap-4">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/60">Uma publicação do</span>
+              <img src={hubLogoClaro} alt="Hub de IA, Produto e Experiência" className="h-11 md:h-12 w-auto" />
+              <div className="space-y-1 mt-2">
+                <p className="text-white/70 text-sm">Curadoria e análise: <span className="text-white font-medium">Silvana Helena</span></p>
+                <p className="text-white/60 text-xs tabular-nums">Setembro de 2026 · Edição #12 · 11 – 28 set</p>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -4199,7 +4463,7 @@ export default function App() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 w-10 h-10 md:w-12 md:h-12 bg-[#FF6B35] hover:bg-[#FF8C5A] text-white rounded-full shadow-lg hover:shadow-xl transition-all z-40 flex items-center justify-center"
+          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 w-11 h-11 md:w-12 md:h-12 bg-rosa-600 hover:bg-rosa-700 active:scale-[0.96] text-white rounded-full shadow-[0_8px_20px_-6px_rgba(225,29,118,0.55)] transition-[background-color,scale] duration-150 z-40 flex items-center justify-center"
           aria-label="Voltar ao topo"
         >
           <ChevronUp className="w-5 h-5 md:w-6 md:h-6" />

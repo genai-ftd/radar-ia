@@ -18,28 +18,25 @@ IMPORTANTE:
 IDENTIDADE VISUAL
 ==================================================
 
+PUBLICADO POR: Hub de IA, Produto e Experiência (nome do time desde a edição #12).
+
 MANTER:
-- marca principal “RADAR”
+- marca principal “RADAR” (logo em src/imports/radar-logo.png; versão clara para fundo navy em radar-logo-claro.png)
+- assinatura do Hub no header e no rodapé (hub-logo.png / hub-logo-claro.png)
 - aparência premium e executiva
 
-UTILIZAR o mascote de IA enviado pelo usuário como:
-- elemento editorial secundário
-- curador inteligente do Radar
+O ícone do Radar (radar-icone.png) substitui o antigo mascote como elemento
+editorial secundário: pequeno, discreto, no consenso dos especialistas e nas
+edições arquivadas. Não criar novos mascotes.
 
-ONDE USAR O MASCOTE:
-- pequeno no header
-- ao lado do “Insight da Semana”
-- em cards de sinais estratégicos
-- de forma sutil
-
-NÃO substituir o logo do Pulso pelo mascote.
-
-PALETA:
-- base branca clean
-- roxo como principal
-- laranja como destaque
-- visual minimalista
-- editorial premium
+PALETA E FONTE (tokens em src/styles/theme.css):
+- fonte Plus Jakarta Sans (self-hosted via @fontsource-variable)
+- base branca; fundos de seção em azul claro (#EEF4FF) e lavanda (#F3F0FF)
+- navy #012270 para títulos e para a faixa da capa
+- azul #1B6EF8 como cor de produto (links, destaques, botões)
+- lilás para rótulos de leitura estratégica, rosa para consequência prática e ação
+- amarelo só sobre navy (destaque do título da capa)
+- texto sobre branco: azul, rosa e lilás a partir do degrau 600
 
 ==================================================
 TEMA CENTRAL DESTA EDIÇÃO
@@ -66,7 +63,7 @@ ESTRUTURA DA EDIÇÃO
 RADAR DE IA NA EDUCAÇÃO
 - subtítulo:
 Movimentos de mercado, implicações estratégicas e oportunidades de produto
-- mascote IA pequeno e elegante
+- ícone do Radar pequeno e elegante
 
 ==================================================
 
@@ -288,7 +285,7 @@ Criar cards executivos com interpretações profundas como:
 
 - “Analytics educacional passa a ser parte central da proposta de valor.”
 
-O mascote pode aparecer discretamente nessa seção.
+O ícone do Radar pode aparecer discretamente nessa seção.
 
 ==================================================
 FONTES E LINKS

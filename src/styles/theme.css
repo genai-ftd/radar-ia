@@ -1,46 +1,48 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Identidade Hub de IA, Produto e Experiência.
+     Navy, azul e lilás vêm dos arquivos de logo, para interface e logo
+     baterem lado a lado; o guia lista #0B2A6B, #1E63F0 e #6B5CF6/#8B5CF6,
+     diferença mínima. Rosa, amarelo e neutros seguem o guia. */
   --font-size: 16px;
   --background: #ffffff;
-  --foreground: #1a1a2e;
+  --foreground: #1F2937;            /* Grafite — textos */
   --card: #ffffff;
-  --card-foreground: #1a1a2e;
+  --card-foreground: #1F2937;
   --popover: #ffffff;
-  --popover-foreground: #1a1a2e;
-  --primary: #6B46C1;
+  --popover-foreground: #1F2937;
+  --primary: #1B6EF8;               /* Azul FTD — produto */
   --primary-foreground: #ffffff;
-  --secondary: #5B3A9E;
+  --secondary: #012270;             /* Azul Hub — confiança */
   --secondary-foreground: #ffffff;
-  --accent-orange: #FF6B35;
-  --accent-orange-light: #FF8C5A;
-  --muted: #f5f3ff;
-  --muted-foreground: #64748b;
-  --accent: #f5f3ff;
-  --accent-foreground: #1a1a2e;
+  --muted: #F3F0FF;                 /* Lavanda claro — fundos */
+  --muted-foreground: #4B5563;
+  --accent: #EEF4FF;                /* Azul claro — seções */
+  --accent-foreground: #012270;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
-  --border: rgba(0, 0, 0, 0.1);
+  --border: #E5E7EB;                /* Cinza — divisórias */
   --input: transparent;
-  --input-background: #f3f3f5;
+  --input-background: #F3F4F6;
   --switch-background: #cbced4;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #6B46C1;
-  --chart-1: #6B46C1;
-  --chart-2: #9333EA;
-  --chart-3: #c084fc;
-  --chart-4: #e9d5ff;
-  --chart-5: #f5f3ff;
+  --ring: #1B6EF8;
+  --chart-1: #012270;
+  --chart-2: #1B6EF8;
+  --chart-3: #9059FD;
+  --chart-4: #E11D76;
+  --chart-5: #F4C20D;
   --radius: 0.75rem;
-  --sidebar: #fafafa;
-  --sidebar-foreground: #1a1a2e;
-  --sidebar-primary: #6B46C1;
+  --sidebar: #F9FAFB;
+  --sidebar-foreground: #1F2937;
+  --sidebar-primary: #1B6EF8;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f5f3ff;
-  --sidebar-accent-foreground: #1a1a2e;
-  --sidebar-border: #e5e7eb;
-  --sidebar-ring: #6B46C1;
+  --sidebar-accent: #EEF4FF;
+  --sidebar-accent-foreground: #012270;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #1B6EF8;
 }
 
 .dark {
@@ -78,6 +80,82 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+}
+
+
+/* Escalas da marca — geradas em OKLCH com a cor do guia fixada no degrau-âncora.
+   Para texto sobre branco use 600 ou mais escuro (azul e rosa passam 4.5:1 no 600;
+   lilás só a partir do 600; amarelo e âmbar só a partir do 700). */
+@theme {
+  --font-sans: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --color-navy-50: #F6F9FF;
+  --color-navy-100: #E7EFFE;
+  --color-navy-200: #CCDEFF;
+  --color-navy-300: #A4C3FD;
+  --color-navy-400: #76A1F4;
+  --color-navy-500: #5883D9;
+  --color-navy-600: #416ABC;
+  --color-navy-700: #2E529A;
+  --color-navy-800: #203C75;
+  --color-navy-900: #012270;
+  --color-navy-950: #0F1A2F;
+  --color-azul-50: #F5F9FF;
+  --color-azul-100: #E7F0FF;
+  --color-azul-200: #CFE1FE;
+  --color-azul-300: #A9C8FC;
+  --color-azul-400: #79AAFE;
+  --color-azul-500: #4C8CFA;
+  --color-azul-600: #1B6EF8;
+  --color-azul-700: #0853C9;
+  --color-azul-800: #053C95;
+  --color-azul-900: #02296B;
+  --color-azul-950: #06193B;
+  --color-lilas-50: #F9F8FF;
+  --color-lilas-100: #EFEBFF;
+  --color-lilas-200: #DED7FE;
+  --color-lilas-300: #C4B4FE;
+  --color-lilas-400: #A889FF;
+  --color-lilas-500: #9059FD;
+  --color-lilas-600: #783EDD;
+  --color-lilas-700: #6029B8;
+  --color-lilas-800: #481B8D;
+  --color-lilas-900: #321564;
+  --color-lilas-950: #1D1139;
+  --color-rosa-50: #FFF6F9;
+  --color-rosa-100: #FFEAEF;
+  --color-rosa-200: #FED5DF;
+  --color-rosa-300: #FFB0C5;
+  --color-rosa-400: #FD7FA7;
+  --color-rosa-500: #FA438C;
+  --color-rosa-600: #E11D76;
+  --color-rosa-700: #B20B5B;
+  --color-rosa-800: #830341;
+  --color-rosa-900: #5C012C;
+  --color-rosa-950: #340618;
+  --color-amarelo-50: #FFF9E9;
+  --color-amarelo-100: #FFF3D4;
+  --color-amarelo-200: #FFE8AD;
+  --color-amarelo-300: #F5D88A;
+  --color-amarelo-400: #F4C20D;
+  --color-amarelo-500: #C79E14;
+  --color-amarelo-600: #A17F05;
+  --color-amarelo-700: #7C6205;
+  --color-amarelo-800: #594607;
+  --color-amarelo-900: #3D2F02;
+  --color-amarelo-950: #231900;
+  --color-ambar-50: #FFF8F1;
+  --color-ambar-100: #FEEFDE;
+  --color-ambar-200: #FEDFBF;
+  --color-ambar-300: #FEC486;
+  --color-ambar-400: #FEA21B;
+  --color-ambar-500: #D1840B;
+  --color-ambar-600: #A96B11;
+  --color-ambar-700: #855206;
+  --color-ambar-800: #613B03;
+  --color-ambar-900: #442801;
+  --color-ambar-950: #291500;
+  --color-fundo-lavanda: #F3F0FF;   /* Lavanda claro — fundos */
+  --color-fundo-azul: #EEF4FF;      /* Azul claro — seções */
 }
 
 @theme inline {
