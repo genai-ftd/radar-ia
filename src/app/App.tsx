@@ -2434,16 +2434,16 @@ export default function App() {
 
               <motion.h1
                 variants={{ oculto: { opacity: 0, y: 16 }, visivel: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }}
-                className="text-[clamp(1.75rem,2.9vw,2.5rem)] text-white font-extrabold mb-7 leading-[1.12] tracking-[-0.02em] text-balance"
+                className="text-[clamp(2rem,3.8vw,3.25rem)] text-white font-extrabold mb-7 leading-[1.08] tracking-[-0.025em] text-balance"
               >
-                Os primeiros estudos rigorosos mostram que a IA só melhora a aprendizagem <span className="text-amarelo-400">quando faz o aluno pensar em vez de entregar a resposta pronta.</span>
+                A IA só ensina quando <span className="text-amarelo-400">faz o aluno pensar em vez de dar a resposta.</span>
               </motion.h1>
 
               <motion.p
                 variants={{ oculto: { opacity: 0, y: 16 }, visivel: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }}
                 className="text-base md:text-[17px] text-white/80 leading-[1.7]"
               >
-                Em agosto e setembro saíram os primeiros ensaios com grupo de comparação sobre tutores de IA. O ganho medido foi pequeno e só apareceu quando o tutor conduzia o aluno por perguntas e exigia que ele dominasse o conteúdo antes de avançar. No mesmo período, uma pesquisa nacional mostrou que a maioria dos americanos acha que a IA faz mais mal que bem na escola, sem distinguir um uso do outro. Para quem faz produto, a tarefa é <strong className="font-semibold text-white">tornar essa diferença visível</strong> para a escola e para as famílias.
+                É o que mostram os primeiros ensaios controlados com tutores de IA, publicados em agosto e setembro: o ganho foi pequeno e só apareceu quando o tutor guiava o aluno por perguntas e exigia domínio do conteúdo antes de avançar. Enquanto isso, a maioria dos americanos diz que a IA faz mais mal que bem na escola, sem separar um uso do outro. Cabe ao produto <strong className="font-semibold text-white">tornar essa diferença visível</strong>.
               </motion.p>
             </motion.div>
           </div>
