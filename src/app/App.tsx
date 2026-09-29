@@ -2418,7 +2418,7 @@ export default function App() {
             <div className="hidden sm:flex items-center gap-5 shrink-0">
               <div className="text-right leading-none">
                 <span className="block text-[11px] font-bold text-azul-600 uppercase tracking-[0.16em]">Edição #12</span>
-                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">11–28 set 2026</span>
+                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">11–30 set 2026</span>
               </div>
               <div className="w-px h-9 bg-gray-200" />
               <img src={hubLogo} alt="Hub de IA, Produto e Experiência" className="h-9 w-auto" />
@@ -2654,7 +2654,7 @@ export default function App() {
                   tag: "Lacuna local",
                   tagCor: "bg-ambar-100 text-ambar-700",
                   conclusao: "Ninguém no Brasil publicou evidência de impacto",
-                  raciocinio: "Não localizamos estudo com grupo de comparação de nenhuma rede, sistema de ensino ou plataforma brasileira de IA. Quando a objeção chegar aqui, quem tiver um número próprio de aprendizagem terá o argumento que a pesquisa americana não derrubou.",
+                  raciocinio: "Não localizamos estudo com grupo de comparação de nenhuma rede, sistema de ensino ou plataforma brasileira de IA. E a primeira candidata a publicar evidência sobre IA na rede pública é uma aliança de fundações com a Anthropic, e não um sistema de ensino. Quando a objeção chegar aqui, quem tiver um número próprio de aprendizagem terá o argumento que a pesquisa americana não derrubou.",
                   decisao: "Montar agora uma linha de base de aprendizagem com uma rede parceira."
                 },
               ].map((item, i) => (
@@ -2735,7 +2735,7 @@ export default function App() {
                   empresa: "NBC News · Washington Post · LAUSD",
                   data: "2–22 set/2026",
                   consolida: "Pesquisa nacional com 7.105 adultos · reportagem sobre a ilusão de aprendizagem · bloqueio em Los Angeles",
-                  resumo: "A pesquisa da NBC News, publicada em 17 de setembro, ouviu 7.105 adultos entre 20 de agosto e 1º de setembro (margem de 3,3 pontos). Para 53%, a IA faz mais mal que bem na educação básica, e 27% acham o contrário. No ensino superior, foram 54% contra 24%. Em 22 de setembro, o Washington Post ouviu educadores que chamam o efeito de ilusão de aprendizagem: o aluno entrega mais, e melhor, e aprende menos. Antes disso, entre 2 e 4 de setembro, Los Angeles bloqueou a IA generativa para todos os alunos nos equipamentos da escola no ano letivo 2026-2027. A rede tinha mais de treze ferramentas aprovadas, e a decisão surpreendeu o conselho e as famílias.",
+                  resumo: "A pesquisa da NBC News, publicada em 17 de setembro, ouviu 7.105 adultos entre 20 de agosto e 1º de setembro (margem de 3,3 pontos). Para 53%, a IA faz mais mal que bem na educação básica, e 27% acham o contrário. No ensino superior, foram 54% contra 24%. Em 22 de setembro, o Washington Post ouviu educadores que chamam o efeito de ilusão de aprendizagem: o aluno entrega mais, e melhor, e aprende menos. Antes disso, entre 2 e 4 de setembro, Los Angeles bloqueou a IA generativa para todos os alunos nos equipamentos da escola no ano letivo 2026-2027. A rede tinha mais de treze ferramentas aprovadas, e a decisão surpreendeu o conselho e as famílias. O comitê criado para rever a medida só leva recomendações ao conselho no fim do ano letivo, então o bloqueio deve valer o ano inteiro.",
                   impacto: "A objeção à IA na escola virou maioria na opinião pública e já vira política de rede. A pesquisa não separa a IA que responde da IA que faz o aluno trabalhar, mas o produto precisa separar: a ilusão de aprendizagem que os educadores descrevem é o que acontece quando o aluno usa a IA para pular o esforço, o mesmo comportamento que os ensaios registraram.",
                   professor: "Vai encontrar famílias mais desconfiadas e precisa de argumento para defender o uso que funciona.",
                   aluno: "Pode perder até o uso bom, se a rede decidir cortar tudo.",
@@ -2748,14 +2748,14 @@ export default function App() {
                   titulo: "As big techs passaram a formar o professor para decidir com a IA",
                   empresa: "OpenAI Academy · Anthropic",
                   data: "28 ago – 23 set/2026",
-                  consolida: "Trilhas AI for Educators e AI for College Students com selos · programa de formadores · Claude for Teachers para redes",
-                  resumo: "Em 21 de setembro, a OpenAI ampliou a OpenAI Academy com novas trilhas. Na de educadores, a IA compara as respostas dos alunos com os objetivos de aprendizagem e o professor decide o que fazer. Na de universitários, há selos de conclusão. Em 23 de setembro, a empresa anunciou um programa para formar formadores. Em 28 de agosto, a Anthropic abriu para escolas e redes americanas o Claude for Teachers, até então individual, com as habilidades de preparar aula e verificar a compreensão, desenvolvidas com a Learning Commons.",
-                  impacto: "A edição #08 registrou que as big techs encontraram no professor um canal para chegar à escola. Agora esse canal tem trilha, certificado e formador, e a ênfase passou a ser como o professor decide usando a IA, que é a mesma regra aprovada pelo CNE em setembro, só que dita por quem tem alcance global e oferta gratuita. O espaço que continua aberto para editoras e sistemas de ensino é a formação ligada ao material que a escola adotou e às regras de uso de cada rede, que um curso global não conhece.",
+                  consolida: "Trilhas AI for Educators e AI for College Students com selos · programa de formadores · Claude for Teachers para redes · ferramentas sobre o currículo nacional em Gana · parceria com fundações brasileiras para a rede pública",
+                  resumo: "Em 21 de setembro, a OpenAI ampliou a OpenAI Academy com novas trilhas. Na de educadores, a IA compara as respostas dos alunos com os objetivos de aprendizagem e o professor decide o que fazer. Na de universitários, há selos de conclusão. Em 23 de setembro, a empresa anunciou um programa para formar formadores. Em 28 de agosto, a Anthropic abriu para escolas e redes americanas o Claude for Teachers, até então individual, com as habilidades de preparar aula e verificar a compreensão, desenvolvidas com a Learning Commons. E em 22 de setembro, num evento durante a Assembleia Geral da ONU, a Anthropic relatou que ferramentas de planejamento de aula feitas sobre o currículo nacional de Gana chegam a 68 mil professores, com a Playlab e o Ministério da Educação do país, e que começou a trabalhar com a Aliança de IA para a Educação, que reúne Fundação Lemann, Fundação Telles e VélezReyes+, para desenhar ferramentas de IA para escolas públicas brasileiras e publicar as evidências e os guias do trabalho.",
+                  impacto: "A edição #08 registrou que as big techs encontraram no professor um canal para chegar à escola. Agora esse canal tem trilha, certificado e formador, e a ênfase passou a ser como o professor decide usando a IA, a mesma regra aprovada pelo CNE em setembro. A novidade para o Brasil é o caminho de entrada: em Gana e agora aqui, a Anthropic chega por meio de ministério e fundações locais, com ferramentas feitas sobre o currículo nacional e voltadas à rede pública. Conhecer o currículo deixa de ser vantagem exclusiva de quem é do setor; o que continua sendo é o material que cada escola adotou e a relação com cada rede.",
                   professor: "Recebe formação certificada gratuita, que pode não conversar com o material da sala.",
                   aluno: "Efeito indireto: o professor formado tende a usar a IA para entender onde o aluno erra, sem abrir mão de corrigir ele mesmo.",
-                  gestor: "Precisa decidir se cumpre a formação obrigatória com o catálogo gratuito ou com algo ligado ao currículo adotado.",
+                  gestor: "Precisa decidir se cumpre a formação obrigatória com o catálogo gratuito, com a ferramenta que fundações e big techs vão oferecer à rede pública ou com algo ligado ao material adotado.",
                   roadmap: "Formar o professor dentro do produto, praticando a decisão no próprio material.",
-                  fonte: "https://openai.com/index/expanding-openai-academy-with-new-learning-paths/",
+                  fonte: "https://www.edtechinnovationhub.com/news/anthropic-says-claude-lesson-planning-tools-are-reaching-68000-teachers-in-ghana",
                   color: "from-azul-600 to-lilas-600"
                 },
                 {
@@ -2864,7 +2864,7 @@ export default function App() {
                 {
                   cat: "Nenhum estudo brasileiro de IA pedagógica com grupo de comparação",
                   nota: "Terceira edição seguida com essa ausência. Os EUA publicaram dois ensaios com milhares de alunos no período. Aqui, não localizamos nenhum de rede, sistema de ensino ou plataforma.",
-                  leitura: "Um estudo leva pelo menos um semestre letivo. Quem não começar agora não terá resposta em 2027, quando a objeção pública chegar.",
+                  leitura: "Um estudo leva pelo menos um semestre letivo. A Anthropic e a Aliança de IA para a Educação disseram que vão publicar evidências sobre as ferramentas que estão desenhando para escolas públicas; se saírem primeiro, o primeiro número brasileiro virá de fora do setor.",
                   janela: "Custo de atraso alto"
                 },
                 {
@@ -2969,8 +2969,8 @@ export default function App() {
                 {
                   tema: "Formação docente como camada de produto",
                   tipo: "Estrutural",
-                  trilha: "#08 a big tech encontra o professor como canal → #09 formação como gargalo → #10 catálogo gratuito consolidado → #11 formação vira obrigação institucional → #12 trilha certificada, selo e programa de formadores",
-                  leitura: "A formação genérica em IA já é oferecida de graça, com certificado e formadores, por empresas de alcance global. O que continua aberto é a formação que esse catálogo não consegue dar: a que acontece no material que a escola adotou e segue as regras de uso de cada rede.",
+                  trilha: "#08 a big tech encontra o professor como canal → #09 formação como gargalo → #10 catálogo gratuito consolidado → #11 formação vira obrigação institucional → #12 trilha certificada, programa de formadores e ferramentas sobre currículo nacional",
+                  leitura: "A formação genérica em IA já é oferecida de graça, com certificado e formadores, por empresas de alcance global. E a big tech começou a descer para o currículo: em Gana, com ferramentas feitas sobre o currículo nacional, e no Brasil, com fundações, para a rede pública. O que continua aberto é a formação feita no material que cada escola adotou e segundo as regras de uso de cada rede.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
@@ -3339,7 +3339,7 @@ export default function App() {
                   {
                     nome: "OpenAI e Anthropic",
                     altera: "Economia da formação",
-                    nota: "Trilha para educadores com selo, programa de formadores e assistente docente vendido a redes. A formação genérica virou oferta gratuita no momento em que a norma a tornou obrigatória."
+                    nota: "Trilha para educadores com selo, programa de formadores, assistente docente vendido a redes e, no Brasil, parceria com fundações para desenhar ferramentas para a rede pública. A formação genérica virou oferta gratuita no momento em que a norma a tornou obrigatória, e a entrada na rede pública passa a ser por aliança com quem já tem relação com as secretarias."
                   },
                   {
                     nome: "Pesquisa independente",
@@ -4304,7 +4304,7 @@ export default function App() {
               <img src={hubLogoClaro} alt="Hub de IA, Produto e Experiência" className="h-11 md:h-12 w-auto" />
               <div className="space-y-1 mt-2">
                 <p className="text-white/70 text-sm">Curadoria e análise: <span className="text-white font-medium">Silvana Helena</span></p>
-                <p className="text-white/60 text-xs tabular-nums">Setembro de 2026 · Edição #12 · 11–28 set</p>
+                <p className="text-white/60 text-xs tabular-nums">Setembro de 2026 · Edição #12 · 11–30 set</p>
               </div>
             </div>
           </motion.div>
