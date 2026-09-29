@@ -2972,9 +2972,31 @@ export default function App() {
                       {item.tipo}
                     </span>
                   </div>
-                  <div className="bg-white/70 rounded-lg px-4 py-2.5 mb-3">
-                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed font-medium">{item.trilha}</p>
-                  </div>
+                  <ol aria-label="Evolução do tema por edição" className="bg-white/80 rounded-xl px-4 py-3.5 mb-4 space-y-2.5">
+                    {item.trilha.split(' → ').map((passo, j, passos) => {
+                      const partes = passo.match(/^(#\d+(?: a #\d+)?)\s+(.*)$/);
+                      const edicao = partes ? partes[1].replace(' a #', '–') : '';
+                      const texto = partes ? partes[2] : passo;
+                      const atual = j === passos.length - 1;
+                      return (
+                        <li key={j} className="relative flex gap-3 pl-5">
+                          {!atual && <span aria-hidden="true" className="absolute left-[5px] top-3.5 -bottom-3 w-px bg-gray-300" />}
+                          <span
+                            aria-hidden="true"
+                            className={`absolute left-0 top-[5px] size-[11px] rounded-full border-2 ${
+                              atual ? 'bg-azul-600 border-azul-600 ring-4 ring-azul-100' : 'bg-white border-gray-300'
+                            }`}
+                          />
+                          <span className={`shrink-0 w-12 whitespace-nowrap text-[11px] font-bold tabular-nums tracking-wide leading-5 ${atual ? 'text-azul-700' : 'text-gray-500'}`}>
+                            {edicao}
+                          </span>
+                          <span className={`text-sm md:text-xs leading-5 ${atual ? 'font-semibold text-gray-900' : 'text-gray-600'}`}>
+                            {texto}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ol>
                   <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.leitura}</p>
                 </motion.div>
               ))}
@@ -3130,7 +3152,7 @@ export default function App() {
 
             {/* Radar de funcionalidades */}
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-1.5 h-6 bg-gradient-to-b from-azul-600 to-rosa-600 rounded-full" />
+              <img src={radarIcone} alt="" width={164} height={160} className="h-6 w-auto" />
               <h3 className="text-xl font-bold text-navy-900">Radar de funcionalidades</h3>
             </div>
             <p className="text-sm text-gray-600 mb-6 max-w-3xl">
@@ -3638,7 +3660,7 @@ export default function App() {
                     Pesquisadores, educadores e big techs chegaram ao mesmo ponto por caminhos diferentes: <span className="text-amarelo-400">a IA ensina quando faz o aluno trabalhar, e o ganho vem do desenho</span>. Nenhum estudo mostrou que o simples acesso à IA melhora a aprendizagem.
                   </p>
                 </div>
-                <img src={liaExperts} alt="" width={394} height={400} className="w-28 sm:w-36 md:w-44 h-auto shrink-0 self-center sm:self-auto drop-shadow-[0_12px_24px_rgba(1,34,112,0.45)]" />
+                <img src={liaExperts} alt="" width={394} height={400} className="w-28 sm:w-36 md:w-44 h-auto shrink-0 self-center sm:self-auto sm:-scale-x-100 drop-shadow-[0_12px_24px_rgba(1,34,112,0.45)]" />
               </div>
 
               <div className="grid md:grid-cols-3 gap-5">
