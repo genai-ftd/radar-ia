@@ -3201,7 +3201,7 @@ export default function App() {
 
             {/* Radar de funcionalidades */}
             <div className="flex items-center gap-2 mb-4">
-              <img src={radarIcone} alt="" width={164} height={160} className="h-6 w-auto" />
+              <img src={radarIcone} alt="" width={234} height={229} className="h-6 w-auto" />
               <h3 className="text-xl font-bold text-navy-900">Radar de funcionalidades</h3>
             </div>
             <p className="text-sm text-gray-600 mb-6 max-w-3xl">
