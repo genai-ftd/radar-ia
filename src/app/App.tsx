@@ -57,6 +57,58 @@ const SECOES = [
 
 type View = 'main' | 'edicao-abril-2026' | 'edicao-maio-2026' | 'edicao-junho-2026' | 'edicao-junho-2026-b' | 'edicao-julho-2026' | 'edicao-agosto-2026' | 'edicao-agosto-2026-b' | 'edicao-setembro-2026';
 
+// Cartões do arquivo, da edição mais recente para a mais antiga.
+const ARQUIVO: { rotulo: string; titulo: string; resumo: string; view: View }[] = [
+  {
+    rotulo: "Setembro de 2026 · Edição #11",
+    titulo: "A regra saiu, e ela não proíbe a IA: proíbe delegar a decisão sobre o aluno",
+    resumo: "O CNE aprovou as diretrizes em 1º de setembro e Nova York suspendeu IA generativa até o 8º ano no dia seguinte. A régua passou a ser quem assina a decisão.",
+    view: "edicao-setembro-2026",
+  },
+  {
+    rotulo: "Agosto de 2026 · Edição #10",
+    titulo: "A mediação pedagógica deixou de ser reserva de valor e virou default da plataforma",
+    resumo: "A evidência nomeou o comportamento que prejudica e a OpenAI embutiu o antídoto no produto. Mediar genericamente virou commodity em três semanas.",
+    view: "edicao-agosto-2026-b",
+  },
+  {
+    rotulo: "Agosto de 2026 · Edição #09",
+    titulo: "A home virou o produto: a disputa saiu do conteúdo e foi para a camada que decide",
+    resumo: "Classroom reconstrói a home por papel para 150M de usuários, Coursera aposta US$ 100 mi contra o próprio catálogo e o MEC institui o EducaLab.",
+    view: "edicao-agosto-2026",
+  },
+  {
+    rotulo: "Julho de 2026 · Edição #08",
+    titulo: "A era dos anúncios acabou: consolidação — quem não constrói capacidade, compra",
+    resumo: "Cogna vai a 90% do Educbank, Teachy faz o 1º M&A de IA em educação da AL, Khan admite 15% de uso e Anthropic lança o Claude for Teachers.",
+    view: "edicao-julho-2026",
+  },
+  {
+    rotulo: "Junho de 2026 · Edição #07",
+    titulo: "O Gemini entrou direto no ENEM: a batalha é pelo estudante dentro do exame",
+    resumo: "Google anuncia simulados gratuitos do ENEM com a Akira Enem, CNE encerra consulta pública e a disputa migra do produto para o canal de distribuição.",
+    view: "edicao-junho-2026-b",
+  },
+  {
+    rotulo: "Junho de 2026",
+    titulo: "O Brasil no ponto de inflexão: IA virou objeto de regulação, capital e escala",
+    resumo: "CNE aprova semáforo de riscos, BNDES injeta R$ 300M na Positivo e Plurall IA gera 26 mil PEIs em 3 meses.",
+    view: "edicao-junho-2026",
+  },
+  {
+    rotulo: "Maio de 2026",
+    titulo: "A próxima disputa não será pela melhor funcionalidade",
+    resumo: "Mercado migra de features isoladas para ecossistemas integrados. CNE regulamenta, Moderna Core e Positivo+AWS definem novo benchmark.",
+    view: "edicao-maio-2026",
+  },
+  {
+    rotulo: "Abril de 2026",
+    titulo: "MEC abre sandbox para testar IA na educação",
+    resumo: "Análise sobre ambiente de experimentação para avaliar soluções educacionais com IA e antecipação de critérios de validação no setor.",
+    view: "edicao-abril-2026",
+  },
+];
+
 // ─── Edição Abril 2026 (arquivo) ────────────────────────────────────────────
 function EdicaoAbril2026({
   onBack,
@@ -2366,7 +2418,7 @@ export default function App() {
             <div className="hidden sm:flex items-center gap-5 shrink-0">
               <div className="text-right leading-none">
                 <span className="block text-[11px] font-bold text-azul-600 uppercase tracking-[0.16em]">Edição #12</span>
-                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">11 – 28 Set 2026</span>
+                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">11–28 set 2026</span>
               </div>
               <div className="w-px h-9 bg-gray-200" />
               <img src={hubLogo} alt="Hub de IA, Produto e Experiência" className="h-9 w-auto" />
@@ -2429,7 +2481,7 @@ export default function App() {
                 className="flex items-center gap-2.5 mb-6"
               >
                 <Sparkles className="w-4 h-4 text-amarelo-400" strokeWidth={2} />
-                <span className="text-[11px] font-bold tracking-[0.22em] text-white/75">INSIGHT DA QUINZENA</span>
+                <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/75">Insight da quinzena</span>
               </motion.div>
 
               <motion.h1
@@ -2558,7 +2610,7 @@ export default function App() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
               <FileText className="w-4 h-4 text-azul-600" />
-              <span className="text-sm text-azul-600 font-medium">Resumo Executivo</span>
+              <span className="text-sm text-azul-600 font-medium">Resumo executivo</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl text-navy-900 font-bold mb-4 tracking-tight text-balance">
@@ -2639,7 +2691,7 @@ export default function App() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
               <Zap className="w-4 h-4 text-azul-600" />
-              <span className="text-sm text-azul-600 font-medium">Sinais da Quinzena</span>
+              <span className="text-sm text-azul-600 font-medium">Sinais da quinzena</span>
             </div>
             <h2 className="text-3xl md:text-4xl text-navy-900 font-bold mb-4 tracking-tight text-balance">
               Cinco sinais, <span className="text-azul-600">uma direção</span>
@@ -2681,7 +2733,7 @@ export default function App() {
                 {
                   titulo: "O público americano virou contra a IA na escola, e Los Angeles tirou a IA de todos os alunos",
                   empresa: "NBC News · Washington Post · LAUSD",
-                  data: "2 – 22 set/2026",
+                  data: "2–22 set/2026",
                   consolida: "Pesquisa nacional com 7.105 adultos · reportagem sobre a ilusão de aprendizagem · bloqueio em Los Angeles",
                   resumo: "A pesquisa da NBC News, publicada em 17 de setembro, ouviu 7.105 adultos entre 20 de agosto e 1º de setembro (margem de 3,3 pontos). Para 53%, a IA faz mais mal que bem na educação básica, e 27% acham o contrário. No ensino superior, foram 54% contra 24%. Em 22 de setembro, o Washington Post ouviu educadores que chamam o efeito de ilusão de aprendizagem: o aluno entrega mais, e melhor, e aprende menos. Antes disso, entre 2 e 4 de setembro, Los Angeles bloqueou a IA generativa para todos os alunos nos equipamentos da escola no ano letivo 2026-2027. A rede tinha mais de treze ferramentas aprovadas, e a decisão surpreendeu o conselho e as famílias.",
                   impacto: "A objeção à IA na escola virou maioria na opinião pública e já vira política de rede. A pesquisa não separa a IA que responde da IA que faz o aluno trabalhar, mas o produto precisa separar: a ilusão de aprendizagem que os educadores descrevem é o que acontece quando o aluno usa a IA para pular o esforço, o mesmo comportamento que os ensaios registraram.",
@@ -2740,9 +2792,6 @@ export default function App() {
                           <Calendar className="w-3 h-3" /> {m.data}
                         </span>
                       </div>
-                      <a href={m.fonte} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-azul-600 transition-colors">
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
                     </div>
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-[11px] font-bold text-azul-600 bg-azul-50 px-2 py-0.5 rounded-full uppercase tracking-wider">Sinal {i + 1}</span>
@@ -2773,8 +2822,8 @@ export default function App() {
                       ))}
                     </div>
                     <a href={m.fonte} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-5 pt-4 border-t border-gray-100 w-full text-azul-600 hover:text-azul-700 transition-colors font-medium text-sm">
-                      <ExternalLink className="w-4 h-4" />
-                      Ver fonte
+                      <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                      Ver fonte<span className="sr-only">: {m.titulo} (abre em nova aba)</span>
                     </a>
                   </div>
                 </motion.div>
@@ -2796,7 +2845,7 @@ export default function App() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full mb-6">
               <AlertCircle className="w-4 h-4 text-gray-600" />
-              <span className="text-sm text-gray-600 font-medium">Sinais de Ausência</span>
+              <span className="text-sm text-gray-600 font-medium">Sinais de ausência</span>
             </div>
             <h2 className="text-2xl md:text-3xl text-navy-900 font-bold mb-3 tracking-tight text-balance">
               O espaço que <span className="text-azul-600">ninguém ocupou</span>
@@ -2877,10 +2926,10 @@ export default function App() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
               <TrendingUp className="w-4 h-4 text-azul-600" />
-              <span className="text-sm text-azul-600 font-medium">Temas Recorrentes</span>
+              <span className="text-sm text-azul-600 font-medium">Temas recorrentes</span>
             </div>
             <h2 className="text-3xl md:text-4xl text-navy-900 font-bold mb-4 tracking-tight text-balance">
-              Estrutural, emergente ou <span className="text-azul-600">encerrado?</span>
+              Estrutural, emergente ou <span className="text-azul-600">pontual?</span>
             </h2>
             <p className="text-gray-600 mb-8 text-base max-w-3xl text-pretty">
               Tema que volta a cada ciclo entra no roadmap; tema que apareceu uma vez fica em observação. Nesta edição, a restrição por idade chegou à terceira edição seguida, e a regulação voltou a travar, agora à espera da homologação do MEC.
@@ -2974,12 +3023,12 @@ export default function App() {
                   </div>
                   <ol aria-label="Evolução do tema por edição" className="bg-white/80 rounded-xl px-4 py-3.5 mb-4 space-y-2.5">
                     {item.trilha.split(' → ').map((passo, j, passos) => {
-                      const partes = passo.match(/^(#\d+(?: a #\d+)?)\s+(.*)$/);
-                      const edicao = partes ? partes[1].replace(' a #', '–') : '';
-                      const texto = partes ? partes[2] : passo;
+                      const partes = passo.match(/^#(\d+)(?: a #(\d+))?\s+(.*)$/);
+                      const edicao = !partes ? '' : partes[2] ? `Edições #${partes[1]}–${partes[2]}` : `Edição #${partes[1]}`;
+                      const texto = partes ? partes[3] : passo;
                       const atual = j === passos.length - 1;
                       return (
-                        <li key={j} className="relative flex gap-3 pl-5">
+                        <li key={j} className="relative flex flex-col sm:flex-row sm:gap-3 pl-5">
                           {!atual && <span aria-hidden="true" className="absolute left-[5px] top-3.5 -bottom-3 w-px bg-gray-300" />}
                           <span
                             aria-hidden="true"
@@ -2987,7 +3036,7 @@ export default function App() {
                               atual ? 'bg-azul-600 border-azul-600 ring-4 ring-azul-100' : 'bg-white border-gray-300'
                             }`}
                           />
-                          <span className={`shrink-0 w-12 whitespace-nowrap text-[11px] font-bold tabular-nums tracking-wide leading-5 ${atual ? 'text-azul-700' : 'text-gray-500'}`}>
+                          <span className={`shrink-0 sm:min-w-[6.25rem] whitespace-nowrap text-[11px] font-bold tabular-nums leading-5 ${atual ? 'text-azul-700' : 'text-gray-500'}`}>
                             {edicao}
                           </span>
                           <span className={`text-sm md:text-xs leading-5 ${atual ? 'font-semibold text-gray-900' : 'text-gray-600'}`}>
@@ -3028,7 +3077,7 @@ export default function App() {
             {/* Mercado privado */}
             <div className="flex items-center gap-2 mb-4">
               <div className="w-1.5 h-6 bg-azul-600 rounded-full" />
-              <h3 className="text-xl font-bold text-navy-900">Concorrência direta — mercado privado</h3>
+              <h3 className="text-xl font-bold text-navy-900">Concorrência direta: mercado privado</h3>
             </div>
             <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm mb-12 bg-white">
               <table className="w-full text-sm">
@@ -3101,7 +3150,7 @@ export default function App() {
             {/* Mercado público */}
             <div className="flex items-center gap-2 mb-4">
               <div className="w-1.5 h-6 bg-rosa-600 rounded-full" />
-              <h3 className="text-xl font-bold text-navy-900">Concorrência direta — mercado público</h3>
+              <h3 className="text-xl font-bold text-navy-900">Concorrência direta: mercado público</h3>
             </div>
             <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm mb-12 bg-white">
               <table className="w-full text-sm">
@@ -3328,7 +3377,7 @@ export default function App() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
               <Globe className="w-4 h-4 text-azul-600" />
-              <span className="text-sm text-azul-600 font-medium">Benchmarks de Inovação</span>
+              <span className="text-sm text-azul-600 font-medium">Benchmarks de inovação</span>
             </div>
             <h2 className="text-3xl md:text-4xl text-navy-900 font-bold mb-4 tracking-tight text-balance">
               Casos de fora, <span className="text-azul-600">em detalhe</span>
@@ -3757,8 +3806,8 @@ export default function App() {
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-azul-50 text-azul-600 rounded-lg hover:bg-azul-600 hover:text-white transition-all font-medium text-sm mt-4"
                   >
-                    <ExternalLink className="w-4 h-4" />
-                    Ver fonte
+                    <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                    Ver fonte<span className="sr-only">: {e.titulo} (abre em nova aba)</span>
                   </a>
                 </motion.div>
               ))}
@@ -3778,10 +3827,10 @@ export default function App() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
               <Target className="w-4 h-4 text-azul-600" />
-              <span className="text-sm text-azul-600 font-medium">Análise Estratégica</span>
+              <span className="text-sm text-azul-600 font-medium">Análise estratégica</span>
             </div>
             <h2 className="text-3xl md:text-4xl text-navy-900 font-bold mb-4 tracking-tight text-balance">
-              Diferenciação vs <span className="text-azul-600">Commodity</span>
+              Diferenciação ou <span className="text-azul-600">commodity</span>
             </h2>
             <p className="text-gray-600 mb-8 text-base max-w-3xl text-pretty">
               Onde a vantagem acabou e o que ainda é difícil de copiar. Nesta edição, o próprio modelo de IA virou commodity.
@@ -3871,7 +3920,7 @@ export default function App() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
               <AlertCircle className="w-4 h-4 text-azul-600" />
-              <span className="text-sm text-azul-600 font-medium">Hype vs Tendência Real</span>
+              <span className="text-sm text-azul-600 font-medium">Hype ou tendência real</span>
             </div>
             <h2 className="text-3xl md:text-4xl text-navy-900 font-bold mb-4 tracking-tight text-balance">
               Força e maturidade <span className="text-azul-600">do movimento</span>
@@ -3975,7 +4024,7 @@ export default function App() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
               <Lightbulb className="w-4 h-4 text-azul-600" />
-              <span className="text-sm text-azul-600 font-medium">Prioridades Estratégicas</span>
+              <span className="text-sm text-azul-600 font-medium">Prioridades estratégicas</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl text-navy-900 font-bold mb-4 tracking-tight text-balance">
@@ -4190,254 +4239,40 @@ export default function App() {
             </div>
 
             <h2 className="text-4xl md:text-5xl text-navy-900 font-bold mb-4">
-              Edições <span className="text-azul-600">Anteriores</span>
+              Edições <span className="text-azul-600">anteriores</span>
             </h2>
             <p className="text-gray-600 mb-12">
-              Biblioteca viva do RADAR — histórico contínuo de inteligência estratégica
+              Todas as edições do Radar, da mais recente à mais antiga.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
-              {/* Card Setembro 2026 · Ed. #11 */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
-                    <p className="text-sm text-gray-700">Setembro de 2026 · Ed. #11</p>
-                  </div>
-                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-azul-600" />
-                  </div>
-                </div>
-                <h3 className="font-bold text-navy-900 mb-3">
-                  A regra saiu, e ela não proíbe a IA: proíbe delegar a decisão sobre o aluno
-                </h3>
-                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
-                  O CNE aprovou as diretrizes em 1º de setembro e Nova York suspendeu IA generativa até o 8º ano no dia seguinte. A régua passou a ser quem assina a decisão.
-                </p>
-                <button
-                  onClick={() => goToEdicao('edicao-setembro-2026')}
-                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
+              {ARQUIVO.map(ed => (
+                <motion.div
+                  key={ed.view}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
                 >
-                  Abrir edição
-                </button>
-              </motion.div>
-
-              {/* Card Agosto 2026 · Ed. #10 */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
-                    <p className="text-sm text-gray-700">Agosto de 2026 · Ed. #10</p>
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-600 mb-1">Edição anterior</p>
+                      <p className="text-sm text-gray-700">{ed.rotulo}</p>
+                    </div>
+                    <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
+                      <FileText className="w-4 h-4 text-azul-600" />
+                    </div>
                   </div>
-                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-azul-600" />
-                  </div>
-                </div>
-                <h3 className="font-bold text-navy-900 mb-3">
-                  A mediação pedagógica deixou de ser reserva de valor e virou default da plataforma
-                </h3>
-                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
-                  A evidência nomeou o comportamento que prejudica e a OpenAI embutiu o antídoto no produto. Mediar genericamente virou commodity em três semanas.
-                </p>
-                <button
-                  onClick={() => goToEdicao('edicao-agosto-2026-b')}
-                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
-                >
-                  Abrir edição
-                </button>
-              </motion.div>
-
-              {/* Card Agosto 2026 · Ed. #09 */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
-                    <p className="text-sm text-gray-700">Agosto de 2026 · Ed. #09</p>
-                  </div>
-                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-azul-600" />
-                  </div>
-                </div>
-                <h3 className="font-bold text-navy-900 mb-3">
-                  A home virou o produto: a disputa saiu do conteúdo e foi para a camada que decide
-                </h3>
-                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
-                  Classroom reconstrói a home por papel para 150M de usuários, Coursera aposta US$ 100 mi contra o próprio catálogo e o MEC institui o EducaLab.
-                </p>
-                <button
-                  onClick={() => goToEdicao('edicao-agosto-2026')}
-                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
-                >
-                  Abrir edição
-                </button>
-              </motion.div>
-
-              {/* Card Julho 2026 · Ed. #08 */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
-                    <p className="text-sm text-gray-700">Julho de 2026 · Ed. #08</p>
-                  </div>
-                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-azul-600" />
-                  </div>
-                </div>
-                <h3 className="font-bold text-navy-900 mb-3">
-                  A era dos anúncios acabou: consolidação — quem não constrói capacidade, compra
-                </h3>
-                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
-                  Cogna vai a 90% do Educbank, Teachy faz o 1º M&A de IA em educação da AL, Khan admite 15% de uso e Anthropic lança o Claude for Teachers.
-                </p>
-                <button
-                  onClick={() => goToEdicao('edicao-julho-2026')}
-                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
-                >
-                  Abrir edição
-                </button>
-              </motion.div>
-
-              {/* Card Junho 2026 · Ed. #07 */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
-                    <p className="text-sm text-gray-700">Junho de 2026 · Ed. #07</p>
-                  </div>
-                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-azul-600" />
-                  </div>
-                </div>
-                <h3 className="font-bold text-navy-900 mb-3">
-                  O Gemini entrou direto no ENEM: a batalha é pelo estudante dentro do exame
-                </h3>
-                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
-                  Google anuncia simulados gratuitos do ENEM com a Akira Enem, CNE encerra consulta pública e a disputa migra do produto para o canal de distribuição.
-                </p>
-                <button
-                  onClick={() => goToEdicao('edicao-junho-2026-b')}
-                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
-                >
-                  Abrir edição
-                </button>
-              </motion.div>
-
-              {/* Card Junho 2026 */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
-                    <p className="text-sm text-gray-700">Junho de 2026</p>
-                  </div>
-                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-azul-600" />
-                  </div>
-                </div>
-                <h3 className="font-bold text-navy-900 mb-3">
-                  O Brasil no ponto de inflexão: IA virou objeto de regulação, capital e escala
-                </h3>
-                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
-                  CNE aprova semáforo de riscos, BNDES injeta R$ 300M na Positivo e Plurall IA gera 26 mil PEIs em 3 meses.
-                </p>
-                <button
-                  onClick={() => goToEdicao('edicao-junho-2026')}
-                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
-                >
-                  Abrir edição
-                </button>
-              </motion.div>
-
-              {/* Card Maio 2026 */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
-                    <p className="text-sm text-gray-700">Maio de 2026</p>
-                  </div>
-                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-azul-600" />
-                  </div>
-                </div>
-                <h3 className="font-bold text-navy-900 mb-3">
-                  A próxima disputa não será pela melhor funcionalidade
-                </h3>
-                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
-                  Mercado migra de features isoladas para ecossistemas integrados. CNE regulamenta, Moderna Core e Positivo+AWS definem novo benchmark.
-                </p>
-                <button
-                  onClick={() => goToEdicao('edicao-maio-2026')}
-                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
-                >
-                  Abrir edição
-                </button>
-              </motion.div>
-
-              {/* Card Abril 2026 */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <p className="text-xs font-semibold text-gray-600 mb-1">EDIÇÃO ANTERIOR</p>
-                    <p className="text-sm text-gray-700">Abril de 2026</p>
-                  </div>
-                  <div className="w-8 h-8 bg-azul-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-azul-600" />
-                  </div>
-                </div>
-                <h3 className="font-bold text-navy-900 mb-3">
-                  MEC abre sandbox para testar IA na educação
-                </h3>
-                <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">
-                  Análise sobre ambiente de experimentação para avaliar soluções educacionais com IA e antecipação de critérios de validação no setor.
-                </p>
-                <button
-                  onClick={() => goToEdicao('edicao-abril-2026')}
-                  className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
-                >
-                  Abrir edição
-                </button>
-              </motion.div>
+                  <h3 className="font-bold text-navy-900 mb-3">{ed.titulo}</h3>
+                  <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">{ed.resumo}</p>
+                  <button
+                    onClick={() => goToEdicao(ed.view)}
+                    className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
+                  >
+                    Abrir edição<span className="sr-only">: {ed.rotulo}</span>
+                  </button>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -4461,7 +4296,7 @@ export default function App() {
             </p>
 
             <p className="text-white/80 text-sm md:text-xs leading-relaxed max-w-[68ch] mx-auto mb-10">
-              O RADAR é um sistema contínuo de inteligência estratégica que transforma movimentos de mercado, concorrência, pesquisa, tecnologia e regulação em sinais, padrões, riscos e oportunidades para produtos educacionais.
+              O Radar acompanha movimentos de mercado, concorrência, pesquisa, tecnologia e regulação e os traduz em sinais, padrões, riscos e oportunidades para produtos educacionais.
             </p>
 
             <div className="pt-8 border-t border-white/15 flex flex-col items-center gap-4">
@@ -4469,7 +4304,7 @@ export default function App() {
               <img src={hubLogoClaro} alt="Hub de IA, Produto e Experiência" className="h-11 md:h-12 w-auto" />
               <div className="space-y-1 mt-2">
                 <p className="text-white/70 text-sm">Curadoria e análise: <span className="text-white font-medium">Silvana Helena</span></p>
-                <p className="text-white/60 text-xs tabular-nums">Setembro de 2026 · Edição #12 · 11 – 28 set</p>
+                <p className="text-white/60 text-xs tabular-nums">Setembro de 2026 · Edição #12 · 11–28 set</p>
               </div>
             </div>
           </motion.div>
