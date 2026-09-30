@@ -800,6 +800,10 @@ oferecem") que contradiziam a própria edição e afirmações sobre o nosso
 produto sem fonte. A causa comum: buscar só dentro da janela e escrever
 a conclusão antes de tentar refutá-la.
 
+EXECUÇÃO: skill /fact-check (.claude/skills/fact-check). Ela roda o
+levantamento automático das afirmações (script extrair_afirmacoes.py),
+guia a checagem por tipo e gera o relatório do PASSO 8.
+
 PASSO 1 — Inventário de afirmações
 Depois de escrever e antes de revisar o texto, listar toda afirmação
 factual da edição (número, data, nome, ausência, superlativo, citação)
