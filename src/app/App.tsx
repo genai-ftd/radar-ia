@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, MotionConfig } from 'motion/react';
 import {
   Brain,
@@ -25,7 +25,8 @@ import {
   ArrowLeft,
   Library,
   Check,
-  LayoutList
+  LayoutList,
+  SlidersHorizontal
 } from 'lucide-react';
 import radarLogo from '../imports/radar-logo.png';
 import radarLogoClaro from '../imports/radar-logo-claro.png';
@@ -2213,6 +2214,211 @@ function EdicaoSetembro2026({
 }
 
 
+type Plataforma = {
+  player: string;
+  produto: string;
+  mercado: 'Plataforma privada' | 'Plataforma pública';
+  publicos: string[];
+  entregue: string;
+  leitura: string;
+  fonte: string;
+  fonteLabel: string;
+};
+
+const TIPOS_PLATAFORMA: { valor: 'todas' | Plataforma['mercado']; rotulo: string }[] = [
+  { valor: 'todas', rotulo: 'Todas' },
+  { valor: 'Plataforma privada', rotulo: 'Privadas' },
+  { valor: 'Plataforma pública', rotulo: 'Públicas' },
+];
+
+const chipFiltro = (ativo: boolean) =>
+  `inline-flex items-center gap-1.5 h-11 sm:h-9 px-4 rounded-full border text-sm font-medium transition-[color,background-color,border-color,scale] duration-150 active:scale-96 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azul-600 ${
+    ativo ? 'bg-navy-900 border-navy-900 text-white' : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300 hover:bg-gray-50'
+  }`;
+
+function RadarFuncionalidades({ itens }: { itens: Plataforma[] }) {
+  const [tipo, setTipo] = useState<'todas' | Plataforma['mercado']>('todas');
+  const [empresas, setEmpresas] = useState<string[]>([]);
+  const [aberto, setAberto] = useState(false);
+  const botaoRef = useRef<HTMLButtonElement>(null);
+  const painelRef = useRef<HTMLDivElement>(null);
+
+  const doTipo = itens.filter(f => tipo === 'todas' || f.mercado === tipo);
+  const visiveis = doTipo.filter(f => empresas.length === 0 || empresas.includes(f.player));
+  const filtrando = tipo !== 'todas' || empresas.length > 0;
+
+  useEffect(() => {
+    if (!aberto) return;
+    const fora = (e: PointerEvent) => {
+      const alvo = e.target as Node;
+      if (!painelRef.current?.contains(alvo) && !botaoRef.current?.contains(alvo)) setAberto(false);
+    };
+    const esc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setAberto(false);
+        botaoRef.current?.focus();
+      }
+    };
+    document.addEventListener('pointerdown', fora);
+    document.addEventListener('keydown', esc);
+    return () => {
+      document.removeEventListener('pointerdown', fora);
+      document.removeEventListener('keydown', esc);
+    };
+  }, [aberto]);
+
+  const trocarTipo = (valor: 'todas' | Plataforma['mercado']) => {
+    setTipo(valor);
+    setEmpresas(sel => sel.filter(p => valor === 'todas' || itens.some(f => f.player === p && f.mercado === valor)));
+  };
+  const alternarEmpresa = (player: string) =>
+    setEmpresas(sel => (sel.includes(player) ? sel.filter(p => p !== player) : [...sel, player]));
+
+  return (
+    <>
+      <div className="flex flex-wrap items-center gap-2 mb-5">
+        <div role="group" aria-label="Filtrar por tipo de plataforma" className="flex flex-wrap gap-2">
+          {TIPOS_PLATAFORMA.map(t => {
+            const ativo = tipo === t.valor;
+            const total = t.valor === 'todas' ? itens.length : itens.filter(f => f.mercado === t.valor).length;
+            return (
+              <button key={t.valor} type="button" aria-pressed={ativo} onClick={() => trocarTipo(t.valor)} className={chipFiltro(ativo)}>
+                {ativo && <Check className="w-3.5 h-3.5" strokeWidth={2.5} aria-hidden="true" />}
+                {t.rotulo}
+                <span className={`text-xs tabular-nums ${ativo ? 'text-white/70' : 'text-gray-500'}`}>{total}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="relative">
+          <button
+            ref={botaoRef}
+            type="button"
+            aria-expanded={aberto}
+            aria-controls="radar-filtro-empresas"
+            onClick={() => setAberto(v => !v)}
+            className={chipFiltro(empresas.length > 0)}
+          >
+            <SlidersHorizontal className="w-4 h-4" aria-hidden="true" />
+            Mais filtros
+            {empresas.length > 0 && (
+              <span className="min-w-5 h-5 px-1.5 rounded-full bg-white text-navy-900 text-xs font-semibold tabular-nums inline-flex items-center justify-center">
+                <span className="sr-only">empresas marcadas: </span>
+                {empresas.length}
+              </span>
+            )}
+            <ChevronDown className={`w-4 h-4 transition-[rotate] duration-150 ${aberto ? 'rotate-180' : ''}`} aria-hidden="true" />
+          </button>
+
+          {aberto && (
+            <div
+              ref={painelRef}
+              id="radar-filtro-empresas"
+              className="absolute left-0 top-full mt-2 z-20 w-64 max-w-[calc(100vw-3rem)] rounded-2xl bg-white p-2 shadow-lg ring-1 ring-black/5"
+            >
+              <fieldset>
+                <legend className="px-2 pt-1 pb-2 text-xs font-semibold text-gray-600 uppercase tracking-wider">Empresas</legend>
+                {doTipo.map(f => (
+                  <label
+                    key={f.player}
+                    className="flex items-center gap-3 min-h-11 sm:min-h-9 px-2 rounded-lg text-sm text-gray-800 cursor-pointer hover:bg-gray-50"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={empresas.includes(f.player)}
+                      onChange={() => alternarEmpresa(f.player)}
+                      className="w-4 h-4 accent-azul-600"
+                    />
+                    <span className="flex-1">{f.player}</span>
+                    {tipo === 'todas' && (
+                      <span className="text-xs text-gray-500">{f.mercado === 'Plataforma pública' ? 'Pública' : 'Privada'}</span>
+                    )}
+                  </label>
+                ))}
+              </fieldset>
+              {empresas.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setEmpresas([])}
+                  className="w-full min-h-11 sm:min-h-9 mt-1 px-2 rounded-lg text-left text-sm font-medium text-azul-600 hover:bg-azul-50"
+                >
+                  Desmarcar empresas
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+
+        {filtrando && (
+          <button
+            type="button"
+            onClick={() => {
+              setTipo('todas');
+              setEmpresas([]);
+            }}
+            className="h-11 sm:h-9 px-3 rounded-full text-sm font-medium text-azul-600 hover:bg-azul-50"
+          >
+            Limpar filtros
+          </button>
+        )}
+        <p role="status" className="sr-only">
+          Mostrando {visiveis.length} de {itens.length} plataformas
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-5 mb-8">
+        {visiveis.map((f, i) => (
+          <motion.div
+            key={f.player}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: i * 0.05 }}
+            className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col"
+          >
+            <div className="flex items-start justify-between gap-3 mb-1 flex-wrap">
+              <h4 className="font-bold text-gray-900 text-lg leading-snug">{f.player}</h4>
+              <span
+                className={`px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${
+                  f.mercado === 'Plataforma pública' ? 'bg-ambar-100 text-ambar-700' : 'bg-azul-100 text-azul-700'
+                }`}
+              >
+                {f.mercado}
+              </span>
+            </div>
+            <p className="text-sm text-gray-600 mb-4">{f.produto}</p>
+
+            <div className="flex flex-wrap gap-1.5 mb-4">
+              {f.publicos.map(p => (
+                <span key={p} className="px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-600">
+                  {p}
+                </span>
+              ))}
+            </div>
+
+            <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">O que está no produto</p>
+            <p className="text-sm md:text-xs text-gray-700 leading-relaxed mb-4">{f.entregue}</p>
+
+            <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">O que isso significa</p>
+            <p className="text-sm md:text-xs text-gray-700 leading-relaxed mb-5">{f.leitura}</p>
+
+            <a
+              href={f.fonte}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto inline-flex items-center gap-1.5 text-xs font-medium text-azul-600 hover:underline"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              {f.fonteLabel}
+            </a>
+          </motion.div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 export default function App() {
   const [activeSection, setActiveSection] = useState('insight');
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -3204,13 +3410,12 @@ export default function App() {
               <img src={radarIcone} alt="" width={234} height={229} className="h-6 w-auto" />
               <h3 className="text-xl font-bold text-navy-900">Radar de funcionalidades</h3>
             </div>
-            <div className="grid md:grid-cols-2 gap-5 mb-8">
-              {[
+            <RadarFuncionalidades
+              itens={[
                 {
                   player: "Somos Educação",
                   produto: "Plu, dentro do Plurall",
-                  mercado: "Privado",
-                  corMercado: "bg-azul-100 text-azul-700",
+                  mercado: "Plataforma privada",
                   publicos: ["Professor", "Aluno"],
                   entregue: "Para o professor: plano de aula, questões, provas e apresentações a partir do capítulo do material. Para o aluno: resumo, glossário, plano de estudo, exercício e tirar dúvida dentro do próprio conteúdo.",
                   leitura: "Para o professor, gera material, e isso ninguém questiona. Para o aluno, resumo e tira-dúvidas são o formato que mais se presta a atalho. O acervo ancorado ao capítulo poderia servir para perguntar ao aluno em vez de responder por ele.",
@@ -3220,8 +3425,7 @@ export default function App() {
                 {
                   player: "Poliedro",
                   produto: "Cosmos, camada de IA do P+",
-                  mercado: "Privado",
-                  corMercado: "bg-azul-100 text-azul-700",
+                  mercado: "Plataforma privada",
                   publicos: ["Professor", "Gestor"],
                   entregue: "Interação com IA generativa restrita ao conteúdo proprietário, somada a modelos preditivos: sugestão de estratégia didática, adaptação de conteúdo, criação de avaliação e leitura de desempenho. Disponível na web e no app P+.",
                   leitura: "A IA não fala com o aluno, então quem decide é o professor. É o desenho que a norma e as big techs defendem, e ele depende da formação do professor para virar aprendizagem.",
@@ -3231,8 +3435,7 @@ export default function App() {
                 {
                   player: "Santillana",
                   produto: "Moderna Core",
-                  mercado: "Privado",
-                  corMercado: "bg-azul-100 text-azul-700",
+                  mercado: "Plataforma privada",
                   publicos: ["Professor", "Gestor"],
                   entregue: "Ecossistema que junta conteúdo, dados e IA: ampliação de repertório de estratégias para o professor e leitura contínua de desempenho para apoiar decisão do gestor.",
                   leitura: "O recurso acompanha o desempenho do aluno e não responde por ele, então não cria atalho. É o tipo de recurso mais útil para medir o efeito do produto, embora chame menos atenção numa demonstração de venda; com a evidência virando argumento de compra, essa desvantagem diminui.",
@@ -3242,8 +3445,7 @@ export default function App() {
                 {
                   player: "Bernoulli",
                   produto: "CoCria Professor",
-                  mercado: "Privado",
-                  corMercado: "bg-azul-100 text-azul-700",
+                  mercado: "Plataforma privada",
                   publicos: ["Professor", "Gestor"],
                   entregue: "Apoio ao planejamento docente e à leitura de diagnóstico de aprendizagem, com adaptação de atividades e organização de estratégias sobre a base de dados da rede.",
                   leitura: "Planejamento e diagnóstico ficam com o professor e não criam atalho para o aluno. Também não diferenciam: todo concorrente terá algo parecido.",
@@ -3254,7 +3456,6 @@ export default function App() {
                   player: "PNLD Digital",
                   produto: "Leitor oficial do MEC/FNDE",
                   mercado: "Plataforma pública",
-                  corMercado: "bg-ambar-100 text-ambar-700",
                   publicos: ["Aluno", "Professor"],
                   entregue: "Leitor interativo das obras do programa, com audiodescrição, narração, mapas e infográficos clicáveis, vídeos legendados e compatibilidade com leitor de tela. Traz agente de IA para esclarecer dúvidas e apoiar o uso do sistema.",
                   leitura: "O agente responde sobre o sistema, e não sobre o conteúdo, por isso não entrega resposta de exercício. Como o leitor oficial já oferece audiodescrição e leitura de tela para todas as obras, esses recursos deixam de diferenciar qualquer fornecedor.",
@@ -3264,8 +3465,7 @@ export default function App() {
                 {
                   player: "Teachy",
                   produto: "Assistente do professor e Teachy Studio",
-                  mercado: "Privado",
-                  corMercado: "bg-azul-100 text-azul-700",
+                  mercado: "Plataforma privada",
                   publicos: ["Professor", "Escola"],
                   entregue: "Para o professor: plano de aula, sequência didática, slides, listas de exercícios, provas e correção de exercícios com IA, alinhados à BNCC. Para a escola: o Teachy Studio, em que a instituição cria livros, apostilas e sequências próprias com IA, impressos e digitais. Desde a Bett Brasil 2026, a escola também pode adotar pelo Studio o material do Descomplica, com as videoaulas, como base curricular. Não houve lançamento entre 11 e 30 de setembro.",
                   leitura: "Vem de fora dos sistemas de ensino e entra pelo material didático, onde está a receita das editoras: a empresa promete apostila própria por uma fração do custo de produção editorial, e a parceria com o Descomplica entrega uma base curricular pronta. A IA serve sobretudo a quem produz o material. O que ela ainda não mostra é o que qualquer material precisa mostrar agora: que o aluno aprende com ele.",
@@ -3275,57 +3475,15 @@ export default function App() {
                 {
                   player: "AI4School",
                   produto: "Plataforma de IA da Conexia Educação (Grupo SEB)",
-                  mercado: "Privado",
-                  corMercado: "bg-azul-100 text-azul-700",
+                  mercado: "Plataforma privada",
                   publicos: ["Aluno", "Professor", "Família"],
                   entregue: "Na versão gratuita, o ChatEdu, assistente para tarefas escolares e preparação para o ENEM e vestibulares, e, para o educador, geração de plano de aula e ferramentas adaptadas a perfis de aprendizagem. Na premium, tutores virtuais por disciplina e trilhas de letramento em IA para alunos, professores e famílias, seguindo a BNCC. Tem controle parental, linguagem ajustada à faixa etária e alerta de conteúdo impróprio. A plataforma ganhou um summit próprio na Bett Brasil 2026 e não teve novidade entre 11 e 30 de setembro.",
                   leitura: "Põe a IA para conversar direto com o aluno, com apoio à tarefa e tutor por disciplina, e aposta na segurança para ganhar a confiança da família. Não localizamos informação pública sobre se o ChatEdu e os tutores evitam entregar a resposta, e é isso que define de que lado da evidência o produto fica. Como a Conexia atende escolas parceiras, está mais perto da concorrência direta do que de uma startup de fora.",
                   fonte: "https://www.uai.com.br/app/noticia/mundo-corporativo/2025/10/06/noticia-mundo-corporativo,370556/ai4school-conexia-apresenta-solucao-de-ia-para-educacao.shtml",
                   fonteLabel: "Portal UAI"
                 },
-              ].map((f, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col"
-                >
-                  <div className="flex items-start justify-between gap-3 mb-1 flex-wrap">
-                    <h4 className="font-bold text-gray-900 text-lg leading-snug">{f.player}</h4>
-                    <span className={`px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${f.corMercado}`}>
-                      {f.mercado}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-4">{f.produto}</p>
-
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {f.publicos.map(p => (
-                      <span key={p} className="px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-600">
-                        {p}
-                      </span>
-                    ))}
-                  </div>
-
-                  <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">O que está no produto</p>
-                  <p className="text-sm md:text-xs text-gray-700 leading-relaxed mb-4">{f.entregue}</p>
-
-                  <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">O que isso significa</p>
-                  <p className="text-sm md:text-xs text-gray-700 leading-relaxed mb-5">{f.leitura}</p>
-
-                  <a
-                    href={f.fonte}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center gap-1.5 text-xs font-medium text-azul-600 hover:underline"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    {f.fonteLabel}
-                  </a>
-                </motion.div>
-              ))}
-            </div>
+              ]}
+            />
 
             <div className="bg-white rounded-2xl border-2 border-ambar-100 p-6 md:p-8 mb-12">
               <div className="flex items-start gap-3">
