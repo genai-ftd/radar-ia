@@ -3205,7 +3205,7 @@ export default function App() {
               <h3 className="text-xl font-bold text-navy-900">Radar de funcionalidades</h3>
             </div>
             <p className="text-sm text-gray-600 mb-6 max-w-3xl">
-              Não localizamos funcionalidade nova na janela; os recursos são os da edição passada. A pergunta desta vez: cada um faz o aluno trabalhar ou entrega a resposta?
+              Não localizamos funcionalidade nova na janela; os recursos são os da edição passada. Entram pela primeira vez a Teachy, startup de IA para professores, e a AI4School, da Conexia Educação (Grupo SEB), que também não tiveram novidade entre 11 e 30 de setembro: os cartões descrevem o que já oferecem. A pergunta desta vez: cada um faz o aluno trabalhar ou entrega a resposta?
             </p>
             <div className="grid md:grid-cols-2 gap-5 mb-8">
               {[
@@ -3263,6 +3263,28 @@ export default function App() {
                   leitura: "O agente responde sobre o sistema, e não sobre o conteúdo, por isso não entrega resposta de exercício. Como o leitor oficial já oferece audiodescrição e leitura de tela para todas as obras, esses recursos deixam de diferenciar qualquer fornecedor.",
                   fonte: "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/junho/pnld-digital-amplia-inclusao-aos-livros-da-educacao-basica",
                   fonteLabel: "MEC"
+                },
+                {
+                  player: "Teachy",
+                  produto: "Assistente do professor e Teachy Studio",
+                  mercado: "Entrante",
+                  corMercado: "bg-lilas-100 text-lilas-700",
+                  publicos: ["Professor", "Escola"],
+                  entregue: "Para o professor: plano de aula, sequência didática, slides, listas de exercícios, provas e correção de exercícios com IA, alinhados à BNCC. Para a escola: o Teachy Studio, em que a instituição cria livros, apostilas e sequências próprias com IA, impressos e digitais. Desde a Bett Brasil 2026, a escola também pode adotar pelo Studio o material do Descomplica, com as videoaulas, como base curricular.",
+                  leitura: "Vem de fora dos sistemas de ensino e entra pelo material didático, onde está a receita das editoras: a empresa promete apostila própria por uma fração do custo de produção editorial, e a parceria com o Descomplica entrega uma base curricular pronta. A IA serve sobretudo a quem produz o material. O que ela ainda não mostra é o que qualquer material precisa mostrar agora: que o aluno aprende com ele.",
+                  fonte: "https://educador21.com/ia-na-educacao-teachy-descomplica-escolas/",
+                  fonteLabel: "Educador21"
+                },
+                {
+                  player: "AI4School",
+                  produto: "Plataforma de IA da Conexia Educação",
+                  mercado: "Entrante",
+                  corMercado: "bg-lilas-100 text-lilas-700",
+                  publicos: ["Aluno", "Professor", "Família"],
+                  entregue: "Na versão gratuita, o ChatEdu, assistente para tarefas escolares e preparação para o ENEM e vestibulares, e, para o educador, geração de plano de aula e ferramentas adaptadas a perfis de aprendizagem. Na premium, tutores virtuais por disciplina e trilhas de letramento em IA para alunos, professores e famílias, seguindo a BNCC. Tem controle parental, linguagem ajustada à faixa etária e alerta de conteúdo impróprio.",
+                  leitura: "Põe a IA para conversar direto com o aluno, com apoio à tarefa e tutor por disciplina, e aposta na segurança para ganhar a confiança da família. Não localizamos informação pública sobre se o ChatEdu e os tutores evitam entregar a resposta, e é isso que define de que lado da evidência o produto fica. Como a Conexia atende escolas parceiras, está mais perto da concorrência direta do que de uma startup de fora.",
+                  fonte: "https://www.uai.com.br/app/noticia/mundo-corporativo/2025/10/06/noticia-mundo-corporativo,370556/ai4school-conexia-apresenta-solucao-de-ia-para-educacao.shtml",
+                  fonteLabel: "Portal UAI"
                 },
               ].map((f, i) => (
                 <motion.div
