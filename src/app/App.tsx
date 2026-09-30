@@ -2495,7 +2495,7 @@ export default function App() {
                 variants={{ oculto: { opacity: 0, y: 16 }, visivel: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }}
                 className="text-base md:text-[17px] text-white/80 leading-[1.7]"
               >
-                É o que mostram os primeiros ensaios controlados com tutores de IA, publicados em agosto e setembro: o ganho foi pequeno e só apareceu quando o tutor guiava o aluno por perguntas e exigia domínio do conteúdo antes de avançar. Enquanto isso, a maioria dos americanos diz que a IA faz mais mal que bem na escola, sem separar um uso do outro. Cabe ao produto <strong className="font-semibold text-white">tornar essa diferença visível</strong>.
+                É o que mostram os ensaios controlados com tutores de IA publicados em agosto e setembro, em escala e por tempo longo: o ganho foi pequeno e só apareceu quando o tutor guiava o aluno por perguntas e exigia domínio do conteúdo antes de avançar. Enquanto isso, a maioria dos americanos diz que a IA faz mais mal que bem na escola, sem separar um uso do outro. Cabe ao produto <strong className="font-semibold text-white">tornar essa diferença visível</strong>.
               </motion.p>
             </motion.div>
           </div>
@@ -2640,7 +2640,7 @@ export default function App() {
                   tag: "Vento contra",
                   tagCor: "bg-red-100 text-red-700",
                   conclusao: "O público americano virou contra a IA na escola, e Los Angeles tirou a IA de todos os alunos",
-                  raciocinio: "Na pesquisa da NBC publicada em 17 de setembro, 53% dos adultos disseram que a IA faz mais mal que bem na educação básica, contra 27%. Los Angeles, a segunda maior rede dos EUA, bloqueou a IA generativa para todos os alunos nos equipamentos da escola, sem avisar o conselho.",
+                  raciocinio: "Na pesquisa da NBC publicada em 17 de setembro, 53% dos adultos disseram que a IA faz mais mal que bem na educação básica, contra 27%. Los Angeles, a segunda maior rede dos EUA, bloqueou a IA generativa para todos os alunos nos equipamentos da escola, numa decisão que surpreendeu o conselho.",
                   decisao: "Ter evidência de aprendizagem pronta antes que a objeção chegue ao comprador brasileiro."
                 },
                 {
@@ -2653,9 +2653,9 @@ export default function App() {
                 {
                   tag: "Lacuna local",
                   tagCor: "bg-ambar-100 text-ambar-700",
-                  conclusao: "Ninguém no Brasil publicou evidência de impacto",
-                  raciocinio: "Não localizamos estudo com grupo de comparação de nenhuma rede, sistema de ensino ou plataforma brasileira de IA. E a primeira candidata a publicar evidência sobre IA na rede pública é uma aliança de fundações com a Anthropic, e não um sistema de ensino. Quando a objeção chegar aqui, quem tiver um número próprio de aprendizagem terá o argumento que a pesquisa americana não derrubou.",
-                  decisao: "Montar agora uma linha de base de aprendizagem com uma rede parceira."
+                  conclusao: "Nenhum sistema de ensino publicou evidência de impacto da própria IA",
+                  raciocinio: "O único ensaio randomizado brasileiro de IA pedagógica que localizamos é o da Letrus, uma edtech de redação avaliada pelo J-PAL em escolas estaduais do Espírito Santo. Nenhum sistema de ensino ou grupo editorial publicou algo parecido. E a próxima candidata a publicar evidência sobre IA na rede pública é uma aliança de fundações com a Anthropic. Quando a objeção chegar aqui, os números brasileiros disponíveis vão ser de quem vem de fora do setor.",
+                  decisao: "Montar agora uma linha de base de aprendizagem com uma rede parceira, para não depender de números de terceiros."
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-rosa-600 shadow-sm hover:shadow-md transition-shadow">
@@ -2703,12 +2703,12 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6 items-start">
               {[
                 {
-                  titulo: "Os primeiros ensaios rigorosos de tutor de IA saíram, e o ganho é pequeno",
+                  titulo: "Dois ensaios grandes com tutor de IA saíram, e o ganho é pequeno",
                   empresa: "Khan Academy · NUMI · EdWorkingPapers",
                   data: "Ago/2026",
                   consolida: "Ensaio de dois anos com o Khanmigo · estudo com 6.997 alunos em Hamilton County · registro de uso das conversas",
-                  resumo: "Oreopoulos e Low publicaram o primeiro ensaio randomizado de dois anos com o Khanmigo, sorteando 18 escolas de anos finais do Tennessee. O tutor funcionava em modo coach, sem entregar a resposta. O ganho foi de cerca de 1,3 ponto percentil por período letivo (0,06 a 0,08 desvio-padrão por ano), perto do que o Khan consegue sem IA. Quase todos os alunos experimentaram (96%), mas o aluno mediano só mandou mensagem em um terço dos dias, e muitas conversas fugiram do assunto ou pediram a resposta. No mesmo mês, um estudo com 6.997 alunos em Hamilton County mediu cerca de 3 pontos percentuais a mais com IA e domínio obrigatório antes de avançar. O ganho ficou no conteúdo praticado e caiu bastante uma semana depois.",
-                  impacto: "Pela primeira vez há números com grupo de comparação para tutor de IA, e eles desmontam tanto a ideia de que a IA não ensina nada quanto a de que ela transforma a aprendizagem: o ganho existe e é pequeno. E ele depende do desenho (modo coach, domínio antes de avançar, retomada do erro), porque onde o aluno pode usar a ferramenta para pular o esforço, ele usa.",
+                  resumo: "Oreopoulos e Low publicaram um ensaio randomizado de dois anos com o Khanmigo, sorteando 18 escolas de anos finais do Tennessee. O tutor funcionava em modo coach, sem entregar a resposta. O ganho foi de cerca de 1,3 ponto percentil por período letivo (0,06 a 0,08 desvio-padrão por ano), perto do que o Khan consegue sem IA. Quase todos os alunos experimentaram (96%), mas o aluno mediano só mandou mensagem em um terço dos dias, e muitas conversas fugiram do assunto ou pediram a resposta. No mesmo mês, um estudo com 6.997 alunos em Hamilton County mediu cerca de 3 pontos percentuais a mais com IA e domínio obrigatório antes de avançar. O ganho ficou no conteúdo praticado e caiu bastante uma semana depois.",
+                  impacto: "São números com grupo de comparação, em escala e por dois anos, e eles desmontam tanto a ideia de que a IA não ensina nada quanto a de que ela transforma a aprendizagem: o ganho existe e é pequeno. E ele depende do desenho (modo coach, domínio antes de avançar, retomada do erro), porque onde o aluno pode usar a ferramenta para pular o esforço, ele usa.",
                   professor: "Tem uma expectativa realista: a IA ajuda quem pratica com ela, e quem usa pouco quase não ganha nada.",
                   aluno: "Aprende mais quando o tutor não dá a resposta e exige domínio antes de avançar.",
                   gestor: "Passa a ter números externos para comparar com o que o fornecedor promete: se alguém anunciar um salto de aprendizagem, os ensaios indicam que o esperado é bem menor.",
@@ -2764,7 +2764,7 @@ export default function App() {
                   data: "26 ago – 18 set/2026",
                   consolida: "Redação com correção por IA na rede do Espírito Santo · parecer do CNE sem homologação · imprensa dividida · cartilha do ENEM",
                   resumo: "Entre 26 de agosto e 7 de setembro, a rede estadual do Espírito Santo fez a quarta produção de redação do ano na plataforma Letrus, em que a IA corrige o texto e devolve o retorno na hora. A secretaria usa a ferramenta desde 2019. O parecer do CNE de 1º de setembro, que veda IA para corrigir e dar nota a redação, continua sem homologação: não localizamos publicação no Diário Oficial até o fechamento. Parte da imprensa trata a regra como vigente, e parte lembra que parecer só vale depois de homologado. Em 18 de setembro, o Inep publicou a cartilha do ENEM, com prova em 8 de novembro e redação corrigida por dois avaliadores humanos.",
-                  impacto: "O caso capixaba mostra onde a linha deve ficar na prática: a devolutiva formativa imediata é permitida, e a nota dada pela máquina, não. Com a norma sem assinatura e a imprensa dividida, redes e fornecedores não sabem de que lado está cada funcionalidade. Quem publicar essa fronteira primeiro, com base no texto aprovado, vai orientar o mercado.",
+                  impacto: "A adoção capixaba tem evidência por trás: um ensaio randomizado avaliado pelo J-PAL entre 2018 e 2020, em 178 escolas estaduais e com cerca de 19 mil alunos, mediu notas maiores de redação com a devolutiva da Letrus, e a versão só com IA teve efeito parecido com a que somava corretores humanos. Depois do estudo, o estado expandiu o uso para toda a rede. O caso mostra onde a linha deve ficar: a devolutiva formativa imediata é permitida e tem resultado medido, e a nota dada pela máquina, não. Com a norma sem assinatura e a imprensa dividida, quem publicar essa fronteira primeiro, com base no texto aprovado, vai orientar o mercado.",
                   professor: "Continua dono da nota e pode usar a devolutiva automática, desde que ela não vire nota.",
                   aluno: "Recebe retorno imediato sobre o texto, o tipo de ajuda que os ensaios ligam à retomada do erro.",
                   gestor: "Precisa separar, em cada contrato, o que é devolutiva e o que é nota antes da homologação.",
@@ -2862,9 +2862,9 @@ export default function App() {
                   janela: "Monitorar"
                 },
                 {
-                  cat: "Nenhum estudo brasileiro de IA pedagógica com grupo de comparação",
-                  nota: "Terceira edição seguida com essa ausência. Os EUA publicaram dois ensaios com milhares de alunos no período. Aqui, não localizamos nenhum de rede, sistema de ensino ou plataforma.",
-                  leitura: "Um estudo leva pelo menos um semestre letivo. A Anthropic e a Aliança de IA para a Educação disseram que vão publicar evidências sobre as ferramentas que estão desenhando para escolas públicas; se saírem primeiro, o primeiro número brasileiro virá de fora do setor.",
+                  cat: "Nenhum sistema de ensino publicou estudo de impacto da própria IA",
+                  nota: "Terceira edição seguida com essa ausência entre sistemas de ensino e grupos editoriais. O único ensaio randomizado brasileiro de IA pedagógica que localizamos é o da Letrus, avaliado pelo J-PAL no Espírito Santo, de uma edtech de fora dos sistemas de ensino.",
+                  leitura: "Um estudo leva pelo menos um semestre letivo. A Anthropic e a Aliança de IA para a Educação disseram que vão publicar evidências sobre as ferramentas que estão desenhando para escolas públicas. Se isso acontecer antes de algum sistema de ensino medir o próprio produto, os números de referência no Brasil vão ser todos de quem vem de fora do setor.",
                   janela: "Custo de atraso alto"
                 },
                 {
@@ -2874,14 +2874,14 @@ export default function App() {
                   janela: "Janela aberta"
                 },
                 {
-                  cat: "Ninguém mede o uso produtivo da IA",
-                  nota: "No ensaio do Khanmigo, o aluno mediano usou o tutor em um terço dos dias, e muitas conversas pediram a resposta ou fugiram do assunto. Nenhuma plataforma brasileira divulga métrica que separe uso produtivo de atalho.",
+                  cat: "Não localizamos métrica pública de uso produtivo da IA",
+                  nota: "No ensaio do Khanmigo, o aluno mediano usou o tutor em um terço dos dias, e muitas conversas pediram a resposta ou fugiram do assunto. Não localizamos plataforma brasileira que divulgue métrica separando uso produtivo de atalho.",
                   leitura: "Um número alto de uso pode esconder alunos que só pedem a resposta pronta. Sem separar os dois, a plataforma não consegue mostrar que não está alimentando a ilusão de aprendizagem.",
                   janela: "Janela aberta"
                 },
                 {
-                  cat: "Ninguém publica custo por ponto de aprendizagem",
-                  nota: "O StudentBench mostrou que a métrica é calculável e que a diferença entre alternativas chega a centenas de vezes. Os fornecedores brasileiros cobram por aluno ou por licença.",
+                  cat: "Não localizamos preço por resultado de aprendizagem",
+                  nota: "O StudentBench mostrou que a métrica é calculável e que a diferença entre alternativas chega a centenas de vezes. Não localizamos fornecedor brasileiro que apresente preço em função do resultado; a cobrança é por aluno ou por licença.",
                   leitura: "Numa rede pública com orçamento apertado, vender aprendizagem por real gasto muda a conversa de compra.",
                   janela: "Janela aberta"
                 },
@@ -2953,8 +2953,8 @@ export default function App() {
                 {
                   tema: "Evidência de aprendizagem como campo de disputa",
                   tipo: "Estrutural",
-                  trilha: "#08 admissão de uso real baixo → #09 pesquisa longitudinal acoplada a rollout → #10 penalidade medida em coorte de 30 meses → #11 avaliação de impacto exigida por norma → #12 primeiros ensaios randomizados de tutor de IA, com ganho modesto",
-                  leitura: "Nas edições anteriores, a discussão era se havia ou não evidência sobre IA na aprendizagem. Agora existem os primeiros resultados com grupo de comparação, e a pergunta passou a ser de que tamanho é o efeito e que tipo de desenho o produz. Um ganho pequeno e bem medido virou o mínimo para ser levado a sério, e o fato de nenhum player brasileiro ter número próprio passou a ser o risco mais concreto do setor.",
+                  trilha: "#08 admissão de uso real baixo → #09 pesquisa longitudinal acoplada a rollout → #10 penalidade medida em coorte de 30 meses → #11 avaliação de impacto exigida por norma → #12 ensaios randomizados de tutor de IA em escala, com ganho modesto",
+                  leitura: "Nas edições anteriores, a discussão era se havia ou não evidência sobre IA na aprendizagem. Agora há resultados com grupo de comparação em escala, e a pergunta passou a ser de que tamanho é o efeito e que tipo de desenho o produz. Um ganho pequeno e bem medido virou o mínimo para ser levado a sério. No Brasil, o único ensaio que localizamos é de uma edtech de redação, e nenhum sistema de ensino tem número próprio: esse passou a ser o risco mais concreto do setor.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
@@ -2962,7 +2962,7 @@ export default function App() {
                   tema: "Quem assina a decisão sobre o aluno",
                   tipo: "Estrutural",
                   trilha: "#09 a interface passa a decidir o que cada perfil vê → #10 a própria plataforma passa a impedir que o aluno pegue a resposta pronta → #11 a norma proíbe a máquina de dar nota e de punir → #12 as big techs formam o professor para decidir",
-                  leitura: "A ideia de que a decisão sobre o aluno cabe ao professor já estava na norma brasileira e agora também está nos cursos de formação da OpenAI e da Anthropic. Como virou o discurso de todo mundo, afirmar isso já não diferencia nenhum produto; o que ainda diferencia é conseguir mostrar em que momento o professor decidiu.",
+                  leitura: "A ideia de que a decisão sobre o aluno cabe ao professor já estava na norma brasileira e agora também está nos cursos de formação da OpenAI e da Anthropic. Como virou discurso comum, afirmar isso já não diferencia nenhum produto; o que ainda diferencia é conseguir mostrar em que momento o professor decidiu.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
@@ -2994,7 +2994,7 @@ export default function App() {
                   tema: "O que vira commodity",
                   tipo: "Emergente",
                   trilha: "#10 mediar o uso vira padrão de plataforma → #12 o modelo em si vira insumo barato, com o aberto de porte médio empatando com o humano",
-                  leitura: "Em três edições, duas coisas que eram vendidas como diferencial passaram a ser oferecidas por todos: mediar o uso do aluno, registrado na edição #10, e agora o próprio modelo de IA. O que continua difícil de copiar é o desenho pedagógico e a capacidade de provar que ele funciona.",
+                  leitura: "Em três edições, duas coisas que eram vendidas como diferencial passaram a ser padrão de mercado: mediar o uso do aluno, registrado na edição #10, e agora o próprio modelo de IA. O que continua difícil de copiar é o desenho pedagógico e a capacidade de provar que ele funciona.",
                   cor: "bg-ambar-50 border-ambar-200",
                   badge: "bg-ambar-100 text-ambar-700"
                 },
@@ -3071,7 +3071,7 @@ export default function App() {
               Quem está do lado <span className="text-azul-600">certo da evidência</span>
             </h2>
             <p className="text-gray-600 mb-8 text-base max-w-3xl text-pretty">
-              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Nenhum dos players acompanhados lançou IA ou publicou resultado de aprendizagem na janela, então a análise parte do que cada um já tem: quem está do lado da IA que faz o aluno trabalhar e quem fica exposto à objeção.
+              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Não localizamos, entre os players acompanhados, lançamento de IA ou resultado de aprendizagem publicado na janela, então a análise parte do que cada um já tem: quem está do lado da IA que faz o aluno trabalhar e quem fica exposto à objeção.
             </p>
 
             {/* Mercado privado */}
@@ -3205,7 +3205,7 @@ export default function App() {
               <h3 className="text-xl font-bold text-navy-900">Radar de funcionalidades</h3>
             </div>
             <p className="text-sm text-gray-600 mb-6 max-w-3xl">
-              Nenhuma funcionalidade nova na janela; os recursos são os da edição passada. A pergunta desta vez: cada um faz o aluno trabalhar ou entrega a resposta?
+              Não localizamos funcionalidade nova na janela; os recursos são os da edição passada. A pergunta desta vez: cada um faz o aluno trabalhar ou entrega a resposta?
             </p>
             <div className="grid md:grid-cols-2 gap-5 mb-8">
               {[
@@ -3314,7 +3314,7 @@ export default function App() {
                 <div>
                   <h4 className="font-bold text-gray-900 mb-2">O espaço que continua vago</h4>
                   <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
-                    Nenhum recurso descrito publicamente declara domínio obrigatório antes de avançar, retomada guiada depois do erro ou medida do que o aluno fez com a resposta, os três elementos que os ensaios de agosto e setembro associaram a ganho. A oportunidade não exige inventar uma funcionalidade nova: está em reorganizar o que já existe em torno desses três elementos e medir o resultado.
+                    Entre os recursos acima, nenhum declara publicamente domínio obrigatório antes de avançar, retomada guiada depois do erro ou medida do que o aluno fez com a resposta, os três elementos que os ensaios de agosto e setembro associaram a ganho. A oportunidade não exige inventar uma funcionalidade nova: está em reorganizar o que já existe em torno desses três elementos e medir o resultado.
                   </p>
                 </div>
               </div>
@@ -3549,7 +3549,7 @@ export default function App() {
                   limitacoes: "Deixa a prática mais lenta, o que pode parecer pior experiência. E o ganho medido foi de curto prazo, no conteúdo praticado.",
                   dependencias: "Banco de itens calibrado e alinhado à habilidade, critério de domínio por habilidade e mapa de pré-requisitos.",
                   cenario: "Matemática e conteúdos com progressão clara de pré-requisitos. Menos útil em produção textual e projetos abertos.",
-                  impactoProduto: "É o recurso mais próximo do que a evidência premia, e nenhum concorrente acompanhado o declara publicamente.",
+                  impactoProduto: "É o recurso mais próximo do que a evidência premia, e não localizamos concorrente acompanhado que o declare publicamente.",
                   impactoEngenharia: "O trabalho está no conteúdo: calibrar itens e mapear pré-requisitos. O motor de regra é simples; o dado que o alimenta, não.",
                   maturidade: "Disponível",
                   cor: "bg-azul-100 text-azul-700",
@@ -3579,7 +3579,7 @@ export default function App() {
                   limitacoes: "A classificação é probabilística e erra. Serve para ver padrão de turma e de período, nunca para julgar ou punir um aluno.",
                   dependencias: "Registro das conversas com política de retenção, classificador avaliado com amostra rotulada por educadores e painel por turma.",
                   cenario: "Qualquer recurso de conversa com o aluno, e sobretudo onde a rede precisa justificar o uso diante do conselho e das famílias.",
-                  impactoProduto: "Responde diretamente à ilusão de aprendizagem com um número que mostra se o uso é produtivo. Nenhum player brasileiro divulga algo assim.",
+                  impactoProduto: "Responde diretamente à ilusão de aprendizagem com um número que mostra se o uso é produtivo. Não localizamos concorrente acompanhado que divulgue algo assim.",
                   impactoEngenharia: "Tratar o classificador como produto, com conjunto de avaliação próprio e revisão periódica.",
                   maturidade: "A construir",
                   cor: "bg-azul-100 text-azul-700",
@@ -3594,7 +3594,7 @@ export default function App() {
                   limitacoes: "Leva pelo menos um semestre, exige consentimento e pode dar resultado pequeno ou nulo. Um resultado modesto e honesto vale mais que nenhum.",
                   dependencias: "Rede parceira, desenho aprovado antes do início, avaliação alinhada à BNCC e parceiro acadêmico que dê credibilidade.",
                   cenario: "O recurso de IA que a empresa mais quer vender. Melhor começar por um só, bem medido.",
-                  impactoProduto: "Permite falar de resultado de aprendizagem, e não só de uso, num mercado em que nenhum concorrente acompanhado tem número publicado.",
+                  impactoProduto: "Permite falar de resultado de aprendizagem, e não só de uso, num mercado em que não localizamos número publicado de concorrente acompanhado.",
                   impactoEngenharia: "Garantir que o produto ligue e desligue o recurso por turma e registre a exposição por aluno. Sem isso, não há comparação.",
                   maturidade: "A construir",
                   cor: "bg-azul-100 text-azul-700",
@@ -3706,7 +3706,7 @@ export default function App() {
                 <div className="flex-1">
                   <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/70 mb-3">Consenso dos especialistas da quinzena</p>
                   <p className="text-lg md:text-xl font-semibold leading-snug text-pretty">
-                    Pesquisadores, educadores e big techs chegaram ao mesmo ponto por caminhos diferentes: <span className="text-amarelo-400">a IA ensina quando faz o aluno trabalhar, e o ganho vem do desenho</span>. Nenhum estudo mostrou que o simples acesso à IA melhora a aprendizagem.
+                    Pesquisadores, educadores e big techs chegaram ao mesmo ponto por caminhos diferentes: <span className="text-amarelo-400">a IA ensina quando faz o aluno trabalhar, e o ganho vem do desenho</span>. Nenhum dos estudos da quinzena mostrou que o simples acesso à IA melhora a aprendizagem.
                   </p>
                 </div>
                 <img src={liaExperts} alt="" width={394} height={400} className="w-28 sm:w-36 md:w-44 h-auto shrink-0 self-center sm:self-auto sm:-scale-x-100 drop-shadow-[0_12px_24px_rgba(1,34,112,0.45)]" />
@@ -3716,7 +3716,7 @@ export default function App() {
                 {[
                   {
                     ponto: "O efeito é pequeno e bem medido",
-                    detalhe: "Os ensaios de agosto mediram poucos pontos percentis, perto do que boas intervenções sem IA conseguem. Por serem os primeiros resultados com grupo de comparação, viram a referência para avaliar qualquer promessa de fornecedor."
+                    detalhe: "Os ensaios de agosto mediram poucos pontos percentis, perto do que boas intervenções sem IA conseguem. Por terem grupo de comparação, escala e duração, viram a referência para avaliar qualquer promessa de fornecedor."
                   },
                   {
                     ponto: "O atalho é o comportamento padrão",
@@ -3857,7 +3857,7 @@ export default function App() {
                 <div className="space-y-4">
                   {[
                     { item: "O modelo de IA em si", motivo: "O aberto de porte médio empatou com a tutoria humana no StudentBench, a custo muito menor. Escolher modelo virou decisão de custo", novo: true },
-                    { item: "Tira-dúvidas e resumo para o aluno", motivo: "Todos oferecem, e é o formato que a objeção associa à ilusão de aprendizagem. Além de não diferenciar, deixa o produto exposto à crítica", novo: true },
+                    { item: "Tira-dúvidas e resumo para o aluno", motivo: "Vários concorrentes oferecem, e é o formato que a objeção associa à ilusão de aprendizagem. Além de não diferenciar, deixa o produto exposto à crítica", novo: true },
                     { item: "Formação docente genérica em IA", motivo: "Trilha certificada e programa de formadores gratuitos de quem tem distribuição global. Não faz sentido concorrer por preço", novo: true },
                     { item: "Métrica de uso da IA", motivo: "Contar alunos e acessos deixou de convencer depois que o ensaio mostrou uso esparso e muita fuga da tarefa" },
                     { item: "Humano no laço como discurso", motivo: "A norma e as big techs já dizem que quem decide é o professor, então repetir isso não diferencia. O que ainda diferencia é o produto registrar em que momento o professor decidiu" },
@@ -3884,10 +3884,10 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   {[
-                    { item: "Domínio obrigatório com explicação do erro", motivo: "É o desenho ligado a ganho em Hamilton County, e nenhum concorrente acompanhado o declara. Depende de banco de itens calibrado, que não se monta em um ciclo", novo: true },
-                    { item: "Número próprio de aprendizagem", motivo: "Nenhum player brasileiro tem estudo com grupo de comparação publicado. O primeiro a publicar, mesmo com efeito modesto, vira a referência com que os outros serão comparados", novo: true },
+                    { item: "Domínio obrigatório com explicação do erro", motivo: "É o desenho ligado a ganho em Hamilton County, e não localizamos concorrente acompanhado que o declare. Depende de banco de itens calibrado, que não se monta em um ciclo", novo: true },
+                    { item: "Número próprio de aprendizagem", motivo: "Nenhum sistema de ensino tem estudo com grupo de comparação publicado; o único ensaio brasileiro que localizamos é de uma edtech de redação. O primeiro sistema a publicar, mesmo com efeito modesto, vira a referência com que os outros serão comparados", novo: true },
                     { item: "Medida de uso produtivo", motivo: "Separar uso para pensar de uso como atalho é o que permite defender o produto diante do conselho e da família", novo: true },
-                    { item: "Custo por ponto aprendido", motivo: "Numa rede pública, vender aprendizagem por real gasto muda a comparação de propostas. Quase ninguém tem hoje os dois dados necessários: o custo por aluno e o ganho medido" },
+                    { item: "Custo por ponto aprendido", motivo: "Numa rede pública, vender aprendizagem por real gasto muda a comparação de propostas. Não localizamos quem divulgue os dois dados necessários: o custo por aluno e o ganho medido" },
                     { item: "Formação docente no material adotado", motivo: "É a parte da formação que o catálogo global não cobre: o professor praticando a decisão no material que usa e dentro da política da rede" },
                     { item: "Acervo com itens calibrados", motivo: "O modelo virou insumo, e o conteúdo estruturado para domínio continua escasso. É um ativo que o grupo editorial tem e a big tech não" },
                   ].map((d, i) => (
@@ -3937,7 +3937,7 @@ export default function App() {
                 <p className="text-[11px] text-ambar-700 mb-5 font-medium">Muito discurso, evidência ausente ou contrária</p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "A IA vai transformar a aprendizagem", desc: "Os primeiros ensaios rigorosos mediram poucos pontos percentis, perto do que boas intervenções sem IA conseguem, e parte do ganho some em uma semana. Os dados mostram uma melhora modesta que depende do desenho." },
+                    { titulo: "A IA vai transformar a aprendizagem", desc: "Os ensaios rigorosos da quinzena mediram poucos pontos percentis, perto do que boas intervenções sem IA conseguem, e parte do ganho some em uma semana. Os dados mostram uma melhora modesta que depende do desenho." },
                     { titulo: "O público rejeita a IA na escola", desc: "A pesquisa mede uma impressão geral, sem separar a IA que responde da que faz trabalhar. Ler o resultado como rejeição a qualquer uso leva a cortar também o que funciona, como fez Los Angeles." },
                     { titulo: "Tutor de IA substitui o professor", desc: "O StudentBench comparou IA e tutoria individual com adultos numa preparação para exame, e não IA e professor em sala. Os outros estudos da quinzena põem o professor ou a estrutura pedagógica como condição do ganho." },
                   ].map((item, i) => (
@@ -3984,7 +3984,7 @@ export default function App() {
                     { titulo: "O ganho vem do desenho", desc: "Três estudos independentes chegaram ao mesmo ponto: onde o aluno pode pegar o atalho, pega, e o ganho aparece quando a estrutura obriga a trabalhar. Já justifica mudar o roadmap." },
                     { titulo: "Evidência de aprendizagem como condição de venda", desc: "O tema aparece há cinco edições, cada vez mais forte, e agora há números de referência publicados e uma objeção pública que vai pedir resultado." },
                     { titulo: "O professor decide", desc: "Norma brasileira, big techs e estudos apontam na mesma direção. Virou a arquitetura esperada de qualquer produto." },
-                    { titulo: "O modelo como insumo", desc: "O modelo aberto teve custo por ponto aprendido centenas de vezes menor que a tutoria humana, e a mediação do uso já era oferecida por todos desde a edição #10. Nenhuma das duas sustenta mais um preço acima do mercado." },
+                    { titulo: "O modelo como insumo", desc: "O modelo aberto teve custo por ponto aprendido centenas de vezes menor que a tutoria humana, e a mediação do uso já tinha virado padrão de plataforma na edição #10. Nenhuma das duas sustenta mais um preço acima do mercado." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-azul-400 mt-1 flex-shrink-0">▸</span>
@@ -4004,7 +4004,7 @@ export default function App() {
                 <p className="font-bold text-gray-900">O padrão desta quinzena</p>
               </div>
               <p className="text-gray-700 leading-relaxed md:columns-2 md:gap-10">
-                A quinzena juntou duas notícias que parecem opostas. O público americano virou contra a IA na escola, e os primeiros estudos rigorosos mostraram que ela ensina. As duas valem para IAs diferentes: a que entrega a resposta produz a ilusão de aprendizagem, e a que obriga o aluno a trabalhar produz um ganho pequeno e mensurável. Ao mesmo tempo, o modelo ficou barato demais para diferenciar. Sobram para competir o desenho pedagógico, a prova de que ele funciona e o professor no lugar de quem decide. O mercado brasileiro ainda não tem nenhum número próprio, e quando a objeção chegar aqui, quem tiver um estará em vantagem.
+                A quinzena juntou duas notícias que parecem opostas. O público americano virou contra a IA na escola, e estudos rigorosos mostraram que ela ensina. As duas valem para IAs diferentes: a que entrega a resposta produz a ilusão de aprendizagem, e a que obriga o aluno a trabalhar produz um ganho pequeno e mensurável. Ao mesmo tempo, o modelo ficou barato demais para diferenciar. Sobram para competir o desenho pedagógico, a prova de que ele funciona e o professor no lugar de quem decide. Entre os sistemas de ensino brasileiros, ninguém tem número próprio, e quando a objeção chegar aqui, quem tiver um estará em vantagem.
               </p>
             </div>
           </motion.div>
@@ -4055,9 +4055,9 @@ export default function App() {
                 {
                   rastreio: "Sinais 1 e 3 · ausência registrada",
                   sinal: "No ensaio do Khanmigo, o uso foi esparso e muitas conversas fugiram da tarefa; nos EUA, educadores passaram a falar em ilusão de aprendizagem",
-                  problema: "Hoje medimos quantos alunos usam a IA e quantas vezes, mas não sabemos se usam para pensar ou para pegar a resposta pronta. É a pergunta que conselhos e famílias vão fazer quando a objeção chegar aqui, e o dado de uso não responde a ela.",
+                  problema: "Se hoje medimos só quantos alunos usam a IA e quantas vezes, não sabemos se usam para pensar ou para pegar a resposta pronta. É a pergunta que conselhos e famílias vão fazer quando a objeção chegar aqui, e o dado de uso não responde a ela. Vale confirmar com o time de dados o que já é medido.",
                   oportunidade: "Painel de uso produtivo para o professor",
-                  impacto: "Classificar cada interação do aluno com a IA (trabalho na tarefa, pedido de resposta, fuga do assunto) e mostrar o resultado por turma e por período. O dado de uso vira um dado sobre a qualidade do uso, que é o que conselho, família e comprador vão pedir. Nenhum player brasileiro divulga algo assim.",
+                  impacto: "Classificar cada interação do aluno com a IA (trabalho na tarefa, pedido de resposta, fuga do assunto) e mostrar o resultado por turma e por período. O dado de uso vira um dado sobre a qualidade do uso, que é o que conselho, família e comprador vão pedir. Não localizamos concorrente acompanhado que divulgue algo assim.",
                   professor: "Vê quem está usando a IA para pensar e quem está só pedindo a resposta, e pode intervir a tempo.",
                   aluno: "Recebe acompanhamento sobre como usa a ferramenta, e não só sobre o que acerta.",
                   gestor: "Tem um número para defender o uso da IA diante do conselho e das famílias.",
@@ -4070,7 +4070,7 @@ export default function App() {
                 {
                   rastreio: "Sinais 1 e 2",
                   sinal: "A IA combinada com domínio obrigatório deu cerca de 3 pontos a mais, sobretudo na recuperação depois do erro, e um modelo aberto barato ensinou tanto quanto o tutor humano",
-                  problema: "Nosso apoio ao aluno funciona como conversa aberta: ele pode pedir a resposta e seguir adiante. É o formato que os estudos associam ao atalho e que mais se expõe à objeção pública.",
+                  problema: "Se o apoio ao aluno funciona como conversa aberta, ele pode pedir a resposta e seguir adiante, que é o formato que os estudos associam ao atalho e que mais se expõe à objeção pública. Vale verificar como cada recurso para o aluno se comporta quando ele pede a resposta.",
                   oportunidade: "Tutor que entra no erro, dentro de uma trilha com domínio obrigatório",
                   impacto: "A IA aparece quando o aluno erra, pergunta como ele pensou e pede uma nova tentativa, dentro de uma trilha em que só se avança depois de dominar a habilidade. Foi nesse ponto do fluxo que o estudo de Hamilton County mostrou ganho, e com um modelo aberto o custo por aluno cabe no orçamento de uma rede pública.",
                   professor: "Recebe um relatório dos erros que cada aluno cometeu e corrigiu, e não só a nota final.",
@@ -4084,10 +4084,10 @@ export default function App() {
                 },
                 {
                   rastreio: "Sinal 3 · ausência recorrente",
-                  sinal: "Nenhuma rede, sistema de ensino ou plataforma brasileira publicou estudo com grupo de comparação, enquanto os EUA publicaram dois ensaios com milhares de alunos em um mês",
+                  sinal: "Nenhum sistema de ensino publicou estudo com grupo de comparação da própria IA, enquanto os EUA publicaram dois ensaios com milhares de alunos em um mês e a única evidência brasileira é de uma edtech de redação",
                   problema: "É a terceira edição seguida com essa ausência. Na edição passada, esta prioridade era Baixa; subiu porque a objeção pública virou maioria nos EUA e agora existem números de referência com os quais qualquer resultado nosso será comparado.",
                   oportunidade: "Linha de base de aprendizagem com uma rede parceira",
-                  impacto: "Um recurso de IA, uma rede, duas condições (com e sem o recurso) e pelo menos um período letivo, com o registro de uso analisado junto das notas e um parceiro acadêmico para dar credibilidade. Mesmo um resultado modesto seria o primeiro número de aprendizagem publicado no mercado brasileiro.",
+                  impacto: "Um recurso de IA, uma rede, duas condições (com e sem o recurso) e pelo menos um período letivo, com o registro de uso analisado junto das notas e um parceiro acadêmico para dar credibilidade. Mesmo um resultado modesto seria o primeiro número de aprendizagem publicado por um sistema de ensino.",
                   professor: "Participa de uma pesquisa que dá legitimidade à própria prática, em vez de ser alvo de medição externa.",
                   aluno: "Passa a usar recursos ajustados com dados da própria rede.",
                   gestor: "Tem resultado para apresentar quando alguém perguntar se funciona, e o relatório de impacto que a norma vai exigir nos usos de alto risco.",
@@ -4100,7 +4100,7 @@ export default function App() {
                 {
                   rastreio: "Sinal 5",
                   sinal: "Uma rede estadual usa IA para corrigir redação com retorno imediato ao aluno, enquanto o parecer que proíbe IA de dar nota a redação espera homologação",
-                  problema: "Nossos recursos de apoio à escrita não separam com clareza o que é devolutiva para o aluno melhorar o texto e o que é nota. Quando a norma entrar em vigor, essa fronteira vai ser cobrada funcionalidade por funcionalidade.",
+                  problema: "Quando a norma entrar em vigor, a fronteira entre devolutiva para o aluno melhorar o texto e nota vai ser cobrada funcionalidade por funcionalidade. Vale mapear agora, em cada recurso de apoio à escrita, de que lado ele está.",
                   oportunidade: "Devolutiva formativa separada da atribuição de nota",
                   impacto: "A IA devolve comentários sobre o texto na hora, o tipo de ajuda que a evidência associa à retomada do erro, e a nota fica sempre com o professor, com registro de quem validou. Isso mantém o valor da correção dentro da regra e dá ao produto uma posição clara enquanto a imprensa ainda diverge sobre o que vale.",
                   professor: "Continua responsável pela nota e ganha tempo com uma devolutiva preliminar.",
@@ -4115,7 +4115,7 @@ export default function App() {
                 {
                   rastreio: "Sinal 2",
                   sinal: "Um modelo aberto de porte médio teve o menor custo por ponto aprendido, 918 vezes abaixo da tutoria humana, num estudo com 2.383 participantes",
-                  problema: "O produto depende de um único fornecedor de modelo, e trocar exigiria reescrever instruções e fluxos. Também não temos uma avaliação própria que diga se um modelo mais barato entregaria o mesmo resultado em português.",
+                  problema: "Se o produto depende de um único fornecedor de modelo, trocar exige reescrever instruções e fluxos, e sem uma avaliação própria não há como saber se um modelo mais barato entregaria o mesmo resultado em português. Vale confirmar com Engenharia o grau de dependência atual.",
                   oportunidade: "Produto independente de modelo, com teste de um modelo aberto",
                   impacto: "Uma camada que isole o produto do modelo e uma bateria de avaliação em português, com o nosso conteúdo, para trocar de modelo em dias. Reduz custo, dá controle sobre os dados dos alunos e tira o produto da dependência da política de preço de um fornecedor.",
                   professor: "Efeito indireto: nenhuma mudança visível, se a troca for bem avaliada.",
@@ -4129,8 +4129,8 @@ export default function App() {
                 },
                 {
                   rastreio: "Sinal 2 · ausência registrada",
-                  sinal: "O StudentBench mostrou que o custo por ponto aprendido pode ser calculado e varia centenas de vezes entre alternativas, e nenhum fornecedor brasileiro vende por resultado",
-                  problema: "Nossas propostas comparam preço de licença por aluno. Não temos nenhuma das duas partes da conta: quanto custa a IA por aluno e quanto ele aprende a mais com ela.",
+                  sinal: "O StudentBench mostrou que o custo por ponto aprendido pode ser calculado e varia centenas de vezes entre alternativas, e não localizamos fornecedor brasileiro que venda por resultado",
+                  problema: "Propostas que comparam só preço de licença por aluno deixam de fora as duas partes da conta que o StudentBench mostrou ser possível calcular: quanto custa a IA por aluno e quanto ele aprende a mais com ela.",
                   oportunidade: "Custo por ponto aprendido como métrica de produto e de venda",
                   impacto: "Começar pela parte que depende só de nós, o custo por aluno e por recurso, e juntar o ganho de aprendizagem quando a linha de base existir. A conversa com a rede pública passa do preço da licença para quanto se aprende por real gasto.",
                   professor: "Efeito indireto: os recursos que mais ensinam por real gasto passam a ter prioridade.",

@@ -390,9 +390,10 @@ MERCADO PÚBLICO
 - Saber (eDocente)
 - Moderna (Moderna Amigos)
 
-BIG TECHS (Google, OpenAI, Anthropic) e edtechs de IA entram
-como FORÇA DE CONTEXTO em bloco separado — mudam as regras do
-jogo, mas não disputam a mesma venda.
+BIG TECHS (Google, OpenAI, Anthropic) entram como FORÇA DE
+CONTEXTO em bloco separado. Edtechs de IA e entrantes de fora
+do setor têm varredura própria: ver "ENTRANTES E EDTECHS DE IA"
+na seção 6.
 
 ==================================================
 EDIÇÕES ANTERIORES
@@ -630,6 +631,32 @@ passa a circular. Entra no radar de funcionalidades como camada de
 plataforma; NUNCA na tabela de concorrência direta, que segue restrita
 à lista calibrada acima.
 
+ENTRANTES E EDTECHS DE IA — varredura obrigatória (a partir da #13)
+Pedido da liderança na #12: "muitas vezes o mercado é disruptado por
+quem vem de fora". A cada edição, varrer também quem não está na lista
+calibrada, no Brasil e fora, mesmo que não dispute a mesma venda hoje.
+
+Base mínima de acompanhamento:
+- Brasil: Teachy (Teachy Studio, parceria com Descomplica), AI4School
+  (Conexia Educação / Grupo SEB), Letrus, Jovens Gênios, Árvore,
+  Descomplica, Educacional (Nexis) e finalistas do Bett EdTech Awards.
+- Fora: MagicSchool, Brisk, SchoolAI, Khan Academy (Khanmigo),
+  Squirrel AI, Brainly, Duolingo.
+- Iniciativas de fundações e big techs com redes públicas (ex.: Aliança
+  de IA para a Educação com a Anthropic).
+
+Como entram na edição:
+1. No Radar de funcionalidades, em bloco próprio "Entrantes", quando o
+   recurso ocupa um espaço marcado como vago ou ameaça a proposta de
+   valor de sistema de ensino e editora (ex.: Teachy Studio, que deixa a
+   escola criar material próprio com IA).
+2. Em Forças de contexto, quando mudam expectativa, preço ou canal.
+3. Na tabela de concorrência direta, só se passarem a disputar a mesma
+   escola, rede e orçamento. Reavaliar a AI4School a cada edição: é de
+   um grupo de soluções educacionais, não de uma startup isolada.
+Sem lançamento na janela, o entrante não vira notícia, mas a varredura
+é registrada e o Radar de funcionalidades é reavaliado.
+
 Regra de precisão: descrever o recurso pelo que ele faz, não pelo que
 o nome sugere. Caso verificado na #11 — o agente de IA do PNLD Digital
 atende dúvida sobre o USO DO SISTEMA, não sobre o conteúdo do livro.
@@ -670,6 +697,11 @@ Toda afirmação factual precisa de fonte rastreável e clicável.
 [ ] Há repetição desnecessária de número, evidência ou conclusão?
 [ ] A liderança entende lendo só Insight + Resumo + Oportunidades?
 [ ] Produto e Engenharia conseguem rastrear a origem das conclusões?
+[ ] O protocolo da seção 12 foi cumprido e o relatório de verificação
+    foi entregue antes do deploy?
+[ ] Toda afirmação absoluta ("nenhum", "ninguém", "único", "primeiro",
+    "todos", "sempre") passou pela busca contrária?
+[ ] A varredura de entrantes e edtechs de IA foi feita e registrada?
 
 Qualquer resposta negativa: revisar antes de finalizar.
 
@@ -717,6 +749,20 @@ TECNOLOGIA, CAPITAL E PESQUISA
 - CEPR (working papers) ..... https://cepr.org/
 - Startups.com.br (M&A edtech) https://startups.com.br/
 
+ENTRANTES E EDTECHS (a partir da #13)
+- Startupi ................... https://startupi.com.br/
+- Bloomberg Línea (startups) . https://www.bloomberglinea.com.br/startups/
+- Educador21 — editoria Edtechs https://educador21.com/edtechs/
+- EdSurge ................... https://www.edsurge.com/
+- EdTech Innovation Hub ..... https://www.edtechinnovationhub.com/
+- Bett EdTech Awards (finalistas) https://brasil.bettshow.com/
+- Blogs de Teachy, Conexia/AI4School, MagicSchool, Khan Academy
+
+EVIDÊNCIA (checar antes de qualquer afirmação de ausência)
+- J-PAL (avaliações em educação) https://www.povertyactionlab.org/
+- EdWorkingPapers ........... https://edworkingpapers.com/
+- NBER, Banco Mundial, BID, 3ie (bases de avaliações de impacto)
+
 Novas fontes entram nesta lista e passam a ser monitoradas nas
 edições seguintes.
 
@@ -739,3 +785,93 @@ Os textos de apoio de cada seção devem falar do ASSUNTO, nunca do
 método. Rastreabilidade visível ao leitor (badge "Consolida:",
 "Rastreável a: Sinal N", numeração dos sinais e legenda de
 classificação) permanece — é utilidade de leitura, não bastidor.
+
+--------------------------------------------------
+12. PROTOCOLO DE VERIFICAÇÃO DE CONTEÚDO — obrigatório antes do deploy
+--------------------------------------------------
+
+Origem: na #12 foram publicados e depois corrigidos dois erros de fato.
+(a) "Ninguém no Brasil publicou evidência de impacto", quando existe o
+ensaio randomizado da Letrus avaliado pelo J-PAL no Espírito Santo.
+(b) "Os primeiros ensaios de tutor de IA", quando já havia ensaios
+anteriores (ex.: Banco Mundial na Nigéria).
+A varredura seguinte achou mais pontos frágeis: generalizações ("todos
+oferecem") que contradiziam a própria edição e afirmações sobre o nosso
+produto sem fonte. A causa comum: buscar só dentro da janela e escrever
+a conclusão antes de tentar refutá-la.
+
+PASSO 1 — Inventário de afirmações
+Depois de escrever e antes de revisar o texto, listar toda afirmação
+factual da edição (número, data, nome, ausência, superlativo, citação)
+numa planilha interna com colunas: afirmação | seção | fonte | tipo de
+leitura (primária / secundária / só busca) | status.
+
+PASSO 2 — Varredura de absolutos
+Buscar no texto: nenhum, nenhuma, ninguém, único, primeiro, pela
+primeira vez, maior, todos, sempre, nunca, só. Cada ocorrência factual
+precisa ser uma de três coisas:
+- sustentada por fonte citada;
+- delimitada ("não localizamos", "entre os concorrentes acompanhados",
+  "na janela");
+- reescrita ou removida.
+
+PASSO 3 — Busca contrária (tentar provar o oposto)
+Para toda ausência, superlativo ou "primeiro", fazer ao menos duas
+buscas para refutar, SEM limite de data: "[tema] Brasil ensaio
+randomizado", "[tema] first randomized trial", e consulta às bases do
+J-PAL, EdWorkingPapers, Banco Mundial/BID/3ie. Se achar o contrário,
+reescrever. Ausência só entra como "não localizamos", com o escopo dito.
+
+PASSO 4 — Coerência interna
+Cruzar cada generalização com os cartões da própria edição (ex.: "todos
+oferecem X" contra o Radar de funcionalidades). Conferir se números
+repetidos em seções diferentes são idênticos.
+
+PASSO 5 — Fatos sobre o nosso produto
+Nunca afirmar como fato algo sobre produto, dado ou contrato da casa
+sem fonte interna. Escrever como hipótese a verificar ("se hoje
+medimos só X, ...; vale confirmar com o time de dados").
+
+PASSO 6 — Fonte e entidade
+- Todo número tem fonte clicável. Fonte primária sempre que possível.
+- Fonte bloqueada pelo proxy: exigir duas fontes independentes e marcar
+  "lida por busca" no relatório.
+- Não inferir quem são os membros de uma aliança, os autores de um
+  estudo ou o dono de um produto: escrever como a fonte escreve, ou
+  citar a fonte que nomeia.
+- Datas: conferir se estão dentro da janela; fatos anteriores entram
+  datados e sinalizados.
+
+PASSO 7 — Revisão em passadas separadas
+(a) Passada de fatos: ler só o inventário contra as fontes, sem olhar o
+    texto corrido.
+(b) Passada adversarial: para cada player, pesquisador ou órgão citado,
+    perguntar "o que ele contestaria aqui?". Corrigir o que não se
+    sustenta.
+(c) Passada editorial (better-writing): clareza, sem frases enigmáticas.
+Quando possível, a passada (a) é feita por um revisor ou agente
+separado de quem escreveu.
+
+PASSO 8 — Relatório de verificação antes do deploy
+Entregar ao responsável pela edição, antes de publicar:
+- afirmações sensíveis, com fonte e status;
+- o que foi lido só por busca;
+- o que foi inferido;
+- as ausências e superlativos que restaram, com a busca contrária feita.
+Publicar só depois do OK.
+
+PASSO 9 — Registro de erros
+Todo erro corrigido depois de publicado entra no registro abaixo, com a
+causa. O padrão é revisado a cada edição.
+
+REGISTRO DE ERROS
+- #12 · "Ninguém no Brasil publicou evidência de impacto" → existe o
+  ensaio da Letrus (J-PAL, ES). Causa: ausência afirmada sem busca
+  contrária e sem busca fora da janela.
+- #12 · "Primeiros ensaios de tutor de IA" → havia ensaios anteriores.
+  Causa: superlativo sem checar antecedentes.
+- #12 · "Todos oferecem tira-dúvidas para o aluno" → o Cosmos não fala
+  com o aluno. Causa: generalização sem cruzar com a própria edição.
+- #12 · Oportunidades afirmavam fatos sobre o nosso produto sem fonte.
+  Causa: problema escrito como fato, e não como hipótese.
+
