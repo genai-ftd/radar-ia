@@ -2225,26 +2225,65 @@ type Plataforma = {
   fonteLabel: string;
 };
 
-const TIPOS_PLATAFORMA: { valor: 'todas' | Plataforma['mercado']; rotulo: string }[] = [
-  { valor: 'todas', rotulo: 'Todas' },
-  { valor: 'Plataforma privada', rotulo: 'Privadas' },
-  { valor: 'Plataforma pública', rotulo: 'Públicas' },
-];
+type LinhaConcorrencia = {
+  player: string;
+  grupo: string;
+  movimento: string;
+  estrategia: string;
+  exposicao: string;
+  impacto: string;
+};
+
+type OpcaoTipo = { valor: string; rotulo: string; curto: string };
+
+function useFiltros<T extends { player: string }>(itens: T[], tipoDe: (item: T) => string) {
+  const [tipo, setTipo] = useState('todas');
+  const [empresas, setEmpresas] = useState<string[]>([]);
+  const doTipo = itens.filter(f => tipo === 'todas' || tipoDe(f) === tipo);
+  const visiveis = doTipo.filter(f => empresas.length === 0 || empresas.includes(f.player));
+  return {
+    itens,
+    tipoDe,
+    tipo,
+    empresas,
+    doTipo,
+    visiveis,
+    trocarTipo: (valor: string) => {
+      setTipo(valor);
+      setEmpresas(sel => sel.filter(p => valor === 'todas' || itens.some(f => f.player === p && tipoDe(f) === valor)));
+    },
+    alternarEmpresa: (player: string) =>
+      setEmpresas(sel => (sel.includes(player) ? sel.filter(p => p !== player) : [...sel, player])),
+    desmarcarEmpresas: () => setEmpresas([]),
+    limpar: () => {
+      setTipo('todas');
+      setEmpresas([]);
+    },
+  };
+}
 
 const chipFiltro = (ativo: boolean) =>
-  `inline-flex items-center gap-1.5 h-11 sm:h-9 px-4 rounded-full border text-sm font-medium transition-[color,background-color,border-color,scale] duration-150 active:scale-96 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azul-600 ${
+  `inline-flex items-center gap-1.5 h-11 sm:h-9 px-4 rounded-full border text-sm font-medium whitespace-nowrap transition-[color,background-color,border-color,scale] duration-150 active:scale-96 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azul-600 ${
     ativo ? 'bg-navy-900 border-navy-900 text-white' : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300 hover:bg-gray-50'
   }`;
 
-function RadarFuncionalidades({ itens }: { itens: Plataforma[] }) {
-  const [tipo, setTipo] = useState<'todas' | Plataforma['mercado']>('todas');
-  const [empresas, setEmpresas] = useState<string[]>([]);
+function BarraFiltros<T extends { player: string }>({
+  id,
+  rotulo,
+  unidade,
+  opcoes,
+  filtro,
+}: {
+  id: string;
+  rotulo: string;
+  unidade: string;
+  opcoes: OpcaoTipo[];
+  filtro: ReturnType<typeof useFiltros<T>>;
+}) {
+  const { itens, tipoDe, tipo, empresas, doTipo, visiveis } = filtro;
   const [aberto, setAberto] = useState(false);
   const botaoRef = useRef<HTMLButtonElement>(null);
   const painelRef = useRef<HTMLDivElement>(null);
-
-  const doTipo = itens.filter(f => tipo === 'todas' || f.mercado === tipo);
-  const visiveis = doTipo.filter(f => empresas.length === 0 || empresas.includes(f.player));
   const filtrando = tipo !== 'todas' || empresas.length > 0;
 
   useEffect(() => {
@@ -2267,108 +2306,117 @@ function RadarFuncionalidades({ itens }: { itens: Plataforma[] }) {
     };
   }, [aberto]);
 
-  const trocarTipo = (valor: 'todas' | Plataforma['mercado']) => {
-    setTipo(valor);
-    setEmpresas(sel => sel.filter(p => valor === 'todas' || itens.some(f => f.player === p && f.mercado === valor)));
-  };
-  const alternarEmpresa = (player: string) =>
-    setEmpresas(sel => (sel.includes(player) ? sel.filter(p => p !== player) : [...sel, player]));
+  return (
+    <div className="flex flex-wrap items-center gap-2 sm:justify-end">
+      {filtrando && (
+        <button
+          type="button"
+          onClick={filtro.limpar}
+          className="h-11 sm:h-9 px-3 rounded-full text-sm font-medium text-azul-600 hover:bg-azul-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azul-600"
+        >
+          Limpar filtros
+        </button>
+      )}
+      <div role="group" aria-label={rotulo} className="flex flex-wrap gap-2">
+        {opcoes.map(t => {
+          const ativo = tipo === t.valor;
+          const total = t.valor === 'todas' ? itens.length : itens.filter(f => tipoDe(f) === t.valor).length;
+          return (
+            <button key={t.valor} type="button" aria-pressed={ativo} onClick={() => filtro.trocarTipo(t.valor)} className={chipFiltro(ativo)}>
+              {ativo && <Check className="w-3.5 h-3.5" strokeWidth={2.5} aria-hidden="true" />}
+              {t.rotulo}
+              <span className={`text-xs tabular-nums ${ativo ? 'text-white/70' : 'text-gray-500'}`}>{total}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="relative">
+        <button
+          ref={botaoRef}
+          type="button"
+          aria-expanded={aberto}
+          aria-controls={id}
+          onClick={() => setAberto(v => !v)}
+          className={chipFiltro(empresas.length > 0)}
+        >
+          <SlidersHorizontal className="w-4 h-4" aria-hidden="true" />
+          Mais filtros
+          {empresas.length > 0 && (
+            <span className="min-w-5 h-5 px-1.5 rounded-full bg-white text-navy-900 text-xs font-semibold tabular-nums inline-flex items-center justify-center">
+              <span className="sr-only">empresas marcadas: </span>
+              {empresas.length}
+            </span>
+          )}
+          <ChevronDown className={`w-4 h-4 transition-[rotate] duration-150 ${aberto ? 'rotate-180' : ''}`} aria-hidden="true" />
+        </button>
+
+        {aberto && (
+          <div
+            ref={painelRef}
+            id={id}
+            className="absolute start-0 sm:start-auto sm:end-0 top-full mt-2 z-20 w-64 max-w-[calc(100vw-3rem)] rounded-2xl bg-white p-2 shadow-lg ring-1 ring-black/5"
+          >
+            <fieldset>
+              <legend className="px-2 pt-1 pb-2 text-xs font-semibold text-gray-600 uppercase tracking-wider">Empresas</legend>
+              {doTipo.map(f => (
+                <label
+                  key={f.player}
+                  className="flex items-center gap-3 min-h-11 sm:min-h-9 px-2 rounded-lg text-sm text-gray-800 cursor-pointer hover:bg-gray-50"
+                >
+                  <input
+                    type="checkbox"
+                    checked={empresas.includes(f.player)}
+                    onChange={() => filtro.alternarEmpresa(f.player)}
+                    className="w-4 h-4 accent-azul-600"
+                  />
+                  <span className="flex-1">{f.player}</span>
+                  {tipo === 'todas' && (
+                    <span className="text-xs text-gray-500">{opcoes.find(o => o.valor === tipoDe(f))?.curto}</span>
+                  )}
+                </label>
+              ))}
+            </fieldset>
+            {empresas.length > 0 && (
+              <button
+                type="button"
+                onClick={filtro.desmarcarEmpresas}
+                className="w-full min-h-11 sm:min-h-9 mt-1 px-2 rounded-lg text-start text-sm font-medium text-azul-600 hover:bg-azul-50"
+              >
+                Desmarcar empresas
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+      <p role="status" className="sr-only">
+        Mostrando {visiveis.length} de {itens.length} {unidade}
+      </p>
+    </div>
+  );
+}
+
+const TIPOS_PLATAFORMA: OpcaoTipo[] = [
+  { valor: 'todas', rotulo: 'Todas', curto: '' },
+  { valor: 'Plataforma privada', rotulo: 'Privadas', curto: 'Privada' },
+  { valor: 'Plataforma pública', rotulo: 'Públicas', curto: 'Pública' },
+];
+
+function RadarFuncionalidades({ itens }: { itens: Plataforma[] }) {
+  const filtro = useFiltros(itens, f => f.mercado);
 
   return (
     <>
-      <div className="flex flex-wrap items-center gap-2 mb-5">
-        <div role="group" aria-label="Filtrar por tipo de plataforma" className="flex flex-wrap gap-2">
-          {TIPOS_PLATAFORMA.map(t => {
-            const ativo = tipo === t.valor;
-            const total = t.valor === 'todas' ? itens.length : itens.filter(f => f.mercado === t.valor).length;
-            return (
-              <button key={t.valor} type="button" aria-pressed={ativo} onClick={() => trocarTipo(t.valor)} className={chipFiltro(ativo)}>
-                {ativo && <Check className="w-3.5 h-3.5" strokeWidth={2.5} aria-hidden="true" />}
-                {t.rotulo}
-                <span className={`text-xs tabular-nums ${ativo ? 'text-white/70' : 'text-gray-500'}`}>{total}</span>
-              </button>
-            );
-          })}
+      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 mb-5">
+        <div className="flex items-center gap-2">
+          <img src={radarIcone} alt="" width={234} height={229} className="h-6 w-auto" />
+          <h3 className="text-xl font-bold text-navy-900">Radar de funcionalidades</h3>
         </div>
-
-        <div className="relative">
-          <button
-            ref={botaoRef}
-            type="button"
-            aria-expanded={aberto}
-            aria-controls="radar-filtro-empresas"
-            onClick={() => setAberto(v => !v)}
-            className={chipFiltro(empresas.length > 0)}
-          >
-            <SlidersHorizontal className="w-4 h-4" aria-hidden="true" />
-            Mais filtros
-            {empresas.length > 0 && (
-              <span className="min-w-5 h-5 px-1.5 rounded-full bg-white text-navy-900 text-xs font-semibold tabular-nums inline-flex items-center justify-center">
-                <span className="sr-only">empresas marcadas: </span>
-                {empresas.length}
-              </span>
-            )}
-            <ChevronDown className={`w-4 h-4 transition-[rotate] duration-150 ${aberto ? 'rotate-180' : ''}`} aria-hidden="true" />
-          </button>
-
-          {aberto && (
-            <div
-              ref={painelRef}
-              id="radar-filtro-empresas"
-              className="absolute left-0 top-full mt-2 z-20 w-64 max-w-[calc(100vw-3rem)] rounded-2xl bg-white p-2 shadow-lg ring-1 ring-black/5"
-            >
-              <fieldset>
-                <legend className="px-2 pt-1 pb-2 text-xs font-semibold text-gray-600 uppercase tracking-wider">Empresas</legend>
-                {doTipo.map(f => (
-                  <label
-                    key={f.player}
-                    className="flex items-center gap-3 min-h-11 sm:min-h-9 px-2 rounded-lg text-sm text-gray-800 cursor-pointer hover:bg-gray-50"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={empresas.includes(f.player)}
-                      onChange={() => alternarEmpresa(f.player)}
-                      className="w-4 h-4 accent-azul-600"
-                    />
-                    <span className="flex-1">{f.player}</span>
-                    {tipo === 'todas' && (
-                      <span className="text-xs text-gray-500">{f.mercado === 'Plataforma pública' ? 'Pública' : 'Privada'}</span>
-                    )}
-                  </label>
-                ))}
-              </fieldset>
-              {empresas.length > 0 && (
-                <button
-                  type="button"
-                  onClick={() => setEmpresas([])}
-                  className="w-full min-h-11 sm:min-h-9 mt-1 px-2 rounded-lg text-left text-sm font-medium text-azul-600 hover:bg-azul-50"
-                >
-                  Desmarcar empresas
-                </button>
-              )}
-            </div>
-          )}
-        </div>
-
-        {filtrando && (
-          <button
-            type="button"
-            onClick={() => {
-              setTipo('todas');
-              setEmpresas([]);
-            }}
-            className="h-11 sm:h-9 px-3 rounded-full text-sm font-medium text-azul-600 hover:bg-azul-50"
-          >
-            Limpar filtros
-          </button>
-        )}
-        <p role="status" className="sr-only">
-          Mostrando {visiveis.length} de {itens.length} plataformas
-        </p>
+        <BarraFiltros id="radar-filtro-empresas" rotulo="Filtrar plataformas por tipo" unidade="plataformas" opcoes={TIPOS_PLATAFORMA} filtro={filtro} />
       </div>
 
       <div className="grid md:grid-cols-2 gap-5 mb-8">
-        {visiveis.map((f, i) => (
+        {filtro.visiveis.map((f, i) => (
           <motion.div
             key={f.player}
             initial={{ opacity: 0, y: 20 }}
@@ -2415,6 +2463,77 @@ function RadarFuncionalidades({ itens }: { itens: Plataforma[] }) {
           </motion.div>
         ))}
       </div>
+    </>
+  );
+}
+
+const TIPOS_MERCADO: OpcaoTipo[] = [
+  { valor: 'todas', rotulo: 'Todos', curto: '' },
+  { valor: 'privado', rotulo: 'Privado', curto: 'Privado' },
+  { valor: 'publico', rotulo: 'Público', curto: 'Público' },
+];
+
+const TOM_TABELA = {
+  privado: { barra: 'bg-azul-600', thead: 'bg-azul-50', th: 'text-azul-700', par: 'bg-white hover:bg-azul-50/30', impar: 'bg-azul-50/20 hover:bg-azul-50/40' },
+  publico: { barra: 'bg-rosa-600', thead: 'bg-ambar-50', th: 'text-ambar-700', par: 'bg-white hover:bg-ambar-50/30', impar: 'bg-ambar-50/20 hover:bg-ambar-50/40' },
+};
+
+function ConcorrenciaDireta({ privado, publico }: { privado: LinhaConcorrencia[]; publico: LinhaConcorrencia[] }) {
+  const todas = [...privado.map(l => ({ ...l, mercado: 'privado' })), ...publico.map(l => ({ ...l, mercado: 'publico' }))];
+  const filtro = useFiltros(todas, l => l.mercado);
+  const tabelas = (['privado', 'publico'] as const)
+    .map(m => ({ mercado: m, linhas: filtro.visiveis.filter(l => l.mercado === m) }))
+    .filter(t => t.linhas.length > 0);
+
+  return (
+    <>
+      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 mb-5">
+        <h3 className="text-xl font-bold text-navy-900">Concorrência direta</h3>
+        <BarraFiltros id="concorrencia-filtro-empresas" rotulo="Filtrar concorrentes por mercado" unidade="concorrentes" opcoes={TIPOS_MERCADO} filtro={filtro} />
+      </div>
+
+      {tabelas.map(({ mercado, linhas }) => {
+        const tom = TOM_TABELA[mercado];
+        return (
+          <div key={mercado} className="mb-12">
+            <div className="flex items-center gap-2 mb-3">
+              <div className={`w-1.5 h-5 rounded-full ${tom.barra}`} />
+              <h4 className="text-base font-bold text-navy-900">{mercado === 'privado' ? 'Mercado privado' : 'Mercado público'}</h4>
+            </div>
+            <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm bg-white">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className={tom.thead}>
+                    {['Player', 'Grupo / Soluções', 'Movimento observado', 'Posição diante da evidência', 'Exposição', 'Impacto'].map(h => (
+                      <th key={h} className={`px-5 py-4 text-left text-xs font-semibold uppercase tracking-wider ${tom.th}`}>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {linhas.map((row, i) => (
+                    <tr key={row.player} className={`${i % 2 === 0 ? tom.par : tom.impar} transition-colors`}>
+                      <td className="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.player}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.grupo}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.movimento}</td>
+                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.estrategia}</td>
+                      <td className="px-5 py-4">
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-amarelo-100 text-amarelo-800'}`}>
+                          {row.exposicao}
+                        </span>
+                      </td>
+                      <td className="px-5 py-4">
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.impacto === 'Alto' ? 'bg-red-100 text-red-700' : 'bg-azul-100 text-azul-700'}`}>
+                          {row.impacto}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        );
+      })}
     </>
   );
 }
@@ -3280,136 +3399,63 @@ export default function App() {
               Concorrência direta é quem disputa a mesma escola, rede e orçamento. Não localizamos, entre os players acompanhados, lançamento de IA ou resultado de aprendizagem publicado na janela, então a análise parte do que cada um já tem: quem está do lado da IA que faz o aluno trabalhar e quem fica exposto à objeção.
             </p>
 
-            {/* Mercado privado */}
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-1.5 h-6 bg-azul-600 rounded-full" />
-              <h3 className="text-xl font-bold text-navy-900">Concorrência direta: mercado privado</h3>
-            </div>
-            <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm mb-12 bg-white">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-azul-50">
-                    {["Player", "Grupo / Soluções", "Movimento observado", "Posição diante da evidência", "Exposição", "Impacto"].map(h => (
-                      <th key={h} className="px-5 py-4 text-left text-xs font-semibold text-azul-700 uppercase tracking-wider">{h}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {[
-                    {
-                      player: "Poliedro",
-                      grupo: "Cosmos · Polígono · Conviver · Sabiá",
-                      movimento: "Sem lançamento na janela. O Cosmos continua restrito ao acervo próprio, para professor e gestor",
-                      estrategia: "A IA não fala com o aluno, então fica fora do alvo da objeção. Em troca, é mais difícil atribuir ganho de aprendizagem à IA, porque o efeito passa pelo professor",
-                      exposicao: "Baixa", impacto: "Médio-Alto"
-                    },
-                    {
-                      player: "Santillana",
-                      grupo: "Moderna Core",
-                      movimento: "Sem lançamento na janela. IA de acompanhamento de desempenho, sem geração voltada ao aluno",
-                      estrategia: "Já acompanha o desempenho de forma contínua, que é a matéria-prima de uma linha de base. Tem o dado para medir o efeito do próprio produto, se quiser",
-                      exposicao: "Baixa", impacto: "Médio-Alto"
-                    },
-                    {
-                      player: "Bernoulli",
-                      grupo: "Sistema de ensino próprio",
-                      movimento: "Sem lançamento na janela. O CoCria Professor continua focado em planejamento e diagnóstico",
-                      estrategia: "O diagnóstico sobre a base da rede está a um passo de virar medição de efeito. Hoje mede o aluno, e não a ferramenta",
-                      exposicao: "Média", impacto: "Alto"
-                    },
-                    {
-                      player: "Arco Educação",
-                      grupo: "SAS, SAE Digital, Geekie",
-                      movimento: "Sem lançamento na janela. Plataforma adaptativa e literacia em IA no programa de competências",
-                      estrategia: "Tem o desenho mais próximo do que os ensaios premiaram, a prática adaptativa com trilha. Como a plataforma fala direto com o aluno, também é quem mais precisa provar que ele não pula etapas",
-                      exposicao: "Média", impacto: "Alto"
-                    },
-                    {
-                      player: "Somos Educação",
-                      grupo: "Anglo, pH, Amplia, Fibonati · Plurall",
-                      movimento: "Sem lançamento na janela. O Plu oferece ao aluno resumo, exercício e tira-dúvidas ancorados ao capítulo",
-                      estrategia: "Pelo que já está no produto, é o mais exposto: resumir e tirar dúvida é o uso que os educadores associam à ilusão de aprendizagem. Ancorar ao capítulo melhora a precisão da resposta, e não o esforço do aluno",
-                      exposicao: "Alta", impacto: "Alto"
-                    },
-                  ].map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-azul-50/30 transition-colors' : 'bg-azul-50/20 hover:bg-azul-50/40 transition-colors'}>
-                      <td className="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.player}</td>
-                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.grupo}</td>
-                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.movimento}</td>
-                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.estrategia}</td>
-                      <td className="px-5 py-4">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-amarelo-100 text-amarelo-800'}`}>
-                          {row.exposicao}
-                        </span>
-                      </td>
-                      <td className="px-5 py-4">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.impacto === 'Alto' ? 'bg-red-100 text-red-700' : 'bg-azul-100 text-azul-700'}`}>
-                          {row.impacto}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Mercado público */}
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-1.5 h-6 bg-rosa-600 rounded-full" />
-              <h3 className="text-xl font-bold text-navy-900">Concorrência direta: mercado público</h3>
-            </div>
-            <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm mb-12 bg-white">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-ambar-50">
-                    {["Player", "Grupo / Soluções", "Movimento observado", "Posição diante da evidência", "Exposição", "Impacto"].map(h => (
-                      <th key={h} className="px-5 py-4 text-left text-xs font-semibold text-ambar-700 uppercase tracking-wider">{h}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {[
-                    {
-                      player: "Saber",
-                      grupo: "eDocente",
-                      movimento: "Sem lançamento na janela. Correção de microtestes por câmera no celular do professor",
-                      estrategia: "Mede e devolve o resultado ao professor, sem conversar com o aluno, o que o deixa do lado certo da objeção. Também gera o dado de acompanhamento que uma avaliação de impacto exige",
-                      exposicao: "Baixa", impacto: "Alto"
-                    },
-                    {
-                      player: "Moderna",
-                      grupo: "Moderna Amigos",
-                      movimento: "Sem lançamento na janela. Presença em redes municipais e estaduais",
-                      estrategia: "Quando uma rede precisar justificar a IA para o conselho e as famílias, vai pedir resultado primeiro a quem já está contratado. A proximidade com as secretarias, que sempre foi a força da Moderna, passa a vir acompanhada de cobrança por evidência",
-                      exposicao: "Baixa", impacto: "Médio-Alto"
-                    },
-                  ].map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-ambar-50/30 transition-colors' : 'bg-ambar-50/20 hover:bg-ambar-50/40 transition-colors'}>
-                      <td className="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.player}</td>
-                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.grupo}</td>
-                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.movimento}</td>
-                      <td className="px-5 py-4 text-gray-600 text-sm md:text-xs leading-relaxed">{row.estrategia}</td>
-                      <td className="px-5 py-4">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.exposicao === 'Baixa' ? 'bg-green-100 text-green-700' : 'bg-amarelo-100 text-amarelo-800'}`}>
-                          {row.exposicao}
-                        </span>
-                      </td>
-                      <td className="px-5 py-4">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${row.impacto === 'Alto' ? 'bg-red-100 text-red-700' : 'bg-azul-100 text-azul-700'}`}>
-                          {row.impacto}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <ConcorrenciaDireta
+              privado={[
+                {
+                  player: "Poliedro",
+                  grupo: "Cosmos · Polígono · Conviver · Sabiá",
+                  movimento: "Sem lançamento na janela. O Cosmos continua restrito ao acervo próprio, para professor e gestor",
+                  estrategia: "A IA não fala com o aluno, então fica fora do alvo da objeção. Em troca, é mais difícil atribuir ganho de aprendizagem à IA, porque o efeito passa pelo professor",
+                  exposicao: "Baixa", impacto: "Médio-Alto"
+                },
+                {
+                  player: "Santillana",
+                  grupo: "Moderna Core",
+                  movimento: "Sem lançamento na janela. IA de acompanhamento de desempenho, sem geração voltada ao aluno",
+                  estrategia: "Já acompanha o desempenho de forma contínua, que é a matéria-prima de uma linha de base. Tem o dado para medir o efeito do próprio produto, se quiser",
+                  exposicao: "Baixa", impacto: "Médio-Alto"
+                },
+                {
+                  player: "Bernoulli",
+                  grupo: "Sistema de ensino próprio",
+                  movimento: "Sem lançamento na janela. O CoCria Professor continua focado em planejamento e diagnóstico",
+                  estrategia: "O diagnóstico sobre a base da rede está a um passo de virar medição de efeito. Hoje mede o aluno, e não a ferramenta",
+                  exposicao: "Média", impacto: "Alto"
+                },
+                {
+                  player: "Arco Educação",
+                  grupo: "SAS, SAE Digital, Geekie",
+                  movimento: "Sem lançamento na janela. Plataforma adaptativa e literacia em IA no programa de competências",
+                  estrategia: "Tem o desenho mais próximo do que os ensaios premiaram, a prática adaptativa com trilha. Como a plataforma fala direto com o aluno, também é quem mais precisa provar que ele não pula etapas",
+                  exposicao: "Média", impacto: "Alto"
+                },
+                {
+                  player: "Somos Educação",
+                  grupo: "Anglo, pH, Amplia, Fibonati · Plurall",
+                  movimento: "Sem lançamento na janela. O Plu oferece ao aluno resumo, exercício e tira-dúvidas ancorados ao capítulo",
+                  estrategia: "Pelo que já está no produto, é o mais exposto: resumir e tirar dúvida é o uso que os educadores associam à ilusão de aprendizagem. Ancorar ao capítulo melhora a precisão da resposta, e não o esforço do aluno",
+                  exposicao: "Alta", impacto: "Alto"
+                },
+              ]}
+              publico={[
+                {
+                  player: "Saber",
+                  grupo: "eDocente",
+                  movimento: "Sem lançamento na janela. Correção de microtestes por câmera no celular do professor",
+                  estrategia: "Mede e devolve o resultado ao professor, sem conversar com o aluno, o que o deixa do lado certo da objeção. Também gera o dado de acompanhamento que uma avaliação de impacto exige",
+                  exposicao: "Baixa", impacto: "Alto"
+                },
+                {
+                  player: "Moderna",
+                  grupo: "Moderna Amigos",
+                  movimento: "Sem lançamento na janela. Presença em redes municipais e estaduais",
+                  estrategia: "Quando uma rede precisar justificar a IA para o conselho e as famílias, vai pedir resultado primeiro a quem já está contratado. A proximidade com as secretarias, que sempre foi a força da Moderna, passa a vir acompanhada de cobrança por evidência",
+                  exposicao: "Baixa", impacto: "Médio-Alto"
+                },
+              ]}
+            />
 
             {/* Radar de funcionalidades */}
-            <div className="flex items-center gap-2 mb-4">
-              <img src={radarIcone} alt="" width={234} height={229} className="h-6 w-auto" />
-              <h3 className="text-xl font-bold text-navy-900">Radar de funcionalidades</h3>
-            </div>
             <RadarFuncionalidades
               itens={[
                 {
