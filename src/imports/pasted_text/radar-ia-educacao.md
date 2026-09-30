@@ -878,4 +878,32 @@ REGISTRO DE ERROS
   com o aluno. Causa: generalização sem cruzar com a própria edição.
 - #12 · Oportunidades afirmavam fatos sobre o nosso produto sem fonte.
   Causa: problema escrito como fato, e não como hipótese.
+- #12 · NUMI: "boa parte da vantagem sumiu em uma semana" → os 3 pontos
+  foram medidos uma semana depois, só no conteúdo praticado, com
+  significância marginal; nada sumiu. Causa: resultado lido na
+  repercussão, sem abrir o working paper.
+- #12 · Khanmigo: "muitas conversas fugiram do assunto" → o artigo fala em
+  respostas soltas, cliques em sugestões e alunos que desistiam quando o
+  tutor recusava. Também: "sorteou 18 escolas" (foram séries dentro das
+  escolas) e "comparado com a plataforma sem IA" (o controle usava outras
+  ferramentas). Causa: paráfrase que virou fato e desenho do estudo
+  deduzido.
+- #12 · StudentBench: p = 0,044 no lugar de 0,015; "o modelo mais barato
+  do teste" (era o mais barato entre os que passaram no teste de
+  equivalência). Causa: número copiado de resumo secundário.
+- #12 · LAUSD: "a rede tinha mais de treze ferramentas" → alunos de 13
+  anos ou mais podiam usar ferramentas aprovadas; "bloqueou entre 2 e 4
+  de setembro" → a regra valia desde o início do ano letivo e veio a
+  público numa reunião de comitê. Causa: número e data lidos errado na
+  repercussão.
+- #12 · OpenAI Academy: "a IA compara as respostas dos alunos com os
+  objetivos" e "trilha certificada" → a trilha ensina planejamento,
+  atividades, avaliação e comunicação, e o selo não é certificação
+  oficial; a data "21 de setembro" não tinha fonte. Causa: produto
+  descrito pelo nome, e não pelo que faz.
+- #12 · Washington Post: educadores descritos como "professores e
+  gestores escolares" → a reportagem ouviu professores universitários.
+- #12 · Aliança de IA para a Educação com membros nomeados sem fonte que
+  os nomeasse; datas da redação no ES e da prova do ENEM sem fonte ou
+  incompletas. Causa: entidade e data deduzidas.
 

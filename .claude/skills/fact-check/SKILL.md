@@ -41,7 +41,7 @@ Tipos que o script marca e como verificar cada um:
 | Tipo | Como verificar |
 | --- | --- |
 | `DATA` | Data do **fato** na fonte primária, não a data da repercussão. Está dentro da janela? Se for anterior, a frase precisa datar o fato explicitamente ("ensaio de 2018–2020"). Confira também se o fato já saiu em edição anterior (grep no `App.tsx`). |
-| `NUMERO` | Bata o número exato com a fonte, com unidade e arredondamento ("cerca de" só quando a fonte arredonda). Use `numeros.md` para garantir que o mesmo dado é igual em todas as seções. |
+| `NUMERO` | Bata o número exato com a fonte (em estudo, o artigo ou o resumo oficial, nunca só a matéria que o repercutiu), com unidade e arredondamento ("cerca de" só quando a fonte arredonda). Use `numeros.md` para garantir que o mesmo dado é igual em todas as seções. |
 | `ABSOLUTO` / `AUSENCIA` | Faça a **busca contrária**: pelo menos duas buscas tentando provar o oposto, **sem limite de data**, em português e em inglês, mais as bases de evidência (J-PAL, EdWorkingPapers, Banco Mundial, BID, 3ie, NBER). Resultado: manter com fonte, delimitar ("não localizamos", "entre os concorrentes acompanhados", "na janela") ou reescrever. "Primeiro", "único" e "nenhum" nunca entram sem essa busca. |
 | `CITACAO` | Texto exato na fonte e atribuição correta. Paráfrase não vai entre aspas. |
 | `PRODUTO_PROPRIO` | Nada sobre produto, dado ou contrato da casa entra como fato sem fonte interna. Reescreva como hipótese a verificar ("se hoje medimos só X…; vale confirmar com o time de dados"). |
@@ -111,3 +111,6 @@ seguida.
 | Fato sobre o nosso produto sem fonte | "O produto depende de um único fornecedor" (#12) | `PRODUTO_PROPRIO` |
 | Entidade deduzida | Membros de uma aliança citados sem fonte que os nomeie | Checagem de entidades |
 | Data da repercussão no lugar da data do fato | Anúncio de 9/set tratado como da janela 11–30/set | `DATA` |
+| Resultado de estudo lido só na repercussão | "Boa parte da vantagem sumiu em uma semana" (#12; foi medida uma semana depois) e p = 0,044 no lugar de 0,015 | `NUMERO`: abrir o artigo ou o resumo oficial |
+| Desenho do estudo deduzido | "Sorteou 18 escolas" (eram séries) e "comparado com a plataforma sem IA" (o controle usava outras ferramentas) | Entidades: unidade de sorteio e grupo de controle vêm do artigo |
+| Paráfrase que vira fato | "Muitas conversas fugiram do assunto" (#12), que o artigo não diz | `CITACAO` vale também sem aspas |
