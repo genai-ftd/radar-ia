@@ -2475,6 +2475,44 @@ function EdicaoSetembro2026B({
   );
 }
 
+const MESES_ABREV: Record<string, string> = { Abr: 'Abril', Mai: 'Maio', Jun: 'Junho' };
+
+// Trilha no formato "#11 texto → #12 texto"; aceita "#08 a #10" e, para as
+// edições sem número, o mês ("Mai/26 texto").
+function LinhaDoTempo({ trilha, rotulo, className = '' }: { trilha: string; rotulo: string; className?: string }) {
+  const passos = trilha.split(' → ');
+  return (
+    <ol aria-label={rotulo} className={`space-y-2.5 ${className}`}>
+      {passos.map((passo, j) => {
+        const num = passo.match(/^#(\d+)(?: a #(\d+))?\s+(.*)$/);
+        const mes = passo.match(/^(Abr|Mai|Jun)\/(\d{2})\s+(.*)$/);
+        const edicao = num
+          ? num[2] ? `Edições #${num[1]}–${num[2]}` : `Edição #${num[1]}`
+          : mes ? `${MESES_ABREV[mes[1]]} de 20${mes[2]}` : '';
+        const texto = num ? num[3] : mes ? mes[3] : passo;
+        const atual = j === passos.length - 1;
+        return (
+          <li key={j} className="relative flex flex-col sm:flex-row sm:gap-3 pl-5">
+            {!atual && <span aria-hidden="true" className="absolute left-[5px] top-3.5 -bottom-3 w-px bg-gray-300" />}
+            <span
+              aria-hidden="true"
+              className={`absolute left-0 top-[5px] size-[11px] rounded-full border-2 ${
+                atual ? 'bg-azul-600 border-azul-600 ring-4 ring-azul-100' : 'bg-white border-gray-300'
+              }`}
+            />
+            <span className={`shrink-0 sm:min-w-[6.25rem] whitespace-nowrap text-[11px] font-bold tabular-nums leading-5 ${atual ? 'text-azul-700' : 'text-gray-500'}`}>
+              {edicao}
+            </span>
+            <span className={`text-sm md:text-xs leading-5 ${atual ? 'font-semibold text-gray-900' : 'text-gray-600'}`}>
+              {texto}
+            </span>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
 type Plataforma = {
   player: string;
   produto: string;
@@ -2484,6 +2522,7 @@ type Plataforma = {
   leitura: string;
   fonte: string;
   fonteLabel: string;
+  historico: string;
 };
 
 type LinhaConcorrencia = {
@@ -2711,6 +2750,9 @@ function RadarFuncionalidades({ itens }: { itens: Plataforma[] }) {
 
             <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">O que isso significa</p>
             <p className="text-sm md:text-xs text-gray-700 leading-relaxed mb-5">{f.leitura}</p>
+
+            <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">Histórico no Radar</p>
+            <LinhaDoTempo trilha={f.historico} rotulo={`Histórico de ${f.player} por edição`} className="bg-gray-50 rounded-xl px-4 py-3.5 mb-5" />
 
             <a
               href={f.fonte}
@@ -3590,31 +3632,7 @@ export default function App() {
                       {item.tipo}
                     </span>
                   </div>
-                  <ol aria-label="Evolução do tema por edição" className="bg-white/80 rounded-xl px-4 py-3.5 mb-4 space-y-2.5">
-                    {item.trilha.split(' → ').map((passo, j, passos) => {
-                      const partes = passo.match(/^#(\d+)(?: a #(\d+))?\s+(.*)$/);
-                      const edicao = !partes ? '' : partes[2] ? `Edições #${partes[1]}–${partes[2]}` : `Edição #${partes[1]}`;
-                      const texto = partes ? partes[3] : passo;
-                      const atual = j === passos.length - 1;
-                      return (
-                        <li key={j} className="relative flex flex-col sm:flex-row sm:gap-3 pl-5">
-                          {!atual && <span aria-hidden="true" className="absolute left-[5px] top-3.5 -bottom-3 w-px bg-gray-300" />}
-                          <span
-                            aria-hidden="true"
-                            className={`absolute left-0 top-[5px] size-[11px] rounded-full border-2 ${
-                              atual ? 'bg-azul-600 border-azul-600 ring-4 ring-azul-100' : 'bg-white border-gray-300'
-                            }`}
-                          />
-                          <span className={`shrink-0 sm:min-w-[6.25rem] whitespace-nowrap text-[11px] font-bold tabular-nums leading-5 ${atual ? 'text-azul-700' : 'text-gray-500'}`}>
-                            {edicao}
-                          </span>
-                          <span className={`text-sm md:text-xs leading-5 ${atual ? 'font-semibold text-gray-900' : 'text-gray-600'}`}>
-                            {texto}
-                          </span>
-                        </li>
-                      );
-                    })}
-                  </ol>
+                  <LinhaDoTempo trilha={item.trilha} rotulo="Evolução do tema por edição" className="bg-white/80 rounded-xl px-4 py-3.5 mb-4" />
                   <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.leitura}</p>
                 </motion.div>
               ))}
@@ -3717,7 +3735,8 @@ export default function App() {
                   entregue: "Para o professor: plano de aula, questões, provas e apresentações a partir do capítulo do material. Para o aluno: resumo, glossário, plano de estudo, exercício e tirar dúvida dentro do próprio conteúdo.",
                   leitura: "Para o professor, gera material, e isso ninguém questiona. Para o aluno, resumo e tira-dúvidas são o formato que mais se presta a atalho. O acervo ancorado ao capítulo poderia servir para perguntar ao aluno em vez de responder por ele.",
                   fonte: "https://www.plurall.net/ia.html",
-                  fonteLabel: "Plurall IA"
+                  fonteLabel: "Plurall IA",
+                  historico: "Mai/26 Plurall aposta em dados que viram recomendação para o professor → Jun/26 em três meses, mais de 2 mil escolas criam PEI com o Plurall IA → #11 o Plu leva resumo e tira-dúvidas ao aluno, ancorados ao capítulo → #12 sem lançamento; o formato para o aluno fica exposto à crítica da ilusão de aprendizagem → #13 sem lançamento; conversa com o aluno é o que as redes passam a restringir"
                 },
                 {
                   player: "Poliedro",
@@ -3727,7 +3746,8 @@ export default function App() {
                   entregue: "Interação com IA generativa restrita ao conteúdo proprietário, somada a modelos preditivos: sugestão de estratégia didática, adaptação de conteúdo, criação de avaliação e leitura de desempenho. Disponível na web e no app P+.",
                   leitura: "A IA não fala com o aluno, então quem decide é o professor. É o desenho que a norma e as big techs defendem, e ele depende da formação do professor para virar aprendizagem.",
                   fonte: "https://brasil.bettshow.com/releases-expositores-2026/poliedro-apresenta-cosmos-hub-de-inteligencia-artificial-na-bett-brasil-2026",
-                  fonteLabel: "Release Bett Brasil 2026"
+                  fonteLabel: "Release Bett Brasil 2026",
+                  historico: "#10 Cosmos restrito ao acervo autoral → #11 Cosmos no P+ para professor e gestor; prêmio pela Supernova, com autoria humana no centro → #12 sem lançamento; a IA fica fora do alcance do aluno → #13 sem lançamento; já está no desenho que a regra deve consagrar"
                 },
                 {
                   player: "Santillana",
@@ -3737,7 +3757,8 @@ export default function App() {
                   entregue: "Ecossistema que junta conteúdo, dados e IA: ampliação de repertório de estratégias para o professor e leitura contínua de desempenho para apoiar decisão do gestor.",
                   leitura: "O recurso acompanha o desempenho do aluno e não responde por ele, então não cria atalho. É o tipo de recurso mais útil para medir o efeito do produto, embora chame menos atenção numa demonstração de venda; com a evidência virando argumento de compra, essa desvantagem diminui.",
                   fonte: "https://revistaeducacao.com.br/2026/05/05/moderna-core-bett/",
-                  fonteLabel: "Revista Educação"
+                  fonteLabel: "Revista Educação",
+                  historico: "Mai/26 Moderna Core junta conteúdo, IA e acompanhamento → #10 IA nos bastidores do Moderna Core → #11 leitura contínua de desempenho, sem geração para o aluno → #12 sem lançamento → #13 sem lançamento; segue fora das restrições ao uso pelo aluno"
                 },
                 {
                   player: "Bernoulli",
@@ -3747,7 +3768,8 @@ export default function App() {
                   entregue: "Para o professor: o Co-crIA, assistente integrado ao material didático e desenvolvido com a Teachy, que gera planos de aula, listas, avaliações, apresentações e materiais adaptados. Para o aluno: o TutorIA e o PraticAI, apresentados no Bernoulli Reload, em agosto; o PraticAI corrige redação e, segundo a página da empresa, estima a nota por competência. Para o gestor: o Radar Enem, que lê os microdados do exame com um chat de IA. Não houve lançamento entre 1 e 13 de outubro.",
                   leitura: "O corretor de redação é o recurso mais sensível à regra nova: estimar nota para o aluno treinar é devolutiva; virar nota da escola sem o professor, não. A parceria com a Teachy mostra que o entrante já está dentro de um sistema de ensino acompanhado.",
                   fonte: "https://www.bernoulli.com.br/blog/co-cria-como-a-inteligencia-artificial-esta-transformando-o-dia-a-dia-dos-professores/",
-                  fonteLabel: "Blog do Bernoulli"
+                  fonteLabel: "Blog do Bernoulli",
+                  historico: "#10 Bernoulli Reload com portfólio segmentado por público → #11 entra no Radar pelo assistente do professor, de planejamento e diagnóstico → #12 sem lançamento → #13 o card passa a incluir o TutorIA e o PraticAI para o aluno e a parceria com a Teachy no Co-crIA"
                 },
                 {
                   player: "PNLD Digital",
@@ -3757,7 +3779,8 @@ export default function App() {
                   entregue: "Leitor interativo das obras do programa, com audiodescrição, narração, mapas e infográficos clicáveis, vídeos legendados e compatibilidade com leitor de tela. Traz agente de IA para esclarecer dúvidas e apoiar o uso do sistema.",
                   leitura: "O agente responde sobre o sistema, e não sobre o conteúdo, por isso não entrega resposta de exercício. Como o leitor oficial já oferece audiodescrição e leitura de tela para todas as obras, esses recursos deixam de diferenciar qualquer fornecedor.",
                   fonte: "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/junho/pnld-digital-amplia-inclusao-aos-livros-da-educacao-basica",
-                  fonteLabel: "MEC"
+                  fonteLabel: "MEC",
+                  historico: "#11 entra no Radar: leitor oficial com acessibilidade e agente de IA que responde sobre o uso do sistema → #12 sem mudança → #13 sem mudança"
                 },
                 {
                   player: "Teachy",
@@ -3767,7 +3790,8 @@ export default function App() {
                   entregue: "Para o professor: plano de aula, sequência didática, slides, listas de exercícios, provas e correção de exercícios com IA, alinhados à BNCC. Para a escola: o Teachy Studio, em que a instituição cria livros, apostilas e sequências próprias com IA, impressos e digitais. Desde a Bett Brasil 2026, a escola também pode adotar pelo Studio o material do Descomplica, com as videoaulas, como base curricular. A Teachy também é parceira do Bernoulli no Co-crIA. Não houve lançamento entre 1 e 13 de outubro.",
                   leitura: "Vem de fora dos sistemas de ensino e entra pelo material didático, onde está a receita das editoras: a empresa promete apostila própria por uma fração do custo de produção editorial, e a parceria com o Descomplica entrega uma base curricular pronta. A IA serve sobretudo a quem produz o material. O que ela ainda não mostra é o que qualquer material precisa mostrar agora: que o aluno aprende com ele.",
                   fonte: "https://educador21.com/ia-na-educacao-teachy-descomplica-escolas/",
-                  fonteLabel: "Educador21"
+                  fonteLabel: "Educador21",
+                  historico: "#08 compra a Nero.AI, em acquihiring de sete dígitos → #12 entra no Radar com o assistente do professor, o Teachy Studio e o material do Descomplica → #13 aparece como parceira do Bernoulli no Co-crIA"
                 },
                 {
                   player: "AI4School",
@@ -3777,7 +3801,8 @@ export default function App() {
                   entregue: "Na versão gratuita, o ChatEdu, assistente para tarefas escolares e preparação para o ENEM e vestibulares, e, para o educador, geração de plano de aula e ferramentas adaptadas a perfis de aprendizagem. Na premium, tutores virtuais por disciplina e trilhas de letramento em IA para alunos, professores e famílias, seguindo a BNCC. Tem controle parental, linguagem ajustada à faixa etária e alerta de conteúdo impróprio. A plataforma ganhou um summit próprio na Bett Brasil 2026 e não teve novidade entre 1 e 13 de outubro.",
                   leitura: "Põe a IA para conversar direto com o aluno, com apoio à tarefa e tutor por disciplina, e aposta na segurança para ganhar a confiança da família, justamente a objeção que a avaliação da Common Sense Media levantou contra o ChatGPT para adolescentes. Não localizamos informação pública sobre se o ChatEdu e os tutores evitam entregar a resposta, e é isso que define de que lado da evidência o produto fica. Como a Conexia atende escolas parceiras, está mais perto da concorrência direta do que de uma startup de fora.",
                   fonte: "https://www.uai.com.br/app/noticia/mundo-corporativo/2025/10/06/noticia-mundo-corporativo,370556/ai4school-conexia-apresenta-solucao-de-ia-para-educacao.shtml",
-                  fonteLabel: "Portal UAI"
+                  fonteLabel: "Portal UAI",
+                  historico: "#12 entra no Radar com o ChatEdu, tutores por disciplina e controle parental → #13 sem novidade; a segurança, sua aposta, vira a objeção às ferramentas para o aluno"
                 },
               ]}
             />

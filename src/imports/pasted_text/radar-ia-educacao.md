@@ -617,6 +617,14 @@ recurso, público atendido (professor / aluno / gestor), data e fonte.
 É o eixo que responde "eles lançaram X, nós lançamos Y" — e que
 expõe espaço vago quando um recurso aparece em um só concorrente.
 
+HISTÓRICO POR PLAYER (a partir da #13): cada cartão do Radar de
+funcionalidades traz o campo `historico`, uma trilha no mesmo formato dos
+Temas recorrentes ("#11 texto → #12 texto → #13 texto"; edições sem número
+entram pelo mês, "Mai/26 texto"). A cada edição, acrescentar o passo novo,
+mesmo que seja "sem lançamento", e manter só o que foi publicado em edição
+anterior, sem reescrever o passado. Player novo começa a trilha na edição em
+que entrou no Radar ou em que apareceu pela primeira vez.
+
 Onde procurar, em ordem de confiabilidade:
 1. Central de ajuda e notas de versão do produto
    (ex.: ajuda.plurall.net, materiais.sistemapoliedro.com.br)
