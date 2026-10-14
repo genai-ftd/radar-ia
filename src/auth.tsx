@@ -14,8 +14,28 @@ import hubLogoClaro from './imports/hub-logo-claro.png';
 const CLIENT_ID = 'cfdae966-39e2-4e45-8c56-34300c4f59c6';
 const TENANT_ID = 'f79b45bf-444f-4075-8bfa-542448657ca4';
 
+// 'teste': o site segue aberto e só pede login a quem abrir com ?entrar=1
+// (a escolha vale para a aba, inclusive na volta do login da Microsoft).
+// 'sempre': todo visitante passa pelo login. Trocar depois do primeiro login
+// bem-sucedido em produção.
+const MODO = 'teste' as 'teste' | 'sempre';
+
+function pediuLogin() {
+  try {
+    if (new URLSearchParams(window.location.search).get('entrar') === '1') sessionStorage.setItem('radar-entrar', '1');
+    return sessionStorage.getItem('radar-entrar') === '1';
+  } catch {
+    return false;
+  }
+}
+
 // Liga só no build de produção. `VITE_SEM_LOGIN=1` desliga para testes locais.
-export const loginAtivo = import.meta.env.PROD && import.meta.env.VITE_SEM_LOGIN !== '1';
+export const loginAtivo =
+  import.meta.env.PROD && import.meta.env.VITE_SEM_LOGIN !== '1' && (MODO === 'sempre' || pediuLogin());
+
+// Erro devolvido pela Microsoft na volta do login (ex.: AADSTS50011 para
+// redirect não cadastrado, AADSTS9002326 para app cadastrado como "Web").
+let erroDoLogin: string | null = null;
 
 // O redirect precisa bater exatamente com o cadastrado no Entra (SPA):
 // https://genai-ftd.github.io/radar-ia/
@@ -31,7 +51,10 @@ export async function criarClienteMsal(): Promise<IPublicClientApplication> {
     },
     cache: { cacheLocation: 'localStorage' },
   });
-  const retorno = await msal.handleRedirectPromise().catch(() => null);
+  const retorno = await msal.handleRedirectPromise().catch((e: { errorCode?: string; errorMessage?: string; message?: string }) => {
+    erroDoLogin = [e?.errorCode, (e?.errorMessage || e?.message || '').split('\n')[0]].filter(Boolean).join(': ') || 'erro desconhecido';
+    return null;
+  });
   const conta = retorno?.account ?? msal.getActiveAccount() ?? msal.getAllAccounts()[0] ?? null;
   if (conta) msal.setActiveAccount(conta);
   return msal;
@@ -75,10 +98,11 @@ function TelaDeEntrada() {
           <LogoMicrosoft />
           {ocupado ? 'Abrindo o login…' : 'Entrar com a conta Microsoft'}
         </button>
-        {erro && (
-          <p role="alert" className="mt-4 text-sm text-amarelo-400">
-            Não foi possível abrir o login. Tente de novo ou fale com o Hub de IA, Produto e Experiência.
-          </p>
+        {(erro || erroDoLogin) && (
+          <div role="alert" className="mt-4 text-sm text-amarelo-400">
+            <p>Não foi possível entrar. Tente de novo ou fale com o Hub de IA, Produto e Experiência.</p>
+            {erroDoLogin && <p className="mt-2 text-xs text-white/60 break-words">Detalhe técnico: {erroDoLogin}</p>}
+          </div>
         )}
       </div>
       <img src={hubLogoClaro} alt="Hub de IA, Produto e Experiência" className="h-9 w-auto mt-16 opacity-80" />
