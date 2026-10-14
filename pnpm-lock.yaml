@@ -12,11 +12,11 @@ importers:
   .:
     dependencies:
       '@azure/msal-browser':
-        specifier: ^5.25.1
-        version: 5.25.1
+        specifier: 5.25.0
+        version: 5.25.0
       '@azure/msal-react':
-        specifier: ^5.7.2
-        version: 5.7.2(@azure/msal-browser@5.25.1)(react@18.3.1)
+        specifier: 5.7.2
+        version: 5.7.2(@azure/msal-browser@5.25.0)(react@18.3.1)
       '@emotion/react':
         specifier: 11.14.0
         version: 11.14.0(@types/react@19.2.17)(react@18.3.1)
@@ -207,8 +207,8 @@ importers:
 
 packages:
 
-  '@azure/msal-browser@5.25.1':
-    resolution: {integrity: sha512-NDW2/bz2Pz71EJAlhSw+jg1kpRIWtrzj0gCzcHuG1u7iLvSOHpUc5lICkDA9x0bbeityxTneiunSBluvS+/y4w==}
+  '@azure/msal-browser@5.25.0':
+    resolution: {integrity: sha512-7GyXzDUrdLG5zPDCYJbQdJqbl9a2U9SWUSC4lxr7cXjkBq6diTfWcJsi0UjdGWlqy+EevQg9dSC4g3s3BEp19g==}
     engines: {node: '>=0.8.0'}
 
   '@azure/msal-common@16.14.2':
@@ -2366,15 +2366,15 @@ packages:
 
 snapshots:
 
-  '@azure/msal-browser@5.25.1':
+  '@azure/msal-browser@5.25.0':
     dependencies:
       '@azure/msal-common': 16.14.2
 
   '@azure/msal-common@16.14.2': {}
 
-  '@azure/msal-react@5.7.2(@azure/msal-browser@5.25.1)(react@18.3.1)':
+  '@azure/msal-react@5.7.2(@azure/msal-browser@5.25.0)(react@18.3.1)':
     dependencies:
-      '@azure/msal-browser': 5.25.1
+      '@azure/msal-browser': 5.25.0
       react: 18.3.1
 
   '@babel/code-frame@7.29.7':
