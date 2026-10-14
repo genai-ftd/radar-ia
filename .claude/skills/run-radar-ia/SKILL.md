@@ -29,6 +29,16 @@ pnpm install
 pnpm run build        # gera dist/; o aviso de chunk > 500 kB é esperado
 ```
 
+O build de produção abre numa tela de login com Entra ID (`src/auth.tsx`), e o
+driver não passa dela. Para inspecionar a edição, gere o build com o login
+desligado e depois volte ao build normal antes de publicar:
+
+```bash
+VITE_SEM_LOGIN=1 pnpm run build   # só para teste local; o deploy não usa
+```
+
+O `vite dev` já roda sem login.
+
 Checagem de tipos (o repositório não tem tsconfig, por decisão do dono; passe
 as opções na linha de comando):
 
@@ -174,5 +184,7 @@ GitHub pelo proxy; confira o resultado com o conector do GitHub
   `lsof -ti:4173 -sTCP:LISTEN | xargs -r kill`.
 - **`error TS5057: Cannot find a tsconfig.json file`.** O `tsc -p .` não
   funciona sem tsconfig; use o comando com as opções na linha de comando.
+- **O driver para numa tela "Entrar com a conta Microsoft".** O build foi feito
+  com o login ligado; refaça com `VITE_SEM_LOGIN=1 pnpm run build`.
 - **`curl` para o site publicado ou para `api.github.com` falha com 403 do
   proxy.** Rede de saída bloqueada; use o conector do GitHub para ver o deploy.
