@@ -14,11 +14,11 @@ import hubLogoClaro from './imports/hub-logo-claro.png';
 const CLIENT_ID = 'cfdae966-39e2-4e45-8c56-34300c4f59c6';
 const TENANT_ID = 'f79b45bf-444f-4075-8bfa-542448657ca4';
 
-// 'teste': o site segue aberto e só pede login a quem abrir com ?entrar=1
-// (a escolha vale para a aba, inclusive na volta do login da Microsoft).
-// 'sempre': todo visitante passa pelo login. Trocar depois do primeiro login
-// bem-sucedido em produção.
-const MODO = 'teste' as 'teste' | 'sempre';
+// 'sempre': todo visitante passa pelo login (em vigor desde 14/out/2026, após
+// o primeiro login bem-sucedido em produção).
+// 'teste': o site fica aberto e só pede login a quem abrir com ?entrar=1; use
+// para validar mudanças na configuração do Entra sem bloquear ninguém.
+const MODO = 'sempre' as 'teste' | 'sempre';
 
 function pediuLogin() {
   try {
