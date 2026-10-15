@@ -41,6 +41,21 @@ let erroDoLogin: string | null = null;
 // https://genai-ftd.github.io/radar-ia/
 const enderecoDoSite = () => window.location.origin + window.location.pathname.replace(/[^/]*$/, '');
 
+// Login por sessão do navegador: o MSAL guarda a conta no localStorage (vale
+// para todas as abas), e um cookie de sessão, sem data de expiração, marca que
+// o login aconteceu nesta sessão. Fechou o navegador, o cookie some e a conta
+// guardada é descartada na próxima visita.
+const COOKIE_SESSAO = 'radar-sessao';
+const caminhoDoSite = () => window.location.pathname.replace(/[^/]*$/, '');
+
+function marcarSessao() {
+  document.cookie = `${COOKIE_SESSAO}=1; path=${caminhoDoSite()}; SameSite=Lax; Secure`;
+}
+
+function sessaoAtiva() {
+  return document.cookie.split('; ').some(c => c === `${COOKIE_SESSAO}=1`);
+}
+
 export async function criarClienteMsal(): Promise<IPublicClientApplication> {
   const msal = await createStandardPublicClientApplication({
     auth: {
@@ -55,6 +70,12 @@ export async function criarClienteMsal(): Promise<IPublicClientApplication> {
     erroDoLogin = [e?.errorCode, (e?.errorMessage || e?.message || '').split('\n')[0]].filter(Boolean).join(': ') || 'erro desconhecido';
     return null;
   });
+  if (retorno?.account) {
+    marcarSessao();
+  } else if (!sessaoAtiva()) {
+    for (const conta of msal.getAllAccounts()) await msal.clearCache({ account: conta }).catch(() => {});
+    msal.setActiveAccount(null);
+  }
   const conta = retorno?.account ?? msal.getActiveAccount() ?? msal.getAllAccounts()[0] ?? null;
   if (conta) msal.setActiveAccount(conta);
   return msal;
