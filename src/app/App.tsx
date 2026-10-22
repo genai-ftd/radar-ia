@@ -3063,7 +3063,7 @@ export default function App() {
             <div className="hidden sm:flex items-center gap-5 shrink-0">
               <div className="text-right leading-none">
                 <span className="block text-[11px] font-bold text-azul-600 uppercase tracking-[0.16em]">Edição #13</span>
-                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">1–13 out 2026</span>
+                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">1–15 out 2026</span>
               </div>
               <div className="w-px h-9 bg-gray-200" />
               <img src={hubLogo} alt="Hub de IA, Produto e Experiência" className="h-9 w-auto" />
@@ -3140,7 +3140,7 @@ export default function App() {
                 variants={{ oculto: { opacity: 0, y: 16 }, visivel: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }}
                 className="text-base md:text-[17px] text-white/80 leading-[1.7]"
               >
-                Em outubro, o MEC sinalizou que vai liberar a IA para corrigir redação desde que a nota fique com o professor, um distrito americano proibiu a IA para todos os alunos semanas depois de liberar o Gemini para parte deles, e um ensaio universitário mediu notas mais baixas nas turmas que ganharam um tutor de IA. Na direção contrária, Google e OpenAI abriram ferramentas de estudo para alunos mais novos. <strong className="font-semibold text-white">O recurso que trabalha com o professor deve ganhar o aval da regra; o que depende do aluno sozinho ficou exposto</strong>.
+                Em outubro, o MEC sinalizou que vai liberar a IA para corrigir redação desde que a nota fique com o professor, um distrito americano proibiu a IA para todos os alunos semanas depois de liberar o Gemini para parte deles, Austrália e Portugal propuseram afastá-la das crianças pequenas, e um ensaio universitário mediu notas mais baixas nas turmas que ganharam um tutor de IA. Na direção contrária, Google e OpenAI abriram ferramentas de estudo para alunos mais novos. <strong className="font-semibold text-white">O recurso que trabalha com o professor deve ganhar o aval da regra; o que depende do aluno sozinho ficou exposto</strong>.
               </motion.p>
             </motion.div>
           </div>
@@ -3277,8 +3277,8 @@ export default function App() {
                 {
                   tag: "Vento contra",
                   tagCor: "bg-red-100 text-red-700",
-                  conclusao: "A proibição do uso de IA pelo aluno já alcança todas as séries numa rede americana",
-                  raciocinio: "Frederick County, em Maryland, proibiu o uso de IA pelos alunos do pré ao 12º ano semanas depois de liberar o Gemini para os anos finais e o ensino médio. Entre os motivos relatados está que os professores não conseguiam desligar a ferramenta nos aparelhos dos alunos.",
+                  conclusao: "A restrição ao uso de IA pelo aluno chegou a todas as séries numa rede americana e às crianças pequenas em dois países",
+                  raciocinio: "Frederick County, em Maryland, proibiu o uso de IA pelos alunos do pré ao 12º ano semanas depois de liberar o Gemini para os anos finais e o ensino médio. Entre os motivos relatados está que os professores não conseguiam desligar a ferramenta nos aparelhos dos alunos. Em 14 e 15 de outubro, Austrália e Portugal propuseram afastar a IA das crianças pequenas e deixá-la com o educador.",
                   decisao: "Garantir que a escola consiga desligar cada recurso voltado ao aluno, por série e por turma, e que o professor veja o que está ligado."
                 },
                 {
@@ -3342,7 +3342,7 @@ export default function App() {
               Quatro sinais, <span className="text-azul-600">uma direção</span>
             </h2>
             <p className="text-gray-600 mb-10 text-base max-w-3xl text-pretty">
-              Regulador brasileiro, rede americana, pesquisa e big techs mostram, por ângulos diferentes, a mesma separação: a IA que trabalha com o professor ganha espaço, e a que fica com o aluno sozinho passa a ser restringida ou cobrada. Os fatos centrais de cada sinal são de 1 a 13 de outubro; o contexto anterior vem datado no cartão.
+              Regulador brasileiro, rede americana, pesquisa e big techs mostram, por ângulos diferentes, a mesma separação: a IA que trabalha com o professor ganha espaço, e a que fica com o aluno sozinho passa a ser restringida ou cobrada. Os fatos centrais de cada sinal são de 1 a 15 de outubro; o contexto anterior vem datado no cartão.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 items-start">
@@ -3362,15 +3362,15 @@ export default function App() {
                   color: "from-azul-700 to-azul-800"
                 },
                 {
-                  titulo: "Um distrito de Maryland proibiu a IA para todos os alunos semanas depois de liberar o Gemini",
-                  empresa: "Frederick County Public Schools",
-                  data: "7 out/2026",
-                  consolida: "Votação do conselho escolar por 6 a 1 · piloto do Gemini iniciado em setembro · lei estadual que obriga os distritos a definir política de IA",
-                  resumo: "Em 7 de outubro, o conselho de educação de Frederick County votou, por 6 a 1, por restringir o uso de IA pelos alunos do pré-escolar ao 12º ano. Os conselheiros pensaram primeiro em limitar a regra aos mais novos e depois a estenderam ao ensino médio. A política tem exceções para aulas específicas, para o ensino sobre a própria IA e para adaptações a alunos com deficiência. A votação veio semanas depois de o distrito começar, em setembro, um piloto que permitia o Gemini nos anos finais e no ensino médio com permissão do professor. Entre os motivos relatados estão cola, dependência da ferramenta, famílias que não foram avisadas do piloto e professores que não conseguiam desligar o Gemini nos aparelhos dos alunos. Uma lei estadual de 2026 obriga os distritos de Maryland a definir sua política de IA neste outono.",
-                  impacto: "É a restrição mais ampla entre as que acompanhamos: Nova York e Los Angeles cortaram por idade ou por aparelho, e Frederick County cortou o uso pelo aluno em todas as séries. O motivo mais útil para produto é o operacional: a escola liberou uma ferramenta que o professor não conseguia controlar, e a saída foi desligar tudo.",
+                  titulo: "Um distrito americano proibiu a IA para todos os alunos, e Austrália e Portugal querem afastá-la das crianças pequenas",
+                  empresa: "Frederick County · AERO (Austrália) · Governo de Portugal · Flórida",
+                  data: "7–15 out/2026",
+                  consolida: "Votação em Frederick County por 6 a 1 · recomendação da AERO para os primeiros anos · consulta pública em Portugal · regras da Flórida, de setembro",
+                  resumo: "Em 7 de outubro, o conselho de educação de Frederick County votou, por 6 a 1, por restringir o uso de IA pelos alunos do pré-escolar ao 12º ano. Os conselheiros pensaram primeiro em limitar a regra aos mais novos e depois a estenderam ao ensino médio. A política tem exceções para aulas específicas, para o ensino sobre a própria IA e para adaptações a alunos com deficiência. A votação veio semanas depois de o distrito começar, em setembro, um piloto que permitia o Gemini nos anos finais e no ensino médio com permissão do professor. Entre os motivos relatados estão cola, dependência da ferramenta, famílias que não foram avisadas do piloto e professores que não conseguiam desligar o Gemini nos aparelhos dos alunos. Uma lei estadual de 2026 obriga os distritos de Maryland a definir sua política de IA neste outono. Em 14 de outubro, a AERO, órgão de pesquisa educacional do governo australiano, recomendou evitar a IA nos três primeiros anos do ensino fundamental e usá-la com cautela depois, pelo risco de a ferramenta pensar pelo aluno. Em 15 de outubro, Portugal abriu consulta pública de 30 dias sobre orientações de IA nas escolas: no pré-escolar, a IA fica como apoio ao educador, sem uso direto pelas crianças, e o professor define as condições de uso em cada atividade. E em 16 de setembro, num fato que a edição passada não registrou, a Flórida aprovou regras estaduais que dão à família a decisão sobre o aluno interagir diretamente com IA, exigem guardar o registro dessas interações por pelo menos 30 dias e proíbem ferramentas que simulem companhia.",
+                  impacto: "Frederick County fez a restrição mais ampla entre as que acompanhamos, e ela deixou de ser um caso isolado: na semana seguinte, um órgão do governo australiano e o governo português propuseram afastar a IA das crianças pequenas. Nos três casos, o professor continua com a ferramenta, e quem perde o acesso direto é o aluno, sobretudo o mais novo. O motivo mais útil para produto é o operacional de Frederick County: a escola liberou uma ferramenta que o professor não conseguia controlar, e a saída foi desligar tudo.",
                   professor: "Deixa de contar com a IA nas atividades dos alunos, salvo as exceções, e parte dos professores já voltou ao papel.",
                   aluno: "Perde o acesso na escola, mas continua com as ferramentas gratuitas fora dela.",
-                  gestor: "Vai pedir ao fornecedor controle fino antes de liberar qualquer recurso voltado ao aluno.",
+                  gestor: "Vai pedir ao fornecedor controle fino por idade e, como na Flórida, registro das interações antes de liberar qualquer recurso voltado ao aluno.",
                   roadmap: "Controle da escola por série, turma e recurso, com o professor vendo e desligando o que estiver ativo.",
                   fonte: "https://www.fox5dc.com/news/frederick-county-school-board-votes-ban-ai-use-pre-k-through-12th-grade-students",
                   color: "from-rosa-600 to-rosa-700"
@@ -3572,8 +3572,8 @@ export default function App() {
                 {
                   tema: "Restrição ao uso de IA pelo aluno",
                   tipo: "Estrutural",
-                  trilha: "#10 trava padrão por idade em produto de massa → #11 vedação até o 5º ano no Brasil e moratória até o 8º ano em Nova York → #12 Los Angeles bloqueia a IA generativa para todos os alunos → #13 Frederick County proíbe do pré ao 12º ano, e o MEC deve vetar a IA na educação infantil",
-                  leitura: "Quarta edição seguida, e a restrição continua se ampliando: começou pelos anos iniciais e agora alcança todas as séries numa rede americana. O motivo também evoluiu, de proteger crianças pequenas para desconfiar do efeito na aprendizagem e da falta de controle da escola. O professor continua dentro; quem sai é o aluno sozinho.",
+                  trilha: "#10 trava padrão por idade em produto de massa → #11 vedação até o 5º ano no Brasil e moratória até o 8º ano em Nova York → #12 Los Angeles bloqueia a IA generativa para todos os alunos → #13 Frederick County proíbe do pré ao 12º ano; Austrália e Portugal propõem afastar a IA das crianças pequenas, e o MEC deve vetá-la na educação infantil",
+                  leitura: "Quarta edição seguida, e a restrição continua se ampliando: começou pelos anos iniciais, agora alcança todas as séries numa rede americana e entrou nas orientações de órgãos públicos de dois países para as crianças pequenas. O motivo também evoluiu, de proteger crianças pequenas para desconfiar do efeito na aprendizagem e da falta de controle da escola. O professor continua dentro; quem sai é o aluno sozinho.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
@@ -3765,7 +3765,7 @@ export default function App() {
                   produto: "Co-crIA, TutorIA, PraticAI e Radar Enem",
                   mercado: "Plataforma privada",
                   publicos: ["Professor", "Aluno", "Gestor"],
-                  entregue: "Para o professor: o Co-crIA, assistente integrado ao material didático e desenvolvido com a Teachy, que gera planos de aula, listas, avaliações, apresentações e materiais adaptados. Para o aluno: o TutorIA e o PraticAI, apresentados no Bernoulli Reload, em agosto; o PraticAI corrige redação e, segundo a página da empresa, estima a nota por competência. Para o gestor: o Radar Enem, que lê os microdados do exame com um chat de IA. Não houve lançamento entre 1 e 13 de outubro.",
+                  entregue: "Para o professor: o Co-crIA, assistente integrado ao material didático e desenvolvido com a Teachy, que gera planos de aula, listas, avaliações, apresentações e materiais adaptados. Para o aluno: o TutorIA e o PraticAI, apresentados no Bernoulli Reload, em agosto; o PraticAI corrige redação e, segundo a página da empresa, estima a nota por competência. Para o gestor: o Radar Enem, que lê os microdados do exame com um chat de IA. Não houve lançamento entre 1 e 15 de outubro.",
                   leitura: "O corretor de redação é o recurso mais sensível à regra nova: estimar nota para o aluno treinar é devolutiva; virar nota da escola sem o professor, não. A parceria com a Teachy mostra que o entrante já está dentro de um sistema de ensino acompanhado.",
                   fonte: "https://www.bernoulli.com.br/blog/co-cria-como-a-inteligencia-artificial-esta-transformando-o-dia-a-dia-dos-professores/",
                   fonteLabel: "Blog do Bernoulli",
@@ -3787,7 +3787,7 @@ export default function App() {
                   produto: "Assistente do professor e Teachy Studio",
                   mercado: "Plataforma privada",
                   publicos: ["Professor", "Escola"],
-                  entregue: "Para o professor: plano de aula, sequência didática, slides, listas de exercícios, provas e correção de exercícios com IA, alinhados à BNCC. Para a escola: o Teachy Studio, em que a instituição cria livros, apostilas e sequências próprias com IA, impressos e digitais. Desde a Bett Brasil 2026, a escola também pode adotar pelo Studio o material do Descomplica, com as videoaulas, como base curricular. A Teachy também é parceira do Bernoulli no Co-crIA. Não houve lançamento entre 1 e 13 de outubro.",
+                  entregue: "Para o professor: plano de aula, sequência didática, slides, listas de exercícios, provas e correção de exercícios com IA, alinhados à BNCC. Para a escola: o Teachy Studio, em que a instituição cria livros, apostilas e sequências próprias com IA, impressos e digitais. Desde a Bett Brasil 2026, a escola também pode adotar pelo Studio o material do Descomplica, com as videoaulas, como base curricular. A Teachy também é parceira do Bernoulli no Co-crIA. Não houve lançamento entre 1 e 15 de outubro.",
                   leitura: "Vem de fora dos sistemas de ensino e entra pelo material didático, onde está a receita das editoras: a empresa promete apostila própria por uma fração do custo de produção editorial, e a parceria com o Descomplica entrega uma base curricular pronta. A IA serve sobretudo a quem produz o material. O que ela ainda não mostra é o que qualquer material precisa mostrar agora: que o aluno aprende com ele.",
                   fonte: "https://educador21.com/ia-na-educacao-teachy-descomplica-escolas/",
                   fonteLabel: "Educador21",
@@ -3798,7 +3798,7 @@ export default function App() {
                   produto: "Plataforma de IA da Conexia Educação (Grupo SEB)",
                   mercado: "Plataforma privada",
                   publicos: ["Aluno", "Professor", "Família"],
-                  entregue: "Na versão gratuita, o ChatEdu, assistente para tarefas escolares e preparação para o ENEM e vestibulares, e, para o educador, geração de plano de aula e ferramentas adaptadas a perfis de aprendizagem. Na premium, tutores virtuais por disciplina e trilhas de letramento em IA para alunos, professores e famílias, seguindo a BNCC. Tem controle parental, linguagem ajustada à faixa etária e alerta de conteúdo impróprio. A plataforma ganhou um summit próprio na Bett Brasil 2026 e não teve novidade entre 1 e 13 de outubro.",
+                  entregue: "Na versão gratuita, o ChatEdu, assistente para tarefas escolares e preparação para o ENEM e vestibulares, e, para o educador, geração de plano de aula e ferramentas adaptadas a perfis de aprendizagem. Na premium, tutores virtuais por disciplina e trilhas de letramento em IA para alunos, professores e famílias, seguindo a BNCC. Tem controle parental, linguagem ajustada à faixa etária e alerta de conteúdo impróprio. A plataforma ganhou um summit próprio na Bett Brasil 2026 e não teve novidade entre 1 e 15 de outubro.",
                   leitura: "Põe a IA para conversar direto com o aluno, com apoio à tarefa e tutor por disciplina, e aposta na segurança para ganhar a confiança da família, justamente a objeção que a avaliação da Common Sense Media levantou contra o ChatGPT para adolescentes. Não localizamos informação pública sobre se o ChatEdu e os tutores evitam entregar a resposta, e é isso que define de que lado da evidência o produto fica. Como a Conexia atende escolas parceiras, está mais perto da concorrência direta do que de uma startup de fora.",
                   fonte: "https://www.uai.com.br/app/noticia/mundo-corporativo/2025/10/06/noticia-mundo-corporativo,370556/ai4school-conexia-apresenta-solucao-de-ia-para-educacao.shtml",
                   fonteLabel: "Portal UAI",
@@ -3848,7 +3848,7 @@ export default function App() {
                 {
                   nome: "Reguladores e redes",
                   altera: "Regras competitivas",
-                  nota: "O MEC deve liberar a correção por IA com a nota do professor e vetar a IA na educação infantil; nos EUA, um distrito proibiu o uso pelo aluno em todas as séries. A regra premia o que trabalha com o professor e cobra controle do que chega ao aluno."
+                  nota: "O MEC deve liberar a correção por IA com a nota do professor e vetar a IA na educação infantil; nos EUA, um distrito proibiu o uso pelo aluno em todas as séries, e Austrália e Portugal propuseram afastar a IA das crianças pequenas. A regra premia o que trabalha com o professor e cobra controle do que chega ao aluno."
                 },
 ].map((item, i) => (
                   <div key={i} className="border-l-2 border-azul-200 pl-4">
@@ -4443,7 +4443,7 @@ export default function App() {
                 <div className="space-y-5">
                   {[
                     { titulo: "Correção por IA como padrão da rede pública", desc: "Já roda em redes estaduais e deve ganhar aval da regra, mas o texto homologado ainda não saiu, e não localizamos avaliação externa da precisão nem do efeito na escrita." },
-                    { titulo: "Proibição total do uso pelo aluno", desc: "Uma rede americana chegou a todas as séries, e os outros distritos de Maryland estão definindo suas regras agora. Pode se espalhar, mas ainda é um caso." },
+                    { titulo: "Proibição total do uso pelo aluno", desc: "Uma rede americana chegou a todas as séries, e os outros distritos de Maryland estão definindo suas regras agora. Austrália e Portugal foram por outro caminho: restrição por idade, com a IA nas mãos do educador. A proibição total ainda é um caso." },
                     { titulo: "Ferramentas de estudo das big techs para todas as idades", desc: "O acesso depende do que cada escola liberar no painel do Google, e o planejador da OpenAI ainda não foi lançado. A adesão real nas escolas ainda não foi medida." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -4787,7 +4787,7 @@ export default function App() {
               <img src={hubLogoClaro} alt="Hub de IA, Produto e Experiência" className="h-11 md:h-12 w-auto" />
               <div className="space-y-1 mt-2">
                 <p className="text-white/70 text-sm">Curadoria e análise: <span className="text-white font-medium">Silvana Helena</span></p>
-                <p className="text-white/60 text-xs tabular-nums">Outubro de 2026 · Edição #13 · 1–13 out</p>
+                <p className="text-white/60 text-xs tabular-nums">Outubro de 2026 · Edição #13 · 1–15 out</p>
               </div>
             </div>
           </motion.div>
