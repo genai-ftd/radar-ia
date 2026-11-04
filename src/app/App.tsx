@@ -3555,7 +3555,7 @@ export default function App() {
                 </div>
                 <div className="mt-7 pt-6 border-t border-gray-100">
                   <p className="text-sm md:text-xs text-gray-800 leading-relaxed">
-                    <span className="font-bold text-azul-600">A conclusão:</span> quem liga a IA vai ser a escola. O fornecedor que entregar <em>recursos separados, o interruptor por série e turma e uma medida honesta de resultado</em> vai passar pela porta que vai ficar fechada por padrão.
+                    <span className="font-bold text-azul-600">A conclusão:</span> quem liga a IA vai ser a escola. O fornecedor que entregar <em>recursos separados, o interruptor por série e turma e uma medida honesta de resultado</em> vai ser ligado primeiro quando a IA passar a vir desligada.
                   </p>
                 </div>
           </div>
@@ -3735,7 +3735,7 @@ export default function App() {
                   empresa: "Google · OpenAI",
                   data: "30 out – 3 nov/2026",
                   consolida: "Gemini, Gemini Notebook e Busca desligados por padrão para alunos · Guided Learning no Classroom e piloto na Busca · travas novas no ChatGPT para adolescentes",
-                  resumo: "Em 3 de novembro, o Google anunciou que o Gemini, o Gemini Notebook, o Gemini no Classroom e a Busca vão ficar desligados nas contas de alunos da educação básica até o administrador da escola ligar. Segundo a imprensa, é o inverso do padrão que a empresa adotou em agosto para o Gemini no Classroom, e a mudança veio depois de uma investigação do Wall Street Journal e de um inquérito bipartidário no Senado americano. A Busca não se separa das respostas de IA: a escola que recusar toda a IA também tira a Busca dos alunos, o que gerou críticas de políticos como o senador Bernie Sanders e o prefeito de Nova York, Zohran Mamdani. Depois disso, o Google esclareceu que a escola pode ligar cada serviço separadamente, inclusive a Busca sem o Gemini. O Google também levou ao Classroom o Guided Learning, modo que conduz o aluno por etapas em vez de dar a resposta, e começou um piloto dele na Busca em escolas americanas. Segundo reportagens, o novo padrão começa no início de 2027; não localizamos informação sobre outros países. Em 30 de outubro, a OpenAI anunciou travas novas no ChatGPT para adolescentes, a chegar nas semanas seguintes: limite a informações sobre armas, estimativa de idade reforçada e aviso aos pais quando a conta de um adolescente for pausada por conversas repetidas sobre violência.",
+                  resumo: "Em 3 de novembro, o Google anunciou que o Gemini, o Gemini Notebook, o Gemini no Classroom e a Busca vão ficar desligados nas contas de alunos da educação básica até o administrador da escola ligar. Segundo a imprensa, é o inverso do padrão que a empresa adotou em agosto para o Gemini no Classroom, e a mudança veio depois de uma investigação do Wall Street Journal e de um inquérito bipartidário no Senado americano. A Busca não se separa das respostas de IA: a escola que recusar toda a IA também tira a Busca dos alunos, o que gerou críticas de políticos como o senador Bernie Sanders e o prefeito de Nova York, Zohran Mamdani. Depois disso, o Google esclareceu que a escola pode ligar cada serviço separadamente, inclusive a Busca sem o Gemini. O Google também levou ao Classroom o Guided Learning, modo que conduz o aluno por etapas em vez de dar a resposta, e anunciou um piloto dele na Busca em escolas americanas. Segundo reportagens, o novo padrão começa no início de 2027; não localizamos informação sobre outros países. Em 30 de outubro, a OpenAI anunciou travas novas no ChatGPT para adolescentes, a chegar nas semanas seguintes: limite a informações sobre armas, estimativa de idade reforçada e aviso aos pais quando a conta de um adolescente for pausada por conversas repetidas sobre violência.",
                   impacto: "Na edição #13, a falta de controle da escola foi um dos motivos relatados para Frederick County desligar tudo. Três semanas depois, o Google, presente em boa parte das escolas americanas, anunciou a mudança do padrão para o lado da escola. A IA vai deixar de entrar pela atualização do fornecedor e passar a entrar pela decisão da rede, que só liga o que consegue justificar. O caso da Busca mostra o risco do outro lado: o recurso que não se separa da IA obriga a escola a escolher entre tudo e nada.",
                   professor: "Passa a depender de a escola ligar a IA e, quando ela ligar, ganha um modo guiado para atribuir à turma.",
                   aluno: "Pode ficar sem o Gemini, e até sem a Busca, na conta da escola, se a rede recusar toda a IA.",
@@ -3753,7 +3753,7 @@ export default function App() {
                   impacto: "É um ensaio próximo do desenho que as edições anteriores recomendaram, com a IA no momento do erro e um professor no fluxo, e ainda assim a vantagem não apareceu na prova externa. Somado ao ensaio de Maryland da edição #13, o quadro fica assim: bem desenhada, a IA ajuda no momento da aula; só oferecida, pode atrapalhar; e ainda não mostrou ganho em prova externa ao produto.",
                   professor: "Pode contar com a IA para responder ao erro na hora, sem esperar salto na avaliação externa.",
                   aluno: "Recebe ajuda no momento do erro, mas pode resolver menos exercícios no mesmo tempo.",
-                  gestor: "Ganha uma régua: pedir ao fornecedor resultado em prova externa, e não só nas métricas da plataforma.",
+                  gestor: "Pode pedir ao fornecedor resultado em prova externa, além das métricas da plataforma.",
                   roadmap: "Medir o efeito de cada recurso numa avaliação externa ao produto, além das métricas internas.",
                   fonte: "https://www.the74million.org/article/five-things-you-should-know-about-new-ai-tutor-study/",
                   color: "from-azul-600 to-azul-700"
@@ -3874,7 +3874,7 @@ export default function App() {
                 {
                   cat: "Não localizamos estudo de impacto de sistema de ensino sobre a própria IA",
                   nota: "Quinta edição seguida sem que localizemos estudo com grupo de comparação de sistema de ensino ou grupo editorial. O único ensaio randomizado brasileiro de IA pedagógica que localizamos segue sendo o da Letrus, avaliado pelo J-PAL no Espírito Santo.",
-                  leitura: "Com o ensaio da Eedi, a régua subiu de novo: além de mostrar que a IA não atrapalha, vai ser preciso mostrar ganho fora das métricas do próprio produto.",
+                  leitura: "Depois do ensaio da Eedi, não basta mostrar que a IA não atrapalha: vai ser preciso mostrar ganho fora das métricas do próprio produto.",
                   janela: "Custo de atraso alto"
                 },
                 {
@@ -3954,7 +3954,7 @@ export default function App() {
                   tema: "Evidência de aprendizagem como campo de disputa",
                   tipo: "Estrutural",
                   trilha: "#11 avaliação de impacto exigida por norma → #12 ensaios randomizados de tutor de IA em escala, com ganho modesto → #13 ensaio mede nota menor em turmas que só receberam acesso ao tutor → #14 tutor de IA revisado por professores empata com o humano na aula, sem vantagem clara na prova externa",
-                  leitura: "Em três edições, a evidência mostrou ganho pequeno com bom desenho, perda quando a IA é só oferecida e, agora, nenhuma vantagem clara em prova externa mesmo com professor no fluxo. A pergunta deixou de ser se a IA ajuda e passou a ser onde o ganho aparece e como medi-lo fora do produto.",
+                  leitura: "Em três edições, a evidência mostrou ganho pequeno com bom desenho, perda quando a IA é só oferecida e, agora, nenhuma vantagem clara em prova externa mesmo com professor no fluxo. O que falta saber é onde o ganho aparece e como medi-lo fora do produto.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
@@ -4040,7 +4040,7 @@ export default function App() {
                   player: "Santillana",
                   grupo: "Moderna Core",
                   movimento: "Sem lançamento na janela. IA de acompanhamento de desempenho, sem geração voltada ao aluno",
-                  estrategia: "Acompanha o desempenho sem falar com o aluno e tem o dado para medir o efeito do produto, o que a régua de prova externa passou a pedir",
+                  estrategia: "Acompanha o desempenho sem falar com o aluno e tem o dado para medir o efeito do produto, que é o que as redes vão pedir",
                   exposicao: "Baixa",
                   impacto: "Médio-Alto"
                 },
@@ -4074,7 +4074,7 @@ export default function App() {
                   player: "Saber",
                   grupo: "eDocente",
                   movimento: "Sem lançamento na janela. Correção de microtestes por câmera no celular do professor",
-                  estrategia: "Trabalha com o professor e não depende de a rede liberar IA para o aluno. Está do lado certo da virada",
+                  estrategia: "Trabalha com o professor e não depende de a rede liberar IA para o aluno, por isso não é afetado pelo novo padrão",
                   exposicao: "Baixa",
                   impacto: "Alto"
                 },
@@ -4164,7 +4164,7 @@ export default function App() {
                   mercado: "Plataforma privada",
                   publicos: ["Aluno", "Professor", "Família"],
                   entregue: "Na versão gratuita, o ChatEdu, assistente para tarefas escolares e preparação para o ENEM e vestibulares, e, para o educador, geração de plano de aula e ferramentas adaptadas a perfis de aprendizagem. Na premium, tutores virtuais por disciplina e trilhas de letramento em IA para alunos, professores e famílias, seguindo a BNCC. Tem controle parental, linguagem ajustada à faixa etária e alerta de conteúdo impróprio. A plataforma ganhou um summit próprio na Bett Brasil 2026 e não teve novidade entre 16 de outubro e 4 de novembro.",
-                  leitura: "Põe a IA para conversar direto com o aluno, com apoio à tarefa e tutor por disciplina, e aposta na segurança para ganhar a confiança da família, justamente a objeção que a avaliação da Common Sense Media levantou contra o ChatGPT para adolescentes. Não localizamos informação pública sobre se o ChatEdu e os tutores evitam entregar a resposta, e é isso que define de que lado da evidência o produto fica. Como a Conexia atende escolas parceiras, está mais perto da concorrência direta do que de uma startup de fora.",
+                  leitura: "Põe a IA para conversar direto com o aluno, com apoio à tarefa e tutor por disciplina, e aposta na segurança para ganhar a confiança da família, a mesma objeção que a avaliação da Common Sense Media levantou contra o ChatGPT para adolescentes. Não localizamos informação pública sobre se o ChatEdu e os tutores evitam entregar a resposta, e é isso que define de que lado da evidência o produto fica. Como a Conexia atende escolas parceiras, está mais perto da concorrência direta do que de uma startup de fora.",
                   fonte: "https://www.uai.com.br/app/noticia/mundo-corporativo/2025/10/06/noticia-mundo-corporativo,370556/ai4school-conexia-apresenta-solucao-de-ia-para-educacao.shtml",
                   fonteLabel: "Portal UAI",
                   historico: "#12 entra no Radar com o ChatEdu, tutores por disciplina e controle parental → #13 sem novidade; a segurança, sua aposta, vira a objeção às ferramentas para o aluno → #14 sem novidade"
@@ -4208,7 +4208,7 @@ export default function App() {
                 {
                   nome: "Pesquisa independente",
                   altera: "Régua de evidência",
-                  nota: "O ensaio da Eedi mostrou ganho nas métricas da plataforma e nenhuma vantagem clara na prova externa. A régua passa a ser resultado fora do produto."
+                  nota: "O ensaio da Eedi mostrou ganho nas métricas da plataforma e nenhuma vantagem clara na prova externa. O que conta passa a ser o resultado fora do produto."
                 },
                 {
                   nome: "Reguladores e redes",
@@ -4554,7 +4554,7 @@ export default function App() {
                 <div className="flex-1">
                   <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/70 mb-3">Consenso dos especialistas da quinzena</p>
                   <p className="text-lg md:text-xl font-semibold leading-snug text-pretty">
-                    Fornecedor, pesquisadores e críticos chegaram ao mesmo ponto por caminhos diferentes: <span className="text-amarelo-400">quem decide se a IA entra é a escola, e ela precisa de recursos separados e de resultado medido fora do produto para decidir</span>.
+                    Fornecedor, pesquisadores e críticos concordam num ponto: <span className="text-amarelo-400">quem decide se a IA entra é a escola, e ela precisa de recursos separados e de resultado medido fora do produto para decidir</span>.
                   </p>
                 </div>
                 <img src={castitoExperts} alt="" width={440} height={414} className="w-32 sm:w-40 md:w-52 h-auto shrink-0 self-center sm:self-auto drop-shadow-[0_12px_24px_rgba(1,34,112,0.45)]" />
@@ -4564,7 +4564,7 @@ export default function App() {
                 {[
                   {
                     ponto: "A escola liga, o fornecedor oferece",
-                    detalhe: "O Google vai deixar cada serviço para a escola ligar, um a um, e os críticos atacaram justamente o caso em que a escola não consegue escolher: a Busca sem IA."
+                    detalhe: "O Google vai deixar cada serviço para a escola ligar, um a um, e os críticos atacaram o caso em que a escola não consegue escolher: a Busca sem IA."
                   },
                   {
                     ponto: "Ganho na aula não é ganho na prova",
@@ -4830,7 +4830,7 @@ export default function App() {
                     { titulo: "A escola decide o que ligar", desc: "Redes, governos e agora o próprio Google apontam para o mesmo arranjo: a IA voltada ao aluno entra quando a escola liga. Já justifica mudar o roadmap." },
                     { titulo: "A IA trabalha com o professor", desc: "A regra brasileira em espera, a correção em dois turnos e o professor revisando o tutor da Eedi apontam na mesma direção." },
                     { titulo: "O ganho vem do desenho", desc: "Com desenho, a IA ajuda na aula; sem ele, pode atrapalhar. O ensaio da Eedi reforça o lado positivo, por ora só dentro da plataforma." },
-                    { titulo: "Evidência como condição de venda", desc: "Agora com a régua mais alta: resultado medido fora do produto." },
+                    { titulo: "Evidência como condição de venda", desc: "Agora a exigência é resultado medido fora do produto, e não só nas métricas da plataforma." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-azul-400 mt-1 flex-shrink-0">▸</span>
@@ -4850,7 +4850,7 @@ export default function App() {
                 <p className="font-bold text-gray-900">O padrão desta quinzena</p>
               </div>
               <p className="text-gray-700 leading-relaxed md:columns-2 md:gap-10">
-                A IA não vai mais chegar ligada à escola. Redes e governos já vinham restringindo o uso pelo aluno, e nesta quinzena o próprio fornecedor anunciou a mudança do padrão: a IA vai vir desligada e a escola liga o que quiser. Ao mesmo tempo, a pesquisa subiu a régua: um tutor bem desenhado, com professor revisando, iguala o humano na aula, mas ainda não mostrou ganho em prova externa. Para um sistema de ensino, a vantagem está em facilitar a decisão da escola: recursos separados, controle por série e turma, documentação para a política da rede e resultado medido fora do produto.
+                A IA não vai mais chegar ligada à escola. Redes e governos já vinham restringindo o uso pelo aluno, e nesta quinzena o próprio fornecedor anunciou a mudança do padrão: a IA vai vir desligada e a escola liga o que quiser. Ao mesmo tempo, a pesquisa ficou mais exigente: um tutor bem desenhado, com professor revisando, iguala o humano na aula, mas ainda não mostrou ganho em prova externa. Para um sistema de ensino, a vantagem está em facilitar a decisão da escola: recursos separados, controle por série e turma, documentação para a política da rede e resultado medido fora do produto.
               </p>
             </div>
           </motion.div>
@@ -4933,7 +4933,7 @@ export default function App() {
                   sinal: "No ensaio da Eedi, o tutor de IA igualou o humano nas medidas da plataforma e não superou o conteúdo padrão na prova padronizada, e não localizamos estudo de impacto de sistema de ensino brasileiro",
                   problema: "Se o produto mede o efeito da IA só com dados dele mesmo, o número que apresenta pode não aparecer em nenhuma avaliação da rede. Vale confirmar com o time de dados o que já é medido fora da plataforma.",
                   oportunidade: "Medida de efeito em avaliação externa ao produto",
-                  impacto: "Comparar turmas com e sem o recurso numa avaliação que o produto não controla, como a prova da rede, junto com uma rede parceira. Evolui a linha de base das edições anteriores com a régua que a pesquisa passou a usar.",
+                  impacto: "Comparar turmas com e sem o recurso numa avaliação que o produto não controla, como a prova da rede, junto com uma rede parceira. Amplia a linha de base das edições anteriores com a medida que a pesquisa passou a usar.",
                   professor: "Vê se o recurso muda o resultado na avaliação que importa para a turma.",
                   aluno: "Só recebe em escala o que mostrou efeito fora do produto.",
                   gestor: "Tem um número que não depende da palavra do fornecedor.",
