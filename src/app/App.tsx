@@ -3940,7 +3940,7 @@ export default function App() {
               ))}
             </div>
 
-            <BentoGrid tipo="leve" className="gap-5">
+            <BentoGrid tipo="denso" className="gap-5">
               {[
                 {
                   tema: "Restrição ao uso de IA pelo aluno",
@@ -3989,9 +3989,9 @@ export default function App() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className={`rounded-2xl border-2 ${item.cor} p-6`}
+                  className={`rounded-2xl border-2 ${item.cor} p-6 @3xl:grid @3xl:grid-cols-2 @3xl:gap-x-8 @3xl:content-start`}
                 >
-                  <div className="flex items-start justify-between gap-4 mb-3 flex-wrap">
+                  <div className="flex items-start justify-between gap-4 mb-3 flex-wrap @3xl:col-span-2">
                     <h3 className="font-bold text-navy-900 text-lg leading-snug">{item.tema}</h3>
                     <span className={`px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap ${item.badge}`}>
                       {item.tipo}
@@ -5095,7 +5095,7 @@ export default function App() {
               ref={gradeArquivoRef}
               tabIndex={-1}
               aria-label={`Edições ${inicioArquivo + 1} a ${inicioArquivo + edicoesDaPagina.length} de ${ARQUIVO.length}`}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start scroll-mt-28 outline-none"
+              className="grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-6 scroll-mt-28 outline-none"
             >
               {edicoesDaPagina.map(ed => (
                 <motion.div
@@ -5103,7 +5103,7 @@ export default function App() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all"
+                  className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-azul-600 hover:shadow-md transition-all flex flex-col"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div>
@@ -5118,7 +5118,7 @@ export default function App() {
                   <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">{ed.resumo}</p>
                   <button
                     onClick={() => goToEdicao(ed.view)}
-                    className="w-full px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
+                    className="w-full mt-auto px-4 py-2 bg-azul-600 text-white rounded-lg font-medium hover:bg-azul-700 transition-colors text-sm"
                   >
                     Abrir edição<span className="sr-only">: {ed.rotulo}</span>
                   </button>

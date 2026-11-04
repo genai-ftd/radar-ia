@@ -35,8 +35,9 @@ GRADE BENTO (a partir da #14): seções de vários cards com conteúdo variável
 (Resumo, Sinais, Recorrentes, Radar de funcionalidades, Benchmarks e
 Aceleradores) usam o componente BentoGrid. Não fixar colunas à mão nessas
 seções: com número ímpar de cards, o último ocupa a linha inteira e se
-reorganiza na horizontal; no Resumo e nos Recorrentes, as linhas têm até três
-cards, e o card com bem mais texto fica mais largo. A ordem dos cards é a
+reorganiza na horizontal (Sinais, Recorrentes, Radar, Benchmarks e
+Aceleradores); no Resumo, as linhas têm até três cards, e o card com bem mais
+texto fica mais largo. No Arquivo, os cards de cada página têm a mesma altura. A ordem dos cards é a
 ordem editorial e não muda. Tabelas, filtros e blocos únicos ficam como estão.
 
 PALETA E FONTE (tokens em src/styles/theme.css):
