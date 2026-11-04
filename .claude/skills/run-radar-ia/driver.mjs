@@ -84,7 +84,7 @@ const cmds = {
       fontes: [...new Set([...document.fonts].filter((f) => f.status === 'loaded').map((f) => f.family))],
       secoes: document.querySelectorAll('section[id]').length,
       imagensQuebradas: [...document.images].filter((i) => i.complete && i.naturalWidth === 0).map((i) => i.src),
-      janela: document.querySelector('header')?.innerText.match(/\d+–\d+ \w+ \d{4}/)?.[0] ?? null,
+      janela: document.querySelector('header')?.innerText.match(/\d+(?: \w+)? ?– ?\d+ \w+ \d{4}/)?.[0] ?? null,
     }));
     console.log(JSON.stringify({ ...r, erros }, null, 2));
   },

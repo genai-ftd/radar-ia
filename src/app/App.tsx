@@ -56,10 +56,16 @@ const SECOES = [
   { id: 'edicoes', label: 'Arquivo', executiva: true },
 ];
 
-type View = 'main' | 'edicao-abril-2026' | 'edicao-maio-2026' | 'edicao-junho-2026' | 'edicao-junho-2026-b' | 'edicao-julho-2026' | 'edicao-agosto-2026' | 'edicao-agosto-2026-b' | 'edicao-setembro-2026' | 'edicao-setembro-2026-b';
+type View = 'main' | 'edicao-abril-2026' | 'edicao-maio-2026' | 'edicao-junho-2026' | 'edicao-junho-2026-b' | 'edicao-julho-2026' | 'edicao-agosto-2026' | 'edicao-agosto-2026-b' | 'edicao-setembro-2026' | 'edicao-setembro-2026-b' | 'edicao-outubro-2026';
 
 // Cartões do arquivo, da edição mais recente para a mais antiga.
 const ARQUIVO: { rotulo: string; titulo: string; resumo: string; view: View }[] = [
+  {
+    rotulo: "Outubro de 2026 · Edição #13",
+    titulo: "A IA na escola está saindo da mão do aluno e indo para a mão do professor",
+    resumo: "O MEC deve liberar a correção por IA com a nota do professor, redes e governos restringiram o uso pelo aluno, e um ensaio mediu nota menor quando o tutor foi só oferecido.",
+    view: "edicao-outubro-2026",
+  },
   {
     rotulo: "Setembro de 2026 · Edição #12",
     titulo: "A IA só ensina quando faz o aluno pensar em vez de dar a resposta",
@@ -2220,6 +2226,260 @@ function EdicaoSetembro2026({
 }
 
 
+function EdicaoOutubro2026({
+  onBack,
+  onBackToEdicoes,
+  mascote,
+  mascoteInverso,
+}: {
+  onBack: () => void;
+  onBackToEdicoes: () => void;
+  mascote: string;
+  mascoteInverso: string;
+}) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Mini header */}
+      <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img src={mascote} alt="Radar" className="h-9 w-auto" />
+            <div>
+              <p className="text-[11px] text-gray-600 uppercase tracking-widest leading-none mb-0.5">Edição Anterior</p>
+              <p className="text-sm font-bold text-azul-600 leading-tight">Outubro de 2026 · Ed. #13</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onBackToEdicoes}
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-azul-600 hover:bg-azul-50 rounded-lg transition-all"
+            >
+              <Library className="w-4 h-4" />
+              Edições anteriores
+            </button>
+            <button
+              onClick={onBack}
+              className="flex items-center gap-1.5 px-4 py-2 bg-azul-600 text-white text-sm font-medium rounded-lg hover:bg-azul-700 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Edição atual
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-azul-50/40 to-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+              <Calendar className="w-3 h-3" />
+              Edição #13 · 1 – 15 Out 2026
+            </div>
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-rosa-600 to-rosa-500 text-white rounded-full">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
+              </div>
+            </div>
+            <h1 className="text-3xl md:text-5xl text-navy-900 font-bold mb-6 leading-tight">
+              A IA na escola está saindo da mão do aluno<br />
+              <span className="text-azul-600">e indo para a mão do professor</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              O MEC sinalizou que vai liberar a IA para corrigir redação desde que a nota fique com o professor, um distrito americano proibiu a IA para todos os alunos, Austrália e Portugal propuseram afastá-la das crianças pequenas, e um ensaio universitário mediu notas mais baixas nas turmas que ganharam um tutor de IA. O recurso que trabalha com o professor ganhou espaço; o que depende do aluno sozinho ficou exposto.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Resumo executivo */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Resumo Executivo</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              O que mudou de <span className="text-azul-600">direção</span>
+            </h2>
+            <div className="space-y-4">
+              {[
+                { titulo: "A regra brasileira deve liberar a IA na correção, com a nota sempre do professor", desc: "Decisão: desenhar a correção assistida para o professor revisar e assinar a nota, com registro.", cor: "border-azul-600" },
+                { titulo: "A restrição ao uso de IA pelo aluno chegou a todas as séries numa rede americana e às crianças pequenas em dois países", desc: "Decisão: garantir que a escola consiga desligar cada recurso voltado ao aluno, por série e por turma.", cor: "border-rosa-600" },
+                { titulo: "Oferecer um tutor de IA à turma, sem desenho, pode baixar a nota", desc: "Decisão: não ampliar recurso de conversa para o aluno sem trilha, medida de uso e plano de avaliação.", cor: "border-azul-600" },
+                { titulo: "Google e OpenAI vão direto ao aluno, e a segurança virou a objeção", desc: "Decisão: usar controle da escola, segurança verificável e registro como argumento contra a ferramenta gratuita.", cor: "border-rosa-600" },
+                { titulo: "Caiu a leitura de que a correção de redação por IA seria proibida", desc: "Decisão: rever o que foi despriorizado pela vedação, mantendo a separação entre devolutiva e nota.", cor: "border-azul-600" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
+                >
+                  <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
+                  <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Sinais */}
+      <section className="py-20 px-6 bg-azul-50/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <TrendingUp className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Sinais da Edição</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              Quatro <span className="text-azul-600">sinais</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-5">
+              {[
+                { num: "01", titulo: "O MEC deve homologar a regra de IA liberando a correção de redação, com a nota nas mãos do professor", desc: "Reportagens de 13 de outubro disseram que o MEC vai homologar o parecer do CNE com mudanças: a IA pode corrigir redação como primeiro filtro, a nota fica com o professor e a IA fica proibida na educação infantil. Paraná, São Paulo e Espírito Santo já usam IA na correção de redação.", impacto: "A regra passa a separar quem faz o quê no mesmo fluxo: a IA lê primeiro, e o professor decide.", cor: "from-azul-700 to-azul-800" },
+                { num: "02", titulo: "Um distrito americano proibiu a IA para todos os alunos, e Austrália e Portugal querem afastá-la das crianças pequenas", desc: "Frederick County, em Maryland, restringiu o uso de IA pelos alunos do pré ao 12º ano semanas depois de liberar o Gemini. A AERO, na Austrália, recomendou evitar a IA nos três primeiros anos do fundamental, e Portugal pôs em consulta orientações que deixam a IA do pré-escolar só com o educador.", impacto: "O professor continua com a ferramenta; quem perde o acesso direto é o aluno, sobretudo o mais novo.", cor: "from-rosa-600 to-rosa-700" },
+                { num: "03", titulo: "Dar acesso a um tutor de IA baixou a nota dos alunos num ensaio com 2.379 universitários", desc: "Num ensaio na Universidade de Maryland, as turmas que receberam um assistente de estudo com GPT-4o tiveram nota final 0,37 desvio-padrão menor e usaram menos o material do curso, mesmo com só cerca de 15% dos alunos usando o assistente.", impacto: "Pôr a IA ao alcance do aluno não é neutro: sem desenho, pode atrapalhar.", cor: "from-azul-600 to-azul-700" },
+                { num: "04", titulo: "Google e OpenAI levaram a IA de estudo a alunos mais novos, e a segurança virou a objeção", desc: "O Google abriu o hub de estudo do Gemini a alunos de todas as idades nas contas escolares, e a OpenAI anunciou ferramentas de estudo no ChatGPT para adolescentes. No mesmo dia, a Common Sense Media classificou o ChatGPT for Teens como risco inaceitável.", impacto: "Avaliação independente de segurança vira critério de compra para qualquer recurso voltado ao aluno.", cor: "from-azul-600 to-lilas-600" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-azul-600 transition-all"
+                >
+                  <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
+                    <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
+                    <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
+                  </div>
+                  <div className="px-6 py-4">
+                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                    <div className="border-l-2 border-lilas-500 pl-3">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-lilas-600">Leitura estratégica</p>
+                      <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Implicação estratégica */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-azul-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-rosa-600" />
+              <span className="text-sm text-rosa-600 font-medium">Implicação Estratégica</span>
+            </div>
+            <div className="bg-gradient-to-r from-azul-600 to-navy-900 p-8 md:p-10 rounded-2xl text-white">
+              <div className="flex items-start gap-4">
+                <img src={mascoteInverso} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <div>
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
+                    O comprador vai separar o que a IA faz com o professor do que ela faz com o aluno sozinho. A correção com a nota assinada pelo professor ficou do lado da regra; o recurso voltado ao aluno vai precisar mostrar desenho, controle da escola e evidência.
+                  </p>
+                  <p className="text-white/70 text-sm">
+                    Quem não der à escola o interruptor de cada recurso vai ver a rede desligar tudo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Oportunidades */}
+      <section className="py-20 px-6 bg-azul-50/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <Lightbulb className="w-4 h-4 text-azul-600" />
+              <span className="text-sm text-azul-600 font-medium">Oportunidades de Produto</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+              O que construir <span className="text-azul-600">a partir disso</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { titulo: "Correção de redação em dois turnos, com assinatura do professor", desc: "Separar no modelo de dados a sugestão da IA e a nota do professor e versionar as duas.", destaque: true },
+                { titulo: "Controle da escola por série, turma e recurso", desc: "Começar pelo catálogo de recursos que falam com o aluno e pelas flags com escopo de rede, escola e turma.", destaque: true },
+                { titulo: "Lançamento por turma, com grupo de comparação", desc: "Liberar o próximo recurso para o aluno em metade das turmas de uma rede parceira e comparar.", destaque: true },
+                { titulo: "Bateria de segurança documentada para recursos voltados ao aluno", desc: "Montar a bateria com a área pedagógica e jurídica e ligá-la ao processo de lançamento.", destaque: false },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.08 }}
+                  className={`p-6 rounded-2xl border-2 transition-all ${
+                    item.destaque
+                      ? 'bg-gradient-to-br from-azul-600 to-navy-900 text-white border-transparent shadow-lg'
+                      : 'bg-white border-azul-200 hover:border-rosa-600 hover:shadow-md'
+                  }`}
+                >
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-azul-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-azul-600'}`} />
+                  </div>
+                  <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
+                  <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
+                  {item.destaque && <span className="inline-block mt-3 px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white">Prioritário</span>}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Navegação inferior */}
+      <section className="py-12 px-6 bg-azul-50/40 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <button
+            onClick={onBackToEdicoes}
+            className="flex items-center gap-2 px-5 py-3 border border-azul-600 text-azul-600 rounded-xl font-medium hover:bg-azul-50 transition-colors text-sm"
+          >
+            <Library className="w-4 h-4" />
+            Voltar para edições anteriores
+          </button>
+          <button
+            onClick={onBack}
+            className="flex items-center gap-2 px-5 py-3 bg-azul-600 text-white rounded-xl font-medium hover:bg-azul-700 transition-colors text-sm"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Voltar para edição atual
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-6 bg-gradient-to-br from-navy-900 to-navy-950 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <img src={mascoteInverso} alt="Radar" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <p className="text-white/70 text-sm font-medium mb-1">RADAR — Inteligência Estratégica de IA na Educação</p>
+          <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
+            <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
+            <p className="text-white/40 text-xs">Hub de IA, Produto e Experiência · Outubro de 2026 · Edição #13</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
 function EdicaoSetembro2026B({
   onBack,
   onBackToEdicoes,
@@ -2884,6 +3144,23 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  if (currentView === 'edicao-outubro-2026') {
+    return (
+      <EdicaoOutubro2026
+        onBack={() => goToEdicao('main')}
+        onBackToEdicoes={() => {
+          setCurrentView('main');
+          setTimeout(() => {
+            const el = document.getElementById('edicoes');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }}
+        mascote={radarIcone}
+        mascoteInverso={radarIconeClaro}
+      />
+    );
+  }
+
   if (currentView === 'edicao-setembro-2026-b') {
     return (
       <EdicaoSetembro2026B
@@ -3062,8 +3339,8 @@ export default function App() {
 
             <div className="hidden sm:flex items-center gap-5 shrink-0">
               <div className="text-right leading-none">
-                <span className="block text-[11px] font-bold text-azul-600 uppercase tracking-[0.16em]">Edição #13</span>
-                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">1–15 out 2026</span>
+                <span className="block text-[11px] font-bold text-azul-600 uppercase tracking-[0.16em]">Edição #14</span>
+                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">16 out – 4 nov 2026</span>
               </div>
               <div className="w-px h-9 bg-gray-200" />
               <img src={hubLogo} alt="Hub de IA, Produto e Experiência" className="h-9 w-auto" />
@@ -3133,14 +3410,14 @@ export default function App() {
                 variants={{ oculto: { opacity: 0, y: 16 }, visivel: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }}
                 className="text-[clamp(2rem,3.8vw,3.25rem)] text-white font-extrabold mb-7 leading-[1.08] tracking-[-0.025em] text-balance"
               >
-                A IA na escola está saindo da mão do aluno <span className="text-amarelo-400">e indo para a mão do professor.</span>
+                A IA não vai mais chegar ligada à escola. <span className="text-amarelo-400">Agora é a escola que decide ligar, e ela vai pedir prova.</span>
               </motion.h1>
 
               <motion.p
                 variants={{ oculto: { opacity: 0, y: 16 }, visivel: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }}
                 className="text-base md:text-[17px] text-white/80 leading-[1.7]"
               >
-                Em outubro, o MEC sinalizou que vai liberar a IA para corrigir redação desde que a nota fique com o professor, um distrito americano proibiu a IA para todos os alunos semanas depois de liberar o Gemini para parte deles, Austrália e Portugal propuseram afastá-la das crianças pequenas, e um ensaio universitário mediu notas mais baixas nas turmas que ganharam um tutor de IA. Na direção contrária, Google e OpenAI abriram ferramentas de estudo para alunos mais novos. <strong className="font-semibold text-white">O recurso que trabalha com o professor deve ganhar o aval da regra; o que depende do aluno sozinho ficou exposto</strong>.
+                Em 3 de novembro, o Google anunciou que o Gemini e a Busca vão ficar desligados para alunos até a escola ligar, depois de uma investigação do Wall Street Journal e de um inquérito no Senado americano. Em Maryland, uma lei obrigou cada rede a ter política de IA, e parte delas perdeu o prazo. E um ensaio com tutor de IA revisado por professores empatou com tutores humanos na aula, mas não mudou a nota numa prova padronizada. <strong className="font-semibold text-white">Ligar a IA virou decisão da escola, e a escola vai pedir controle e resultado antes de ligar</strong>.
               </motion.p>
             </motion.div>
           </div>
@@ -3157,7 +3434,7 @@ export default function App() {
                       <p className="text-xs font-bold text-green-700 uppercase tracking-wide">O que a evidência sustenta</p>
                     </div>
                     <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
-                      A IA com o professor no fluxo, corrigindo como primeiro leitor e deixando a nota para ele, está perto de ganhar aval na regra brasileira e já funciona em redes estaduais. Do outro lado, um ensaio com grupo de comparação mostrou que só oferecer um tutor de IA à turma, sem desenho para isso, pode baixar a nota.
+                      A IA com um professor por perto ajuda no momento da aula: no ensaio da Eedi com o Google DeepMind, o tutor de IA revisado por professores ajudou tanto quanto tutores humanos a lidar com o erro. E a escola com o interruptor na mão pode liberar o recurso que quer sem liberar o resto.
                     </p>
                   </div>
                   <div className="border-l-2 border-red-400 pl-4">
@@ -3166,13 +3443,13 @@ export default function App() {
                       <p className="text-xs font-bold text-red-700 uppercase tracking-wide">O que ela derruba</p>
                     </div>
                     <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
-                      A ideia de que basta pôr a IA nas mãos do aluno para ele aprender mais. Onde a ferramenta chegou ao aluno sem desenho e sem controle da escola, a resposta foi proibir: em Frederick County, o distrito voltou atrás semanas depois de liberar o Gemini.
+                      A ideia de que a IA entra na escola pela atualização do fornecedor, ligada por padrão: o próprio Google voltou atrás sob pressão. E a ideia de que ganho na aula é ganho na prova: no mesmo ensaio, nem o tutor de IA nem o humano superaram a prática comum no teste padronizado.
                     </p>
                   </div>
                 </div>
                 <div className="mt-7 pt-6 border-t border-gray-100">
                   <p className="text-sm md:text-xs text-gray-800 leading-relaxed">
-                    <span className="font-bold text-azul-600">A conclusão:</span> o comprador vai separar o que a IA faz com o professor do que ela faz com o aluno sozinho. O recurso voltado ao aluno vai precisar mostrar <em>desenho, controle da escola e evidência</em>; o que trabalha com o professor, com a nota assinada e registrada, ficou do lado da regra.
+                    <span className="font-bold text-azul-600">A conclusão:</span> quem liga a IA passou a ser a escola. O fornecedor que entregar <em>recursos separados, o interruptor por série e turma e uma medida honesta de resultado</em> vai passar pela porta que agora fica fechada por padrão.
                   </p>
                 </div>
           </div>
@@ -3268,39 +3545,39 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-5 items-start">
               {[
                 {
-                  tag: "Mudança de regra",
+                  tag: "Mudança de padrão",
                   tagCor: "bg-azul-100 text-azul-700",
-                  conclusao: "A regra brasileira deve liberar a IA na correção, com a nota sempre do professor",
-                  raciocinio: "Reportagens de 13 de outubro dizem que o MEC vai homologar o parecer do CNE com mudanças: a IA passa a poder corrigir redação e questão dissertativa como primeiro filtro, e a nota e a decisão de aprovar ou reprovar ficam com o professor. Redes estaduais como Paraná, São Paulo e Espírito Santo já usam IA na correção de redação.",
-                  decisao: "Desenhar a correção assistida para o professor revisar e assinar a nota, com registro, antes que o texto oficial saia."
-                },
-                {
-                  tag: "Vento contra",
-                  tagCor: "bg-red-100 text-red-700",
-                  conclusao: "A restrição ao uso de IA pelo aluno chegou a todas as séries numa rede americana e às crianças pequenas em dois países",
-                  raciocinio: "Frederick County, em Maryland, proibiu o uso de IA pelos alunos do pré ao 12º ano semanas depois de liberar o Gemini para os anos finais e o ensino médio. Entre os motivos relatados está que os professores não conseguiam desligar a ferramenta nos aparelhos dos alunos. Em 14 e 15 de outubro, Austrália e Portugal propuseram afastar a IA das crianças pequenas e deixá-la com o educador.",
-                  decisao: "Garantir que a escola consiga desligar cada recurso voltado ao aluno, por série e por turma, e que o professor veja o que está ligado."
+                  conclusao: "O Google vai entregar a IA desligada para alunos nas escolas",
+                  raciocinio: "Em 3 de novembro, o Google anunciou que o Gemini, o Gemini Notebook, o Gemini no Classroom e a Busca vão ficar desligados nas contas de alunos da educação básica até o administrador da escola ligar. A mudança veio depois de uma investigação do Wall Street Journal e de um inquérito no Senado americano. Segundo reportagens, a mudança começa no início de 2027.",
+                  decisao: "Tratar a ativação pela escola como o caminho normal: o recurso voltado ao aluno chega desligado, e a rede liga o que quiser."
                 },
                 {
                   tag: "Tese revista",
                   tagCor: "bg-ambar-100 text-ambar-700",
-                  conclusao: "Oferecer um tutor de IA à turma, sem desenho, pode baixar a nota",
-                  raciocinio: "Na edição passada, a leitura era de que o ganho com IA é pequeno e depende do desenho. Agora há um ensaio com grupo de comparação em que o simples acesso a um assistente de IA ancorado no material do curso piorou o resultado e reduziu o uso do próprio curso, mais entre alunos de primeira geração.",
-                  decisao: "Não ampliar recurso de conversa para o aluno sem trilha, sem medida de uso e sem plano de avaliação."
+                  conclusao: "O tutor de IA revisado por professores empatou com o humano na aula, mas não mudou a prova",
+                  raciocinio: "Num ensaio com 1.179 alunos em 10 escolas públicas do Reino Unido, o tutor de IA da Eedi, com um professor revisando cada mensagem, ajudou tanto quanto tutores humanos nas medidas da plataforma. Na prova padronizada aplicada por terceiros, nenhum dos dois teve vantagem clara sobre a prática comum.",
+                  decisao: "Prometer ajuda no momento do erro, e não salto de nota, até ter medida própria em avaliação externa."
                 },
                 {
-                  tag: "Contramovimento",
+                  tag: "Vento contra",
+                  tagCor: "bg-red-100 text-red-700",
+                  conclusao: "Política de IA virou obrigação das redes, e as redes não estão dando conta do prazo",
+                  raciocinio: "Uma lei de Maryland deu às redes até 22 de outubro para aprovar uma política de IA, e ao menos uma delas, Anne Arundel, perdeu o prazo. O rascunho dessa rede exige avaliar o valor educacional de cada ferramenta antes de adotá-la.",
+                  decisao: "Levar à rede a documentação que a política dela vai pedir: o que cada recurso faz, para que idade, com que controle e com que evidência."
+                },
+                {
+                  tag: "Lacuna local",
                   tagCor: "bg-gray-200 text-gray-700",
-                  conclusao: "Google e OpenAI vão direto ao aluno, e a segurança virou a objeção",
-                  raciocinio: "O Google abriu o hub de estudo do Gemini a alunos de todas as idades nas contas escolares, e a OpenAI anunciou planejador de faculdade, flashcards e quizzes no ChatGPT para adolescentes. No mesmo dia do anúncio da OpenAI, a Common Sense Media classificou o ChatGPT for Teens como risco inaceitável para menores de 18 anos.",
-                  decisao: "Usar controle da escola, segurança verificável e registro como argumento contra a ferramenta gratuita que o aluno já tem."
+                  conclusao: "A regra brasileira anunciada para outubro não saiu",
+                  raciocinio: "Em 13 de outubro, reportagens disseram que o MEC homologaria naquela semana o parecer do CNE com mudanças, liberando a IA como primeiro filtro na correção de redação. Até 4 de novembro, não localizamos a homologação no Diário Oficial.",
+                  decisao: "Não travar o roadmap esperando o texto: desenhar para o caso mais exigente, com a nota do professor e o registro, e ajustar quando a regra sair."
                 },
                 {
-                  tag: "Hipótese que caiu",
-                  tagCor: "bg-rosa-100 text-rosa-700",
-                  conclusao: "Caiu a leitura de que a correção de redação por IA seria proibida",
-                  raciocinio: "Nas edições #11 e #12, tratamos a correção de redação por IA como vetada pelo parecer do CNE, à espera só da homologação. Se o MEC homologar com a mudança anunciada, a correção volta a ser permitida como primeiro filtro; o que continua vetado é a máquina dar a nota ou decidir a aprovação.",
-                  decisao: "Rever o que foi despriorizado por causa da vedação, mantendo a separação entre devolutiva e nota."
+                  tag: "Hipótese confirmada",
+                  tagCor: "bg-green-100 text-green-700",
+                  conclusao: "A edição passada previu que a escola pediria controle antes de liberar a IA, e o Google confirmou",
+                  raciocinio: "Na #13, a falta de controle da escola foi um dos motivos relatados para Frederick County proibir a IA para todos os alunos, e a recomendação foi dar à escola o interruptor de cada recurso. Três semanas depois, o Google anunciou que vai entregar a IA desligada para alunos, com a ativação nas mãos da escola.",
+                  decisao: "Subir o controle da escola de requisito técnico para argumento de venda."
                 },
 ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-rosa-600 shadow-sm hover:shadow-md transition-shadow">
@@ -3339,69 +3616,55 @@ export default function App() {
               <span className="text-sm text-azul-600 font-medium">Sinais da quinzena</span>
             </div>
             <h2 className="text-3xl md:text-4xl text-navy-900 font-bold mb-4 tracking-tight text-balance">
-              Quatro sinais, <span className="text-azul-600">uma direção</span>
+              Três sinais, <span className="text-azul-600">uma direção</span>
             </h2>
             <p className="text-gray-600 mb-10 text-base max-w-3xl text-pretty">
-              Regulador brasileiro, rede americana, pesquisa e big techs mostram, por ângulos diferentes, a mesma separação: a IA que trabalha com o professor ganha espaço, e a que fica com o aluno sozinho passa a ser restringida ou cobrada. Os fatos centrais de cada sinal são de 1 a 15 de outubro; o contexto anterior vem datado no cartão.
+              Big tech, pesquisa e redes públicas mostram a mesma virada: a IA vai deixar de entrar na escola por padrão e passar a depender da decisão da rede, que vai pedir controle e prova antes de ligar. Os fatos centrais são de 16 de outubro a 4 de novembro; o contexto anterior vem datado no cartão.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 items-start">
               {[
                 {
-                  titulo: "O MEC deve homologar a regra de IA liberando a correção de redação, com a nota nas mãos do professor",
-                  empresa: "MEC · CNE · redes estaduais",
-                  data: "6–13 out/2026",
-                  consolida: "Súmula do parecer no Diário Oficial · homologação anunciada com mudanças · correção por IA já em uso no Paraná, em São Paulo e no Espírito Santo",
-                  resumo: "Segundo o escritório Mattos Filho, a súmula do Parecer CNE/CP nº 15/2026, aprovado em 1º de setembro, saiu no Diário Oficial em 6 de outubro, e o texto seguiu para homologação. Em 13 de outubro, reportagens disseram que o ministro Leonardo Barchini deve homologá-lo com mudanças. A principal é liberar ferramentas de IA para corrigir redações e questões dissertativas como primeiro filtro, o que a versão de setembro proibia. A nota continua sendo dada só pelo professor, e a IA não pode decidir aprovação ou reprovação. Outra mudança é proibir a IA na educação infantil, mesmo com mediação do professor. As redes terão doze meses para se adaptar a partir da homologação. Até o fechamento, não localizamos a homologação publicada. A mudança aproxima a regra do que redes estaduais já fazem: o Paraná corrige redações com IA desde 2025, São Paulo usa assistentes de correção na Redação Paulista e o Espírito Santo usa a Letrus desde 2019.",
-                  impacto: "A regra deixa de separar a ferramenta permitida da proibida e passa a separar quem faz o quê no mesmo fluxo: a IA lê primeiro, e o professor decide. Isso reabre para o mercado a correção automática, que parecia vetada, mas com uma exigência que muda o desenho do produto: a nota precisa passar pelo professor, e a escola vai querer provar isso.",
-                  professor: "Ganha um primeiro leitor para as redações e continua responsável pela nota.",
-                  aluno: "Pode receber devolutiva mais rápida, mas a nota oficial continua vindo do professor.",
-                  gestor: "Precisa saber, em cada contrato, onde a IA corrige e onde o professor assina.",
-                  roadmap: "Correção em dois turnos, com a revisão e a assinatura do professor registradas.",
-                  fonte: "https://www.apufsc.org.br/2026/10/13/mec-vai-homologar-com-mudancas-parecer-que-cria-regras-para-uso-de-inteligencia-artificial-na-educacao/",
+                  titulo: "O Google vai entregar a IA desligada para alunos, e a OpenAI apertou as travas para adolescentes",
+                  empresa: "Google · OpenAI",
+                  data: "30 out – 3 nov/2026",
+                  consolida: "Gemini, Gemini Notebook e Busca desligados por padrão para alunos · Guided Learning no Classroom e piloto na Busca · travas novas no ChatGPT para adolescentes",
+                  resumo: "Em 3 de novembro, o Google anunciou que o Gemini, o Gemini Notebook, o Gemini no Classroom e a Busca vão ficar desligados nas contas de alunos da educação básica até o administrador da escola ligar. Segundo a imprensa, é o inverso do padrão que a empresa adotou em agosto para o Gemini no Classroom, e a mudança veio depois de uma investigação do Wall Street Journal e de um inquérito bipartidário no Senado americano. Depois das críticas, o Google esclareceu que a escola pode ligar cada serviço separadamente, inclusive a Busca sem o Gemini. Mas a Busca não se separa das respostas de IA: a escola que recusar toda a IA também tira a Busca dos alunos, o que gerou críticas de políticos como o senador Bernie Sanders e o prefeito de Nova York, Zohran Mamdani. O Google também levou ao Classroom o Guided Learning, modo que conduz o aluno por etapas em vez de dar a resposta, e começou um piloto dele na Busca em escolas americanas. Segundo reportagens, o novo padrão começa no início de 2027; não localizamos informação sobre outros países. Em 30 de outubro, a OpenAI anunciou travas novas no ChatGPT para adolescentes, a chegar nas semanas seguintes: limite a informações sobre armas, estimativa de idade reforçada e aviso aos pais quando a conta de um adolescente for pausada por conversas repetidas sobre violência.",
+                  impacto: "Na edição #13, a falta de controle da escola foi um dos motivos relatados para Frederick County desligar tudo. Três semanas depois, o Google, presente em boa parte das escolas americanas, anunciou a mudança do padrão para o lado da escola. A IA deixa de entrar pela atualização do fornecedor e passa a entrar pela decisão da rede, que só liga o que consegue justificar. O caso da Busca mostra o risco do outro lado: o recurso que não se separa da IA obriga a escola a escolher entre tudo e nada.",
+                  professor: "Passa a depender de a escola ligar a IA e, quando ela ligar, ganha um modo guiado para atribuir à turma.",
+                  aluno: "Pode ficar sem o Gemini, e até sem a Busca, na conta da escola, se a rede recusar toda a IA.",
+                  gestor: "Vira o responsável explícito por ligar cada recurso de IA e vai precisar de critério para isso.",
+                  roadmap: "Separar os recursos de IA para que a escola ligue um sem ser obrigada a ligar os outros.",
+                  fonte: "https://www.washingtonpost.com/education/2026/11/03/google-turn-off-search-schools-that-dont-want-students-using-ai/",
                   color: "from-azul-700 to-azul-800"
                 },
                 {
-                  titulo: "Um distrito americano proibiu a IA para todos os alunos, e Austrália e Portugal querem afastá-la das crianças pequenas",
-                  empresa: "Frederick County · AERO (Austrália) · Governo de Portugal · Flórida",
-                  data: "7–15 out/2026",
-                  consolida: "Votação em Frederick County por 6 a 1 · recomendação da AERO para os primeiros anos · consulta pública em Portugal · regras da Flórida, de setembro",
-                  resumo: "Em 7 de outubro, o conselho de educação de Frederick County votou, por 6 a 1, por restringir o uso de IA pelos alunos do pré-escolar ao 12º ano. Os conselheiros pensaram primeiro em limitar a regra aos mais novos e depois a estenderam ao ensino médio. A política tem exceções para aulas específicas, para o ensino sobre a própria IA e para adaptações a alunos com deficiência. A votação veio semanas depois de o distrito começar, em setembro, um piloto que permitia o Gemini nos anos finais e no ensino médio com permissão do professor. Entre os motivos relatados estão cola, dependência da ferramenta, famílias que não foram avisadas do piloto e professores que não conseguiam desligar o Gemini nos aparelhos dos alunos. Uma lei estadual de 2026 obriga os distritos de Maryland a definir sua política de IA neste outono. Em 14 de outubro, a AERO, órgão de pesquisa educacional do governo australiano, recomendou evitar a IA nos três primeiros anos do ensino fundamental e usá-la com cautela depois, pelo risco de a ferramenta pensar pelo aluno. Em 15 de outubro, Portugal abriu consulta pública de 30 dias sobre orientações de IA nas escolas: no pré-escolar, a IA fica como apoio ao educador, sem uso direto pelas crianças, e o professor define as condições de uso em cada atividade. E em 16 de setembro, num fato que a edição passada não registrou, a Flórida aprovou regras estaduais que dão à família a decisão sobre o aluno interagir diretamente com IA, exigem guardar o registro dessas interações por pelo menos 30 dias e proíbem ferramentas que simulem companhia.",
-                  impacto: "Frederick County fez a restrição mais ampla entre as que acompanhamos, e ela deixou de ser um caso isolado: na semana seguinte, um órgão do governo australiano e o governo português propuseram afastar a IA das crianças pequenas. Nos três casos, o professor continua com a ferramenta, e quem perde o acesso direto é o aluno, sobretudo o mais novo. O motivo mais útil para produto é o operacional de Frederick County: a escola liberou uma ferramenta que o professor não conseguia controlar, e a saída foi desligar tudo.",
-                  professor: "Deixa de contar com a IA nas atividades dos alunos, salvo as exceções, e parte dos professores já voltou ao papel.",
-                  aluno: "Perde o acesso na escola, mas continua com as ferramentas gratuitas fora dela.",
-                  gestor: "Vai pedir ao fornecedor controle fino por idade e, como na Flórida, registro das interações antes de liberar qualquer recurso voltado ao aluno.",
-                  roadmap: "Controle da escola por série, turma e recurso, com o professor vendo e desligando o que estiver ativo.",
-                  fonte: "https://www.fox5dc.com/news/frederick-county-school-board-votes-ban-ai-use-pre-k-through-12th-grade-students",
-                  color: "from-rosa-600 to-rosa-700"
-                },
-                {
-                  titulo: "Dar acesso a um tutor de IA baixou a nota dos alunos num ensaio com 2.379 universitários",
-                  empresa: "Universidade de Maryland · EdWorkingPapers",
-                  data: "Out/2026",
-                  consolida: "Ensaio com 30 professores e 2.379 alunos · nota final e uso do material do curso · efeito maior entre alunos de primeira geração",
-                  resumo: "Um working paper publicado no EdWorkingPapers em outubro relata um ensaio feito no segundo semestre de 2025 numa grande universidade pública americana. Professores foram sorteados para oferecer ou não às turmas um assistente de estudo baseado no GPT-4o, ancorado no material do curso e integrado à plataforma da universidade. Na comparação entre turmas do mesmo curso, a nota final das turmas com acesso ficou 0,37 desvio-padrão abaixo, cerca de 4 pontos numa escala de 0 a 100, e a participação na plataforma do curso caiu 0,90 desvio-padrão. Só cerca de 15% dos alunos que receberam o assistente o usaram. A perda estimada foi maior entre alunos de primeira geração na universidade.",
-                  impacto: "O efeito é de oferecer o assistente, e não de usá-lo: com poucos usando, a nota caiu para a turma inteira. Os autores sugerem que a ferramenta aprovada pela universidade mudou o jeito de estudar, com menos uso do material do curso. O ensaio testou um assistente genérico, e não um tutor desenhado para não dar a resposta, mas mostra que pôr IA ao alcance do aluno não é neutro.",
-                  professor: "Ganha um motivo concreto para pedir que o recurso de IA venha com desenho e acompanhamento.",
-                  aluno: "Pode estudar menos com o material do curso quando tem um assistente à mão, e quem tem menos apoio em casa perde mais.",
-                  gestor: "Passa a ter evidência de que liberar IA sem desenho pode ter custo de aprendizagem.",
-                  roadmap: "Lançar recurso para o aluno por turma, com grupo de comparação e medida do uso do material.",
-                  fonte: "https://www.edtechinnovationhub.com/news/students-offered-an-ai-tutor-got-lower-grades-and-disengaged-from-course-materials-university-of-maryland-trial-finds",
+                  titulo: "Um tutor de IA revisado por professores empatou com o humano na aula, mas não mudou a prova",
+                  empresa: "Eedi · Google DeepMind",
+                  data: "29 out/2026",
+                  consolida: "Ensaio com 1.179 alunos em 10 escolas públicas do Reino Unido · tutor de IA, tutor humano e prática comum · prova padronizada Star Maths",
+                  resumo: "Em 29 de outubro, a Eedi, plataforma britânica de matemática, publicou os resultados do segundo ensaio randomizado do seu tutor de IA, feito com o Google DeepMind em 10 escolas públicas do Reino Unido, com 1.179 alunos, ao longo de um período letivo. Quando o aluno errava uma questão, recebia o conteúdo padrão da plataforma, um tutor humano ou uma de duas versões do tutor de IA, com um professor experiente revisando cada mensagem antes de ela chegar ao aluno. Nas medidas da própria plataforma, o tutor de IA ajudou tanto quanto o humano, e os dois superaram o conteúdo padrão. Na prova padronizada Star Maths, aplicada por terceiros, nenhum dos dois teve vantagem clara sobre a prática comum. Com o tutor de IA, os alunos resolveram cerca de 14 problemas por sessão, contra cerca de 19 com as dicas estáticas. Os autores tratam os resultados como provisórios.",
+                  impacto: "É um ensaio próximo do desenho que as edições anteriores recomendaram, com a IA no momento do erro e um professor no fluxo, e ainda assim a vantagem não apareceu na prova externa. Somado ao ensaio de Maryland da edição #13, o quadro fica assim: bem desenhada, a IA ajuda no momento da aula; só oferecida, pode atrapalhar; e ainda não mostrou ganho em prova externa ao produto.",
+                  professor: "Pode contar com a IA para responder ao erro na hora, sem esperar salto na avaliação externa.",
+                  aluno: "Recebe ajuda no momento do erro, mas pode resolver menos exercícios no mesmo tempo.",
+                  gestor: "Ganha uma régua: pedir ao fornecedor resultado em prova externa, e não só nas métricas da plataforma.",
+                  roadmap: "Medir o efeito de cada recurso numa avaliação externa ao produto, além das métricas internas.",
+                  fonte: "https://www.the74million.org/article/five-things-you-should-know-about-new-ai-tutor-study/",
                   color: "from-azul-600 to-azul-700"
                 },
                 {
-                  titulo: "Google e OpenAI levaram a IA de estudo a alunos mais novos, e a segurança virou a objeção",
-                  empresa: "Google · OpenAI · Common Sense Media",
-                  data: "1–7 out/2026",
-                  consolida: "Hub de estudo do Gemini para todas as idades · planejador de faculdade, flashcards e quizzes no ChatGPT para adolescentes · ChatGPT for Teens classificado como risco inaceitável",
-                  resumo: "No começo de outubro, o Google abriu o hub de estudo do Gemini, com cadernos, flashcards e quizzes, a usuários de todas as idades do Google Workspace for Education, sob os controles que o administrador da escola já usa. Em 7 de outubro, a OpenAI anunciou que o ChatGPT for Teens vai ganhar um planejador de candidatura à faculdade, para alunos americanos do 10º ao 12º ano, além de flashcards e quizzes feitos a partir das anotações do aluno. No mesmo dia, a Common Sense Media classificou o ChatGPT for Teens como risco inaceitável para menores de 18 anos, depois de mais de 4 mil testes. Segundo a avaliação, os alertas aos pais não dispararam em contas novas, o modo de estudo podia ser contornado e a estimativa de idade não funcionou. A OpenAI contestou o método e disse que os alertas levam algumas horas para funcionar depois que as contas são ligadas.",
-                  impacto: "As big techs seguem o caminho oposto ao das escolas: enquanto redes restringem o uso pelo aluno, elas oferecem ferramentas de estudo direto a ele, de graça. O aluno vai chegar à escola com flashcards, quizzes e planejamento prontos, e a pergunta da família e da rede passa a ser se aquilo é seguro. Avaliação independente de segurança, que até aqui era preocupação de big tech, vira critério de compra para qualquer recurso voltado ao aluno.",
-                  professor: "Vai lidar com alunos que já usam ferramentas de estudo fora do controle da escola.",
-                  aluno: "Ganha ferramentas gratuitas de revisão; no caso do ChatGPT para adolescentes, com proteções que uma avaliação independente considerou insuficientes.",
-                  gestor: "Vai querer, de qualquer fornecedor, prova de que o recurso voltado ao aluno é seguro e controlável.",
-                  roadmap: "Testar a segurança dos recursos voltados ao aluno com bateria própria, antes de alguém testar por nós.",
-                  fonte: "https://www.cnbc.com/make-it/2026/10/09/chatgpt-for-teens-safety-common-sense-media.html",
-                  color: "from-azul-600 to-lilas-600"
+                  titulo: "Política de IA virou obrigação das redes de Maryland, e parte delas perdeu o prazo",
+                  empresa: "Maryland · redes públicas",
+                  data: "19–22 out/2026",
+                  consolida: "Lei estadual com prazo de 22 de outubro · redes atrasadas · exigência de avaliar o valor educacional das ferramentas",
+                  resumo: "Uma lei de Maryland aprovada em 2026 obriga cada rede a adotar uma política de IA alinhada à orientação do departamento estadual de educação, que fixou o prazo em 22 de outubro. Em 19 de outubro, o Baltimore Sun informou que quatro redes aprovariam a política com atraso: Anne Arundel, Howard, Baltimore County e Baltimore City. O rascunho de Anne Arundel exige que cada ferramenta de IA tenha o valor educacional avaliado antes de ser adotada, e a rede prevê aprovar a política até meados de dezembro. Frederick County, que proibiu o uso de IA pelos alunos em outubro, é do mesmo estado.",
+                  impacto: "Ter política de IA virou obrigação das redes, e elas estão escrevendo as regras agora, com pressa. O que essas políticas vão pedir já aparece: a orientação do estado trata privacidade, segurança de dados e supervisão humana como inegociáveis, e o rascunho de Anne Arundel exige avaliar o valor educacional de cada ferramenta. O fornecedor que chegar com essa documentação pronta encurta a decisão; o que não chegar entra na fila.",
+                  professor: "Vai trabalhar com uma lista de ferramentas aprovadas pela rede, e não com o que encontrar por conta própria.",
+                  aluno: "Passa a usar só o que a rede aprovou.",
+                  gestor: "Precisa de critério para aprovar ferramentas e de documentação dos fornecedores para aplicá-lo.",
+                  roadmap: "Uma ficha por recurso de IA: o que faz, para que idade, que dados usa, que controle a escola tem e que evidência existe.",
+                  fonte: "https://www.baltimoresun.com/2026/10/19/ai-policy-maryland-school-districts-deadline/",
+                  color: "from-rosa-600 to-rosa-700"
                 },
 ].map((m, i) => (
                 <motion.div
@@ -3487,27 +3750,27 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6 items-start">
               {[
                 {
-                  cat: "O texto das mudanças na regra ainda não foi publicado",
-                  nota: "As mudanças circulam por reportagens de 13 de outubro. Até o fechamento, não localizamos a homologação no Diário Oficial nem o texto oficial do que foi alterado.",
-                  leitura: "O desenho do produto depende de detalhes que a manchete não traz: o que conta como primeiro filtro, que registro a escola precisa guardar e como fica o uso nos anos iniciais. Quem planejar só pela manchete pode ter de refazer.",
+                  cat: "A homologação anunciada para outubro não saiu",
+                  nota: "Em 13 de outubro, reportagens disseram que o ministro Leonardo Barchini homologaria o parecer do CNE naquela semana, com mudanças. Até 4 de novembro, não localizamos a homologação no Diário Oficial nem o texto das mudanças.",
+                  leitura: "Três semanas depois do anúncio, redes e fornecedores seguem sem saber o que conta como primeiro filtro na correção e que registro guardar. Quem tiver uma leitura clara do texto quando ele sair vai orientar o mercado.",
                   janela: "Monitorar"
                 },
                 {
-                  cat: "Não localizamos concorrente direto que mostre como a nota de redação fica com o professor",
-                  nota: "Entre os concorrentes diretos acompanhados, há correção de redação com IA para o aluno, como o PraticAI do Bernoulli, mas não localizamos descrição pública de como o professor revisa e assina a nota. Fora dessa lista, edtechs como o Super Professor já anunciam um corretor em que, segundo a empresa, a IA faz a primeira análise e o professor ajusta antes de o aluno receber a devolutiva.",
-                  leitura: "É o ponto que a regra deve exigir, e as edtechs já estão ocupando. Entre os sistemas de ensino, quem publicar primeiro como a nota passa pelo professor vira a referência que as redes vão usar para comparar.",
-                  janela: "Janela curta"
+                  cat: "Não localizamos posição do Google sobre o novo padrão fora dos EUA",
+                  nota: "A cobertura do anúncio de 3 de novembro trata das escolas americanas e cita início em 2027; não localizamos informação sobre escolas de outros países.",
+                  leitura: "Redes públicas brasileiras usam o Google for Education. Se o padrão chegar aqui, cada secretaria vai ter de decidir o que ligar e vai pedir critério a todos os fornecedores, não só ao Google.",
+                  janela: "Monitorar"
                 },
                 {
                   cat: "Não localizamos estudo de impacto de sistema de ensino sobre a própria IA",
-                  nota: "Quarta edição seguida sem que localizemos estudo com grupo de comparação de sistema de ensino ou grupo editorial. O único ensaio randomizado brasileiro de IA pedagógica que localizamos segue sendo o da Letrus, avaliado pelo J-PAL no Espírito Santo.",
-                  leitura: "Com o ensaio de Maryland, a pergunta deixou de ser só se a IA ajuda e passou a incluir se ela atrapalha. Sem número próprio, o setor vai responder com números de terceiros.",
+                  nota: "Quinta edição seguida sem que localizemos estudo com grupo de comparação de sistema de ensino ou grupo editorial. O único ensaio randomizado brasileiro de IA pedagógica que localizamos segue sendo o da Letrus, avaliado pelo J-PAL no Espírito Santo.",
+                  leitura: "Com o ensaio da Eedi, a régua subiu de novo: além de mostrar que a IA não atrapalha, vai ser preciso mostrar ganho fora das métricas do próprio produto.",
                   janela: "Custo de atraso alto"
                 },
                 {
                   cat: "O Inep continua sem falar da prova de conceito de correção por IA",
-                  nota: "Terceira edição sem posição. A redação do ENEM será em 8 de novembro, com dois corretores humanos, e não localizamos resultado ou posição do Inep sobre o teste com empresas anunciado em junho.",
-                  leitura: "Se o MEC liberar a IA como primeiro filtro na escola, a pergunta seguinte é se o exame nacional vai pelo mesmo caminho. Enquanto o Inep não responder, cada fornecedor vai interpretar por conta própria.",
+                  nota: "Quarta edição sem posição. A redação do ENEM será em 8 de novembro, com dois corretores humanos, e não localizamos resultado ou posição do Inep sobre o teste com empresas anunciado em junho.",
+                  leitura: "Se a regra liberar a IA como primeiro filtro na escola, a pergunta seguinte é se o exame nacional vai pelo mesmo caminho. Enquanto o Inep não responder, cada fornecedor interpreta por conta própria.",
                   janela: "Monitorar"
                 },
 ].map((item, i) => (
@@ -3551,7 +3814,7 @@ export default function App() {
               Estrutural, emergente ou <span className="text-azul-600">pontual?</span>
             </h2>
             <p className="text-gray-600 mb-8 text-base max-w-3xl text-pretty">
-              Tema que volta a cada ciclo entra no roadmap; tema que apareceu uma vez fica em observação. Nesta edição, a restrição ao uso pelo aluno chegou à quarta edição seguida, a regra brasileira mudou de conteúdo, e não só de data, e a linha de interfaces novas saiu do radar depois de três edições sem desdobramento.
+              Tema que volta a cada ciclo entra no roadmap; tema que apareceu uma vez fica em observação. Nesta edição, a restrição ao uso pelo aluno chegou à quinta edição seguida e passou a vir do próprio fornecedor, e a regulação brasileira, em pauta desde a edição #07, passa a estrutural.
             </p>
 
             <div className="flex items-center gap-5 mb-10 flex-wrap">
@@ -3572,48 +3835,40 @@ export default function App() {
                 {
                   tema: "Restrição ao uso de IA pelo aluno",
                   tipo: "Estrutural",
-                  trilha: "#10 trava padrão por idade em produto de massa → #11 vedação até o 5º ano no Brasil e moratória até o 8º ano em Nova York → #12 Los Angeles bloqueia a IA generativa para todos os alunos → #13 Frederick County proíbe do pré ao 12º ano; Austrália e Portugal propõem afastar a IA das crianças pequenas, e o MEC deve vetá-la na educação infantil",
-                  leitura: "Quarta edição seguida, e a restrição continua se ampliando: começou pelos anos iniciais, agora alcança todas as séries numa rede americana e entrou nas orientações de órgãos públicos de dois países para as crianças pequenas. O motivo também evoluiu, de proteger crianças pequenas para desconfiar do efeito na aprendizagem e da falta de controle da escola. O professor continua dentro; quem sai é o aluno sozinho.",
-                  cor: "bg-red-50 border-red-200",
-                  badge: "bg-red-100 text-red-700"
-                },
-                {
-                  tema: "Quem assina a decisão sobre o aluno",
-                  tipo: "Estrutural",
-                  trilha: "#09 a interface passa a decidir o que cada perfil vê → #10 a própria plataforma passa a impedir que o aluno pegue a resposta pronta → #11 a norma proíbe a máquina de dar nota e de punir → #12 as big techs formam o professor para decidir → #13 a correção por IA deve ser liberada, com a nota sempre do professor",
-                  leitura: "A regra brasileira chegou ao formato mais preciso até aqui: a máquina pode ler e comentar, e a pessoa decide. Isso troca a pergunta de se o produto usa IA para em que ponto do fluxo o professor assina, e o produto que não registrar esse ponto vai ter dificuldade de provar que cumpre a regra.",
+                  trilha: "#11 vedação até o 5º ano no Brasil e moratória até o 8º ano em Nova York → #12 Los Angeles bloqueia a IA generativa para todos os alunos → #13 Frederick County proíbe do pré ao 12º ano; Austrália e Portugal propõem afastar a IA das crianças pequenas → #14 o Google passa a entregar a IA desligada para alunos até a escola ligar",
+                  leitura: "Quinta edição seguida, e o tema mudou de natureza: depois das redes e dos governos, o próprio fornecedor anunciou que vai entregar a IA desligada para o aluno. A restrição deixou de ser exceção imposta pela rede e virou padrão do produto, com a escola decidindo o que ligar.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
                 {
                   tema: "Evidência de aprendizagem como campo de disputa",
                   tipo: "Estrutural",
-                  trilha: "#09 pesquisa longitudinal acoplada a rollout → #10 penalidade medida em coorte de 30 meses → #11 avaliação de impacto exigida por norma → #12 ensaios randomizados de tutor de IA em escala, com ganho modesto → #13 ensaio mede nota menor em turmas que só receberam acesso ao tutor",
-                  leitura: "A evidência agora tem os dois lados: ganho pequeno quando o desenho obriga o aluno a trabalhar, e perda quando a IA só é oferecida. Com isso, um número próprio deixou de ser vantagem de marketing e virou defesa: é o que mostra de que lado o produto está.",
+                  trilha: "#11 avaliação de impacto exigida por norma → #12 ensaios randomizados de tutor de IA em escala, com ganho modesto → #13 ensaio mede nota menor em turmas que só receberam acesso ao tutor → #14 tutor de IA revisado por professores empata com o humano na aula, sem ganho na prova externa",
+                  leitura: "Em três edições, a evidência mostrou ganho pequeno com bom desenho, perda quando a IA é só oferecida e, agora, nenhuma vantagem clara em prova externa mesmo com professor no fluxo. A pergunta deixou de ser se a IA ajuda e passou a ser onde o ganho aparece e como medi-lo fora do produto.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
                 {
                   tema: "A regulação brasileira travada na última milha",
-                  tipo: "Emergente",
-                  trilha: "#07 CNE aprova e abre consulta → #08 a #10 sem homologação → #11 aprovado em plenário com prazo de doze meses → #12 quatro semanas sem assinatura → #13 súmula no Diário Oficial e homologação anunciada com mudanças",
-                  leitura: "Na edição passada, a recomendação era tratar o conteúdo da regra como definido e só a data como incerta. Errou pela metade: o conteúdo também mudou, e justo no ponto mais sensível para produto, a correção. A lição para planejar é esperar o texto homologado antes de travar decisões de produto.",
-                  cor: "bg-ambar-50 border-ambar-200",
-                  badge: "bg-ambar-100 text-ambar-700"
+                  tipo: "Estrutural",
+                  trilha: "#11 aprovado em plenário com prazo de doze meses → #12 sem assinatura → #13 súmula no Diário Oficial e homologação anunciada com mudanças → #14 três semanas depois do anúncio, ainda sem homologação",
+                  leitura: "Em pauta desde a edição #07, o tema passa a estrutural. O padrão é o mesmo a cada etapa: anúncio, expectativa e atraso. Para planejar, o mais seguro é desenhar para a versão mais exigente da regra e não contar com data.",
+                  cor: "bg-red-50 border-red-200",
+                  badge: "bg-red-100 text-red-700"
                 },
                 {
                   tema: "Big tech direto ao aluno",
                   tipo: "Emergente",
-                  trilha: "#07 simulado do ENEM no Gemini → #12 big techs se voltam à formação do professor → #13 Gemini aberto a alunos de todas as idades e ferramentas de estudo no ChatGPT para adolescentes",
-                  leitura: "Depois de uma fase concentrada no professor, as big techs voltaram a mirar o aluno, agora com ferramentas de estudo gratuitas e cada vez mais cedo. É o movimento que as redes estão tentando conter, e é por onde a objeção de segurança deve chegar às famílias brasileiras.",
+                  trilha: "#07 simulado do ENEM no Gemini → #12 big techs se voltam à formação do professor → #13 Gemini aberto a alunos de todas as idades e ferramentas de estudo no ChatGPT para adolescentes → #14 o Google recua e anuncia a IA desligada para alunos",
+                  leitura: "A ida direta ao aluno encontrou o limite em três semanas: pressão pública e política fez o Google mudar o padrão. A big tech continua oferecendo de graça, mas a decisão de ligar passou para a escola.",
                   cor: "bg-ambar-50 border-ambar-200",
                   badge: "bg-ambar-100 text-ambar-700"
                 },
                 {
                   tema: "O que vira commodity",
                   tipo: "Emergente",
-                  trilha: "#10 mediar o uso vira padrão de plataforma → #12 o modelo em si vira insumo barato → #13 a correção automática de redação vira prática de rede pública e deve ganhar aval da regra",
-                  leitura: "A correção de redação por IA já roda em redes estaduais, em plataformas de concorrentes e em ferramentas gratuitas. Com o aval da regra, deixa de ser diferencial. O que fica difícil de copiar é a parte que a regra exige: o professor revisando e assinando, com registro.",
+                  trilha: "#12 o modelo em si vira insumo barato → #13 a correção automática de redação vira prática de rede pública → #14 o Google leva ao Classroom um modo guiado que conduz o aluno em vez de dar a resposta",
+                  leitura: "O tutor que não entrega a resposta, que nas edições #12 e #13 aparecia como diferencial de desenho, chegou de graça ao Classroom. O que fica difícil de copiar é ligá-lo ao material que a escola adotou e medir o efeito fora do produto.",
                   cor: "bg-ambar-50 border-ambar-200",
                   badge: "bg-ambar-100 text-ambar-700"
                 },
@@ -3658,7 +3913,7 @@ export default function App() {
               Quem está do lado <span className="text-azul-600">certo da evidência</span>
             </h2>
             <p className="text-gray-600 mb-8 text-base max-w-3xl text-pretty">
-              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Não localizamos, entre os players acompanhados, lançamento de IA na janela, então a análise parte do que cada um já tem e de como isso fica diante de duas mudanças: a correção liberada com a nota do professor e a restrição ao uso pelo aluno.
+              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Não localizamos, entre os players acompanhados, lançamento de IA na janela. A análise parte do que cada um já tem diante da virada da edição: a IA passa a entrar na escola quando a rede liga, e a rede vai pedir controle e prova.
             </p>
 
             <ConcorrenciaDireta
@@ -3667,7 +3922,7 @@ export default function App() {
                   player: "Poliedro",
                   grupo: "Cosmos · Polígono · Conviver · Sabiá",
                   movimento: "Sem lançamento na janela. O Cosmos continua restrito ao acervo próprio, para professor e gestor",
-                  estrategia: "Com a IA só do lado do professor, já está no desenho que a regra e as redes favorecem. O risco é o inverso: se a correção assistida virar padrão, quem não a tiver fica atrás",
+                  estrategia: "Com a IA só do lado do professor, não depende de a escola liberar recurso para o aluno. Fica fora da decisão mais difícil que as redes passaram a tomar",
                   exposicao: "Baixa",
                   impacto: "Médio-Alto"
                 },
@@ -3675,15 +3930,15 @@ export default function App() {
                   player: "Santillana",
                   grupo: "Moderna Core",
                   movimento: "Sem lançamento na janela. IA de acompanhamento de desempenho, sem geração voltada ao aluno",
-                  estrategia: "Acompanha o desempenho sem falar com o aluno, o que a deixa fora das restrições. Tem o dado para medir o efeito do próprio produto, se quiser",
+                  estrategia: "Acompanha o desempenho sem falar com o aluno e tem o dado para medir o efeito do produto, o que a régua de prova externa passou a pedir",
                   exposicao: "Baixa",
                   impacto: "Médio-Alto"
                 },
                 {
                   player: "Bernoulli",
                   grupo: "Co-crIA · TutorIA · PraticAI · Radar Enem",
-                  movimento: "Sem lançamento na janela. Co-crIA para o professor, feito com a Teachy, e TutorIA e PraticAI para o aluno, apresentados em agosto",
-                  estrategia: "Tem as duas pontas. O corretor de redação para o aluno pode virar o produto mais alinhado à regra, se a nota passar pelo professor, ou o mais exposto, se chegar ao aluno como nota",
+                  movimento: "Sem lançamento na janela. Co-crIA para o professor e TutorIA e PraticAI para o aluno",
+                  estrategia: "Os recursos para o aluno são separados dos do professor, o que facilita a escola ligar um sem o outro. Vai precisar mostrar resultado fora das métricas do próprio produto",
                   exposicao: "Média",
                   impacto: "Alto"
                 },
@@ -3691,7 +3946,7 @@ export default function App() {
                   player: "Arco Educação",
                   grupo: "SAS, SAE Digital, Geekie",
                   movimento: "Sem lançamento na janela. Plataforma adaptativa e literacia em IA no programa de competências",
-                  estrategia: "A plataforma adaptativa fala direto com o aluno, o que a põe no centro das duas mudanças: precisa mostrar o controle da escola por série e o professor no fluxo para não ser alvo de restrição",
+                  estrategia: "A plataforma adaptativa fala direto com o aluno, então depende de a rede ligar. Quanto mais fácil for desligar recurso por série, menor o risco de a rede desligar tudo",
                   exposicao: "Média",
                   impacto: "Alto"
                 },
@@ -3699,7 +3954,7 @@ export default function App() {
                   player: "Somos Educação",
                   grupo: "Anglo, pH, Amplia, Fibonati · Plurall",
                   movimento: "Sem lançamento na janela. O Plu oferece ao aluno resumo, exercício e tira-dúvidas ancorados ao capítulo",
-                  estrategia: "Pelo que já está no produto, segue o mais exposto: conversa com o aluno é o formato que as redes estão restringindo e que o ensaio de Maryland associou a perda. Ancorar ao capítulo não resolve; o ensaio também usou um assistente ancorado no material",
+                  estrategia: "Segue o mais exposto: a conversa com o aluno é o recurso que a escola agora decide se liga, e é o que as redes estão restringindo",
                   exposicao: "Alta",
                   impacto: "Alto"
                 },
@@ -3709,7 +3964,7 @@ export default function App() {
                   player: "Saber",
                   grupo: "eDocente",
                   movimento: "Sem lançamento na janela. Correção de microtestes por câmera no celular do professor",
-                  estrategia: "A correção fica com o professor, que é o desenho que a regra deve consagrar. Está do lado certo das duas mudanças da edição",
+                  estrategia: "Trabalha com o professor e não depende de a rede liberar IA para o aluno. Está do lado certo da virada",
                   exposicao: "Baixa",
                   impacto: "Alto"
                 },
@@ -3717,7 +3972,7 @@ export default function App() {
                   player: "Moderna",
                   grupo: "Moderna Amigos",
                   movimento: "Sem lançamento na janela. Presença em redes municipais e estaduais",
-                  estrategia: "As redes estaduais já corrigem redação com IA por conta própria, com Google e edtechs. A proximidade com as secretarias só vale se vier com uma proposta de correção que caiba na regra",
+                  estrategia: "Quando as redes tiverem política de IA, a proximidade com as secretarias ajuda a chegar primeiro com a documentação que elas vão pedir",
                   exposicao: "Baixa",
                   impacto: "Médio-Alto"
                 },
@@ -3736,7 +3991,7 @@ export default function App() {
                   leitura: "Para o professor, gera material, e isso ninguém questiona. Para o aluno, resumo e tira-dúvidas são o formato que mais se presta a atalho. O acervo ancorado ao capítulo poderia servir para perguntar ao aluno em vez de responder por ele.",
                   fonte: "https://www.plurall.net/ia.html",
                   fonteLabel: "Plurall IA",
-                  historico: "Mai/26 Plurall aposta em dados que viram recomendação para o professor → Jun/26 em três meses, mais de 2 mil escolas criam PEI com o Plurall IA → #11 o Plu leva resumo e tira-dúvidas ao aluno, ancorados ao capítulo → #12 sem lançamento; o formato para o aluno fica exposto à crítica da ilusão de aprendizagem → #13 sem lançamento; conversa com o aluno é o que as redes passam a restringir"
+                  historico: "Mai/26 Plurall aposta em dados que viram recomendação para o professor → Jun/26 em três meses, mais de 2 mil escolas criam PEI com o Plurall IA → #11 o Plu leva resumo e tira-dúvidas ao aluno, ancorados ao capítulo → #12 sem lançamento; o formato para o aluno fica exposto à crítica da ilusão de aprendizagem → #13 sem lançamento; conversa com o aluno é o que as redes passam a restringir → #14 sem lançamento; a conversa com o aluno é o recurso que a escola agora decide se liga"
                 },
                 {
                   player: "Poliedro",
@@ -3747,7 +4002,7 @@ export default function App() {
                   leitura: "A IA não fala com o aluno, então quem decide é o professor. É o desenho que a norma e as big techs defendem, e ele depende da formação do professor para virar aprendizagem.",
                   fonte: "https://brasil.bettshow.com/releases-expositores-2026/poliedro-apresenta-cosmos-hub-de-inteligencia-artificial-na-bett-brasil-2026",
                   fonteLabel: "Release Bett Brasil 2026",
-                  historico: "#10 Cosmos restrito ao acervo autoral → #11 Cosmos no P+ para professor e gestor; prêmio pela Supernova, com autoria humana no centro → #12 sem lançamento; a IA fica fora do alcance do aluno → #13 sem lançamento; já está no desenho que a regra deve consagrar"
+                  historico: "#10 Cosmos restrito ao acervo autoral → #11 Cosmos no P+ para professor e gestor; prêmio pela Supernova, com autoria humana no centro → #12 sem lançamento; a IA fica fora do alcance do aluno → #13 sem lançamento; já está no desenho que a regra deve consagrar → #14 sem lançamento"
                 },
                 {
                   player: "Santillana",
@@ -3758,18 +4013,18 @@ export default function App() {
                   leitura: "O recurso acompanha o desempenho do aluno e não responde por ele, então não cria atalho. É o tipo de recurso mais útil para medir o efeito do produto, embora chame menos atenção numa demonstração de venda; com a evidência virando argumento de compra, essa desvantagem diminui.",
                   fonte: "https://revistaeducacao.com.br/2026/05/05/moderna-core-bett/",
                   fonteLabel: "Revista Educação",
-                  historico: "Mai/26 Moderna Core junta conteúdo, IA e acompanhamento → #10 IA nos bastidores do Moderna Core → #11 leitura contínua de desempenho, sem geração para o aluno → #12 sem lançamento → #13 sem lançamento; segue fora das restrições ao uso pelo aluno"
+                  historico: "Mai/26 Moderna Core junta conteúdo, IA e acompanhamento → #10 IA nos bastidores do Moderna Core → #11 leitura contínua de desempenho, sem geração para o aluno → #12 sem lançamento → #13 sem lançamento; segue fora das restrições ao uso pelo aluno → #14 sem lançamento"
                 },
                 {
                   player: "Bernoulli",
                   produto: "Co-crIA, TutorIA, PraticAI e Radar Enem",
                   mercado: "Plataforma privada",
                   publicos: ["Professor", "Aluno", "Gestor"],
-                  entregue: "Para o professor: o Co-crIA, assistente integrado ao material didático e desenvolvido com a Teachy, que gera planos de aula, listas, avaliações, apresentações e materiais adaptados. Para o aluno: o TutorIA e o PraticAI, apresentados no Bernoulli Reload, em agosto; o PraticAI corrige redação e, segundo a página da empresa, estima a nota por competência. Para o gestor: o Radar Enem, que lê os microdados do exame com um chat de IA. Não houve lançamento entre 1 e 15 de outubro.",
+                  entregue: "Para o professor: o Co-crIA, assistente integrado ao material didático e desenvolvido com a Teachy, que gera planos de aula, listas, avaliações, apresentações e materiais adaptados. Para o aluno: o TutorIA e o PraticAI, apresentados no Bernoulli Reload, em agosto; o PraticAI corrige redação e, segundo a página da empresa, estima a nota por competência. Para o gestor: o Radar Enem, que lê os microdados do exame com um chat de IA. Não houve lançamento entre 16 de outubro e 4 de novembro.",
                   leitura: "O corretor de redação é o recurso mais sensível à regra nova: estimar nota para o aluno treinar é devolutiva; virar nota da escola sem o professor, não. A parceria com a Teachy mostra que o entrante já está dentro de um sistema de ensino acompanhado.",
                   fonte: "https://www.bernoulli.com.br/blog/co-cria-como-a-inteligencia-artificial-esta-transformando-o-dia-a-dia-dos-professores/",
                   fonteLabel: "Blog do Bernoulli",
-                  historico: "#10 Bernoulli Reload com portfólio segmentado por público → #11 entra no Radar pelo assistente do professor, de planejamento e diagnóstico → #12 sem lançamento → #13 o card passa a incluir o TutorIA e o PraticAI para o aluno e a parceria com a Teachy no Co-crIA"
+                  historico: "#10 Bernoulli Reload com portfólio segmentado por público → #11 entra no Radar pelo assistente do professor, de planejamento e diagnóstico → #12 sem lançamento → #13 o card passa a incluir o TutorIA e o PraticAI para o aluno e a parceria com a Teachy no Co-crIA → #14 sem lançamento"
                 },
                 {
                   player: "PNLD Digital",
@@ -3780,29 +4035,29 @@ export default function App() {
                   leitura: "O agente responde sobre o sistema, e não sobre o conteúdo, por isso não entrega resposta de exercício. Como o leitor oficial já oferece audiodescrição e leitura de tela para todas as obras, esses recursos deixam de diferenciar qualquer fornecedor.",
                   fonte: "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/junho/pnld-digital-amplia-inclusao-aos-livros-da-educacao-basica",
                   fonteLabel: "MEC",
-                  historico: "#11 entra no Radar: leitor oficial com acessibilidade e agente de IA que responde sobre o uso do sistema → #12 sem mudança → #13 sem mudança"
+                  historico: "#11 entra no Radar: leitor oficial com acessibilidade e agente de IA que responde sobre o uso do sistema → #12 sem mudança → #13 sem mudança → #14 sem mudança"
                 },
                 {
                   player: "Teachy",
                   produto: "Assistente do professor e Teachy Studio",
                   mercado: "Plataforma privada",
                   publicos: ["Professor", "Escola"],
-                  entregue: "Para o professor: plano de aula, sequência didática, slides, listas de exercícios, provas e correção de exercícios com IA, alinhados à BNCC. Para a escola: o Teachy Studio, em que a instituição cria livros, apostilas e sequências próprias com IA, impressos e digitais. Desde a Bett Brasil 2026, a escola também pode adotar pelo Studio o material do Descomplica, com as videoaulas, como base curricular. A Teachy também é parceira do Bernoulli no Co-crIA. Não houve lançamento entre 1 e 15 de outubro.",
+                  entregue: "Para o professor: plano de aula, sequência didática, slides, listas de exercícios, provas e correção de exercícios com IA, alinhados à BNCC. Para a escola: o Teachy Studio, em que a instituição cria livros, apostilas e sequências próprias com IA, impressos e digitais. Desde a Bett Brasil 2026, a escola também pode adotar pelo Studio o material do Descomplica, com as videoaulas, como base curricular. A Teachy também é parceira do Bernoulli no Co-crIA. Não houve lançamento entre 16 de outubro e 4 de novembro.",
                   leitura: "Vem de fora dos sistemas de ensino e entra pelo material didático, onde está a receita das editoras: a empresa promete apostila própria por uma fração do custo de produção editorial, e a parceria com o Descomplica entrega uma base curricular pronta. A IA serve sobretudo a quem produz o material. O que ela ainda não mostra é o que qualquer material precisa mostrar agora: que o aluno aprende com ele.",
                   fonte: "https://educador21.com/ia-na-educacao-teachy-descomplica-escolas/",
                   fonteLabel: "Educador21",
-                  historico: "#08 compra a Nero.AI, em acquihiring de sete dígitos → #12 entra no Radar com o assistente do professor, o Teachy Studio e o material do Descomplica → #13 aparece como parceira do Bernoulli no Co-crIA"
+                  historico: "#08 compra a Nero.AI, em acquihiring de sete dígitos → #12 entra no Radar com o assistente do professor, o Teachy Studio e o material do Descomplica → #13 aparece como parceira do Bernoulli no Co-crIA → #14 sem novidade"
                 },
                 {
                   player: "AI4School",
                   produto: "Plataforma de IA da Conexia Educação (Grupo SEB)",
                   mercado: "Plataforma privada",
                   publicos: ["Aluno", "Professor", "Família"],
-                  entregue: "Na versão gratuita, o ChatEdu, assistente para tarefas escolares e preparação para o ENEM e vestibulares, e, para o educador, geração de plano de aula e ferramentas adaptadas a perfis de aprendizagem. Na premium, tutores virtuais por disciplina e trilhas de letramento em IA para alunos, professores e famílias, seguindo a BNCC. Tem controle parental, linguagem ajustada à faixa etária e alerta de conteúdo impróprio. A plataforma ganhou um summit próprio na Bett Brasil 2026 e não teve novidade entre 1 e 15 de outubro.",
+                  entregue: "Na versão gratuita, o ChatEdu, assistente para tarefas escolares e preparação para o ENEM e vestibulares, e, para o educador, geração de plano de aula e ferramentas adaptadas a perfis de aprendizagem. Na premium, tutores virtuais por disciplina e trilhas de letramento em IA para alunos, professores e famílias, seguindo a BNCC. Tem controle parental, linguagem ajustada à faixa etária e alerta de conteúdo impróprio. A plataforma ganhou um summit próprio na Bett Brasil 2026 e não teve novidade entre 16 de outubro e 4 de novembro.",
                   leitura: "Põe a IA para conversar direto com o aluno, com apoio à tarefa e tutor por disciplina, e aposta na segurança para ganhar a confiança da família, justamente a objeção que a avaliação da Common Sense Media levantou contra o ChatGPT para adolescentes. Não localizamos informação pública sobre se o ChatEdu e os tutores evitam entregar a resposta, e é isso que define de que lado da evidência o produto fica. Como a Conexia atende escolas parceiras, está mais perto da concorrência direta do que de uma startup de fora.",
                   fonte: "https://www.uai.com.br/app/noticia/mundo-corporativo/2025/10/06/noticia-mundo-corporativo,370556/ai4school-conexia-apresenta-solucao-de-ia-para-educacao.shtml",
                   fonteLabel: "Portal UAI",
-                  historico: "#12 entra no Radar com o ChatEdu, tutores por disciplina e controle parental → #13 sem novidade; a segurança, sua aposta, vira a objeção às ferramentas para o aluno"
+                  historico: "#12 entra no Radar com o ChatEdu, tutores por disciplina e controle parental → #13 sem novidade; a segurança, sua aposta, vira a objeção às ferramentas para o aluno → #14 sem novidade"
                 },
               ]}
             />
@@ -3813,7 +4068,7 @@ export default function App() {
                 <div>
                   <h4 className="font-bold text-gray-900 mb-2">O espaço que continua vago</h4>
                   <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
-                    Vários dos recursos acima corrigem texto ou conversam com o aluno, mas não localizamos, entre eles, descrição pública de como o professor revisa e assina a nota, que é o ponto que a regra deve exigir. Também não localizamos controle divulgado para a escola desligar por série ou turma os recursos voltados ao aluno, a falta que levou Frederick County a proibir tudo. As duas coisas cabem no que já existe: é reorganizar a correção em dois turnos e dar à escola o interruptor.
+                    Não localizamos, entre os recursos acima, controle divulgado para a escola ligar e desligar cada recurso voltado ao aluno por série e turma, nem uma ficha pública com o que cada recurso faz, para que idade e com que evidência, que é o que as políticas de rede, como as de Maryland, passaram a pedir. Também não localizamos descrição pública de como o professor revisa e assina a nota na correção por IA. As três coisas cabem no que já existe.
                   </p>
                 </div>
               </div>
@@ -3831,24 +4086,24 @@ export default function App() {
               <div className="grid md:grid-cols-2 gap-5">
                 {[
                 {
-                  nome: "Google e OpenAI",
-                  altera: "Expectativa do aluno e da família",
-                  nota: "Ferramentas de estudo gratuitas para alunos de todas as idades nas contas escolares do Google e para adolescentes no ChatGPT. O aluno chega à escola com flashcards, quizzes e planejamento prontos, e o que a escola compra passa a ser controle e conexão com o material."
+                  nome: "Google",
+                  altera: "Padrão de ativação",
+                  nota: "Gemini e Busca desligados por padrão para alunos até a escola ligar. A escola passa a esperar, de qualquer fornecedor, o mesmo: recurso separado, ativação por ela e controle por turma."
                 },
                 {
-                  nome: "Avaliadores de segurança infantil",
+                  nome: "OpenAI e avaliadores de segurança",
                   altera: "Critério de compra",
-                  nota: "A Common Sense Media classificou o ChatGPT for Teens como risco inaceitável. Avaliação independente de segurança vira pergunta de família e de rede para qualquer recurso que fale com o aluno."
+                  nota: "Semanas depois de a Common Sense Media classificar o ChatGPT for Teens como risco inaceitável, a OpenAI anunciou travas novas. Segurança verificável segue como pergunta de família e de rede para todo recurso que fala com o aluno."
                 },
                 {
                   nome: "Pesquisa independente",
                   altera: "Régua de evidência",
-                  nota: "Um ensaio mediu perda de nota quando a IA foi só oferecida às turmas. A régua deixou de ser apenas quanto a IA ajuda e passou a incluir quanto ela pode atrapalhar."
+                  nota: "O ensaio da Eedi mostrou ganho nas métricas da plataforma e nenhuma vantagem clara na prova externa. A régua passa a ser resultado fora do produto."
                 },
                 {
                   nome: "Reguladores e redes",
                   altera: "Regras competitivas",
-                  nota: "O MEC deve liberar a correção por IA com a nota do professor e vetar a IA na educação infantil; nos EUA, um distrito proibiu o uso pelo aluno em todas as séries, e Austrália e Portugal propuseram afastar a IA das crianças pequenas. A regra premia o que trabalha com o professor e cobra controle do que chega ao aluno."
+                  nota: "Redes americanas são obrigadas a ter política de IA e estão atrasadas; no Brasil, a regra anunciada para outubro não saiu. Quem chegar com documentação pronta encurta a decisão da rede."
                 },
 ].map((item, i) => (
                   <div key={i} className="border-l-2 border-azul-200 pl-4">
@@ -3888,46 +4143,46 @@ export default function App() {
             <div className="grid lg:grid-cols-2 gap-6 items-start">
               {[
                 {
-                  empresa: "Redação Paraná: a IA lê primeiro, o professor lê depois",
-                  pais: "Brasil · Rede estadual",
-                  categoria: "Correção em dois turnos",
-                  problema: "Dar devolutiva de redação a todos os alunos de uma rede estadual, em escala, sem tirar do professor a avaliação do texto.",
-                  implementacao: "A Secretaria da Educação do Paraná, em parceria com o Google, pôs na plataforma Redação Paraná uma correção automática que o aluno vê enquanto escreve. A IA avalia adequação ao gênero, organização das ideias, desenvolvimento do tema e aspectos linguísticos e gera uma devolutiva para revisão. Depois, o professor analisa o texto. A correção automática de textos dissertativo-argumentativos começou em 2025 e, em março de 2026, foi ampliada para conto, crônica e relato.",
-                  escala: "Segundo o governo do Paraná, mais de 4,6 milhões de redações foram concluídas na plataforma em 2025, e cerca de 153 mil foram corrigidas com apoio da IA.",
-                  financiamento: "Política da rede estadual, com parceria da Secretaria com o Google.",
-                  aprendizado: "É o desenho de dois turnos que a regra brasileira deve adotar: a IA como primeiro leitor e o professor com a última palavra. A rede chegou a ele antes da norma.",
-                  limitacoes: "Um estudo de pesquisadoras da UTFPR, publicado na revista Texto Livre em maio de 2026, aponta que a IA faz sobretudo correções classificatórias e indicativas. Não localizamos avaliação externa da precisão da correção nem do efeito na escrita.",
-                  replicavel: "A divisão de turnos, a devolutiva durante a escrita e a ampliação gradual por gênero textual.",
-                  naoReplicavel: "A escala de uma rede estadual e a parceria direta com uma big tech.",
-                  application: "Se uma rede estadual já oferece a correção em dois turnos aos próprios alunos, o produto privado precisa entregar o que ela não entrega: registro da assinatura do professor, ligação com o material adotado e evidência de efeito."
+                  empresa: "Eedi: o professor revisa cada mensagem da IA antes do aluno ver",
+                  pais: "Reino Unido · Rede pública",
+                  categoria: "Desenho com humano no fluxo",
+                  problema: "Dar a cada aluno ajuda individual no momento do erro, com a segurança de um professor, sem precisar de um professor por aluno.",
+                  implementacao: "Na plataforma de matemática da Eedi, quando o aluno erra, o tutor de IA, feito com o Google DeepMind, redige a resposta, e um professor experiente a aprova, edita ou reescreve antes de ela chegar ao aluno. O ensaio comparou essa versão com tutores humanos e com o conteúdo padrão da plataforma. Os números estão no Sinal 2.",
+                  escala: "Segundo a cobertura do The 74, os professores aprovaram sem mudança a maior parte das mensagens redigidas pela IA, mais do que no estudo de 2025. As fontes divergem sobre a taxa exata.",
+                  financiamento: "Empresa privada em parceria com o Google DeepMind; ensaio pré-registrado.",
+                  aprendizado: "Com o professor revisando, a IA chegou ao nível do tutor humano na aula, e a maior parte das mensagens passou sem edição.",
+                  limitacoes: "Resultados provisórios, segundo os próprios autores, e sem ganho na prova padronizada. A revisão de cada mensagem custa tempo de professor.",
+                  replicavel: "A IA redigindo e o professor aprovando, com a taxa de aprovação medida para saber quando a revisão pode ficar por amostragem.",
+                  naoReplicavel: "O time de professores revisores dedicados durante o ensaio. Na escola, o revisor é o próprio professor da turma.",
+                  application: "É um desenho para redes que ainda não querem a IA falando sozinha com o aluno: o professor aprova a resposta, e o produto mede quanto ele precisa intervir."
                 },
                 {
-                  empresa: "Universidade de Maryland: sortear quem oferece o tutor, e não quem usa",
-                  pais: "Estados Unidos · Ensino superior",
-                  categoria: "Método de avaliação",
-                  problema: "Medir o efeito de pôr um assistente de IA à disposição de turmas inteiras, do jeito que uma instituição faz quando libera a ferramenta, e não só entre quem escolhe usar.",
-                  implementacao: "Os pesquisadores sortearam professores, dentro de blocos de cursos, para oferecer ou não às turmas um assistente de estudo integrado à plataforma da universidade e ancorado no material do curso. Compararam a nota final e o uso da plataforma entre turmas do mesmo curso. Os números estão no Sinal 3.",
-                  escala: "30 professores de várias áreas, num semestre letivo.",
-                  financiamento: "Pesquisa acadêmica, publicada como working paper no EdWorkingPapers (26-1598).",
-                  aprendizado: "Sortear a oferta mostra o efeito de uma decisão de política, que é o que o gestor toma. Comparar só quem usa teria escondido a perda, porque a maioria não usou.",
-                  limitacoes: "Universitários, um semestre e um assistente genérico. Não diz nada sobre tutor desenhado para não dar a resposta nem sobre a educação básica.",
-                  replicavel: "Sortear por professor ou turma, medir a nota e o uso do material junto e olhar o efeito por perfil de aluno.",
-                  naoReplicavel: "A plataforma única da universidade, que registra tudo, e a autonomia para sortear professores. Na educação básica, depende de uma rede parceira.",
-                  application: "É o desenho para testar um recurso voltado ao aluno antes de ampliar: liberar para metade das turmas e comparar com a outra metade, inclusive no uso do material."
+                  empresa: "Serra Leoa: modo guiado do Gemini nas aulas de matemática",
+                  pais: "Serra Leoa · Anos finais",
+                  categoria: "Evidência de efeito",
+                  problema: "Saber se um modo de IA que conduz o aluno por perguntas, em vez de dar a resposta, melhora a matemática numa rede com poucos recursos.",
+                  implementacao: "O Google e a Fab AI sortearam 48 turmas de matemática para usar o Guided Learning do Gemini em metade das aulas, por oito semanas, num ensaio pré-registrado. A intervenção incluiu também formação dos professores, trabalho em dupla e aulas estruturadas. Resultados divulgados em 2026.",
+                  escala: "Cerca de 1.760 alunos. Ganho de 0,26 desvio-padrão em matemática sobre o grupo de comparação. Segundo os autores, o Gemini fez perguntas de apoio em 76% das mensagens e deu a solução direta em 2%.",
+                  financiamento: "Google, com a Fab AI.",
+                  aprendizado: "O mesmo modo guiado que o Google acaba de levar ao Classroom teve efeito medido em sala de aula, junto com professor formado e aula estruturada, e com a IA quase nunca entregando a resposta.",
+                  limitacoes: "Pesquisa da própria empresa, oito semanas e um contexto de poucos recursos. O desenho não separa o efeito do Gemini do da formação e das aulas estruturadas, e os alunos com mais domínio de matemática ganharam mais.",
+                  replicavel: "Sortear turmas, fixar uma meta de uso e medir quanto a IA pergunta e quanto responde.",
+                  naoReplicavel: "A comparação com uma rede de poucos recursos, onde quase qualquer apoio adicional pesa mais.",
+                  application: "Mostra o que o tutor gratuito das big techs pode entregar. Para competir, o produto próprio precisa somar o que ele não tem: o material adotado e o professor da turma."
                 },
                 {
-                  empresa: "Turquia: o mesmo modelo com e sem guarda-corpos",
-                  pais: "Turquia · Ensino médio",
-                  categoria: "Desenho pedagógico",
-                  problema: "Saber se o efeito da IA na aprendizagem depende do modelo ou do que ela é instruída a fazer.",
-                  implementacao: "Num experimento divulgado em 2024 por Hamsa Bastani e coautores, turmas de matemática do 9º ao 11º ano foram sorteadas para praticar com uma versão comum do ChatGPT, com uma versão tutora instruída a dar dicas sem revelar a resposta, ou sem IA. Depois, todos fizeram a prova sem ajuda.",
-                  escala: "Cerca de mil alunos. Com o ChatGPT comum, os alunos acertaram 48% mais exercícios na prática e tiraram nota 17% menor na prova. Com a versão tutora, acertaram 127% mais na prática e não tiveram ganho na prova.",
-                  financiamento: "Pesquisa acadêmica com escolas de ensino médio na Turquia.",
-                  aprendizado: "O mesmo modelo deu resultados opostos conforme a instrução. Sem guarda-corpos, a IA melhorou a prática e piorou a prova; com eles, evitou a perda, mas não gerou ganho.",
-                  limitacoes: "Um país, uma disciplina e uma intervenção curta. A versão tutora só evitou o prejuízo, sem melhorar a nota.",
-                  replicavel: "Testar o recurso para o aluno em duas versões, com e sem as instruções que impedem entregar a resposta, e medir numa prova sem IA.",
-                  naoReplicavel: "O controle total sobre a sala que o experimento teve. No produto, o aluno pode sair da ferramenta e usar outra.",
-                  application: "Desempenho na prática com IA não é aprendizagem. A medida que importa é a prova sem a ferramenta, e é ela que o produto precisa mostrar."
+                  empresa: "Google: o interruptor da escola, recurso por recurso",
+                  pais: "Estados Unidos · Plataforma",
+                  categoria: "Governança de produto",
+                  problema: "Responder à pressão pública e política sem tirar a IA do produto: deixar que a escola decida o que o aluno acessa.",
+                  implementacao: "O Gemini, o Gemini Notebook, o Gemini no Classroom e a Busca vão vir desligados para alunos, e o administrador liga cada um. O Guided Learning entra no Classroom para o professor atribuir. Os detalhes estão no Sinal 1.",
+                  escala: "Contas de alunos da educação básica do Google for Education, a partir do início de 2027, segundo reportagens. A escola pode ligar cada serviço separadamente.",
+                  financiamento: "Decisão de produto da empresa.",
+                  aprendizado: "O padrão desligado responde à crítica de levar a IA ao aluno sem a escola decidir, mas a crítica se concentrou na Busca, que não se separa das respostas de IA.",
+                  limitacoes: "Sem informação para outros países. A Busca não se separa das respostas de IA: a escola que recusar toda a IA perde a Busca.",
+                  replicavel: "Recurso de IA separado por padrão e ativado pela escola, com o professor atribuindo o modo guiado.",
+                  naoReplicavel: "A escala do Google, que permite mudar o padrão de milhões de contas de uma vez.",
+                  application: "Cada recurso de IA do produto precisa poder ser ligado sozinho. Recurso que só vem em pacote vira o próximo caso de tudo ou nada."
                 },
 ].map((b, i) => (
                 <motion.div
@@ -4020,85 +4275,85 @@ export default function App() {
               Capacidades que <span className="text-azul-600">encurtam o caminho</span>
             </h2>
             <p className="text-gray-600 mb-8 text-base max-w-3xl text-pretty">
-              O que já existe, em que estágio está e quanto custa adotar, com limites, dependências e o que muda para Produto e Engenharia. Nesta edição, entram os que respondem à regra nova e à restrição ao uso pelo aluno.
+              O que já existe, em que estágio está e quanto custa adotar, com limites, dependências e o que muda para Produto e Engenharia. Nesta edição, entram os que ajudam a escola a decidir o que ligar.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  nome: "Correção em dois turnos com assinatura registrada",
-                  tipo: "Padrão de fluxo",
-                  oque: "A IA faz a primeira leitura da redação e gera a devolutiva; o professor revisa, ajusta e atribui a nota, e o sistema guarda quem assinou e o que mudou. É o desenho da Redação Paraná e o que a regra brasileira deve exigir.",
-                  acelera: "Põe a correção automática dentro da regra e transforma a assinatura do professor em prova de conformidade.",
-                  limitacoes: "Se a revisão do professor virar um clique, o registro existe, mas a decisão não. A interface precisa mostrar o que a IA sugeriu e o que o professor mudou.",
-                  dependencias: "Modelo de dados que separe devolutiva e nota, trilha de auditoria por redação e critério de correção alinhado à competência avaliada.",
-                  cenario: "Redação e questões dissertativas, em escola privada e rede pública.",
-                  impactoProduto: "Reabre a correção como recurso vendável, agora com um diferencial que a ferramenta gratuita não tem: a prova de que o professor decidiu.",
-                  impactoEngenharia: "Versionar a sugestão da IA e a decisão do professor e guardar as duas. Sem isso, não há como mostrar quem deu a nota.",
-                  maturidade: "Disponível",
-                  cor: "bg-azul-100 text-azul-700",
-                  link: "https://www.consed.org.br/noticia/redacao-parana-correcao-por-inteligencia-artificial-e-ampliada-para-novos-generos-textuais",
-                  linkLabel: "O caso do Paraná"
-                },
-                {
-                  nome: "Controle da escola por série, turma e recurso",
+                  nome: "Ativação pela escola, recurso por recurso",
                   tipo: "Governança",
-                  oque: "Painel em que a escola e o professor ligam e desligam cada recurso de IA voltado ao aluno por série, turma e período, com o estado visível para quem está na sala. O Google já oferece esse tipo de controle ao administrador da escola.",
-                  acelera: "Permite liberar recurso para o aluno sem o risco de a rede ter de desligar tudo, como aconteceu em Frederick County.",
-                  limitacoes: "Controle demais vira trabalho para o professor. O padrão precisa vir pronto por faixa etária, com o professor ajustando só a exceção.",
-                  dependencias: "Cadastro confiável de série e turma, permissões hierárquicas (rede, escola, turma) e um catálogo dos recursos que falam com o aluno.",
-                  cenario: "Qualquer rede que precise cumprir a regra por etapa, como o veto na educação infantil, ou responder a uma restrição local.",
-                  impactoProduto: "Responde à objeção antes que ela vire proibição. É argumento de venda para a rede pública e para a família.",
-                  impactoEngenharia: "Flags com escopo hierárquico e teste da matriz de estados: um recurso desligado na série precisa ficar desligado em toda turma dela.",
+                  oque: "Cada recurso de IA voltado ao aluno vem desligado ou no modo mais restrito, e a escola liga o que quiser, por série e turma, com o estado visível para o professor. É o padrão que o Google acaba de adotar.",
+                  acelera: "Tira da rede o risco de liberar um pacote inteiro e permite começar pelo recurso mais seguro.",
+                  limitacoes: "Desligado por padrão reduz o uso no começo. O produto precisa mostrar à escola, na ativação, o que cada recurso faz.",
+                  dependencias: "Recursos separados no código, cadastro confiável de série e turma e permissões por rede, escola e turma.",
+                  cenario: "Toda rede que estiver escrevendo política de IA, e toda escola com aluno abaixo de 18 anos.",
+                  impactoProduto: "Transforma a objeção à IA em configuração. É o requisito técnico da edição #13 virando argumento de venda.",
+                  impactoEngenharia: "Flags por recurso com escopo hierárquico; nenhum recurso pode depender de outro estar ligado.",
                   maturidade: "Padrão de mercado",
                   cor: "bg-gray-200 text-gray-700",
-                  link: "https://www.fox5dc.com/news/frederick-county-school-board-votes-ban-ai-use-pre-k-through-12th-grade-students",
-                  linkLabel: "O caso de Frederick County"
+                  link: "https://www.washingtonpost.com/education/2026/11/03/google-turn-off-search-schools-that-dont-want-students-using-ai/",
+                  linkLabel: "A mudança do Google"
                 },
                 {
-                  nome: "Guarda-corpos de tutor que não entrega a resposta",
+                  nome: "Professor aprovando a resposta da IA",
+                  tipo: "Padrão de fluxo",
+                  oque: "A IA redige a resposta ao aluno e o professor aprova, edita ou descarta antes do envio. No ensaio da Eedi, a maior parte das mensagens passou sem edição.",
+                  acelera: "Permite levar a IA ao aluno em redes que ainda não aceitam a IA falando sozinha.",
+                  limitacoes: "Custa tempo do professor e atrasa a resposta. Só se sustenta se a taxa de aprovação sem edição for alta.",
+                  dependencias: "Fila de revisão por turma, registro de cada edição e métrica de aprovação por tipo de pergunta.",
+                  cenario: "Primeiros meses de um recurso novo para o aluno, e redes mais restritivas.",
+                  impactoProduto: "Oferece à rede um degrau entre desligado e ligado: a IA com o professor no meio.",
+                  impactoEngenharia: "Guardar a versão da IA e a do professor para medir quando a revisão pode virar amostragem.",
+                  maturidade: "Emergente",
+                  cor: "bg-green-100 text-green-700",
+                  link: "https://www.the74million.org/article/five-things-you-should-know-about-new-ai-tutor-study/",
+                  linkLabel: "O ensaio da Eedi"
+                },
+                {
+                  nome: "Modo guiado atribuído pelo professor",
                   tipo: "Padrão de interação",
-                  oque: "Instruções e checagens que fazem o tutor dar dicas, pedir o raciocínio e devolver a pergunta, sem mostrar a solução, com teste contra o aluno que insiste. No experimento da Turquia, foi o que evitou a perda na prova.",
-                  acelera: "Separa o recurso para o aluno da IA genérica que as redes estão restringindo.",
-                  limitacoes: "Evitar a perda não é gerar ganho: na Turquia, a versão com guarda-corpos não melhorou a nota. Precisa vir junto de trilha e domínio do conteúdo.",
-                  dependencias: "Bateria de testes com tentativas de obter a resposta, revisão periódica e registro das conversas.",
-                  cenario: "Exercícios com resposta verificável, onde o atalho é mais fácil.",
-                  impactoProduto: "Dá ao recurso para o aluno um argumento contra a objeção: ele foi feito para não fazer a tarefa pelo aluno.",
-                  impactoEngenharia: "Tratar a recusa de entregar a resposta como requisito testado a cada versão do modelo, e não como instrução escrita uma vez.",
-                  maturidade: "Emergente",
-                  cor: "bg-green-100 text-green-700",
-                  link: "https://hechingerreport.org/kids-chatgpt-worse-on-tests/",
-                  linkLabel: "O experimento da Turquia"
+                  oque: "Um modo de IA que conduz o aluno por perguntas em vez de dar a resposta, que o professor atribui como atividade e acompanha. O Google levou o Guided Learning ao Classroom com esse desenho.",
+                  acelera: "Junta o tutor que não entrega a resposta com o controle do professor sobre quando ele entra.",
+                  limitacoes: "Virou oferta gratuita das big techs. Sem ligação com o material adotado, não diferencia.",
+                  dependencias: "Instruções que impeçam entregar a resposta, testadas a cada versão do modelo, e integração com as atividades da turma.",
+                  cenario: "Exercícios e revisão em que o aluno costuma pedir a resposta pronta.",
+                  impactoProduto: "A diferença passa a ser o modo guiado sobre o capítulo que a turma está estudando, com o erro voltando ao professor.",
+                  impactoEngenharia: "Medir quanto o modo pergunta e quanto responde, como fez o estudo de Serra Leoa.",
+                  maturidade: "Disponível",
+                  cor: "bg-azul-100 text-azul-700",
+                  link: "https://edtechinnovationhub.com/news/google-gemini-guided-learning-raises-math-scores-in-sierra-leone-classroom-trial",
+                  linkLabel: "O estudo de Serra Leoa"
                 },
                 {
-                  nome: "Bateria de segurança para recursos voltados ao aluno",
-                  tipo: "Processo de qualidade",
-                  oque: "Conjunto de testes de risco feito antes de cada lançamento: conteúdo impróprio, sinais de crise, contorno do modo de estudo, verificação de idade e alertas ao responsável. Foi com testes desse tipo que a Common Sense Media avaliou o ChatGPT for Teens.",
-                  acelera: "Antecipa a avaliação que terceiros vão fazer e transforma segurança em documento que a escola pode mostrar à família.",
-                  limitacoes: "Testes próprios convencem menos que avaliação independente. Servem para corrigir antes e para chegar preparado a uma auditoria externa.",
-                  dependencias: "Casos de teste em português por faixa etária, critérios de aprovação definidos com a área pedagógica e jurídica e repetição a cada versão do modelo.",
-                  cenario: "Todo recurso que converse com o aluno, sobretudo abaixo dos 18 anos.",
-                  impactoProduto: "Segurança verificável vira diferencial diante da ferramenta gratuita que uma avaliação independente reprovou.",
-                  impactoEngenharia: "Rodar a bateria no pipeline de lançamento, com bloqueio se algum critério crítico falhar.",
-                  maturidade: "Emergente",
-                  cor: "bg-green-100 text-green-700",
-                  link: "https://www.cnbc.com/make-it/2026/10/09/chatgpt-for-teens-safety-common-sense-media.html",
-                  linkLabel: "A avaliação da Common Sense"
-                },
-                {
-                  nome: "Linha de base com sorteio por turma",
-                  tipo: "Método de avaliação",
-                  oque: "Estudo com uma rede parceira em que turmas são sorteadas para receber ou não o recurso de IA, com comparação de nota, uso do material e efeito por perfil de aluno. É o desenho do ensaio de Maryland aplicado à educação básica.",
-                  acelera: "Mostra se o recurso ajuda ou atrapalha antes de ampliar, e dá ao produto um número próprio para a conversa de compra.",
-                  limitacoes: "Leva pelo menos um semestre, exige consentimento e pode mostrar efeito nulo ou negativo. Saber disso antes é melhor que descobrir depois.",
-                  dependencias: "Rede parceira, ligar e desligar o recurso por turma, registro de exposição por aluno e parceiro acadêmico.",
-                  cenario: "O próximo recurso voltado ao aluno, antes de liberar para todas as turmas.",
-                  impactoProduto: "Permite responder com dado próprio à pergunta que o ensaio de Maryland pôs na mesa: a IA pode estar atrapalhando?",
-                  impactoEngenharia: "O controle por turma do acelerador anterior é pré-requisito: sem ele, não há como sortear.",
+                  nome: "Ficha de cada recurso de IA para a política da rede",
+                  tipo: "Documentação",
+                  oque: "Uma ficha pública por recurso: o que faz, para que idade, que dados usa, que controle a escola tem, que testes de segurança passou e que evidência de efeito existe.",
+                  acelera: "Encaixa o produto direto no que as políticas de rede pedem, como a de Anne Arundel, que exige avaliar o valor educacional antes de adotar.",
+                  limitacoes: "Ficha sem evidência real vira peça de marketing. Precisa ser revista a cada versão.",
+                  dependencias: "Catálogo de recursos, bateria de segurança e resultados de avaliação por recurso.",
+                  cenario: "Toda proposta para rede pública e toda renovação com escola privada.",
+                  impactoProduto: "Encurta a decisão de compra numa rede que está escrevendo as regras agora.",
+                  impactoEngenharia: "Gerar a ficha a partir do catálogo de recursos e das flags, para não ficar desatualizada.",
                   maturidade: "A construir",
                   cor: "bg-azul-100 text-azul-700",
-                  link: "https://www.edtechinnovationhub.com/news/students-offered-an-ai-tutor-got-lower-grades-and-disengaged-from-course-materials-university-of-maryland-trial-finds",
-                  linkLabel: "O ensaio de Maryland"
+                  link: "https://www.baltimoresun.com/2026/10/19/ai-policy-maryland-school-districts-deadline/",
+                  linkLabel: "As redes de Maryland"
+                },
+                {
+                  nome: "Medida em avaliação externa ao produto",
+                  tipo: "Método de avaliação",
+                  oque: "Comparar turmas com e sem o recurso numa avaliação que o produto não controla, como uma prova da rede ou padronizada, além das métricas da plataforma.",
+                  acelera: "Mostra se o ganho medido dentro do produto sai dele, a pergunta que o ensaio da Eedi deixou aberta.",
+                  limitacoes: "Leva pelo menos um período letivo e pode não mostrar efeito, como no próprio ensaio da Eedi.",
+                  dependencias: "Rede parceira, sorteio por turma, acesso à avaliação externa e parceiro acadêmico.",
+                  cenario: "O recurso de IA que a empresa mais quer vender.",
+                  impactoProduto: "Separa o produto de quem só mostra métricas internas.",
+                  impactoEngenharia: "Ligar e desligar o recurso por turma e registrar a exposição por aluno são pré-requisito.",
+                  maturidade: "A construir",
+                  cor: "bg-azul-100 text-azul-700",
+                  link: "https://www.the74million.org/article/five-things-you-should-know-about-new-ai-tutor-study/",
+                  linkLabel: "O que o ensaio mediu"
                 },
 ].map((a, i) => (
                 <motion.div
@@ -4190,7 +4445,7 @@ export default function App() {
                 <div className="flex-1">
                   <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/70 mb-3">Consenso dos especialistas da quinzena</p>
                   <p className="text-lg md:text-xl font-semibold leading-snug text-pretty">
-                    Avaliadores de segurança, pesquisadores e quem estuda a correção na rede pública chegaram ao mesmo ponto por caminhos diferentes: <span className="text-amarelo-400">a IA rende mais, e preocupa menos, quando trabalha com o professor do que quando é entregue ao aluno sozinho</span>.
+                    Fornecedor, pesquisadores e críticos chegaram ao mesmo ponto por caminhos diferentes: <span className="text-amarelo-400">quem decide se a IA entra é a escola, e ela precisa de recursos separados e de resultado medido fora do produto para decidir</span>.
                   </p>
                 </div>
                 <img src={liaExperts} alt="" width={394} height={400} className="w-28 sm:w-36 md:w-44 h-auto shrink-0 self-center sm:self-auto sm:-scale-x-100 drop-shadow-[0_12px_24px_rgba(1,34,112,0.45)]" />
@@ -4199,16 +4454,16 @@ export default function App() {
               <div className="grid md:grid-cols-3 gap-5">
                 {[
                   {
-                    ponto: "Só oferecer a IA ao aluno tem custo",
-                    detalhe: "O ensaio de Maryland mediu nota menor nas turmas que receberam o assistente, mesmo com poucos alunos usando. Liberar a ferramenta é uma decisão com efeito, e não um gesto neutro."
+                    ponto: "A escola liga, o fornecedor oferece",
+                    detalhe: "O Google vai deixar cada serviço para a escola ligar, um a um, e os críticos atacaram justamente o caso em que a escola não consegue escolher: a Busca sem IA."
                   },
                   {
-                    ponto: "A segurança é o ponto fraco do produto para o aluno",
-                    detalhe: "A avaliação da Common Sense encontrou alertas que não dispararam e um modo de estudo que podia ser contornado, numa versão feita para adolescentes."
+                    ponto: "Ganho na aula não é ganho na prova",
+                    detalhe: "No ensaio da Eedi, o tutor de IA igualou o humano nas medidas da plataforma e nenhum dos dois superou a prática comum no teste padronizado."
                   },
                   {
-                    ponto: "O professor como segundo leitor",
-                    detalhe: "Na Redação Paraná, a IA faz a correção que classifica e indica, e o professor analisa o texto. É o arranjo que a regra brasileira deve adotar."
+                    ponto: "Tudo ou nada não serve",
+                    detalhe: "A crítica ao Google se concentrou na Busca, que não se separa das respostas de IA. A escola quer ligar um recurso sem ligar os outros."
                   },
 ].map((item, i) => (
                   <div key={i} className="bg-white/10 rounded-xl p-5 backdrop-blur-sm">
@@ -4222,34 +4477,34 @@ export default function App() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  autor: "Common Sense Media",
-                  cargo: "Youth AI Safety Institute · avaliação de risco",
-                  titulo: "O ChatGPT for Teens é risco inaceitável para menores de 18 anos",
-                  data: "7 out/2026",
-                  tese: "Depois de mais de 4 mil testes, a organização deu ao ChatGPT for Teens a pior nota da sua escala de risco. Os alertas aos pais não dispararam em contas novas ligadas a responsáveis, mais de um em cada quatro encaminhamentos de crise considerados necessários não aconteceu, o modo de estudo podia ser contornado e a estimativa de idade não reclassificou contas de teste. A organização reconheceu proteções que funcionaram, como a recusa a roleplay sexual explícito, e a OpenAI contestou o método.",
-                  importa: "É uma avaliação independente de peso sobre uma versão para adolescentes de um assistente geral, e o critério pode ser aplicado a qualquer recurso que fale com o aluno, inclusive os nossos.",
-                  relacao: "Sustenta o Sinal 4 e o acelerador de bateria de segurança.",
-                  link: "https://www.cnbc.com/make-it/2026/10/09/chatgpt-for-teens-safety-common-sense-media.html"
+                  autor: "Pesquisadores da Eedi e do Google DeepMind",
+                  cargo: "Ensaio randomizado em escolas públicas do Reino Unido",
+                  titulo: "O tutor de IA iguala o humano no momento do erro, e o resto ainda é pergunta",
+                  data: "29 out/2026",
+                  tese: "Os autores relatam que o tutor de IA, revisado por professores, ajudou tanto quanto tutores humanos nas medidas da plataforma, sem vantagem clara na prova padronizada, e tratam os resultados como provisórios. Também apontam a troca: com o tutor, os alunos resolveram menos problemas por sessão.",
+                  importa: "É a leitura mais cuidadosa da quinzena sobre o que um tutor bem desenhado consegue: ajuda na hora do erro, sem prova de ganho fora do produto.",
+                  relacao: "Sustenta o Sinal 2, a tese revista do resumo e o acelerador de medida externa.",
+                  link: "https://www.the74million.org/article/five-things-you-should-know-about-new-ai-tutor-study/"
                 },
                 {
-                  autor: "Pesquisadores da Universidade de Maryland",
-                  cargo: "Working paper no EdWorkingPapers (26-1598)",
-                  titulo: "Oferecer o tutor mudou o jeito de a turma estudar",
-                  data: "Out/2026",
-                  tese: "Como o uso do assistente foi baixo, os autores sugerem que a queda de nota venha de uma mudança no comportamento da turma: com uma ferramenta de IA aprovada pela universidade à mão, os alunos passaram a usar menos o material e a plataforma do curso. A perda foi maior entre alunos de primeira geração.",
-                  importa: "Desloca a discussão da qualidade da resposta da IA para o que a presença da ferramenta faz com o resto do estudo. E mostra que o custo recai mais sobre quem tem menos apoio.",
-                  relacao: "Sustenta o Sinal 3, a tese revista do resumo e o acelerador de linha de base.",
-                  link: "https://www.edtechinnovationhub.com/news/students-offered-an-ai-tutor-got-lower-grades-and-disengaged-from-course-materials-university-of-maryland-trial-finds"
+                  autor: "Google for Education",
+                  cargo: "Anúncio de produto",
+                  titulo: "A escola decide o que liga",
+                  data: "3 nov/2026",
+                  tese: "Em post de Chris Phillips, vice-presidente de Educação, o Google anunciou que os serviços de IA e a Busca ficam desligados para alunos até a escola ligar e, depois das críticas, esclareceu que cada serviço pode ser ligado separadamente. Phillips explicou que a Busca não se separa das respostas de IA porque as duas estão profundamente integradas.",
+                  importa: "É um dos fornecedores mais presentes nas escolas americanas assumindo que a decisão de ligar a IA é da escola. Isso tende a virar expectativa para os demais fornecedores.",
+                  relacao: "Sustenta o Sinal 1 e o acelerador de ativação pela escola.",
+                  link: "https://www.cnbc.com/2026/11/03/google-responds-to-outrage-over-removing-search-in-schools-that-ban-ai.html"
                 },
                 {
-                  autor: "Agatha de Lima, Maisa Morelatto, Vanda Trombetta e Lovania Teixeira",
-                  cargo: "Pesquisadoras da UTFPR · revista Texto Livre (UFMG)",
-                  titulo: "O turno da IA e o turno do professor na correção",
-                  data: "Mai/2026",
-                  tese: "O estudo analisa a Redação Paraná e a divisão da correção entre a IA e o professor. A IA faz sobretudo correções classificatórias e indicativas, e a análise da discursividade e da subjetividade do texto fica com o professor.",
-                  importa: "É a leitura mais independente do modelo de dois turnos que a regra brasileira deve adotar, e mostra o limite: a parte que a IA faz é a mais mecânica, e o valor do professor está no que ela não alcança.",
-                  relacao: "Fundamenta o Sinal 1, o benchmark da Redação Paraná e o acelerador de correção em dois turnos.",
-                  link: "https://periodicos.ufmg.br/index.php/textolivre/article/view/62011"
+                  autor: "Críticos da medida do Google",
+                  cargo: "Políticos e educadores americanos",
+                  titulo: "Tirar a Busca de quem recusa a IA é forçar a IA",
+                  data: "3 nov/2026",
+                  tese: "O prefeito de Nova York, Zohran Mamdani, o senador Bernie Sanders e outros críticos acusaram o Google de usar o peso que tem nas escolas para forçar a IA, porque a escola que recusar a IA perde também a Busca.",
+                  importa: "Mostra que o controle só convence quando é real: a escola precisa poder recusar um recurso sem perder os outros.",
+                  relacao: "Explica a parte do Sinal 1 sobre a Busca e o item \"Tudo ou nada\" do consenso.",
+                  link: "https://www.forbes.com/sites/maryroeloffs/2026/11/03/google-will-cut-off-search-engine-access-to-schools-banning-generative-ai/"
                 },
 ].map((e, i) => (
                 <motion.div
@@ -4317,7 +4572,7 @@ export default function App() {
               Diferenciação ou <span className="text-azul-600">commodity</span>
             </h2>
             <p className="text-gray-600 mb-8 text-base max-w-3xl text-pretty">
-              Onde a vantagem acabou e o que ainda é difícil de copiar. Nesta edição, a correção automática de redação passou para o lado da commodity.
+              Onde a vantagem acabou e o que ainda é difícil de copiar. Nesta edição, chegar à escola com a IA ligada deixou de ser vantagem.
             </p>
 
             <div className="bg-white rounded-2xl border-2 border-rosa-600 p-6 mb-8">
@@ -4326,7 +4581,7 @@ export default function App() {
                 <div>
                   <p className="font-bold text-gray-900 mb-1">A mudança de lado desta edição</p>
                   <p className="text-sm md:text-xs text-gray-600 leading-relaxed">
-                    <strong>A correção automática de redação</strong> deixou de diferenciar. Redes estaduais já fazem, algumas com o Google, concorrentes e edtechs oferecem ao aluno, e a regra deve liberá-la como primeiro filtro. O que passa a diferenciar é a parte que a regra exige e que a ferramenta gratuita não entrega: o professor revisando e assinando, com registro.
+                    <strong>Chegar à escola com a IA ligada</strong> deixou de ser vantagem de distribuição. O Google, presente em boa parte das escolas americanas, anunciou que vai entregar a IA desligada para alunos. O que diferencia agora é facilitar a decisão da escola: recursos separados, controle por série e turma e documentação para a política da rede.
                   </p>
                 </div>
               </div>
@@ -4340,11 +4595,11 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   {[
-                    { item: "Correção automática de redação", motivo: "Redes estaduais oferecem aos próprios alunos, concorrentes e edtechs já têm, e a regra deve liberá-la como primeiro filtro. Sozinha, não sustenta preço", novo: true },
-                    { item: "Ferramentas de estudo para o aluno", motivo: "Flashcards, quizzes e resumos chegaram de graça ao aluno pelo Gemini e pelo ChatGPT. Concorrer com isso por funcionalidade não faz sentido", novo: true },
-                    { item: "Tira-dúvidas e resumo para o aluno", motivo: "Além de não diferenciar, é o formato que as redes estão restringindo e que o ensaio de Maryland associou a perda" },
+                    { item: "Tutor que não entrega a resposta", motivo: "O Google levou o modo guiado ao Classroom, de graça. Sozinho, deixou de ser diferencial de desenho", novo: true },
+                    { item: "IA ligada por padrão para o aluno", motivo: "Deixou de ser atalho de distribuição: as redes e o próprio Google passaram a exigir a ativação pela escola", novo: true },
+                    { item: "Ferramentas de estudo para o aluno", motivo: "Flashcards, quizzes e resumos chegam de graça pelas big techs desde a edição #13" },
+                    { item: "Correção automática de redação", motivo: "Já roda em redes estaduais e em concorrentes desde a edição #13" },
                     { item: "O modelo de IA em si", motivo: "Desde a edição #12, escolher modelo virou decisão de custo" },
-                    { item: "Chat ancorado no conteúdo próprio", motivo: "Padrão entre os concorrentes diretos. O ensaio de Maryland usou um assistente ancorado no material e mediu perda, então ancorar não basta" },
                   ].map((c, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-red-400 mt-0.5 flex-shrink-0">▸</span>
@@ -4367,12 +4622,11 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   {[
-                    { item: "Correção em dois turnos com assinatura registrada", motivo: "É o que a regra deve exigir e o que a ferramenta gratuita não entrega. Edtechs já põem o professor para revisar; o que segue raro é o registro de quem deu a nota, e não localizamos concorrente direto que descreva isso publicamente", novo: true },
-                    { item: "Controle da escola sobre o que o aluno acessa", motivo: "A falta dele levou um distrito a proibir tudo. Ligar e desligar por série e turma, com o professor vendo o estado, vira condição para liberar recurso ao aluno", novo: true },
-                    { item: "Segurança verificável do recurso para o aluno", motivo: "Depois da avaliação da Common Sense, ter testes documentados vira argumento diante da família e da rede", novo: true },
-                    { item: "Número próprio de aprendizagem", motivo: "Agora também como defesa: é o que mostra que o recurso não está entre os que atrapalham" },
-                    { item: "Domínio obrigatório com explicação do erro", motivo: "Segue sendo o desenho ligado a ganho, e depende de banco de itens calibrado, que não se monta em um ciclo" },
-                    { item: "Recursos de estudo ligados ao material e ao professor", motivo: "O flashcard gratuito não sabe o que a turma está estudando nem mostra ao professor o que o aluno errou. O que liga o estudo ao material adotado continua escasso" },
+                    { item: "Recursos separados, ligados pela escola", motivo: "É o que o Google anunciou e o que as redes tendem a esperar dos demais. Recurso que só vem em pacote vira caso de tudo ou nada", novo: true },
+                    { item: "Ficha de cada recurso para a política da rede", motivo: "As redes estão escrevendo as políticas agora e pedem prova de valor educacional antes de adotar. Não localizamos concorrente direto com ficha pública", novo: true },
+                    { item: "Resultado em prova externa ao produto", motivo: "O ensaio da Eedi mostrou ganho dentro da plataforma e nenhuma vantagem clara fora. Quem medir fora do produto sai da comparação por métricas internas", novo: true },
+                    { item: "Correção em dois turnos com assinatura registrada", motivo: "Segue sendo o que a regra brasileira deve exigir, quando sair" },
+                    { item: "Modo guiado ligado ao material adotado", motivo: "O tutor gratuito não sabe o que a turma está estudando nem devolve o erro ao professor" },
                   ].map((d, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-green-500 mt-0.5 flex-shrink-0">▸</span>
@@ -4420,9 +4674,9 @@ export default function App() {
                 <p className="text-[11px] text-ambar-700 mb-5 font-medium">Muito discurso, evidência ausente ou contrária</p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "Dar IA ao aluno melhora a nota", desc: "O ensaio de Maryland mediu o contrário quando a IA foi só oferecida, e o experimento da Turquia mostrou nota menor com o ChatGPT comum. Melhorar a prática com IA não é aprender." },
-                    { titulo: "Versão para adolescentes resolve a segurança", desc: "Uma avaliação independente de peso reprovou a versão para adolescentes de um assistente geral. Um rótulo de idade não substitui teste." },
-                    { titulo: "Proibir resolve", desc: "A proibição de Frederick County vale para os aparelhos e o horário da escola; em casa, o aluno segue com as ferramentas gratuitas. Sem controle e desenho, a escola só tira a IA de onde poderia acompanhá-la." },
+                    { titulo: "Tutor de IA melhora a nota", desc: "No ensaio da Eedi, nem com professor revisando o tutor superou a prática comum na prova padronizada, e na edição #13 o tutor só oferecido baixou a nota. O ganho medido fica dentro do produto." },
+                    { titulo: "A IA vai entrar na escola de qualquer jeito", desc: "O Google voltou atrás no padrão de agosto e vai depender da decisão da escola. A entrada não é automática." },
+                    { titulo: "Versão para adolescentes resolve a segurança", desc: "Semanas depois de a Common Sense Media classificar o ChatGPT for Teens como risco inaceitável, a OpenAI anunciou travas novas, ainda por chegar. Rótulo de idade não substitui teste." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-ambar-400 mt-1 flex-shrink-0">▸</span>
@@ -4442,9 +4696,9 @@ export default function App() {
                 <p className="text-[11px] text-azul-700 mb-5 font-medium">Sinal real, cedo demais para conclusão firme</p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "Correção por IA como padrão da rede pública", desc: "Já roda em redes estaduais e deve ganhar aval da regra, mas o texto homologado ainda não saiu, e não localizamos avaliação externa da precisão nem do efeito na escrita." },
-                    { titulo: "Proibição total do uso pelo aluno", desc: "Uma rede americana chegou a todas as séries, e os outros distritos de Maryland estão definindo suas regras agora. Austrália e Portugal foram por outro caminho: restrição por idade, com a IA nas mãos do educador. A proibição total ainda é um caso." },
-                    { titulo: "Ferramentas de estudo das big techs para todas as idades", desc: "O acesso depende do que cada escola liberar no painel do Google, e o planejador da OpenAI ainda não foi lançado. A adesão real nas escolas ainda não foi medida." },
+                    { titulo: "Padrão desligado fora dos EUA", desc: "O Google não disse se vale para outros países. Se chegar às redes brasileiras, muda a negociação dos demais fornecedores." },
+                    { titulo: "Modo guiado como padrão de tutor", desc: "Teve efeito medido em Serra Leoa, em pesquisa da própria empresa e junto com formação de professores, e sem vantagem clara em prova externa no ensaio da Eedi. Cedo para tomar como certo." },
+                    { titulo: "Política de IA obrigatória nas redes", desc: "Já é lei em Maryland, e as redes estão atrasadas. Pode se espalhar, mas o conteúdo das políticas ainda está sendo escrito." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-azul-400 mt-1 flex-shrink-0">▸</span>
@@ -4464,10 +4718,10 @@ export default function App() {
                 <p className="text-[11px] text-azul-700 mb-5 font-medium">Evidência convergente, já move roadmap</p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "A IA trabalha com o professor", desc: "A regra brasileira, as redes estaduais e o modelo de dois turnos apontam para o mesmo arranjo: a IA lê primeiro, o professor decide. Já justifica mudar o roadmap." },
-                    { titulo: "A escola controla o que chega ao aluno", desc: "Quatro edições seguidas de restrição ao uso pelo aluno, agora com a falta de controle como motivo explícito. Controle fino virou requisito." },
-                    { titulo: "O ganho vem do desenho", desc: "Reforçado pelo lado negativo: sem desenho, a IA oferecida ao aluno pode tirar nota. Com desenho, o ganho é pequeno e mensurável." },
-                    { titulo: "Evidência de aprendizagem como condição de venda", desc: "Seis edições seguidas, e agora a evidência também pode ser usada contra o produto. Ter número próprio virou defesa." },
+                    { titulo: "A escola decide o que ligar", desc: "Redes, governos e agora o próprio Google apontam para o mesmo arranjo: a IA voltada ao aluno entra quando a escola liga. Já justifica mudar o roadmap." },
+                    { titulo: "A IA trabalha com o professor", desc: "A regra brasileira em espera, a correção em dois turnos e o professor revisando o tutor da Eedi apontam na mesma direção." },
+                    { titulo: "O ganho vem do desenho", desc: "Com desenho, a IA ajuda na aula; sem ele, pode atrapalhar. O ensaio da Eedi reforça o lado positivo, por ora só dentro da plataforma." },
+                    { titulo: "Evidência como condição de venda", desc: "Agora com a régua mais alta: resultado medido fora do produto." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-azul-400 mt-1 flex-shrink-0">▸</span>
@@ -4487,7 +4741,7 @@ export default function App() {
                 <p className="font-bold text-gray-900">O padrão desta quinzena</p>
               </div>
               <p className="text-gray-700 leading-relaxed md:columns-2 md:gap-10">
-                A quinzena separou dois caminhos para a IA na escola. No primeiro, ela trabalha com o professor: corrige como primeiro leitor, sugere e deixa a decisão com quem assina. É o caminho que a regra brasileira deve abrir e que as redes estaduais já seguem. No segundo, ela vai direto ao aluno, de graça e cada vez mais cedo, pelas mãos das big techs, e é esse que as redes estão restringindo, que a pesquisa mostrou poder atrapalhar e que a avaliação de segurança reprovou. Para um sistema de ensino, o primeiro caminho é onde está a vantagem; o segundo só vale com controle da escola, desenho que não entregue a resposta e evidência própria.
+                A IA não vai mais chegar ligada à escola. Redes e governos já vinham restringindo o uso pelo aluno, e nesta quinzena o próprio fornecedor anunciou a mudança do padrão: a IA vai vir desligada e a escola liga o que quiser. Ao mesmo tempo, a pesquisa subiu a régua: um tutor bem desenhado, com professor revisando, iguala o humano na aula, mas ainda não mostrou ganho em prova externa. Para um sistema de ensino, a vantagem está em facilitar a decisão da escola: recursos separados, controle por série e turma, documentação para a política da rede e resultado medido fora do produto.
               </p>
             </div>
           </motion.div>
@@ -4536,94 +4790,94 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  rastreio: "Sinal 1 · ausência registrada",
-                  sinal: "O MEC deve liberar a IA para corrigir redação como primeiro filtro, com a nota sempre do professor, e não localizamos concorrente direto que mostre publicamente como faz isso",
-                  problema: "Se a correção de texto do produto hoje devolve nota ao aluno ou à escola sem passar pelo professor, ela fica do lado errado da regra; se foi despriorizada por causa da vedação de setembro, a regra nova reabre o espaço. Vale mapear com Produto como cada recurso de escrita trata a nota hoje.",
-                  oportunidade: "Correção de redação em dois turnos, com assinatura do professor",
-                  impacto: "A IA lê primeiro e devolve comentários ao aluno; o professor revisa, ajusta e dá a nota, e o produto guarda a sugestão da IA, a decisão do professor e quem assinou. Na edição passada, a separação entre devolutiva e nota era prioridade Média; subiu porque a regra deve consagrar exatamente esse arranjo e porque a correção sozinha virou commodity.",
-                  professor: "Ganha tempo com a primeira leitura e continua dono da nota, com o registro do que decidiu.",
-                  aluno: "Recebe devolutiva para reescrever antes da avaliação e uma nota dada por uma pessoa.",
-                  gestor: "Consegue provar, redação por redação, que a escola cumpre a regra.",
-                  roadmapItem: "Separar no modelo de dados a sugestão da IA e a nota do professor e versionar as duas; esperar o texto homologado para fechar os detalhes do registro.",
-                  prioridade: "Alta",
-                  cor: "border-azul-600",
-                  corBadge: "bg-azul-600 text-white",
-                  area: "Produto / Avaliação"
-                },
-                {
-                  rastreio: "Sinal 2",
-                  sinal: "Frederick County proibiu o uso de IA pelos alunos em todas as séries, e um dos motivos relatados foi que os professores não conseguiam desligar o Gemini nos aparelhos dos alunos",
-                  problema: "Se a escola não consegue desligar um recurso de IA por série ou turma, a resposta mais provável a uma objeção é desligar tudo, inclusive o que funciona. Com o veto anunciado para a educação infantil, a regra brasileira também deve exigir controle por etapa. Vale confirmar com Engenharia que controles existem hoje.",
-                  oportunidade: "Controle da escola por série, turma e recurso",
-                  impacto: "Um painel em que a rede, a escola e o professor ligam e desligam cada recurso voltado ao aluno, com padrão pronto por faixa etária e o estado visível na sala. Transforma a objeção em configuração, em vez de proibição.",
-                  professor: "Sabe o que está ligado para a turma e pode desligar na hora.",
-                  aluno: "Mantém os recursos que funcionam mesmo quando a rede restringe outros.",
-                  gestor: "Cumpre a regra por etapa e responde ao conselho sem cancelar o contrato.",
-                  roadmapItem: "Começar pelo catálogo de recursos que falam com o aluno e pelas flags com escopo de rede, escola e turma.",
+                  rastreio: "Sinal 1 · edição #13",
+                  sinal: "O Google anunciou que o Gemini e a Busca vão ficar desligados para alunos até a escola ligar, e foi criticado porque a escola que recusar toda a IA perde também a Busca",
+                  problema: "Se os recursos de IA do produto só podem ser ligados em conjunto, a escola que quiser um vai ter de aceitar todos, ou recusar todos. Vale confirmar com Engenharia quais recursos voltados ao aluno já podem ser ligados sozinhos.",
+                  oportunidade: "Recursos de IA separados, com ativação pela escola",
+                  impacto: "Cada recurso voltado ao aluno vem desligado ou no modo mais restrito, e a escola liga o que quiser por série e turma. Amplia a oportunidade de controle da edição #13: além de desligar, a escola passa a escolher o que ligar.",
+                  professor: "Sabe exatamente o que está ligado para a turma.",
+                  aluno: "Usa só o que a escola decidiu liberar para a idade dele.",
+                  gestor: "Liga o recurso mais seguro primeiro, sem precisar aceitar o pacote inteiro.",
+                  roadmapItem: "Separar no código cada recurso que fala com o aluno e garantir que nenhum dependa de outro estar ligado.",
                   prioridade: "Alta",
                   cor: "border-azul-600",
                   corBadge: "bg-azul-600 text-white",
                   area: "Produto / Plataforma"
                 },
                 {
-                  rastreio: "Sinal 3 · ausência recorrente",
-                  sinal: "Num ensaio com 2.379 universitários, as turmas que receberam um assistente de IA tiveram nota menor e usaram menos o material do curso, e não localizamos número próprio de sistema de ensino brasileiro",
-                  problema: "Se os recursos de IA para o aluno são liberados para todos de uma vez, não há como saber se ajudam ou atrapalham, e o primeiro dado pode vir de fora. Vale verificar se o produto consegue liberar um recurso só para parte das turmas.",
-                  oportunidade: "Lançamento por turma, com grupo de comparação",
-                  impacto: "Todo recurso novo para o aluno entra primeiro em metade das turmas de uma rede parceira, sorteadas, e é comparado com a outra metade em nota, uso do material e perfil de aluno. Substitui a linha de base da edição passada por um processo de lançamento.",
-                  professor: "Participa de uma comparação que protege a turma de um recurso que atrapalhe.",
-                  aluno: "Só recebe em escala o que mostrou não piorar o resultado.",
-                  gestor: "Tem resultado próprio quando alguém perguntar se a IA está atrapalhando.",
-                  roadmapItem: "Depende do controle por turma; desenhar o estudo do próximo recurso voltado ao aluno junto com a rede parceira neste semestre.",
+                  rastreio: "Sinal 3",
+                  sinal: "Uma lei de Maryland obrigou cada rede a ter política de IA, as redes perderam o prazo, e a política de Anne Arundel exige avaliar o valor educacional de cada ferramenta antes de adotá-la",
+                  problema: "Se a rede pedir, para cada recurso, o que ele faz, para que idade, que dados usa e que evidência tem, a resposta hoje precisa ser montada caso a caso. Vale verificar o que já existe documentado.",
+                  oportunidade: "Ficha de cada recurso de IA para a política da rede",
+                  impacto: "Uma ficha pública por recurso, gerada a partir do catálogo e das configurações do produto, com o que ele faz, para que idade, que controle a escola tem, que testes de segurança passou e que evidência existe.",
+                  professor: "Sabe o que cada recurso faz antes de usá-lo com a turma.",
+                  aluno: "Efeito indireto: usa recursos que a rede avaliou.",
+                  gestor: "Aprova a ferramenta com base num documento, e não numa demonstração.",
+                  roadmapItem: "Começar pelo catálogo de recursos voltados ao aluno, que também serve à oportunidade anterior.",
                   prioridade: "Alta",
                   cor: "border-azul-600",
                   corBadge: "bg-azul-600 text-white",
-                  area: "Evidência / Produto"
-                },
-                {
-                  rastreio: "Sinal 4",
-                  sinal: "A Common Sense Media classificou o ChatGPT for Teens como risco inaceitável, no mesmo dia em que a OpenAI anunciou novas ferramentas de estudo para adolescentes",
-                  problema: "Se o produto tem recursos que conversam com o aluno e não há uma bateria de testes de segurança documentada, a primeira avaliação pode vir de fora, como veio para a OpenAI. Vale confirmar com Produto e Jurídico o que já é testado antes de cada versão.",
-                  oportunidade: "Bateria de segurança documentada para recursos voltados ao aluno",
-                  impacto: "Testes em português por faixa etária, com conteúdo impróprio, sinais de crise, tentativa de contornar o modo de estudo e alertas ao professor ou responsável, rodados a cada versão e resumidos num documento que a escola pode mostrar à família.",
-                  professor: "Recebe alerta quando a conversa do aluno exigir atenção.",
-                  aluno: "Usa um recurso testado para a sua idade.",
-                  gestor: "Tem um documento para apresentar à família e ao conselho.",
-                  roadmapItem: "Montar a bateria com a área pedagógica e jurídica e ligá-la ao processo de lançamento.",
-                  prioridade: "Média",
-                  cor: "border-rosa-600",
-                  corBadge: "bg-rosa-600 text-white",
                   area: "Produto / Jurídico"
                 },
                 {
-                  rastreio: "Sinal 4",
-                  sinal: "O Google abriu o hub de estudo do Gemini, com flashcards e quizzes, a alunos de todas as idades, e a OpenAI anunciou flashcards e quizzes no ChatGPT para adolescentes",
-                  problema: "Se os recursos de estudo do produto se limitam a gerar flashcards e quizzes, eles concorrem com ferramentas gratuitas e já disponíveis ao aluno. Vale comparar o que o nosso recurso faz que a ferramenta gratuita não faz.",
-                  oportunidade: "Recursos de estudo ligados ao material adotado e ao professor",
-                  impacto: "Flashcards e quizzes gerados a partir do capítulo que a turma está estudando, com os erros do aluno chegando ao professor e alimentando a próxima aula. O valor deixa de ser gerar o recurso e passa a ser ligá-lo ao que a escola ensina.",
-                  professor: "Vê o que a turma errou na revisão e ajusta a aula.",
-                  aluno: "Revisa exatamente o que vai ser cobrado.",
-                  gestor: "Justifica pagar por algo que a ferramenta gratuita não entrega.",
-                  roadmapItem: "Usar o acervo estruturado como fonte dos recursos de estudo e devolver os erros ao painel do professor.",
+                  rastreio: "Sinal 2 · ausência recorrente",
+                  sinal: "No ensaio da Eedi, o tutor de IA igualou o humano nas medidas da plataforma e não superou a prática comum na prova padronizada, e não localizamos estudo de impacto de sistema de ensino brasileiro",
+                  problema: "Se o produto mede o efeito da IA só com dados dele mesmo, o número que apresenta pode não aparecer em nenhuma avaliação da rede. Vale confirmar com o time de dados o que já é medido fora da plataforma.",
+                  oportunidade: "Medida de efeito em avaliação externa ao produto",
+                  impacto: "Comparar turmas com e sem o recurso numa avaliação que o produto não controla, como a prova da rede, junto com uma rede parceira. Evolui a linha de base das edições anteriores com a régua que a pesquisa passou a usar.",
+                  professor: "Vê se o recurso muda o resultado na avaliação que importa para a turma.",
+                  aluno: "Só recebe em escala o que mostrou efeito fora do produto.",
+                  gestor: "Tem um número que não depende da palavra do fornecedor.",
+                  roadmapItem: "Fechar com a rede parceira o acesso à avaliação externa e o sorteio por turma do próximo recurso para o aluno.",
+                  prioridade: "Alta",
+                  cor: "border-azul-600",
+                  corBadge: "bg-azul-600 text-white",
+                  area: "Evidência / Dados"
+                },
+                {
+                  rastreio: "Sinal 2",
+                  sinal: "No ensaio da Eedi, um professor revisou cada mensagem do tutor de IA, e a maior parte passou sem edição",
+                  problema: "Se o produto só oferece a IA falando sozinha com o aluno, a rede mais restritiva não tem por onde começar. Vale avaliar onde um degrau intermediário caberia.",
+                  oportunidade: "Resposta da IA aprovada pelo professor, como degrau de entrada",
+                  impacto: "A IA redige a resposta ao aluno e o professor aprova antes do envio, com a taxa de aprovação medida para decidir quando a revisão pode ser por amostragem.",
+                  professor: "Fica no meio da conversa, sem precisar escrever cada resposta.",
+                  aluno: "Recebe ajuda individual com um professor por trás.",
+                  gestor: "Tem uma opção entre desligado e ligado para a rede mais cautelosa.",
+                  roadmapItem: "Prototipar a fila de revisão numa turma e medir quanto tempo do professor ela consome.",
                   prioridade: "Média",
                   cor: "border-rosa-600",
                   corBadge: "bg-rosa-600 text-white",
-                  area: "Produto / Conteúdo"
+                  area: "Produto / Pedagógico"
                 },
                 {
-                  rastreio: "Sinal 3 · edição #12",
-                  sinal: "No ensaio de Maryland, só cerca de 15% dos alunos que receberam o assistente o usaram, e mesmo assim a turma usou menos o material do curso",
-                  problema: "Se medimos só quantos alunos usam a IA, não vemos o efeito que mais pesou no ensaio: o que acontece com o uso do resto do produto. Vale confirmar com o time de dados o que já é medido.",
-                  oportunidade: "Painel de uso que inclua o efeito no resto do estudo",
-                  impacto: "Além de classificar o uso da IA, acompanhar se o uso do material, dos exercícios e das videoaulas cai nas turmas com recurso de IA. A oportunidade da edição passada ganha uma métrica nova.",
-                  professor: "Percebe se a turma está trocando o material pela IA.",
-                  aluno: "Recebe orientação quando deixa de estudar pelo material.",
-                  gestor: "Vê o efeito da IA no uso de todo o produto, e não só no recurso novo.",
-                  roadmapItem: "Cruzar os eventos de uso da IA com os do material por turma e período.",
+                  rastreio: "Edição #13 · ausência",
+                  sinal: "Até 4 de novembro, não localizamos a homologação anunciada para outubro, e o texto que deve liberar a IA como primeiro filtro na correção segue sem publicação",
+                  problema: "A correção em dois turnos segue sendo o desenho que a regra deve exigir, mas os detalhes de registro dependem do texto. Na edição passada, esta oportunidade era Alta; desceu porque a data ficou incerta, e não porque a direção mudou.",
+                  oportunidade: "Correção de redação em dois turnos, com assinatura do professor",
+                  impacto: "Manter o desenho da edição #13, com a sugestão da IA e a nota do professor separadas e registradas, pronto para ajustar quando o texto sair.",
+                  professor: "Continua dono da nota, com uma primeira leitura feita pela IA.",
+                  aluno: "Recebe devolutiva antes da avaliação.",
+                  gestor: "Sabe que o produto já atende a versão mais exigente da regra.",
+                  roadmapItem: "Separar sugestão e nota no modelo de dados agora; deixar o formato do registro para depois da homologação.",
+                  prioridade: "Média",
+                  cor: "border-rosa-600",
+                  corBadge: "bg-rosa-600 text-white",
+                  area: "Produto / Avaliação"
+                },
+                {
+                  rastreio: "Sinal 1 · benchmark",
+                  sinal: "O Google levou ao Classroom, de graça, o modo guiado que conduz o aluno por perguntas, com efeito medido em Serra Leoa",
+                  problema: "Se o recurso de tutoria do produto é um modo guiado genérico, ele concorre com uma oferta gratuita. Vale comparar o que o nosso faz que o gratuito não faz.",
+                  oportunidade: "Modo guiado ligado ao material adotado e ao professor",
+                  impacto: "O modo guiado parte do capítulo que a turma está estudando e devolve ao professor os erros do aluno. O valor deixa de ser o modo em si e passa a ser a ligação com o que a escola ensina.",
+                  professor: "Vê os erros da turma no conteúdo que está dando.",
+                  aluno: "Treina exatamente o que vai ser cobrado.",
+                  gestor: "Justifica pagar por algo que a ferramenta gratuita não entrega.",
+                  roadmapItem: "Usar o acervo estruturado como fonte do modo guiado e medir quanto ele pergunta e quanto responde.",
                   prioridade: "Baixa",
                   cor: "border-gray-200",
                   corBadge: "bg-gray-200 text-gray-700",
-                  area: "Dados"
+                  area: "Produto / Conteúdo"
                 },
 ].map((item, idx) => (
                 <motion.div
@@ -4787,7 +5041,7 @@ export default function App() {
               <img src={hubLogoClaro} alt="Hub de IA, Produto e Experiência" className="h-11 md:h-12 w-auto" />
               <div className="space-y-1 mt-2">
                 <p className="text-white/70 text-sm">Curadoria e análise: <span className="text-white font-medium">Silvana Helena</span></p>
-                <p className="text-white/60 text-xs tabular-nums">Outubro de 2026 · Edição #13 · 1–15 out</p>
+                <p className="text-white/60 text-xs tabular-nums">Novembro de 2026 · Edição #14 · 16 out – 4 nov</p>
               </div>
             </div>
           </motion.div>
