@@ -26,8 +26,10 @@ MANTER:
 - aparência premium e executiva
 
 O ícone do Radar (radar-icone.png) é o elemento editorial secundário das
-edições arquivadas. A Lia (lia-experts.webp) aparece só no box de consenso dos
-especialistas, sem ícone de cérebro ao lado. Não criar novos mascotes.
+edições arquivadas. O Castito, mascote do Hub (castito-experts.webp), aparece só no box de
+consenso dos especialistas, sem ícone de cérebro ao lado e sem espelhar
+(a imagem tem o logo do Hub). Substituiu a Lia a partir da #14. Não criar
+novos mascotes.
 
 PALETA E FONTE (tokens em src/styles/theme.css):
 - fonte Plus Jakarta Sans (self-hosted via @fontsource-variable)

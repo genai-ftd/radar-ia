@@ -34,7 +34,7 @@ import radarIcone from '../imports/radar-icone.png';
 import radarIconeClaro from '../imports/radar-icone-claro.png';
 import hubLogo from '../imports/hub-logo.png';
 import hubLogoClaro from '../imports/hub-logo-claro.png';
-import liaExperts from '../imports/lia-experts.webp';
+import castitoExperts from '../imports/castito-experts.webp';
 
 type ModoLeitura = 'executiva' | 'completa';
 
@@ -3417,7 +3417,7 @@ export default function App() {
                 variants={{ oculto: { opacity: 0, y: 16 }, visivel: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }}
                 className="text-base md:text-[17px] text-white/80 leading-[1.7]"
               >
-                Em 3 de novembro, o Google anunciou que o Gemini e a Busca vão ficar desligados para alunos até a escola ligar, depois de uma investigação do Wall Street Journal e de um inquérito no Senado americano. Em Maryland, uma lei obrigou cada rede a ter política de IA, e parte delas perdeu o prazo. E um ensaio com tutor de IA revisado por professores empatou com tutores humanos na aula, mas não mudou a nota numa prova padronizada. <strong className="font-semibold text-white">Ligar a IA virou decisão da escola, e a escola vai pedir controle e resultado antes de ligar</strong>.
+                Em 3 de novembro, o Google anunciou que o Gemini e a Busca vão ficar desligados para alunos até a escola ligar, depois de uma investigação do Wall Street Journal e de um inquérito no Senado americano. Em Maryland, uma lei obrigou cada rede a ter política de IA, e parte delas perdeu o prazo. E um ensaio com tutor de IA revisado por professores empatou com tutores humanos na aula, mas não mudou a nota numa prova padronizada. <strong className="font-semibold text-white">Ligar a IA vai ser decisão da escola, e a escola vai pedir controle e resultado antes de ligar</strong>.
               </motion.p>
             </motion.div>
           </div>
@@ -3443,13 +3443,13 @@ export default function App() {
                       <p className="text-xs font-bold text-red-700 uppercase tracking-wide">O que ela derruba</p>
                     </div>
                     <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
-                      A ideia de que a IA entra na escola pela atualização do fornecedor, ligada por padrão: o próprio Google voltou atrás sob pressão. E a ideia de que ganho na aula é ganho na prova: no mesmo ensaio, nem o tutor de IA nem o humano superaram a prática comum no teste padronizado.
+                      A ideia de que a IA entra na escola pela atualização do fornecedor, ligada por padrão: o próprio Google voltou atrás sob pressão. E a ideia de que ganho na aula é ganho na prova: no mesmo ensaio, nem o tutor de IA nem o humano superaram o conteúdo padrão na prova padronizada.
                     </p>
                   </div>
                 </div>
                 <div className="mt-7 pt-6 border-t border-gray-100">
                   <p className="text-sm md:text-xs text-gray-800 leading-relaxed">
-                    <span className="font-bold text-azul-600">A conclusão:</span> quem liga a IA passou a ser a escola. O fornecedor que entregar <em>recursos separados, o interruptor por série e turma e uma medida honesta de resultado</em> vai passar pela porta que agora fica fechada por padrão.
+                    <span className="font-bold text-azul-600">A conclusão:</span> quem liga a IA vai ser a escola. O fornecedor que entregar <em>recursos separados, o interruptor por série e turma e uma medida honesta de resultado</em> vai passar pela porta que vai ficar fechada por padrão.
                   </p>
                 </div>
           </div>
@@ -3548,14 +3548,14 @@ export default function App() {
                   tag: "Mudança de padrão",
                   tagCor: "bg-azul-100 text-azul-700",
                   conclusao: "O Google vai entregar a IA desligada para alunos nas escolas",
-                  raciocinio: "Em 3 de novembro, o Google anunciou que o Gemini, o Gemini Notebook, o Gemini no Classroom e a Busca vão ficar desligados nas contas de alunos da educação básica até o administrador da escola ligar. A mudança veio depois de uma investigação do Wall Street Journal e de um inquérito no Senado americano. Segundo reportagens, a mudança começa no início de 2027.",
+                  raciocinio: "Em 3 de novembro, o Google anunciou que o Gemini, o Gemini Notebook, o Gemini no Classroom e a Busca vão ficar desligados nas contas de alunos da educação básica até o administrador da escola ligar. A mudança veio depois de uma investigação do Wall Street Journal e de um inquérito no Senado americano. Segundo reportagens, o novo padrão começa no início de 2027.",
                   decisao: "Tratar a ativação pela escola como o caminho normal: o recurso voltado ao aluno chega desligado, e a rede liga o que quiser."
                 },
                 {
                   tag: "Tese revista",
                   tagCor: "bg-ambar-100 text-ambar-700",
                   conclusao: "O tutor de IA revisado por professores empatou com o humano na aula, mas não mudou a prova",
-                  raciocinio: "Num ensaio com 1.179 alunos em 10 escolas públicas do Reino Unido, o tutor de IA da Eedi, com um professor revisando cada mensagem, ajudou tanto quanto tutores humanos nas medidas da plataforma. Na prova padronizada aplicada por terceiros, nenhum dos dois teve vantagem clara sobre a prática comum.",
+                  raciocinio: "Num ensaio com 1.179 alunos em 10 escolas públicas do Reino Unido, o tutor de IA da Eedi, com um professor revisando cada mensagem, ajudou tanto quanto tutores humanos nas medidas da plataforma. Na prova padronizada aplicada por terceiros, nenhum dos dois teve vantagem clara sobre o conteúdo padrão.",
                   decisao: "Prometer ajuda no momento do erro, e não salto de nota, até ter medida própria em avaliação externa."
                 },
                 {
@@ -3629,8 +3629,8 @@ export default function App() {
                   empresa: "Google · OpenAI",
                   data: "30 out – 3 nov/2026",
                   consolida: "Gemini, Gemini Notebook e Busca desligados por padrão para alunos · Guided Learning no Classroom e piloto na Busca · travas novas no ChatGPT para adolescentes",
-                  resumo: "Em 3 de novembro, o Google anunciou que o Gemini, o Gemini Notebook, o Gemini no Classroom e a Busca vão ficar desligados nas contas de alunos da educação básica até o administrador da escola ligar. Segundo a imprensa, é o inverso do padrão que a empresa adotou em agosto para o Gemini no Classroom, e a mudança veio depois de uma investigação do Wall Street Journal e de um inquérito bipartidário no Senado americano. Depois das críticas, o Google esclareceu que a escola pode ligar cada serviço separadamente, inclusive a Busca sem o Gemini. Mas a Busca não se separa das respostas de IA: a escola que recusar toda a IA também tira a Busca dos alunos, o que gerou críticas de políticos como o senador Bernie Sanders e o prefeito de Nova York, Zohran Mamdani. O Google também levou ao Classroom o Guided Learning, modo que conduz o aluno por etapas em vez de dar a resposta, e começou um piloto dele na Busca em escolas americanas. Segundo reportagens, o novo padrão começa no início de 2027; não localizamos informação sobre outros países. Em 30 de outubro, a OpenAI anunciou travas novas no ChatGPT para adolescentes, a chegar nas semanas seguintes: limite a informações sobre armas, estimativa de idade reforçada e aviso aos pais quando a conta de um adolescente for pausada por conversas repetidas sobre violência.",
-                  impacto: "Na edição #13, a falta de controle da escola foi um dos motivos relatados para Frederick County desligar tudo. Três semanas depois, o Google, presente em boa parte das escolas americanas, anunciou a mudança do padrão para o lado da escola. A IA deixa de entrar pela atualização do fornecedor e passa a entrar pela decisão da rede, que só liga o que consegue justificar. O caso da Busca mostra o risco do outro lado: o recurso que não se separa da IA obriga a escola a escolher entre tudo e nada.",
+                  resumo: "Em 3 de novembro, o Google anunciou que o Gemini, o Gemini Notebook, o Gemini no Classroom e a Busca vão ficar desligados nas contas de alunos da educação básica até o administrador da escola ligar. Segundo a imprensa, é o inverso do padrão que a empresa adotou em agosto para o Gemini no Classroom, e a mudança veio depois de uma investigação do Wall Street Journal e de um inquérito bipartidário no Senado americano. A Busca não se separa das respostas de IA: a escola que recusar toda a IA também tira a Busca dos alunos, o que gerou críticas de políticos como o senador Bernie Sanders e o prefeito de Nova York, Zohran Mamdani. Depois disso, o Google esclareceu que a escola pode ligar cada serviço separadamente, inclusive a Busca sem o Gemini. O Google também levou ao Classroom o Guided Learning, modo que conduz o aluno por etapas em vez de dar a resposta, e começou um piloto dele na Busca em escolas americanas. Segundo reportagens, o novo padrão começa no início de 2027; não localizamos informação sobre outros países. Em 30 de outubro, a OpenAI anunciou travas novas no ChatGPT para adolescentes, a chegar nas semanas seguintes: limite a informações sobre armas, estimativa de idade reforçada e aviso aos pais quando a conta de um adolescente for pausada por conversas repetidas sobre violência.",
+                  impacto: "Na edição #13, a falta de controle da escola foi um dos motivos relatados para Frederick County desligar tudo. Três semanas depois, o Google, presente em boa parte das escolas americanas, anunciou a mudança do padrão para o lado da escola. A IA vai deixar de entrar pela atualização do fornecedor e passar a entrar pela decisão da rede, que só liga o que consegue justificar. O caso da Busca mostra o risco do outro lado: o recurso que não se separa da IA obriga a escola a escolher entre tudo e nada.",
                   professor: "Passa a depender de a escola ligar a IA e, quando ela ligar, ganha um modo guiado para atribuir à turma.",
                   aluno: "Pode ficar sem o Gemini, e até sem a Busca, na conta da escola, se a rede recusar toda a IA.",
                   gestor: "Vira o responsável explícito por ligar cada recurso de IA e vai precisar de critério para isso.",
@@ -3642,8 +3642,8 @@ export default function App() {
                   titulo: "Um tutor de IA revisado por professores empatou com o humano na aula, mas não mudou a prova",
                   empresa: "Eedi · Google DeepMind",
                   data: "29 out/2026",
-                  consolida: "Ensaio com 1.179 alunos em 10 escolas públicas do Reino Unido · tutor de IA, tutor humano e prática comum · prova padronizada Star Maths",
-                  resumo: "Em 29 de outubro, a Eedi, plataforma britânica de matemática, publicou os resultados do segundo ensaio randomizado do seu tutor de IA, feito com o Google DeepMind em 10 escolas públicas do Reino Unido, com 1.179 alunos, ao longo de um período letivo. Quando o aluno errava uma questão, recebia o conteúdo padrão da plataforma, um tutor humano ou uma de duas versões do tutor de IA, com um professor experiente revisando cada mensagem antes de ela chegar ao aluno. Nas medidas da própria plataforma, o tutor de IA ajudou tanto quanto o humano, e os dois superaram o conteúdo padrão. Na prova padronizada Star Maths, aplicada por terceiros, nenhum dos dois teve vantagem clara sobre a prática comum. Com o tutor de IA, os alunos resolveram cerca de 14 problemas por sessão, contra cerca de 19 com as dicas estáticas. Os autores tratam os resultados como provisórios.",
+                  consolida: "Ensaio com 1.179 alunos em 10 escolas públicas do Reino Unido · tutor de IA, tutor humano e conteúdo padrão · prova padronizada Star Maths",
+                  resumo: "Em 29 de outubro, a Eedi, plataforma britânica de matemática, publicou os resultados do segundo ensaio randomizado do seu tutor de IA, feito com o Google DeepMind em 10 escolas públicas do Reino Unido, com 1.179 alunos, ao longo de um período letivo. Quando o aluno errava uma questão, recebia o conteúdo padrão da plataforma, um tutor humano ou uma de duas versões do tutor de IA, com um professor experiente revisando cada mensagem antes de ela chegar ao aluno. Nas medidas da própria plataforma, o tutor de IA ajudou tanto quanto o humano, e os dois superaram o conteúdo padrão. Na prova padronizada Star Maths, aplicada por terceiros, nenhum dos dois teve vantagem clara sobre o conteúdo padrão. Com o tutor de IA, os alunos resolveram cerca de 14 problemas por sessão, contra cerca de 19 com o conteúdo padrão. Os autores tratam os resultados como provisórios.",
                   impacto: "É um ensaio próximo do desenho que as edições anteriores recomendaram, com a IA no momento do erro e um professor no fluxo, e ainda assim a vantagem não apareceu na prova externa. Somado ao ensaio de Maryland da edição #13, o quadro fica assim: bem desenhada, a IA ajuda no momento da aula; só oferecida, pode atrapalhar; e ainda não mostrou ganho em prova externa ao produto.",
                   professor: "Pode contar com a IA para responder ao erro na hora, sem esperar salto na avaliação externa.",
                   aluno: "Recebe ajuda no momento do erro, mas pode resolver menos exercícios no mesmo tempo.",
@@ -3835,7 +3835,7 @@ export default function App() {
                 {
                   tema: "Restrição ao uso de IA pelo aluno",
                   tipo: "Estrutural",
-                  trilha: "#11 vedação até o 5º ano no Brasil e moratória até o 8º ano em Nova York → #12 Los Angeles bloqueia a IA generativa para todos os alunos → #13 Frederick County proíbe do pré ao 12º ano; Austrália e Portugal propõem afastar a IA das crianças pequenas → #14 o Google passa a entregar a IA desligada para alunos até a escola ligar",
+                  trilha: "#11 vedação até o 5º ano no Brasil e moratória até o 8º ano em Nova York → #12 Los Angeles bloqueia a IA generativa para todos os alunos → #13 Frederick County proíbe do pré ao 12º ano; Austrália e Portugal propõem afastar a IA das crianças pequenas → #14 o Google anuncia a IA desligada para alunos até a escola ligar",
                   leitura: "Quinta edição seguida, e o tema mudou de natureza: depois das redes e dos governos, o próprio fornecedor anunciou que vai entregar a IA desligada para o aluno. A restrição deixou de ser exceção imposta pela rede e virou padrão do produto, com a escola decidindo o que ligar.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
@@ -3843,7 +3843,7 @@ export default function App() {
                 {
                   tema: "Evidência de aprendizagem como campo de disputa",
                   tipo: "Estrutural",
-                  trilha: "#11 avaliação de impacto exigida por norma → #12 ensaios randomizados de tutor de IA em escala, com ganho modesto → #13 ensaio mede nota menor em turmas que só receberam acesso ao tutor → #14 tutor de IA revisado por professores empata com o humano na aula, sem ganho na prova externa",
+                  trilha: "#11 avaliação de impacto exigida por norma → #12 ensaios randomizados de tutor de IA em escala, com ganho modesto → #13 ensaio mede nota menor em turmas que só receberam acesso ao tutor → #14 tutor de IA revisado por professores empata com o humano na aula, sem vantagem clara na prova externa",
                   leitura: "Em três edições, a evidência mostrou ganho pequeno com bom desenho, perda quando a IA é só oferecida e, agora, nenhuma vantagem clara em prova externa mesmo com professor no fluxo. A pergunta deixou de ser se a IA ajuda e passou a ser onde o ganho aparece e como medi-lo fora do produto.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
@@ -3860,7 +3860,7 @@ export default function App() {
                   tema: "Big tech direto ao aluno",
                   tipo: "Emergente",
                   trilha: "#07 simulado do ENEM no Gemini → #12 big techs se voltam à formação do professor → #13 Gemini aberto a alunos de todas as idades e ferramentas de estudo no ChatGPT para adolescentes → #14 o Google recua e anuncia a IA desligada para alunos",
-                  leitura: "A ida direta ao aluno encontrou o limite em três semanas: pressão pública e política fez o Google mudar o padrão. A big tech continua oferecendo de graça, mas a decisão de ligar passou para a escola.",
+                  leitura: "A ida direta ao aluno encontrou o limite em três semanas: a pressão pública e política fez o Google anunciar a mudança do padrão. A big tech continua oferecendo de graça, mas a decisão de ligar passou para a escola.",
                   cor: "bg-ambar-50 border-ambar-200",
                   badge: "bg-ambar-100 text-ambar-700"
                 },
@@ -3913,7 +3913,7 @@ export default function App() {
               Quem está do lado <span className="text-azul-600">certo da evidência</span>
             </h2>
             <p className="text-gray-600 mb-8 text-base max-w-3xl text-pretty">
-              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Não localizamos, entre os players acompanhados, lançamento de IA na janela. A análise parte do que cada um já tem diante da virada da edição: a IA passa a entrar na escola quando a rede liga, e a rede vai pedir controle e prova.
+              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Não localizamos, entre os players acompanhados, lançamento de IA na janela. A análise parte do que cada um já tem diante da virada da edição: a IA vai entrar na escola quando a rede ligar, e a rede vai pedir controle e prova.
             </p>
 
             <ConcorrenciaDireta
@@ -4151,7 +4151,7 @@ export default function App() {
                   escala: "Segundo a cobertura do The 74, os professores aprovaram sem mudança a maior parte das mensagens redigidas pela IA, mais do que no estudo de 2025. As fontes divergem sobre a taxa exata.",
                   financiamento: "Empresa privada em parceria com o Google DeepMind; ensaio pré-registrado.",
                   aprendizado: "Com o professor revisando, a IA chegou ao nível do tutor humano na aula, e a maior parte das mensagens passou sem edição.",
-                  limitacoes: "Resultados provisórios, segundo os próprios autores, e sem ganho na prova padronizada. A revisão de cada mensagem custa tempo de professor.",
+                  limitacoes: "Resultados provisórios, segundo os próprios autores, e sem vantagem clara na prova padronizada. A revisão de cada mensagem custa tempo de professor.",
                   replicavel: "A IA redigindo e o professor aprovando, com a taxa de aprovação medida para saber quando a revisão pode ficar por amostragem.",
                   naoReplicavel: "O time de professores revisores dedicados durante o ensaio. Na escola, o revisor é o próprio professor da turma.",
                   application: "É um desenho para redes que ainda não querem a IA falando sozinha com o aluno: o professor aprova a resposta, e o produto mede quanto ele precisa intervir."
@@ -4283,7 +4283,7 @@ export default function App() {
                 {
                   nome: "Ativação pela escola, recurso por recurso",
                   tipo: "Governança",
-                  oque: "Cada recurso de IA voltado ao aluno vem desligado ou no modo mais restrito, e a escola liga o que quiser, por série e turma, com o estado visível para o professor. É o padrão que o Google acaba de adotar.",
+                  oque: "Cada recurso de IA voltado ao aluno vem desligado ou no modo mais restrito, e a escola liga o que quiser, por série e turma, com o estado visível para o professor. É o padrão que o Google acaba de anunciar.",
                   acelera: "Tira da rede o risco de liberar um pacote inteiro e permite começar pelo recurso mais seguro.",
                   limitacoes: "Desligado por padrão reduz o uso no começo. O produto precisa mostrar à escola, na ativação, o que cada recurso faz.",
                   dependencias: "Recursos separados no código, cadastro confiável de série e turma e permissões por rede, escola e turma.",
@@ -4448,7 +4448,7 @@ export default function App() {
                     Fornecedor, pesquisadores e críticos chegaram ao mesmo ponto por caminhos diferentes: <span className="text-amarelo-400">quem decide se a IA entra é a escola, e ela precisa de recursos separados e de resultado medido fora do produto para decidir</span>.
                   </p>
                 </div>
-                <img src={liaExperts} alt="" width={394} height={400} className="w-28 sm:w-36 md:w-44 h-auto shrink-0 self-center sm:self-auto sm:-scale-x-100 drop-shadow-[0_12px_24px_rgba(1,34,112,0.45)]" />
+                <img src={castitoExperts} alt="" width={440} height={414} className="w-32 sm:w-40 md:w-52 h-auto shrink-0 self-center sm:self-auto drop-shadow-[0_12px_24px_rgba(1,34,112,0.45)]" />
               </div>
 
               <div className="grid md:grid-cols-3 gap-5">
@@ -4459,7 +4459,7 @@ export default function App() {
                   },
                   {
                     ponto: "Ganho na aula não é ganho na prova",
-                    detalhe: "No ensaio da Eedi, o tutor de IA igualou o humano nas medidas da plataforma e nenhum dos dois superou a prática comum no teste padronizado."
+                    detalhe: "No ensaio da Eedi, o tutor de IA igualou o humano nas medidas da plataforma e nenhum dos dois superou o conteúdo padrão na prova padronizada."
                   },
                   {
                     ponto: "Tudo ou nada não serve",
@@ -4491,7 +4491,7 @@ export default function App() {
                   cargo: "Anúncio de produto",
                   titulo: "A escola decide o que liga",
                   data: "3 nov/2026",
-                  tese: "Em post de Chris Phillips, vice-presidente de Educação, o Google anunciou que os serviços de IA e a Busca ficam desligados para alunos até a escola ligar e, depois das críticas, esclareceu que cada serviço pode ser ligado separadamente. Phillips explicou que a Busca não se separa das respostas de IA porque as duas estão profundamente integradas.",
+                  tese: "Em post de Chris Phillips, vice-presidente de Educação, o Google anunciou que os serviços de IA e a Busca vão ficar desligados para alunos até a escola ligar e, depois das críticas, esclareceu que cada serviço pode ser ligado separadamente. Phillips explicou que a Busca não se separa das respostas de IA porque as duas estão profundamente integradas.",
                   importa: "É um dos fornecedores mais presentes nas escolas americanas assumindo que a decisão de ligar a IA é da escola. Isso tende a virar expectativa para os demais fornecedores.",
                   relacao: "Sustenta o Sinal 1 e o acelerador de ativação pela escola.",
                   link: "https://www.cnbc.com/2026/11/03/google-responds-to-outrage-over-removing-search-in-schools-that-ban-ai.html"
@@ -4501,7 +4501,7 @@ export default function App() {
                   cargo: "Políticos e educadores americanos",
                   titulo: "Tirar a Busca de quem recusa a IA é forçar a IA",
                   data: "3 nov/2026",
-                  tese: "O prefeito de Nova York, Zohran Mamdani, o senador Bernie Sanders e outros críticos acusaram o Google de usar o peso que tem nas escolas para forçar a IA, porque a escola que recusar a IA perde também a Busca.",
+                  tese: "O prefeito de Nova York, Zohran Mamdani, o senador Bernie Sanders e outros críticos acusaram o Google de usar o peso que tem nas escolas para forçar a IA, porque a escola que recusar toda a IA perde também a Busca.",
                   importa: "Mostra que o controle só convence quando é real: a escola precisa poder recusar um recurso sem perder os outros.",
                   relacao: "Explica a parte do Sinal 1 sobre a Busca e o item \"Tudo ou nada\" do consenso.",
                   link: "https://www.forbes.com/sites/maryroeloffs/2026/11/03/google-will-cut-off-search-engine-access-to-schools-banning-generative-ai/"
@@ -4596,7 +4596,7 @@ export default function App() {
                 <div className="space-y-4">
                   {[
                     { item: "Tutor que não entrega a resposta", motivo: "O Google levou o modo guiado ao Classroom, de graça. Sozinho, deixou de ser diferencial de desenho", novo: true },
-                    { item: "IA ligada por padrão para o aluno", motivo: "Deixou de ser atalho de distribuição: as redes e o próprio Google passaram a exigir a ativação pela escola", novo: true },
+                    { item: "IA ligada por padrão para o aluno", motivo: "Deixou de ser atalho de distribuição: as redes passaram a restringir, e o próprio Google anunciou a ativação pela escola", novo: true },
                     { item: "Ferramentas de estudo para o aluno", motivo: "Flashcards, quizzes e resumos chegam de graça pelas big techs desde a edição #13" },
                     { item: "Correção automática de redação", motivo: "Já roda em redes estaduais e em concorrentes desde a edição #13" },
                     { item: "O modelo de IA em si", motivo: "Desde a edição #12, escolher modelo virou decisão de custo" },
@@ -4674,7 +4674,7 @@ export default function App() {
                 <p className="text-[11px] text-ambar-700 mb-5 font-medium">Muito discurso, evidência ausente ou contrária</p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "Tutor de IA melhora a nota", desc: "No ensaio da Eedi, nem com professor revisando o tutor superou a prática comum na prova padronizada, e na edição #13 o tutor só oferecido baixou a nota. O ganho medido fica dentro do produto." },
+                    { titulo: "Tutor de IA melhora a nota", desc: "No ensaio da Eedi, nem com professor revisando o tutor superou o conteúdo padrão na prova padronizada, e na edição #13 o tutor só oferecido baixou a nota. O ganho medido fica dentro do produto." },
                     { titulo: "A IA vai entrar na escola de qualquer jeito", desc: "O Google voltou atrás no padrão de agosto e vai depender da decisão da escola. A entrada não é automática." },
                     { titulo: "Versão para adolescentes resolve a segurança", desc: "Semanas depois de a Common Sense Media classificar o ChatGPT for Teens como risco inaceitável, a OpenAI anunciou travas novas, ainda por chegar. Rótulo de idade não substitui teste." },
                   ].map((item, i) => (
@@ -4821,7 +4821,7 @@ export default function App() {
                 },
                 {
                   rastreio: "Sinal 2 · ausência recorrente",
-                  sinal: "No ensaio da Eedi, o tutor de IA igualou o humano nas medidas da plataforma e não superou a prática comum na prova padronizada, e não localizamos estudo de impacto de sistema de ensino brasileiro",
+                  sinal: "No ensaio da Eedi, o tutor de IA igualou o humano nas medidas da plataforma e não superou o conteúdo padrão na prova padronizada, e não localizamos estudo de impacto de sistema de ensino brasileiro",
                   problema: "Se o produto mede o efeito da IA só com dados dele mesmo, o número que apresenta pode não aparecer em nenhuma avaliação da rede. Vale confirmar com o time de dados o que já é medido fora da plataforma.",
                   oportunidade: "Medida de efeito em avaliação externa ao produto",
                   impacto: "Comparar turmas com e sem o recurso numa avaliação que o produto não controla, como a prova da rede, junto com uma rede parceira. Evolui a linha de base das edições anteriores com a régua que a pesquisa passou a usar.",
