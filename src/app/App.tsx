@@ -13,6 +13,8 @@ import {
   Sparkles,
   ChevronDown,
   ChevronUp,
+  ChevronLeft,
+  ChevronRight,
   ExternalLink,
   Calendar,
   FileText,
@@ -59,6 +61,22 @@ const SECOES = [
 type View = 'main' | 'edicao-abril-2026' | 'edicao-maio-2026' | 'edicao-junho-2026' | 'edicao-junho-2026-b' | 'edicao-julho-2026' | 'edicao-agosto-2026' | 'edicao-agosto-2026-b' | 'edicao-setembro-2026' | 'edicao-setembro-2026-b' | 'edicao-outubro-2026';
 
 // Cartões do arquivo, da edição mais recente para a mais antiga.
+// Paginação do arquivo: seis edições por página, da mais recente à mais antiga.
+const POR_PAGINA_ARQUIVO = 6;
+
+// Números a mostrar na paginação. Com até 7 páginas, todos; acima disso, a
+// primeira, a última e as vizinhas da atual, com reticências nos saltos.
+function paginasVisiveis(atual: number, total: number): (number | '…')[] {
+  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+  const meio = [atual - 1, atual, atual + 1].filter(p => p > 1 && p < total);
+  const lista: (number | '…')[] = [1];
+  if (meio[0] > 2) lista.push('…');
+  lista.push(...meio);
+  if (meio[meio.length - 1] < total - 1) lista.push('…');
+  lista.push(total);
+  return lista;
+}
+
 const ARQUIVO: { rotulo: string; titulo: string; resumo: string; view: View }[] = [
   {
     rotulo: "Outubro de 2026 · Edição #13",
@@ -3106,6 +3124,25 @@ export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [currentView, setCurrentView] = useState<View>('main');
   const [modoLeitura, setModoLeitura] = useState<ModoLeitura>('completa');
+  const [paginaArquivo, setPaginaArquivo] = useState(1);
+  const gradeArquivoRef = useRef<HTMLDivElement>(null);
+  const totalPaginasArquivo = Math.ceil(ARQUIVO.length / POR_PAGINA_ARQUIVO);
+  const inicioArquivo = (paginaArquivo - 1) * POR_PAGINA_ARQUIVO;
+  const edicoesDaPagina = ARQUIVO.slice(inicioArquivo, inicioArquivo + POR_PAGINA_ARQUIVO);
+
+  // Troca a página do arquivo e leva o leitor ao início da grade: rola só se
+  // o topo da grade estiver fora da tela e move o foco para ela, para quem
+  // navega por teclado ou leitor de tela continuar da primeira edição.
+  const irParaPaginaArquivo = (pagina: number) => {
+    setPaginaArquivo(pagina);
+    const grade = gradeArquivoRef.current;
+    if (!grade) return;
+    if (grade.getBoundingClientRect().top < 96) {
+      const reduzir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      grade.scrollIntoView({ behavior: reduzir ? 'auto' : 'smooth', block: 'start' });
+    }
+    grade.focus({ preventScroll: true });
+  };
   const modoExecutivo = modoLeitura === 'executiva';
   const secoesVisiveis = SECOES.filter(s => !modoExecutivo || s.executiva);
 
@@ -4982,8 +5019,13 @@ export default function App() {
               Todas as edições do Radar, da mais recente à mais antiga.
             </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
-              {ARQUIVO.map(ed => (
+            <div
+              ref={gradeArquivoRef}
+              tabIndex={-1}
+              aria-label={`Edições ${inicioArquivo + 1} a ${inicioArquivo + edicoesDaPagina.length} de ${ARQUIVO.length}`}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start scroll-mt-28 outline-none"
+            >
+              {edicoesDaPagina.map(ed => (
                 <motion.div
                   key={ed.view}
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -5011,6 +5053,54 @@ export default function App() {
                 </motion.div>
               ))}
             </div>
+
+            {totalPaginasArquivo > 1 && (
+              <nav aria-label="Páginas do arquivo" className="mt-10 pt-6 border-t border-gray-200 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+                <p aria-live="polite" className="text-sm md:text-xs text-gray-600 tabular-nums">
+                  Edições {inicioArquivo + 1}–{inicioArquivo + edicoesDaPagina.length} de {ARQUIVO.length}
+                </p>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => irParaPaginaArquivo(paginaArquivo - 1)}
+                    disabled={paginaArquivo === 1}
+                    className="inline-flex items-center gap-1 h-11 pl-2.5 pr-3.5 rounded-lg text-sm font-medium text-navy-900 border border-gray-200 bg-white transition-[border-color,color] duration-150 hover:border-azul-600 hover:text-azul-600 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-gray-200 disabled:hover:text-navy-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azul-600"
+                  >
+                    <ChevronLeft aria-hidden="true" className="w-4 h-4" />
+                    Anterior
+                  </button>
+                  {paginasVisiveis(paginaArquivo, totalPaginasArquivo).map((p, i) =>
+                    p === '…' ? (
+                      <span key={`salto-${i}`} aria-hidden="true" className="w-6 text-center text-sm text-gray-500">…</span>
+                    ) : (
+                      <button
+                        key={p}
+                        type="button"
+                        onClick={() => irParaPaginaArquivo(p)}
+                        aria-current={p === paginaArquivo ? 'page' : undefined}
+                        aria-label={`Página ${p}`}
+                        className={`min-w-11 h-11 px-2 rounded-lg text-sm font-semibold tabular-nums transition-[background-color,border-color,color] duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azul-600 ${
+                          p === paginaArquivo
+                            ? 'bg-azul-600 text-white border border-azul-600'
+                            : 'bg-white text-navy-900 border border-gray-200 hover:border-azul-600 hover:text-azul-600'
+                        }`}
+                      >
+                        {p}
+                      </button>
+                    )
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => irParaPaginaArquivo(paginaArquivo + 1)}
+                    disabled={paginaArquivo === totalPaginasArquivo}
+                    className="inline-flex items-center gap-1 h-11 pl-3.5 pr-2.5 rounded-lg text-sm font-medium text-navy-900 border border-gray-200 bg-white transition-[border-color,color] duration-150 hover:border-azul-600 hover:text-azul-600 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-gray-200 disabled:hover:text-navy-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azul-600"
+                  >
+                    Próxima
+                    <ChevronRight aria-hidden="true" className="w-4 h-4" />
+                  </button>
+                </div>
+              </nav>
+            )}
           </motion.div>
         </div>
       </section>
