@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useLayoutEffect, Children, isValidElement, type ReactNode } from 'react';
 import { motion, MotionConfig } from 'motion/react';
 import {
   Brain,
@@ -2980,6 +2980,71 @@ const TIPOS_PLATAFORMA: OpcaoTipo[] = [
   { valor: 'Plataforma pública', rotulo: 'Públicas', curto: 'Pública' },
 ];
 
+// ── Grade bento ──
+// Para seções de vários cards cujo conteúdo varia muito de um para outro.
+// 'denso' (cards longos): duas colunas; o card que sobra sozinho na última
+//   linha ocupa a linha inteira e, por container query (@container), reorganiza
+//   o próprio conteúdo na horizontal.
+// 'leve' (cards curtos): linhas de até três no desktop, distribuídas por igual
+//   (5 = 3 + 2, 4 = 2 + 2, 7 = 3 + 2 + 2); numa linha de dois, o card com
+//   bem mais texto fica mais largo (4/6 contra 2/6).
+// A ordem editorial dos cards nunca muda.
+const SPAN_LG_BENTO: Record<number, string> = { 2: 'lg:col-span-2', 3: 'lg:col-span-3', 4: 'lg:col-span-4', 6: 'lg:col-span-6' };
+
+function linhasBento(n: number) {
+  const linhas = Math.ceil(n / 3);
+  const base = Math.floor(n / linhas);
+  const extra = n % linhas;
+  return Array.from({ length: linhas }, (_, i) => base + (i < extra ? 1 : 0));
+}
+
+function spansBento(tipo: 'denso' | 'leve', n: number, pesos: number[], desde: 'md' | 'lg') {
+  const sozinho = n % 2 === 1;
+  const larguraTotal = desde === 'md' ? 'md:col-span-2' : 'lg:col-span-2';
+  if (tipo === 'denso') return Array.from({ length: n }, (_, i) => (sozinho && i === n - 1 ? larguraTotal : ''));
+  const spans: string[] = [];
+  let k = 0;
+  for (const tamanho of linhasBento(n)) {
+    if (tamanho === 2) {
+      const a = pesos[k] || 1, b = pesos[k + 1] || 1;
+      const [sa, sb] = a / b >= 1.4 ? [4, 2] : b / a >= 1.4 ? [2, 4] : [3, 3];
+      spans.push(SPAN_LG_BENTO[sa], SPAN_LG_BENTO[sb]);
+    } else {
+      for (let j = 0; j < tamanho; j++) spans.push(SPAN_LG_BENTO[6 / tamanho]);
+    }
+    k += tamanho;
+  }
+  // No tablet (duas colunas), o card que sobra ocupa a linha inteira.
+  return spans.map((s, i) => (sozinho && i === n - 1 ? `md:col-span-2 ${s}` : s));
+}
+
+function BentoGrid({ tipo, desde = 'md', className = '', children }: { tipo: 'denso' | 'leve'; desde?: 'md' | 'lg'; className?: string; children: ReactNode }) {
+  const itens = Children.toArray(children);
+  const ref = useRef<HTMLDivElement>(null);
+  const [pesos, setPesos] = useState<number[]>([]);
+
+  // O peso de cada card é o tamanho do texto dele, medido antes da pintura.
+  useLayoutEffect(() => {
+    if (tipo !== 'leve' || !ref.current) return;
+    const filhos = ref.current.children;
+    const novos: number[] = [];
+    for (let i = 0; i < filhos.length; i++) novos.push((filhos[i].textContent ?? '').length);
+    setPesos(p => (p.length === novos.length && p.every((v, i) => v === novos[i]) ? p : novos));
+  });
+
+  const spans = spansBento(tipo, itens.length, pesos, desde);
+  const colunas = tipo === 'leve' ? 'md:grid-cols-2 lg:grid-cols-6' : desde === 'md' ? 'md:grid-cols-2' : 'lg:grid-cols-2';
+  return (
+    <div ref={ref} className={`grid ${colunas} ${className}`}>
+      {itens.map((item, i) => (
+        <div key={isValidElement(item) && item.key != null ? item.key : i} className={`@container flex flex-col *:flex-1 ${spans[i]}`}>
+          {item}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function RadarFuncionalidades({ itens }: { itens: Plataforma[] }) {
   const filtro = useFiltros(itens, f => f.mercado);
 
@@ -2993,7 +3058,7 @@ function RadarFuncionalidades({ itens }: { itens: Plataforma[] }) {
         <BarraFiltros id="radar-filtro-empresas" rotulo="Filtrar plataformas por tipo" unidade="plataformas" opcoes={TIPOS_PLATAFORMA} filtro={filtro} />
       </div>
 
-      <div className="grid md:grid-cols-2 gap-5 mb-8">
+      <BentoGrid tipo="denso" className="gap-5 mb-8">
         {filtro.visiveis.map((f, i) => (
           <motion.div
             key={f.player}
@@ -3001,8 +3066,9 @@ function RadarFuncionalidades({ itens }: { itens: Plataforma[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.05 }}
-            className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col"
+            className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col @3xl:grid @3xl:grid-cols-2 @3xl:gap-x-10 @3xl:content-start"
           >
+            <div>
             <div className="flex items-start justify-between gap-3 mb-1 flex-wrap">
               <h4 className="font-bold text-gray-900 text-lg leading-snug">{f.player}</h4>
               <span
@@ -3028,6 +3094,8 @@ function RadarFuncionalidades({ itens }: { itens: Plataforma[] }) {
 
             <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">O que isso significa</p>
             <p className="text-sm md:text-xs text-gray-700 leading-relaxed mb-5">{f.leitura}</p>
+            </div>
+            <div className="flex flex-col">
 
             <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">Histórico no Radar</p>
             <LinhaDoTempo trilha={f.historico} rotulo={`Histórico de ${f.player} por edição`} className="bg-gray-50 rounded-xl px-4 py-3.5 mb-5" />
@@ -3041,9 +3109,10 @@ function RadarFuncionalidades({ itens }: { itens: Plataforma[] }) {
               <ExternalLink className="w-3.5 h-3.5" />
               {f.fonteLabel}
             </a>
+            </div>
           </motion.div>
         ))}
-      </div>
+      </BentoGrid>
     </>
   );
 }
@@ -3579,7 +3648,7 @@ export default function App() {
               Cinco pontos para a liderança, cada um com a decisão que exige.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-5 items-start">
+            <BentoGrid tipo="leve" className="gap-5">
               {[
                 {
                   tag: "Mudança de padrão",
@@ -3630,7 +3699,7 @@ export default function App() {
                   </div>
                 </div>
               ))}
-            </div>
+            </BentoGrid>
 
           </motion.div>
         </div>
@@ -3659,7 +3728,7 @@ export default function App() {
               Big tech, pesquisa e redes públicas mostram a mesma virada: a IA vai deixar de entrar na escola por padrão e passar a depender da decisão da rede, que vai pedir controle e prova antes de ligar. Os fatos centrais são de 16 de outubro a 4 de novembro; o contexto anterior vem datado no cartão.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-6 items-start">
+            <BentoGrid tipo="denso" className="gap-6">
               {[
                 {
                   titulo: "O Google vai entregar a IA desligada para alunos, e a OpenAI apertou as travas para adolescentes",
@@ -3713,7 +3782,8 @@ export default function App() {
                   className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all group overflow-hidden"
                 >
                   <div className={`h-1.5 bg-gradient-to-r ${m.color}`} />
-                  <div className="p-6">
+                  <div className="p-6 @3xl:grid @3xl:grid-cols-2 @3xl:gap-x-10">
+                    <div>
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="inline-flex items-center gap-1 text-xs bg-azul-50 text-azul-700 px-2 py-1 rounded-full font-medium">
@@ -3735,6 +3805,8 @@ export default function App() {
                       </p>
                     </div>
                     <p className="text-sm md:text-xs text-gray-600 mb-4 leading-relaxed">{m.resumo}</p>
+                    </div>
+                    <div>
                     <div className="border-l-2 border-lilas-500 pl-4 mb-5">
                       <p className="text-[11px] font-semibold uppercase tracking-wider mb-1.5 text-lilas-600">Leitura estratégica</p>
                       <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{m.impacto}</p>
@@ -3756,10 +3828,11 @@ export default function App() {
                       <ExternalLink className="w-4 h-4" aria-hidden="true" />
                       Ver fonte<span className="sr-only">: {m.titulo} (abre em nova aba)</span>
                     </a>
+                    </div>
                   </div>
                 </motion.div>
               ))}
-            </div>
+            </BentoGrid>
           </motion.div>
         </div>
       </section>
@@ -3867,7 +3940,7 @@ export default function App() {
               ))}
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5 items-start">
+            <BentoGrid tipo="leve" className="gap-5">
               {[
                 {
                   tema: "Restrição ao uso de IA pelo aluno",
@@ -3928,7 +4001,7 @@ export default function App() {
                   <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{item.leitura}</p>
                 </motion.div>
               ))}
-            </div>
+            </BentoGrid>
           </motion.div>
         </div>
       </section>
@@ -4177,7 +4250,7 @@ export default function App() {
               Cada caso por problema, implantação, escala e aprendizado, com o que dá e o que não dá para replicar aqui.
             </p>
 
-            <div className="grid lg:grid-cols-2 gap-6 items-start">
+            <BentoGrid tipo="denso" desde="lg" className="gap-6">
               {[
                 {
                   empresa: "Eedi: o professor revisa cada mensagem da IA antes do aluno ver",
@@ -4250,7 +4323,7 @@ export default function App() {
                     <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{b.problema}</p>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4 mb-5 items-start">
+                  <div className="grid md:grid-cols-2 @4xl:grid-cols-4 gap-4 mb-5 items-start">
                     {[
                       { label: 'Como foi implantado', valor: b.implementacao, icone: <Zap className="w-3.5 h-3.5" /> },
                       { label: 'Escala e números', valor: b.escala, icone: <BarChart3 className="w-3.5 h-3.5" /> },
@@ -4267,12 +4340,11 @@ export default function App() {
                     ))}
                   </div>
 
-                  <div className="bg-red-50/60 rounded-xl p-4 mb-4 border border-red-100">
-                    <p className="text-xs font-semibold text-red-700 mb-1">Limitações do caso</p>
-                    <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{b.limitacoes}</p>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4 mb-5 items-start">
+                  <div className="grid md:grid-cols-2 @4xl:grid-cols-3 gap-4 mb-5 items-start">
+                    <div className="bg-red-50/60 rounded-xl p-4 border border-red-100 md:col-span-2 @4xl:col-span-1">
+                      <p className="text-xs font-semibold text-red-700 mb-1">Limitações do caso</p>
+                      <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{b.limitacoes}</p>
+                    </div>
                     <div className="bg-green-50/60 rounded-xl p-4 border border-green-100">
                       <p className="text-xs font-semibold text-green-700 mb-1">O que é replicável</p>
                       <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{b.replicavel}</p>
@@ -4289,7 +4361,7 @@ export default function App() {
                   </div>
                 </motion.div>
               ))}
-            </div>
+            </BentoGrid>
           </motion.div>
         </div>
       </section>
@@ -4315,7 +4387,7 @@ export default function App() {
               O que já existe, em que estágio está e quanto custa adotar, com limites, dependências e o que muda para Produto e Engenharia. Nesta edição, entram os que ajudam a escola a decidir o que ligar.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <BentoGrid tipo="denso" className="gap-6">
               {[
                 {
                   nome: "Ativação pela escola, recurso por recurso",
@@ -4411,7 +4483,7 @@ export default function App() {
                     </span>
                   </div>
                   <p className="text-sm md:text-xs text-gray-600 leading-relaxed mb-4">{a.oque}</p>
-                  <div className="space-y-3 flex-1">
+                  <div className="space-y-3 flex-1 @3xl:space-y-0 @3xl:grid @3xl:grid-cols-2 @3xl:gap-3 @3xl:content-start">
                     <div>
                       <p className="text-xs font-semibold text-rosa-600 mb-1">O que acelera</p>
                       <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{a.acelera}</p>
@@ -4428,7 +4500,7 @@ export default function App() {
                       <p className="text-xs font-semibold text-gray-700 mb-1">Cenário ideal de uso</p>
                       <p className="text-sm md:text-xs text-gray-600 leading-relaxed">{a.cenario}</p>
                     </div>
-                    <div className="grid gap-2">
+                    <div className="grid gap-2 @3xl:col-span-2 @3xl:grid-cols-2 @3xl:gap-3">
                       <div className="bg-azul-50 rounded-xl p-3">
                         <p className="text-xs font-semibold text-azul-700 mb-1">Impacto para Produto</p>
                         <p className="text-sm md:text-xs text-gray-700 leading-relaxed">{a.impactoProduto}</p>
@@ -4443,14 +4515,14 @@ export default function App() {
                     href={a.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-azul-50 text-azul-600 rounded-lg hover:bg-azul-600 hover:text-white transition-all font-medium text-sm mt-4"
+                    className="w-full @3xl:w-auto @3xl:self-start flex items-center justify-center gap-2 px-4 py-2 bg-azul-50 text-azul-600 rounded-lg hover:bg-azul-600 hover:text-white transition-all font-medium text-sm mt-4"
                   >
                     <ExternalLink className="w-4 h-4" />
                     {a.linkLabel}
                   </a>
                 </motion.div>
               ))}
-            </div>
+            </BentoGrid>
           </motion.div>
         </div>
       </section>
