@@ -3446,7 +3446,7 @@ export default function App() {
             <div className="hidden sm:flex items-center gap-5 shrink-0">
               <div className="text-right leading-none">
                 <span className="block text-[11px] font-bold text-azul-600 uppercase tracking-[0.16em]">Edição #14</span>
-                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">16 out – 4 nov 2026</span>
+                <span className="block text-[11px] text-gray-500 mt-1.5 tabular-nums">16 out – 9 nov 2026</span>
               </div>
               <div className="w-px h-9 bg-gray-200" />
               <img src={hubLogo} alt="Hub de IA, Produto e Experiência" className="h-9 w-auto" />
@@ -3675,7 +3675,7 @@ export default function App() {
                   tag: "Lacuna local",
                   tagCor: "bg-gray-200 text-gray-700",
                   conclusao: "A regra brasileira anunciada para outubro não saiu",
-                  raciocinio: "Em 13 de outubro, reportagens disseram que o MEC homologaria naquela semana o parecer do CNE com mudanças, liberando a IA como primeiro filtro na correção de redação. Até 4 de novembro, não localizamos a homologação no Diário Oficial.",
+                  raciocinio: "Em 13 de outubro, reportagens disseram que o MEC homologaria naquela semana o parecer do CNE com mudanças, liberando a IA como primeiro filtro na correção de redação. Até 9 de novembro, não localizamos a homologação no Diário Oficial.",
                   decisao: "Não travar o roadmap esperando o texto: desenhar para o caso mais exigente, com a nota do professor e o registro, e ajustar quando a regra sair."
                 },
                 {
@@ -3725,7 +3725,7 @@ export default function App() {
               Três sinais, <span className="text-azul-600">uma direção</span>
             </h2>
             <p className="text-gray-600 mb-10 text-base max-w-3xl text-pretty">
-              Big tech, pesquisa e redes públicas mostram a mesma virada: a IA vai deixar de entrar na escola por padrão e passar a depender da decisão da rede, que vai pedir controle e prova antes de ligar. Os fatos centrais são de 16 de outubro a 4 de novembro; o contexto anterior vem datado no cartão.
+              Big tech, pesquisa e redes públicas mostram a mesma virada: a IA vai deixar de entrar na escola por padrão e passar a depender da decisão da rede, que vai pedir controle e prova antes de ligar. Os fatos centrais são de 16 de outubro a 9 de novembro; o contexto anterior vem datado no cartão.
             </p>
 
             <BentoGrid tipo="denso" className="gap-6">
@@ -3733,9 +3733,9 @@ export default function App() {
                 {
                   titulo: "O Google vai entregar a IA desligada para alunos, e a OpenAI apertou as travas para adolescentes",
                   empresa: "Google · OpenAI",
-                  data: "30 out – 3 nov/2026",
-                  consolida: "Gemini, Gemini Notebook e Busca desligados por padrão para alunos · Guided Learning no Classroom e piloto na Busca · travas novas no ChatGPT para adolescentes",
-                  resumo: "Em 3 de novembro, o Google anunciou que o Gemini, o Gemini Notebook, o Gemini no Classroom e a Busca vão ficar desligados nas contas de alunos da educação básica até o administrador da escola ligar. Segundo a imprensa, é o inverso do padrão que a empresa adotou em agosto para o Gemini no Classroom, e a mudança veio depois de uma investigação do Wall Street Journal e de um inquérito bipartidário no Senado americano. A Busca não se separa das respostas de IA: a escola que recusar toda a IA também tira a Busca dos alunos, o que gerou críticas de políticos como o senador Bernie Sanders e o prefeito de Nova York, Zohran Mamdani. Depois disso, o Google esclareceu que a escola pode ligar cada serviço separadamente, inclusive a Busca sem o Gemini. O Google também levou ao Classroom o Guided Learning, modo que conduz o aluno por etapas em vez de dar a resposta, e anunciou um piloto dele na Busca em escolas americanas. Segundo reportagens, o novo padrão começa no início de 2027; não localizamos informação sobre outros países. Em 30 de outubro, a OpenAI anunciou travas novas no ChatGPT para adolescentes, a chegar nas semanas seguintes: limite a informações sobre armas, estimativa de idade reforçada e aviso aos pais quando a conta de um adolescente for pausada por conversas repetidas sobre violência.",
+                  data: "30 out – 8 nov/2026",
+                  consolida: "Gemini, Gemini Notebook e Busca desligados por padrão para alunos · redes avaliam buscadores alternativos · Guided Learning no Classroom e piloto na Busca · travas novas no ChatGPT para adolescentes",
+                  resumo: "Em 3 de novembro, o Google anunciou que o Gemini, o Gemini Notebook, o Gemini no Classroom e a Busca vão ficar desligados nas contas de alunos da educação básica até o administrador da escola ligar. Segundo a imprensa, é o inverso do padrão que a empresa adotou em agosto para o Gemini no Classroom, e a mudança veio depois de uma investigação do Wall Street Journal e de um inquérito bipartidário no Senado americano. A Busca não se separa das respostas de IA: a escola que recusar toda a IA também tira a Busca dos alunos, o que gerou críticas de políticos como o senador Bernie Sanders e o prefeito de Nova York, Zohran Mamdani. Depois disso, o Google esclareceu que a escola pode ligar cada serviço separadamente, inclusive a Busca sem o Gemini. Nos dias seguintes, redes americanas disseram estar avaliando o impacto, algumas cogitando buscadores alternativos, e a ex-presidente da FTC Lina Khan acusou o Google de usar o monopólio da busca para coagir as escolas. O Google também levou ao Classroom o Guided Learning, modo que conduz o aluno por etapas em vez de dar a resposta, e anunciou um piloto dele na Busca em escolas americanas. Segundo reportagens, o novo padrão começa no início de 2027; não localizamos informação sobre outros países. Em 30 de outubro, a OpenAI anunciou travas novas no ChatGPT para adolescentes, a chegar nas semanas seguintes: limite a informações sobre armas, estimativa de idade reforçada e aviso aos pais quando a conta de um adolescente for pausada por conversas repetidas sobre violência.",
                   impacto: "Na edição #13, a falta de controle da escola foi um dos motivos relatados para Frederick County desligar tudo. Três semanas depois, o Google, presente em boa parte das escolas americanas, anunciou a mudança do padrão para o lado da escola. A IA vai deixar de entrar pela atualização do fornecedor e passar a entrar pela decisão da rede, que só liga o que consegue justificar. O caso da Busca mostra o risco do outro lado: o recurso que não se separa da IA obriga a escola a escolher entre tudo e nada.",
                   professor: "Passa a depender de a escola ligar a IA e, quando ela ligar, ganha um modo guiado para atribuir à turma.",
                   aluno: "Pode ficar sem o Gemini, e até sem a Busca, na conta da escola, se a rede recusar toda a IA.",
@@ -3761,9 +3761,9 @@ export default function App() {
                 {
                   titulo: "Política de IA virou obrigação das redes de Maryland, e parte delas perdeu o prazo",
                   empresa: "Maryland · redes públicas",
-                  data: "19–22 out/2026",
-                  consolida: "Lei estadual com prazo de 22 de outubro · redes atrasadas · exigência de avaliar o valor educacional das ferramentas",
-                  resumo: "Uma lei de Maryland aprovada em 2026 obriga cada rede a adotar uma política de IA alinhada à orientação do departamento estadual de educação, que fixou o prazo em 22 de outubro. Em 19 de outubro, o Baltimore Sun informou que quatro redes aprovariam a política com atraso: Anne Arundel, Howard, Baltimore County e Baltimore City. O rascunho de Anne Arundel exige que cada ferramenta de IA tenha o valor educacional avaliado antes de ser adotada, e a rede prevê aprovar a política até meados de dezembro. Frederick County, que proibiu o uso de IA pelos alunos em outubro, é do mesmo estado.",
+                  data: "19–29 out/2026",
+                  consolida: "Lei estadual com prazo de 22 de outubro · redes atrasadas · Howard County aprova a sua com IA só com permissão do professor · exigência de avaliar o valor educacional das ferramentas",
+                  resumo: "Uma lei de Maryland aprovada em 2026 obriga cada rede a adotar uma política de IA alinhada à orientação do departamento estadual de educação, que fixou o prazo em 22 de outubro. Em 19 de outubro, o Baltimore Sun informou que quatro redes aprovariam a política com atraso: Anne Arundel, Howard, Baltimore County e Baltimore City. O rascunho de Anne Arundel exige que cada ferramenta de IA tenha o valor educacional avaliado antes de ser adotada, e a rede prevê aprovar a política até meados de dezembro. Howard County, outra das atrasadas, aprovou a sua cerca de uma semana depois do prazo, segundo reportagem publicada pela GovTech: toda tarefa passa a ser sem IA, a menos que o professor permita, numa rede que tinha liberado o Gemini aos alunos do ensino médio em janeiro. Frederick County, que proibiu o uso de IA pelos alunos em outubro, é do mesmo estado.",
                   impacto: "Ter política de IA virou obrigação das redes, e elas estão escrevendo as regras agora, com pressa. O que essas políticas vão pedir já aparece: a orientação do estado trata privacidade, segurança de dados e supervisão humana como inegociáveis, e o rascunho de Anne Arundel exige avaliar o valor educacional de cada ferramenta. O fornecedor que chegar com essa documentação pronta encurta a decisão; o que não chegar entra na fila.",
                   professor: "Vai trabalhar com uma lista de ferramentas aprovadas pela rede, e não com o que encontrar por conta própria.",
                   aluno: "Passa a usar só o que a rede aprovou.",
@@ -3861,8 +3861,8 @@ export default function App() {
               {[
                 {
                   cat: "A homologação anunciada para outubro não saiu",
-                  nota: "Em 13 de outubro, reportagens disseram que o ministro Leonardo Barchini homologaria o parecer do CNE naquela semana, com mudanças. Até 4 de novembro, não localizamos a homologação no Diário Oficial nem o texto das mudanças.",
-                  leitura: "Três semanas depois do anúncio, redes e fornecedores seguem sem saber o que conta como primeiro filtro na correção e que registro guardar. Quem tiver uma leitura clara do texto quando ele sair vai orientar o mercado.",
+                  nota: "Em 13 de outubro, reportagens disseram que o ministro Leonardo Barchini homologaria o parecer do CNE naquela semana, com mudanças. Até 9 de novembro, não localizamos a homologação no Diário Oficial nem o texto das mudanças.",
+                  leitura: "Quase quatro semanas depois do anúncio, redes e fornecedores seguem sem saber o que conta como primeiro filtro na correção e que registro guardar. Quem tiver uma leitura clara do texto quando ele sair vai orientar o mercado.",
                   janela: "Monitorar"
                 },
                 {
@@ -3879,8 +3879,8 @@ export default function App() {
                 },
                 {
                   cat: "O Inep continua sem falar da prova de conceito de correção por IA",
-                  nota: "Quarta edição sem posição. A redação do ENEM será em 8 de novembro, com dois corretores humanos, e não localizamos resultado ou posição do Inep sobre o teste com empresas anunciado em junho.",
-                  leitura: "Se a regra liberar a IA como primeiro filtro na escola, a pergunta seguinte é se o exame nacional vai pelo mesmo caminho. Enquanto o Inep não responder, cada fornecedor interpreta por conta própria.",
+                  nota: "Quarta edição sem posição. A redação do ENEM foi aplicada em 8 de novembro, com o tema da valorização do SUS, e segue corrigida por dois corretores humanos. Não localizamos resultado ou posição do Inep sobre o teste com empresas anunciado em junho. Na reta final, o MEC incentivou os candidatos a treinar no app MEC Enem, que dá uma nota estimada por IA em até 60 segundos.",
+                  leitura: "Se a regra liberar a IA como primeiro filtro na escola, a pergunta seguinte é se o exame nacional vai pelo mesmo caminho. O próprio MEC já oferece correção por IA para o aluno treinar, enquanto a nota que vale continua humana. Enquanto o Inep não responder, cada fornecedor interpreta por conta própria.",
                   janela: "Monitorar"
                 },
 ].map((item, i) => (
@@ -3961,7 +3961,7 @@ export default function App() {
                 {
                   tema: "A regulação brasileira travada na última milha",
                   tipo: "Estrutural",
-                  trilha: "#11 aprovado em plenário com prazo de doze meses → #12 sem assinatura → #13 súmula no Diário Oficial e homologação anunciada com mudanças → #14 três semanas depois do anúncio, ainda sem homologação",
+                  trilha: "#11 aprovado em plenário com prazo de doze meses → #12 sem assinatura → #13 súmula no Diário Oficial e homologação anunciada com mudanças → #14 quase quatro semanas depois do anúncio, ainda sem homologação",
                   leitura: "Em pauta desde a edição #07, o tema passa a estrutural. O padrão é o mesmo a cada etapa: anúncio, expectativa e atraso. Para planejar, o mais seguro é desenhar para a versão mais exigente da regra e não contar com data.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
@@ -4130,7 +4130,7 @@ export default function App() {
                   produto: "Co-crIA, TutorIA, PraticAI e Radar Enem",
                   mercado: "Plataforma privada",
                   publicos: ["Professor", "Aluno", "Gestor"],
-                  entregue: "Para o professor: o Co-crIA, assistente integrado ao material didático e desenvolvido com a Teachy, que gera planos de aula, listas, avaliações, apresentações e materiais adaptados. Para o aluno: o TutorIA e o PraticAI, apresentados no Bernoulli Reload, em agosto; o PraticAI corrige redação e, segundo a página da empresa, estima a nota por competência. Para o gestor: o Radar Enem, que lê os microdados do exame com um chat de IA. Não houve lançamento entre 16 de outubro e 4 de novembro.",
+                  entregue: "Para o professor: o Co-crIA, assistente integrado ao material didático e desenvolvido com a Teachy, que gera planos de aula, listas, avaliações, apresentações e materiais adaptados. Para o aluno: o TutorIA e o PraticAI, apresentados no Bernoulli Reload, em agosto; o PraticAI corrige redação e, segundo a página da empresa, estima a nota por competência. Para o gestor: o Radar Enem, que lê os microdados do exame com um chat de IA. Não houve lançamento entre 16 de outubro e 9 de novembro.",
                   leitura: "O corretor de redação é o recurso mais sensível à regra nova: estimar nota para o aluno treinar é devolutiva; virar nota da escola sem o professor, não. A parceria com a Teachy mostra que o entrante já está dentro de um sistema de ensino acompanhado.",
                   fonte: "https://www.bernoulli.com.br/blog/co-cria-como-a-inteligencia-artificial-esta-transformando-o-dia-a-dia-dos-professores/",
                   fonteLabel: "Blog do Bernoulli",
@@ -4152,7 +4152,7 @@ export default function App() {
                   produto: "Assistente do professor e Teachy Studio",
                   mercado: "Plataforma privada",
                   publicos: ["Professor", "Escola"],
-                  entregue: "Para o professor: plano de aula, sequência didática, slides, listas de exercícios, provas e correção de exercícios com IA, alinhados à BNCC. Para a escola: o Teachy Studio, em que a instituição cria livros, apostilas e sequências próprias com IA, impressos e digitais. Desde a Bett Brasil 2026, a escola também pode adotar pelo Studio o material do Descomplica, com as videoaulas, como base curricular. A Teachy também é parceira do Bernoulli no Co-crIA. Não houve lançamento entre 16 de outubro e 4 de novembro.",
+                  entregue: "Para o professor: plano de aula, sequência didática, slides, listas de exercícios, provas e correção de exercícios com IA, alinhados à BNCC. Para a escola: o Teachy Studio, em que a instituição cria livros, apostilas e sequências próprias com IA, impressos e digitais. Desde a Bett Brasil 2026, a escola também pode adotar pelo Studio o material do Descomplica, com as videoaulas, como base curricular. A Teachy também é parceira do Bernoulli no Co-crIA. Não houve lançamento entre 16 de outubro e 9 de novembro.",
                   leitura: "Vem de fora dos sistemas de ensino e entra pelo material didático, onde está a receita das editoras: a empresa promete apostila própria por uma fração do custo de produção editorial, e a parceria com o Descomplica entrega uma base curricular pronta. A IA serve sobretudo a quem produz o material. O que ela ainda não mostra é o que qualquer material precisa mostrar agora: que o aluno aprende com ele.",
                   fonte: "https://educador21.com/ia-na-educacao-teachy-descomplica-escolas/",
                   fonteLabel: "Educador21",
@@ -4163,7 +4163,7 @@ export default function App() {
                   produto: "Plataforma de IA da Conexia Educação (Grupo SEB)",
                   mercado: "Plataforma privada",
                   publicos: ["Aluno", "Professor", "Família"],
-                  entregue: "Na versão gratuita, o ChatEdu, assistente para tarefas escolares e preparação para o ENEM e vestibulares, e, para o educador, geração de plano de aula e ferramentas adaptadas a perfis de aprendizagem. Na premium, tutores virtuais por disciplina e trilhas de letramento em IA para alunos, professores e famílias, seguindo a BNCC. Tem controle parental, linguagem ajustada à faixa etária e alerta de conteúdo impróprio. A plataforma ganhou um summit próprio na Bett Brasil 2026 e não teve novidade entre 16 de outubro e 4 de novembro.",
+                  entregue: "Na versão gratuita, o ChatEdu, assistente para tarefas escolares e preparação para o ENEM e vestibulares, e, para o educador, geração de plano de aula e ferramentas adaptadas a perfis de aprendizagem. Na premium, tutores virtuais por disciplina e trilhas de letramento em IA para alunos, professores e famílias, seguindo a BNCC. Tem controle parental, linguagem ajustada à faixa etária e alerta de conteúdo impróprio. A plataforma ganhou um summit próprio na Bett Brasil 2026 e não teve novidade entre 16 de outubro e 9 de novembro.",
                   leitura: "Põe a IA para conversar direto com o aluno, com apoio à tarefa e tutor por disciplina, e aposta na segurança para ganhar a confiança da família, a mesma objeção que a avaliação da Common Sense Media levantou contra o ChatGPT para adolescentes. Não localizamos informação pública sobre se o ChatEdu e os tutores evitam entregar a resposta, e é isso que define de que lado da evidência o produto fica. Como a Conexia atende escolas parceiras, está mais perto da concorrência direta do que de uma startup de fora.",
                   fonte: "https://www.uai.com.br/app/noticia/mundo-corporativo/2025/10/06/noticia-mundo-corporativo,370556/ai4school-conexia-apresenta-solucao-de-ia-para-educacao.shtml",
                   fonteLabel: "Portal UAI",
@@ -4960,7 +4960,7 @@ export default function App() {
                 },
                 {
                   rastreio: "Edição #13 · ausência",
-                  sinal: "Até 4 de novembro, não localizamos a homologação anunciada para outubro, e o texto que deve liberar a IA como primeiro filtro na correção segue sem publicação",
+                  sinal: "Até 9 de novembro, não localizamos a homologação anunciada para outubro, e o texto que deve liberar a IA como primeiro filtro na correção segue sem publicação",
                   problema: "A correção em dois turnos segue sendo o desenho que a regra deve exigir, mas os detalhes de registro dependem do texto. Na edição passada, esta oportunidade era Alta; desceu porque a data ficou incerta, e não porque a direção mudou.",
                   oportunidade: "Correção de redação em dois turnos, com assinatura do professor",
                   impacto: "Manter o desenho da edição #13, com a sugestão da IA e a nota do professor separadas e registradas, pronto para ajustar quando o texto sair.",
@@ -5203,7 +5203,7 @@ export default function App() {
               <img src={hubLogoClaro} alt="Hub de IA, Produto e Experiência" className="h-11 md:h-12 w-auto" />
               <div className="space-y-1 mt-2">
                 <p className="text-white/70 text-sm">Curadoria e análise: <span className="text-white font-medium">Silvana Helena</span></p>
-                <p className="text-white/60 text-xs tabular-nums">Novembro de 2026 · Edição #14 · 16 out – 4 nov</p>
+                <p className="text-white/60 text-xs tabular-nums">Novembro de 2026 · Edição #14 · 16 out – 9 nov</p>
               </div>
             </div>
           </motion.div>
