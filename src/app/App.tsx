@@ -3816,7 +3816,7 @@ export default function App() {
                       <p className="text-xs font-bold text-green-700 uppercase tracking-wide">O que a evidência sustenta</p>
                     </div>
                     <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
-                      A IA que trabalha com o professor: a regra brasileira admite a pré-correção como apoio à correção dele, com leitura integral e a nota nas mãos dele, e a revisão de Stanford viu resultados mais promissores nas ferramentas para o docente.
+                      A IA que trabalha com o professor: a regra brasileira admite a pré-correção como apoio à correção do professor, que lê a produção inteira e decide a nota, e a revisão de Stanford viu resultados mais promissores nas ferramentas para ele.
                     </p>
                   </div>
                   <div className="border-l-2 border-red-400 pl-4">
@@ -3825,7 +3825,7 @@ export default function App() {
                       <p className="text-xs font-bold text-red-700 uppercase tracking-wide">O que ela derruba</p>
                     </div>
                     <p className="text-sm md:text-xs text-gray-700 leading-relaxed">
-                      A ideia de que o tamanho do fornecedor garante o lugar na escola: grandes redes americanas cogitam trocar a Busca do Google por buscadores que deixam desligar a IA. E a ideia de que dá para vender IA conversacional ao aluno pequeno: a regra brasileira a afasta dos anos iniciais.
+                      A ideia de que o tamanho do fornecedor garante o lugar na escola: grandes redes americanas avaliam trocar a Busca do Google por buscadores que deixam desligar a IA. E a ideia de que dá para vender IA conversacional aos alunos dos anos iniciais: a regra brasileira a afasta dessa etapa.
                     </p>
                   </div>
                 </div>
@@ -3937,7 +3937,7 @@ export default function App() {
                   tag: "Hipótese confirmada",
                   tagCor: "bg-green-100 text-green-700",
                   conclusao: "A correção em dois turnos, recomendada desde a edição #13, é o que a regra exige",
-                  raciocinio: "A resolução admite a pré-correção de redações e provas dissertativas por IA exclusivamente como apoio preparatório da correção do professor. Segundo guias de entidades do setor, o professor lê a produção inteira e decide, e aprovar em bloco a sugestão do sistema não vale.",
+                  raciocinio: "A resolução admite a pré-correção de redações e provas dissertativas por IA exclusivamente como apoio preparatório da correção do professor. Segundo guias de entidades do setor, o professor lê a produção inteira e decide, sem aprovar em bloco a sugestão do sistema.",
                   decisao: "Tratar a correção em dois turnos como requisito de conformidade, com a leitura do professor registrada, e não como diferencial opcional."
                 },
                 {
@@ -3950,7 +3950,7 @@ export default function App() {
                 {
                   tag: "Mudança de padrão",
                   tagCor: "bg-azul-100 text-azul-700",
-                  conclusao: "Três das quatro maiores redes americanas cogitam trocar a Busca do Google porque não conseguem desligar a IA",
+                  conclusao: "Três das quatro maiores redes americanas avaliam trocar a Busca do Google porque não conseguem desligar a IA",
                   raciocinio: "Nova York, Los Angeles e Chicago avaliam buscadores que deixam desligar as respostas de IA, como Bing e DuckDuckGo, segundo o New York Times. Mais de 500 funcionários e terceirizados do Google assinaram uma petição pedindo a Busca sem IA para as escolas.",
                   decisao: "Garantir que cada recurso de IA do produto possa ser desligado sem levar junto a função em que está embutido."
                 },
@@ -4012,7 +4012,7 @@ export default function App() {
                   data: "10–12 nov/2026",
                   consolida: "Homologação do Parecer CNE/CP nº 15/2026 · Resolução CNE/CP nº 1/2026 no Diário Oficial · regras por etapa, para avaliação e para dados",
                   resumo: "Em 10 de novembro, o ministro Leonardo Barchini homologou o parecer do CNE com as diretrizes para o uso de IA em toda a educação brasileira, pública e privada, e a Resolução CNE/CP nº 1/2026 saiu no Diário Oficial em 12 de novembro. As vedações valem desde a publicação, e redes e instituições têm 12 meses para adequar políticas, práticas e contratos. Na avaliação, a resolução admite a pré-correção de redações e provas dissertativas por IA exclusivamente como apoio preparatório da correção do professor; segundo guias de entidades do setor, o professor lê a produção inteira e não pode aprovar em bloco a sugestão do sistema, e resultados com efeito sobre a vida escolar exigem validação humana prévia e documentada. Por etapa, a norma proíbe o uso de IA pelas crianças da educação infantil, mesmo com mediação, e afasta a IA generativa e conversacional dos alunos dos anos iniciais; nos anos finais, segundo a Agência Brasil, o uso depende da mediação do professor. Ficam vedados ainda o reconhecimento automatizado de emoções, a vigilância biométrica contínua, o uso de dados de estudantes para publicidade direcionada e o uso de dados de crianças e adolescentes para treinar modelos de terceiros. Adotar IA é facultativo, mas quem adotar segue as regras. Para a Unesco, que participou da elaboração, o letramento digital dos alunos tem de vir antes do uso.",
-                  impacto: "É regra nacional, e ela descreve o fluxo que as edições #13 e #14 recomendaram: a IA lê primeiro, o professor lê tudo e decide. Ao mesmo tempo, fecha a porta para a IA que conversa com o aluno até o 5º ano e põe os contratos com fornecedores sob exigência de governança e de cuidado com os dados. Quem já separa sugestão e nota, controla recurso por série e não usa dado de aluno para treinar modelo sai na frente; quem oferece conversa com o aluno pequeno tem de mudar o produto.",
+                  impacto: "Com força de regra nacional, ela descreve o fluxo que as edições #13 e #14 recomendaram: a IA lê primeiro, o professor lê tudo e decide. Ao mesmo tempo, fecha a porta para a IA que conversa com o aluno até o 5º ano e põe os contratos com fornecedores sob exigência de governança e de cuidado com os dados. Quem já separa sugestão e nota, controla recurso por série e não usa dado de aluno para treinar modelo sai na frente; quem oferece conversa com os alunos dos anos iniciais tem de mudar o produto.",
                   professor: "Ganha respaldo para usar a IA na pré-correção, desde que leia cada produção inteira e decida a nota.",
                   aluno: "Até o 5º ano, deixa de conversar com IA na escola; nos anos finais, usa com a mediação do professor.",
                   gestor: "Tem 12 meses para adequar políticas e contratos, e as vedações já valem.",
@@ -4021,7 +4021,7 @@ export default function App() {
                   color: "from-azul-700 to-azul-800"
                 },
                 {
-                  titulo: "Três das quatro maiores redes americanas cogitam trocar a Busca do Google porque não conseguem desligar a IA",
+                  titulo: "Três das quatro maiores redes americanas avaliam trocar a Busca do Google porque não conseguem desligar a IA",
                   empresa: "Google · Nova York, Los Angeles e Chicago",
                   data: "9–18 nov/2026",
                   consolida: "Protesto em Chicago · petição de funcionários do Google · três das quatro maiores redes avaliam outros buscadores",
@@ -4222,7 +4222,7 @@ export default function App() {
                   tema: "Restrição ao uso de IA pelo aluno",
                   tipo: "Estrutural",
                   trilha: "#12 Los Angeles bloqueia a IA generativa para todos os alunos → #13 Frederick County proíbe do pré ao 12º ano; Austrália e Portugal propõem afastar a IA das crianças pequenas → #14 o Google anuncia a IA desligada para alunos até a escola ligar → #15 a regra brasileira proíbe a IA para as crianças da educação infantil e a afasta dos anos iniciais",
-                  leitura: "Sexta edição seguida. Começou em redes isoladas, passou por governos e pelo próprio fornecedor e agora virou regra nacional no Brasil, com corte por etapa. Agora é requisito.",
+                  leitura: "Sexta edição seguida. Começou em redes isoladas, passou por governos e pelo próprio fornecedor e virou regra nacional no Brasil, com corte por etapa. Agora é requisito.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
@@ -4230,7 +4230,7 @@ export default function App() {
                   tema: "Evidência de aprendizagem como campo de disputa",
                   tipo: "Estrutural",
                   trilha: "#12 ensaios randomizados de tutor de IA em escala, com ganho modesto → #13 ensaio mede nota menor em turmas que só receberam acesso ao tutor → #14 tutor de IA revisado por professores empata com o humano na aula, sem vantagem clara na prova externa → #15 revisão de Stanford vê mais resultado nas ferramentas para o professor do que nas do aluno",
-                  leitura: "As peças se juntaram: com desenho, a IA ajuda na aula; só oferecida, pode atrapalhar; e o ganho do aluno pode sumir sem a IA. A evidência mais favorável hoje está nos recursos que apoiam o professor.",
+                  leitura: "Em quatro edições, a evidência foi na mesma direção: com desenho, a IA ajuda na aula; só oferecida, pode atrapalhar; e o ganho do aluno pode sumir sem a IA. A evidência mais favorável hoje está nos recursos que apoiam o professor.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
@@ -4245,7 +4245,7 @@ export default function App() {
                 {
                   tema: "Big tech direto ao aluno",
                   tipo: "Estrutural",
-                  trilha: "#12 big techs se voltam à formação do professor → #13 Gemini aberto a alunos de todas as idades e ferramentas de estudo no ChatGPT para adolescentes → #14 o Google recua e anuncia a IA desligada para alunos → #15 três das quatro maiores redes americanas cogitam trocar a Busca do Google",
+                  trilha: "#12 big techs se voltam à formação do professor → #13 Gemini aberto a alunos de todas as idades e ferramentas de estudo no ChatGPT para adolescentes → #14 o Google recua e anuncia a IA desligada para alunos → #15 três das quatro maiores redes americanas avaliam trocar a Busca do Google",
                   leitura: "Em quatro edições, a big tech foi direto ao aluno, recuou e agora enfrenta a ameaça de troca em grandes redes americanas. O tamanho não garante o lugar: a escola quer decidir recurso por recurso.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
@@ -4479,7 +4479,7 @@ export default function App() {
                 {
                   nome: "Google",
                   altera: "Padrão de ativação",
-                  nota: "Sem Busca sem IA para escolas, grandes redes americanas cogitam trocar de buscador. A escola espera poder desligar cada recurso, inclusive dentro do que considera essencial."
+                  nota: "Sem Busca sem IA para escolas, grandes redes americanas avaliam trocar de buscador. A escola espera poder desligar cada recurso, inclusive dentro do que considera essencial."
                 },
                 {
                   nome: "Pesquisa independente",
@@ -4659,7 +4659,7 @@ export default function App() {
                   limitacoes: "A leitura da regra ainda vai amadurecer, e a matriz precisa de revisão jurídica a cada versão.",
                   dependencias: "Catálogo de recursos, cadastro de série e turma e revisão jurídica.",
                   cenario: "Toda renovação de contrato com escola privada e rede pública nos próximos 12 meses.",
-                  impactoProduto: "Vira peça de venda enquanto os concorrentes não mostram nada.",
+                  impactoProduto: "Vira peça de venda enquanto não localizamos concorrente que mostre o mesmo.",
                   impactoEngenharia: "Gerar a matriz a partir do catálogo e das flags, para não ficar desatualizada.",
                   maturidade: "A construir",
                   cor: "bg-azul-100 text-azul-700",
@@ -4700,7 +4700,7 @@ export default function App() {
                   nome: "Interruptor por recurso, inclusive no essencial",
                   tipo: "Arquitetura",
                   oque: "Cada recurso de IA pode ser desligado sem levar junto a função em que está embutido: a busca continua sem a resposta de IA, o exercício continua sem o tira-dúvidas.",
-                  acelera: "Tira da escola a escolha entre tudo e nada que levou grandes redes americanas a cogitar trocar de buscador.",
+                  acelera: "Tira da escola a escolha entre tudo e nada que levou grandes redes americanas a avaliar a troca de de buscador.",
                   limitacoes: "Manter a versão sem IA de cada função custa manutenção.",
                   dependencias: "Arquitetura em que a IA é camada opcional, e não parte da função.",
                   cenario: "Redes que restringem a IA e escolas com anos iniciais.",
@@ -4826,7 +4826,7 @@ export default function App() {
                 {[
                   {
                     ponto: "O professor decide",
-                    detalhe: "A regra brasileira admite a pré-correção por IA só como apoio à correção do professor, e a revisão de Stanford encontrou mais resultado nas ferramentas que apoiam o docente."
+                    detalhe: "A regra brasileira admite a pré-correção por IA só como apoio à correção do professor, e a revisão de Stanford encontrou mais resultado nas ferramentas que apoiam o professor."
                   },
                   {
                     ponto: "A idade conta",
@@ -4834,7 +4834,7 @@ export default function App() {
                   },
                   {
                     ponto: "Sem interruptor, a escola troca",
-                    detalhe: "Três das quatro maiores redes americanas cogitam trocar a Busca do Google porque não conseguem desligar as respostas de IA."
+                    detalhe: "Nova York, Los Angeles e Chicago avaliam outros buscadores porque a Busca do Google não deixa desligar as respostas de IA."
                   },
 ].map((item, i) => (
                   <div key={i} className="bg-white/10 rounded-xl p-5 backdrop-blur-sm">
@@ -4943,7 +4943,7 @@ export default function App() {
               Diferenciação ou <span className="text-azul-600">commodity</span>
             </h2>
             <p className="text-gray-600 mb-8 text-base max-w-3xl text-pretty">
-              Onde a vantagem acabou e o que ainda é difícil de copiar. Nesta edição, a regra transformou diferencial em requisito.
+              Onde a vantagem acabou e o que ainda é difícil de copiar. Nesta edição, a regra mudou o que conta como diferencial.
             </p>
 
             <div className="bg-white rounded-2xl border-2 border-rosa-600 p-6 mb-8">
@@ -5045,8 +5045,8 @@ export default function App() {
                 <p className="text-[11px] text-ambar-700 mb-5 font-medium">Muito discurso, evidência ausente ou contrária</p>
                 <div className="space-y-5">
                   {[
-                    { titulo: "A regra nova trava a IA na escola", desc: "A resolução não proíbe a IA: admite a pré-correção com o professor e o uso nos anos finais com mediação. Restringe o que conversa com o aluno pequeno e o uso comercial de dados." },
-                    { titulo: "O tamanho do fornecedor garante o lugar", desc: "Três das quatro maiores redes americanas cogitam trocar a Busca do Google por buscadores que deixam desligar a IA." },
+                    { titulo: "A regra nova trava a IA na escola", desc: "A resolução não proíbe a IA: admite a pré-correção com o professor e o uso nos anos finais com mediação. Restringe o que conversa com os alunos dos anos iniciais e o uso comercial de dados." },
+                    { titulo: "O tamanho do fornecedor garante o lugar", desc: "Nova York, Los Angeles e Chicago avaliam buscadores que deixam desligar a IA, mesmo com o peso do Google nas escolas." },
                     { titulo: "Tutor de IA melhora a nota", desc: "A revisão de Stanford encontrou evidência fraca e mista nas ferramentas do aluno, e ganhos que podem sumir quando ele é avaliado sem a IA." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -5112,7 +5112,7 @@ export default function App() {
                 <p className="font-bold text-gray-900">O padrão desta quinzena</p>
               </div>
               <p className="text-gray-700 leading-relaxed md:columns-2 md:gap-10">
-                A regra saiu e confirmou o desenho que vinha se formando: a IA entra na escola pelo professor, com a leitura e a nota nas mãos dele, e fica longe do aluno pequeno. Nos EUA, grandes redes mostraram o outro lado: sem controle por recurso, até o fornecedor dominante corre o risco de ser trocado. Para um sistema de ensino, os próximos 12 meses são de adequação, e quem demonstrar conformidade primeiro, recurso por recurso e etapa por etapa, sai na frente.
+                A regra saiu e confirmou o desenho que vinha se formando: a IA entra na escola pelo professor, com a leitura e a nota nas mãos dele, e fica longe dos alunos dos anos iniciais. Nos EUA, grandes redes mostraram o outro lado: sem controle por recurso, até o fornecedor dominante corre o risco de ser trocado. Para um sistema de ensino, os próximos 12 meses são de adequação, e quem demonstrar conformidade primeiro, recurso por recurso e etapa por etapa, sai na frente.
               </p>
             </div>
           </motion.div>
@@ -5207,7 +5207,7 @@ export default function App() {
                 },
                 {
                   rastreio: "Sinal 2 · edição #14",
-                  sinal: "Três das quatro maiores redes americanas cogitam trocar a Busca do Google porque não conseguem desligar as respostas de IA",
+                  sinal: "Três das quatro maiores redes americanas avaliam trocar a Busca do Google porque não conseguem desligar as respostas de IA",
                   problema: "Se algum recurso de IA do produto vem embutido numa função essencial, sem interruptor próprio, a escola que quer menos IA pode trocar o produto inteiro. Vale verificar onde isso acontece.",
                   oportunidade: "Interruptor por recurso, inclusive no que é essencial",
                   impacto: "Cada função continua funcionando com a IA desligada, e a escola liga só a camada de IA que quiser. Amplia a ativação pela escola da edição #14.",
@@ -5225,7 +5225,7 @@ export default function App() {
                   sinal: "A revisão de Stanford encontrou mais resultado nas ferramentas para o professor e ganhos do aluno que podem sumir quando ele é avaliado sem a IA",
                   problema: "Se os recursos do aluno são medidos só com dados de uso, o produto não sabe se o ganho continua sem a IA. Vale confirmar com o time de dados o que já é medido fora da plataforma.",
                   oportunidade: "Avaliação sem IA para os recursos do aluno",
-                  impacto: "Comparar turmas com e sem o recurso numa avaliação feita sem IA, com uma rede parceira. Evolui a medida em avaliação externa da edição #14.",
+                  impacto: "Comparar turmas com e sem o recurso numa avaliação feita sem IA, com uma rede parceira. Amplia a medida em avaliação externa da edição #14.",
                   professor: "Vê se o recurso ajuda o aluno a aprender, e não só a entregar.",
                   aluno: "Só recebe em escala o que mostrou ganho sem a IA.",
                   gestor: "Tem um número que não depende do uso da ferramenta.",
