@@ -3799,7 +3799,7 @@ export default function App() {
                 variants={{ oculto: { opacity: 0, y: 16 }, visivel: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }}
                 className="text-base md:text-[17px] text-white/80 leading-[1.7]"
               >
-                Em 10 de novembro, o MEC homologou as diretrizes do CNE para a IA na educação, e a resolução saiu no Diário Oficial dois dias depois: a pré-correção de redação por IA só vale como apoio à correção do professor, as crianças da educação infantil não usam IA nem com mediação, e dados de alunos não podem treinar modelos de terceiros. Nos EUA, três das quatro maiores redes públicas avaliam trocar a Busca do Google porque não conseguem desligar as respostas de IA. E uma revisão de Stanford encontrou resultados mais promissores nas ferramentas que apoiam o professor do que nas que falam com o aluno. <strong className="font-semibold text-white">A IA entra na escola pelo professor, e a escola quer decidir cada recurso que chega ao aluno</strong>.
+                Em 10 de novembro, o MEC homologou as diretrizes do CNE para a IA na educação, e a resolução saiu no Diário Oficial dois dias depois: a pré-correção de redação por IA só vale como apoio à correção do professor, as crianças da educação infantil não usam IA nem com mediação, e dados de alunos não podem treinar modelos de terceiros. A varredura das outras frentes trouxe três modelos novos em dez dias, uma proposta inglesa de certificar produtos de IA para escolas e, nos EUA, três das quatro maiores redes públicas avaliando trocar a Busca do Google porque não conseguem desligar as respostas de IA. E uma revisão de Stanford encontrou resultados mais promissores nas ferramentas que apoiam o professor do que nas que falam com o aluno. <strong className="font-semibold text-white">A IA entra na escola pelo professor, e a escola quer decidir cada recurso que chega ao aluno</strong>.
               </motion.p>
             </motion.div>
           </div>
@@ -3921,7 +3921,7 @@ export default function App() {
               O que mudou e <span className="text-azul-600">o que decidir</span>
             </h2>
             <p className="text-gray-600 mb-10 text-base max-w-3xl text-pretty">
-              Cinco pontos para a liderança, cada um com a decisão que exige.
+              Sete pontos para a liderança, cada um com a decisão que exige.
             </p>
 
             <BentoGrid tipo="leve" className="gap-5">
@@ -3929,9 +3929,9 @@ export default function App() {
                 {
                   tag: "Regra em vigor",
                   tagCor: "bg-azul-100 text-azul-700",
-                  conclusao: "A regra brasileira de IA na educação está valendo, com vedações imediatas e 12 meses para adequação",
-                  raciocinio: "O MEC homologou o parecer do CNE em 10 de novembro, e a Resolução CNE/CP nº 1/2026 saiu no Diário Oficial em 12 de novembro. As vedações valem desde a publicação; redes e instituições, públicas e privadas, têm 12 meses para adequar políticas, práticas e contratos.",
-                  decisao: "Fazer agora o mapa do que o produto já cumpre e do que precisa mudar, começando pelas vedações, que já valem."
+                  conclusao: "A regra brasileira de IA na educação está valendo: vedações imediatas, 12 meses para adequar e IA conversacional fora do alcance dos anos iniciais",
+                  raciocinio: "O MEC homologou o parecer do CNE em 10 de novembro, e a Resolução CNE/CP nº 1/2026 saiu no Diário Oficial em 12 de novembro. As vedações valem desde a publicação; redes e instituições, públicas e privadas, têm 12 meses para adequar políticas, práticas e contratos. A norma proíbe o uso de IA pelas crianças da educação infantil, mesmo com mediação, e afasta a IA generativa e conversacional dos alunos dos anos iniciais.",
+                  decisao: "Fazer agora o mapa do que cada recurso já cumpre, por etapa, começando pelas vedações e pelo que conversa com o aluno até o 5º ano."
                 },
                 {
                   tag: "Hipótese confirmada",
@@ -3939,13 +3939,6 @@ export default function App() {
                   conclusao: "A correção em dois turnos, recomendada desde a edição #13, é o que a regra exige",
                   raciocinio: "A resolução admite a pré-correção de redações e provas dissertativas por IA exclusivamente como apoio preparatório da correção do professor. Segundo guias de entidades do setor, o professor lê a produção inteira e decide, sem aprovar em bloco a sugestão do sistema.",
                   decisao: "Tratar a correção em dois turnos como requisito de conformidade, com a leitura do professor registrada, e não como diferencial opcional."
-                },
-                {
-                  tag: "Vento contra",
-                  tagCor: "bg-red-100 text-red-700",
-                  conclusao: "A IA conversacional sai do alcance do aluno até o 5º ano",
-                  raciocinio: "A norma proíbe o uso de IA pelas crianças da educação infantil, mesmo com mediação, e afasta a IA generativa e conversacional dos alunos dos anos iniciais. Nos anos finais, segundo a Agência Brasil, o uso depende da mediação do professor.",
-                  decisao: "Revisar série a série o que cada recurso voltado ao aluno oferece e desligar o que conversa com o aluno até o 5º ano."
                 },
                 {
                   tag: "Mudança de padrão",
@@ -3960,6 +3953,27 @@ export default function App() {
                   conclusao: "As ferramentas para o professor mostram mais resultado do que as que falam com o aluno",
                   raciocinio: "Uma revisão do centro SCALE, da Universidade de Stanford, encontrou resultados mais promissores nas ferramentas que apoiam o professor e evidência fraca e mista nas voltadas ao aluno, cujos ganhos podem sumir quando ele é avaliado sem a IA.",
                   decisao: "Priorizar os recursos para o professor e exigir avaliação sem IA dos recursos para o aluno."
+                },
+                {
+                  tag: "Tecnologia",
+                  tagCor: "bg-azul-100 text-azul-700",
+                  conclusao: "Três modelos de fronteira saíram em dez dias, e escolher o modelo do primeiro turno da correção passa a ser questão de custo",
+                  raciocinio: "A Anthropic lançou o Claude Fable 5.2 em 9 de novembro, a OpenAI lançou o GPT-6.2 Astra e Sol em 17 de novembro, e o Google lançou o Gemini 4 Neon em 18 de novembro. Segundo a cobertura, o Fable 5.2 custa cerca de 20% menos que o 5.1, e o Neon custa US$ 3 por milhão de tokens de entrada e US$ 15 de saída. Desempenho e preço são declarações das empresas; o desempenho em manuscrito em português não foi verificado.",
+                  decisao: "Testar os modelos numa amostra de redações manuscritas reais antes de fixar o do primeiro turno, com contrato que impeça o uso de dados de alunos para treinar modelos de terceiros."
+                },
+                {
+                  tag: "Referência externa",
+                  tagCor: "bg-gray-200 text-gray-700",
+                  conclusao: "A Inglaterra propõe certificar produtos de IA para escolas, e autoridades de privacidade pedem avaliação de impacto antes do uso",
+                  raciocinio: "Em 10 de novembro, o Departamento de Educação da Inglaterra abriu consulta, até 4 de fevereiro de 2027, sobre um selo de segurança para ferramentas de IA generativa e de aprendizagem personalizada voltadas ao aluno, entre outras. O selo seria voluntário e levaria ao menos 18 meses para sair. Em meados de novembro, a Assembleia Global de Privacidade adotou, sem efeito vinculante, uma resolução sobre IA na educação.",
+                  decisao: "Usar os critérios dessas propostas e o rubric de Maryland como base da ficha de cada recurso de IA e acompanhar a consulta inglesa."
+                },
+                {
+                  tag: "Mercado público",
+                  tagCor: "bg-gray-200 text-gray-700",
+                  conclusao: "A educação básica da Cogna perdeu 18,6% da receita no 3º trimestre, com menos PNLD e vendas a governos mais lentas",
+                  raciocinio: "No resultado do 3º trimestre, divulgado em novembro, a Cogna informou receita líquida de R$ 315,5 milhões na educação básica, queda de 18,6%, com EBITDA recorrente negativo. A empresa atribuiu o resultado à sazonalidade, à menor receita do PNLD e à lentidão das vendas a governos num ano eleitoral. Não localizamos menção a IA na cobertura do resultado.",
+                  decisao: "Levantar com Finanças qual parte da nossa receita acompanha o ciclo do PNLD e as compras de governo."
                 },
 ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-rosa-600 shadow-sm hover:shadow-md transition-shadow">
@@ -3998,10 +4012,10 @@ export default function App() {
               <span className="text-sm text-azul-600 font-medium">Sinais da quinzena</span>
             </div>
             <h2 className="text-3xl md:text-4xl text-navy-900 font-bold mb-4 tracking-tight text-balance">
-              Três sinais, <span className="text-azul-600">uma direção</span>
+              Uma manchete, <span className="text-azul-600">cinco outros movimentos</span>
             </h2>
             <p className="text-gray-600 mb-10 text-base max-w-3xl text-pretty">
-              Regulador brasileiro, redes americanas e pesquisa apontam para o mesmo lugar: a IA entra na escola pelo professor, e a escola quer controlar cada recurso que chega ao aluno. Os fatos centrais são de 7 a 25 de novembro; o contexto anterior vem datado no cartão.
+              O primeiro sinal é a manchete da quinzena, a regra brasileira. Os outros cinco saíram de uma varredura independente de produto, concorrência, tecnologia, regulação, pedagogia e mercado, e nem todos se ligam à manchete. Os fatos centrais são de 7 a 25 de novembro; o contexto anterior vem datado no cartão.
             </p>
 
             <BentoGrid tipo="denso" className="gap-6">
@@ -4029,7 +4043,7 @@ export default function App() {
                   impacto: "Na edição #14, o Google pôs nas mãos da escola a decisão de ligar a IA, mas deixou de fora o recurso mais usado. Duas semanas depois, três das maiores redes do país mostram que, sem interruptor, a escola considera trocar de fornecedor, mesmo um com o peso do Google. É o mesmo recado da regra brasileira: a escola quer decidir recurso por recurso.",
                   professor: "Pode ter de trocar o buscador que usa com a turma.",
                   aluno: "Pode passar a pesquisar num buscador sem respostas de IA.",
-                  gestor: "Ganha poder de negociação: trocar de fornecedor virou ameaça crível.",
+                  gestor: "Ganha poder de negociação: a troca de fornecedor passa a ser ameaça crível.",
                   roadmap: "Nenhum recurso de IA embutido sem interruptor próprio, inclusive dentro das funções que a escola considera essenciais.",
                   fonte: "https://gizmodo.com/nyc-la-and-chicago-school-districts-all-discussing-alternatives-to-ai-pilled-google-2000842174",
                   color: "from-rosa-600 to-rosa-700"
@@ -4047,6 +4061,48 @@ export default function App() {
                   roadmap: "Medir os recursos do aluno numa avaliação feita sem IA e priorizar os recursos para o professor.",
                   fonte: "https://www.chalkbeat.org/2026/11/13/ai-research-review-shows-tools-help-teachers-more-than-students/",
                   color: "from-azul-600 to-azul-700"
+                },
+                {
+                  titulo: "Três modelos de fronteira saíram em dez dias, e o custo de testar a pré-correção de redação cai",
+                  empresa: "Anthropic · OpenAI · Google",
+                  data: "9–18 nov/2026",
+                  consolida: "Claude Fable 5.2 · GPT-6.2 Astra e Sol · Gemini 4 Neon · melhorias de visão e de preço declaradas pelas empresas",
+                  resumo: "Em 9 de novembro, a Anthropic lançou o Claude Fable 5.2, na API e nos planos pagos, com melhorias em programação, raciocínio e visão e, segundo a cobertura, preço de API cerca de 20% menor que o do Fable 5.1. Em 17 de novembro, a OpenAI lançou o GPT-6.2 Astra, para trabalho profissional exigente, e o GPT-6.2 Sol, para uso cotidiano, disponíveis nos planos Plus, Pro, Enterprise e Edu. Em 18 de novembro, o Google lançou o Gemini 4 Neon, a US$ 3 por milhão de tokens de entrada e US$ 15 de saída, que a empresa diz rivalizar com o Claude Opus 5.5 e o GPT-6.2 Sol por menos, segundo o Digital Trends. Os números de desempenho e de preço são das empresas e de sites de preços, e não foram verificados de forma independente. Nas fontes que lemos, nenhum dos três anúncios traz recurso específico para alunos ou escolas.",
+                  impacto: "Para os produtos educacionais, o que muda é o custo e a capacidade do primeiro turno de tarefas como a leitura de redação manuscrita e a geração de material, que a regra brasileira admite como apoio ao professor. Com três provedores em faixas de preço próximas, a escolha do modelo é decisão de custo, como já era desde a edição #12, e o diferencial está no fluxo do professor. Não verificamos o desempenho em manuscrito em português: é teste interno, não conclusão.",
+                  professor: "Pode ganhar pré-correção mais rápida e barata, desde que leia cada produção inteira.",
+                  aluno: "Efeito indireto: devolutiva mais rápida, com a nota decidida pelo professor.",
+                  gestor: "O custo de IA por correção tende a cair; vale pedir ao fornecedor essa conta.",
+                  roadmap: "Comparar os modelos numa amostra de redações manuscritas reais, medindo qualidade da leitura, custo e tempo, com contrato que impeça o uso de dados de alunos para treinar modelos de terceiros.",
+                  fonte: "https://sdtimes.com/ai/anthropic-introduces-claude-fable-5-2-mythos-5-2/",
+                  color: "from-azul-600 to-lilas-600"
+                },
+                {
+                  titulo: "A Inglaterra propõe certificar produtos de IA para escolas, e autoridades de privacidade pedem avaliação de impacto antes do uso",
+                  empresa: "Departamento de Educação da Inglaterra · Assembleia Global de Privacidade",
+                  data: "10–18 nov/2026",
+                  consolida: "Consulta pública até 4 de fevereiro de 2027 · quatro categorias de produto · resolução não vinculante com 11 princípios",
+                  resumo: "Em 10 de novembro, o Departamento de Educação da Inglaterra abriu consulta sobre um esquema de certificação de segurança para produtos de tecnologia educacional e de IA. Seriam certificados filtros de conteúdo, produtos que tratam dados de crianças com alto risco, ferramentas de IA generativa voltadas ao aluno e ferramentas de aprendizagem personalizada voltadas ao aluno; ferramentas criadas por uma escola ou professor para uso só ali ficariam de fora. A certificação seria voluntária, o governo diz não ter hoje poder para exigi-la, e levaria pelo menos 18 meses para sair. A consulta convida fornecedores internacionais e vai até 4 de fevereiro de 2027. Na mesma quinzena, a 48ª Assembleia Global de Privacidade, em Bruxelas, adotou uma resolução sobre IA na educação, conduzida pela autoridade francesa, a CNIL, e sem efeito vinculante: 11 princípios e seis compromissos, entre eles avaliação de impacto à proteção de dados antes de adotar ferramentas de IA e coleta limitada ao necessário. Segundo uma reportagem, recursos que prolongam o engajamento do aluno devem vir desligados por padrão.",
+                  impacto: "Mostra como outros reguladores tratam o problema que a Resolução CNE/CP nº 1/2026 trata no Brasil. O Brasil optou por vedações e exigências de contrato; a Inglaterra propõe um selo de produto. O ponto comum é a lista do que a escola vai querer ver antes de adotar: segurança, dados de crianças e controle. As ferramentas de aprendizagem personalizada voltadas ao aluno, como as plataformas adaptativas, entram na proposta inglesa.",
+                  professor: "Tende a receber ferramentas com mais documentação de segurança.",
+                  aluno: "Pode ter menos coleta de dados e menos recursos que prolongam o uso, se as propostas virarem prática.",
+                  gestor: "Ganha uma lista de critérios para pedir ao fornecedor, mesmo sem selo.",
+                  roadmap: "Usar os critérios da consulta inglesa, da resolução internacional e do rubric de Maryland como base da ficha de cada recurso de IA; acompanhar o resultado da consulta.",
+                  fonte: "https://www.gov.uk/government/consultations/introducing-an-edtech-and-ai-product-safety-certification-scheme",
+                  color: "from-rosa-600 to-rosa-700"
+                },
+                {
+                  titulo: "A educação básica da Cogna perdeu 18,6% da receita no 3º trimestre, com menos PNLD e vendas a governos mais lentas",
+                  empresa: "Cogna",
+                  data: "11–12 nov/2026",
+                  consolida: "Resultado do 3T26 · educação básica com EBITDA recorrente negativo · menos receita do PNLD · ano eleitoral",
+                  resumo: "No resultado do 3º trimestre, divulgado em novembro, a Cogna informou prejuízo líquido de R$ 37,3 milhões, contra lucro de R$ 191,6 milhões um ano antes. A receita líquida do grupo caiu 5,2%, para R$ 1,44 bilhão. A educação básica foi o segmento mais fraco: receita líquida de R$ 315,5 milhões, queda de 18,6%, e EBITDA recorrente negativo; as fontes divergem no valor. A empresa atribuiu a reversão à sazonalidade desfavorável e à queda das receitas de programas governamentais. O CEO, Roberto Valério, citou a menor receita do PNLD, que teria recuado 75,6% na comparação anual, e a lentidão das vendas a governos num ano eleitoral. Não localizamos menção a IA na cobertura do resultado.",
+                  impacto: "É o movimento de mercado mais claro da janela no lado público. A empresa atribui o resultado à sazonalidade, ao momento das compras do PNLD e ao ritmo das compras de governo em ano eleitoral, e por isso a queda não mostra, por si, perda estrutural. Também não dá para ligar o resultado à IA. O que cabe é uma pergunta interna: quanto da nossa receita acompanha o mesmo ciclo.",
+                  professor: "Sem efeito direto no uso em sala.",
+                  aluno: "Sem efeito direto.",
+                  gestor: "O ritmo de compras de governo em ano eleitoral aparece como fator de receita para os fornecedores.",
+                  roadmap: "Levantar com Finanças a exposição da nossa receita ao ciclo do PNLD e às compras de governo, e comparar com os concorrentes que divulgam resultado.",
+                  fonte: "https://www.infomoney.com.br/mercados/cogna-cogn3-resultados-terceiro-trimestre-2026/",
+                  color: "from-azul-700 to-azul-800"
                 },
 ].map((m, i) => (
                 <motion.div
@@ -4156,7 +4212,13 @@ export default function App() {
                 {
                   cat: "O Google não ofereceu Busca sem IA para escolas",
                   nota: "Até 25 de novembro, não localizamos anúncio do Google de uma Busca sem respostas de IA para escolas, nem informação sobre o padrão desligado fora dos EUA.",
-                  leitura: "Se o Google ceder, o interruptor por recurso vira padrão de mercado; se não ceder e alguma grande rede trocar de buscador, vira argumento de venda contra fornecedores dominantes. Os dois caminhos favorecem quem já separa os recursos.",
+                  leitura: "Se o Google ceder, o interruptor por recurso se firma como padrão de mercado; se não ceder e alguma grande rede trocar de buscador, ele serve de argumento de venda contra fornecedores dominantes. Os dois caminhos favorecem quem já separa os recursos.",
+                  janela: "Monitorar"
+                },
+                {
+                  cat: "Não localizamos lançamento de concorrente direto nem novidade do PNLD na janela",
+                  nota: "Entre os concorrentes diretos acompanhados e nos canais do PNLD que a busca alcança, não localizamos lançamento ou mudança de produto entre 7 e 25 de novembro. A busca cobre imprensa e páginas indexadas; não alcança centrais de ajuda, demonstrações fechadas, webinars nem comunicados internos de redes.",
+                  leitura: "Ausência na busca não é ausência de movimento. O lançamento que surpreende costuma aparecer primeiro em página de produto, webinar ou rede piloto, e esses canais pedem monitoramento direto a cada ciclo.",
                   janela: "Monitorar"
                 },
 ].map((item, i) => (
@@ -4245,16 +4307,16 @@ export default function App() {
                 {
                   tema: "Big tech direto ao aluno",
                   tipo: "Estrutural",
-                  trilha: "#12 big techs se voltam à formação do professor → #13 Gemini aberto a alunos de todas as idades e ferramentas de estudo no ChatGPT para adolescentes → #14 o Google recua e anuncia a IA desligada para alunos → #15 três das quatro maiores redes americanas avaliam trocar a Busca do Google",
-                  leitura: "Em quatro edições, a big tech foi direto ao aluno, recuou e agora enfrenta a ameaça de troca em grandes redes americanas. O tamanho não garante o lugar: a escola quer decidir recurso por recurso.",
+                  trilha: "#12 big techs se voltam à formação do professor → #13 Gemini aberto a alunos de todas as idades e ferramentas de estudo no ChatGPT para adolescentes → #14 o Google recua e anuncia a IA desligada para alunos → #15 o Google acrescenta livros didáticos abertos ao Gemini Notebook (29–30 out) e três das quatro maiores redes americanas avaliam trocar a Busca do Google",
+                  leitura: "Em quatro edições, a big tech foi direto ao aluno, recuou, passou a oferecer conteúdo ancorado de graça e agora enfrenta a ameaça de troca em grandes redes americanas. O tamanho não garante o lugar: a escola quer decidir recurso por recurso.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
                 {
                   tema: "O que vira commodity",
                   tipo: "Estrutural",
-                  trilha: "#12 o modelo em si vira insumo barato → #13 a correção automática de redação vira prática de rede pública → #14 o Google leva ao Classroom um modo guiado que conduz o aluno em vez de dar a resposta → #15 com a regra, a pré-correção por IA com o professor vira prática admitida em qualquer escola",
-                  leitura: "Com a regra, a pré-correção de redação por IA vira prática que qualquer escola pode adotar. A diferença passa a estar no fluxo do professor: leitura integral, nota decidida por ele e registro.",
+                  trilha: "#12 o modelo em si vira insumo barato → #13 a correção automática de redação vira prática de rede pública → #14 o Google leva ao Classroom um modo guiado que conduz o aluno em vez de dar a resposta → #15 três modelos de fronteira em dez dias, pré-correção por IA admitida pela regra e livros abertos ancorados de graça no Gemini Notebook",
+                  leitura: "Com a regra, a pré-correção de redação por IA vira prática que qualquer escola pode adotar, com modelos mais baratos para rodá-la. O conteúdo didático ancorado com citação, antes diferencial de quem tem o livro, também passa a ser oferecido de graça pelo Google, com livros abertos dos EUA e da Índia. A diferença passa a estar no fluxo do professor e na obra adotada: leitura integral, nota decidida por ele, registro e citação do trecho.",
                   cor: "bg-red-50 border-red-200",
                   badge: "bg-red-100 text-red-700"
                 },
@@ -4299,7 +4361,7 @@ export default function App() {
               Quem está do lado <span className="text-azul-600">certo da evidência</span>
             </h2>
             <p className="text-gray-600 mb-8 text-base max-w-3xl text-pretty">
-              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Não localizamos, entre os players acompanhados, lançamento de IA na janela nem anúncio de adequação à resolução. A análise parte do que cada um já tem diante da regra que entrou em vigor: a IA com o professor no fluxo está admitida; a IA que conversa com o aluno até o 5º ano, não.
+              Concorrência direta é quem disputa a mesma escola, rede e orçamento. Não localizamos, entre os players acompanhados, lançamento de IA na janela nem anúncio de adequação à resolução. A busca não alcança centrais de ajuda nem demonstrações fechadas, então a ausência vale só para o que é público. A análise parte do que cada um já tem diante da regra que entrou em vigor: a IA com o professor no fluxo está admitida; a IA que conversa com o aluno até o 5º ano, não.
             </p>
 
             <ConcorrenciaDireta
@@ -4421,7 +4483,7 @@ export default function App() {
                   leitura: "O agente responde sobre o sistema, e não sobre o conteúdo, por isso não entrega resposta de exercício. Como o leitor oficial já oferece audiodescrição e leitura de tela para todas as obras, esses recursos deixam de diferenciar qualquer fornecedor.",
                   fonte: "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/junho/pnld-digital-amplia-inclusao-aos-livros-da-educacao-basica",
                   fonteLabel: "MEC",
-                  historico: "#11 entra no Radar: leitor oficial com acessibilidade e agente de IA que responde sobre o uso do sistema → #12 sem mudança → #13 sem mudança → #14 sem mudança → #15 sem mudança"
+                  historico: "#11 entra no Radar: leitor oficial com acessibilidade e agente de IA que responde sobre o uso do sistema → #12 sem mudança → #13 sem mudança → #14 sem mudança → #15 sem mudança; vale verificar como o agente de IA do leitor se enquadra nas regras por etapa"
                 },
                 {
                   player: "Teachy",
@@ -4491,6 +4553,16 @@ export default function App() {
                   altera: "Ordem de adoção",
                   nota: "Para a Unesco, que participou da elaboração da regra, o letramento digital dos alunos tem de vir antes do uso da IA. Recurso para o aluno sem formação junto tende a ser questionado."
                 },
+                {
+                  nome: "Google (conteúdo)",
+                  altera: "Expectativa de conteúdo",
+                  nota: "Em 29–30 de outubro, fora da janela e não registrado na #14, o Gemini Notebook passou a oferecer de graça centenas de livros didáticos abertos, com respostas que citam a obra e geram quiz e flashcards. As editoras citadas são dos EUA e da Índia; a escola passa a esperar a mesma ancoragem com citação de qualquer material."
+                },
+                {
+                  nome: "Reguladores no exterior",
+                  altera: "Critério de compra",
+                  nota: "A Inglaterra propõe certificar ferramentas de IA voltadas ao aluno, e a Assembleia Global de Privacidade pede avaliação de impacto antes do uso. Sem selo no Brasil, a lista do que a escola vai querer ver cresce do mesmo jeito."
+                },
 ].map((item, i) => (
                   <div key={i} className="border-l-2 border-azul-200 pl-4">
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
@@ -4529,6 +4601,34 @@ export default function App() {
             <BentoGrid tipo="denso" desde="lg" className="gap-6">
               {[
                 {
+                  empresa: "Google e OpenStax: o livro aberto que responde com citação",
+                  pais: "Estados Unidos e Índia · Conteúdo",
+                  categoria: "Conteúdo ancorado",
+                  problema: "Dar ao aluno respostas de IA que se apoiem numa obra conhecida, e não na internet inteira.",
+                  implementacao: "No Gemini Notebook, o aluno abre um caderno, escolhe adicionar fontes e depois livros, e as respostas passam a vir do conteúdo do livro, com citação e link para a fonte. Dá para gerar questionários, flashcards e guias de estudo a partir da obra. O contexto: na edição #13, o Google tinha aberto o hub de estudo do Gemini com cadernos, flashcards e quizzes.",
+                  escala: "Centenas de livros de OpenStax, Open Textbook Library e S Chand Publishing, de graça, anunciados em 29–30 de outubro, fora da janela e não registrados na #14. A editora indiana PM Publishers já tinha anunciado, em dezembro de 2025, tutores com o Gemini sobre os próprios livros.",
+                  financiamento: "Decisão de produto do Google; livros de acesso aberto.",
+                  aprendizado: "Ancorar a IA numa obra identificada, com citação, já é oferta gratuita. O que diferencia um material do outro é a qualidade da obra e a ligação com o currículo, e não a capacidade de responder sobre ela.",
+                  limitacoes: "São livros abertos dos EUA e da Índia; não localizamos livro didático brasileiro no catálogo. A cobertura não informa se outras editoras vão entrar.",
+                  replicavel: "Resposta que cita o trecho da obra adotada, com link para ele, em vez de resposta solta.",
+                  naoReplicavel: "O alcance do Google e o acesso livre aos livros abertos: o material de uma editora privada tem de resolver direitos e acesso.",
+                  application: "Mostra a expectativa que a escola passa a ter: material didático com IA que cita a própria obra. Vale investigar como entregar isso com o conteúdo adotado, com os direitos resolvidos."
+                },
+                {
+                  empresa: "Maryland: um rubric estadual para avaliar ferramentas de IA",
+                  pais: "Estados Unidos · Rede pública",
+                  categoria: "Avaliação de fornecedor",
+                  problema: "Dar a cada rede um jeito padronizado de decidir se uma ferramenta de IA entra, sem depender da demonstração do fornecedor.",
+                  implementacao: "O departamento estadual de educação publicou, nas orientações de 2026, um rubric que pontua cada critério em quatro níveis, de exemplar a inadequado. Segundo os trechos que lemos, entre os critérios estão privacidade e segurança dos dados, com a prática de nunca treinar modelos globais com dados do aluno, e supervisão humana, com o professor podendo aprovar ou corrigir o que a IA produz e acompanhar as interações do aluno com ela. Há ainda itens que precisam estar confirmados antes de a ferramenta passar ao piloto, como rotular o conteúdo gerado por IA.",
+                  escala: "É o instrumento das redes de Maryland, que a lei obrigou a ter política de IA; parte delas perdeu o prazo de 22 de outubro, como registrado na #14. Em 17 de novembro, a rede de Montgomery County divulgou um rascunho de regulamento de IA, aberto a comentários, que trata também da avaliação de ferramentas, segundo a Bethesda Today.",
+                  financiamento: "Poder público estadual.",
+                  aprendizado: "A rede passa a comparar fornecedores pelo mesmo conjunto de critérios, e quem já tem a documentação pronta encurta a decisão.",
+                  limitacoes: "Lemos só trechos do rubric, e a versão oficial deve ser conferida. Não localizamos dado sobre quantas ferramentas foram reprovadas.",
+                  replicavel: "Usar os mesmos critérios como lista de verificação interna e preencher uma ficha por recurso antes de a escola pedir.",
+                  naoReplicavel: "O peso legal: em Maryland, a lei obriga as redes a ter política, e o rubric é a ferramenta delas. Não localizamos equivalente no Brasil.",
+                  application: "É um modelo pronto do que a ficha de cada recurso precisa mostrar. A resolução brasileira exige governança e cuidado com dados nos contratos; o rubric mostra como uma rede pode transformar isso em nota."
+                },
+                {
                   empresa: "DuckDuckGo e Bing: o interruptor de IA que as escolas pediram",
                   pais: "Estados Unidos · Buscadores",
                   categoria: "Governança de produto",
@@ -4536,11 +4636,11 @@ export default function App() {
                   implementacao: "O DuckDuckGo mantém os recursos de IA opcionais, que podem ser desligados nas configurações, e uma versão sem IA em endereço próprio, que a escola pode definir como buscador padrão dos equipamentos. O Bing também permite desligar as respostas de IA, segundo a cobertura da disputa.",
                   escala: "São as alternativas que Nova York, Los Angeles e Chicago avaliam, segundo o New York Times. Nova York disse que ainda não decidiu.",
                   financiamento: "Decisão de produto das empresas.",
-                  aprendizado: "Um interruptor simples virou argumento na disputa por três das maiores redes do país, contra o fornecedor dominante.",
+                  aprendizado: "Um interruptor simples entrou como argumento na disputa por três das maiores redes do país, contra o fornecedor dominante.",
                   limitacoes: "Trocar de buscador tem custo de hábito e de formação, e não localizamos rede que tenha decidido trocar até 25 de novembro.",
                   replicavel: "Uma versão sem IA de cada função, que a escola define como padrão.",
                   naoReplicavel: "A facilidade da troca: mudar o buscador é simples; mudar de sistema de ensino no meio do ano letivo, não. Isso dá ao fornecedor de material mais tempo, mas não imunidade.",
-                  application: "O controle por recurso deixou de ser detalhe: é o que faz a escola ficar ou sair."
+                  application: "O controle por recurso não é detalhe: é o que faz a escola ficar ou sair."
                 },
                 {
                   empresa: "Stanford SCALE: separar o estudo causal do resto",
@@ -4646,61 +4746,76 @@ export default function App() {
               Capacidades que <span className="text-azul-600">encurtam o caminho</span>
             </h2>
             <p className="text-gray-600 mb-8 text-base max-w-3xl text-pretty">
-              O que já existe, em que estágio está e quanto custa adotar, com limites, dependências e o que muda para Produto e Engenharia. Nesta edição, entram os que ajudam a cumprir a regra e a dar à escola o controle de cada recurso.
+              O que já existe, em que estágio está e quanto custa adotar, com limites, dependências e o que muda para Produto e Engenharia. Nesta edição, entram modelos novos, padrões que o mercado já pratica e um rubric pronto. O que a empresa precisa construir fica em Oportunidades.
             </p>
 
             <BentoGrid tipo="denso" className="gap-6">
               {[
                 {
-                  nome: "Mapa de conformidade por recurso e por etapa",
-                  tipo: "Governança",
-                  oque: "Uma matriz com cada recurso de IA do produto, a etapa em que aparece, se fala com o aluno, que dados usa e o que a Resolução CNE/CP nº 1/2026 exige dele.",
-                  acelera: "Mostra à escola, em uma página, o que já cumpre a regra e o que muda até o fim da adequação.",
-                  limitacoes: "A leitura da regra ainda vai amadurecer, e a matriz precisa de revisão jurídica a cada versão.",
-                  dependencias: "Catálogo de recursos, cadastro de série e turma e revisão jurídica.",
-                  cenario: "Toda renovação de contrato com escola privada e rede pública nos próximos 12 meses.",
-                  impactoProduto: "Vira peça de venda enquanto não localizamos concorrente que mostre o mesmo.",
-                  impactoEngenharia: "Gerar a matriz a partir do catálogo e das flags, para não ficar desatualizada.",
-                  maturidade: "A construir",
+                  nome: "Modelos de fronteira novos para o primeiro turno da correção",
+                  tipo: "Modelos de IA",
+                  oque: "Claude Fable 5.2 (9/11), GPT-6.2 Astra e Sol (17/11) e Gemini 4 Neon (18/11), por API ou por plano. Segundo a cobertura, o Fable 5.2 melhorou em programação, raciocínio e visão e custa cerca de 20% menos que o 5.1, e o Neon custa US$ 3 por milhão de tokens de entrada e US$ 15 de saída.",
+                  acelera: "Reduz o custo e o tempo de testar a pré-correção de redação e a geração de material, e as melhorias em programação podem reduzir o esforço de construir o fluxo de dois turnos.",
+                  limitacoes: "Desempenho e preço são declarações das empresas e de sites de preços, não verificados de forma independente. O desempenho em manuscrito em português não foi verificado. O preço de lançamento de outros modelos do Gemini 4 sobe em 1º de dezembro, segundo a cobertura.",
+                  dependencias: "Amostra de redações manuscritas reais, critério de qualidade definido com professores, contrato de API que impeça o uso de dados de alunos para treinar modelos de terceiros e proteção desses dados.",
+                  cenario: "Primeiro turno da correção de redação e de questões dissertativas, e geração de material para o professor.",
+                  impactoProduto: "A escolha do modelo é decisão de custo e qualidade, e o diferencial do produto está no fluxo do professor.",
+                  impactoEngenharia: "Camada de modelo trocável, para comparar e mudar de provedor sem refazer o fluxo, e registro da versão do modelo em cada correção.",
+                  maturidade: "Disponível",
                   cor: "bg-azul-100 text-azul-700",
-                  link: "https://mecnormas.mec.gov.br/pesquisa/detalhar/15979",
-                  linkLabel: "A Resolução CNE/CP nº 1/2026"
+                  link: "https://sdtimes.com/ai/anthropic-introduces-claude-fable-5-2-mythos-5-2/",
+                  linkLabel: "A cobertura do lançamento"
                 },
                 {
-                  nome: "Registro da leitura integral do professor",
-                  tipo: "Padrão de fluxo",
-                  oque: "Na correção assistida, a confirmação da nota é individual, e o sistema registra que o professor abriu a produção inteira antes de confirmar.",
-                  acelera: "Atende à exigência de validação humana documentada sem papelada à parte.",
-                  limitacoes: "Registrar a abertura não prova leitura atenta, e o desenho não pode virar vigilância do professor.",
-                  dependencias: "Sugestão e nota separadas no modelo de dados, trilha de auditoria e tela de correção individual.",
-                  cenario: "Redação e provas dissertativas com pré-correção por IA.",
-                  impactoProduto: "Transforma a correção em dois turnos em conformidade demonstrável.",
-                  impactoEngenharia: "Bloquear a aprovação em lote e guardar a versão da IA e a do professor.",
-                  maturidade: "A construir",
+                  nome: "Guided Learning atribuído pelo professor no Classroom",
+                  tipo: "Padrão de interação",
+                  oque: "O professor adiciona o Guided Learning, modo do Gemini que conduz o aluno por etapas, a uma tarefa do Classroom. Quando o aluno abre a tarefa, o painel lateral do Gemini some e novos chats ficam desativados naquela aba. A implantação global, em todos os idiomas do Gemini, começou em 3 de novembro, segundo o blog de atualizações do Workspace.",
+                  acelera: "Dá à rede que já usa o Google for Education um tutor guiado e atribuído pelo professor, sem construir nada, e mostra o desenho de mediação docente que a regra admite nos anos finais.",
+                  limitacoes: "Só funciona se o administrador ligar o Gemini para alunos, que, nos EUA, passa a vir desligado em 2027, segundo reportagens. A regra afasta a IA generativa e conversacional dos anos iniciais. Depende do Google e não conhece o material adotado pela escola.",
+                  dependencias: "Escola no Google for Education, Gemini ativado pelo administrador e atividade atribuída pelo professor.",
+                  cenario: "Anos finais e ensino médio, em revisão e prática guiada.",
+                  impactoProduto: "É o concorrente gratuito com o qual o tutor do nosso material vai ser comparado. O que a ferramenta não traz, nas fontes que lemos, é a ligação com o capítulo adotado.",
+                  impactoEngenharia: "Estudar como o desenho esconde o chat livre e atribui a atividade, e se o material adotado pode ser a fonte, com direitos e dados resolvidos.",
+                  maturidade: "Disponível",
                   cor: "bg-azul-100 text-azul-700",
-                  link: "https://agenciabrasil.ebc.com.br/educacao/noticia/2026-11/mec-aprova-diretrizes-para-uso-de-ia-em-cada-etapa-da-educacao",
-                  linkLabel: "As regras por etapa"
+                  link: "https://workspaceupdates.googleblog.com/2026/11/educators-can-now-add-guided-learning-to-assignments-in-Google-Classroom-to-help-students-get-extra-support.html",
+                  linkLabel: "O anúncio do Google"
                 },
                 {
-                  nome: "Corte por etapa nos recursos que falam com o aluno",
-                  tipo: "Governança",
-                  oque: "Os recursos de IA generativa e conversacional voltados ao aluno ficam indisponíveis na educação infantil e nos anos iniciais e, nos anos finais, funcionam em atividade atribuída pelo professor.",
-                  acelera: "Põe o produto dentro da regra por padrão, sem depender de cada escola configurar.",
-                  limitacoes: "Cadastro de série errado expõe o aluno, e por isso precisa de verificação.",
-                  dependencias: "Cadastro confiável de série, flags por recurso e etapa e atividade atribuída pelo professor.",
-                  cenario: "Todo sistema de ensino com material da educação infantil e dos anos iniciais.",
-                  impactoProduto: "Evita ter de desligar o recurso inteiro em toda a rede.",
-                  impactoEngenharia: "Regras de disponibilidade por etapa acima das configurações da escola, que só podem restringir mais.",
-                  maturidade: "A construir",
-                  cor: "bg-azul-100 text-azul-700",
-                  link: "https://agenciabrasil.ebc.com.br/educacao/noticia/2026-11/mec-aprova-diretrizes-para-uso-de-ia-em-cada-etapa-da-educacao",
-                  linkLabel: "O que vale em cada etapa"
+                  nome: "Respostas ancoradas na obra, com citação",
+                  tipo: "Padrão de arquitetura",
+                  oque: "A IA responde a partir de uma obra identificada e cita o trecho com link, em vez de responder a partir de tudo o que o modelo sabe. É o desenho do Gemini Notebook com livros abertos e o de tutores que editoras já anunciaram sobre os próprios livros, como a indiana PM Publishers com o Gemini, em dezembro de 2025.",
+                  acelera: "Reduz o risco de resposta fora do currículo e dá ao professor um caminho para conferir a resposta.",
+                  limitacoes: "Depende de a obra estar bem estruturada e de os direitos do material permitirem o uso. Citar o trecho não garante que a resposta esteja certa.",
+                  dependencias: "Obra digital estruturada por capítulo, busca por trecho, rótulo de IA nas respostas e revisão pedagógica de uma amostra.",
+                  cenario: "Tira-dúvidas e estudo guiado sobre o material adotado.",
+                  impactoProduto: "Responde à expectativa criada pela oferta gratuita do Google com a obra que a escola adotou.",
+                  impactoEngenharia: "Indexar o acervo por trecho, com identificador estável, e devolver a citação junto com a resposta.",
+                  maturidade: "Padrão de mercado",
+                  cor: "bg-gray-200 text-gray-700",
+                  link: "https://www.bweducation.com/article/google-adds-free-textbooks-to-notebooklm-for-students-631248",
+                  linkLabel: "Os livros abertos no Gemini Notebook"
                 },
                 {
-                  nome: "Interruptor por recurso, inclusive no essencial",
-                  tipo: "Arquitetura",
-                  oque: "Cada recurso de IA pode ser desligado sem levar junto a função em que está embutido: a busca continua sem a resposta de IA, o exercício continua sem o tira-dúvidas.",
-                  acelera: "Tira da escola a escolha entre tudo e nada que levou grandes redes americanas a avaliar a troca de de buscador.",
+                  nome: "Rubric aberto de avaliação de ferramentas de IA (Maryland)",
+                  tipo: "Framework aberto",
+                  oque: "Lista publicada pelo departamento estadual de educação de Maryland para avaliar ferramentas de IA, com quatro níveis por critério, entre eles privacidade e segurança de dados e supervisão humana.",
+                  acelera: "Dá uma estrutura pronta, já usada por redes, para montar a ficha de cada recurso de IA, em vez de partir do zero.",
+                  limitacoes: "Pensado para as redes de Maryland e para a lei local. Lemos só trechos, e a versão oficial deve ser conferida.",
+                  dependencias: "Revisão jurídica e pedagógica e as respostas por recurso.",
+                  cenario: "Preparação para pedidos de rede pública e para renovações com escola privada.",
+                  impactoProduto: "Reduz o esforço de montar a documentação que a Resolução CNE/CP nº 1/2026 vai exigir dos contratos.",
+                  impactoEngenharia: "Mapear os critérios para dados que o produto já registra, como versão do modelo, uso de dados e aprovação do professor.",
+                  maturidade: "Disponível",
+                  cor: "bg-azul-100 text-azul-700",
+                  link: "https://marylandpublicschools.org/about/documents/dccr/ai/07-ai-tools-evaluation-rubric-a.pdf",
+                  linkLabel: "O rubric de Maryland"
+                },
+                {
+                  nome: "Interruptor por recurso: a IA como camada opcional",
+                  tipo: "Padrão de arquitetura",
+                  oque: "Cada função continua funcionando com a IA desligada, e a escola liga só a camada de IA que quiser. É a prática do DuckDuckGo, que mantém a IA opcional e oferece uma versão sem IA em endereço próprio, e do Bing, que permite desligar as respostas de IA.",
+                  acelera: "Tira da escola a escolha entre tudo e nada que levou grandes redes americanas a avaliar a troca de buscador.",
                   limitacoes: "Manter a versão sem IA de cada função custa manutenção.",
                   dependencias: "Arquitetura em que a IA é camada opcional, e não parte da função.",
                   cenario: "Redes que restringem a IA e escolas com anos iniciais.",
@@ -4710,21 +4825,6 @@ export default function App() {
                   cor: "bg-gray-200 text-gray-700",
                   link: "https://gizmodo.com/nyc-la-and-chicago-school-districts-all-discussing-alternatives-to-ai-pilled-google-2000842174",
                   linkLabel: "As redes e o Google"
-                },
-                {
-                  nome: "Avaliação sem IA para os recursos do aluno",
-                  tipo: "Método de avaliação",
-                  oque: "Medir o efeito de cada recurso voltado ao aluno numa avaliação feita sem a IA, além das métricas de uso dentro do produto.",
-                  acelera: "Responde à pergunta que a revisão de Stanford deixou: o ganho continua quando a IA sai?",
-                  limitacoes: "Leva pelo menos um período letivo e pode não mostrar efeito.",
-                  dependencias: "Rede parceira, sorteio por turma e avaliação aplicada sem IA.",
-                  cenario: "O recurso para o aluno que a empresa mais quer vender.",
-                  impactoProduto: "Separa o produto de quem mostra só uso e satisfação.",
-                  impactoEngenharia: "Registrar a exposição por aluno e ligar e desligar o recurso por turma.",
-                  maturidade: "A construir",
-                  cor: "bg-azul-100 text-azul-700",
-                  link: "https://www.chalkbeat.org/2026/11/13/ai-research-review-shows-tools-help-teachers-more-than-students/",
-                  linkLabel: "A revisão de Stanford"
                 },
 ].map((a, i) => (
                 <motion.div
@@ -4952,7 +5052,7 @@ export default function App() {
                 <div>
                   <p className="font-bold text-gray-900 mb-1">A mudança de lado desta edição</p>
                   <p className="text-sm md:text-xs text-gray-600 leading-relaxed">
-                    <strong>A correção em dois turnos</strong> deixou de ser diferencial e virou requisito. A Resolução CNE/CP nº 1/2026 só admite a pré-correção por IA como apoio à correção do professor, com leitura integral e sem aprovação em bloco. O que diferencia agora é demonstrar a conformidade antes do concorrente e manter a escola no controle de cada recurso.
+                    <strong>A correção em dois turnos</strong> é agora requisito, e não diferencial. A Resolução CNE/CP nº 1/2026 só admite a pré-correção por IA como apoio à correção do professor, com leitura integral e sem aprovação em bloco. O que diferencia agora é demonstrar a conformidade antes do concorrente e manter a escola no controle de cada recurso.
                   </p>
                 </div>
               </div>
@@ -4970,7 +5070,8 @@ export default function App() {
                     { item: "Tutor que não entrega a resposta", motivo: "O Google levou o modo guiado ao Classroom, de graça, na edição #14" },
                     { item: "Ferramentas de estudo para o aluno", motivo: "Flashcards, quizzes e resumos chegam de graça pelas big techs desde a edição #13" },
                     { item: "Correção automática de redação", motivo: "Já roda em redes estaduais e em concorrentes desde a edição #13" },
-                    { item: "O modelo de IA em si", motivo: "Desde a edição #12, escolher modelo virou decisão de custo" },
+                    { item: "Livro didático aberto com IA que cita a obra", motivo: "O Google ofereceu de graça, em 29–30 de outubro, centenas de livros abertos no Gemini Notebook, com resposta e citação", novo: true },
+                    { item: "O modelo de IA em si", motivo: "Desde a edição #12, escolher modelo virou decisão de custo; três modelos novos em dez dias reforçam isso" },
                   ].map((c, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-red-400 mt-0.5 flex-shrink-0">▸</span>
@@ -4998,6 +5099,7 @@ export default function App() {
                     { item: "Resultado medido sem a IA", motivo: "A revisão de Stanford mostrou que o ganho do aluno pode sumir sem a IA; quem medir assim sai da comparação por uso", novo: true },
                     { item: "Ficha de cada recurso para a política da rede", motivo: "As redes vão rever contratos em 12 meses e pedir o que cada recurso faz e com que dados" },
                     { item: "Modo guiado ligado ao material adotado", motivo: "O tutor gratuito não sabe o que a turma está estudando nem devolve o erro ao professor" },
+                    { item: "Conteúdo autoral alinhado à BNCC, citável pela IA", motivo: "O catálogo do Google traz livros abertos dos EUA e da Índia; o material adotado pela escola brasileira, alinhado ao currículo, é o que o tutor gratuito não tem. Não localizamos livro didático brasileiro nesse catálogo", novo: true },
                   ].map((d, i) => (
                     <div key={i} className="flex gap-3">
                       <span className="text-green-500 mt-0.5 flex-shrink-0">▸</span>
@@ -5047,6 +5149,7 @@ export default function App() {
                   {[
                     { titulo: "A regra nova trava a IA na escola", desc: "A resolução não proíbe a IA: admite a pré-correção com o professor e o uso nos anos finais com mediação. Restringe o que conversa com os alunos dos anos iniciais e o uso comercial de dados." },
                     { titulo: "O tamanho do fornecedor garante o lugar", desc: "Nova York, Los Angeles e Chicago avaliam buscadores que deixam desligar a IA, mesmo com o peso do Google nas escolas." },
+                    { titulo: "O modelo mais novo, rápido e barato resolve a correção", desc: "Melhoria de visão, desempenho e preço são declarações das empresas. Não verificamos o desempenho em manuscrito em português, e a regra mantém a leitura integral e a nota com o professor." },
                     { titulo: "Tutor de IA melhora a nota", desc: "A revisão de Stanford encontrou evidência fraca e mista nas ferramentas do aluno, e ganhos que podem sumir quando ele é avaliado sem a IA." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -5069,6 +5172,8 @@ export default function App() {
                   {[
                     { titulo: "Troca de fornecedor por falta de controle", desc: "Até 25 de novembro, não localizamos rede grande que tenha decidido trocar. Se uma trocar, o argumento vale para todo o mercado." },
                     { titulo: "Letramento digital antes da IA", desc: "Defendido pela Unesco e previsto na regra. Pode virar condição para liberar recursos ao aluno, mas ainda sem formato definido." },
+                    { titulo: "Certificação de produto de IA para escolas", desc: "Proposta da Inglaterra em consulta até fevereiro de 2027, voluntária e com pelo menos 18 meses para sair. Não localizamos selo equivalente em vigor." },
+                    { titulo: "Livros abertos ancorados em IA como expectativa", desc: "O Google oferece centenas de livros dos EUA e da Índia, com citação. Cedo para dizer se as redes brasileiras vão passar a esperar o mesmo." },
                     { titulo: "Política de IA obrigatória nas redes", desc: "Maryland exigiu, a Flórida exigiu com prazo até 2027, e o Brasil agora exige que quem adota IA siga regras. O conteúdo das políticas ainda está sendo escrito." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -5091,7 +5196,7 @@ export default function App() {
                   {[
                     { titulo: "A IA entra pelo professor", desc: "A regra brasileira, a revisão de Stanford e a correção em dois turnos apontam na mesma direção. Já justifica mudar o roadmap." },
                     { titulo: "A escola decide recurso por recurso", desc: "O Google anunciou a ativação pela escola, e grandes redes americanas mostraram que, sem interruptor, consideram trocar de fornecedor." },
-                    { titulo: "A idade vira corte de produto", desc: "A regra brasileira afasta a IA generativa até o 5º ano, como já tinham feito redes e governos de fora." },
+                    { titulo: "A idade é corte de produto", desc: "A regra brasileira afasta a IA generativa até o 5º ano, como já tinham feito redes e governos de fora." },
                     { titulo: "Evidência como condição de venda", desc: "Agora com o resultado medido sem a IA como pergunta central." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -5112,7 +5217,7 @@ export default function App() {
                 <p className="font-bold text-gray-900">O padrão desta quinzena</p>
               </div>
               <p className="text-gray-700 leading-relaxed md:columns-2 md:gap-10">
-                A regra saiu e confirmou o desenho que vinha se formando: a IA entra na escola pelo professor, com a leitura e a nota nas mãos dele, e fica longe dos alunos dos anos iniciais. Nos EUA, grandes redes mostraram o outro lado: sem controle por recurso, até o fornecedor dominante corre o risco de ser trocado. Para um sistema de ensino, os próximos 12 meses são de adequação, e quem demonstrar conformidade primeiro, recurso por recurso e etapa por etapa, sai na frente.
+                A regra saiu e confirmou o desenho que vinha se formando: a IA entra na escola pelo professor, com a leitura e a nota nas mãos dele, e fica longe dos alunos dos anos iniciais. Nos EUA, grandes redes mostraram o outro lado: sem controle por recurso, até o fornecedor dominante corre o risco de ser trocado. As outras frentes ampliam o quadro: três modelos novos em dez dias tornam a pré-correção mais barata de testar, a Inglaterra propõe certificar produtos de IA e o Google oferece livros abertos com citação. Para um sistema de ensino, os próximos 12 meses são de adequação, e quem demonstrar conformidade primeiro, recurso por recurso e etapa por etapa, sai na frente.
               </p>
             </div>
           </motion.div>
@@ -5165,7 +5270,7 @@ export default function App() {
                   sinal: "A Resolução CNE/CP nº 1/2026 está em vigor desde 12 de novembro, com vedações imediatas e 12 meses para adequar políticas, práticas e contratos",
                   problema: "Se a escola perguntar o que o produto já cumpre, hoje a resposta precisa ser montada caso a caso. Vale confirmar com Jurídico e Produto quais recursos já estão dentro da regra.",
                   oportunidade: "Mapa de conformidade por recurso e por etapa",
-                  impacto: "Uma matriz com cada recurso de IA, a etapa em que aparece, se fala com o aluno, que dados usa e o que a regra exige dele, mantida a partir do catálogo e das configurações do produto.",
+                  impacto: "Uma matriz com cada recurso de IA, a etapa em que aparece, se fala com o aluno, que dados usa e o que a regra exige dele, mantida a partir do catálogo e das configurações do produto. A estrutura pode partir do rubric de Maryland e dos critérios da consulta inglesa, em vez de começar do zero.",
                   professor: "Sabe o que pode usar com cada turma.",
                   aluno: "Efeito indireto: só usa o que a regra admite para a idade dele.",
                   gestor: "Renova o contrato com a conformidade demonstrada, e não prometida.",
@@ -5234,6 +5339,36 @@ export default function App() {
                   cor: "border-rosa-600",
                   corBadge: "bg-rosa-600 text-white",
                   area: "Evidência / Dados"
+                },
+                {
+                  rastreio: "Sinal 4",
+                  sinal: "Três modelos de fronteira saíram entre 9 e 18 de novembro, com melhorias em visão e preço menor em ao menos dois, segundo a cobertura",
+                  problema: "Se o primeiro turno da correção roda num único modelo, sem comparação recente, o custo e a qualidade podem estar longe do que já está disponível. Vale confirmar com Engenharia qual modelo está em uso e quando foi comparado pela última vez.",
+                  oportunidade: "Teste comparativo de modelos para o primeiro turno da correção",
+                  impacto: "Comparar os modelos novos e o atual numa amostra de redações manuscritas reais, medindo qualidade da leitura, custo e tempo, com professores avaliando as sugestões. É uma investigação, e não uma troca.",
+                  professor: "Recebe sugestões melhores ou mais rápidas e continua lendo e decidindo.",
+                  aluno: "Devolutiva mais rápida, com a nota decidida por uma pessoa.",
+                  gestor: "Passa a ter o custo por correção como número para negociar contratos.",
+                  roadmapItem: "Montar a amostra com professores, definir o critério de qualidade e rodar a comparação antes de fixar o modelo.",
+                  prioridade: "Média",
+                  cor: "border-rosa-600",
+                  corBadge: "bg-rosa-600 text-white",
+                  area: "Engenharia / Dados"
+                },
+                {
+                  rastreio: "Evolução · edição #14 e Sinal 2",
+                  sinal: "O Google ofereceu de graça centenas de livros didáticos abertos no Gemini Notebook, com respostas que citam a obra, e levou o Guided Learning ao Classroom",
+                  problema: "Se o recurso de tutoria do produto responde sem citar a obra adotada, ele concorre com uma oferta gratuita que cita. Vale comparar o que o nosso faz com o que o Google faz.",
+                  oportunidade: "Respostas ancoradas na obra adotada, com citação do trecho",
+                  impacto: "A IA responde a partir da obra que a escola adotou e cita o trecho com link, ligada ao capítulo que a turma estuda. Evolui a oportunidade do modo guiado da edição #14, que sobe de Baixa para Média com a oferta de livros abertos do Google.",
+                  professor: "Confere a resposta no trecho da obra.",
+                  aluno: "Estuda sobre o capítulo que vai ser cobrado, com a fonte à vista.",
+                  gestor: "Justifica pagar por algo que a ferramenta gratuita não entrega: o material adotado.",
+                  roadmapItem: "Investigar com Jurídico e Produto como indexar o acervo por trecho e citar, com direitos e dados resolvidos.",
+                  prioridade: "Média",
+                  cor: "border-rosa-600",
+                  corBadge: "bg-rosa-600 text-white",
+                  area: "Produto / Conteúdo"
                 },
                 {
                   rastreio: "Sinal 1 · forças de contexto",

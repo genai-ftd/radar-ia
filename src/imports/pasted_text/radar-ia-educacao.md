@@ -740,6 +740,99 @@ inteligência para tomada de decisão.
 
 
 --------------------------------------------------
+9B. PROCESSO DE INVESTIGAÇÃO (a partir da #15)
+--------------------------------------------------
+
+PROPÓSITO
+O Radar não é um jornal de notícias sobre IA nem um estudo temático
+quinzenal. É inteligência estratégica que usa a IA como eixo para
+acompanhar a transformação do mercado educacional, antecipar movimentos
+competitivos, identificar oportunidades e subsidiar decisões de negócio,
+produto, tecnologia e estratégia. Serve para a empresa não ser
+surpreendida por movimentos que poderiam ter sido vistos antes, e para
+achar oportunidades antes de virarem demanda urgente da liderança.
+A IA é o eixo da investigação; a transformação do mercado educacional é
+o objeto de análise.
+
+SEIS DIMENSÕES, INVESTIGADAS EM TODO CICLO E DE FORMA INDEPENDENTE
+1. Produto e inovação educacional: lançamentos, jornadas de professor,
+   aluno e gestor, novos usos de conteúdo, necessidades pouco exploradas,
+   inovação de produto mesmo sem IA inédita.
+2. Inteligência competitiva: concorrentes diretos e indiretos, startups,
+   entrantes, parcerias, aquisições, posicionamento, PNLD, MEC, FNDE e
+   redes. Olhar também páginas de produto, blogs, demonstrações,
+   webinars, comunicados, centrais de ajuda, atualizações e eventos.
+3. Tecnologia e IA: modelos, APIs, ferramentas, agentes, multimodalidade,
+   automação, custo e desempenho, e o que acelera produto.
+4. Regulação, jurídico e governança: normas, privacidade, segurança,
+   restrições por etapa, efeitos em produto, contrato e operação.
+5. Pedagogia e evidências: pesquisas, estudos de impacto, abordagens.
+6. Negócio e mercado: modelos de negócio, expectativa e comportamento
+   das escolas, estratégia comercial, efeito em receita e custo.
+Sem cota por dimensão. Todas são investigadas mesmo quando não há nada
+a publicar, e a lacuna não é preenchida de forma artificial.
+
+ORDEM DO PROCESSO
+1. Varredura independente das seis dimensões.
+2. Acontecimentos relevantes dentro da janela.
+3. Validação de fontes, datas e informações.
+4. Comparação com as edições anteriores.
+5. Classificação por relevância, impacto e novidade.
+6. Padrões e conexões.
+7. Só então o insight da quinzena.
+A tese é consequência da investigação, nunca um filtro prévio. Notícia
+relevante que não se liga à manchete entra do mesmo jeito: a manchete é
+um sinal, e os demais são independentes. Na seção Sinais, o primeiro é a
+manchete e os outros vêm de outras frentes.
+
+CONTINUIDADE
+Classificar cada movimento como: novo acontecimento; evolução de um
+anterior; confirmação de hipótese; contexto histórico necessário; ou
+repetição sem novidade. Não reapresentar notícia antiga como nova. Quando
+um tema volta, dizer o que mudou desde a última edição e por que merece
+atenção. Fato fora da janela só entra como contexto, datado no texto
+("fora da janela e não registrado na #N").
+
+NOVIDADE DE PRODUTO OU DE CONCORRENTE
+Para cada uma: o que foi lançado ou alterado; que problema resolve; que
+público atende; o que representa para o mercado; que expectativa gera
+nas escolas; que oportunidade, risco ou investigação cria para a FTD.
+Não presumir que a FTD não tem a funcionalidade. Sem informação interna,
+apresentar como oportunidade de investigação ou de comparação.
+
+BENCHMARK, ACELERADOR E OPORTUNIDADE
+- Benchmark: o que alguém já fez e o que podemos aprender.
+- Acelerador: o que podemos aproveitar para fazer melhor ou mais rápido
+  (ferramentas, APIs, SDKs, modelos, frameworks abertos, plataformas de
+  automação, geração de conteúdo, padrões de arquitetura já validados).
+  Não vira lista do que a empresa precisa construir.
+- Oportunidade: o que podemos investigar, desenvolver ou evoluir.
+
+LIMITE DA BUSCA
+A busca em imprensa e páginas indexadas não alcança central de ajuda,
+demonstração fechada, webinar nem comunicado interno de rede. A seção
+Ausências declara esse limite sempre que afirma que não houve lançamento.
+
+REVISÃO CRÍTICA ANTES DE PUBLICAR
+- Investigamos as seis dimensões?
+- Há lançamento de produto educacional relevante fora da edição?
+- Há movimento competitivo que poderia surpreender a liderança?
+- Há tecnologia que acelere produto ou reduza custo?
+- Há mudança regulatória com impacto relevante?
+- Estamos deixando notícia importante de fora por não sustentar a tese?
+- Estamos repetindo informação sem mostrar evolução?
+- As oportunidades se apoiam em acontecimentos reais?
+- As interpretações são proporcionais às evidências?
+- Fontes e datas foram verificadas?
+
+REGISTRO DE PROCESSO
+- #15 · A primeira versão foi escrita a partir da tese regulatória e
+  cobriu pouco produto, concorrência, tecnologia e mercado. A revisão
+  complementar acrescentou modelos novos, regulação no exterior, mercado
+  e a oferta de conteúdo ancorado do Google, e reorganizou Aceleradores
+  e Benchmarks. Causa: a tese veio antes da varredura das seis dimensões.
+
+--------------------------------------------------
 10. FONTES MONITORADAS — uso interno
 --------------------------------------------------
 
